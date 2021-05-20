@@ -16,7 +16,7 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-19">2021-05-19</time></h2>
+    <h2 class="daily-heading"><time datatime="2021-05-20">2021-05-20</time></h2>
     <ul class="sources card">
       <li class="source">
         <section>
@@ -24,21 +24,63 @@
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">crypto.randomUUID is three times faster uuid.v4</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/galkin/crypto-randomuuid-vs-uuid-v4-47i5">
+                <summary class="article-expander__title">Como implementar Type guards no seu código</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/samuelmpinho/como-implementar-type-guards-no-seu-codigo-2040">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Node.js v14.17 release added crypto.randomUUID(). This method allows to generate random RFC 4122 Version 4 UUID strings. Example:
-const { randomUUID } &#x3D; require(&#x27;crypto&#x27;);
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Imagine que você tem a seguinte situação:
+Você tem uma aplicação que busca por músicas no Spotify e nessa aplicação você mostra o email do usuário logado e a música que ele está escutando naquele momento.
+Você então cria 2 funções para acessar a API do Spotify
+getUser para chamar a API que irá buscar os dados do usuário
+getSong que irá retornar uma lista de músicas do Spotify
+Então você teria o seguinte código:
+type APIResponse &#x3D; {
+  data: T;
+  error: Error;
+}
 
-console.log(randomUUID());
-// &#x27;43c98ac2-8493-49b0-95d8-de843d90e6ca&#x27;
+type User &#x3D; {
+  email: string;
+}
 
-I wondered how big the difference between uuid generation by Node.js API and uuid package.
-For benchmarking I prefer to use hyperfine. It is like apache benchmark, but for CLI commands. There are have two cases:
-require(&#x27;crypto&#x27;).randomUUID()
-require(&#x27;uuid&#x27;).v4()
-Let&#x27;s…</span>
+type Song…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2021-05-19">2021-05-19</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Notion API</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/notion-api/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>The Public Beta of the Notion API dropped! Woot! Here’s their guide. I’ve been a Notion user and fan for a long time, for both personal and professional team use. They even sponsored a few videos around here a …
+The post Notion API appeared first on CSS-Tricks.
+You can support CSS-Tricks by being an MVP Supporter.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">svg-loader: A Different Way to Work With External SVG</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/svg-loader-a-different-way-to-work-with-external-svg/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>SVGs are awesome: they are small, look sharp on any scale, and can be customized without creating a separate file. However, there is something I feel is missing in web standards today: a way to include them as an external …
+The post svg-loader: A Different Way to Work With External SVG appeared first on CSS-Tricks.
+You can support CSS-Tricks by being an MVP Supporter.</span>
                   </div>
                 </a>
               </details>
@@ -51,14 +93,925 @@ Let&#x27;s…</span>
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Using the useReducer Hook in React with TypeScript</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/craigaholliday/using-the-usereducer-hook-in-react-with-typescript-27m1">
+                <summary class="article-expander__title">Angular directives: Interesting ways to use it.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/dwale/angular-directives-interesting-ways-to-use-it-1k4b">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>This article will be using the angular directive to create a reusable custom user validation field. A typical use case will be an account lookup field or any user validation field.
+
+I&#x27;ll be using a bank account validation feature for this document. I came about this idea due to my experience in the fintech industry, where I&#x27;ve had to implement this across various applications, this will allow you to keep your code DRY and it also looks cool 😉.
+&lt;input type&#x3D;&quot;text&quot; [appAccountLookup] &#x3D; &quot;bankInformationForm.va…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular: Pass Component via @Input() | HOC | Dynamic Wrapper</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sincovschi/angular-pass-component-via-input-hoc-dynamic-wrapper-48jo">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>The intro
+
+
+I was working with React Projects for a long time. I have evolved a mindset that allows you to abuse HOC to make code more reusable and somewhat clean. But when I got into Angular, it felt weird at first that there is no such concept.
+At some point, I got in touch with Modals and there it was the gong that awoke the ninja in me. First, I dove again into angular.io docs and indeed found a way to pass components through @Input() and render them. But that was unsatisfying because of the decorator. …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular SpringBoot CRUD MariaDB Example</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/loizenai/angular-springboot-crud-mariadb-example-48jb">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>https://loizenai.com/angular-springboot-mariadb-crud/
+Tutorial: &quot;Angular SpringBoot CRUD MariaDB Example&quot;
+In the tutorial, I introduce how to create an &quot;SpringBoot Angular MariaDB CRUD Example&quot; with POST/GET/PUT/DELETE requests to SpringBoot RestAPIs.
+Design overview system by Architecture Diagram that includes: Angular Client, SpringBoot RestAPIs, and MariaDB database.
+Implement Angular CRUD Client with Angular built-in HttpClient to communicate with server side.
+Implement SpringBoot RestAPIs that gets dat…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ever worked on a project like Wix or Godaddy Site Builder?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/youngquarshie/ever-worked-on-a-project-like-wix-or-godaddy-site-builder-2jjl">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>I want to build a project like that with Angular and Laravel</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular 6 HttpClient + Spring Boot + MariaDB example | Spring Data JPA + RestAPIs CRUD example</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/loizenai/angular-6-httpclient-spring-boot-mariadb-example-spring-data-jpa-restapis-crud-example-25n0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>https://grokonez.com/frontend/angular/angular-6/angular-6-httpclient-spring-boot-mariadb-example-spring-data-jpa-restapis-crud-example
+Angular 6 HttpClient + Spring Boot + MariaDB example | Spring Data JPA + RestAPIs CRUD example
+In this tutorial, we show you Angular 6 Http Client &amp; Spring Boot Server example that uses Spring JPA to do CRUD with MariaDB and Angular 6 as a front-end technology to make request and receive response.
+Related Posts:
+Spring Boot + Angular 6 example | Spring Data JPA + REST + MySQ…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular Dev Tools</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/imaknoo/angular-dev-tools-2bbd">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>⚡ We now have Angular Chrome Developer Tools, a new way to debug angular apps ⚡
+Easily navigate between component hierarchy, properties used in each component and can deliberately update property value from dev tools
+The Angular Chrome Developer tool will work on Angular Version 9+
+Install now to:
+Install here → [http://goo.gle/install-angular-devtools]
+https://angular.io/guide/devtools]
+
+Chrome Angular Developer Tool</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Spring Boot + Angular 6 example | Spring Data JPA + REST + MySQL CRUD example</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/loizenai/spring-boot-angular-6-example-spring-data-jpa-rest-mysql-crud-example-4nm5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>https://grokonez.com/spring-framework/spring-data/spring-boot-angular-6-example-spring-data-jpa-rest-mysql-crud-example
+Spring Boot + Angular 6 example | Spring Data JPA + REST + MySQL CRUD example
+In this tutorial, we show you Angular 12 Http Client &amp; Spring Boot Server example that uses Spring JPA to do CRUD with MySQL and Angular 12 as a front-end technology to make request and receive response.
+Related Posts:
+How to use Spring JPA MySQL | Spring Boot
+Update for Angular 8:
+Spring Boot 2.1 + Angular 8 + M…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Scheduling API for Remote and Distributed Teams</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/spurwing/scheduling-api-for-remote-and-distributed-teams-5dcf">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(3 min)</span>
-                    <span>The useReducer hook is an alternative to the useState hook and is preferable when you have complex state logic or when your next state depends on your previous state.
-The useReducer hook accepts a reducer type (state, action) &#x3D;&gt; newState and returns a state object paired with a dispatch method much like Redux.
-Now the official useReducer documentation will show you how to define a reducer that accepts actions you will call with a dispatch method.
-That is a good use case but I have another example of using u…</span>
+                    <span>Face it. Remote work is here to stay. It&#x27;s opened up a treasure trove of benefits to companies and workers alike.
+So the new frontier of work after the world more or less goes back to normal, will be maximizing efficiency even though the team may never be in the same room ever again.
+Spurwing&#x27;s Scheduling API can bring a level of organization and time management to your team so that it will seem like you&#x27;re always in the same room together.
+ 
+The average company is in over its head with projects, and anyone…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Thinking upstream about the White House cybersecurity executive order</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/tidelift/thinking-upstream-about-the-white-house-cybersecurity-executive-order-1h89">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>The upstream parable
+Stop me if you’ve heard this one before.
+Three friends are relaxing beside a river. Suddenly, they hear the sound of someone crying out for help.
+Looking out into the river, they see a child flailing in the middle of a strong current. The first friend moves quickly, jumping in and swimming as fast as they can to get the child and pull them to safety.
+Before the first friend is able to get back to shore, there are more cries for help. Three additional children are in the river, in need o…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Understanding Docker: part 33 – Tools: Skopeo</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aurelievache/understanding-docker-part-33-tools-skopeo-1hin">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Understanding Docker can be difficult or time-consuming. In order to spread knowledge about Cloud technologies I started to create sketchnotes about Docker. I think it could be a good way, more visual, to explain Docker (and other technologies like Kubernetes and Istio).
+We continue the series of Docker sketchnotes with an useful tool: skopeo!
+
+
+As usual, if you like theses sketchnotes, you can follow me, and tell me what do you think. I will publish others sketchs shortly :-).
+If you are interested, I publ…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Upgrade your incident retrospectives with this template</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/wuz/upgrade-your-incident-retrospectives-with-this-template-2a89">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>TL;DR: Get the template here
+The more time you spend working for tech companies, the more likely it is that you will run a retrospective for an incident. 
+There are lots of theories out there about how to perform retros — from Amazon&#x27;s &quot;Five Why&#x27;s&quot; strategy to Netflix&#x27;s Dispatch tooling.
+For most engineering teams however, incident response ends with the fix and a couple words or paragraphs about what happened. This is a great starting place, but often times focusing on what happened over what caused it to …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How would you tackle this NodeJS project?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/hasnaindev/how-would-you-tackle-this-nodejs-project-43if">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Hello!
+I work at a startup and have been working on a cool project NodeJS based project. Even though, it is a WordPress position, when I&#x27;m free, I take my time to work on interesting projects. Given what we&#x27;re trying to achieve in this soon-to-be proprietary system, I noticed optimization issues with it. I tried bombarding the endpoints with 200 requests at a time and pm2 monit showed a few issues.
+Before I talk about the pm2 stats, I would like to talk about what the system actually does. We sent a domain …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Best Practice React.js project For Beginners</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/katholder/best-practice-react-js-project-for-beginners-28fn">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Aiming to master front-end frameworks? Start learning ReactJS diligently and look forward to a great career in programming. The best way to polish your skill is to  start building Practice React.js  project For Beginners and get hands-on with ReactJS.
+By now you must be clear on requirements for building React apps. Let’s start React Learning Path about a few of the best ReactJS projects for beginners list-
+E-Commerce Apps
+Calculator
+Weather App
+Messaging App
+Simple CRM
+Social Media App</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Top Open-Source Status Page Tools for 2021</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/betteruptime/top-open-source-status-page-tools-for-2021-2dd0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Status pages are a must for any online business today. In case of incidents or downtime, status pages provide a modern platform for communication with users.
+Now let&#x27;s have a look at some open source status page tools you can use to build, publish, and maintain your status page and start communicating your downtime in a proper way.
+Want to host your status page for free? Read our article on best free and paid hosted status page tools.
+
+Upptime
+
+
+Upptime allows users to use GitHub Actions to schedule workflo…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Best WordPress plugin to make your website satisfying.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/katholder/best-wordpress-plugin-to-make-your-website-satisfying-749">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>90% of the world&#x27;s population have been using smartphone devices. This implies that if you don&#x27;t concentrate on enhancing your website&#x27;s user interface and having it be more mobile-friendly, you&#x27;ll lose sales.
+You have around five seconds to capture a visitor&#x27;s attention and convince them to linger on your website. That person will not return if your site does not function or loads quickly.
+As a result, you must ensure that your site is mobile-optimized in order for it to load faster. Furthermore, it will s…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Software delivery through a flexible and agile DevOps model</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/softwebsub/software-delivery-through-a-flexible-and-agile-devops-model-46nd">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>DevOps Portfolio 
+Software delivery through a flexible and agile DevOps model
+Challenges
+Solutions
+DevOps is considered important in the ability to frequently and reliably update a system in an operational state. DevOps presumes automation and seamless cross-functional collaboration between multiple teams. Hence, to manage a single smart product developed by multiple teams, our client needed a robust DevOps approach.
+Softweb Solutions significantly accelerated the delivery of mobile and web apps features, f…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">API Integration with Lightspeed Cart</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/natalia27070051/api-integration-with-lightspeed-cart-3kl">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>The development of API integration with Lightspeed is a must-have for software providers who want to succeed on the market in 2021. In this article, we will explore what a Lightspeed API integration is, how exactly it works, and how it is possible to develop seamless integration with this cart solution.
+Any software provider who wants to take their business to new success levels should focus on eCommerce integration. Keep reading to find out why a Lightspeed API integration is an essential part of any eComm…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Step-by-step guide to add request ID to all SQL logs with Async Local Storage</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/acro5piano/step-by-step-guide-to-add-request-id-to-all-sql-logs-with-async-local-storage-1al0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Logging is important for all production-ready service. It will significantly affect our productivity when a issue happens.
+With request ID, we can track a user&#x27;s request without grepping every rows with our eyes. Just filtering with the unique request ID and things done. Almost all logging service has filtering feature, so it&#x27;s a quite portable way.
+Since Node.js typically runs on a single threaded environment, it requires a trick to add request ID for each logs. The trick was domain API for a long time, bu…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Fix Your First Contentful Paint: Cheat Sheet</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/requestmetrics/fix-your-first-contentful-paint-cheat-sheet-68i">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Are slow FCP scores getting you down? Worried that website performance is frustrating your users and hurting your SEO rankings? This FCP cheat sheet has all the tactics (with links) you’ll need to have screaming-fast FCP scores.
+First Contentful Paint (FCP) is a measurement of how long it takes to show the user the first bit of content. Measuring FCP encourages your website to respond quickly to requests so that users know their request has been received.
+If you’re not yet familiar with the FCP metric, chec…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">WSL for Rails developers</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/hint/wsl-for-rails-developers-2a3g">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>It is now possible, thankfully, to develop in Rails on Windows. For many years, it seemed one needed a Mac for this purpose; and I have nothing against Macs, and enjoy the MacBook Pro, which I have used throughout my career. But I also have a Windows machine. I like to play games sometimes, and now that I work from home, along with an increasing number of people, I have access to it. I like the idea that developers should be able to enjoy their preference in environment, where reasonable. Some prefer to boo…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How To View And Configure Apache Access &amp; Error Logs</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/betteruptime/how-to-view-and-configure-apache-access-error-logs-4fbl">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Introduction
+
+
+In this tutorial, you will learn everything you need to know about Apache logging to help you troubleshoot and quickly resolve any problem you may encounter on your server. Logging is a very powerful tool that will give you valuable data about all the operations of your servers. You will learn where logs are stored, how to access them, and how to customize log output to fit your needs.
+Apache web server.
+Apache writes logs of its events in two different log files.
+Access Log - In this file, A…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Use Vim as a Python IDE</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jones268/use-vim-as-a-python-ide-31e6">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Vim is an awesome text editor that can be used as a Python IDE. For those who use Vim and want to program in Python, here are a few tips on how to do it easily.
+Vim is a highly extensible text editor. By adding plugins to your .vimrc and installing other packages, you can tailor Vim to your liking.
+I&#x27;ve been using Vim as my primary text editor for several years and I really love it. It has an excellent interface for navigating and editing text, and I&#x27;ve never been able to find a better one.
+If you are new t…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Vim Editor: 5+ Tips and Tricks for Mastering Vim</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/harvey/the-vim-editor-5-tips-and-tricks-for-mastering-vim-2fbf">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Vim (Vi Improved) is a modal text editor. The learning curve is a little steep but it offers many features that can make editing code faster. 
+I’ve been using Vim as my primary editor for a few years now and these are some of the tips and tricks to help increase your speed.
+Vim can be overwhelming at first. To help you get your feet wet, here are some tips that will improve your productivity and make you faster at editing text. 
+Hit escape then to get into command mode, then use one of the following command…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">ifconfig vs ipconfig vs iwconfig</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/deepu14d/ifconfig-vs-ipconfig-vs-iwconfig-3k9b">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>This may seem useless to a lot of people, even I am thinking that way but still I got this confusion when I started learning a bit networking and started working in Linux terminal so maybe other also have this confusion and these are the basic commands especially for those who works with networking stuff. It’s really very basic. So, what is the difference between ifconfig, iwconfig and ipconfig?
+Ifconfig stands for interface configuration and it’s used to display the network configuration information, you c…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">make sudo not ask for password</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/akshatsinghania/make-sudo-not-ask-for-password-3878">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Modifying the system files to skip asking for password can be dangerous and also can lead to unexpected behaviour and problems.
+So the way without Modifying anything it to use
+sudo su
+this will make you login to the super user and you can do anything you want without asking for password and the good thing is when you close the terminal and open a new terminal , the new one will be normal as before without the need to undo the change in any files</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">YouTube Live Stream ON: Bash Shell for Data Sciences</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/scientificschool/youtube-live-stream-on-bash-shell-for-data-sciences-1bj7">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Welcome to the Bash Shell for Data Sciences | Scientific Programming School – FREE YouTube Live Stream. 🔴 LIVE NOW!
+https://youtu.be/2SyrHh65qMk
+In this awesome live class ❤️ we will cover three practical flat file data mining projects involving four data projects (each with a different objective function):
+University ranking data,
+Facebook data,
+Australian statistics crime data and
+Please don’t forget to Subscribe our new [YouTube channel] if you want more weekly updates on Linux, Devops, HPC and Advanced…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">A closer look at the new Glitch starter apps</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/glitch/a-closer-look-at-the-new-glitch-starter-apps-22ke">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>The following post was written by Glitch engineer, Keith Kurson. In it, he discusses the tech stack and opinions behind our new lineup of Glitch starter apps. Enjoy, and let us know what you think + create!
+We just launched generated static sites! 🎉 This has been an in-flight feature for a long time, and something I’m really excited to finally see out in the world. There are a lot of moving pieces, but the most important thing to take away is this: generated static sites allow you to run a development proc…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Wanted: Code reviewers for my first node project</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/cb80/wanted-code-reviewers-for-my-first-node-project-3jk">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Dear fellows, I was searching for a GitHub action to publish releases including assets. Despite the sheer mass of actions out there I failed to find the right one. What I found did either not support GitHub enterprise, or it failed to replace an existing release, or it could not upload assets, or it published the release before uploading the assets, or, or, or. Eventually I wrote an action on my own which turned out to be my first node project using typescript. I am curious what you think. Please tell me wh…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Implementing Custom Ranking for Records from a MongoDB Database in Node.js</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/agusioma/implementing-custom-ranking-for-records-from-a-mongodb-database-in-node-js-4h54">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>This article will give us a heads-up on how to rank the records from a MongoDB database. We are going to add a bit of sorting functionality to the sort() function to give the records positions.
+In the end, we will be able to:
+Install and configure MongoDB driver in a Node.js application using the Node Package Manager.
+Query and sort results from a MongoDb database.
+Use arrays to give custom ranking for records.
+Prerequisite
+Introduction
+What we will be doing
+Getting started
+Creating our database
+Creating ou…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ma</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/mayanhavoc/ma-3g0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>A post by Roberto</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Getting Started with Node.js</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/chibichibibr/getting-started-with-node-js-24hm">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>What is it all about?
+A Back-end framework for JavaScript
+It allows you to run JavaScript on the server
+It&#x27;s a javaScript runtime (it is not a programming language)
+An extension to JavaScript
+Native JSON Support
+It&#x27;s open source
+Back-end technology
+You can process multiple requests at the same time
+Installing Node.js
+Official Node.js Download link: https://nodejs.org/en/download/
+LTS (Long Term Support) - Recommended for Most Users
+Current - Latest features
+Choose an IDE (Integrated Development Environment)…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Automatically protect your supply chain from dependency confusion</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sumstrm/automatically-protect-your-supply-chain-from-dependency-confusion-2n35">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Dependency confusion occurs when a system or user is tricked into fetching a package version from a public registry, instead of the intended trusted package with the same namespace from your private registry.
+Like other supply chain attacks it’s all about injecting non-intended packages into a vulnerable supply chain, where malicious code can be executed on installation. A critical security threat for your supply chain if left uncontrolled. And a problem that potentially gets even worse in automated environ…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Introduction to Web3 and MetaMask</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ngduc/introduction-to-web3-and-metamask-562h">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Web3 - Javascript - Resources
+
+
+Web3.js is a collection of libraries that allow you to interact with a local or remote ethereum node using HTTP, IPC or WebSocket.
+MetaMask is a browser plugin that serves as an Ethereum wallet. Users can store Ether and other ERC-20 tokens in the MetaMask wallet. The wallet can also be used to interact with decentralized applications, or dapps.
+This page is a collection of resources, tutorials, guides, articles, etc. for learning Web3 with Javascript.
+Last update: 05/19/2021…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Using Typescript to create a Robust API between your frontend and backend</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/grouparoo/using-typescript-to-create-a-robust-api-between-your-frontend-and-backend-2f3i">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Two of the major components of the @grouparoo/core application are a Node.js API server and a React frontend. We use Actionhero as the API server, and Next.JS for our React site generator. As we develop the Grouparoo application, we are constantly adding new API endpoints and changing existing ones.
+One of the great features of Typescript is that it can help not only to share type definitions within a codebase, but also across multiple codebases or services. We share the Typescript types of our API response…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Event Loop</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/retr0c0de/event-l-p-2do1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Disclaimer: This article is all about event-loop. It may have soo many dependency articles or too little. But It will confuse you like christopher nolan movies. So, Save your brains✌
+Let&#x27;s Begin 🚀
+
+In a nutshell it&#x27;s a loop. But differ from other loops i.e., from movies or traditional loop(for, while). Because, you can&#x27;t write this eventloop. In nature it&#x27;s declarative. I know you won&#x27;t get nothing with the definition above 🤷‍♂️.
+It&#x27;s Okay let&#x27;s go for an analogy tour. Let&#x27;s use flash from DC Comics. If a…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to populate nested document in MongoDB.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rajeshroyal/how-to-populate-nested-document-in-mongodb-3a91">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Recently I run into a situation where I needed to fetch nested mongodb document data and wasted my 1 hour. If you are facing the same this is for you.
+Here is the stackoverflow - Populate nested array in mongoose
+I used this query -
+public courseListRead(): Promise {
+    return this.courseModel.find().sort({
+      index: 1
+    }).populate(&#x27;instructor&#x27;).populate({
+      path: &#x27;categories&#x27;,
+      populate: {
+        path: &#x27;posts&#x27;,
+        model: &#x27;CourseCategoryPost&#x27;
+      }
+    }).exec();
+  }
+
+To p…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Hosting your react-native express.js backend on Heroku.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/usaidpeerzada/hosting-your-react-native-express-js-backend-on-heroku-5b3l">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>You have created an app in react native and written backend in expressjs/nodejs and you want to host your backend so you can get or post data on your app from anywhere?
+Answer: Heroku.
+Here&#x27;s how:
+Create a Heroku account on www.heroku.com
+
+Install Heroku CLI.
+
+
+
+
+// for mac:
+brew tap heroku/brew &amp;&amp; brew install heroku
+// for ubuntu: 
+sudo snap install --classic heroku
+
+
+After Heroku CLI has been installed, open the terminal and just login with your credentials
+
+
+
+
+
+// type this in your terminal to login:
+he…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Node.js : Reading a file line by line</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rajeshkumaryadavdotcom/node-js-reading-a-file-line-by-line-5ga9">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Create a file as app.js (or whatever name you want) and paste below code -
+app.js
+const readline &#x3D; require(&#x27;readline&#x27;);
+const fs &#x3D; require(&#x27;fs&#x27;);
+var file &#x3D; &#x27;path.to.file&#x27;;
+var rl &#x3D; readline.createInterface({
+ input: fs.createReadStream(file),
+ output: process.stdout,
+ terminal: false
+});
+rl.on(&#x27;line&#x27;, function (line) {
+ console.log(line) // print the content of the line on each linebreak
+});
+
+path.to.file will be path of your file and once modified this line you can run &#x27;node app.js&#x27; and you will get the f…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Automatically protect your supply chain from dependency confusion</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sumstrm/automatically-protect-your-supply-chain-from-dependency-confusion-2n35">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Dependency confusion occurs when a system or user is tricked into fetching a package version from a public registry, instead of the intended trusted package with the same namespace from your private registry.
+Like other supply chain attacks it’s all about injecting non-intended packages into a vulnerable supply chain, where malicious code can be executed on installation. A critical security threat for your supply chain if left uncontrolled. And a problem that potentially gets even worse in automated environ…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">AzureFunBytes Reminder - @Azure Data Factory Security with @narainabhishek - 5/20/2021</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/azure/azurefunbytes-reminder-azure-data-factory-security-with-narainabhishek-5-20-2021-37b5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>AzureFunBytes is a weekly opportunity to learn more about the fundamentals and foundations that make up Azure. It&#x27;s a chance for me to understand more about what people across the Azure organization do and how they do it. Every week we get together at 11 AM Pacific on Microsoft LearnTV and learn more about Azure.
+
+This is part two of our series on Azure Data Factory.  Last time Mark helped get us on the road to understanding how to best get our data into the cloud by using the linked services and tools with…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">💳 What Is Credential Stuffing? How To Prevent Credential Stuffing Attacks</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/robertinoc_dev/what-is-credential-stuffing-how-to-prevent-credential-stuffing-attacks-2e81">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>💻 Credential stuffing is one of the most common types of cyberattacks. Here’s how to prevent credential stuffing.
+
+
+
+  
+  
+  
+Credential stuffing is a type of cyberattack in which a cybercriminal uses stolen usernames and passwords from one organization (obtained in a breach or purchased off of the dark web) to access user accounts at another organization.
+Credential stuffing attacks are one of the most common causes of data breaches because 65% of all people reuse the same password on multiple (and someti…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">What are the Ways to Prevent an Organization from Phishing Attacks?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/bhhaavikpatel/what-are-the-ways-to-prevent-an-organization-from-phishing-attacks-2a7c">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Your company might be at risk of compromising valuable data to unknown sources online. The sad part is, you might not even know about it. There are plenty of websites claiming to give you the right anti-phishing solutions for your company. But not all of them are reliable. We are here to provide you with the latest prevention measures to stop phishing attacks for your organization.  
+Before we move into how you can fix the problem, let’s first understand what phishing is and why it’s challenging to combat? …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular directives: Interesting ways to use it.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/dwale/angular-directives-interesting-ways-to-use-it-1k4b">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>This article will be using the angular directive to create a reusable custom user validation field. A typical use case will be an account lookup field or any user validation field.
+
+I&#x27;ll be using a bank account validation feature for this document. I came about this idea due to my experience in the fintech industry, where I&#x27;ve had to implement this across various applications, this will allow you to keep your code DRY and it also looks cool 😉.
+&lt;input type&#x3D;&quot;text&quot; [appAccountLookup] &#x3D; &quot;bankInformationForm.va…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Wanted: Code reviewers for my first node project</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/cb80/wanted-code-reviewers-for-my-first-node-project-3jk">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Dear fellows, I was searching for a GitHub action to publish releases including assets. Despite the sheer mass of actions out there I failed to find the right one. What I found did either not support GitHub enterprise, or it failed to replace an existing release, or it could not upload assets, or it published the release before uploading the assets, or, or, or. Eventually I wrote an action on my own which turned out to be my first node project using typescript. I am curious what you think. Please tell me wh…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Using Typescript to create a Robust API between your frontend and backend</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/grouparoo/using-typescript-to-create-a-robust-api-between-your-frontend-and-backend-2f3i">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Two of the major components of the @grouparoo/core application are a Node.js API server and a React frontend. We use Actionhero as the API server, and Next.JS for our React site generator. As we develop the Grouparoo application, we are constantly adding new API endpoints and changing existing ones.
+One of the great features of Typescript is that it can help not only to share type definitions within a codebase, but also across multiple codebases or services. We share the Typescript types of our API response…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Explore Fullstack modern tools</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/harshmangalam/explore-fullstack-modern-tools-51bf">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>No doubt javascript is booming the world of software industry . From frontend to backend every where javascript is getting its position.
+
+
+
+In this blog post i will share you some  library and framework that i am using for my projects
+A JavaScript library for building user interfaces.
+React components for faster and easier web development.Material UI is based on google material design specification and provide a lot of ui components.
+Next.js gives you the best developer experience with all the features you …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">React, Tailwind and TypeScript</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/kevin_odongo35/react-tailwind-and-typescript-35hk">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Hey Dev&#x27;s
+Hope you enjoyed the TypeScript tutorial. Transitioning for the client project was quite a learning process. We have to evolve and allow ourselves enjoy the process of learning different technologies. Next.js and React are similar in many ways just like Nuxt and Vue.
+In this tutorial we are going to learn the following:
+How to setup a React and TypeScript project
+How to add Tailwind to a React application
+How to add Cypress e2e Testing to your application
+How to configure basic routing.
+To get sta…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">TypeScript: The Difference Between Interface and Type</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/saranshk/typescript-the-difference-between-interface-and-type-ol2">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Once we start exploring TypeScript, we start using interfaces and types without really understanding the differences between them. I am guilty of doing that as well. It is simple to get started with them and keep using them. But, at some point, it becomes important to know the difference between interface and type.
+After all, we can use either of these:
+interface Point {
+  x: number;
+  y: number;
+}
+
+or
+type Point &#x3D; {
+  x: number;
+  y: number;
+}
+
+The difference between interface and type is more than just th…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">TypeScript</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/kevin_odongo35/typescript-3p00">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(13 min)</span>
+                    <span>Hey Dev&#x27;s
+It&#x27;s been a while catching up with everyone here. Let me tell you a short story of how today&#x27;s tutorial is coming up from. Back in March, we got a client who needed a project, and in his condition, we had to use React, TypeScript, and Tailwind. Guess who had a basic understanding of React and TypeScript. It&#x27;s funny we accepted the challenge so I had to go through sleepless nights of learning in-depth about React and TypeScript.
+
+I was truly amazed by TypeScript!!
+While learning through I created a…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Reinventing DevTools console - announcing BetterConsole Beta!</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/areknawo/reinventing-devtools-console-announcing-betterconsole-beta-f43">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Imagine a scenario - you’re a web developer, simply wanting to debug a website you’re working on. You’re opening your DevTools to check out the console log and mess with the DOM, only to get irritated by the shrunk website due to the lack of screen space on your small laptop screen.
+Next up, how about opening DevTools for playing with some code real quick. Just some simple math, messing with the website you’re on, etc. Well, good luck going anywhere beyond a single line without accidentally forgetting about…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Learn Fullstack | 2021</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/retr0c0de/learn-fullstack-2021-54gd">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>This article focus on Fullstack web development. So, Don&#x27;t blame me for the &quot;anaconda article&quot;.
+If you&#x27;re not using React or using Angular/Vue. It&#x27;s totally fine and will be compatible for you. You can start with idea and gist that I provide. Then Ladder up your skills with your taste 😉.
+let&#x27;s begin 🚀
+
+A full stack web developer is a person who can develop both client and server software.
+In addition to mastering HTML and CSS, he/she also knows how to:
+Program a browser (like using JavaScript, jQuery, Ang…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">All of Your React Utility Hooks in One Place</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/pranta/all-of-your-react-util-hooks-in-one-place-3kid">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span># 🛠 All of Your Utility Hooks in One Place.
+When using react(or other frameworks like NextJS and Gatsby), we often need to use some kind of hooks to make our lives
+Extremely Important
+
+
+I don&#x27;t own any of these hooks. I found these hooks on the internet and every time I wanted to use them, I had to search
+useHook.ts &amp; useHook.com
+
+
+  
+  
+  What are React Hooks?
+
+
+Hooks are a new addition in React that lets you use state and other React features without writing a class. This library
+react docs
+Doesn&#x27;t have …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Need help</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/touhidulshawan/need-help-844">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>I am creating a helper function to get weather data using open-weather api
+require(&quot;dotenv&quot;).config();
+import axios from &quot;axios&quot;;
+
+export const getWeatherData &#x3D; async (cityName: any) &#x3D;&gt; {
+  let getData &#x3D; {};
+  try {
+    const response &#x3D; await axios.get(
+      &#x60;https://api.openweathermap.org/data/2.5/weather?q&#x3D;${cityName}&amp;appid&#x3D;${process.env.WEATHER_API_KEY}&amp;units&#x3D;metric&#x60;
+    );
+    const data &#x3D; await response.data;
+    getData &#x3D; {
+      forecast: data.weather[0].description,
+      cityName: data.name,
+     …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">What is Web3? The Decentralized Internet of the Future Explained</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/what-is-web3/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>The internet is going through a paradigm shift. Learn the differences between Web2 and Web3, and why many developers and companies are shifting their approach in building apps.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to Optimize for Change in Software Development</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/how-to-optimize-for-change-software-development/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Imagine that you work at Magic Money Corp, which runs on just three lines of JavaScript: let input &#x3D; { step1: &#x27;collect underpants&#x27; } doStuff(input)  profit(input) // $$$!!! Now imagine that something&#x27;s wrong with doStuff and you need to take it down for maintenance. What happens if you temporarily comment out the second</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Frustrating Design Patterns: Mega-Dropdown Hover Menus</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/frustrating-design-patterns-mega-dropdown-hover-menus/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(17 min)</span>
+                    <span>Do we need mega-dropdown hover menus in 2021? Probably not. Let’s explore things to keep in mind when designing and building a mega-dropdown, alternatives to hover menus and fine details for designing a better UX.</span>
                   </div>
                 </a>
               </details>
@@ -79,7 +1032,7 @@ That is a good use case but I have another example of using u…</span>
                 <summary class="article-expander__title">Pinned Audio WordPress Theme</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/pinned-audio-wordpress-theme/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
+                    <span class="article-reading-time">(4 min)</span>
                     <span>I’m afraid I have to start this with a whole backstory, as the journey here is the point, not so much the theme.
 A fella wrote to me a while back outlining a situation he was in. His company has …
 The post Pinned Audio WordPress Theme appeared first on CSS-Tricks.
@@ -93,7 +1046,7 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
                 <summary class="article-expander__title">How to Create Neon Text With CSS</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/how-to-create-neon-text-with-css/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
+                    <span class="article-reading-time">(8 min)</span>
                     <span>Neon text can add a nice, futuristic touch to any website. I’ve always loved the magic of neon signs, and wanted to recreate them using CSS. I thought I’d share some tips on how to do it! In this article, …
 The post How to Create Neon Text With CSS appeared first on CSS-Tricks.
 You can support CSS-Tricks by being an MVP Supporter.</span>
@@ -195,304 +1148,6 @@ Ang…</span>
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Error Handler Angular 6 HttpClient – catchError + retry – with SpringBoot RestAPIs example</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/loizenai/error-handler-angular-6-httpclient-catcherror-retry-with-springboot-restapis-example-4dbo">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>https://grokonez.com/frontend/angular/error-handler-angular-6-httpclient-catcherror-retry-with-springboot-restapis-example
-Error Handler Angular 6 HttpClient – catchError + retry – with SpringBoot RestAPIs example
-In the tutorial, we show how to handle error from Angular HttpClient with catchError &amp; retry when request fails on the SpringBoot server, or in case of a poor network connection.
-Related posts:
-Angular 6 HttpClient – Get/Post/Put/Delete requests + SpringBoot RestAPIs + Bootstrap 4
-Technologies
-Ang…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Adding ESLint to an Angular Micro Frontend architecture</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/pgarzina/adding-eslint-to-an-angular-micro-frontend-architecture-161g">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Recently we moved our platform from a mono repo to a micro frontend architecture. One of the things we wanted to add was a base linter that is shared across our apps to ensure a more standardized code as both the platform and the number of micro applications expand.
-In this post I&#x27;ll share the basic rundown of the things we had to do in order to get the linter up and running.
-As noted in the ng lint Angular Docs, TSLint is being deprecated in favor of ESLint. The migration is rather straightforward and boil…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">What’s New in Angular 12?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/bacancy_technology/what-s-new-in-angular-12-h4o">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>We at Bacancy Technology share an article about the Angular 12 features. You can implement those features into your angular based projects and improve the performance and experience of your front-end applications development better.
-We all know that Google introduced Angular framework way back in sept, 2016.
-Angular has such a strong community that at every six months they have released some new updates and on 12th may, 2021, they have released the new features in Angular12.
-In our article, we discussed tho…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Spring Boot + Angular 6 example | Spring Data JPA + REST + PostgreSQL CRUD example</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/loizenai/spring-boot-angular-6-example-spring-data-jpa-rest-postgresql-crud-example-2ejc">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>https://grokonez.com/spring-framework/spring-data/spring-boot-angular-6-example-spring-data-rest-postgresql-example
-Spring Boot + Angular 6 example | Spring Data JPA + REST + PostgreSQL CRUD example
-In this tutorial, we show you Angular 6 Http Client &amp; Spring Boot Server example that uses Spring JPA to do CRUD with PostgreSQL and Angular 6 as a front-end technology to make request and receive response.
-Related Posts:
-How to use Spring JPA with PostgreSQL | Spring Boot
-Spring JPA + PostgreSQL + AngularJS exa…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">EXPLORING RAD TOOLS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/melissadissouza/exploring-rad-tools-2359">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>The rapid app development (RAD) strategy employs tools, techniques, and methodologies devised to achieve faster time-to-market while ensuring congruency between the vision for the app and the final product. Click to know more...</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">React vs Angular – A 2021 Comparison</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ltdsolace/react-vs-angular-a-2021-comparison-20ni">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Whenever you think about the Javascript ecosystem, react and angular will pop up immediately in your mind because of their popularity. But choosing the right javascript framework for app development is a big confusion. Angular is a javascript framework, while Reactjs is a Javascript library. Since these are fundamentally different, we need to compare them on the basis of various parameters. Before digging to the comparison, let us see the overview of React and Angular in detail.
-It is an open-source library…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Angular: Teste Unitário com Spectator</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rogeriofonseca/angular-teste-unitario-com-spectator-4lgf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Introdução ao Tema 
-
-
-Neste post irei mostrar um exemplo de como podemos utilizar o Spectator para criar Mocks ou Stubs e construir os cenários de teste, simulando uma request HTTP de uma API externa em um sistema que estamos desenvolvendo.
-Neste exemplo usei a VIACEP como exemplo para ser consumido.
-Apresentação do Problema
-Configuração
-Definição de Mock ou de retorno Fake
-Validação de regras de negócios
-Verificações
-Exemplo Completo
-Para executar o exemplo
-
-
-
-Ao implementar um cenário de teste que necessi…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Kubernetes — Conceitos básicos e agentes</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rafamttz/kubernetes-conceitos-basicos-e-agentes-17n9">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Nesse artigo vamos falar sobre os conceitos ditos como básicos no Kubernetes como um ponto de partida para essa série!
-Para quem não sabe o Kubernetes é uma ferramenta que gerencia containers que ficam em um cluster, também conhecido como um “orquestrador de containers”. Quando você precisa lidar com muitas aplicações em um cluster o Kubernetes se torna uma boa alternativa. Nele existem várias funcionalidades que torna o seu ecossistema mais resiliente e elástico como veremos ao logo dessa (possível) série …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Best sources through which you can Find Ruby on Rails Developer</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/alexisdevs/best-sources-through-which-you-can-find-ruby-on-rails-developer-522f">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>When you have got your dream project to get started on, your idea is ready but struggling to get the right talent on board, have fear to stuck with mediocre talent?
-The backend is the backbone of any web or mobile application. Hence, to Find Ruby on Rails Developer who is best in his field is very important, as At the time, creating an application that possesses a robust backend will allow you to stand out from the competition in the market.
-To build a robust backend structure, you will need powerful techno…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Hugo on Azure with Static Web Apps</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/bedindavide/hugo-on-azure-with-static-web-apps-306k">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>I have few web sites based on Hugo framework currently running as Web Apps on Azure App Service Plan at the Shared tier: one of the least expensive options with the ability to use a custom domain names, you can learn more about the differences beteween hosting plans here.
-As GitHub documentation describes it:
-GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.
-GiHub Actions are a powerful way to define YAML ba…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Will .NET Core 2.1 reach an end to its Support in August 2021?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/alexisdevs/will-net-core-2-1-reach-an-end-to-its-support-in-august-2021-2788">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Yes, You heard that right! Microsoft has initiated the process to end the official support for .NET Core 2.1 The support officially ends on the date of August 2021.
-This announcement means few things, Microsoft now onwards will no longer be providing security fixes, technical support, and no new updates on .Net core 2.1 version.
-Microsoft has already been suggesting users update themselves with their Microsoft products; however, the good news is if your web application or product runs on .net core, it will …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Automate ZAP With Docker</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/mydeveloperplanet/automate-zap-with-docker-4o53">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>In the previous posts, you learned how to use ZAP with the Desktop client and via the command line with ZAP CLI. This post, you will learn how to use the Docker images which are provided by OWASP. This will even make it easier to automate ZAP, especially in a CI/CD pipeline.
-It is strongly advised to read the two previous posts about ZAP before starting with this one. You will need some files which were created in the previous posts. If you already have experience with ZAP, you can continue reading and use …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Golang : Work with config files</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/adi73/golang-work-with-config-files-4jid">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Configuration files play an important role in the application development lifecycle. We build and deploy applications onto multiple environments and each of them must require a certain set of configurations to run.
-Running applications on multiple environments require configuration to be set properly.
-Golang builds a single binary of the whole application which can be run on the specific environment be it a linux binary or a windows binary.
-With the release of Golang v1.16 Embed feature was also released an…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Deploy your React Project to Netlify? (step by step)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/brayanarrieta/how-to-deploy-your-react-project-to-netlify-step-by-step-3a06">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Today, let’s take a look at how to deploy our react app to Netlify, including setting up continuous deployment.
-Continuous Deployment (CD) is a software release process that uses automated testing to validate if changes to a codebase are correct and stable for immediate autonomous deployment to a production environment.
-Why Netlify?
-Netlify is an all-in-one platform for running web projects. This means you can use Netlify for hosting most if not all your web projects. Netlify is simple to use and set up whi…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Keep your AWS Kubernetes costs in check with intelligent allocation</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/castai/keep-your-aws-kubernetes-costs-in-check-with-intelligent-allocation-2l8l">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Traditional cost allocation and Kubernetes are like oil and water. Surely, containerized environments make a lot of things easier. But not this one.
-Luckily, there are a few things you can do to allocate AWS Kubernetes costs smarter and keep them in check.
-Read on to find out what they are and finally hold the reins over your cloud expenses.
-What you’ll find inside:
-You’re not the only one getting confused by Kubernetes costs, here’s why
-Calculating shared costs is a nightmare
-Containers are very dynamic
-De…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to use YAML Aliases</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jasonheecs/how-to-use-yaml-aliases-3kig">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Have you ever had to copy and paste duplicate content in a YAML file and wondered if it is possible to DRY that up? As it turns out, YAML allows you to repeat nodes via aliases.
-YAML Aliases allow you to assign a name to a value or block of data and recall the assigned data by its name in the YAML file. Aliases should work for any file written in YAML.
-hello: &amp;hello &#x27;hello&#x27;
-greeting:
-  audience: &#x27;world&#x27;
-  hello: *hello  #greeting.hello has the string value of &#x27;hello&#x27;
-new_greeting:
-  audience: &#x27;room&#x27;
-  hello…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Migrating From Class To Functional Components With Hooks</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/punya2004/migrating-from-class-to-functional-components-with-hooks-2j69">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>What’s the difference,which should you use in your app,and why?
-
-
-Since React is so popular among developers today, this blog is 
-useState() and useEffect()’s hooks API.
-First of all, the clear difference is the syntax. Just like in
-React.Component which has a render method. 
-Let’s take a look into a simple example.
-import React from &quot;react&quot;;
-
-const FunctionalComponent &#x3D; () &#x3D;&gt; 
-{
-    return 
-Hello, world
-;
-};
-
-import React, { Component } from &quot;react&quot;;
-
-class ClassComponent extends Component {
- render…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The long winding road to Kubernetes...</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/laradissouza99/the-long-winding-road-to-kubernetes-4e78">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>A look at why enterprises are slow in moving to Kubernetes.
-With the advent of the microservices architecture, containers have emerged as the tool of choice for building and deploying applications. Enterprises are rapidly adopting containers as that enables them to scale on-demand. But when it comes to deploying a bulk-load of applications, container orchestration and management becomes a tough nut to crack. Click to know more...</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">software containers to accelerate app delivery</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/laradissouza99/software-containers-to-accelerate-app-delivery-25il">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Containers have been the talk of the software development world for a few years now. At present, over 26% of environments currently use containerized applications and the number is expected to double by 2021. The key appealing factor that containers bring to the table is offering quality software delivery within a comparatively short time span. Containers have played a major role in transforming the app delivery process. Click to know more...</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -569,298 +1224,6 @@ Oh…</span>
 In a way, I would divide the screen in three areas:
 Easy to reach: the area can be reached with the thumb while holding the phone.
 Not comfortable: you can reach the area, but it&#x27;s not as comfortable as the previously mentioned o…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">[Dicas do VIM] Instalando o VIM / NeoVIM no Linux</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/womakerscode/dicas-do-vim-instalando-o-vim-neovim-no-linux-4k6b">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>print(&quot;Olá! o/&quot;)
-Hoje vamos iniciar um nova série aqui no seu blog preferido de tecnologia. 😎
-Vamos falar sobre o tão amado e temido (e às vezes, odiado) VIM. Será uma dica por cada post, de como usar o editor. Assim, aos pouquinhos vamos juntas perdendo o medo (além de aprender a rir dos memes sobre sair do VIM).
-Como podem ver no título, vamos começar pela instalação.
-Digite, no terminal
-$ sudo apt install vim
-
-$ indica que você deve usar o usuário comum para fazer essa operação.
-sudo serve para pedir pe…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Mine Crypto on Linux</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/akshatsinghania/mine-crypto-on-linux-31eh">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Mining crypto on windows is quite intuitive but not quite in Linux
-We would be using xmrig to mine XMR, it is a great miner, it also doesn&#x27;t charge a huge fee, you set the percentage of the fees yourself too
-Since xmrig doesn&#x27;t give us the binary themselves so we have to build them ourselves, this doesn&#x27;t take much bandwidth not much processing power, and time though
-sudo apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev
-cloning the open-source code to build Linux executables.
-git…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Node.js Streams Quick Introduction</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/itsrennyman/node-js-streams-quick-introduction-31ej">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Curious to try the streams but you don&#x27;t know if they can serve you? Let&#x27;s see its uses together!
-In an event-based platform such as Node.js, the most efficient way to handle I/O is in real-time, consuming the input as soon as it is available and sending the output as soon as the application produces it.
-Streams allow us to process the data as soon as it arrives from the resource. This is different from buffering, where all the data that comes from a resource needs to be collected into a buffer until the op…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to configure Nginx configuration file in ubuntu for localhost port forwarding</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/avi9360/how-to-configure-nginx-configuration-file-in-ubuntu-for-localhost-port-forwarding-1hlj">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>First
-
-
-
-
-
-cd ..
-cd etc/nginx/
-
-This takes you to the root dir of the Nginx server
-cd sites-available
-vim YourSiteName
-
-Now,
-server {
-        listen 3000 default_server;
-        listen [::]:3000 default_server;
-
-        root /var/www/html;
-        index index.html index.htm index.nginx-debian.html;
-
-        server_name _;
-
-        location / {
-                try_files $uri $uri/ &#x3D;404;
-        }
-}
-
-To save and exit from the vim use this command
-:wq
-
-Now, We want to update the sites-enabled dir
-cd ..
-cd site…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">First time with Node.js</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/flt_s3nyo/first-time-with-node-js-2b6l">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>What is node?
-
-
-When we are developing a website we normally talk about code inside the frontend (browser) or the backend (server). In the past, Javascript was confined to work only in the browser (frontend) which was used to add interactivity to the website. We never used to run Javascript directly on the computer or server but in recent times Node.js has made that possible. Node.js allows us to run javascript on the server side (backend) or directly on computers.
-Computers can’t directly understand Javasc…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Hide &amp; Seek code</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/vjnvisakh/hide-seek-code-hdp">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>We were trying to hide our code from the client. We didn&#x27;t want them to judge us because of the bad indentations we followed. Lol! 
-Basically, we wanted to obfuscate it so that the client doesn&#x27;t get hold of the source code. This is what we did. 
-We had a git repository obviously where all the developers pushed their code.
-Each client had their own branch. This was done to handle customizations at a client level.
-Each client had their own server instance(AWS) also. They had a docker file that would pull cod…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to start a Node project from scratch (with Typescript)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/joncodes/how-to-start-a-node-project-from-scratch-with-typescript-3nn9">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Previous post: How to prepare a Node.js dev environment on MacOS
-Github
-baseline project
-
-
-This project will be a full-stack web application starter written in Typescript. I plan to build it as I write tutorials explaining each step. Lets start by initializing the project:
-From the folder you keep your projects in, create a new directory called baseline (or whatever you&#x27;d like to name your project):
-mkdir baseline &amp;&amp; cd baseline
-
-Now, initialize a new Node project with Yarn:
-yarn init -y
-
-The -y flag auto-p…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to upload and store images in mongoDB database ?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jahangeer/how-to-upload-and-store-images-in-mongodb-database-c3f">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Hi guys, today we will learn how to upload and store image mongoDB database. It is not recommended in real world projects for storing media files in database. So why do we need to learn, because we are developers 😞 . Just kidding ...
-So let&#x27;s start coding. 
-
-
-
-Project Github link
-App Overview :
-Project Structure
-
-Following table shows the overview of Rest APIs that be exported: 
-
-
-
-Methods
-Urls
-Actions
-
-
-
-
-POST
-/file/upload
-upload image to database
-
-
-GET
-/file/:filename
-stream image
-
-
-DELETE
-/file/:filenam…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Build a Complete Food Ordering App using React + Redux along With Stripe Payment Integration</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/myogeshchavan97/build-a-complete-food-ordering-app-using-react-redux-along-with-stripe-payment-integration-1k61">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>A great project to add to your portfolio and resume.
-This article is about what you&#x27;ll learn by building a complete food ordering app in React + Redux.
-I have recently launched a new Mastering Redux course.
-Check out the below preview of the app you&#x27;ll be building in this course:
-Note that, in this app, I have used INR as the currency for displaying the prices but you can easily change it to USD or AUD or any other currency with a single configuration change in the app.
-
-
-
-
-In this course, you will learn:
-R…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Cross platform app to aggregate and rename files in bulk with simple drag n&#x27; drop</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/deep5050/cross-platform-app-to-aggregate-and-rename-files-in-bulk-with-simple-drag-n-drop-418l">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>GitHub repo: https://github.com/deep5050/Mr.Dclutterer 
-https://www.electronjs.org/apps/mrdclutterer
-Features:
-    Drag and drop
-    Rename files on-the-fly
-    Aggregate files by extensions and types (more coming soon..)
-    Process files under sub-directories too
-    Quick access to settings from the right click context-menu 
-    Minimal and beautiful 
-    Auto updates itself
-    Available both for Linux &amp; windows</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Quick notes to use the serverless framework to deploy a Node project on AWS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rounakcodes/quick-notes-to-use-the-serverless-framework-to-deploy-on-aws-3kaj">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Intro
-
-
-serverless framework consists of an open source CLI and a hosted dashboard to provide you with full serverless application lifecycle management. 
-The purpose of the article is to provide you a quick configuration to get started with it.
-serverless cli
-
-
-npm i -g serverless
-serverless to use AWS
-
-
-serverless config credentials --provider aws --key  --secret  --profile 
-If you do not wish to provide secrets in the shell, use ~/.aws/credentials file to sav…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to prepare a Node.js dev environment on MacOS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/joncodes/how-to-prepare-a-node-js-dev-environment-on-macos-2la5">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>You will need node (required), git (optional), and yarn (optional) to develop Node applications. I also use an optional package manager, homebrew to install these tools.
-To check whether you already have these tools, you can run:
-brew -v
-node -v
-yarn -v
-git --version
-If these commands each output a version number, you already have the tools installed and you are ready to go.
-Homebrew is an extremely useful package manager for Mac. To install it, run the following:
-/bin/bash -c &quot;$(curl -fsSL https://raw.gith…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">&quot;And for this interview, build me a custom REST-API router for a web-application&quot;</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/tratnayake/and-for-this-interview-build-me-a-custom-router-for-a-web-application-30l1">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Palms are sweaty, knees weak, arms are heavy, 
-There&#x27;s vomit on his Patagucci already
-These are the types of tech interview questions my friends used to tell me about that would make me freeze up. The way it&#x27;s phrased just seems like such a lot of work and hidden complexity. And, I&#x27;m sure there is - if you really wanted to knock it out of the park -- but today, at approximately 4 hours into a task that I found more annoying than complex, I realized I&#x27;d done just this (sorta, at a very low level).
-Header Ima…</span>
                   </div>
                 </a>
               </details>
@@ -995,202 +1358,19 @@ As usual, if you are a visual learner, or simply prefer to watch and listen inst
       </li>
       <li class="source">
         <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">NestJS Dependency Injection with Abstract Classes</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ef/nestjs-dependency-injection-with-abstract-classes-4g65">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>A seemingly common complaint regarding NestJS and TypeScript is the absence of interfaces in runtime code (since interfaces are removed during transpilation).  This limitation prevents the use of constructor-based dependency injection and instead necessitates use of the @Inject decorator.  That decorator requires us to associate some &quot;real&quot; JavaScript token with the interface to resolve the dependency - often just a string of the interface name:
-/* IAnimal.ts */
-export interface IAnimal {
-  speak(): string;…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Configuring TypeScript: options rootDir, outDir, module, target</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/mxkvl/configuring-typescript-options-rootdir-outdir-module-target-1m38">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Subscribe to my email newsletter to stay up to date.
-
-In the post Getting Started With TypeScript Compiler (tsc) we started to use TypeScript compiler with a few options in a simple Node project. We used tsc command to compile our app with specific rules and in watch mode. It works but we can use much more options of TypeScript compiler. However, use it just like a command in the Terminal with a bunch of flags is not so comfortable. We can improve our workflow by using TypeScript configuration file - tsconf…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Sustainable string enums in Typescript</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/afrodevgirl/sustainable-string-enums-in-typescript-ldi">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>So you&#x27;ve got an enum type in your database table. The user needs to be able to set that property via a dropdown in your web application. But it&#x27;s possible the table will require more enum types in the future. How do we write a dropdown that remains as flexible as the enum type itself? 
-For this example we&#x27;ll use a Post as our database table.
-CREATE TYPE post_status AS ENUM (&#x27;published&#x27;, &#x27;draft&#x27;, &#x27;review&#x27;);
-
-CREATE TABLE Posts (
-  Id int,
-  Title varchar(255),
-  Status post_status
-);
-
-A post starts as a dra…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Why I made my open source React component private by default: an Open Source story</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ibrahimcesar/why-i-made-my-open-source-react-component-private-by-default-an-open-source-story-1jja">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>I’m a big fan of open source. Because, well, we all owe to this vast collection of code, libraries, frameworks and knowledge. Just like with arts and science, we stand on the shoulders of Giants. Inspired and iterations upon previous works, adding one more chain, keeping us together. And not just in the figurative sense, but literally, as xkcd pointed in the “It’s funny cause is truth”, Dependency:
-
-Last year, one of books I loved was Working in Public from Nadia Eghbal whose subtitle, “The Making and Maint…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to start a Node project from scratch (with Typescript)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/joncodes/how-to-start-a-node-project-from-scratch-with-typescript-3nn9">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Previous post: How to prepare a Node.js dev environment on MacOS
-Github
-baseline project
-
-
-This project will be a full-stack web application starter written in Typescript. I plan to build it as I write tutorials explaining each step. Lets start by initializing the project:
-From the folder you keep your projects in, create a new directory called baseline (or whatever you&#x27;d like to name your project):
-mkdir baseline &amp;&amp; cd baseline
-
-Now, initialize a new Node project with Yarn:
-yarn init -y
-
-The -y flag auto-p…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Adding a layer of more explicit typings on top of 3rd party library interfaces</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/scooperdev/adding-a-layer-of-more-explicit-typings-on-top-of-3rd-party-library-interfaces-k81">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>You may have noticed that the typing provided by 3rd party libraries often feels very loose. This should not come as a surprise as to maintain flexibility for all users it is not always possible to provide stricter typings.
-However, there is nothing to stop us, within our own applications, adding a layer of more explicit typing on top of the library interface. In doing so we can leverage Typescript to greatly improve the developer experience, as well as encouraging consistently in how the library is used.
-T…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to simplify project setup with Projen - project setup as code</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/eriklz/how-to-simplify-project-setup-with-projen-project-setup-as-code-3mdd">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Whenever you start a new software project and set up a repository for it, what do you do?
-Or use scaffolding to set up an initial project setup, and then start copying files from other repositories that have valuable configurations to tweak these?
-Or have a repository template as a starting point and work from there?
-Either way, setting up a project can sometimes be time-consuming work.
-I have done and used all of the above, and while I usually can get some decent starting point for a project, I still need …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to extend interfaces in TypeScript</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/saulodias/how-to-extend-interfaces-in-typescript-167h">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>The other day I had the following problem: the property sources in my interface ITemplateField was a list of key-value objects.
-export interface ITemplateField { 
-  sources?: KeyValue[];
-}
-
-KeyValue was a generic type imported from @angular/common, but I needed a new property called descriptionin the sourceslist items.
-interface KeyValue {
-  key: K;
-  value: V;
-}
-
-I couldn&#x27;t (and I shouldn&#x27;t) create a new parameter in the KeyValue generic type. First, it is a library import, which I co…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Testing React app with Jest</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/achukka/testing-react-app-with-jest-3ie5">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>In this post we will look into how to write tests for react application using Jest
-Jest is open source testing framework built on top of JavaScript. It was majorly designed to work with React based web applications. However it can also be used on applications using Node, Angular, Vue etc.
-We will be writing tests on todolist, a React application that I have created in my previous post
-Step 1: Installing dependencies
-If you have created your application using create-react-app you can skip this step
-Install J…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Lit 2.0 Released: Building Fast and Lightweight Web Components</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/thisdotmedia/lit-2-0-released-building-fast-and-lightweight-web-components-558f">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>In the past months, I&#x27;ve been actively using Web Components to build single-page applications. It has been a great experience so far, not only because I learned a lot about the latest web standards, but also because the web applications ended up being quite fast.
-The Web Component development story is not something new. In fact, it has been nearly three years since LitElement was introduced as a base class to build Web Components using JavaScript with the addition of great support from TypeScript. On the ot…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Angular: Teste Unitário com Spectator</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rogeriofonseca/angular-teste-unitario-com-spectator-4lgf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Introdução ao Tema 
-
-
-Neste post irei mostrar um exemplo de como podemos utilizar o Spectator para criar Mocks ou Stubs e construir os cenários de teste, simulando uma request HTTP de uma API externa em um sistema que estamos desenvolvendo.
-Neste exemplo usei a VIACEP como exemplo para ser consumido.
-Apresentação do Problema
-Configuração
-Definição de Mock ou de retorno Fake
-Validação de regras de negócios
-Verificações
-Exemplo Completo
-Para executar o exemplo
-
-
-
-Ao implementar um cenário de teste que necessi…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
           <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
           <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to Break into Ethereum, Crypto, and Web3 as a Developer</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/breaking-into-ethereum-crypto-web3-as-a-developer/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Lately, I&#x27;ve been talking about my move into the Web3, Ethereum, and crypto space since making the switch from a traditional web, mobile, and cloud background. Since making that move, a shocking number of people have reached out to me who are also thinking about doing the same.  It&#x27;s really</span>
+                  </div>
+                </a>
+              </details>
+            </article>
             <article>
               <details class="article-expander">
                 <summary class="article-expander__title">Freelance Development Pricing Guide – Should Freelancers Bill by the Hour?</summary>
@@ -1305,7 +1485,7 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
                 <summary class="article-expander__title">A Love Letter to HTML &amp; CSS</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/a-love-letter-to-html-css/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
+                    <span class="article-reading-time">(8 min)</span>
                     <span>I see you. In the back there, behind JavaScript and React and PHP and all those “real” programming languages, I see you. And I appreciate you.
 The post A Love Letter to HTML &amp; CSS appeared first on CSS-Tricks.
 You can support CSS-Tricks by being an MVP Supporter.</span>
@@ -1322,151 +1502,6 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
                     <span>An interactive tool for learning grid syntax from Etesam Ansari. In the Learn section, it teaches you some concepts (involving multiple bits of the grid syntax) then gives you a task to complete by filling out the right syntax. I’m …
 The post Euismod appeared first on CSS-Tricks.
 You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Become a leader in VIM window and tab creation!</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aminnairi/become-a-leader-in-vim-window-and-tab-creation-12c5">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Preface
-
-
-If you are like me, a VIM user, but have never used windows, now is a great time to do it!
-The main reason I didn&#x27;t use windows in VIM is because I use Tmux. But this is a bad reason, and not everybody is used to use Tmux, even though you should because this is a fantastic tool.
-The second bad reason why I don&#x27;t use windows is because I don&#x27;t really like the key combination. Since most of the keys are used for something very logical, there is no more space for using window efficiently, meaning we …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Easiest Way to Debug Kubernetes Workloads</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/martinheinz/the-easiest-way-to-debug-kubernetes-workloads-1njg">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Debugging containerized workloads and Pods is a daily task for every developer and DevOps engineer that works with Kubernetes. Oftentimes simple kubectl logs or kubectl describe pod is enough to find the culprit of some problem, but some issues are harder to hunt down. In those cases you might try to use kubectl exec but even that might not be enough as some containers such as Distroless don&#x27;t even contain shell that you could SSH into. So what do we have left, if all of the above fails? ...
-Sometimes you n…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Install Polr on Ubuntu 20.04 with LAMP</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/hostnextra/how-to-install-polr-on-ubuntu-20-04-with-lamp-3b9p">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>In this article, we&#x27;ll explain how to install Polr on Ubuntu 20.04 with LAMP.
-Polr is a quick, modern, and open-source link shortener. It allows you to host your own URL shortener, to brand your URLs, and to gain control over your data.
-It has a robust API (Application Programming Interface) that allows you to create links programmatically. It is released under the GNU General Public License v2.0, and it comes with a wide range of features that allow you to customize permissions, URL forwarding, and themes.…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Basic Vim Commands Every Linux User Must Know</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/harvey/basic-vim-commands-every-linux-user-must-know-2jni">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Vim is the most popular text editor and the most powerful tool in Linux. And in order to master it, one must learn its basic commands. 
-Vim is one of the most interesting applications that any Linux user must learn at some point. It’s a very old text editor from the early days of UNIX, incredibly powerful and versatile, and fun to use 💻
-Even if you’re not a developer or programmer, Vim is still an essential tool that you should learn if you use Linux or BSD on a daily basis.
-If you are new to Vim, I recomm…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Automate Backup database SQL Server in docker container.</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/pobx/automate-backup-database-sql-server-in-docker-container-oea">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Hi, everyone. This is first my post in dev.to and my first time for write article in second language. today I want to share some trick for backup your database from docker container. let&#x27;s begin... 😊
-Note I assume your already running container. 
-For example I use TutorialDB database for demonstrate purpose. Your can create same database click Create a database
-PRINT &quot;Start Backup process...&quot;;
-DECLARE @MyFileName varchar(200)
-SELECT @MyFileName&#x3D;N&#x27;/tmp/Backup_&#x27; + convert(nvarchar(20),GetDate(),112)+&#x27;_&#x27;+conv…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">📈 How to Scale Quickly with Identity</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/robertinoc_dev/how-to-scale-quickly-with-identity-3baf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>📕 Learn how the right customer identity and access management (CIAM) solution helps you achieve scalability and provide consistent, reliable service.
-
-
-
-  
-  
-  
-In the last few years, identity has become a familiar concept to business decision-makers seeking to fortify their security, unlock efficiency gains, and outpace competitors.
-Customer identity and access management (CIAM) is a set of solutions built to help organizations balance convenience, privacy, and security for every type of user who needs a…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Protect Cookies Against Common XSS Attacks on the Web?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/obetomuniz/how-to-protect-cookies-against-common-xss-attacks-on-the-web-3p39">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>We can ignore Cookies danger by just not recommending its usage, but the fact is that at least 55% of all the websites use Cookies RIGHT NOW even with lots of existing cookieless strategies.
-So how to protect Cookies against Common XSS Attacks?
-Well, if your app really needs to use Cookies, configure each one  through Set-Cookie HTTP Header with at least the following flags:
-🍪 Secure: To allow the Cookie only through HTTPS
-HttpOnly: To remove the Cookie from the document.cookie
-SameSite: To limit the Cooki…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">API Testing basado en OWASP</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/atejedaautomation/api-testing-basado-en-owasp-3165">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>En API Testing y no morir en el intento realicé una introducción sobre qué deberíamos de probar en una API, en esta oportunidad vamos a tomar en consideración el top 10 de OWASP para que agreguemos casos de pruebas de introducción a seguridad.
-OWASP (Open Web Application Security Project), es un proyecto sin ánimo de lucro a nivel mundial que busca mejorar la seguridad del software en general. Para esto, la organización se ha provisto de una serie de herramientos y documentos que explican cuáles son las bre…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Apple Silicon Death Valleys</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/pepefeliblu/apple-silicon-death-valleys-4i63">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Sweet Apple M1
-
-
-I am not an apple fan/boy. I mean, I get it. They provide this unique and friendly ecosystem of products that now are consolidating under one hardware architecture. But along those changes, their OS also changes too. On previous jobs I used the iMac 4K 27 inch display. They used intel and they were nice. And working on those machines is pretty sweet! I think it was macOS Catalina?
-Personally I own an ASUS gaming machine with windows, I mostly use it for gaming! But I can tell that many work…</span>
                   </div>
                 </a>
               </details>
@@ -1508,33 +1543,11 @@ Chore: Reorganize to monorepo with npm workspace.</span>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">The DOM Explained for Beginners – How the Document Object Model Works</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/dom-explained-everything-you-need-to-know-about-the-document-object-model/">
+                <summary class="article-expander__title">The Complete Guide to Full Stack Ethereum Development</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/full-stack-ethereum-development/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>When I started out as a web developer, people often threw around the term &quot;DOM&quot; in the industry. Every JavaScript tutorial mentioned it, but I didn&#x27;t know what it meant. Fast forward two years, and now that I know what it&#x27;s all about, I am going to explain what the</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Use the Lottie Library like a Pro – Lottie Resources for Designers and Developers</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/how-to-use-lottie-like-a-pro-resources-for-designers-and-developers/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Lottie is a library that helps render Adobe After Effects animations natively on mobile and the web. I like using Lottie for animations in my projects because: Creating an animation from scratch can be time-consuming, andGIF files can be double the size of Lottie JSON files (the files containing the</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Solidity Tutorial – How to Create NFTs with Hardhat</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/solidity-tutorial-hardhat-nfts/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>I&#x27;m a developer who&#x27;s mostly been writing JavaScript, so the Solidity development environment was a bit hard to learn.  About four months ago, I switched to Hardhat from Truffle. This cool new kid on the block drastically improved my coding experience. So today I want to share it with my</span>
+                    <span class="article-reading-time">(14 min)</span>
+                    <span>In this article, you&#x27;ll learn how to build full stack dApps with React, Ethers.js, Solidity, and Hardhat. You can find the code for this project here. The video course for this tutorial is here. I recently joined Edge &amp; Node as a Developer Relations Engineer and have been diving</span>
                   </div>
                 </a>
               </details>
@@ -1639,23 +1652,6 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
                     <span>Manuel Matuzović goes line-by-line through a boilerplate HTML document. I like it. It’s a good reference and has a lot of the same type of stuff I tend to put in the main HTML template. It makes me think about …
 The post HTML Boilerplates appeared first on CSS-Tricks.
 You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">What is SendGrid? SMTP Email Newsletter Tutorial</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/what-is-sendgrid-smpt-email-newsletter-tutorial/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>You may have heard of the term SMTP before, and wondered what it is. SMTP is a common method for handling email messages. Today I am going to explain what SMTP is, and how to use an SMTP provider such as SendGrid to send emails from your address. What Is</span>
                   </div>
                 </a>
               </details>
@@ -1802,38 +1798,6 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
   <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2021-05-11">2021-05-11</time></h2>
     <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">CSS Pie Timer Re-Revisited</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/css-pie-timer-re-revisited/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Kitty reflected on an ancient blog post here on CSS-Tricks on how to make an animated pie timer. The old technique is still clever. The new technique is equally clever and much easier. I particularly like the steps() animation function…
-The post CSS Pie Timer Re-Revisited appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">I could build this during the weekend</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://world.hey.com/joaoqalves/i-could-build-this-during-the-weekend-aa093c5e">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>How many times have you heard that (or even uttered it under your own breath)? I know I’ve heard it in conversations. I also know I’ve wondered the same thing about a product or two — hey, the idea here …
-The post I could build this during the weekend appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
       <li class="source">
         <section>
           <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
@@ -2310,31 +2274,9 @@ Chore: Refactored parameter passing for enrich step.</span>
       </li>
     </ul>
   </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-04-20">2021-04-20</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Making GraphQL Work In WordPress</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/04/making-graphql-work-in-wordpress/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(12 min)</span>
-                    <span>Let’s explore the plugins providing GraphQL servers to WordPress. When should we use WPGraphQL, and when the GraphQL API for WordPress? Is there some advantage of one over the other, or some particular task that is easier to accomplish with one of them? In this article, we will find out.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-05-19T01:00:11.932Z">2021-05-19T01:00:11.932Z</time>
+    <time id="build-timestamp" datetime="2021-05-20T00:57:49.628Z">2021-05-20T00:57:49.628Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.7.2</a></span>
   </footer>
   <script src="index.js"></script>
