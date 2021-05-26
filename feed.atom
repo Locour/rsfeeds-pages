@@ -1,10 +1,1141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>urn:2021-05-25T01:03:52.108Z</id>
+    <id>urn:2021-05-26T01:17:49.221Z</id>
     <title>osmos::feed</title>
-    <updated>2021-05-25T01:03:52.108Z</updated>
+    <updated>2021-05-26T01:17:49.221Z</updated>
     <generator>osmosfeed 1.8.1</generator>
     <link rel="alternate" href="index.html"/>
+    <entry>
+        <title type="html"><![CDATA[How can you send automated messages via WhatsApp with Node.js]]></title>
+        <id>https://dev.to/carlosvldz/how-can-you-send-automated-messages-via-whatsapp-with-node-js-5387</id>
+        <link href="https://dev.to/carlosvldz/how-can-you-send-automated-messages-via-whatsapp-with-node-js-5387"/>
+        <updated>2021-05-25T23:36:03.000Z</updated>
+        <summary type="html"><![CDATA[How you can use Node.js to send messages via WhatsApp with Twilio's API.
+
+
+
+  
+  
+  First, here the things that you need:
+
+
+
+Node and npm installed
+Create an account with  Twilio  (it's free)
+And finally, Twilio and dotenv library
+Once you sign up for the Twilio account, activate the Sandbox for Whatsapp. This enable you a shared phone number and allows you to test with WhatsApp service. 
+Then you have to opt in sending a message to the phone number provided from the sandbox. The message should say "join mass-there", if everything is ok you will receive a confirmation response. 
+
+Once you are in the directory where is created the project, in the terminal run the following commands:
+npm init -y
+
+npm install twilio@3.30.0 dotenv
+
+The first one to iniciate a package.json and the second one for install the dependencies.
+The next step is create the file index.js with the following code:
+const { config } = require('./config');
+
+const accountSid = config.sid;
+const authToken = config.token;
+const client = require('twilio') (accountSid, authToken);
+
+client.messages.create({
+    from: 'whatsapp:+14155238886',
+    body: 'Hello world this is CarlosVldz!!!',
+    to: 'whatsapp:+5215555555555'
+}).then(message => console.log(message.sid));
+
+(Don't forget replace the phone numbers in this example with your sandbox number and a personal number.)
+Finally I used dotenv to configure the environment variables TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN with their values from the account credentials. You can find both in your Twilio console. 
+.env.example
+TWILIO_ACCOUNT_SID = "Your account sid"
+
+TWILIO_AUTH_TOKEN = "Your auth token"
+
+In your terminal run this last command to send the WhatsApp message:
+node index.js
+
+In your phone check WhatsApp and you should have a new chat like this.
+
+Hope you liked! (:]]></summary>
+        <author>
+            <name>Carlos Sánchez</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Building a Simple Secure API REST with Node.js]]></title>
+        <id>https://dev.to/carlosvldz/building-a-simple-secure-api-rest-with-node-js-3576</id>
+        <link href="https://dev.to/carlosvldz/building-a-simple-secure-api-rest-with-node-js-3576"/>
+        <updated>2021-05-25T23:18:18.000Z</updated>
+        <summary type="html"><![CDATA[This time we learn to create a secure API REST with CRUD operations like Create, Read, Update and Delete.
+This development include a public and private API, for security we use JWT for authentication and Bcrypt for hashing our passwords. The database engine is run by MongoDB.
+REST API: it's an interface between systems that use HTTP protocol for obtain data and perform operations. In this case we will use the most important operations: POST, GET, PUT and DELETE.
+Node.Js: it's a runtime environment based in JavaScript for the server side, is asynchronous and event oriented architecture. Based on Google's V8 engine.
+JWT: it's an open standard ( RFC-7519 ) based in JSON to create a token that serves to send data between applications and services, guaranteeing that is authentic.
+Bcrypt: is a p…]]></summary>
+        <author>
+            <name>Carlos Sánchez</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to set up ESLint and Prettier with pre-commit hooks (with Typescript)]]></title>
+        <id>https://dev.to/joncodes/how-to-set-up-eslint-and-prettier-with-pre-commit-hooks-with-typescript-h0a</id>
+        <link href="https://dev.to/joncodes/how-to-set-up-eslint-and-prettier-with-pre-commit-hooks-with-typescript-h0a"/>
+        <updated>2021-05-25T22:47:17.000Z</updated>
+        <summary type="html"><![CDATA[Source code: Github
+
+
+
+
+
+  
+  
+  The baseline project
+
+
+This post assumes you are following along with the baseline project tutorial, but the concepts apply to any Typescript project.
+As our codebase expands, so does the risk of introducing bugs and inconsistent styling. We are going to use two tools to help enforce some Typescript best practices and general code formatting guidelines:
+ESLint
+eslint is a linter, which is a static code analysis tools that can scan our codebase and throw errors and warnings if there are any issues in our codebase.
+Prettier
+prettier is an automatic code formatter that automatically formats our code with consistent styling.
+We can manually run these tools to lint and format our codebase, but we are also going to enforce these rules by setting up git hooks - sc…]]></summary>
+        <author>
+            <name>Jon Webb</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to set up ESLint and Prettier with pre-commit hooks (with Typescript)]]></title>
+        <id>https://dev.to/joncodes/how-to-set-up-eslint-and-prettier-with-pre-commit-hooks-with-typescript-h0a</id>
+        <link href="https://dev.to/joncodes/how-to-set-up-eslint-and-prettier-with-pre-commit-hooks-with-typescript-h0a"/>
+        <updated>2021-05-25T22:47:17.000Z</updated>
+        <summary type="html"><![CDATA[Source code: Github
+
+
+
+
+
+  
+  
+  The baseline project
+
+
+This post assumes you are following along with the baseline project tutorial, but the concepts apply to any Typescript project.
+As our codebase expands, so does the risk of introducing bugs and inconsistent styling. We are going to use two tools to help enforce some Typescript best practices and general code formatting guidelines:
+ESLint
+eslint is a linter, which is a static code analysis tools that can scan our codebase and throw errors and warnings if there are any issues in our codebase.
+Prettier
+prettier is an automatic code formatter that automatically formats our code with consistent styling.
+We can manually run these tools to lint and format our codebase, but we are also going to enforce these rules by setting up git hooks - sc…]]></summary>
+        <author>
+            <name>Jon Webb</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Keep Calm and Hack The Box – Valentine]]></title>
+        <id>60ac3a2711ffb70827ef6aec</id>
+        <link href="https://www.freecodecamp.org/news/keep-calm-and-hack-the-box-valentine/"/>
+        <updated>2021-05-25T22:43:11.000Z</updated>
+        <summary type="html"><![CDATA[Walkthrough for Hack The Box Valentine machine]]></summary>
+        <author>
+            <name>freeCodeCamp.org</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[425show @ Build 2021]]></title>
+        <id>https://dev.to/425show/425show-build-2021-2a7e</id>
+        <link href="https://dev.to/425show/425show-build-2021-2a7e"/>
+        <updated>2021-05-25T21:35:06.000Z</updated>
+        <summary type="html"><![CDATA[Thanks for joining us at Build! We'll be updating this post throughout the week with code samples, docs and other info after our sessions.
+This session kicks off a 5-week series every Monday through June, where Christos & I will take you through the Implement Microsoft identity - Associate learning path. Join us each Monday from June 7th - July 12th as we'll go into the why behind the how.
+Find the code samples from this session, complete with CodeTour!
+Single-page applications
+Web app that signs in users and calls APIs
+Headless/daemon apps
+Stay tuned, more to come throughout the week! Join us on discord]]></summary>
+        <author>
+            <name>John Patrick Dandison</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[No-code AWS Lambda Monitoring]]></title>
+        <id>https://dev.to/sentry/no-code-aws-lambda-monitoring-1fbd</id>
+        <link href="https://dev.to/sentry/no-code-aws-lambda-monitoring-1fbd"/>
+        <updated>2021-05-25T21:11:19.000Z</updated>
+        <summary type="html"><![CDATA[Auto-instrumenting AWS Lambda Monitoring didn’t originate through a focus group or business plan. It started as a hackathon project that addressed the tedium of removing manual code instrumentation. Developer environments often include hundreds of AWS Lambda functions. And our existing instrumentation required initialization code to be manually placed on every single function. So to fix this, our growth team used Amazon CloudWatch to build a prototype that could instrument AWS Lambda functions.
+This prototype began by using AWS CloudFormation stack to automatically create resources in a customer environment. Then we streamed Amazon CloudWatch Logs to Sentry through the Amazon Kinesis Data Firehose. This made it so all you had to do was put in your AWS account ID and create the stack using …]]></summary>
+        <author>
+            <name>Kathy Lam</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Setting up ESLint + Prettier]]></title>
+        <id>https://dev.to/saulodias/setting-up-eslint-prettier-4802</id>
+        <link href="https://dev.to/saulodias/setting-up-eslint-prettier-4802"/>
+        <updated>2021-05-25T21:05:37.000Z</updated>
+        <summary type="html"><![CDATA[Disclaimer: This is not intended as a step-by-step tutorial. It's just a draft of a solution me and my team are still discussing for our TypeScript projects. 
+npm install prettier --save-dev
+Create the .prettierrc file.
+{
+  "printWidth": 140,
+  "singleQuote": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "bracketSpacing": true
+}
+
+Name: Prettier - Code formatter
+https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+On VSCode, open your settings.json file and add the following configurations.
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+
+eslint-config-prettier
+
+
+Turns off all rules that are unnecessary or might conflict with Prettier.
+npm install --save-dev eslint-config-prettier
+npm install --save-dev eslint
+npm install --save-dev @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest
+Create the .eslintrc.json file.
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "curly": ["error", "multi-line"]
+  }
+}
+
+Name: ESLint
+https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+The ESLint plugin requires permission to execute the local ESLint installation from your node_modules. Open the command palette (F1 or Ctrl + Shift + P) and select ESLint: Manage Library Execution to open the dialog for your project and confirm with 'Accept'.
+ESLint not working in VSCode? Help build a troubleshooting checklist!]]></summary>
+        <author>
+            <name>Dias</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Use React-Hook-Form to Build Beautiful Forms with Chakra UI]]></title>
+        <id>60a93b0011ffb70827ef5b0d</id>
+        <link href="https://www.freecodecamp.org/news/how-to-use-react-hook-form-with-chakra-ui/"/>
+        <updated>2021-05-25T20:26:38.000Z</updated>
+        <summary type="html"><![CDATA[In HTML, it’s the default behavior for forms to redirect to a new page whenever they're submitted. So in order to provide dynamic functionality, React uses a strategy called controlled components. If you have recently gone through a React course, you probably didn't like this part, because there are]]></summary>
+        <author>
+            <name>freeCodeCamp.org</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Face detection with Tensorflow【React + TypeScript】]]></title>
+        <id>https://dev.to/yuiko/face-detection-by-using-tensorflow-react-typescript-3dn5</id>
+        <link href="https://dev.to/yuiko/face-detection-by-using-tensorflow-react-typescript-3dn5"/>
+        <updated>2021-05-25T20:26:04.000Z</updated>
+        <summary type="html"><![CDATA[Hello guys,
+I have developed an application with face detection, that applies a mask automatically to your face in real time.
+
+In this article, I will explain how to develop this application.
+DEMO→https://mask-app-one.vercel.app/
+https://github.com/YuikoIto/mask-app
+If the mask does not show up even after some seconds, please reload it.
+$ npx create-react-app face-mask-app --template typescript
+$ yarn add react-webcam @types/react-webcam
+
+Then, try setting up web camera.
+// App.tsx
+
+import { useRef } from "react";
+import "./App.css";
+import Webcam from "react-webcam";
+
+const App = () => {
+  const webcam = useRef<Webcam>(null);
+
+  return (
+    <div className="App">
+      <header className="header">
+        <div className="title">face mask App</div>
+      </header>
+      <Webcam
+        audi…]]></summary>
+        <author>
+            <name>Yui_travel</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Social Media App Using MERN Stack]]></title>
+        <id>https://dev.to/safak/social-media-app-using-mern-stack-4ic6</id>
+        <link href="https://dev.to/safak/social-media-app-using-mern-stack-4ic6"/>
+        <updated>2021-05-25T19:58:21.000Z</updated>
+        <summary type="html"><![CDATA[If you want to be a full-stack web developer and stuck at just beginner projects, here is the chance to improve your skills and create something real. I decided to share my 9 hours tutorial series on YouTube for free.
+We are going to create a social media application from scratch. And this project is not going to include just a basic couple of methods and an unpleasant design, it's going to include a complete web API, impressive React components, and chat functionality.
+Let's dive into it!
+In this section, we are going to create an Express server and the MongoDB connection. You are going to learn how to create Models and Routes. And after the section, you will be able to create your own web API, login and register operations, and CRUD for users and posts.
+
+
+
+
+
+  
+  
+  Designing React Components
+
+
+In this section, we are going to design Facebook like website using reusable React components and React Hooks.
+
+
+
+
+
+  
+  
+  Creating MERN Stack Social Media App
+
+
+In this 3rd section, we are going to combine our Rest API and React UI design. You are going to learn real-world usage of a MERN application.
+
+
+
+
+
+  
+  
+  React Chat App Using Socket.io
+
+
+In the final section, we are going to design a React messenger component and some additional routes in Node.js to get and post chat messages. And finally you are going to learn how to use Socket.io to send instant messages and notifications.
+
+
+
+
+I hope it was useful. If you want to learn more about web development and practice with real-world projects, you can check my channel out.
+🔥 Lama Dev Youtube Channel
+Lama Dev Facebook
+Source Code]]></summary>
+        <author>
+            <name>Safak</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MongoDB find() e findOne()]]></title>
+        <id>https://dev.to/emanuelferreira/mongodb-find-e-findone-5c6b</id>
+        <link href="https://dev.to/emanuelferreira/mongodb-find-e-findone-5c6b"/>
+        <updated>2021-05-25T18:45:07.000Z</updated>
+        <summary type="html"><![CDATA[Métodos
+
+
+Para fazer uma busca por documento no MongoDB utilizamos os métodos find() e findOne(), que recebem dois tipos de parâmetro: a query, que irá fazer a busca no nosso banco de dados e o segundo parâmetro, que dizemos o que será retornado.
+Nosso Documento
+{
+    "name": {
+        type: String,
+        required: true
+    },
+    "password": {
+        type: String,
+        required: true
+    },
+    "email": {
+        type: String,
+        required: true
+    }
+}
+
+Exemplo do Comando
+const query = { name: "Emanuel"}
+const retorno = { name: 1, email: 1, password: 1}
+const users = User.find(query, retorno)
+
+O Método find retorna uma array com todos os documentos que foram encontrados utilizando o campo name. 
+Query
+const users = User.find({ name: Emanuel })
+
+Retorno
+[{ "_id": 12345678, "name…]]></summary>
+        <author>
+            <name>Emanuel Ferreira</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Enjoying an Haskell like Type System in Javascript]]></title>
+        <id>https://dev.to/iquardt/enjoying-an-haskell-like-type-system-in-javascript-42fa</id>
+        <link href="https://dev.to/iquardt/enjoying-an-haskell-like-type-system-in-javascript-42fa"/>
+        <updated>2021-05-25T18:30:10.000Z</updated>
+        <summary type="html"><![CDATA[scriptum is a type validator and a functional library build upon it. A type validator is distinguished by a static type checker like Typescript by operating at runtime. Besides it doesn't infere types from terms but only checks applications.
+Doing without type inference sounds like a silly idea but fortunately the validator can resort to Javascript's introspection means, so the developer only has to annotate function types.
+Technically speaking scriptum is based on the Hindler-Milner type system extended by higher-kinded/rank types and row polymorphism. 
+A runtime type system can never attain the soundness of a static one. You can think of it more as a tool for gradual typing. Here is a complex, real world example that should give an intuition how expressive this approach is.
+Javascript is…]]></summary>
+        <author>
+            <name>Iven Marquardt</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Enjoying an Haskell like Type System in Javascript]]></title>
+        <id>https://dev.to/iquardt/enjoying-an-haskell-like-type-system-in-javascript-42fa</id>
+        <link href="https://dev.to/iquardt/enjoying-an-haskell-like-type-system-in-javascript-42fa"/>
+        <updated>2021-05-25T18:30:10.000Z</updated>
+        <summary type="html"><![CDATA[scriptum is a type validator and a functional library build upon it. A type validator is distinguished by a static type checker like Typescript by operating at runtime. Besides it doesn't infere types from terms but only checks applications.
+Doing without type inference sounds like a silly idea but fortunately the validator can resort to Javascript's introspection means, so the developer only has to annotate function types.
+Technically speaking scriptum is based on the Hindler-Milner type system extended by higher-kinded/rank types and row polymorphism. 
+A runtime type system can never attain the soundness of a static one. You can think of it more as a tool for gradual typing. Here is a complex, real world example that should give an intuition how expressive this approach is.
+Javascript is…]]></summary>
+        <author>
+            <name>Iven Marquardt</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Make a basic discord bot in discord.js]]></title>
+        <id>https://dev.to/integratergithub/make-a-basic-discord-bot-in-discord-js-37i2</id>
+        <link href="https://dev.to/integratergithub/make-a-basic-discord-bot-in-discord-js-37i2"/>
+        <updated>2021-05-25T18:28:13.000Z</updated>
+        <summary type="html"><![CDATA[Creating the bot
+
+
+Go to the discord developer portal and click on create new application. Now choose the name and click create. Now click on Bot and click add bot, next click yes, do it. 
+To invite the bot, click on oauth2, then choose the bot scope now scroll down and give the bot the admin permission. Now copy the link and paste it into your browser and you will be able to invite it to any server you own. 
+Open up your text editor of choice and execute
+
+npm init -y && npm i discord.js 
+
+
+Explanation: npm init -y creates our package.json and npm i discord.js installs the discord.js libary in order to interact with the discord api. 
+index.js and paste in the following code:
+
+var discord = require("discord.js"); // imports the discord.js libary
+var client = new discord.Client(); // this is the main way we interact with the discord api   
+client.on('ready', () => { // executes when the bot is online
+    console.log("Bot online")
+})
+client.on("message", (msg) => { // executes on a new message
+    if(msg.content === "!ping"){
+        msg.reply("pong")
+    }
+})
+client.login("your-token") // replace "your-token" with your bot token from https://discord.com/developers/applications
+
+
+Now replace "your-token" with your bot token from the discord developer portal. Next, run the following command:
+
+node index.js
+
+
+You should see in the console: Bot online and if you send  !ping in your discord server with the bot you'll see the bot reply with pong.
+More tutorials coming soon!]]></summary>
+        <author>
+            <name>IntegraterGithub</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WebdriverIO - Part1: A Journey]]></title>
+        <id>https://dev.to/sadabnepal/webdriverio-part1-a-journey-39dj</id>
+        <link href="https://dev.to/sadabnepal/webdriverio-part1-a-journey-39dj"/>
+        <updated>2021-05-25T17:54:55.000Z</updated>
+        <summary type="html"><![CDATA[WebdriverIO is a testing framework that uses NodeJS to provide an extensive API to write automated tests. 
+Unforgettable year 2020, new company and new team. I remember, with Selenium and Java in resume joining new work place. The rationale for switching to WebdriverIO started with a project member saying “Start exploring WEBDRIVERIO” in call. A quick search on the YouTube and I landed on channel called Naveen Automation Labs where I started the playlist and I was able to write my first test. I recommend everyone to check it out as you will gain enough knowledge to start your journey.
+Not sufficiently convinced (that bond with selenium being obvious reason), I continued on practicing (no other option as project requirement). After couple of weeks I started realizing that I am falling in lo…]]></summary>
+        <author>
+            <name>MD SADAB SAQIB</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WebdriverIO - Part1: A Journey]]></title>
+        <id>https://dev.to/sadabnepal/webdriverio-part1-a-journey-39dj</id>
+        <link href="https://dev.to/sadabnepal/webdriverio-part1-a-journey-39dj"/>
+        <updated>2021-05-25T17:54:55.000Z</updated>
+        <summary type="html"><![CDATA[WebdriverIO is a testing framework that uses NodeJS to provide an extensive API to write automated tests. 
+Unforgettable year 2020, new company and new team. I remember, with Selenium and Java in resume joining new work place. The rationale for switching to WebdriverIO started with a project member saying “Start exploring WEBDRIVERIO” in call. A quick search on the YouTube and I landed on channel called Naveen Automation Labs where I started the playlist and I was able to write my first test. I recommend everyone to check it out as you will gain enough knowledge to start your journey.
+Not sufficiently convinced (that bond with selenium being obvious reason), I continued on practicing (no other option as project requirement). After couple of weeks I started realizing that I am falling in lo…]]></summary>
+        <author>
+            <name>MD SADAB SAQIB</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Using JSON Web Tokens with Node.js]]></title>
+        <id>https://dev.to/franciscomendes10866/using-json-web-tokens-with-node-js-22c6</id>
+        <link href="https://dev.to/franciscomendes10866/using-json-web-tokens-with-node-js-22c6"/>
+        <updated>2021-05-25T17:42:26.000Z</updated>
+        <summary type="html"><![CDATA[Maybe you have been developing Apis to be consumed by a website, mobile or desktop application. And one of the points that you need to learn in a quick and simple way is how to implement authentication and authorization in your Api.
+Obviously, there are several strategies, from the most popular, such as cookies, sessions and JWT. However, in recent years there has been a huge popularity in the use of third party services like OAuth. However, I am always reticent about whether or not I will give the sensitive data of my users to another company.
+I would also add that implementing OAuth can be challenging, at least on the server side. However, in this article I will talk about JWT and I will give a simple example of its implementation.
+A JSON Web Token, or JWT, is a method used to securely t…]]></summary>
+        <author>
+            <name>Francisco Mendes</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Need help in reactjs]]></title>
+        <id>https://dev.to/pradeep_murugan/need-help-in-reactjs-4gc</id>
+        <link href="https://dev.to/pradeep_murugan/need-help-in-reactjs-4gc"/>
+        <updated>2021-05-25T17:07:07.000Z</updated>
+        <summary type="html"><![CDATA[here is my question posted on stackover flow this is bothering me for last two days 😭😭
+https://stackoverflow.com/a/67680014/5730749]]></summary>
+        <author>
+            <name>pradeep murugan</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Check out the latest .Net core Developer Hourly rate in 2021!]]></title>
+        <id>https://dev.to/alexisdevs/check-out-the-latest-net-core-developer-hourly-rate-in-2021-348o</id>
+        <link href="https://dev.to/alexisdevs/check-out-the-latest-net-core-developer-hourly-rate-in-2021-348o"/>
+        <updated>2021-05-25T16:52:55.000Z</updated>
+        <summary type="html"><![CDATA[The demand for .Net core expert developers has been increasing steam fast. And the experts predict this demand will keep on increasing with time.
+One of the advantages of .Net core is if you know c language or Javascript, learning .Net core is not a big task to accomplish.
+Its vital base class directories and shared binaries within multiple frameworks and platforms make the language more robust when it comes to web development.
+If we look at the current trends hiring the professional or globally leading .Net core Development company is quite popular these days.
+So basically, how this works, you can Hire any .Net core development company, and they will connect you with their well-versed expert .Net core team.
+This .Net core developer team will lead your project from that and gives you profo…]]></summary>
+        <author>
+            <name>Alexis Gilbert</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Web Design Best Practices for New Developers – How to Create Portfolio-Worthy Work]]></title>
+        <id>608706aedd38b9088c2c012c</id>
+        <link href="https://www.freecodecamp.org/news/web-design-best-practices-for-new-developers/"/>
+        <updated>2021-05-25T16:51:37.000Z</updated>
+        <summary type="html"><![CDATA[If you're a beginner developer, it can be difficult to find ways to use your limited knowledge to support yourself. And at the same time, you won't be able to hone your skills if you aren't using them full time.  It's a precarious spot that I remember being in when]]></summary>
+        <author>
+            <name>freeCodeCamp.org</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WhatsApp Privacy Policy: Everything You Need to Know]]></title>
+        <id>https://dev.to/afifa83248486/whatsapp-privacy-policy-everything-you-need-to-know-4lfh</id>
+        <link href="https://dev.to/afifa83248486/whatsapp-privacy-policy-everything-you-need-to-know-4lfh"/>
+        <updated>2021-05-25T16:40:54.000Z</updated>
+        <summary type="html"><![CDATA[WhatsApp is an instant messaging application that Facebook owns. It is the third most used messaging application, according to Messenger People. Although it uses end-to-end encryption, it still collects more metadata on its users than other messaging applications like Signal. 
+In January 2021, news circulated that WhatsApp planned to roll out in-app notifications to users, informing an update in its Terms of Service and Privacy Policy. It was up to the user to accept the new WhatsApp Privacy Policy and Terms of Service to continue to use the messaging application.
+The company tweaked its terms of service and privacy policy which notified users once they entered the application. Users had to accept these updates to continue to use the application, and these changes were scheduled to be implemented on February 8th, 2021. The following were the updates made in terms of service and privacy policy:
+WhatsApp’s service and how we process your data
+How businesses can use Facebook hosted services to store and 
+manage their WhatsApp chats
+How they partner with Facebook to offer integrations across the 
+Facebook Company Products
+Read the full article here:WhatsApp Privacy Policy: Everything You Need to Know]]></summary>
+        <author>
+            <name>Afifa</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Cross-site Request Forgery: protection against CSRF attacks]]></title>
+        <id>https://dev.to/ra1nbow1/cross-site-request-forgery-protection-against-csrf-attacks-a6o</id>
+        <link href="https://dev.to/ra1nbow1/cross-site-request-forgery-protection-against-csrf-attacks-a6o"/>
+        <updated>2021-05-25T16:29:10.000Z</updated>
+        <summary type="html"><![CDATA[CSRF (cross-site request forgery) is a type of attack on a site that is carried out using a fraudulent site or a script that causes the user's browser to perform an undesirable action on a trusted site where the user is logged in.
+Usually, to do this, the user must click on a fraudulent link (which can be changed using a link shortener).
+For example, Jane, who is logged in to the bank's website, checks her email. They may click on a phishing link that includes a request to transfer money to the fraudster's account.
+Due to the fact that it is authorized on the bank's website, the bank will process the transfer request.
+The GET, HEAD, OPTIONS, and TRACE methods are not subject to CSRF, because they are intended only for retrieving information and do not change the server state.
+The POST, PUT…]]></summary>
+        <author>
+            <name>Matvey Romanov</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Edit remote files with Vim]]></title>
+        <id>https://dev.to/jones268/edit-remote-files-with-vim-24k9</id>
+        <link href="https://dev.to/jones268/edit-remote-files-with-vim-24k9"/>
+        <updated>2021-05-25T15:39:59.000Z</updated>
+        <summary type="html"><![CDATA[Vim is a text editor with a huge following. It's installed by  default on every Linux system and even on Mac OS X.
+Vim is a tool that wants you to succeed. if you want something to happen, you can make it happen. It works completely by keyboard shortcuts. 
+
+It gives you the power to manipulate text at a fundamental level. you can operate on individual characters, words or lines of text this gives vim a really powerful interactive feel.
+If you are new to vim, I recommend these exercises
+I am often connecting to remote machines and editing config files. 
+This was cumbersome, as I would have to use SFTP to copy files, manually updating the buffer when the file was modified on the remote machine. 
+It was too easy to get distracted and lose track of what I was doing.
+If you want to edit files on a remote server, try this command:
+vim scp://you@remote_ip//path/file.txt
+
+and change username to your username, your remote ip, the path and the filename.
+vim scp://frank@192.168.2.7//home/frank/hello.txt
+
+If you have vim open, you can also do :e scp://you@remote_ip//path/file.txt
+You can use sftp too:
+vim sftp://user@remote_ip//path/file
+
+Change it with your username, remote ip and path to the file.
+vim sftp://frank@192.168.2.7//home/frank/hello.txt
+
+If you want to use the old unencrypted ftp protocol
+:e ftp://[user@]machine/path/
+
+Vim is relentlessly awesome. It does everything an editor should do and nothing it shouldn't. There are no gimmicks, no silly settings, no bloat. It just works. all the time. no exceptions.]]></summary>
+        <author>
+            <name>jones268</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Want to compress your pdf files ?]]></title>
+        <id>https://dev.to/burakcank/want-to-compress-your-pdf-files-5ff9</id>
+        <link href="https://dev.to/burakcank/want-to-compress-your-pdf-files-5ff9"/>
+        <updated>2021-05-25T14:41:23.000Z</updated>
+        <summary type="html"><![CDATA[Are you tired of scanning images and trying to shrink them under 25 mbs just so you can send them via email ? Look no further, I am here to save you from this trouble. (that kinda rhymed.)
+This basic shell script uses ghostscript to compress your scanned pdfs significantly. Just yesterday I scanned 100 pages of documents and it was over 90 mbs. I searched for a way to compress them under 25 mbs and voila. Here I was with only 6 mbs of pdfs. Much wow. Such compression.
+Why we need it,
+Fast.
+Ez.
+No need to go online. Especially no need to upload company top-secret documents to any website you see on the Internet.
+Possible huge compression without notable loss.
+Command usage:
+./shrinkpdf.sh in.pdf out.pdf
+ghostscript.
+
+
+
+
+
+If you are in a situation exactly like me where there are 100 pdf files under one folder that you want to compress altogether, a simple for loop will suffice.
+import os
+import subprocess
+import sys
+
+infolder = sys.argv[1]
+outfolder = "compressed_" + infolder
+os.mkdir(outfolder)
+
+for f in os.listdir(infolder):
+    subprocess.run(["./shrinkpdf.sh", os.path.join(infolder, f), os.path.join(outfolder, f)])
+
+Run this python script,
+python shrink.py pdfs/
+and all of your pdfs will be put under compressed_pdfs/.
+http://www.alfredklomp.com/programming/shrinkpdf/
+All the relevant details and more, inside. I humbly wanted to let you know such a useful tool exists.]]></summary>
+        <author>
+            <name>Burak Can Kahraman</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The bpmn-visualization project celebrates its 1st anniversary]]></title>
+        <id>https://dev.to/tbouffard/the-bpmn-visualization-project-celebrates-its-1st-anniversary-4ae2</id>
+        <link href="https://dev.to/tbouffard/the-bpmn-visualization-project-celebrates-its-1st-anniversary-4ae2"/>
+        <updated>2021-05-25T14:38:35.000Z</updated>
+        <summary type="html"><![CDATA[To celebrate the first year of our work on the bpmn-visualization library, here's a look back about what has been achieved.
+bpmn-visualization is an open source TypeScript library for visualizing process execution data on BPMN diagrams.
+From its first public release in March 2020 to the introduction of diagram interactions in January 2021, here it is: an overview of the first year achievements.
+
+Template from Simple Blackboard Background
+Below are some examples of what can be done with bpmn-visualization.
+dedicated GitHub repository if you want a more complete overview of the available capabilities.
+BPMN diagrams are at the foundation of the bpmn-visualization capabilities.
+This animation shows the evolution of BPMN support over time. It uses the B.2.0 diagram of the BPMN Model Interchange…]]></summary>
+        <author>
+            <name>Thomas Bouffard</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What I Learned Building a Word Game App With Nuxt on Google Play]]></title>
+        <id>https://css-tricks.com/?p=340759</id>
+        <link href="https://css-tricks.com/what-i-learned-building-a-word-game-app-with-nuxt-on-google-play/"/>
+        <updated>2021-05-25T14:25:06.000Z</updated>
+        <summary type="html"><![CDATA[I fell in love with coding the moment I created my first CSS :hover effect. Years later, that initial bite into interactivity on the web led me to a new goal: making a game.
+Table of contents
+What’s the game 
+…
+The post What I Learned Building a Word Game App With Nuxt on Google Play appeared first on CSS-Tricks.
+You can support CSS-Tricks by being an MVP Supporter.]]></summary>
+        <author>
+            <name>Josh Collinsworth</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Practical Angular: The Most Impactful RxJs Best Practice Tip Of All Time (Medium Dev.to auto import)]]></title>
+        <id>https://dev.to/tomastrajan/practical-angular-the-most-impactful-rxjs-best-practice-tip-of-all-time-3kc3</id>
+        <link href="https://dev.to/tomastrajan/practical-angular-the-most-impactful-rxjs-best-practice-tip-of-all-time-3kc3"/>
+        <updated>2021-05-25T14:16:55.000Z</updated>
+        <summary type="html"><![CDATA[This easy to follow tip can help YOU and your teammates to simplify and hence improve your projects significantly!
+Continue reading on Medium »]]></summary>
+        <author>
+            <name>Tomas Trajan 🐻</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Practical Angular: The Most Impactful RxJs Best Practice Tip Of All Time (Medium Dev.to auto import)]]></title>
+        <id>https://dev.to/tomastrajan/practical-angular-the-most-impactful-rxjs-best-practice-tip-of-all-time-3kc3</id>
+        <link href="https://dev.to/tomastrajan/practical-angular-the-most-impactful-rxjs-best-practice-tip-of-all-time-3kc3"/>
+        <updated>2021-05-25T14:16:55.000Z</updated>
+        <summary type="html"><![CDATA[This easy to follow tip can help YOU and your teammates to simplify and hence improve your projects significantly!
+Continue reading on Medium »]]></summary>
+        <author>
+            <name>Tomas Trajan 🐻</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Top 10 (+/-) Linux skills for landing a Linux job]]></title>
+        <id>https://dev.to/asciiden/top-10-linux-skills-for-landing-a-linux-job-1i5m</id>
+        <link href="https://dev.to/asciiden/top-10-linux-skills-for-landing-a-linux-job-1i5m"/>
+        <updated>2021-05-25T14:07:41.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+Hey now, you have probably went through numerous job-hunting websites and you memorized all the buzzwords (Junior Sysadmin; Junior Site Reliability Engineer; NOC Engineer; System support; etc.) that can get you in IT with zero experience, or even zero education. Well, let me tell you - you are on the right track! However, there are some insights that a lot of you don't know as you haven't got a real Linux job. Well now, except you are on the right track, you are on the post, as well!
+I am going to note down & explain the top 10 Linux skills (in the opinion of a person who had a Linux job as a first) that you should have before rushing into the interview.
+Linux skills? But I know a lot of commands already!
+It is not up to the commands you know but the ability to imply them at…]]></summary>
+        <author>
+            <name>Denislav Gavrilov 👨‍🚀🤖🤷‍♂️</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Não use node.js 10, Angular 12 lançado, Bootstrap 5, Deno 1.1, Playwright, TS 4.3 e muito mais]]></title>
+        <id>https://dev.to/wilsonnetodev/nao-use-node-js-10-angular-12-lancado-bootstrap-5-deno-1-1-playwright-ts-4-3-e-muito-mais-3393</id>
+        <link href="https://dev.to/wilsonnetodev/nao-use-node-js-10-angular-12-lancado-bootstrap-5-deno-1-1-playwright-ts-4-3-e-muito-mais-3393"/>
+        <updated>2021-05-25T14:00:48.000Z</updated>
+        <summary type="html"><![CDATA[Não use mais o node 10! Node 10 chega ao End Of Life, Angular 12 lançado, Bootstrap 5, Deno 1.1, Playwright, TS 4.3, CloudFront Functions, Azure Static WebApp e muitas outras novidades!
+As principais novidades da semana, no mundo da tecnologia e do javascript.
+Leia a edição desta semana da newsletter em:
+https://novidadesjs.substack.com/p/nao-use-nodejs-10-angular-12-lancado
+Para se inscrever e receber semanalmente as principais novidades, cadastre-se em:
+https://novidadesjs.substack.com/welcome]]></summary>
+        <author>
+            <name>Wilson Neto B.R.</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A Guide To Undoing Mistakes With Git (Part 2)]]></title>
+        <id>https://smashingmagazine.com/2021/05/undoing-mistakes-git-part2/</id>
+        <link href="https://smashingmagazine.com/2021/05/undoing-mistakes-git-part2/"/>
+        <updated>2021-05-25T14:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Mistakes. These cruel villains do not even stop at the beautiful world of software development. But although we cannot avoid making mistakes, we can learn to undo them! This post will show the right tools for your daily work with Git.]]></summary>
+        <author>
+            <name>hello@smashingmagazine.com (Tobias Günther)</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux Command Line for Beginners]]></title>
+        <id>https://dev.to/harvey/linux-command-line-for-beginners-16n8</id>
+        <link href="https://dev.to/harvey/linux-command-line-for-beginners-16n8"/>
+        <updated>2021-05-25T13:50:25.000Z</updated>
+        <summary type="html"><![CDATA[The Linux command line is for power users. It is not for the faint of heart or for people who are afraid to take a risk. 
+If you are new to Linux and are afraid to take the plunge into using the command line interface, then this tutorial is a good start. 
+Linux is an open source operating system that is used on everything from smart phones to main frame computers. 
+Linux provides a command line interface (CLI) that provides a quick and powerful way to control and manipulate your computer. Once mastered, the Linux CLI can save you time and provide a powerful tool to aid in your daily tasks.
+The command line can be intimidating but learning the basics will give you access to a world of scripts and automation tools that will make your life a lot easier and more productive.
+The Basics: You will be using the command line to type various commands and tasks. Commands are what Linux runs. In Linux, the Command Line can be used for various things.
+
+To start, open up a terminal. Now, let's try using some basic Linux commands! 
+Most of these commands are applicable for all Linux distributions. Linux is case sensitive (capitalization matters).
+Navigation
+ls    List directory
+cd DIR Change the current directory to the DIR directory
+cd ~  Change to home directory
+cd /      Change the current directory to the root directory
+cd ..     Go one directory lower
+pwd   Show name of current working directory 
+File Commands
+mkdir -p DIR Create directory DIR 
+rm FILE Remove FILE
+rm -r DIR Remove DIR and its contents recursively
+rm -f FILE Force remove FILE 
+System Info
+date  Print or set the system date and time
+cal   Displays a calendar
+uptime Tell how long the system has been running
+w     Show who is logged on and what they are doing
+whoami  Print effective userid]]></summary>
+        <author>
+            <name>Harvey</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Node.JS - Foal framework - version 2.4 is here]]></title>
+        <id>https://dev.to/loicpoullain/node-js-foal-framework-version-2-4-is-here-dhh</id>
+        <link href="https://dev.to/loicpoullain/node-js-foal-framework-version-2-4-is-here-dhh"/>
+        <updated>2021-05-25T13:48:06.000Z</updated>
+        <summary type="html"><![CDATA[Version 2.4 of Foal has been released! Here are the improvements that it brings.
+$data references for validation
+
+
+Version 2.4 allows you to enable the AJV $data option so that you can use the verified data values as validators for other values.
+config/default.json
+{
+  "settings": {
+    "ajv": {
+      "$data": true
+    }
+  }
+}
+
+Example of auth controller
+import { Context, Post, ValidateBody } from '@foal/core';
+
+export class AuthController {
+  @Post('/signup')
+  @ValidateBody({
+    type: 'object',
+    properties: {
+      username: { type: 'string' },
+      password: { type: 'string' },
+      // "password" and "confirmPassword" should be identical.
+      confirmPassword: {
+        const: {
+          $data: '1/password',
+        },
+        type: 'string',
+      },
+    }
+    required: [ 'username', 'password', 'confirmPassword' ],
+    additionalProperties: false
+  })
+  signup(ctx: Context) {
+    // Do something.
+  }
+}
+
+
+Starting from version 2.4 the Disk.createHttpResponse method accepts an optional parameter to specify the value of the Cache-Control header.
+import { Context, dependency, Get } from '@foal/core';
+import { Disk } from '@foal/storage';
+
+import { User } from '../entities';
+
+export class ProfileController {
+  @dependency
+  disk: Disk;
+
+  @Get('/avatar')
+  async readProfileImage(ctx: Context<User>) {
+    return this.disk.createHttpResponse(ctx.user.avatar, {
+      cache: 'no-cache'
+    });
+  }
+
+See issue #930.
+@ZakRabe]]></summary>
+        <author>
+            <name>Loïc Poullain</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Node.JS - Foal framework - version 2.4 is here]]></title>
+        <id>https://dev.to/loicpoullain/node-js-foal-framework-version-2-4-is-here-dhh</id>
+        <link href="https://dev.to/loicpoullain/node-js-foal-framework-version-2-4-is-here-dhh"/>
+        <updated>2021-05-25T13:48:06.000Z</updated>
+        <summary type="html"><![CDATA[Version 2.4 of Foal has been released! Here are the improvements that it brings.
+$data references for validation
+
+
+Version 2.4 allows you to enable the AJV $data option so that you can use the verified data values as validators for other values.
+config/default.json
+{
+  "settings": {
+    "ajv": {
+      "$data": true
+    }
+  }
+}
+
+Example of auth controller
+import { Context, Post, ValidateBody } from '@foal/core';
+
+export class AuthController {
+  @Post('/signup')
+  @ValidateBody({
+    type: 'object',
+    properties: {
+      username: { type: 'string' },
+      password: { type: 'string' },
+      // "password" and "confirmPassword" should be identical.
+      confirmPassword: {
+        const: {
+          $data: '1/password',
+        },
+        type: 'string',
+      },
+    }
+    required: [ 'username', 'password', 'confirmPassword' ],
+    additionalProperties: false
+  })
+  signup(ctx: Context) {
+    // Do something.
+  }
+}
+
+
+Starting from version 2.4 the Disk.createHttpResponse method accepts an optional parameter to specify the value of the Cache-Control header.
+import { Context, dependency, Get } from '@foal/core';
+import { Disk } from '@foal/storage';
+
+import { User } from '../entities';
+
+export class ProfileController {
+  @dependency
+  disk: Disk;
+
+  @Get('/avatar')
+  async readProfileImage(ctx: Context<User>) {
+    return this.disk.createHttpResponse(ctx.user.avatar, {
+      cache: 'no-cache'
+    });
+  }
+
+See issue #930.
+@ZakRabe]]></summary>
+        <author>
+            <name>Loïc Poullain</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why Use Vim for Programming]]></title>
+        <id>https://dev.to/jones268/why-use-vim-for-programming-467h</id>
+        <link href="https://dev.to/jones268/why-use-vim-for-programming-467h"/>
+        <updated>2021-05-25T13:26:26.000Z</updated>
+        <summary type="html"><![CDATA[Vim is the most famous text editor many programmers use for coding on the Linux terminal.
+Vim is a text editor for Linux. Many people have grown up using Vim, that and its ubiquitous nature means it can be found on any Unix/Linux system. 
+Many “power users” swear by the power and functionality of Vim, however many people see it as intimidating and complicated. If you are new to vim, I recommend these exercises
+Vim can be downloaded and installed from a software repository. Vim is often installed by default on Linux systems and even on Mac OS X.
+You can install vim with your package manager
+sudo apt-get install vim
+
+The reasons for this are simple: it's fast, it's powerful, and it comes in both a terminal emulator and a GUI version. 
+You can use it locally or over an ssh connection. It can even be used inside IDEs as a plugin.
+Vim allows programmers to edit text quickly and efficiently. You can jump to the end of file using G, top of file using gg and to line 10 using 10G. Vim allows you to record and replay keystrokes and has many many more features.
+
+Vim 8 comes with built-in support for Python, PHP, Perl, Ruby and Tcl programming languages.
+Vim as a code editor but it's much more powerful than you may think. Before you do anything else, you should know that:
+Vim is not a text editor that uses a mouse. It's a program that uses keyboard shortcuts to perform all of the tasks.
+Vim is hard to learn. You will have to spend a lot of time practising and mastering your skills before using it effectively.]]></summary>
+        <author>
+            <name>jones268</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[🧩 What is Caching and How It Works]]></title>
+        <id>https://dev.to/robertinoc_dev/what-is-caching-and-how-it-works-4gg0</id>
+        <link href="https://dev.to/robertinoc_dev/what-is-caching-and-how-it-works-4gg0"/>
+        <updated>2021-05-25T13:20:45.000Z</updated>
+        <summary type="html"><![CDATA[🖥 Let’s see why caching has become one of the most crucial concepts in computer science. We will dive into the concept of caching, understanding what it is, how it works, and what are the most important types of caching.
+
+
+
+  
+  
+  
+Over the past few years, information technology has been improving whatever kind of business drastically. Meanwhile, software architectures have become increasingly complex, and the number of their users has grown exponentially. This has represented a performance challenge for any application. Slow performance can undermine the strategic goals of any company, which is why finding smart ways to improve it is critical. As a consequence, avoiding overhead and reducing data retrieval and processing time has become imperative. This is where caching comes into play …]]></summary>
+        <author>
+            <name>Robertino</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Role-Based Security using Entity Framework (Part 1) | Dear Coder]]></title>
+        <id>https://dev.to/piaomu/role-based-security-using-entity-framework-part-1-dear-coder-4d6h</id>
+        <link href="https://dev.to/piaomu/role-based-security-using-entity-framework-part-1-dear-coder-4d6h"/>
+        <updated>2021-05-25T12:45:09.000Z</updated>
+        <summary type="html"><![CDATA[Dear Coder,
+If you're working on an application that allows users to register an account, you've likely encountered the issue of role-based security.
+What is role-based security and why do we need it?
+Say you're working on an application that allows users to share webcomics with each other. You've already built in the features that allow the user to securely upload photos to your database, and you've implemented features that allow users to register an account and log in.
+But now you need to ask what features should be accessible to any user regardless of if they've registered an account, what features should be accessible to registered users, and what features should be available to privileged users.
+This is where role-based security comes in.
+For the sake of my illustration, let's catego…]]></summary>
+        <author>
+            <name>Kasey Wahl</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Looking for non-profit or open-source projects]]></title>
+        <id>https://dev.to/dinhhuyams/looking-for-non-profit-or-open-source-projects-3119</id>
+        <link href="https://dev.to/dinhhuyams/looking-for-non-profit-or-open-source-projects-3119"/>
+        <updated>2021-05-25T12:31:37.000Z</updated>
+        <summary type="html"><![CDATA[🏋️‍♂️I am looking for a non-profit or an open-source project that I can contribute to.
+The motivation behind this is that I would love to find a place I can practice coding. Normally, if I want to learn something, I will try to write a blog or create some small projects.
+👉 Example of my projects:
+awesome-react-typescript-boilerplate
+awesome-node-boilerplate
+👉 Blogs
+10 tips to improve readability in Javascript
+Introduction to React.memo, useMemo and useCallback
+It would be good to do something meaningful, and I would like to work in a team 
+🪄 I have 3-year experience in coding. 
+I work mostly with React and I am quite familiar with these tech:
+JavaScript
+TypeScript
+React
+NextJS
+NodeJS
+My ideal project is a non-profit or an open-source project built with these tech:
+JavaScript
+TypeScript
+React
+NextJS
+NodeJS
+AWS
+I would love to work in a team who is passionate about tech
+I can contribute about 3-7 hours/week
+Feel free to contact me so we can discuss if you have any interesting non-profit projects that need help.
+Twitter
+LinkedIn]]></summary>
+        <author>
+            <name>TrinhDinhHuy</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[India Startups Are Thriving, With More on the Way]]></title>
+        <id>https://dev.to/robertinoc_dev/india-startups-are-thriving-with-more-on-the-way-33cf</id>
+        <link href="https://dev.to/robertinoc_dev/india-startups-are-thriving-with-more-on-the-way-33cf"/>
+        <updated>2021-05-25T12:02:03.000Z</updated>
+        <summary type="html"><![CDATA[Bolstered by a 42% increase in unicorns, India’s technology startup scene is powered by developers focusing on new core products.
+
+
+
+  
+  
+  
+Have you noticed the number of Indian startups making international news lately? Well, the world media and investors sure have, and with good reason. The startup scene in India has not only weathered the last year of global uncertainty, it’s managing to thrive by staying focused on core offerings. According to a report from KPMG and Pitchbook, that worked out to 2019 Q3 returns in the $3.6 billion range. 
+Fortune India reports that as of the end of 2019, India was home to 26 unicorns. And according to Inc42, by the end of 2020, 11 more were added to the ranks. That’s an increase of 42%, during a global pandemic no less. The keys to this success are v…]]></summary>
+        <author>
+            <name>Robertino</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hacking Academy - Help me out!]]></title>
+        <id>https://dev.to/appsecmonkey/hacking-academy-help-me-out-35pm</id>
+        <link href="https://dev.to/appsecmonkey/hacking-academy-help-me-out-35pm"/>
+        <updated>2021-05-25T11:07:58.000Z</updated>
+        <summary type="html"><![CDATA[Hey guys,
+I'm building an online e-learning platform for hackers (you can see some screenshots/videos here), and two of the demographics I'm trying to reach are: 
+Experienced developers who already know how to create backend or full-stack applications but don't necessarily know about all of the security hazards or how to exploit them as an attacker.
+
+
+Beginner developers who know what a variable or a function is but don't yet understand how the HTTP protocol or browsers or web applications in general really work.
+
+
+
+Because it's difficult to really put oneself in someone else's shoes, I humbly ask for your help. If you belong to either of the two demographics, and are interested in the topic, what would be most important to you in an e-learning platform that aims to teach about hacking and defending against the attacks?
+Feel free to suggest specific content, features, or anything at all. The page I linked above should give a pretty good overview of the current idea that I have about what it could look like.
+Thanks in advance! And sorry I know this is a bit of a plug but there is no better place to ask (:]]></summary>
+        <author>
+            <name>Teo Selenius</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Creating Powerful Websites with Serverless-Driven CMS Development]]></title>
+        <id>https://css-tricks.com/?p=341383</id>
+        <link href="https://css-tricks.com/creating-powerful-websites-with-serverless-driven-cms-development/"/>
+        <updated>2021-05-25T11:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Choosing the right tools to build a website for your organization is essential, but it can be tough to find the right fit. Simple site builders like Wix and Squarespace are easy for marketers to use, but severely limit developers …
+The post Creating Powerful Websites with Serverless-Driven CMS Development appeared first on CSS-Tricks.
+You can support CSS-Tricks by being an MVP Supporter.]]></summary>
+        <author>
+            <name>Ahmed Bouchefra</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Don't throw the infra baby out with the bathwater]]></title>
+        <id>https://dev.to/tinydevops/don-t-throw-the-infra-baby-out-with-the-bathwater-4bnb</id>
+        <link href="https://dev.to/tinydevops/don-t-throw-the-infra-baby-out-with-the-bathwater-4bnb"/>
+        <updated>2021-05-25T09:45:15.000Z</updated>
+        <summary type="html"><![CDATA[In this episode of The Tiny DevOps Podcast, Jonathan talks with guest Patric Conant about an often-overlooked aspect of our technology stack: the physical infrastructure.  Patric talks about some common problems he sees, and some simple tips to make sure your team doesn't fall into the common trap of throwing the "infrastructure baby" out with the bathwater.]]></summary>
+        <author>
+            <name>Jonathan Hall</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fast Connect - Standalone React WebRTC Application]]></title>
+        <id>https://dev.to/huseyn0w/fast-connect-standalone-react-webrtc-application-4n44</id>
+        <link href="https://dev.to/huseyn0w/fast-connect-standalone-react-webrtc-application-4n44"/>
+        <updated>2021-05-25T09:40:42.000Z</updated>
+        <summary type="html"><![CDATA[COVID-19 Changed the world...
+
+
+Since the year 2020 world is different. The majority of people change the way of workflow from Office to Remote mode.
+By using our application you DO NOT NEED to download anything to your device or pay for anything.
+ABSOLUTELY FREE and without registration ;)
+All you have to do is to take 2 steps:
+Create a unique ID for the conference, send it to all your colleagues.
+Enter that ID on the homepage and start your conference. 
+Github
+Demo
+My Linkedin profile
+Application features:
+No registration and NO "PREMIUM" accounts
+Realtime video/audio conference with unlimited number of users
+Different rooms creating an option for conversations
+Chat for sending messages
+Screen Sharing option
+Technologies that used in the creation of this app:
+React JS
+TypeScript
+Material UI
+Node / Express js
+Socket IO
+Peer JS
+Like it ? Please star the project and share in return ;)]]></summary>
+        <author>
+            <name>Elman Huseynov</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A New Way To Reduce Font Loading Impact: CSS Font Descriptors]]></title>
+        <id>https://smashingmagazine.com/2021/05/reduce-font-loading-impact-css-descriptors/</id>
+        <link href="https://smashingmagazine.com/2021/05/reduce-font-loading-impact-css-descriptors/"/>
+        <updated>2021-05-25T09:30:00.000Z</updated>
+        <summary type="html"><![CDATA[Web fonts are often terrible for web performance and none of the font loading strategies are particularly effective to address that. Upcoming font options may finally deliver on the promise of making it easier to align fallback fonts to the final fonts.]]></summary>
+        <author>
+            <name>hello@smashingmagazine.com (Barry Pollard)</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Type-check your JavaScript with JSDoc]]></title>
+        <id>https://dev.to/ncribt/type-check-your-javascript-with-jsdoc-e7i</id>
+        <link href="https://dev.to/ncribt/type-check-your-javascript-with-jsdoc-e7i"/>
+        <updated>2021-05-25T09:04:32.000Z</updated>
+        <summary type="html"><![CDATA[JSDoc refers to JavaScript documentation through comment blocks, it is similar to the JavaDoc. With it, it is possible to type-check your JavaScript code and avoid setting up a build/compilation step in your project. This method still requires TypeScript, but only for developing, not to ship your code.
+Why would anyone want to use JSDoc instead of TypeScript for type-checking?
+If you're building a frontend application using a library like React, you will probably use a tool such as Webpack (or Vite) to bundle/compile your code into JavaScript that browsers can understand. In that case you might as well use TypeScript because you already have a build step. Though, if you think the Hot Reloading or the build step are too slow, JSDoc could still be of help.
+Now if you're building a library, t…]]></summary>
+        <author>
+            <name>Nico</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Install Kubernetes on Ubuntu 21.04 | Install Kubernetes on Ubuntu | Install kubernetes]]></title>
+        <id>https://dev.to/jhooq/how-to-install-kubernetes-on-ubuntu-21-04-install-kubernetes-on-ubuntu-install-kubernetes-5379</id>
+        <link href="https://dev.to/jhooq/how-to-install-kubernetes-on-ubuntu-21-04-install-kubernetes-on-ubuntu-install-kubernetes-5379"/>
+        <updated>2021-05-25T08:40:44.000Z</updated>
+        <summary type="html"><![CDATA[In this lab session we will focus on how to setup your Kubernetes cluster on Ubuntu 21.04. 
+Benefits of local k8s cluster - 
+You do not need to pay cloud services for learning purpose
+You can destroy and rebuilt everything as many times as you can using virtual machine
+You know what you are doing.
+Read more detailed blog post at - https://jhooq.com/14-steps-to-install-kubernetes-on-ubuntu-18-04-and-16-04/]]></summary>
+        <author>
+            <name>Rahul Wagh</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React VS Angular: Which framework is the best choice for app development?]]></title>
+        <id>https://dev.to/abbasmurtza/react-vs-angular-which-framework-is-the-best-choice-for-app-development-4lhg</id>
+        <link href="https://dev.to/abbasmurtza/react-vs-angular-which-framework-is-the-best-choice-for-app-development-4lhg"/>
+        <updated>2021-05-25T08:14:08.000Z</updated>
+        <summary type="html"><![CDATA[React vs Angular – which framework is best app development? This blog is extensively written to present entire knowledge and benefits.
+Read full article here]]></summary>
+        <author>
+            <name>MURTZA ABBAS RIZVI</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How to Use Node Environment Variables with a DotEnv File for Node.js and npm]]></title>
         <id>60abc6d011ffb70827ef630f</id>
@@ -13,35 +1144,6 @@
         <summary type="html"><![CDATA[Environment variables are variables that are set outside of a program, often through a cloud provider or operating system.  In Node, environment variables are a great way to securely and conveniently configure things that don't change often, like URLs, authentication keys, and passwords. How to Create Environment VariablesEnvironment variables are]]></summary>
         <author>
             <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JavaScript Inheritance: the Dark Arts]]></title>
-        <id>https://dev.to/nickkelly314/javascript-inheritance-the-dark-arts-1bh1</id>
-        <link href="https://dev.to/nickkelly314/javascript-inheritance-the-dark-arts-1bh1"/>
-        <updated>2021-05-25T00:42:22.000Z</updated>
-        <summary type="html"><![CDATA[Inheritance remains one of the most relied upon and misunderstood features of JavaScript to this day. Since ES2015 JavaScript developers have been able to ignore how the inheritance sausage is made by relying on the class syntax that hides the nitty gritty details, until they run into its mind-bending edge cases.
-In this post we'll explore the secrets of JavaScript inheritance: [[Prototype]] and constructors.
-But first, put your knowledge to the test:
-console.log('Overriding getters and setters');
-
-class SuperClass {
-  _value = undefined;
-  get value() { return this._value; }
-}
-class SubClass extends SuperClass {
-  set value(to) { this._value = to; }
-}
-const sub = new SubClass();
-sub.value = 5;
-
-// What gets logged?
-
-console.log(sub.value); // undefined
-
-console.log('Deleting from a class …]]></summary>
-        <author>
-            <name>Nick Kelly</name>
         </author>
     </entry>
     <entry>
@@ -209,88 +1311,6 @@ Dialog - playground]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[ngx-awesome-popup Interactive modals on steroids 🚀]]></title>
-        <id>https://dev.to/costlydeveloper/ngx-awesome-popup-interactive-modals-on-steroids-2ej3</id>
-        <link href="https://dev.to/costlydeveloper/ngx-awesome-popup-interactive-modals-on-steroids-2ej3"/>
-        <updated>2021-05-24T20:59:35.000Z</updated>
-        <summary type="html"><![CDATA[What is it?
-
-
-It's the npm library made for the Angular 9+
-It provides:
-Evoking dynamic components in popup
-Toast Notifications
-Alert Box
-Confirm Box
-Cookie GDPR banner
-It has:
-Clean API
-Better documented than others
-Easy to use
-d.ts files
-Awesome snippet generator
-Ability of global or local configuration
-Predefined styles
-Easy to change colors 
-Button generator
-Simple and powerful Dependency Injection 
-Okay
-toastNotification() {
-        const newToastNotification = new ToastNotificationInitializer();
-        newToastNotification.setTitle('Title!');
-        newToastNotification.setMessage('Message!');
-        newToastNotification.setConfig({
-            LayoutType: DialogLayoutDisplay.INFO // SUCCESS | INFO | NONE | DANGER | WARNING
-        });
-        newToastNotification.openToastNotification$();
-    }
-
-confirmBox() {
-        const confirmBox = new ConfirmBoxInitializer();
-        confirmBox.setTitle('Title!');
-        confirmBox.setMessage('Message!');
-        confirmBox.setButtonLabels('Button1', 'Button2'); 
-        confirmBox.setConfig({
-            LayoutType: DialogLayoutDisplay.SUCCESS // SUCCESS | INFO | NONE | DANGER | WARNING
-        });
-        const subscription = confirmBox.openConfirmBox$().subscribe(resp => {
-            // button response
-            subscription.unsubscribe();
-        });
-    }
-
-dialog() {
-        const dialogPopup = new DialogInitializer(AnyAngularComponent);
-        dialogPopup.setCustomData({myData}); 
-        dialogPopup.setConfig({
-            Width     : '500px',
-        );
-
-        dialogPopup.setButtons([
-            new ButtonMaker('Submit', 'submit', ButtonLayoutDisplay.SUCCESS),
-            new ButtonMaker('Cancel', 'cancel', ButtonLayoutDisplay.SECONDARY)
-        ]);
-
-        const subscription = dialogPopup.openDialog$().subscribe(resp => {
-            // button response
-            subscription.unsubscribe();
-        });
-    }
-
-Here's how!
-
-
-
-Toast - playground
-Toast - StackBlitz
-Confirm box - playground
-Confirm box - StackBlitz
-Dialog - playground]]></summary>
-        <author>
-            <name>Boris Jenicek</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How to Use CSS Media Queries to Create Responsive Websites]]></title>
         <id>60ac07ec11ffb70827ef66e4</id>
         <link href="https://www.freecodecamp.org/news/how-to-use-css-media-queries-to-create-responsive-websites/"/>
@@ -298,50 +1318,6 @@ Dialog - playground]]></summary>
         <summary type="html"><![CDATA[CSS Media Queries allow you to create responsive websites that look good on all screen sizes, from desktop to mobile. We just released a course on the freeCodeCamp channel that will teach you how to create CSS Media Queries. After learning the basics, you will learn how to use media]]></summary>
         <author>
             <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Image Upload to Cloudinary with Node.js]]></title>
-        <id>https://dev.to/franciscomendes10866/image-upload-to-cloudinary-with-node-js-523o</id>
-        <link href="https://dev.to/franciscomendes10866/image-upload-to-cloudinary-with-node-js-523o"/>
-        <updated>2021-05-24T20:15:03.000Z</updated>
-        <summary type="html"><![CDATA[Cloudinary is one of the tools/platforms that can be used to upload your images. In addition to being quick and simple to use, it also has exceptional documentation.
-Obviously, in many cases, having a bucket at the cloud provider is at a better cost and perhaps more predictable. Because it is easier to deal with fixed prices or even estimates than with credits.
-But sometimes we like to take advantage of free plan limits or we just don't want to deal with infrastructure. We just want to deal with an SDK and upload the images.
-It was precisely for this reason that I decided to write this article, to show that we can use the tools we use in our daily lives in a simple and effective way.
-In this article I am not going to explain why we use Express together with Multer. If you need to have a sm…]]></summary>
-        <author>
-            <name>Francisco Mendes</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Optimizing performance of PHP app that sends an external request]]></title>
-        <id>https://dev.to/nostop8/optimizing-performance-of-php-app-that-sends-an-external-request-291p</id>
-        <link href="https://dev.to/nostop8/optimizing-performance-of-php-app-that-sends-an-external-request-291p"/>
-        <updated>2021-05-24T20:08:07.000Z</updated>
-        <summary type="html"><![CDATA[Table Of Contents
-
-
-
-Intro
-Optimization Iteration #0
-Optimization Iteration #1
-Optimization Iteration #2
-Exposing more info
-Summary
-
-
-
-I’m running web services API written in PHP and one of the endpoints during every request pings another external web service, particularly Firebase Realtime DB which in its turn can deliver notification to the client through the Websockets API. Below is the image with a rough architecture of this process:
-
-The web service I am running is not very complicated and we can divide the operations is does into the following steps:
-Processing request
-Doing few SQL queries including insert queries
-Performing POST request to the external Firebase Realtime DB API
-Providing response to the client
-After it was completed, I did load tests and profiling. It turned out tha…]]></summary>
-        <author>
-            <name>Volodymyr Dovbenko</name>
         </author>
     </entry>
     <entry>
@@ -495,153 +1471,6 @@ Ensure that all the Network settings are working fine.]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Using multiple versions of nodejs.]]></title>
-        <id>https://dev.to/afif_ahmed/using-multiple-versions-of-nodejs-37bd</id>
-        <link href="https://dev.to/afif_ahmed/using-multiple-versions-of-nodejs-37bd"/>
-        <updated>2021-05-24T18:35:35.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-Usually we work on different version for our nodejs project and its hard to manage them,but fortunately there is tool called NVM(node verion manager) which help to manage your node version and switch between them according to your projects.
-
-
-  
-  
-  Windows installation
-
-
-Unfortunately nvm project is only for linux/macos, but...but there is another very similar project by Corey bulter,known as nvm-windows. Click this link  download the nvm-setup.zip file and install it in a mundane fashion as on windows.
-
-
-  
-  
-  Linux installation
-
-
-In your terminal use curl to install
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/v0.34.0/install.sh | 
-
-after installation you need to add a bit of configuration in your .bashrc file or .zshrc etc. So, open the file and append the below code.
-$ export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
-[ -s :$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-This sets the path to directory of installation.
-
-
-
-  
-  
-  usage
-
-
-So let's jump into the terminal and look at some of the commands.
-To Install latest version of node
-
-
-
-
-$ nvm install node
-
-Install specific version
-
-
-
-
-$ nvm install {node_verion}
-
-#example
-$ nvm install 10.0.0
-
-command to list out all the versions installed
-
-
-
-
-$ nvm ls
-
-Switching between different node versions
-
-
-
-
-# to use latest version
-$ nvm use node  
-
-# for a specific verion
-$ nvm use 10.0.0  
-
-Deleting node versions
-
-
-
-
-$ nvm uninstall {node_version}
-
-As this was an introductory post, we looked at some of the most used commands, this is a very useful tool if you are working on multiple projects which requires different version of node. You can have a look at the official nvm https://github.com/nvm-sh/nvm gitrepo to understand thoroughly.
-Liked the content?]]></summary>
-        <author>
-            <name>mohammed afif ahmed</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hide & Seek Code: Part II]]></title>
-        <id>https://dev.to/vjnvisakh/hide-seek-code-part-ii-4og5</id>
-        <link href="https://dev.to/vjnvisakh/hide-seek-code-part-ii-4og5"/>
-        <updated>2021-05-24T18:32:36.000Z</updated>
-        <summary type="html"><![CDATA[If you are new here, then please visit our earlier article over here for some context. 
-After the last article we were trying to find out ways to improve upon the approach but at the same time didn't want to do anything crazy either. 
-That is when we found out about Buddy. Buddy is one of those easy DIY devops tools out there. Best part is the UI and how easy it is to create a deployment pipeline. 
-Okay so back to our task. We added this line in our package.json file under the build script.
-    "build": "nest build && mkdir -p build && node obfuscate.js && find ./build -name '*.ts' -type f -delete && cp package.json build/",
-
-The above line creates a folder called build, obfuscates(make it unreadable) and remove all the .ts files. We also had to copy our package.json file into the build folder so that we can install our dependencies at our destination.
-Then we setup a pipeline in Buddy. 
-
-We made 3 actions. Actions are more like a sequence of steps.  
-The first one "Execute" created a build folder and obfuscated code.
-
-
-
-The second one copied the build folder to the client's server.
-
-
-
-The third one basically started the project.
-
-
-
-
-
-  
-  
-  Feel good moment
-
-
-Once the actions were setup we started our pipeline and kept looking at this "feels good" UI while it was running.
-
-After the pipeline completed, we logged into our server and were able to see our instance running. Phew!!! And this is how our code looks now. Not the best of encryption, but pretty hard to read/modify.
-
-This solved our problem to a major extent. The only drawback we found was the speed of execution. It takes around 2-3 minutes for the entire process to complete. But we are sure there are ways to optimize it. So we are looking forward to it.
-Let us know your comments.
-Happy programming!!!]]></summary>
-        <author>
-            <name>Visakh Vijayan</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Data-Driven Components]]></title>
-        <id>https://dev.to/ngconf/data-driven-components-fcl</id>
-        <link href="https://dev.to/ngconf/data-driven-components-fcl"/>
-        <updated>2021-05-24T17:58:02.000Z</updated>
-        <summary type="html"><![CDATA[Jim Armstrong | ng-conf | Feb 2021
-Runtime Templates Using String Identifiers
-Many of the applications I develop for clients most often involve mathematical sciences, ranging from physics and engineering to financial modeling to data analytics. These applications regularly employ components in which the majority of the component’s runtime display is driven by external data. We are all familiar with using binding to alter some portion of a component. A fully data-driven component will also have other aspects of its display controlled by external data.
-For example, it is common in the utility industry to display, analyze, and even edit load profiles. Each profile contains one or more time series such as ‘raw data,’ ‘cleansed data’, ‘gross’, ‘AMI’, etc. Each of these series has some meaning t…]]></summary>
-        <author>
-            <name>ng-conf</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Data-Driven Components]]></title>
         <id>https://dev.to/ngconf/data-driven-components-fcl</id>
         <link href="https://dev.to/ngconf/data-driven-components-fcl"/>
@@ -682,17 +1511,6 @@ If you go with …]]></summary>
 The Nx Devkit is an underlying part of the Nx build framework that provides utilities for building generators and executors. The Nx Devkit provides a way to build generators with a more straightforward approach using only JavaScript language primitives and immutable objects (the tree being the only e…]]></summary>
         <author>
             <name>Brandon Roberts</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sitewide file uploads with React Context]]></title>
-        <id>https://dev.to/bluealien99/sitewide-file-uploads-with-react-context-32e9</id>
-        <link href="https://dev.to/bluealien99/sitewide-file-uploads-with-react-context-32e9"/>
-        <updated>2021-05-24T16:20:38.000Z</updated>
-        <summary type="html"><![CDATA[React is awesome, right? It's fast, lightweight and comes with a relatively simple API... at a cost. Up until recently React didn't have a built-in solution for application state management. For many years Redux was a go-to library which solved that problem. But things have changed, React evolved and now we've got Hooks! One of them is especially interesting. Everyone, welcome useContext!
-If you're building a small web app, you might not need to use Redux for managing your application's state, React already comes with Context and in this tutorial I'll show you how to handle sitewide file uploads, so that you can freely navigate in your app without having to worry that that 1GB file which you've been uploading for the last half an hour suddenly stops and you'll need to upload it again... an…]]></summary>
-        <author>
-            <name>BlueAlien99</name>
         </author>
     </entry>
     <entry>
@@ -781,20 +1599,6 @@ Some programming languages which full-stack developers must get better at happen
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[What are the full stack demands in the next few years?]]></title>
-        <id>https://dev.to/rlogical/what-are-the-full-stack-demands-in-the-next-few-years-5daf</id>
-        <link href="https://dev.to/rlogical/what-are-the-full-stack-demands-in-the-next-few-years-5daf"/>
-        <updated>2021-05-24T13:41:41.000Z</updated>
-        <summary type="html"><![CDATA[Yes, Today is full stack developers are great demand for app development. So, Let’s know here Top 7 reasons which is the the know as a full stack developer’s future is great in the next few years.
-Fewer resources for a business
-Besides being a specialist in front-end and back-end development, a full-stack developer is likewise proficient in several other fields. Full-stack programmers will be able to play the role of web developers and mean-stack developers
-plus DevOps developers. They need to be theoretically sound in just about all aspects of development and technology.
-Some programming languages which full-stack developers must get better at happen to be JavaScript, React.js, MongoDB, node, in addition to Python. The future of the majority of the full-stack developers is great because o…]]></summary>
-        <author>
-            <name>Rlogical Techsoft Pvt Ltd</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Angular is opinionated and that’s great]]></title>
         <id>https://dev.to/stephenradams/angular-is-opinionated-and-that-s-great-3ldn</id>
         <link href="https://dev.to/stephenradams/angular-is-opinionated-and-that-s-great-3ldn"/>
@@ -806,35 +1610,6 @@ Split your functionality into modules
 Use serv…]]></summary>
         <author>
             <name>Stephen Adams</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Build A Library With esbuild]]></title>
-        <id>https://dev.to/daviddalbusco/build-a-library-with-esbuild-fnh</id>
-        <link href="https://dev.to/daviddalbusco/build-a-library-with-esbuild-fnh"/>
-        <updated>2021-05-24T13:38:59.000Z</updated>
-        <summary type="html"><![CDATA[I recently developed plugins and, migrated all the utilities of DeckDeckGo to build these with esbuild.
-If you are looking to do the same, hope this tutorial helps you get started!
-esbuild is “an extremely fast JavaScript bundler” made by Evan Wallace. It is its tagline and, according my tests, the least we can say is that it is true. It is blazing fast ⚡️.
-Sometimes while migrating my libraries, I even found myself waiting for the end of a build because I did not notice that it was already finished. I assumed it would still need some more time, old habits die hard I guess 😅.
-In addition, other things which make me really like this new bundler are its clean, flexible API and, its documentation. It is easy to follow and, clear.
-To get started, let’s create a new empty project.
-mkdir mylib …]]></summary>
-        <author>
-            <name>David Dal Busco</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Build a Card-Linked Application With Node.js, React and the Fidel Web SDK]]></title>
-        <id>https://dev.to/fidel/how-to-build-a-card-linked-application-with-node-js-react-and-the-fidel-web-sdk-31bf</id>
-        <link href="https://dev.to/fidel/how-to-build-a-card-linked-application-with-node-js-react-and-the-fidel-web-sdk-31bf"/>
-        <updated>2021-05-24T13:08:50.000Z</updated>
-        <summary type="html"><![CDATA[Fidel makes it simple to add card-linking capabilities to any application. The process involves setting up a program, along with the participating brands and locations. And then registering or helping your users register their cards on the Fidel platform. Once they are live, Fidel receives transactions from participating locations and will pass them along to your application using webhooks. You can register your webhook URLs in the Fidel Dashboard and start receiving the transaction data.
-There are two main steps in the process, and this tutorial is going to walk you through building an application with a card-linking feature.
-
-The first requirement is to register user cards on the Fidel platform. Fidel provides SDKs to use within your applications to help you register cards simply and sec…]]></summary>
-        <author>
-            <name>Alex Lakatos 🥑</name>
         </author>
     </entry>
     <entry>
@@ -1050,21 +1825,6 @@ Press :Explore to open the file explorer. Use the j and k keys and press enter t
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How Heroku Works]]></title>
-        <id>https://dev.to/johnjvester/how-heroku-works-137b</id>
-        <link href="https://dev.to/johnjvester/how-heroku-works-137b"/>
-        <updated>2021-05-24T10:01:35.000Z</updated>
-        <summary type="html"><![CDATA[I started looking into Heroku as an option for creating personal applications in my free time. In fact, I converted an existing application from the AWS ecosystem to Heroku which was captured in a series on DZone.com:
-Moving Away From AWS and Onto Heroku
-Starting with a brand new idea with Heroku, I was able to quickly create a fitness-based SaaS solution as well, which was documented in another series on DZone.com:
-Using Heroku to Quickly Build a Multi-Tenant SaaS Product
-Well over a year into using Heroku for several of my applications, I thought I would take a step back and describe how Heroku works and offer thoughts on why the Salesforce-owned solution should be a consideration for your next project.
-Founded in 2007, Heroku is a platform as a service (PaaS) ecosystem which currently s…]]></summary>
-        <author>
-            <name>John Vester</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Security Testing Essentials of Cloud-based Applications]]></title>
         <id>https://dev.to/cigniti/security-testing-essentials-of-cloud-based-applications-1d8j</id>
         <link href="https://dev.to/cigniti/security-testing-essentials-of-cloud-based-applications-1d8j"/>
@@ -1076,40 +1836,6 @@ Regulatory Compliance - Cloud computing security solutions help to manage and ma
 Limited Expenditure - There…]]></summary>
         <author>
             <name>Hemanth Yamjala</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tips to Buying Private Proxies]]></title>
-        <id>https://dev.to/louiseelambertf/tips-to-buying-private-proxies-4d36</id>
-        <link href="https://dev.to/louiseelambertf/tips-to-buying-private-proxies-4d36"/>
-        <updated>2021-05-24T09:08:07.000Z</updated>
-        <summary type="html"><![CDATA[As the need to work in a remote location and increased desire to maintain anonymity among internet user create the demand for the private proxies. The use of a virtual private network has been the most popular type of proxy used in the world. The first type of serves to be used were named Wingate (Smith & Robles, 2013).  Wingate, window services enabled the sharing of internet destination dial-up among different users. With the increasing development in technology more advanced type of proxy continues to emerge and incidence of their misuse continue to increase.
-Functions of a Proxy Server
-A proxy can be defined as the intermediary on the connection between computers two or more over the internet. The primary function of the proxy is thus in establishing a permanent and a network link betw…]]></summary>
-        <author>
-            <name>LouiseeLambertf</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Security Analytics market Report by Component, by Organization Size, By Vertical - Global Forecast to 2027]]></title>
-        <id>https://dev.to/pranali004/security-analytics-market-report-by-component-by-organization-size-by-vertical-global-forecast-to-2027-25l8</id>
-        <link href="https://dev.to/pranali004/security-analytics-market-report-by-component-by-organization-size-by-vertical-global-forecast-to-2027-25l8"/>
-        <updated>2021-05-24T08:54:38.000Z</updated>
-        <summary type="html"><![CDATA[Market Scenario:
-COVID-19 Analysis:
-https://www.marketresearchfuture.com/sample_request/4211 
-Regional Analysis:
-Browse Full Report Details @  https://www.marketresearchfuture.com/reports/security-analytics-market-4211 
-About Market Research Future:
-Contact:
-sales@marketresearchfuture.com
-
-
-  
-  
-  informationtechnology #technology #it #cybersecurity #tech #computerscience #programming #business #coding #innovation #software #informationsecurity #information #computer #programmer #engineering #hacking #networking #python #security #technologynews #newtechnology #covid #ethicalhacking #itsupport #java #internet #cloudcomputing #technologyrocks #bhfyp]]></summary>
-        <author>
-            <name>pranali004</name>
         </author>
     </entry>
     <entry>
@@ -1183,57 +1909,6 @@ To get to a Linux pro level quickly, I recommend this tutorial]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hidden power of || and &&]]></title>
-        <id>https://dev.to/kozlovzxc/hidden-power-of-and-jng</id>
-        <link href="https://dev.to/kozlovzxc/hidden-power-of-and-jng"/>
-        <updated>2021-05-24T08:36:52.000Z</updated>
-        <summary type="html"><![CDATA[TLDR: Logical operators actually return one of the operands, so you can refactor code using this feature.
-Usually, you may see || and && logical operators in if cases.
-if (case1 || case2) { 
-  doSomething()
-}
-
-So you may expect that || and && returns a boolean value, but it is only correct if values on both sides of these operators are boolean as well. 
-Actually, these operators return one of their arguments. E.g. if they were functions they would be implemented like this.
-function or(a, b) {
-  if (a) {
-    return a
-  }
-  return b
-}
-
-function and(a, b) {
-  if (a) {
-    return b
-  }
-  return a
-}
-
-It may sound and look a bit confusing, but let’s dive into examples.
-let obj = { prop: 1 }
-
-// boring part
-true || false // -> true
-false || true // -> true
-true && false // -> false
-false && true …]]></summary>
-        <author>
-            <name>Nikita Kozlov</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[React Query and TypeScript]]></title>
-        <id>https://dev.to/tkdodo/react-query-and-typescript-34ai</id>
-        <link href="https://dev.to/tkdodo/react-query-and-typescript-34ai"/>
-        <updated>2021-05-24T08:19:04.000Z</updated>
-        <summary type="html"><![CDATA[TypeScript is 🔥 - this seems to be a common understanding now in the frontend community. Many developers expect libraries to either be written in TypeScript, or at least provide good type definitions. For me, if a library is written in TypeScript, the type definitions are the best documentation there is. It's never wrong because it directly reflects the implementation. I frequently look at type definitions before I read API docs.
-React Query was initially written in JavaScript (v1), and was then re-written to TypeScript with v2. This means that right now, there is very good support for TypeScript consumers.
-There are however a couple of "gotchas" when working with TypeScript due to how dynamic and unopinionated React Query is. Let's go through them one by one to make your experience with …]]></summary>
-        <author>
-            <name>Dominik D</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[What is computer vision? And how it works.]]></title>
         <id>https://dev.to/rishabh062/what-is-computer-vision-and-how-it-works-5789</id>
         <link href="https://dev.to/rishabh062/what-is-computer-vision-and-how-it-works-5789"/>
@@ -1276,34 +1951,6 @@ Rishabh Dwivedi]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Install Kazam di Linux Fedora]]></title>
-        <id>https://dev.to/rabihcigar/install-kazam-di-linux-fedora-3l09</id>
-        <link href="https://dev.to/rabihcigar/install-kazam-di-linux-fedora-3l09"/>
-        <updated>2021-05-24T07:21:26.000Z</updated>
-        <summary type="html"><![CDATA[Download filenya terlebih dahulu
-wget https://raw.githubusercontent.com/rpmsphere/noarch/master/k/kazam-1.5.3-1.1.noarch.rpm
-Install file tersebut
-sudo rpm -Uvh kazam-1.5.3-1.1.noarch.rpm
-Jika terdapat error seperti berikut berarti kalian harus menginstall dependency(software yg dibutuhkan agar kazam berjalan) kazam secara manual.
-error: Failed dependencies:
-    keybinder is needed by kazam-1.5.3-1.1.noarch
-    libappindicator-gtk3 is needed by kazam-1.5.3-1.1.noarch
-    python3-xlib is needed by kazam-1.5.3-1.1.noarch
-
-
-Cara solvingnya adalah dengan memasukkan command berikut satu persatu:
-sudo dnf install keybinder
-sudo dnf install libappindicator-gtk3
-sudo dnf install python3-xlib
-Terakhir, install kembali kazam maka error tsb akan hilang. 
-sudo rpm -Uvh kazam-1.5.3-1.1.noarch.rpm
-sumber: 
-https://fedora.pkgs.org/]]></summary>
-        <author>
-            <name>Roby Cigar</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Which one should I do first?]]></title>
         <id>https://dev.to/pavithrasp1194/which-one-should-i-do-first-2oe5</id>
         <link href="https://dev.to/pavithrasp1194/which-one-should-i-do-first-2oe5"/>
@@ -1311,114 +1958,6 @@ https://fedora.pkgs.org/]]></summary>
         <summary type="html"><![CDATA[I am planning to upgrade my angular application to version 10 and migrate Tslint to Eslint which one should I do first?]]></summary>
         <author>
             <name>Pavithra</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Embed Twitter profile on your website]]></title>
-        <id>https://dev.to/swastikyadav/embed-twitter-profile-on-your-website-41b2</id>
-        <link href="https://dev.to/swastikyadav/embed-twitter-profile-on-your-website-41b2"/>
-        <updated>2021-05-24T07:10:46.000Z</updated>
-        <summary type="html"><![CDATA[I wanted to embed my Twitter profile on my personal website but didn't found any tool for that. Twitter provides a tool to embed tweets and timelines but not the profile.
-So, I have created this tool to help you embed your Twitter profile on your personal websites.
-
-
-I have used the Node, Express at backedn and VanillaJS at frontend.
-Here is the product URL: https://embed-twitter-profile.herokuapp.com/
-And here is a video showing how it works.
-https://www.youtube.com/watch?v=iV7Y5WS0n0E]]></summary>
-        <author>
-            <name>Swastik Yadav</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Beginner's Guide To Shell Aliases With Examples]]></title>
-        <id>https://dev.to/flyingcakes/beginner-s-guide-to-shell-aliases-with-examples-5hbj</id>
-        <link href="https://dev.to/flyingcakes/beginner-s-guide-to-shell-aliases-with-examples-5hbj"/>
-        <updated>2021-05-24T07:09:42.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-*nix shell is a powerful tool that can help you go about your work easily. At the lowest level, it can be It can seamlessly run binaries and this power combined with shell grammar, you can write scripts to automate processes on your system.
-Shell has this feature where you can define aliases to existing commands. So, if I alias w to wget, then every time I run w, it will be interpreted as wget.
-Shell aliases can be easily defined by the following syntax:
-alias <keyword>="some long command"
-
-So, for the above example, I can write
-alias w="wget"
-
-This line goes in your ~/.bashrc or ~/.zshrc depending on the shell you use. After adding an alias, you need to reload your shell config. This can be done simply by restarting your teminal, or if you don't want to close the current ru…]]></summary>
-        <author>
-            <name>Snehit Sah</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Three Ways To use Linux based Distroes in Online]]></title>
-        <id>https://dev.to/ramanasai/three-ways-to-use-linux-based-distroes-in-online-1k0n</id>
-        <link href="https://dev.to/ramanasai/three-ways-to-use-linux-based-distroes-in-online-1k0n"/>
-        <updated>2021-05-24T07:02:13.000Z</updated>
-        <summary type="html"><![CDATA[01) Try Hack Me (https://tryhackme.com/)
-02) hackthebox academy (https://academy.hackthebox.eu/)
-03) Distrotest (https://distrotest.net/)
-Free Tier: 1 hour (Every Day)
-Free Tier: 1 hour (Extend time after 30 mins)
-Free Tier: 30 Mins (Extend time after 15 mins)
-1) Use Brave Browser.
-2) Open in Incognito tab.
-3) Don't use personal data.
-4) Maintain Internet connection.]]></summary>
-        <author>
-            <name>P B Sai Ramana</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[🐧 Linux Commands - A Complete Handbook 💻]]></title>
-        <id>https://dev.to/kaiwalyakoparkar/linux-commands-a-complete-handbook-1a7b</id>
-        <link href="https://dev.to/kaiwalyakoparkar/linux-commands-a-complete-handbook-1a7b"/>
-        <updated>2021-05-24T06:55:20.000Z</updated>
-        <summary type="html"><![CDATA[Hello folks,
-Without wasting anymore time let's jump into it.
-cd directory_name ==> Changes the path to directory_name
-cd .. ==> Go back to previous directory
-cd or cd ~ ==> Go back to root directory
-mkdir directory_name ==> Makes a new directory at that location
-rmdir directory_name ==> This will delete the directory (Cannot be undone)
-ls ==> Lists all the directories in the location
-touch file_name ==> Creats a file of file_name (File extension is compulsary)
-echo random_text ==> Will print random_text on the terminal screen
-echo random_text > file_name ==> It will put the random_text into the file_name instead of printing on the terminal screen
-man command_name ==> This will display all the information about the specific terminal command_name
-help ==> This will help you by providing som…]]></summary>
-        <author>
-            <name>Kaiwalya Koparkar</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[installing xampp and HeidiSQL ubuntu 20.04]]></title>
-        <id>https://dev.to/guadalupe182/installing-xampp-and-heidisql-ubuntu-20-04-eba</id>
-        <link href="https://dev.to/guadalupe182/installing-xampp-and-heidisql-ubuntu-20-04-eba"/>
-        <updated>2021-05-24T04:56:52.000Z</updated>
-        <summary type="html"><![CDATA[Hello everyone for those who are using any linux distro in this case ubuntu 20.04 there are certain installations to be done
-*Installation Xampp**
-https://www.apachefriends.org/xampp-files/7.4.8/xampp-linux-x64-7.4.8-0-installer.run (you can choose your preferred version)
-//give permissions
-/home/your-user/www.apachefriends.org/xampp-files/Accedemos to its location and from the console we give permissions.
-chmod 755 xampp-linux-*-installer.run
-Install it.
-sudo ./xampp-linux-*-installer.run
-Example...
-adrian@asus ~/www.apachefriends.org/xampp-files/7.4.8 $ chmod 755 xampp-linux-*-installer.run
-click next next next next until the installation begins 
-//commands to use 
-sudo /opt/lampp/lampp/lampp start //to start the service
-sudo /opt/lampp/lampp/lampp stop //to stop it
-sudo /opt/lampp/lampp restart //to restart the service
-sudo /opt/lampp/manager-linux-x64.run //to access control panel
-****Instalacion HeidiSQL*****
-You will see a window indicating that the program is being configured. We wait until it finishes, or until we see a window asking for permission to install dependencies. We click on the "Install" button of all of them so that the wizard takes care of downloading and copying everything necessary, and when the process is finished, and everything is ready on our PC, we will see the Wine configuration window. This window has 7 tabs, through which we will be able to configure the different aspects of this tool.Wine allows us to simulate all versions of Windows. This way, if we have software that can only run on a specific version of Windows, we will be able to load the libraries of that version, and impersonate the version of the operating system, for each of them. We can configure a default version, which will be used in all programs, and add specific EXE files to give each one a version. To verify that it has been installed correctly we will use
-NOTE: before starting the Heidi server make sure you have your xampp servers running.
-Greetings!]]></summary>
-        <author>
-            <name>Guadalupe Rosas</name>
         </author>
     </entry>
     <entry>
@@ -1470,44 +2009,6 @@ Podcast]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[NodeJS Event Emitter]]></title>
-        <id>https://dev.to/julianopadilha/nodejs-event-emitter-4l04</id>
-        <link href="https://dev.to/julianopadilha/nodejs-event-emitter-4l04"/>
-        <updated>2021-05-24T00:45:43.000Z</updated>
-        <summary type="html"><![CDATA[O que é o Event Emitter?
-
-
-Event Emitter é um módulo do NodeJS que nos ajuda a criar um padrão de publisher-subscriber.
-Com um Event Emitter podemos simplesmente criar um evento de qualquer parte de uma aplicação, escutar este evento e tomar alguma ação baseado nele.
-
-Para criar um event emitter é preciso instanciar o EventEmitter do módulo events no NodeJS.
-const { EventEmitter } = require('events');
-
-const eventEmitter = new EventEmitter();
-
-Esse é o básico para criar um event emitter. Mas o que podemos fazer com ele? 🤔
-A classe do EventEmitter têm uma série de métodos e podemos usá-los para publicar e ouvir eventos. Por hora, focaremos em dois deles:
-emit(eventName...)
-on(eventName...)
-Para publicar um evento nós utilizamos o método emit(). Já para ouvir, utilizamos o método on(). E a …]]></summary>
-        <author>
-            <name>Juliano Padilha</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Learn OpenStack by example: Part 0 - Summary and Goals]]></title>
-        <id>https://dev.to/wsidl/learn-openstack-by-examples-part-0-summary-and-goals-p84</id>
-        <link href="https://dev.to/wsidl/learn-openstack-by-examples-part-0-summary-and-goals-p84"/>
-        <updated>2021-05-23T23:34:15.000Z</updated>
-        <summary type="html"><![CDATA[My whole career up to this point has been built around designing and developing applications for offline or isolated networks and working with severely outdated operating systems with no external dependencies allowed. So when I moved into a new role working on cloud deployments, I took it as an opportunity to learn cloud development and deployments. It didn't take me long to run into a bunch of headaches that comes with working on these platforms.
-While searching for solutions and documentation on the various problems I've come across, I would often see references to OpenStack and it got my curiosity going. What is OpenStack? What services does it offer and who owns it? How do I learn to use it? What are it's costs and limitations?
-
-Without going into too much history or detail, OpenStack …]]></summary>
-        <author>
-            <name>Will Siddall</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Ditsmod - new NodeJS webframework writen in TypeScript]]></title>
         <id>https://dev.to/kostyatretyak/ditsmod-new-nodejs-webframework-writen-in-typescript-19j2</id>
         <link href="https://dev.to/kostyatretyak/ditsmod-new-nodejs-webframework-writen-in-typescript-19j2"/>
@@ -1525,154 +2026,6 @@ Built-in support for nested routes, such as /api/posts/:postId/comments/:comment
 Check for collisions when importing providers. This feature allows you to detect situations where you import two or more modules that export providers…]]></summary>
         <author>
             <name>Костя Третяк</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ditsmod - new NodeJS webframework writen in TypeScript]]></title>
-        <id>https://dev.to/kostyatretyak/ditsmod-new-nodejs-webframework-writen-in-typescript-19j2</id>
-        <link href="https://dev.to/kostyatretyak/ditsmod-new-nodejs-webframework-writen-in-typescript-19j2"/>
-        <updated>2021-05-23T22:55:59.000Z</updated>
-        <summary type="html"><![CDATA[Motivation to create Ditsmod
-
-
-Before creating Ditsmod, of course, I was looking for: "Are there ready-made solutions for my purposes?".
-I believe that the set of the following features is unique at the moment:
-The framework is written in TypeScript (and under the hood there is no ExpressJS or Fastify ;).
-Modular architecture with decorators.
-Has a hierarchical Dependency Injection that allows you to use classes as a search token, rather than their names.
-Clearly delineated providers arrays for DI injectors at the application, module, route, or request level.
-Built-in support for nested routes, such as /api/posts/:postId/comments/:commentId.
-Check for collisions when importing providers. This feature allows you to detect situations where you import two or more modules that export providers…]]></summary>
-        <author>
-            <name>Костя Третяк</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to validate environmental variables in Node.js (with Typescript)]]></title>
-        <id>https://dev.to/joncodes/how-to-validate-environmental-variables-in-node-js-with-typescript-1b1a</id>
-        <link href="https://dev.to/joncodes/how-to-validate-environmental-variables-in-node-js-with-typescript-1b1a"/>
-        <updated>2021-05-23T21:49:07.000Z</updated>
-        <summary type="html"><![CDATA[Source code: Github
-
-
-
-
-
-  
-  
-  The baseline project
-
-
-This post assumes you are following along with the baseline project tutorial, but the concepts apply to any Typescript project.
-Currently, we are storing the configuration for our application externally, in environmental variables. This is beneficial, because it allows us to change our app configuration without changing any of the code in our codebase.
-However, we want to ensure that all of the environmental variables needed for our app to run are set when our app starts. Otherwise, our app might start initially, then crash due to an error when a variable is unexpectedly undefined.
-It would also be nice to export a single config object that we can use throughout our application, instead of having to reference process.env.VARIABLE_NAME…]]></summary>
-        <author>
-            <name>Jon Webb</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to validate environmental variables in Node.js (with Typescript)]]></title>
-        <id>https://dev.to/joncodes/how-to-validate-environmental-variables-in-node-js-with-typescript-1b1a</id>
-        <link href="https://dev.to/joncodes/how-to-validate-environmental-variables-in-node-js-with-typescript-1b1a"/>
-        <updated>2021-05-23T21:49:07.000Z</updated>
-        <summary type="html"><![CDATA[Source code: Github
-
-
-
-
-
-  
-  
-  The baseline project
-
-
-This post assumes you are following along with the baseline project tutorial, but the concepts apply to any Typescript project.
-Currently, we are storing the configuration for our application externally, in environmental variables. This is beneficial, because it allows us to change our app configuration without changing any of the code in our codebase.
-However, we want to ensure that all of the environmental variables needed for our app to run are set when our app starts. Otherwise, our app might start initially, then crash due to an error when a variable is unexpectedly undefined.
-It would also be nice to export a single config object that we can use throughout our application, instead of having to reference process.env.VARIABLE_NAME…]]></summary>
-        <author>
-            <name>Jon Webb</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Azure Devops 2019.1 Build Agent running on a pod in my Kubernetes cluster]]></title>
-        <id>https://dev.to/stevesims2/azure-devops-2019-1-build-agent-running-on-a-pod-in-my-kubernetes-cluster-4m8c</id>
-        <link href="https://dev.to/stevesims2/azure-devops-2019-1-build-agent-running-on-a-pod-in-my-kubernetes-cluster-4m8c"/>
-        <updated>2021-05-23T20:13:12.000Z</updated>
-        <summary type="html"><![CDATA[As a "toy" I decided to try and revive an old version of Microsoft's Azure Pipelines Agent on an image from before they made that Azure Services Only.   However, I updated the agent on the ubuntu-16.04-tfs-2018-u2 image to a later version of the linux agent.  (2.140.2)
-https://hub.docker.com/_/microsoft-azure-pipelines-vsts-agent
-I had to also update the Team Explorer Everywhere (TEE/TEE-cli) that was embedded in that to the latest version. And upgrade java to version 11.   But once that was done, it works well.  Its a tad on the large size for an image.  (1gb), but it seems ok on its memory and CPU usage.  See the kubebox graph at the bottom.
-
-
-Does anyone think this could be more than just a toy ?  I'm a novice at most Kubernetes stuff compared to the folks here, but I wanted to share this.]]></summary>
-        <author>
-            <name>SteveSims2</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ծրագրային անվտանգություն՝ SQL Injection (մաս 2)]]></title>
-        <id>https://dev.to/n_babajanyan/sql-injection-2-46g9</id>
-        <link href="https://dev.to/n_babajanyan/sql-injection-2-46g9"/>
-        <updated>2021-05-23T19:31:00.000Z</updated>
-        <summary type="html"><![CDATA[Նախորդ գրառման մեջ տեսանք SQL Injection խոցելիության ընդհանուր բնութագիրը։ Այժմ փորձենք OWASP Juice Shop խոցելի վեբ֊ծրագրում փնտրել տվյալ տեսակի խոցելիություններ։
-Ծրագիրը արխիվի տեսքով կարելի է ներբեռնել նախագծի GitHub էջից, այնուհետև npm start հրամանի միջոցով գործարկել այն (նախապես npm install հրամանով տեղադրելով ծրագրի պահանջված գրադարանները)։ Գործարկվելիս, Juice Shop֊ը հասանելի է դառնում localhost:3000 հասցեով։ 
-Առաջին հերթին կարելի է ուշադրություն դարձնել Account հղմամբ գտնվող մուտք գործման (login) հատվածին և այստեղ փորձել SQL injection֊ի պարզագույն տարբերակ՝
-email: ' OR 1=1 --
-password: test
-
-Ստանում ենք հաջողված մուտք ադմինիստրատորի օգտահաշվով, այսինքն տվյալ ծրագրի login էջի email դաշտը ենթակա է SQL injection հարձակման։ 
-Փորձենք հասկանալ ինչու է առաջանում տվյալ խոցելիությունը։ Juice …]]></summary>
-        <author>
-            <name>Narek Babajanyan</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[5 Awesome Thing You Can Build With Node.Js]]></title>
-        <id>https://dev.to/circle/7-awesome-thing-you-can-build-with-node-js-1ke</id>
-        <link href="https://dev.to/circle/7-awesome-thing-you-can-build-with-node-js-1ke"/>
-        <updated>2021-05-23T19:28:20.000Z</updated>
-        <summary type="html"><![CDATA[Node.js is not just for making simple websites, but awesome, dynamic, real-time experiences. Here are some Node.js project ideas to spark your inspiration:
-GIF Chat Room
-
-
-Build your Own Zoom
-
-
-Job Search App
-
-
-Collaborative Drawing Tool
-
-
-Covid-19 Tracker
-
-
-
-At last I want to say that this is just some of the example I gave to you there's anything you can build.
-THANKS FOR CHECKING OUT :D
-JOIN THEVIKCODE NEWLETTER ( GET DAILY WHICH WILL NOT BE AVAIBLE HERE ) - https://thevikcode.substack.com/]]></summary>
-        <author>
-            <name>Vikram Aditya</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Feature flags for Infrastructure as Code]]></title>
-        <id>https://dev.to/leading-edje/feature-flags-for-infrastructure-as-code-4hi8</id>
-        <link href="https://dev.to/leading-edje/feature-flags-for-infrastructure-as-code-4hi8"/>
-        <updated>2021-05-23T18:23:58.000Z</updated>
-        <summary type="html"><![CDATA[Feature what?
-
-
-Feature flags or toggles are often* used in application code to allow for rapid integration of new changes without necessarily enabling them in production.
-*I have no real idea how commonly used they really are
-Feature flags can prevent the dreaded long running feature branch that keeps accumulating changes that you hold off from merging because you're not ready for it to go into production in the next release.
-These same challenges can apply to your Infrastructure as Code (IaC) where having changes to shared resources you want to test in a lower environment but aren't ready to promote to production can be a real problem.
-Consider this scenario:
-You're making changes to your network in a cloud environment.
-You've got your changes in a development environment and everything …]]></summary>
-        <author>
-            <name>Andrew May</name>
         </author>
     </entry>
     <entry>
@@ -1715,139 +2068,6 @@ I fo…]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[React Clean Architecture]]></title>
-        <id>https://dev.to/kpiteng/react-clean-architecture-114f</id>
-        <link href="https://dev.to/kpiteng/react-clean-architecture-114f"/>
-        <updated>2021-05-23T13:34:03.000Z</updated>
-        <summary type="html"><![CDATA[Hello Developers! Many of us use various design patterns with React Development to make React Apps more clean, clearly understandable, and more structured. But still we are facing issues with coding standards, we changed at one place and it breaks at another place. Is there any resolution for this? Yes, Try React Clean Architecture!
-Quick Highlights  - React Clean Architecture - which makes your code more structured, clean and anyone can easily take over your code and start working with you. So Let’s continue next. Which include everything API, State Management (Redux, Redux Saga), Storybook, Utilities, Component/Container and you can add more relevant features in defined structure hierarchy.
-react-clean-architecture
-├── android
-├── ios
-├── src
-│   ├── application
-│   │   ├── common
-│   │ …]]></summary>
-        <author>
-            <name>kpiteng</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Morsible - Morse App]]></title>
-        <id>https://dev.to/ilhamwahabigx/morsible-morse-app-278h</id>
-        <link href="https://dev.to/ilhamwahabigx/morsible-morse-app-278h"/>
-        <updated>2021-05-23T13:09:04.000Z</updated>
-        <summary type="html"><![CDATA[Morsible - fast and reliable morse translator https://morsible.iwgx.io
-✨ Translate text to morse or vice versa
-Tech stack:
-Reactjs -> Preactjs with Typescript in Next.js
-Tailwind CSS with twin.macro and emotion for styling
-testing-library and Jest for testing
-Analytics with Splitbee
-Google Cloud for text-to-speech and speech-to-text
-Deployed to Vercel
-Link: https://morsible.iwgx.io
-https://github.com/iwgx/morsible]]></summary>
-        <author>
-            <name>Ilham Wahabi</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Create a new Angular 4 Component – Multiple Components Angular Application]]></title>
-        <id>https://dev.to/loizenai/create-a-new-angular-4-component-multiple-components-angular-application-1k3m</id>
-        <link href="https://dev.to/loizenai/create-a-new-angular-4-component-multiple-components-angular-application-1k3m"/>
-        <updated>2021-05-23T07:35:20.000Z</updated>
-        <summary type="html"><![CDATA[https://grokonez.com/frontend/angular/create-new-angular-4-component-multiple-components
-Create a new Angular 4 Component – Multiple Components Angular Application
-The previous post, We had introduced how to set up an Angular 4 App with SpringBootSuite. In the tutorial, JavaSampleApproach will show you how to create a new Angular 4 Component and build an Angular Application with multiple Components.
-Angular 6:
-Angular 6 Component – How to create & integrate New Angular 6 Component
-Related articles:
-How to integrate Angular 4 with SpringBoot Web App and SpringToolSuite
-I. Technologies
-– Angular 4
-II. Angular Component
-Example:
-import { Component, OnInit } from '@angular/core';
-import { Customer } from './customer';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-
-export class AppComponent implements OnInit {
-  customers: Customer[];
-  selectedCustomer: Customer;
-
-  constructor() {}
-
-  getCustomers() {
-     ...
-  }
-
-  ngOnInit(): void {
-     this.customers = this.getCustomers();
-  }
-
-}
-What is Component?
-Angular Application. It allows us to mark a logic class, and additional metadata for processing at runtime. Components have a template (in above code is './app.component.html') and only one component can be instantiated per an element in a template. 
-NgModule. So you should declare it in a NgModule:
-More at:
-https://grokonez.com/frontend/angular/create-new-angular-4-component-multiple-components
-Create a new Angular 4 Component – Multiple Components Angular Application]]></summary>
-        <author>
-            <name>loizenai</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to develop with Angular Service (Angular 4 Service)]]></title>
-        <id>https://dev.to/loizenai/how-to-develop-with-angular-service-angular-4-service-2567</id>
-        <link href="https://dev.to/loizenai/how-to-develop-with-angular-service-angular-4-service-2567"/>
-        <updated>2021-05-23T06:59:16.000Z</updated>
-        <summary type="html"><![CDATA[https://grokonez.com/frontend/angular/develop-angular-service-angular4-service
-How to develop with Angular Service (Angular 4 Service)
-The previous post, we had introduced Angular Components (Angular4 Component). And in the tutorial, JavaSampleApproach will continuously  show you how to use Angular Services (Angular4 Services) to develop an Angular Application.
-Related articles:
-How to setup Angular IDE with Spring Tool Suite
-Create a new Angular4 Component – Multiple Components Angular Application
-I. Technologies
-– Angular 4
-II. Angular Service
-What is Angular Service?
-
-Angular Service is an JavaScript function that's responsible for doing a specific task. Using Services to exchange and processing data then keeps Components focused on doing business logic on the view.  So it's very helpful to organize a big project that makes codes more clear and clean for development and reusability.
-III. Practice
-Step to do:
-Create an Angular Service
-
-Implement logic for Angular Application
-
-Run and check results
-***Note: to do the tutorial, We reuse the sourcecode and continue with the previous post. So please check out it for more details:
-Create a new Angular4 Component – Multiple Components Angular Application
-1. Create an Angular Service
-/angular4client/src/app, choose: File -> New -> Service:
-
-
-Press Finish,
-
--> New project's structure:
-
-Log: "WARNING Service is generated but not provided, it must be provided to be used"
-
--> Need register the DataService by using providers property. So we will do it later in a below session.
-We got 2 new files: data.service.spec.ts and data.service.ts. Check sourcecode of the main file data.service.ts:
-More at:
-https://grokonez.com/frontend/angular/develop-angular-service-angular4-service
-How to develop with Angular Service (Angular 4 Service)]]></summary>
-        <author>
-            <name>loizenai</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[v1.8.1]]></title>
         <id>https://github.com/osmoscraft/osmosfeed/releases/tag/v1.8.1</id>
         <link href="https://github.com/osmoscraft/osmosfeed/releases/tag/v1.8.1"/>
@@ -1866,136 +2086,6 @@ How to develop with Angular Service (Angular 4 Service)]]></summary>
 Thank you: @LooperXX.]]></summary>
         <author>
             <name>Release notes from osmosfeed</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Migrei do VS Code para o VIM]]></title>
-        <id>https://dev.to/cezarmzz/migrei-do-vs-code-para-o-vim-4o0p</id>
-        <link href="https://dev.to/cezarmzz/migrei-do-vs-code-para-o-vim-4o0p"/>
-        <updated>2021-05-23T02:04:29.000Z</updated>
-        <summary type="html"><![CDATA[Uma mudança gradativa...
-
-
-Pois é, hoje temos como padrão de editor de código para várias e várias linguagens, é Visual Studio Code, VS Code.
-Se você não tem paciência e muito menos vontade de aprender coisas novas, o VIM não é feito para você.Não é uma crítica, mas uma verdade.
-A primeira coisa que você vai precisar aprender para usar o VIM é entender que tudo se baseia em uso de teclado e seu fluxo de trabalho é diferente, pois, não é simplesmente abrir e sair escrevendo código.
-NORMAL.Para editar, pressionando a tecla i você vai entrar no modo INSERT. 
-ESC, para retornar ao modo NORMAL e em seguida pressione a combinação de teclas :w nomedoarquivo.ts. O comando :w vai salvar o arquivo. Para sair do VIM, só pressionar a combinação :q. 
-Eu usei muito o VSCode, as vezes 3, 4 projetos abert…]]></summary>
-        <author>
-            <name>Cezar Augusto Mezzalira</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[Windows][Node.js][TypeScript] Get installed printer driver names]]></title>
-        <id>https://dev.to/masanori_msl/windows-node-js-typescript-get-installed-printer-driver-names-bj2</id>
-        <link href="https://dev.to/masanori_msl/windows-node-js-typescript-get-installed-printer-driver-names-bj2"/>
-        <updated>2021-05-23T00:10:02.000Z</updated>
-        <summary type="html"><![CDATA[Intro
-
-
-I wanted to print PDF files.
-Windows 10 ver.20H2
-Node.js ver.16.2.0
-TypeScript ver.4.2.4
-pdf-to-printer ver.2.0.4
-iconv-lite ver.0.4.24
-I can get installed printer driver names by "pdf-to-printer".
-GitHub - artiebits/pdf-to-printer: Print PDF files from Node.js and Electron
-
-
-
-import ptp from "pdf-to-printer";
-async function print()
-{
-    const printerName = 'Microsoft Print to PDF';
-    const printers = await ptp.getPrinters();
-    for(const p of printers)
-    {
-        console.log(`PRINTER Name: ${p.name} compare: ${p.name === printerName}`);
-    }
-}
-print();
-
-PRINTER Name: OneNote for Windows 10 compare: false
-PRINTER Name: OneNote (??????) compare: false
-PRINTER Name: OneNote (Desktop) compare: false
-PRINTER Name: Microsoft XPS Document Writer compare: false
-PRINTER Name: Micro…]]></summary>
-        <author>
-            <name>Masui Masanori</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Return to the Land of Environment Variables]]></title>
-        <id>https://dev.to/maxjacobzander/return-to-the-land-of-environment-variables-2gfp</id>
-        <link href="https://dev.to/maxjacobzander/return-to-the-land-of-environment-variables-2gfp"/>
-        <updated>2021-05-22T16:19:20.000Z</updated>
-        <summary type="html"><![CDATA[If you read my blog post about deploying my first full-stack app, you may remember our "Quick Deviation into the Land of Environment Variables" (if you haven't read it yet, you can check that out here!). I wanted to write a small follow-up piece for those of you who are trying to protect your data in a React app.
-As I mentioned in my last blog post, I have been working on a project for a small business. I built the site with React and, as I mentioned in my last post, utilized EmailJS to help me handle the contact form. When it came to pushing to Github, I knew that I didn't want to push any information that could be traced back to my client's email account and, after using Environment Variables to help do that in Ruby, I figured that I could probably do the same thing in React! Wouldn't yo…]]></summary>
-        <author>
-            <name>Max Zander</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Fuck up story; rotate committed secret(s) on multiple Heroku apps]]></title>
-        <id>https://dev.to/hilleer/fuck-up-story-rotate-committed-secret-s-on-multiple-heroku-apps-26l</id>
-        <link href="https://dev.to/hilleer/fuck-up-story-rotate-committed-secret-s-on-multiple-heroku-apps-26l"/>
-        <updated>2021-05-22T11:16:29.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-I have read a lot of exciting, helpful and inspiring articles/posts on dev.to and have felt like giving something back for a long time. Additionally a colleague of mine have been pushing me to writing a blog post for a long time (thank you, Jonathan) so I thought this fuck up and how it was solved, might as well be helpful, interesting and inspiring for others.
-Please don't hesitate to give any kind of feedback for my first post!
-As the title indicates, I committed and pushed a secret to git. I had to run some code locally relying on this secret and as I were eager to resolve the problem I was working on, I eventually forgot all about the secret.... So I staged the file files, wrote a commit message, committed them and pushed it all to GitHub, including the secret and boom! …]]></summary>
-        <author>
-            <name>Daniel Hillmann</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Never trust an upload's filename]]></title>
-        <id>https://dev.to/kahdev/never-trust-an-upload-s-filename-3fhj</id>
-        <link href="https://dev.to/kahdev/never-trust-an-upload-s-filename-3fhj"/>
-        <updated>2021-05-22T09:25:21.000Z</updated>
-        <summary type="html"><![CDATA[It's generally accepted that we should never simply trust a user's input. Otherwise, we're vulnerable to malicious input (CE-5). For a file upload from a user, it’s common to check their file size or type, especially when restricting them by those two attributes. But one that might get overlooked is the filename.
-Checking the filename is especially important when it displayed on a web page to prevent HTML or XSS injection. That’s just on the frontend. On the backend, there are the other usual injections to worry about. Like SQL injection, when storing the name in a database. Or path injection, if storing in a path based on the name.
-It might be tempting to dismiss this possibility as something that would never happen. After all, we must make the files first before we can upload them and th…]]></summary>
-        <author>
-            <name>Kah</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Self-signed certificates: shell script to generate]]></title>
-        <id>https://dev.to/nabbisen/bash-script-to-generate-self-signed-certificates-5hfj</id>
-        <link href="https://dev.to/nabbisen/bash-script-to-generate-self-signed-certificates-5hfj"/>
-        <updated>2021-05-22T06:38:38.000Z</updated>
-        <summary type="html"><![CDATA[* The cover image is originally by OpenClipart-Vectors and edited with great appreciation.
-I created Bash script to generate self-signed certificates. It was maybe when I tried some tests on MariaDB or PostgreSQL connection.
-#!/bin/sh
-
-# [ global parameters ]
-# certificate configuration
-readonly CERT_DAYS=36500
-readonly RSA_STR_LEN=4096
-readonly PREFIX=xxx-
-readonly CERT_DIR=./ssl
-readonly KEY_DIR=./ssl/private
-# certificate content definition
-readonly ADDRESS_COUNTRY_CODE=XX
-readonly ADDRESS_PREFECTURE=XXXX
-readonly ADDRESS_CITY=XXXX
-readonly COMPANY_NAME=XXXXXXXX
-readonly COMPANY_SECTION=XXXXXXXX
-readonly CERT_PASSWORD= # no password
-# - ca
-readonly CA_DOMAIN=x.domain
-readonly CA_EMAIL=ca@email.address
-# - server
-readonly SERVER_DOMAIN=y.domain
-readonly SERVER_EMAIL=server@email.address
-…]]></summary>
-        <author>
-            <name>Heddi Nabbisen</name>
         </author>
     </entry>
     <entry>
@@ -2078,36 +2168,6 @@ The post Learn CSS! appeared first on CSS-Tricks.
 You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <author>
             <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Angular 11 Tutorial: Code a Project from Scratch]]></title>
-        <id>60a6b3ab906c5207e3a7f5fa</id>
-        <link href="https://www.freecodecamp.org/news/angular-11-tutorial-code-a-project-from-scratch/"/>
-        <updated>2021-05-20T19:14:48.000Z</updated>
-        <summary type="html"><![CDATA[Angular is one of the most popular web frameworks. We just released a course on the freeCodeCamp.org YouTube channel that will teach you how to create an Angular 11 project from scratch. It uses a public API to create a game database website. You will gain a great foundation]]></summary>
-        <author>
-            <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Learn Modern C++ by Building an Audio Plugin]]></title>
-        <id>60a694ab906c5207e3a7f544</id>
-        <link href="https://www.freecodecamp.org/news/learn-modern-cpp-by-building-an-audio-plugin/"/>
-        <updated>2021-05-20T17:12:29.000Z</updated>
-        <summary type="html"><![CDATA[A lot of C++ courses teach you how to build toy projects with no real-world application. But it can often be more helpful to write programs people would actually use. We just released a 5-hour C++ course that will teach you how to write modern C++ code by building an]]></summary>
-        <author>
-            <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Get Started with Version Control Using Git]]></title>
-        <id>60a4b5c7906c5207e3a7e2bb</id>
-        <link href="https://www.freecodecamp.org/news/get-started-with-version-control-and-git/"/>
-        <updated>2021-05-20T15:20:53.000Z</updated>
-        <summary type="html"><![CDATA[In this tutorial, you'll learn what version control is and how you can contribute to open-source projects using Git.  We'll get through the fundamentals of Git and I'll give you the knowledge that is indispensable for any web developer. What is Git?Git is a version control software which lets]]></summary>
-        <author>
-            <name>freeCodeCamp.org</name>
         </author>
     </entry>
     <entry>
@@ -2202,18 +2262,6 @@ You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How to Create Neon Text With CSS]]></title>
-        <id>https://css-tricks.com/?p=340420</id>
-        <link href="https://css-tricks.com/how-to-create-neon-text-with-css/"/>
-        <updated>2021-05-18T14:31:25.000Z</updated>
-        <summary type="html"><![CDATA[Neon text can add a nice, futuristic touch to any website. I’ve always loved the magic of neon signs, and wanted to recreate them using CSS. I thought I’d share some tips on how to do it! In this article, …
-The post How to Create Neon Text With CSS appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.]]></summary>
-        <author>
-            <name>Silvia O'Dwyer</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How To Create, Edit And Animate SVGs All In One Place With SVGator 3.0]]></title>
         <id>https://smashingmagazine.com/2021/05/create-edit-animate-svg-svgator3/</id>
         <link href="https://smashingmagazine.com/2021/05/create-edit-animate-svg-svgator3/"/>
@@ -2231,20 +2279,6 @@ You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <summary type="html"><![CDATA[In this episode, we’re talking about VisBug. What is it, and how is it different from the array of options already found in Chrome DevTools? Drew McLellan talks to its creator Adam Argyle to find out.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Drew McLellan)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Humble `img` Element And Core Web Vitals]]></title>
-        <id>https://css-tricks.com/?p=340716</id>
-        <link href="https://www.smashingmagazine.com/2021/04/humble-img-element-core-web-vitals/"/>
-        <updated>2021-05-17T22:38:06.000Z</updated>
-        <summary type="html"><![CDATA[Addy Osmani on images in HTML:
-The humble <img> element has gained some superpowers over the years. Given how central it is to image optimization on the web, let’s catch up on what it can do and how it can 
-…
-The post The Humble `img` Element And Core Web Vitals appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.]]></summary>
-        <author>
-            <name>Chris Coyier</name>
         </author>
     </entry>
     <entry>
@@ -2447,7 +2481,7 @@ Chore: Refactored parameter passing for enrich step.]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[A Guide To Undoing Mistakes With Git]]></title>
+        <title type="html"><![CDATA[A Guide To Undoing Mistakes With Git (Part 1)]]></title>
         <id>https://smashingmagazine.com/2021/05/undoing-mistakes-git-part1/</id>
         <link href="https://smashingmagazine.com/2021/05/undoing-mistakes-git-part1/"/>
         <updated>2021-05-04T14:30:00.000Z</updated>
@@ -2514,16 +2548,6 @@ Chore: Refactored parameter passing for enrich step.]]></summary>
         <summary type="html"><![CDATA[Easing functions can change the look and feel of an animation by affecting the rate, or speed, of an animation. In this article, we’re going to take a deep dive into easing functions and see how we can use them to create those natural and stunning animations.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Adrian Bece)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How To Bake Layers Of Accessibility Testing Into Your Process]]></title>
-        <id>https://smashingmagazine.com/2021/04/bake-layers-accessibility-testing-process/</id>
-        <link href="https://smashingmagazine.com/2021/04/bake-layers-accessibility-testing-process/"/>
-        <updated>2021-04-26T11:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Accessibility experts Kate Kalcevich and Mike Gifford introduce readers to "layered accessibility testing”, a practice of using a variety of tools and approaches at different stages in the digital product lifecycle to catch accessibility issues early — when it’s easier and cheaper to fix them.]]></summary>
-        <author>
-            <name>hello@smashingmagazine.com (Kate Kalcevich &amp; Mike Gifford)</name>
         </author>
     </entry>
 </feed>
