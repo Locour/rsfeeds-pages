@@ -1,10 +1,947 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>urn:2021-05-29T01:52:07.894Z</id>
+    <id>urn:2021-05-30T02:03:08.593Z</id>
     <title>osmos::feed</title>
-    <updated>2021-05-29T01:52:07.894Z</updated>
+    <updated>2021-05-30T02:03:08.593Z</updated>
     <generator>osmosfeed 1.9.0</generator>
     <link rel="alternate" href="index.html"/>
+    <entry>
+        <title type="html"><![CDATA[Upgrade a Rails app from the Heroku-16 to the Heroku-18 Stack]]></title>
+        <id>https://dev.to/jbranchaud/upgrade-a-rails-app-from-the-heroku-16-to-the-heroku-18-stack-5kp</id>
+        <link href="https://dev.to/jbranchaud/upgrade-a-rails-app-from-the-heroku-16-to-the-heroku-18-stack-5kp"/>
+        <updated>2021-05-30T00:44:42.000Z</updated>
+        <summary type="html"><![CDATA[I'm working with a client to urgently upgrade their Rails app from the Heroku-16 stack to the Heroku-18 stack. Heroku has already end-of-life'd the Heroku-16 stack at the beginning of this month. And in a few days, on June 1st, they will completely turn off support patches and new builds of Heroku-16 apps.
+The Heroku-18 stack is supported until April 2023 (source).
+The minimum Ruby version supported by the Heroku-18 is Ruby 2.4.10 (source).
+Install the target Ruby version:
+$ asdf install ruby 2.4.10
+
+Switch to that Ruby version:
+$ asdf local ruby 2.4.10
+$ ruby --version
+ruby 2.4.10p364 (2020-03-31 revision 67879) [x86_64-darwin19]
+
+Install an older version of bundler (pre 2.x):
+$ gem install bundler:1.17.3
+
+Install all the app's gems with for the new Ruby version using the specific version…]]></summary>
+        <author>
+            <name>Josh Branchaud</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Write Asynchronous JavaScript Code]]></title>
+        <id>https://dev.to/cpustejovsky/how-to-write-asynchronous-code-448h</id>
+        <link href="https://dev.to/cpustejovsky/how-to-write-asynchronous-code-448h"/>
+        <updated>2021-05-29T22:37:18.000Z</updated>
+        <summary type="html"><![CDATA[How to Write Asynchronous Code in NodeJS
+
+
+JavaScript is a non-blocking, single-threaded programming language. It will not go from top to bottom, running your functions one line at a time like you would expect.
+For example, here is some simple code to read a file:
+const fs = require("fs");
+
+console.log("starting");
+fs.readFile("/path/to/helloworld.txt", "utf8", (err, data) => {
+  if (err) console.log(err);
+  console.log(data);
+});
+console.log("finishing");
+
+You may expect the result to be
+starting
+<file contents>
+finishing
+
+But instead you get:
+starting
+finishing
+<file contents>
+
+This is because JavaScript does not stop. It will keep going down your code while waiting for a process to finish. There are three ways to handle this and I'll go over them from worst to best.
+To use callbacks for…]]></summary>
+        <author>
+            <name>Charles Clinton Pustejovsky III</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How I Created an Event-Driven Backend with RxJS, Server-Sent Events and ExpressJS]]></title>
+        <id>https://dev.to/sh4yy/how-i-created-an-event-driven-backend-with-rxjs-server-sent-events-and-expressjs-4d6k</id>
+        <link href="https://dev.to/sh4yy/how-i-created-an-event-driven-backend-with-rxjs-server-sent-events-and-expressjs-4d6k"/>
+        <updated>2021-05-29T20:36:28.000Z</updated>
+        <summary type="html"><![CDATA[About a month ago, a friend and I came up with an idea for a small website and decided to create an MVP in a couple of days to give it a shot. The idea was pretty simple; a meme-driven chat room and a live price chart for each cryptocurrency. I was assigned to create the backend for the project, and my friend would make the web client.
+I set three requirements for myself before starting to work on the server. First and foremost, I wanted to get the MVP out as soon as possible. Secondly, I wanted to make the server as lightweight as possible to just leave it running on a cheap VM. Lastly, I wanted to design the architecture to allow for easy scaling if the shit coin investors decide to make another stupid decision and use our application.
+The first step was to think of the entire server as …]]></summary>
+        <author>
+            <name>Shayan</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[You can't improve what you can't measure: 13 KPIs necessary for every DevOps leader]]></title>
+        <id>https://dev.to/ryan_opsera/you-can-t-improve-what-you-can-t-measure-13-kpis-necessary-for-every-devops-leader-22ib</id>
+        <link href="https://dev.to/ryan_opsera/you-can-t-improve-what-you-can-t-measure-13-kpis-necessary-for-every-devops-leader-22ib"/>
+        <updated>2021-05-29T18:58:49.000Z</updated>
+        <summary type="html"><![CDATA[Original Post: https://www.opsera.io/blog/you-cant-improve-what-you-cant-measure-13-kpis-necessary-for-every-devops-leader
+DevOps is not an event: it’s a culture. As such, it demands continual improvement in order to stay relevant and competitive. Improvement, however, requires measurement. KPIs are measurements that allow DevOps leaders to see where their teams are, and map out where they are going.
+KPIs are metrics that help everyone in an organization from the engineer to the CTO, CIO or CISO. When people at all levels are on the same page, using the same data to build upon, progress happens more easily and quickly. The engineering team uses the information to improve, while the executive team uses it to make decisions that reshape the DevOps in the organization.
+KPIs also align everyon…]]></summary>
+        <author>
+            <name>Ryan Cartwright</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fedora Workstation 34: Guia pós-instalação e Ambiente Dev JavaScript]]></title>
+        <id>https://dev.to/thiagoreis/fedora-workstation-34-guia-pos-instalacao-e-ambiente-dev-javascript-jbo</id>
+        <link href="https://dev.to/thiagoreis/fedora-workstation-34-guia-pos-instalacao-e-ambiente-dev-javascript-jbo"/>
+        <updated>2021-05-29T18:17:50.000Z</updated>
+        <summary type="html"><![CDATA[O intuito deste post é apresentar o essencial a se fazer após a instalação do Fedora Workstation 34 e de bônus a configuração de um ambiente essencial de desenvolvimento JavaScript.
+Vamos editar o arquivo /etc/dnf/dnf.conf e habilitar os mirrors mais rápidos e aumentar a quantidade de downloads paralelos. Execute os seguintes comandos no terminal:
+echo 'fastestmirror=1' | sudo tee -a /etc/dnf/dnf.conf 
+echo 'max_parallel_downloads=10' | sudo tee -a /etc/dnf/dnf.conf 
+echo 'deltarpm=true' | sudo tee -a /etc/dnf/dnf.conf
+
+Os 3 comandos acima irão adicionar as diretivas fastestmirror, max_parallel_downloads e deltarpm ao arquivo:
+
+Free:
+sudo rpm -Uvh https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
+
+Non-free:
+sudo rpm -Uvh https://download1.rpmf…]]></summary>
+        <author>
+            <name>Thiago Reis</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mi experiencia con Digital Ocean como hosting]]></title>
+        <id>https://dev.to/neon_affogato/mi-experiencia-con-digital-ocean-como-hosting-50k8</id>
+        <link href="https://dev.to/neon_affogato/mi-experiencia-con-digital-ocean-como-hosting-50k8"/>
+        <updated>2021-05-29T17:58:50.000Z</updated>
+        <summary type="html"><![CDATA[¿Estás eligiendo un servicio de hosting pero no sabes cual elegir? De seguro te topaste con publicidad de Digital Ocean pero quieres escuchar una opinión real de lo que tienen para ofrecer. Llevo usando Digital Ocean como hosting de mis proyectos personales por varios años y te platico como ha sido mi experiencia y lo que puedes encontrar si decides contratar sus servicios.
+Estoy casi seguro de que has considerado usar Vercel, Netifly, Heroku u otro servicio de hosting moderno para tu aplicación (probablemente hecha en Javascript). Pero, ¿es lo mismo? Bien pues aquí hay que hacer una pequeña aclaración, solo en caso de que no lo sepas; existen diferentes tipos de empresas para servicios en línea; IAAS, Infrastructure as a service; y PAAS, platform as a service.
+Traducido al español como "i…]]></summary>
+        <author>
+            <name>Eduardo Zepeda</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JavaScript tips: The labeled statement]]></title>
+        <id>https://dev.to/davidarmendariz/the-labeled-statement-in-javascript-20f8</id>
+        <link href="https://dev.to/davidarmendariz/the-labeled-statement-in-javascript-20f8"/>
+        <updated>2021-05-29T15:47:36.000Z</updated>
+        <summary type="html"><![CDATA[What if you type in the console something like this?
+label: {}
+
+You won't have any errors. This is valid JS!
+It turns out you can reference loops in Javascript. This was something I did not know a few days ago, but is a really cool and helpful feature in Javascript. In the following video, I explain you with examples how to use labeled statements.]]></summary>
+        <author>
+            <name>David Armendáriz</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React + Firebase: A Simple Context-based Authentication Provider]]></title>
+        <id>https://dev.to/dchowitz/react-firebase-a-simple-context-based-authentication-provider-1ool</id>
+        <link href="https://dev.to/dchowitz/react-firebase-a-simple-context-based-authentication-provider-1ool"/>
+        <updated>2021-05-29T15:23:38.000Z</updated>
+        <summary type="html"><![CDATA[This post showcases a quick and easy way to make a Firebase-authenticated user available throughout your React web app.
+We are using here plain React with Typescript, and no extra state management library like Redux involved.
+Firebase offers us to register a callback that gets called every time a user is authenticated or signed out to get notified about the current authentication situation.
+import firebase from "firebase/app";
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log("authenticated", user);
+  } else {
+    console.log("signed out");
+  }
+});
+
+We thus could implement a React component that is interested in the authenticated user quite straightforward like this:
+import * as React from "react";
+import firebase from "firebase/app";
+
+function CurrentUser() {
+ …]]></summary>
+        <author>
+            <name>Denny Christochowitz</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to add editable post angular]]></title>
+        <id>https://dev.to/mateuszto/how-to-add-editable-post-angular-44el</id>
+        <link href="https://dev.to/mateuszto/how-to-add-editable-post-angular-44el"/>
+        <updated>2021-05-29T15:21:54.000Z</updated>
+        <summary type="html"><![CDATA[Hi, i got my app and now I try to make edit feature but I can't do you got any tutorials or tips?
+https://stackblitz.com/edit/angular-ivy-qkhrjx?file=src%2Fapp%2Fnotes%2Fnotes.component.ts]]></summary>
+        <author>
+            <name>Mateusz Tomczyk</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to add editable post angular]]></title>
+        <id>https://dev.to/mateuszto/how-to-add-editable-post-angular-44el</id>
+        <link href="https://dev.to/mateuszto/how-to-add-editable-post-angular-44el"/>
+        <updated>2021-05-29T15:21:54.000Z</updated>
+        <summary type="html"><![CDATA[Hi, i got my app and now I try to make edit feature but I can't do you got any tutorials or tips?
+https://stackblitz.com/edit/angular-ivy-qkhrjx?file=src%2Fapp%2Fnotes%2Fnotes.component.ts]]></summary>
+        <author>
+            <name>Mateusz Tomczyk</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Docker `with_build_env.sh` Script]]></title>
+        <id>https://dev.to/smortimerk/docker-withbuildenv-sh-script-4o9a</id>
+        <link href="https://dev.to/smortimerk/docker-withbuildenv-sh-script-4o9a"/>
+        <updated>2021-05-29T15:01:02.000Z</updated>
+        <summary type="html"><![CDATA[In Docker for the Build Process, I introduced the idea of extracting the build phase of a project into a dedicated build_img.sh script, which uses the project's Dockerised build environment to build the "run" image for the project, allowing a project to be built on a host environment without installing any extra tooling other than Docker. In this post I'll expand on this idea and show how we can use this script as a basis for a new, reusable script that allows us to easily work with the build environment of our project.
+The idea here is to create a with_build_env.sh script which, at its most basic, will take a command and run it in the build environment, with the local project directory also mounted in this build environment. This means that we could, for example, run bash scripts/with_bui…]]></summary>
+        <author>
+            <name>Seán Kelleher</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Vim Cheat Sheet]]></title>
+        <id>https://dev.to/harvey/the-vim-cheat-sheet-5624</id>
+        <link href="https://dev.to/harvey/the-vim-cheat-sheet-5624"/>
+        <updated>2021-05-29T14:53:48.000Z</updated>
+        <summary type="html"><![CDATA[Vim is a highly configurable text editor built to enable efficient text editing. It is an improved version of the vi editor distributed with most UNIX systems.
+Vim is often used by programmers on Linux. But it can be used on Mac OS X and Windows too.
+
+Vim is a powerful text editor that runs in a terminal, yet can be used to edit any kind of file. It's old, it's weird, and it's hard to learn but also one of the most powerful tools for editing code on any operating system.
+So what about commands?
+Here's a handy cheat sheet to help you get started with the editor. 
+
+
+
+Cursor Movement
+
+
+
+
+
+h
+move cursor left
+
+
+j
+move cursor down
+
+
+k
+move cursor up
+
+
+l
+move cursor right
+
+
+w
+jump forwards to the start of a word
+
+
+b
+jump backwards to the start of a word
+
+
+
+To write and to use commands press ESC for command mode or i for insert mode.
+To save, open and quit a file:
+
+
+
+Basic editor commands
+
+
+
+
+
+:e filename
+edit a file in a new buffer
+
+
+:w
+write (save) the file, but don't exit
+
+
+:wq
+write (save) and quit
+
+
+:x
+write (save) and quit
+
+
+:q
+quit (fails if there are unsaved changes)
+
+
+:q!
+quit and throw away unsaved changes
+
+
+:qa
+quit all buffers and windows
+
+
+ZZ
+write (save) current file, if modified, and quit
+
+
+ZQ
+quit without checking for changes
+
+
+
+You can copy and paste text too:
+
+
+
+Cut and Paste
+
+
+
+
+
+yy
+yank (copy) a line
+
+
+2yy
+yank (copy) 2 lines
+
+
+p
+put (paste) the clipboard after cursor
+
+
+P
+put (paste) before cursor
+
+
+dd
+delete (cut) a line
+
+
+2dd
+delete (cut) 2 lines
+
+
+
+There are quite a few commands you have to memorize to use Vim effectively, which can be overwhelming when you’re learning. 
+You can use these exercises to memorize commands.]]></summary>
+        <author>
+            <name>Harvey</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Use Bash to Write a Simple Script]]></title>
+        <id>https://dev.to/jones268/how-to-use-bash-to-write-a-simple-script-3loj</id>
+        <link href="https://dev.to/jones268/how-to-use-bash-to-write-a-simple-script-3loj"/>
+        <updated>2021-05-29T14:37:50.000Z</updated>
+        <summary type="html"><![CDATA[Bash is a Unix shell used in Linux and MacOS. We will be using a bash script to make a program that runs in the background. 
+You need to know how to open a terminal in your operating system. On Ubuntu, you can press Ctrl+Alt+t . On Mac, you can press Command+Space, then type Terminal and press Enter.
+To make bash scripts, you should know Linux commands. To practice the command line, you can use this site
+A Bash script is a text file containing a series of Bash commands. When the file is executed, the commands are executed in sequence as they appear in the text file.
+To get started, you can create a new script called my_script.sh. 
+A simple script would be:
+echo "Hello World"
+
+Make it executable with the command:
+chmod +x my_script.sh
+
+This script will run when you enter the following comma…]]></summary>
+        <author>
+            <name>jones268</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Welcome white hackers]]></title>
+        <id>https://dev.to/jmau111/welcome-white-hackers-4m62</id>
+        <link href="https://dev.to/jmau111/welcome-white-hackers-4m62"/>
+        <updated>2021-05-29T14:37:44.000Z</updated>
+        <summary type="html"><![CDATA[If hackers want to help you, don't reject them.
+Here is a short explanation, but be aware these are generic names inspired by old western movies!
+Hackers are of all kinds, genders, and ages. Forget about the hoodie, the darkroom, and the need for recognition. Not that the cliché never happens, but remember it's a stereotype.
+Anyway, not all hackers are cybercriminals. White hats or "ethical hackers" use their skills to test and ultimately improve security for various organizations and people. For example, banks and medical services can be involved.
+They use the same techniques as gray and black hats to infiltrate systems. Black hats are known for their dark intentions. I would describe gray hats as "not always ethical hackers." Sometimes, they do illegal stuff.
+If you're a black hat, there…]]></summary>
+        <author>
+            <name>Julien Maury</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[We are DKFM - Making DevOps things that make DevOps things easier]]></title>
+        <id>https://dev.to/devops-kung-fu/we-are-dkfm-making-devops-things-that-make-devops-things-easier-8o8</id>
+        <link href="https://dev.to/devops-kung-fu/we-are-dkfm-making-devops-things-that-make-devops-things-easier-8o8"/>
+        <updated>2021-05-29T14:25:33.000Z</updated>
+        <summary type="html"><![CDATA[DevOps, DevSecOps, Rainbow Monkey Unicorn Pony, it really doesn't matter what you call it but one thing is certain - every one of these practices relies on innovative tooling to shift quality issues left to developers. Innovation is something I needed to turn to as a Security Architect many years ago as I built and deployed DevSecOps practices to a few Fortune 10 healthcare organizations.
+When I met Julio Jimenez @juliojimenez
+ we struck up a great friendship built on a shared vision of developing tools that would blur the line between Security and DevOps. We became Essentialists and adopted the mantra that security is just an attribute of quality. With that, we focused on developing tools that improve the quality of the code we built.
+After Dan Walsh joined DKFM we had our core team and o…]]></summary>
+        <author>
+            <name>DJ Schleen</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[vim vs. emacs]]></title>
+        <id>https://dev.to/harvey/vim-vs-emacs-5e96</id>
+        <link href="https://dev.to/harvey/vim-vs-emacs-5e96"/>
+        <updated>2021-05-29T14:05:56.000Z</updated>
+        <summary type="html"><![CDATA[Vim and emacs are two of the most popular text editors in the world. They are very different, with a different design philosophy.
+Vim and Emacs are still used to this day and are both great choices 😁
+Vim's main advantage is that it is very good at being a text editor and that you can do a lot without having to learn anything new.
+You can install plugins, change key mappings, etc. either with the builtin scripting language or by sourcing scripts from your .vimrc .
+Emacs is a text editor but more than that. It can be used for email, browsing the internet and a lot more.
+Vim is a modal editor. It operates in either the insert mode (where keystrokes are entered and text is composed) or the command mode (where text can be moved and modified). 
+It is not until you exit command mode and return t…]]></summary>
+        <author>
+            <name>Harvey</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[gpg command examples]]></title>
+        <id>https://dev.to/jones268/gpg-command-examples-2dek</id>
+        <link href="https://dev.to/jones268/gpg-command-examples-2dek"/>
+        <updated>2021-05-29T13:39:07.000Z</updated>
+        <summary type="html"><![CDATA[gpg is a program to encrypt and decrypt files. In other words, it is a program for privacy and security.
+Your data is safe if you store it on gpg (i.e. encrypted).
+So why would you expose your secret information to the threat of being stolen by leaking it to a computer disk?
+The only reason is ignorance, because encryption is easy and saves you effort and money in the long run.
+Tools like gpg make encryption as easy as saving a file, or even easier.
+gpg linux will help you encrypt your e-mails or to encrypt files on your disk so that nobody else can read them without knowing the decryption password which you alone know.
+If you are new to the linux command line, you can practice here
+Encryption is a method for obscuring electronic data from those who should not see it. 
+Encrypted data is un…]]></summary>
+        <author>
+            <name>jones268</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[gpg command examples]]></title>
+        <id>https://dev.to/jones268/gpg-command-examples-2dek</id>
+        <link href="https://dev.to/jones268/gpg-command-examples-2dek"/>
+        <updated>2021-05-29T13:39:07.000Z</updated>
+        <summary type="html"><![CDATA[gpg is a program to encrypt and decrypt files. In other words, it is a program for privacy and security.
+Your data is safe if you store it on gpg (i.e. encrypted).
+So why would you expose your secret information to the threat of being stolen by leaking it to a computer disk?
+The only reason is ignorance, because encryption is easy and saves you effort and money in the long run.
+Tools like gpg make encryption as easy as saving a file, or even easier.
+gpg linux will help you encrypt your e-mails or to encrypt files on your disk so that nobody else can read them without knowing the decryption password which you alone know.
+If you are new to the linux command line, you can practice here
+Encryption is a method for obscuring electronic data from those who should not see it. 
+Encrypted data is un…]]></summary>
+        <author>
+            <name>jones268</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Building a simple server using Node.js and Express.]]></title>
+        <id>https://dev.to/allyedge/building-a-simple-server-using-node-js-and-express-26hm</id>
+        <link href="https://dev.to/allyedge/building-a-simple-server-using-node-js-and-express-26hm"/>
+        <updated>2021-05-29T13:26:20.000Z</updated>
+        <summary type="html"><![CDATA[In this story, I will show you how to build a simple serve using Node.js and Express!
+I will also talk about why and when to use Node.js for your backend.
+So, what are you waiting for?
+https://link.medium.com/PGLb3EYIEgb]]></summary>
+        <author>
+            <name>Allyedge</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Writing An Operating System - The Boot Process (Part 1)]]></title>
+        <id>https://dev.to/arriqaaq/writing-an-operating-system-the-boot-process-part-1-48p0</id>
+        <link href="https://dev.to/arriqaaq/writing-an-operating-system-the-boot-process-part-1-48p0"/>
+        <updated>2021-05-29T13:04:46.000Z</updated>
+        <summary type="html"><![CDATA[This post was originally published here
+My journey on learning to build a simple OS
+How many times have you read an OS book but not been able to code one?Operating System (OS) books are tedious, but only theory makes it hard to understand how an OS actually works. Here is my attempt to write a simple OS and document some of the concepts learned.
+On a mac, install Homebrew and then brew install qemu nasm
+For testing these low-level programs without continuously having to reboot a machine or risk scrubbing your important data off a disk, we will use a CPU emulator QEmu. 
+docker run -it ubuntu bash.
+NASM is an assembler and disassembler for the Intel x86 architecture. It can be used to write 16-bit, 32-bit (IA-32) and 64-bit (x86-64) programs. 
+Booting an operating system consists of transfer…]]></summary>
+        <author>
+            <name>Farhan</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Integrate a Health Check Endpoint into Your App]]></title>
+        <id>https://dev.to/omarfben/how-to-integrate-a-health-check-endpoint-into-your-app-2oc4</id>
+        <link href="https://dev.to/omarfben/how-to-integrate-a-health-check-endpoint-into-your-app-2oc4"/>
+        <updated>2021-05-29T12:00:18.000Z</updated>
+        <summary type="html"><![CDATA[As your client base grows, so does your responsibility to provide a reliable service at all times. Let's look at how you may achieve piece of mind by adding a few lines of code.
+To begin with, making one is really straightforward and does not need a great deal of technical knowledge. Google "How to create a [insert language] health check" and you'll get some code you can copy/paste in no time!
+The following are some possible causes:
+SLA — You may be forced to adhere to a Service Level Agreement (SLA) that outlines the amount of uptime you must commit to.
+Money loss – a minute of downtime may cost tens of thousands of dollars in some businesses. What would you lose in terms of money and business if you had a minute, an hour, or an entire day of downtime?
+Reputation – a history of downtimes …]]></summary>
+        <author>
+            <name>Omar Ben.</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Single Sign On (SSO) with subdomains using Caddy v2]]></title>
+        <id>https://dev.to/shu8/single-sign-on-sso-with-subdomains-using-caddy-v2-l2i</id>
+        <link href="https://dev.to/shu8/single-sign-on-sso-with-subdomains-using-caddy-v2-l2i"/>
+        <updated>2021-05-29T11:30:43.000Z</updated>
+        <summary type="html"><![CDATA[I've recently taken an interest in self-hosting simple open source applications — to have fun, take control of my privacy, and learn more about Linux, Docker and DevOps!
+However, with this comes the need to add some form of authentication in front of all your services. For example, you probably don't want just anyone to be able to view all your RSS feeds, or use your markdown editor freely!
+The most basic form is HTTP Basic Authentication, which is a pain as it must be configured and re-entered for each subdomain/service. You also need to type it out for each service, which can be challenging on mobile.
+Single Sign On (SSO) on the other hand allows you to authenticate with different services with a single login. For example, if you have a Google account, you can go to youtube.com, gmail.co…]]></summary>
+        <author>
+            <name>Shubham</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to plot bar chart with R]]></title>
+        <id>https://dev.to/maxwizard01/how-to-plot-bar-chart-with-r-1e03</id>
+        <link href="https://dev.to/maxwizard01/how-to-plot-bar-chart-with-r-1e03"/>
+        <updated>2021-05-29T10:52:53.000Z</updated>
+        <summary type="html"><![CDATA[How to plot bar graph in R.
+
+
+One of the important aspect in statistics or data analysis is representing data in a graphical method. Today we are going to learn how to plot a common statistical graph called bar chart.
+well, you don't have any problem concerning that. all you just need to use is the barplot() function. 
+barplot function we declare a variable that will hold all the height given then we can insert it inside the function.
+Codes>>
+height= c(1,3, 6, 1,3,3, 4, 3, 3, 1, 3 ,5 ,1, 2, 1 ,4, 3, 2 ,3 ,1 ,1, 1 ,1, 4, 3, 1,5,5)
+barplot(height) # this isn’t correct
+
+Result>>
+
+table() function. this table() function helps to count the occurrence of each data.
+Codes>>
+height= c(1,3, 6, 1,3,3, 4, 3, 3, 1, 3 ,5 ,1, 2, 1 ,4, 3, 2 ,3 ,1 ,1, 1 ,1, 4, 3, 1,5,5)
+summarizedHeight=table(height)
+barplot(summarizedHeight) # this correct
+
+Result>>
+
+However, what if we wish to design the graph by giving it title and color. won't that be more amazing??
+Vectors: is the data will want to use to plot the graph which is important to be summarised by table() function.
+col: this is use to color your bar(the rectangular shape).
+main: this is the main title of your graph.
+xlab: to label on X-axis
+ylab: to label on Y-axis.
+col.main: this will give main title the preferable colour.
+Now let's quickly take alook at how to implement this in our codes.
+Codes>>
+height= c(1,3, 6, 1,3,3, 4, 3, 3, 1, 3 ,5 ,1, 2, 1 ,4, 3, 2 ,3 ,1 ,1, 1 ,1, 4, 3, 1,5,5)
+summarizedHeight=table(height)
+barplot(summarizedHeight,col = 'pink',main = 'The height of student in primary1',ylab="frequency",xlab = "Height",col.main='red')
+
+Result>>
+
+title() function
+
+cex.sub 
+that is a simple way to represent our data in bar chart. I hope you find this article helpful. consider to like, join me on histagram or chat me up on whatsapp(07045225718)]]></summary>
+        <author>
+            <name>maxwizard01</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Creating a Reddit Clone Using React and GraphQL - 19]]></title>
+        <id>https://dev.to/rasikag/creating-a-reddit-clone-using-react-and-graphql-19-1md6</id>
+        <link href="https://dev.to/rasikag/creating-a-reddit-clone-using-react-and-graphql-19-1md6"/>
+        <updated>2021-05-29T10:51:22.000Z</updated>
+        <summary type="html"><![CDATA[This blog post originally posted on my blog site and you can find it here.
+
+
+From last post, we stopped with a bug that introduce to the system. If we check the console in API we can see there is an error.
+error: bind message supplies 2 parameters, but prepared statement "" requires 1
+
+
+The thing is, in the post resolver, we are providing 2 parameters in the replacement array. But in the query, we only have $1. Because if the user just scroll the home page without login to the system, there will not be an UserId . So we need to change the parameters dynamically according to the query.
+So first change the replacement array.
+const replacement: any[] = [realLimitPlusOne];
+
+Then set the cursor index dynamically.
+if (req.session.userId) {
+  replacement.push(req.session.userId);
+}
+let cursorIdx …]]></summary>
+        <author>
+            <name>Rasika Gayan Gunarathna</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JavaScript Tips #1: Menunggu beberapa proses asynchronous dengan Promise.all()]]></title>
+        <id>https://dev.to/hadihammurabi/javascript-tips-1-menunggu-beberapa-proses-asynchronous-dengan-promise-all-2b77</id>
+        <link href="https://dev.to/hadihammurabi/javascript-tips-1-menunggu-beberapa-proses-asynchronous-dengan-promise-all-2b77"/>
+        <updated>2021-05-29T09:47:17.000Z</updated>
+        <summary type="html"><![CDATA[Hal menarik yang disediakan oleh Javascript salah satunya adalah kita dapat melakukan proses secara tidak sinkron (asynchronous) sehingga tidak terjadi saling tunggu antar proses. Dalam praktiknya, proses asynchronous ini digunakan untuk proses-proses yang waktu tunggunya tergantung pada hal di luar proses itu sendiri, seperti koneksi internet, kecepatan penyimpanan, dll. Contoh proses yang dapat dilakukan secara asynchronous:
+Query database
+Mengambil data dari web lain (HTTP Request)
+Menulis/membaca isi file
+Mengirim email
+Selengkapnya baca di:
+https://hadihammurabi.hashnode.dev/javascript-tips-1-menunggu-beberapa-proses-asynchronous-dengan-promiseall
+Terima kasih sudah baca.
+Kalau mau diskusi, komen aja. Kalau mau berteman, bilang aja 😎]]></summary>
+        <author>
+            <name>Hadi Hidayat Hammurabi</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[6 Easy steps for sharing AWS Encrypted RDS snapshot between two accounts.]]></title>
+        <id>https://dev.to/chrisedrego/6-easy-steps-for-sharing-aws-encrypted-rds-snapshot-between-two-accounts-1c40</id>
+        <link href="https://dev.to/chrisedrego/6-easy-steps-for-sharing-aws-encrypted-rds-snapshot-between-two-accounts-1c40"/>
+        <updated>2021-05-29T08:20:37.000Z</updated>
+        <summary type="html"><![CDATA[This is a hassle-free guide to share AWS Encrypted RDS across two different AWS accounts within 7 easy steps.
+
+Overview
+
+
+
+
+Login to the Source Account, Create a snapshot from RDS.
+
+
+Creating KMS Key (with details of the destination account)
+
+
+After the snapshot is created, Create a new copy of the snapshot & attach the KMS key.
+
+
+Share the newly created snapshot to the destination account.
+
+
+Log in to the **Destination Account, **head over to **Shared with me **snapshots, and create a new copy of the snapshot.
+Restore the copied Snapshot into a new RDS Instance.
+Log in to the source AWS Account which contains the source Database and create a snapshot from it.
+
+
+Cannot share an Encrypted Snapshot straight away.
+Click on Share Snapshot, we can see that we cannot directly share the snapshot. For that, we have the KMS key to the rescue.
+
+Open Key Management Service (KMS)
+Create a Symmetric key, and add a label along with permission.
+
+Enter the AWS Account ID and save the KMS key.
+
+Once the snapshot is created, Select Snapshot, Click Actions > Copy Snapshot
+
+Provide a name & select the newly create KMS key under the Master key
+
+Once the Copy of the snapshot is created, click on Actions > Share snapshot
+
+Provide the AWS Account key and click Save.
+
+Snapshot which we have shared from the source account will be available in the Shared with me tab under the snapshot window for AWS RDS.
+Create a Copy of Snapshot click on Actions > Copy snapshot
+
+Once the Copy of the share snapshot is created we can Restore the snapshot.
+Select the Snapshot, Click on Actions > Restore Snapshot
+
+
+Provide the Details for the new RDS instance and there we go!!.
+
+
+
+  
+  
+  “if you found this article useful, feel free to show some ❤️ and click on ❤️ many times or share it with your friends. Also follow us for more DevOps content”]]></summary>
+        <author>
+            <name>chrisedrego</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MYSQL Operator: A MYSQL ❤ affair with Kubernetes]]></title>
+        <id>https://dev.to/chrisedrego/mysql-operator-a-mysql-affair-with-kubernetes-551j</id>
+        <link href="https://dev.to/chrisedrego/mysql-operator-a-mysql-affair-with-kubernetes-551j"/>
+        <updated>2021-05-29T08:18:16.000Z</updated>
+        <summary type="html"><![CDATA[We will explore how to easily provision, backup, restore & monitor MYSQL Instances on Kubernetes the easy way using MYSQL Operator.
+“Running databases in Kubernetes is one shiny disco ball that attracts a lot of limelight. Although Databases by their very nature are stateful, on the other hand, Kubernetes is more inclined towards running stateless & ephemeral applications, which makes them two different worlds apart, although to make them one ❤ we have MYSQL Operator. As there is some great amount of work done worldwide in the Open Source community by Oracle, Presslabs & Percona providing rich MySQL Operator’s which make running MYSQL on Kubernetes a hassle-free experience.”
+
+Operator are applications written ontop of kubernetes which makes challenging & domain specific operations automate…]]></summary>
+        <author>
+            <name>chrisedrego</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kubernetes Monitoring: Kube-State-Metrics]]></title>
+        <id>https://dev.to/chrisedrego/kubernetes-monitoring-kube-state-metrics-2bbi</id>
+        <link href="https://dev.to/chrisedrego/kubernetes-monitoring-kube-state-metrics-2bbi"/>
+        <updated>2021-05-29T08:13:38.000Z</updated>
+        <summary type="html"><![CDATA[In a pursuit to monitor our Kubernetes Cluster we often need the right set of tools to capture, the right metrics. Although there are a couple of tools present already, today let’s discuss Kube-state-metrics.
+Kube-State-Metrics is an open-source light-weight utility used to monitor the Kubernetes Cluster. As the name suggests, it provides information about the state of a couple of Kubernetes objects by listening to Kubernetes API. Kube-State-Metrics acts like a Swiss Army Knife that provides metrics for a long list of Kubernetes-Objects.
+
+git clone [https://github.com/kubernetes/kube-state-metrics](https://github.com/kubernetes/kube-state-metrics)
+kubectl apply -f kube-state-metrics/examples/standard/
+
+This will go ahead and install all the components needed such as ServiceAccount, ClusterRole, ClusterRolebinding along with Deployment, and Service.
+Let’s test it locally, by exposing the service, run the command
+kubectl port-forward svc/kube-state-metrics -n kube-system 8080:8080
+
+
+
+As we already, know Kube-state-metrics is Prometheus friendly let's get started with scrapping the Kube-State-metrics with Prometheus.
+
+Assuming that you have already installed on Prometheus on your cluster, you can use the above Prometheus Configuration to start scraping metrics.
+
+
+
+  
+  
+  if you found this article useful, feel free to click ❤️ heart many times or share it with your friends.]]></summary>
+        <author>
+            <name>chrisedrego</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Monitoring Nginx Ingress Controller with Prometheus & Grafana.]]></title>
+        <id>https://dev.to/chrisedrego/monitoring-nginx-ingress-controller-with-prometheus-grafana-2l37</id>
+        <link href="https://dev.to/chrisedrego/monitoring-nginx-ingress-controller-with-prometheus-grafana-2l37"/>
+        <updated>2021-05-29T08:11:12.000Z</updated>
+        <summary type="html"><![CDATA[Before getting started we need to make sure that we have the following tools installed.
+Nginx Ingress Controller
+
+
+Prometheus
+
+
+Grafana.
+
+
+
+Let’s install Nginx-Ingress Controller, Prometheus, Grafana with ***helm3***
+helm repo add nginx-stable [https://helm.nginx.com/stable](https://helm.nginx.com/stable)
+helm repo update
+
+helm install controller  nginx-stable/nginx-ingress 
+--set prometheus.create=true --set prometheus.port=9901
+
+helm install prometheus stable/prometheus
+helm install grafana stable/grafana
+
+You can tweak the installation as per your needs, more details on this on https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/
+One extra work that is needed is that we need to expose a service that listens to the port that contains the Nginx-Ingress-Cont…]]></summary>
+        <author>
+            <name>chrisedrego</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kubernetes Monitoring: Metrics Server]]></title>
+        <id>https://dev.to/chrisedrego/kubernetes-monitoring-metrics-server-3fhk</id>
+        <link href="https://dev.to/chrisedrego/kubernetes-monitoring-metrics-server-3fhk"/>
+        <updated>2021-05-29T08:04:08.000Z</updated>
+        <summary type="html"><![CDATA[Kubernetes Monitoring Series: Understanding the what, why, how & behind the scenes — Metrics-server.
+
+Metrics Server is another useful lightweight tool that can be added to your Kubernetes Monitoring arsenal. As the name suggests Metrics Server provides metrics for resource utilization like CPU & Memory. Metrics Server discovers all the nodes in the cluster and queries the kubelet which is an agent that runs on each node and further forwards the details for resource utilization i.e CPU/Memory to Kubernetes API Server which exposes it as a Metrics API endpoint.
+In most of the managed Kubernetes as a service offering from cloud vendors, it does come as an addon by default, as well a couple of bootstrapping tools like Kube-up.sh. If you are using minkube it can be enabled as an addon.
+Althoug…]]></summary>
+        <author>
+            <name>chrisedrego</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Deep Dive with Provisioning AKS RBAC Enabled Kubernetes Cluster using Terraform.]]></title>
+        <id>https://dev.to/chrisedrego/deep-dive-with-provisioning-aks-rbac-enabled-kubernetes-cluster-using-terraform-1geg</id>
+        <link href="https://dev.to/chrisedrego/deep-dive-with-provisioning-aks-rbac-enabled-kubernetes-cluster-using-terraform-1geg"/>
+        <updated>2021-05-29T07:58:58.000Z</updated>
+        <summary type="html"><![CDATA[In this long descriptive blog post, where we would understand what is Infrastructure a code. Understanding the what, why, and how behind **terraform **and how to a provision simple RBAC enabled Azure Kubernetes Service (AKS) Cluster using Terraform.
+
+Terraform is an open-source, cross-platform Infrastructure as a code,(Iaac) software tool that is provided by Hashicorp which is available on Windows, Linux, Mac, and other OS. Terraform provides a better way to provision Infrastructure on various platforms and cloud providers with the help of a configuration file (main.tf). Terraform uses a high-level configuration language called HCL(Hashicorp Configuration Language) which is more human-readable, and easy to understand.
+So in simple words, instead of manually configuring the Infrastructure w…]]></summary>
+        <author>
+            <name>chrisedrego</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Setup CI/CD Pipeline using Gitlab-CI to Deploy to Azure Storage & Azure CDN.]]></title>
+        <id>https://dev.to/chrisedrego/how-to-setup-ci-cd-pipeline-using-gitlab-ci-to-deploy-to-azure-storage-azure-cdn-15g5</id>
+        <link href="https://dev.to/chrisedrego/how-to-setup-ci-cd-pipeline-using-gitlab-ci-to-deploy-to-azure-storage-azure-cdn-15g5"/>
+        <updated>2021-05-29T07:56:58.000Z</updated>
+        <summary type="html"><![CDATA[A Complete Zero-to-Hero guide in setting up a CI/CD Pipeline using Gitlab-CI to deploy with the help of Azure Storage
+
+
+
+For the purpose of this demo, I have already created a simple Angular 7 application that is hosted on Gitlab, the application is a simple, digital clock that looks something like this.
+
+
+The above diagram describes the whole process, right from a developer pushing the code, to the point where the CI/CD Pipeline builds & deploys the code to Azure Storage (Blob) which is linked to Azure CDN Endpoint.
+Developer goes ahead and performs the development locally of the application after which he goes ahead and commits and pushes the code to the version control system in our case it’s Gitlab.
+
+
+We would then have Gitlab perform the CI/CD in the form of the steps mentioned in git…]]></summary>
+        <author>
+            <name>chrisedrego</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[secretlint v3.0 support GitHub’s new authentication token detection]]></title>
+        <id>https://dev.to/azu/secretlint-v3-0-support-github-token-detection-57eg</id>
+        <link href="https://dev.to/azu/secretlint-v3-0-support-github-token-detection-57eg"/>
+        <updated>2021-05-29T07:30:31.000Z</updated>
+        <summary type="html"><![CDATA[secretlint is a pluggable linting tool to prevent committing credential.
+secretlint/secretlint: Pluggable linting tool to prevent committing credential.
+secretlint is similar tools to git-secrets, but it is more flexible and support more credentials.
+secretlint v3.0 support new GitHub Token format.
+Release v3.0.0 · secretlint/secretlint
+Recently, GitHub introduce new authentication token format.
+Behind GitHub's new authentication token formats | The GitHub Blog
+Authentication token format updates are generally available | GitHub Changelog
+The character set changed from [a-f0-9] to [A-Za-z0-9_]
+secretlint support them!
+You can prevent to commit GitHub Tokens!
+github.com/secretlint/sec… 
+    
+You can use secretlint as Docker Container or Node.js CLI.
+If you already have installed Docker:
+docker run -v `pwd`:`pwd` -w `pwd` --rm -it secretlint/secretlint secretlint "**/*"
+
+If you already have installed Node.js:
+npx @secretlint/quick-start "**/*"
+
+secretlint also support custom rules like ESLint.
+secretlint documenataion.
+You can setup pre-commit Hook per project or pre-commit Hook globally.
+pre-commit prevent you to commit your credentials  like GitHub Token, SSH key, AWS crendentials.
+If you want to know about secretlint, please visit secretlint/secretlint.]]></summary>
+        <author>
+            <name>azu</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How To Install Visual Studio Code On CentOS 8]]></title>
+        <id>https://dev.to/hitjethva/how-to-install-visual-studio-code-on-centos-8-69d</id>
+        <link href="https://dev.to/hitjethva/how-to-install-visual-studio-code-on-centos-8-69d"/>
+        <updated>2021-05-29T07:15:59.000Z</updated>
+        <summary type="html"><![CDATA[Visual Studio Code is an open-source, lightweight and powerful code editor developed by Microsoft. It supports Linux, macOS and Windows, and runs on the Desktop operating system. It has a built-in support for Node.js, TypeScript and JavaScript. You can add other language support including, Python, Go, PHP, Java and C++ with the help of extensions. It has a lot of features including, debugging, Git control and GitHub, syntax highlighting, snippets, intelligent code completion and code refactoring.
+In this tutorial, we will show you how to install Visual Studio Code On CentOS 8.
+A fresh CentOS 8 Desktop.
+A root password is configured on your server.
+If you want to create a new VPS server, Login to your Atlantic.Net Cloud Server. Create a new server, choosing CentOS 8 as the operating system,…]]></summary>
+        <author>
+            <name>Hitesh Jethva</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Top 10 Tips to Secure your Smartphone in 2021]]></title>
+        <id>https://dev.to/techbethink/top-10-tips-to-secure-your-smartphone-in-2021-579h</id>
+        <link href="https://dev.to/techbethink/top-10-tips-to-secure-your-smartphone-in-2021-579h"/>
+        <updated>2021-05-29T06:59:23.000Z</updated>
+        <summary type="html"><![CDATA[As we all know very well that we can keep our body healthy by applying masks doing exercise and so many things but what can we do to keep our smartphone healthy.
+Let me tell you how you can secure your phone if you are uncomfortable with the privacy of your smartphone, there are many tips to secure your smartphone with various types of malware but in this article, I will tell you the Top 10 Tips to Secure Your Smartphone in 2021.
+Why your smartphone may hack?
+Unknown source
+Permissions
+Keep Your OS and app updated
+Different password
+Backup 
+Public charging 
+No need for an antivirus app 
+Passphrase 
+Incognito mode
+Ad Personalisation
+To Know More Read The Full Article : https://techbethink.com/top-10-tips-to-secure-your-smartphone-in-2021/]]></summary>
+        <author>
+            <name>Ruler Of Dark</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to clean up disk space on Ubuntu server]]></title>
+        <id>https://dev.to/crazyoptimist/how-to-clean-up-disk-space-on-ubuntu-server-40gp</id>
+        <link href="https://dev.to/crazyoptimist/how-to-clean-up-disk-space-on-ubuntu-server-40gp"/>
+        <updated>2021-05-29T05:44:00.000Z</updated>
+        <summary type="html"><![CDATA[If you are running your own cloud instances and use them for development purposes, their capacities would probably be limited and sometimes you might notice that the disk space is too low.
+TL;DR
+sudo apt-get autoremove
+sudo apt-get autoclean
+sudo apt-get clean
+
+Check it first:
+journalctl --disk-usage
+
+sudo journalctl --vacuum-time=3d
+
+Check it first:
+du -h /var/lib/snapd/snaps
+
+This is a bash script.
+#!/bin/bash
+# Removes old revisions of snaps
+# CLOSE ALL SNAPS BEFORE RUNNING THIS
+set -eu
+snap list --all | awk '/disabled/{print $1, $3}' |
+    while read snapname revision; do
+        snap remove "$snapname" --revision="$revision"
+    done
+
+Please add more in the comment section if you have another ones.
+Happy coding! :)]]></summary>
+        <author>
+            <name>CrazyOptimist</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to convert your website from HTTP to HTTPS]]></title>
+        <id>https://dev.to/deepakfilth/how-to-convert-your-website-from-http-to-https-boj</id>
+        <link href="https://dev.to/deepakfilth/how-to-convert-your-website-from-http-to-https-boj"/>
+        <updated>2021-05-29T04:49:33.000Z</updated>
+        <summary type="html"><![CDATA[Recently I developed a personal blog website, bought a domain and wanted to go-live, but had no idea on how to make my website secure. It wasn't easy to find the list of steps to achieve this, so I wrote an article so that it will be helpful for others.
+If you want to protect communication between the client and the server from eavesdroppers then HTTPS is the way to go because if anyone tries to listen to your communication it will be just random characters to them as HTTPS makes all the calls encrypted. Also browsers nowadays enforce all the sites to be secured and you can notice a padlock icon beside the URL, whereas websites which doesn't have a padlock icon beside the URL are flagged as not secured and a warning is displayed before you can continue to browse.
+Prepare a Certificate Sign…]]></summary>
+        <author>
+            <name>deepak pd</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A safer alternative to 'any' in TypeScript]]></title>
+        <id>https://dev.to/saulodias/a-safer-alternative-to-any-in-typescript-2g67</id>
+        <link href="https://dev.to/saulodias/a-safer-alternative-to-any-in-typescript-2g67"/>
+        <updated>2021-05-29T04:28:45.000Z</updated>
+        <summary type="html"><![CDATA[We've all been there. For some reason we are not really sure what type of object to expect from an API endpoint. Maybe the API has not been defined yet, or whatever. So what do we do?
+You've probably seen code like this, because someone knew it was going to be a list of things.
+getData(): Observable<any[]> {
+  // return this.http.get<any[]>(API_URL); // TODO: Integrate with api
+  return of([]);
+}
+
+But we can do better than that.
+You might not know what type of object to expect, but you probably have a vague idea. Maybe it is going to be a list of objects with keys (strings) which you don't know yet.
+In that case you want to do something like this:
+getData(): Observable<Record<string, unknown>[]> {
+  // return this.http.get<Record<string, unknown>[]>(API_URL); // TODO: Integrate with api
+  …]]></summary>
+        <author>
+            <name>Dias</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Exploring [key:string]: any in TypeScript]]></title>
+        <id>https://dev.to/tlylt/exploring-key-string-any-in-typescript-4ake</id>
+        <link href="https://dev.to/tlylt/exploring-key-string-any-in-typescript-4ake"/>
+        <updated>2021-05-29T02:31:41.000Z</updated>
+        <summary type="html"><![CDATA[With this series I intend to note down some of the confusion and quirky stuff that I encountered out in the wild. So, today I am going to start with this snippet in TypeScript. 
+interface CustomState {
+  value: {
+    [key:string]: any
+  }
+}
+
+const defaultState : CustomState = {
+  value: {}
+}
+
+const reducer = (state: CustomState, action: { type: string }): CustomState => {
+  if (action.type === 'reset') {
+    return {
+      value: []
+    }
+  } else {
+    return {
+      ...state
+    }
+  }
+}
+
+The CustomState declared at the start includes a property called value, which is an object with key-value pairs of the form string - any. The defaultState variable contains an (empty) object conforming to the interface declared above, which is perfectly normal.
+The thing that caught me off-guard is in th…]]></summary>
+        <author>
+            <name>Liu YongLiang</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Introduction to Chore-cli, easy to generate development infrastructure for typescript project.]]></title>
         <id>https://dev.to/iwfan/introduction-to-chore-cli-easy-to-generate-development-infrastructure-for-typescript-project-1co</id>
@@ -61,7 +998,8 @@ Open the httpd-xampp.conf file
         <id>https://dev.to/alwaysup/containerize-your-dev-environment-forget-about-painful-setup-beginner-friendly-10bp</id>
         <link href="https://dev.to/alwaysup/containerize-your-dev-environment-forget-about-painful-setup-beginner-friendly-10bp"/>
         <updated>2021-05-29T00:24:31.000Z</updated>
-        <summary type="html"><![CDATA[NOTE: IDE will not work on Windows. Please read windows section.
+        <summary type="html"><![CDATA[After only a few years of working in the industry I am already tired of having to setup my machine each time something happens to it or I want to work on it on my laptop when visiting someone. Setting up DEV environment has irked me for as long as I have been working in this industry. And after some inspiration from a company that is doing many things right, I decided to make this amazing solution easily available to everyone!
+NOTE: IDE will not work on Windows. Please read windows section.
 Install docker
 For Windows: install wsl
 
@@ -70,13 +1008,35 @@ For Windows: install wsl
 
   
   
-  Key Concepts
+  Disclaimer (For Windows users)
 
 
-I don't intend to leave behind the many developers that are just getting started. So, here's the general breakdown that you HAVE TO know.
-Container is just as it sounds, a box to separate out resources used by it. This is somewhere between running apps directly in your host vs running in a VM (Virtual Machine). In a VM only the hardware resources are shared. However, in docker the OS kernel is shared. This does mean that the security of your container can be compromised if you let it (That's a whole another beast of its own, so I'll leave that out. Yes, this does mean you should not just pull down some random image and run exactly as the writer tells you to 😭…]]></summary>
+The display of IDE is done by piggybacking off the X11 server that unix systems use for display. This is not available in windows. However, you should still have full read write access to the "devenv" folder which will …]]></summary>
         <author>
             <name>Adnan Alam</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TypeScript Index Signature]]></title>
+        <id>https://dev.to/afrazkhan/typescript-index-signature-4npo</id>
+        <link href="https://dev.to/afrazkhan/typescript-index-signature-4npo"/>
+        <updated>2021-05-28T23:14:18.000Z</updated>
+        <summary type="html"><![CDATA[Javascript objects obj:{} are usually indexed using strings. But certainly, its possible to index them using number and even object types as keys. Because when it comes to index a particular element of a javascript object, JS always stringifies a non-string key by calling toString() method. So number as key will get stringified and object as key must have a toString() method which returns a valid string key.
+let obj = {
+  toString(){
+    console.log('toString called')
+    return 'Hello'
+  }
+}
+let foo: any = {};
+foo[obj] = 'World'; // toString called
+console.log(foo[obj]); // toString called, World
+console.log(foo['Hello']); // World
+
+In typescript, object as key does not work as above in javascript. Typescript usually throws error doing that.
+Lets suppose that if somehow developer uses an …]]></summary>
+        <author>
+            <name>Afraz Khan</name>
         </author>
     </entry>
     <entry>
@@ -151,57 +1111,6 @@ Lighthouse metrics for a random web app
 By minimizing the size of the bundle, we reduce the time it takes for browsers to download the JavaScript for our site, improving user experience. With every additional second of wait time, the user is more likely to close the tab. Consider all of the users that visit your site everyday and that can be thousands of seconds wasted. The chance of losing a potenti…]]></summary>
         <author>
             <name>Anvil Engineering</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A Complete Guide To Deploy GitHub Project on Amazon EC2 Using GitHub Actions and AWS CodeDeploy]]></title>
-        <id>https://dev.to/ankushbehera/a-complete-guide-to-deploy-github-project-on-amazon-ec2-using-github-actions-and-aws-codedeploy-3f0b</id>
-        <link href="https://dev.to/ankushbehera/a-complete-guide-to-deploy-github-project-on-amazon-ec2-using-github-actions-and-aws-codedeploy-3f0b"/>
-        <updated>2021-05-28T20:08:59.000Z</updated>
-        <summary type="html"><![CDATA[Auto Deploy in Amazon EC2 on Git Commit. A complete guide to configure CodeDeploy and GitHub CI/CD Action.
-
-
-
-
-
-
-  
-  
-  Prerequisite
-
-
-
-
-
-
-Create a GitHub account.
-Create AWS Account.
-Create IAM Role for EC2 and CodeDeploy
-Create EC2 Instance
-Launch EC2 Instance
-Install CodeDeploy Agent on EC2 Instance
-CodeDeploy Service Configuration
-GitHub Project
-GitHub Action
-Select a particular region of AWS Services which CodeDeploy Agent and GitHub will use.
-
-
-
-
-
-
-
-Create a role for EC2 Instance - 
-Select AWS Service as trusted entity and EC2 as usecase, click on Next:Permissions.
-On the Permissions page, select AmazonEC2RoleforAWSCodeDeploy Policy and Click on Next:Tags
-
-Ignore the tags and click Next:Review.
-Provide the role name as EC2_Role on the review page.
-
-
-Open the EC2_Role and go to Trust…]]></summary>
-        <author>
-            <name>ANkush</name>
         </author>
     </entry>
     <entry>
@@ -317,54 +1226,6 @@ https://stackoverflow.com/questions/2043617/is-it-possible-to-have-ssl-certifica
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Is it possible to have ssl certificate for ip address 
-not domain name? Answer is YES :)]]></title>
-        <id>https://dev.to/manishfoodtechs/is-it-possible-to-have-ssl-certificate-for-ip-address-not-domain-name-answer-is-yes-519o</id>
-        <link href="https://dev.to/manishfoodtechs/is-it-possible-to-have-ssl-certificate-for-ip-address-not-domain-name-answer-is-yes-519o"/>
-        <updated>2021-05-28T19:21:38.000Z</updated>
-        <summary type="html"><![CDATA["To be concise, here is how to generate an individual self signed SAN certificate with IP addresses. Expand the IP list to include your entire subnet and use one cert for everything."
-https://stackoverflow.com/users/3421482/josiah-dewitt
-
-
-
-
-
-#!/bin/bash
-#using: OpenSSL 1.1.1c FIPS  28 May 2019 / CentOS Linux release 8.2.2004
-
-C=US ; ST=Confusion ; L=Anywhere ; O=Private\ Subnet ; EMAIL=admin@company.com
-BITS=2048
-CN=RFC1918
-DOM=company.com
-SUBJ="/C=$C/ST=$ST/L=$L/O=$O/CN=$CN.$DOM"
-
-openssl genrsa -out ip.key $BITS
-
-SAN='\n[SAN]\nsubjectAltName=IP:192.168.1.0,IP:192.168.1.1,IP:192.168.1.2,IP:192.168.1.3,IP:192.168.1.4,IP:192.168.1.5,IP:192.168.1.6,IP:192.168.1.7,IP:192.168.1.8,IP:192.168.1.9,IP:192.168.1.10'
-
-cp /etc/pki/tls/openssl.cnf /tmp/openssl.cnf
-echo -e "$SAN" >> /tmp/openssl.cnf
-
-openssl req -subj "$SUBJ" -new -x509 -days 10950 \
-    -key ip.key -out ip.crt -batch \
-    -set_serial 168933982 \
-    -config /tmp/openssl.cnf \
-    -extensions SAN
-
-openssl x509 -in ip.crt -noout -text
-
-$DOM is Domain (Incase you need)
-https://stackoverflow.com/questions/2043617/is-it-possible-to-have-ssl-certificate-for-ip-address-not-domain-name#:~:text=An%20SSL%20certificate%20is%20typically,Certificate%20Signing%20Request%20(CSR).
-
-
-  
-  
-  THE END]]></summary>
-        <author>
-            <name>manish srivastava</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Create your first S3 bucket using AWS CDK]]></title>
         <id>https://dev.to/aws-builders/create-your-first-s3-bucket-using-aws-cdk-cj7</id>
         <link href="https://dev.to/aws-builders/create-your-first-s3-bucket-using-aws-cdk-cj7"/>
@@ -382,54 +1243,6 @@ The AWS Cloud Development Kit (AWS CDK) is an open-source software development f
 It offers a high-level object-oriented abstraction to define AWS resources imperatively using the power of modern programming languages. Using the CDK's library of infrastructure …]]></summary>
         <author>
             <name>Supratip Banerjee</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Create your first S3 bucket using AWS CDK]]></title>
-        <id>https://dev.to/aws-builders/create-your-first-s3-bucket-using-aws-cdk-cj7</id>
-        <link href="https://dev.to/aws-builders/create-your-first-s3-bucket-using-aws-cdk-cj7"/>
-        <updated>2021-05-28T18:52:00.000Z</updated>
-        <summary type="html"><![CDATA[Infrastructure as Code
-
-
-Infrastructure as code is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
-If you want to know more about Infrastructure as Code and and when to use different IaC tools take a look at this article of mine.
-What is Infrastructure-as-Code and how is Terraform, CDK Ansible different?
- 
-The AWS Cloud Development Kit (AWS CDK) is an open-source software development framework to define cloud infrastructure in code and provision it through AWS CloudFormation.
-
-
-It offers a high-level object-oriented abstraction to define AWS resources imperatively using the power of modern programming languages. Using the CDK's library of infrastructure …]]></summary>
-        <author>
-            <name>Supratip Banerjee</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to calculate percentile,Decile and Quartile in R-programming]]></title>
-        <id>https://dev.to/maxwizard01/how-to-calculate-percentile-decile-and-quartile-in-r-programming-170k</id>
-        <link href="https://dev.to/maxwizard01/how-to-calculate-percentile-decile-and-quartile-in-r-programming-170k"/>
-        <updated>2021-05-28T17:47:12.000Z</updated>
-        <summary type="html"><![CDATA[Percentiles in R
-
-
-So much time people need to calculate percentiles in statistics. This is a little as R failed to have no inbuilt function for that like quantiles and mean.
-So how do we go about this?? Well some people accept the we should use the general formula
-Well, there is inbuilt function in R to do that but only few people aware of that. 
-quartile() function. inside it includes parameters called 'prob' and equal to your percentiles.
-quantile(data, percentage)
-Let say I need to find the 20 percentiles of the following data.
-data=c(1,2,1,3,7,5,7,7,3,7,9,2,7,9,6,3,5,7,6,5,4,5,6,7,8,9,7,5,8,7)
-quantile(data,0.2)
-
-Results
-data=c(1,2,1,3,7,5,7,7,3,7,9,2,7,9,6,3,5,7,6,5,4,5,6,7,8,9,7,5,8,7)
-> quantile(data,0.2)
-20% 
-  3
-
-Note: we are to change the percentage value to decimal, 20% =0.2. t…]]></summary>
-        <author>
-            <name>maxwizard01</name>
         </author>
     </entry>
     <entry>
@@ -514,16 +1327,6 @@ If you hover over a variable, you will see the type information, but it sometime
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[The benefits of serverless for staff-strapped teams]]></title>
-        <id>https://dev.to/tinydevops/the-benefits-of-serverless-for-staff-strapped-teams-39k3</id>
-        <link href="https://dev.to/tinydevops/the-benefits-of-serverless-for-staff-strapped-teams-39k3"/>
-        <updated>2021-05-28T15:59:22.000Z</updated>
-        <summary type="html"><![CDATA[Zachary Randall talks about the benefits of serverless technology, especially for small and understaffed teams. Aside from saving money on the hosting bill, serverless can simplify maintenence. We also discuss what it takes to get started with serverless, and what changes are necessary from a tooling or workflow standpoint.]]></summary>
-        <author>
-            <name>Jonathan Hall</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Dynamic Favicons for WordPress]]></title>
         <id>https://css-tricks.com/?p=341163</id>
         <link href="https://css-tricks.com/dynamic-favicons-for-wordpress/"/>
@@ -549,20 +1352,6 @@ The response from the server can be empty or any kind of data.
 Short Polling is a technique in which th…]]></summary>
         <author>
             <name>Bibek</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[O que é selfhosting e por que adotá-lo]]></title>
-        <id>https://dev.to/computandoarte/o-que-e-selfhosting-e-por-que-adota-lo-3ld</id>
-        <link href="https://dev.to/computandoarte/o-que-e-selfhosting-e-por-que-adota-lo-3ld"/>
-        <updated>2021-05-28T14:24:53.000Z</updated>
-        <summary type="html"><![CDATA[Muitos dos serviços digitais que utilizamos no nosso dia a dia estão na "nuvem", como Gmail, LinkedIn, Google Drive/Docs etc ... e como diria um famoso ditado “essa tal de "nuvem" não existe, são apenas computadores de outras pessoas”. Mas, então quais as implicações da maioria das nossas vidas digitais estar nesses computadores dessas grandes empresas? Essas implicações no geral são positivas para os usuários?
- 
-Neste texto, que vai ser o primeiro de uma série, vamos falar de uma alternativa simples chamada self hosting, ou seja, hospedar os serviços que usamos em computadores que de fato temos controle, e como fazê-lo.
-Dentre todos os motivos para adotar o self-hosting, vale destacar os seguintes:
-Com muita frequência, vemos notícias de vazamentos envolvendo nossos dados, e mesmo assim m…]]></summary>
-        <author>
-            <name>Caio Volpato</name>
         </author>
     </entry>
     <entry>
@@ -608,46 +1397,6 @@ Node Schedule is a…]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Pulumi - IaC in your favorite programming language!]]></title>
-        <id>https://dev.to/techworld_with_nana/pulumi-iac-in-your-favorite-programming-language-3i1m</id>
-        <link href="https://dev.to/techworld_with_nana/pulumi-iac-in-your-favorite-programming-language-3i1m"/>
-        <updated>2021-05-28T14:13:04.000Z</updated>
-        <summary type="html"><![CDATA[DevOps tool of the month is a series, where each month I introduce one new useful DevOps tool in 2021 🙌🏼
-For May I chose: Pulumi 🎉 - a modern Infrastructure as Code Tool for Developers.
-When writing IaC scripts using other tools, you usually have to use a DSL (like HCL in case of Terraform) of that tool or YAML or JSON which is a format that many tools use. 
-Problem with YAML or JSON: 
-But what if we need to add some logic in there, like
-conditionals, "create this EC2 instance, if xyz"
-or use loops, like "I want to create 20 EC2 Instances with the same configuration"
-or what about re-using logic? Like, "all 20 instances with this shared config, plus some specific configs"
-It gets pretty complex in such formats. So all these logical operations, loops, reusing blocks of code is a natural …]]></summary>
-        <author>
-            <name>Techworld with Nana</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Deploy an ML model inside docker container]]></title>
-        <id>https://dev.to/hackcoderr/deploy-an-ml-model-inside-docker-container-521c</id>
-        <link href="https://dev.to/hackcoderr/deploy-an-ml-model-inside-docker-container-521c"/>
-        <updated>2021-05-28T14:06:41.000Z</updated>
-        <summary type="html"><![CDATA[Welcome back to my another article. Here I will share you an idea how you can train & deploy your machine learning model inside docker container. So let's jumped directly on the installation part of it.
-For installing docker, I'm using AWS instance but you can use any OS according to your desire. So if you're also going the same then just launch your instance and follow the mentioned steps.
-Note : If you are going to use RHEL8 then you have to run below script because RHEL8 doesn't contain docker software by default But for other one you can skip it.
-cat <<EOF >> /etc/yum.repos.d/docker.repo
-[docker]
-baseurl=https://download.docker.com/linux/centos/7/x86_64/stable/
-gpgcheck=0
-EOF
-
-Now you can move ahead towards the installing so run the below command.
-yum install docker -y
-
-In case of RHEL…]]></summary>
-        <author>
-            <name>Sachin Kumar</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[NodeJS vs DenoJS]]></title>
         <id>https://dev.to/rlogical/nodejs-vs-denojs-55cc</id>
         <link href="https://dev.to/rlogical/nodejs-vs-denojs-55cc"/>
@@ -703,101 +1452,6 @@ Given that Deno can be considered to be an improved alternative to node JS, it m
 Learn more here: https://www.rlogical.com/blog/nodejs-vs-denojs-which-is-better-for-you/]]></summary>
         <author>
             <name>Rlogical Techsoft Pvt Ltd</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Kubernetes Monitoring Series: Kubeview]]></title>
-        <id>https://dev.to/chrisedrego/kubernetes-monitoring-series-kubeview-27li</id>
-        <link href="https://dev.to/chrisedrego/kubernetes-monitoring-series-kubeview-27li"/>
-        <updated>2021-05-28T13:42:58.000Z</updated>
-        <summary type="html"><![CDATA[What is KubeView?
-
-
-KubeView is a simple Web interface that provides the complete overview of the Kubernetes Objects across namespaces and how they are interconnected to each other with intuitive UI & icons.
-Deployments
-ReplicaSets / StatefulSets / DaemonSets
-Pods
-Services
-Ingresses
-LoadBalancer IPs
-PersistentVolumeClaims
-Secrets
-ConfigMaps
-Before Installing KubeView, make sure to have helm installed on your machine.
-git clone https://github.com/benc-uk/kubeview
-
-
-This will go ahead and install all the components needed such as ServiceAccount, ClusterRole, ClusterRoleBinding along with Deployment, and Service.
-Let’s test it locally, by exposing the service, run the command
-kubectl port-forward svc/kubeview -n default 80:80
-
-Looks Beautiful ❤
-if you found this article useful, feel free to 👏 clap many times or share it with your friends.]]></summary>
-        <author>
-            <name>chrisedrego</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Offshore vs. Nearshore Outsourcing: What's Best for Your Business?]]></title>
-        <id>https://dev.to/blackthornvision/offshore-vs-nearshore-outsourcing-what-s-best-for-your-business-3fll</id>
-        <link href="https://dev.to/blackthornvision/offshore-vs-nearshore-outsourcing-what-s-best-for-your-business-3fll"/>
-        <updated>2021-05-28T13:39:22.000Z</updated>
-        <summary type="html"><![CDATA[Although the relatively low costs of outsourced software development attract many product owners, they often find it hard to distinguish between the different types of outsourcing. What is the difference between the three outsourcing types, and which one is better for your business? Read on to find out!
-Let’s start by clarifying the definition of outsourcing. Outsourcing means hiring external talent for your business needs, such as freelancers, consultants, or augmented teams. Outsourcing software development is a proven, cost-effective approach for any organization trying to remain competitive.
-Consider a corporation based in the United States. The cost of providing a ready-to-use software product requires not just the employment of skilled engineers but also the renting and setting up of…]]></summary>
-        <author>
-            <name>blackthorn-vision</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Linux for Devops Basic Cource]]></title>
-        <id>https://dev.to/rk7/linux-for-devops-basic-cource-3bkp</id>
-        <link href="https://dev.to/rk7/linux-for-devops-basic-cource-3bkp"/>
-        <updated>2021-05-28T12:30:35.000Z</updated>
-        <summary type="html"><![CDATA[Hey People,
-I took this course because I want to learn Devops from scratch and Linux is the base of learning Devops!
-The Course Contain:
-Basic Linux Commands:
-AWS and how to create an Ec2 Instance from AWS.
-To run Linux on windows, use MobaXterm.
-Linux File System Hierarchy.
-Managing Files:
-Read/Write/Access command
-Changing Directory
-Search and Replace a word in Linux
-User Management:
-Login as a User onto EC2 Instance.
-Changing Permissions - Commands: chmod
-Changing Ownership - Commands: chown, file.
-System Management:
-Gather System Information - Commands: free, cpuinfo, uname.
-Software Management:
-Installation Packages - Commands : yum [install, remove]
-Updating and getting info about packages - Commands: yum 
-Networking:
-Collect Network info - Commands: hostname, ping, wget
-Telnet
-Services:
-Services - Commands: service [status, start, stop]
-Services - commands chkconfig, systemctl
-Process Management:
-Process Management - Commands: ps, fg, bg, top.
-Other Topics:
-Archiving files and directories - Commands: gzip, gunzip, zip, unzip.
-Crontab.
-
-
-Softlink and Hardlink.
-
-
-Copy files from Windows to Linux - Commands: scp
-
-
-
-If you are new to Linux and want to learn Devops as Scratch then I will recommend you this course as it contains all the required commands and learning which is used in Devops!
-Course: https://www.udemy.com/course/valaxy-linux/]]></summary>
-        <author>
-            <name>Rahul Khinchi</name>
         </author>
     </entry>
     <entry>
@@ -862,17 +1516,6 @@ Course: https://www.udemy.com/course/valaxy-linux/]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Early Heroku and App Platform infrastructure, with some thoughts about letting you know when your colony ship has been built]]></title>
-        <id>https://dev.to/amireldor/early-heroku-and-app-platform-infrastructure-with-some-thoughts-about-letting-you-know-when-your-colony-ship-has-been-built-5c6b</id>
-        <link href="https://dev.to/amireldor/early-heroku-and-app-platform-infrastructure-with-some-thoughts-about-letting-you-know-when-your-colony-ship-has-been-built-5c6b"/>
-        <updated>2021-05-28T12:24:22.000Z</updated>
-        <summary type="html"><![CDATA[Hello. In this part of my development blog I will describe the infrastructure I chose for the early development of my online persistent universe single/coop players space game, AGS9. I will try to describe the reasons for my choices and describe some technical stuff. This is what I'm going to implement next in my development process.
-To ease deployment and not "fiddle around" with servers and infrastructure, I chose to run my game server under Heroku. Instead of choosing a real-time process that "runs in the background all the time" and calculates the next "tick" of the universe in some sort of gameloop, possibly using an ECS (Entity Component System) for tracking all the things that should be going on, I decided to go the old "classical web-app" way and have a relational database and a we…]]></summary>
-        <author>
-            <name>Amir Eldor</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[📱Build a Flutter Wishlist App, Part 3: Finishing the App with User Authentication and a Secured API.]]></title>
         <id>https://dev.to/robertinoc_dev/build-a-flutter-wishlist-app-part-3-finishing-the-app-with-user-authentication-and-a-secured-api-nhl</id>
         <link href="https://dev.to/robertinoc_dev/build-a-flutter-wishlist-app-part-3-finishing-the-app-with-user-authentication-and-a-secured-api-nhl"/>
@@ -888,20 +1531,6 @@ This is the third and final article in a series that guides you through the proc
 Note: This article bu…]]></summary>
         <author>
             <name>Robertino</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Here's what every React Developer needs to know about TypeScript - Part 1]]></title>
-        <id>https://dev.to/dastasoft/here-s-what-every-react-developer-needs-to-know-about-typescript-part-1-48ob</id>
-        <link href="https://dev.to/dastasoft/here-s-what-every-react-developer-needs-to-know-about-typescript-part-1-48ob"/>
-        <updated>2021-05-28T11:44:12.000Z</updated>
-        <summary type="html"><![CDATA[If you've been using React for a while, you'll have noticed some cases where the freedom and wild nature of JavaScript works against you (and not because of JS 😄), especially if you're working in a team. You may not know it, but you need TypeScript or at least, you need to test it.
-Let me be clear, I love JavaScript and the freedom it provides, for a long time I was "against" TypeScript.
-So I want to go on a journey together, figuring out if TypeScript is worth using or TS is only for people who don't know how to code properly (this was an inside joke in my team a time ago!).
-The idea behind this article is to go through the basics of TS and understand the benefits so you can decide if you want those benefits or not, in a second part I will cover the specifics of TS with React.
-If you wan…]]></summary>
-        <author>
-            <name>dastasoft</name>
         </author>
     </entry>
     <entry>
@@ -938,114 +1567,6 @@ New Bluetooth Flaws Let Attackers Impersonate Legiti…]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How to Use the Linux Command Line Like a Pro]]></title>
-        <id>https://dev.to/harvey/how-to-use-the-linux-command-line-like-a-pro-2j1n</id>
-        <link href="https://dev.to/harvey/how-to-use-the-linux-command-line-like-a-pro-2j1n"/>
-        <updated>2021-05-28T10:09:03.000Z</updated>
-        <summary type="html"><![CDATA[Learn how to use the Linux command line to save time and run commands faster. If you use a Unix-based operating system, such as Linux or macOS, you’re probably familiar with the shell, also called the command line. 
-The shell lets you interact with your system by entering commands that perform actions. When it comes to mastering the shell, there are a lot of possibilities for streamlining your work.
-
-Linux shells are a thing of beauty. They are the command line interfaces that power servers, minicomputers, supercomputers, embedded systems - and they are one of the most powerful tools in a system administrator's arsenal.
-A lot of tech professionals use the command line to do their job.
-Learning to use the Bash command line on a Linux-based operating system will change your life. It will save you hours of frustration and anger, level up your career, and improve your life in many other ways. If you want to practice the command line, I recommend this site
-Servers
-If you use a server or web server for your project, it most likely runs on Linux. You can connect to the server using ssh and control it using commands.
-ssh user@ip
-
-Then login and you can control it with commands.
-Search files
-The power of the command line lies in its ability to perform tasks faster than you could with an interface alone. For example, if you want to find out where a file is located on your hard drive, you can use Nautilus/Dolphin (or Finder on a Mac) to locate it or just type one command:
-find /home -type f -name filename.txt
-
-You can also use the fd command
-> fd netfl
-Software/python/imdb-ratings/netflix-details.py
-
-Navigate file system
-You can navigate the file system with the cd and ls commands. ls shows you the files in the current directory. cd changes the directory.
-Some commands include cd ~ go to home directory, cd dir enter directory, cd .. leave directory.
-That's all you need to navigate your file system. Here you can find a large list of commands for Linux.]]></summary>
-        <author>
-            <name>Harvey</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What is a Document in MongoDB?]]></title>
-        <id>https://dev.to/w3tsa/what-is-a-document-in-mongodb-4c06</id>
-        <link href="https://dev.to/w3tsa/what-is-a-document-in-mongodb-4c06"/>
-        <updated>2021-05-28T09:54:05.000Z</updated>
-        <summary type="html"><![CDATA[Let's take a closer look at what documents are and how they're used to store data in a structured way.
-A document is a way to organize and store data as a set of field-value pairs.
-Just like the below object, where the field is a unique identifier for some data point, and the value is data related to a given identifier.
-{
- <field> : <value>,
- <field> : <value>,
- "name"  : "Raju",
- "title" : "Team Leader",
- "age"   : "26"
-}
-
-In this example, there is a field name, and the value is Raju.
-We will look closer at documents and their structures once we get our hands on an actual data set.
-But for now, this is a simple example of a document.
-A collection would contain many documents similar to this one.
-And a database would contain multiple collections.
-In this post, I defined what document and collection mean in MongoDB.
-In the next post, I will start querying collections for documents and interact with the database in general.]]></summary>
-        <author>
-            <name>w3tsa</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What is MongoDB?]]></title>
-        <id>https://dev.to/w3tsa/what-is-mongodb-c54</id>
-        <link href="https://dev.to/w3tsa/what-is-mongodb-c54"/>
-        <updated>2021-05-28T09:19:05.000Z</updated>
-        <summary type="html"><![CDATA[A database, meaning a structured way to store and access data. More specifically, it is a NoSQL database.
-NoSQL is a very generic term used to describe any data store that doesn't use legacy approach of related tables of data.
-This means that you're storing your data in an organized way, but not in rows and columns An example of NoSQL databases can be anything from a library card catalog, to a more sophisticated data store like MongoDB.
-Since the range of what NoSQL means is so wide, we must narrow our definition further.
-MongoDB is a NoSQL document database.
-This means that data in MongoDB is stored as documents. I will cover what a document is in the next post.
-These documents are in turn stored in what MongoDB call collections of documents.
-That's why MongoDB is categorized as a NoSQL document database.
-In conclusion, the MongoDB database is a NoSQL document database.]]></summary>
-        <author>
-            <name>w3tsa</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The #1 tip to familiarize with new JavaScript codebases]]></title>
-        <id>https://dev.to/igeligel/the-1-tip-to-familiarize-with-new-javascript-codebases-2m1</id>
-        <link href="https://dev.to/igeligel/the-1-tip-to-familiarize-with-new-javascript-codebases-2m1"/>
-        <updated>2021-05-28T09:04:06.000Z</updated>
-        <summary type="html"><![CDATA[The #1 tip to familiarize with new JavaScript Codebases
-
-
-In my years as a software engineer, I have probably looked at hundreds of codebases. Too many to count. I struggled a lot with understanding where the relevant code is most of the time. Normally, asking for help what I should look for and guidance in tickets will bring me forward. Slowly and surely I will understand what the code is doing. And you will too. Some people are better at this and some people will be slow. No shame. Most code is complex. But I found a simple tool that will make it easier for you. It is called code-complexity and you can use it as the following code snippet shows:
-npx code-complexity . --limit 20 --sort ratio
-# You can also use --filter '**/*.js' to use glob patterns to filter files
-
-It will return an outp…]]></summary>
-        <author>
-            <name>Kevin Peters</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Linux Command Line]]></title>
-        <id>https://dev.to/jones268/the-linux-command-line-8p1</id>
-        <link href="https://dev.to/jones268/the-linux-command-line-8p1"/>
-        <updated>2021-05-28T08:38:26.000Z</updated>
-        <summary type="html"><![CDATA[If you're a Linux user, or you know someone who is, you've probably heard of the "command line". But what is it? Is it hard to learn? Will it turn you into a geek? 
-The command line is something that anybody can learn and enjoy using. It's a special way of interacting with your computer, by typing short commands instead of clicking around in menus. 
-Although it's easy to use, the command line does take a little getting used to, because it's very different from what most people are used to. 
-On top of that, there are many different commands. It can take a long time to become an expert without training. You can use this site to boost your Linux skills.
-I'll start with a simple statement of fact: the command line is here to stay. It's a powerful, flexible interface that allows the user to con…]]></summary>
-        <author>
-            <name>jones268</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[The Best Frontend Framework: The Battle Lines are Drawn]]></title>
         <id>https://dev.to/manav_jain/the-best-frontend-framework-the-battle-lines-are-drawn-3onm</id>
         <link href="https://dev.to/manav_jain/the-best-frontend-framework-the-battle-lines-are-drawn-3onm"/>
@@ -1071,200 +1592,6 @@ You can see below, a lot of vulnerabilities in the latest Keycloak image, especi
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[FoalTS - Building a Typescript Based API]]></title>
-        <id>https://dev.to/alexmercedcoder/foalts-building-a-typescript-based-api-eaa</id>
-        <link href="https://dev.to/alexmercedcoder/foalts-building-a-typescript-based-api-eaa"/>
-        <updated>2021-05-28T03:21:22.000Z</updated>
-        <summary type="html"><![CDATA[Bottom Line, like bow-ties... Typescript is cool!
-Allowing us to catch errors and bugs more easily along with awesome IDE suggestions and hinting, I reiterate Typescript is cool. While there are many framework that have built in support for Typescript as an afterthought, FoalTS is built with Typescript at the forefront. FoalTS carefully selects ORMS and other libraries for their typescript support to build one of the more robust typescript backend engineering experiences.
-So how about we build API
-You need NodeJS 10 or greater
-Open up terminal to whatever directory you want to initiate your project and run the following command to install the FOALTS CLI:
-npm install -g @foal/cli
-Then this command to generate a new project
-foal createapp my-api
-You can run the development servier with the c…]]></summary>
-        <author>
-            <name>Alex Merced</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Lemur Pro - 7 months later]]></title>
-        <id>https://dev.to/stevenpg/the-lemur-pro-7-months-later-4c3l</id>
-        <link href="https://dev.to/stevenpg/the-lemur-pro-7-months-later-4c3l"/>
-        <updated>2021-05-28T02:44:44.000Z</updated>
-        <summary type="html"><![CDATA[7 months ago I was faced with a problem I'm sure everyone who writes code in their free time has dealt with. Buying a new laptop that will be used for side projects (and maybe the occasional side work).
-Do you get a Mac by default? A massively powerful gaming laptop? An expensive but powerful windows machine? A Surface? A cheapie machine? After all, how much power do you really need!
-It's a great problem to have.
-I wrote a post about it on dev.to titled "The Lemur Pro - Random Developer's Opinion" because I wanted to write out my thoughts after reading so many other partial opinions across the internet.
-So now, 7 months later I've used this laptop for at least 4 hours a day and I wanted to summarize my thoughts again, this time highlighting whether or not I regret making this purchase.
-I'l…]]></summary>
-        <author>
-            <name>StevenPG</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DevOps Huddle: How to integrate Security & Quality into your CI/CD pipelines and what KPIs to measure]]></title>
-        <id>https://dev.to/ryan_opsera/devops-huddle-how-to-integrate-security-quality-into-your-ci-cd-pipelines-and-what-kpis-to-measure-4gde</id>
-        <link href="https://dev.to/ryan_opsera/devops-huddle-how-to-integrate-security-quality-into-your-ci-cd-pipelines-and-what-kpis-to-measure-4gde"/>
-        <updated>2021-05-28T02:30:17.000Z</updated>
-        <summary type="html"><![CDATA[Development is fast paced, and the demands on developers are never ending.  How do you keep up with the pace of software development without leaving security and quality behind.
-In this session, learn how Developers can take security and quality into their own hands, empowered by automation tools. Enable collaboration between your Development, IT Operations, Security and Quality teams with 100+ KPIs across your CI/CD pipelines.
-Learn and see a demo on how to: 
-Seamlessly integrate security and quality into your CI/CD pipelines
-Add approval gates at every step of the pipeline
-Reduce vulnerabilities and improve collaboration with the right KPIs
-Speakers
-Aruna Pattabiraman, Principal Data Architect, Opsera
-Harsha PPS, Software Engineer, Opsera
-Register for this Webinar at: https://www.opsera.io/huddle/integrate-security-quality-into-your-ci-cd-pipelines-and-what-kpis-to-measure]]></summary>
-        <author>
-            <name>Ryan Cartwright</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Working with a non profit organization to build an internal monitoring system]]></title>
-        <id>https://dev.to/tgrede/working-with-a-non-profit-organization-to-build-an-internal-monitoring-system-47e6</id>
-        <link href="https://dev.to/tgrede/working-with-a-non-profit-organization-to-build-an-internal-monitoring-system-47e6"/>
-        <updated>2021-05-28T01:34:31.000Z</updated>
-        <summary type="html"><![CDATA[Developing a full stack application for Family Promise from the back end perspective
-
-
-~     
-I spent the entire month of May 2021 working on an internal monitoring and evaluation system for the non-profit organization Family Promise. Family Promise works with homeless and low income families to help them achieve sustainable independence. They provide various prevention programs to help keep low income families from becoming homeless, as well as sheltering programs for the homeless, and aftercare programs for those who get out of sheltering. These programs are great and I personally love what the organization is doing to help the communities who need it most. That is why I am excited that I had the opportunity to work all month with a team of skilled developers. We spent a lot of time coll…]]></summary>
-        <author>
-            <name>Trenten Grede</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Using Environment Variables in Node.js for App Configuration and Secrets]]></title>
-        <id>https://dev.to/ryanblunden/using-environment-variables-in-node-js-for-app-configuration-and-secrets-2260</id>
-        <link href="https://dev.to/ryanblunden/using-environment-variables-in-node-js-for-app-configuration-and-secrets-2260"/>
-        <updated>2021-05-28T00:49:59.000Z</updated>
-        <summary type="html"><![CDATA[Many developers start with hard-coded config and secrets in either JSON or JavaScript files, and while this works, it poses a security risk as any developer with code access can potentially view secrets such as production database credentials and API keys.
-If you're currently configuring your applications like this, don't worry, you're not alone! Most developers eventually realize that hard-coding credentials isn't the way to go, and begin looking for a more secure alternative in the form of a secrets manager.
-This is exactly we created Doppler—giving developers an easy to use secrets manager for Node.js applications that centralizes secrets storage with an easy to use CLI for injecting secrets as environment variables.
-Environment variables are considered the best way to configure applica…]]></summary>
-        <author>
-            <name>Ryan Blunden</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[TypeScript - Check if an array contains only unique values]]></title>
-        <id>https://dev.to/shane/typescript-check-if-an-array-contains-only-unique-values-3b3e</id>
-        <link href="https://dev.to/shane/typescript-check-if-an-array-contains-only-unique-values-3b3e"/>
-        <updated>2021-05-28T00:43:47.000Z</updated>
-        <summary type="html"><![CDATA[Intro
-
-
-A cool trick in TypeScript is that you can use a Set to remove nonunique values from an array. Combine this with Array.from and you get a quick one liner to remove none unique values
-const unqiueValues = Array.from(new Set(YOUR_ARRAY_HERE))
-
-// Our array of non unique values
-const values = [0,0,1,'a','a','b','c'];
-
-// Create a `Set` from our array
-// Sets can only contain unique values so duplicate will be removed for us
-const uniqueSet = new Set(values);
-
-// Create a new array from our set so we can use the Array.length property
-const unqiueValues = Array.from(uniqueSet);
-
-// Compare the length of the original `values` array and the new `uniqueValues` array
-// If the lengths differ then a non unique value was removed by the set
-// This means that the original array contained non-unique values
-const isUnique = (values.length === unqiueValues.length)
-
-const values = [0,0,1,'a','a','b','c'];
-const unique = (Array.from(new Set(values)).length === values.length);
-
-onlyUnique(values: Array<any>): boolean {
-  return (Array.from(new Set(values)).length === values.length);
-}
-
-Now follow me on twitter plz https://twitter.com/theshanemcgowan]]></summary>
-        <author>
-            <name>shane</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Simple GUI on Linux Using Zenity and Node.js]]></title>
-        <id>https://dev.to/ferfox1981/simple-gui-on-linux-using-zenity-and-node-js-2kei</id>
-        <link href="https://dev.to/ferfox1981/simple-gui-on-linux-using-zenity-and-node-js-2kei"/>
-        <updated>2021-05-27T23:42:59.000Z</updated>
-        <summary type="html"><![CDATA[It is incredible the amount of "secret" features on Linux that are not well known until today.
-My goal is to do the following:
-Use Node.js to access financial data related to Brazilian Treasury Bonds (Tesouro Direto in Brazil);
-Create a mechanism to sistematically check instant treasury rates;
-Use Zenity to pop-up a notification to user;
-Tesouro Direto Rates can be found here. In addition, if you press F12 and check Network Tab, you'll see that the following json is received by the browser:  https://www.tesourodireto.com.br/json/br/com/b3/tesourodireto/service/api/treasurybondsinfo.json 
-const axios = require('axios');
-const { exec } = require("child_process");
-const https = require('https');
-
-
-
-const instance = axios.create({
-  httpsAgent: new https.Agent({
-    rejectUnauthorized: false
- …]]></summary>
-        <author>
-            <name>Fernando Raposo da Camara Silva</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Simple GUI on Linux Using Zenity and Node.js]]></title>
-        <id>https://dev.to/ferfox1981/simple-gui-on-linux-using-zenity-and-node-js-2kei</id>
-        <link href="https://dev.to/ferfox1981/simple-gui-on-linux-using-zenity-and-node-js-2kei"/>
-        <updated>2021-05-27T23:42:59.000Z</updated>
-        <summary type="html"><![CDATA[It is incredible the amount of "secret" features on Linux that are not well known until today.
-My goal is to do the following:
-Use Node.js to access financial data related to Brazilian Treasury Bonds (Tesouro Direto in Brazil);
-Create a mechanism to sistematically check instant treasury rates;
-Use Zenity to pop-up a notification to user;
-Tesouro Direto Rates can be found here. In addition, if you press F12 and check Network Tab, you'll see that the following json is received by the browser:  https://www.tesourodireto.com.br/json/br/com/b3/tesourodireto/service/api/treasurybondsinfo.json 
-const axios = require('axios');
-const { exec } = require("child_process");
-const https = require('https');
-
-
-
-const instance = axios.create({
-  httpsAgent: new https.Agent({
-    rejectUnauthorized: false
- …]]></summary>
-        <author>
-            <name>Fernando Raposo da Camara Silva</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to send web push notifications in Java]]></title>
-        <id>https://dev.to/marcushellberg/how-to-send-web-push-notifications-in-java-21lo</id>
-        <link href="https://dev.to/marcushellberg/how-to-send-web-push-notifications-in-java-21lo"/>
-        <updated>2021-05-27T23:42:24.000Z</updated>
-        <summary type="html"><![CDATA[Web push notifications are a way of informing your app users when something important has happened. 
-Users can receive web push notifications even when they are not actively using your application, for instance, if the app is open in a background tab or even if it's not open. 
-
-Push notifications are widely supported by all browsers except for Safari: 78% of web users use a browser that supports them.
-In this tutorial, I'll show you how to subscribe to notifications in the browser and how to send notifications from a Java server. 
-
-
-
-
-
-  
-  
-  A bit of background: how web push notifications work
-
-
-Web push notifications rely on two web standards: Notification API and Push API (which in turn uses ServiceWorker). They require HTTPS to work. 
-The server shares its public key with the browser
-…]]></summary>
-        <author>
-            <name>Marcus Hellberg</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Your Angular code base is deprecated.]]></title>
         <id>https://dev.to/shivamd20/your-angular-code-base-is-deprecated-315e</id>
         <link href="https://dev.to/shivamd20/your-angular-code-base-is-deprecated-315e"/>
@@ -1307,91 +1634,6 @@ Let's just hope that this doesn’t result in fragmentation of JavaScript decora
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Your Angular code base is deprecated.]]></title>
-        <id>https://dev.to/shivamd20/your-angular-code-base-is-deprecated-315e</id>
-        <link href="https://dev.to/shivamd20/your-angular-code-base-is-deprecated-315e"/>
-        <updated>2021-05-27T23:27:40.000Z</updated>
-        <summary type="html"><![CDATA[No, upgrading to Angular 12.x.x will not help.
-The Typescript experimental decorators were based on TC39 proposal-decorators.
-We use the same Decorators in our Angular codebase to create services, components and other Angular constructs.
-But the same TC39 proposal has evolved in a different direction which is semantically not compatible with the experimental Typescript decorators.   
-The new spec for Decorators is easier to use and write.
-You can find the detailed comparison between old and new decorators here. 
-Just finished up the first draft of the new decorators spec, pretty excited about it 😄 https://t.co/ELhZbsiaiR
-— The p is silent (@pzuraq
-) May 27, 2021
- 
-
-
-
-Does this mean that Typescript experimental decorators will not be compatible with Javascript decorators 😨
-— Shivam (@shivamd20
-) May 27, 2021
- 
-
-
-
-Unfortunately no, the new proposal has differing semantics from previous proposals in a number of ways. TypeScript experimental decorators were also incompatible with the Define semantics class fields, which caused a decent amount of breakage in the ecosystem.
-— The p is silent (@pzuraq
-) May 27, 2021
- 
-
-
-
-When the proposal advances, figuring out a step-by-step incremental upgrade path for existing decorators users is definitely going to be a priority though! No user left behind 😄
-— The p is silent (@pzuraq
-) May 27, 2021
- 
-
-Let's just hope that this doesn’t result in fragmentation of JavaScript decorators. We have already faced a lot inconvenience due to commonsjs and ES6 imports.]]></summary>
-        <author>
-            <name>Shivam</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Listening to OS signals in Golang]]></title>
-        <id>https://dev.to/lautarojayat/listening-to-os-signals-in-golang-nkh</id>
-        <link href="https://dev.to/lautarojayat/listening-to-os-signals-in-golang-nkh"/>
-        <updated>2021-05-27T22:07:13.000Z</updated>
-        <summary type="html"><![CDATA[No server, application, script or binary stuff is something isolated from the rest of the computer. Being aware of what is happening behind the scenes is useful, because lot of things can happen.
-For this reason, Golang offers a simple way to manage this, without any black magic.
-Lets suppose we have just a simple main function that starts a simple http server.
-package main
-
-func main{
-    StartServer()
-}
-
-
-Maybe this works fine, but this is not aware of anything about the underlying OS. This means that, if something signals the main process to stop, this will just stop or crash without the possibility of gracefully shut down the server and it’s child gorutines.
-Imagine now that we could pass a a context with cancellation this function as an argument like StartServer(ctx).
-Lets check out t…]]></summary>
-        <author>
-            <name>Lautaro Jayat</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Neat Linux CLI tools]]></title>
-        <id>https://dev.to/jones268/neat-linux-cli-tools-1o48</id>
-        <link href="https://dev.to/jones268/neat-linux-cli-tools-1o48"/>
-        <updated>2021-05-27T21:41:31.000Z</updated>
-        <summary type="html"><![CDATA[These are some command line tools for Linux. All these tools have one thing in common, they all use the Linux Command Line Interface (CLI).
-These tools are mainly useful for developers and sysadmins who use the linux shell on a daily basis.
-If you are new to the command line, I recommend this course
-Ranger is a console file manager for the X Window System / Wayland. It lets you browse your file system using just the cursor keys. It's great for viewing images too, pressing the right arrow on an image shows it.
-
-ncdu is a disk usage analyzer just like du. But ncdu has a unique approach to this problem of disk usage.
-ncdu is a disk analyzer for the command line. It scans your home directory and shows you how much space each directory takes.
-unlike du, it uses an ncurses interface.
-
-Lynis is an open source security auditing tool that tests the security defenses of Unix-based systems. 
-It scans the system locally or remotely and gives a detailed report on the system’s security, allowing you to well-informed decisions for system hardening.
-Lynis is a security tool designed to test common system security. This includes controls, policies and procedures as well as the actual security mechanisms of the operating system itself. It helps you to answer those questions and gives you recommendations how to improve overall security of your systems.]]></summary>
-        <author>
-            <name>jones268</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Angular- Delete item from array of object]]></title>
         <id>https://dev.to/mateuszto/angular-delete-item-from-array-of-object-3316</id>
         <link href="https://dev.to/mateuszto/angular-delete-item-from-array-of-object-3316"/>
@@ -1400,107 +1642,6 @@ Lynis is a security tool designed to test common system security. This includes 
 As you can see I try to delete item but it doesn't work, can sb look at that? Thanks alot!]]></summary>
         <author>
             <name>Mateusz Tomczyk</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Angular- Delete item from array of object]]></title>
-        <id>https://dev.to/mateuszto/angular-delete-item-from-array-of-object-3316</id>
-        <link href="https://dev.to/mateuszto/angular-delete-item-from-array-of-object-3316"/>
-        <updated>2021-05-27T21:06:32.000Z</updated>
-        <summary type="html"><![CDATA[Here's my app: https://stackblitz.com/edit/angular-ivy-s6usrl?file=src%2Fapp%2Fnotes%2Fsingle-note%2Fsingle-note.component.ts
-As you can see I try to delete item but it doesn't work, can sb look at that? Thanks alot!]]></summary>
-        <author>
-            <name>Mateusz Tomczyk</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[X-headers, what and why?]]></title>
-        <id>https://dev.to/jordanfinners/x-headers-what-and-why-jd</id>
-        <link href="https://dev.to/jordanfinners/x-headers-what-and-why-jd"/>
-        <updated>2021-05-27T19:59:42.000Z</updated>
-        <summary type="html"><![CDATA[Contents
-
-
-
- Intro
-
- X-Content-Type-Options
-
- X-XSS-Protection
-
- X-Frame-Options
-
- Summary
-
-
-
-
-  
-  
-  Intro 
-
-
-Continuing on from my previous blog about website security week, we're going to talk about a series of X- security headers.
-These are set as headers on your site when it is served up, let's dive in!
-
-
-
-This header indicates that the browser should not try and sniff the type of the file served up. Sniffing of the file type would mean the browser modifying the Content-Type header that is returned from the server.
-Sniffing the file content type could lead to non executable files being made executable, this could lead to bad actors injecting executable code into normal files and could lead to vulnerabilities.
-It's best not to let the browser sniff the code.
-Recommended setting:
-X-Content-Type-Options: nosniff
-
-You can read about it more on Modzilla.
-
-
-
-This header has mostly been superseeded by the Content Security Policy, however its still useful for old browsers.
-Recommended setting:
-X-XSS-Protection: 1; mode=block
-
-You can read about it more on Modzilla.
-
-
-
-This header has mostly been superseeded by the Content Security Policy, however its still useful for old browsers.
-This indicates if the site can be loaded in a <frame>, <iframe>, <embed> or <object>.
-Recommended setting:
-X-Frame-Options: DENY
-
-You can read about it more on Modzilla.
-
-
-
-In summary, setting a few additional headers when serving up your site can really improve the security of your site. It reduces the amount of attack surface there is for attackers and prevent common attacks on websites.
-Set those headers now!
-Happy Building!]]></summary>
-        <author>
-            <name>Jordan Finneran</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Introduction to Micro Frontends with Module Federation, React and Typescript]]></title>
-        <id>https://dev.to/ogzhanolguncu/introduction-to-micro-frontends-with-module-federation-react-and-typescript-nij</id>
-        <link href="https://dev.to/ogzhanolguncu/introduction-to-micro-frontends-with-module-federation-react-and-typescript-nij"/>
-        <updated>2021-05-27T19:12:44.000Z</updated>
-        <summary type="html"><![CDATA[The Micro Frontend is one of the hottest topics on the internet right now. We hear it all the time, but what is micro Frontend? Imagine a website with lots of components such as Navbar, Footer, Main Container and Side Menu. What would happen, if they were being served from different domains? Yes, you guessed it right we would've ended up with a micro Frontend. Now, thanks to micro frontend technologies, we can deal with those apps separately. We can write their unit tests separately, e2e tests separately we can even use different frameworks like Angular, Vue and Svelte.
-There are two major players to make those things happen right now, one of them is Module Federation and another one is Single SPA which I covered here: 🔗Migrating CRA to Micro Frontends with Single SPA.
-Unlike Single SPA, …]]></summary>
-        <author>
-            <name>Oğuzhan Olguncu</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How we updated our Content Security Policy using our own product]]></title>
-        <id>https://dev.to/sentry/how-we-updated-our-content-security-policy-using-our-own-product-4mgh</id>
-        <link href="https://dev.to/sentry/how-we-updated-our-content-security-policy-using-our-own-product-4mgh"/>
-        <updated>2021-05-27T19:12:12.000Z</updated>
-        <summary type="html"><![CDATA[By: Mark Story
-Everyone talks about creating content. But what about controlling it? In this Dogfooding Chronicle, I’ll walk you through how we updated our Content Security Policy using Discover — and how we’re keeping watch with Dashboards.
-As the Internet evolves, so must our security mechanisms. It’s why same-origin policies (a Netscape-era directive in which resources from one origin are unable to modify or read data from another origin) put your application at risk for clickjacking and cross-site scripting attacks. That’s because same-origin policies have a weakness that enables third-party entities to have the same access rights as trusted entities. Content Security Policies (CSPs) address this blind spot by approving specific content types — everything from JavaScript sources to CSS…]]></summary>
-        <author>
-            <name>Schaeffer</name>
         </author>
     </entry>
     <entry>
@@ -1513,18 +1654,6 @@ As the Internet evolves, so must our security mechanisms. It’s why same-origin
 I wanted to something fun for the holiday season, so I decided to port a variable-width stroke from the Flex Freehand Drawing Library I created back in the early 2010’s. This stroke actually has a venerable history, going back to about 1983, as an exercise I was assigned as a teaching assistant for a graduate course in computational geometry. The instructor’s company recently obtained a very expensive tablet. This system allowed users to scan or load drawings already in electronic form into a display and annotate them with hand-drawn notes using a fixed-width stroke. The instructor had an idea for a variable-width (speed-dependent) stroke that would be the basis for a number of lab exercises. My job was to get his idea working in Fortran (yes, now you ca…]]></summary>
         <author>
             <name>ng-conf</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[LVM PE Striping to maximize Hyper-Converged storage throughput]]></title>
-        <id>https://dev.to/intersystems/lvm-pe-striping-to-maximize-hyper-converged-storage-throughput-3cog</id>
-        <link href="https://dev.to/intersystems/lvm-pe-striping-to-maximize-hyper-converged-storage-throughput-3cog"/>
-        <updated>2021-05-27T19:00:55.000Z</updated>
-        <summary type="html"><![CDATA[This post provides useful links and an overview of best practice configuration for low latency storage IO by creating LVM Physical Extent (PE) stripes for database disks on InterSystems Data Platforms; InterSystems IRIS, Caché, and Ensemble. 
-Consistent low latency storage is key to getting the best database application performance. For applications running on Linux, Logical Volume Manager (LVM) is often used for database disks, for example, because of the ability to grow volumes and filesystems or create snapshots for online backups. For database applications, the parallelism of writes using LVM PE striped logical volumes can also help increase performance for large sequential reads and writes by improving the efficiency of the data I/O.
-This post has a focus on using LVM PE stripes with …]]></summary>
-        <author>
-            <name>InterSystems Developer</name>
         </author>
     </entry>
     <entry>
@@ -1550,34 +1679,6 @@ You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <summary type="html"><![CDATA[When you're training a machine learning model, you can have some features in your dataset that represent categorical values. Categorical features are types of data that you can divide into groups. There are three common categorical data types: Ordinal – a set of values in ascending or descending order. Example: rating]]></summary>
         <author>
             <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Vim Tips and Tricks]]></title>
-        <id>https://dev.to/harvey/vim-tips-and-tricks-4hfd</id>
-        <link href="https://dev.to/harvey/vim-tips-and-tricks-4hfd"/>
-        <updated>2021-05-27T17:47:37.000Z</updated>
-        <summary type="html"><![CDATA[The following are my favorite tips and tricks for working with Vim. I use Vim as my primary editor, and try to avoid the use of other IDEs and editors.
-If you're new to vim, or looking to learn more about the features already available, here's a sample of my tips and tricks.
-Vim is often used by Linux but it works on every system. It's included by default on Mac OS X.
-If you type / then a search term, Vim will start searching forwards from the current cursor location for that word. 
-To search for the next occurrence of that search term, press n (for next); to search backwards press N . After pressing n or N , Vim will highlight all matching words, which you can then press on to select.
-
-One of the most powerful features of Vim is its ability to use ex commands. First, in order to run ex commands, you must be in insert mode: that is to say, not at the beginning of a line. 
-It’s important to note that in order to enter insert mode, you must first exit normal mode. To do this, press “i” or “a” – these keys will start you off in insert mode at the beginning of a new line or at the end of your current line.
-Now that you’re in insert mode, you can type “:” and then an ex command.
-Some things you can do are:
-:5p print the fifth line
-:100p print line 100
-:%s/hello/world/ search and replace
-:!bash return to bash, type exit to open vim
-This saves you quit a few keystrokes. Press the number of times you want to repeat, then press the key. To move 100 lines down, press 100j. To move up 50 lines, press 50k. To delete 5 lines press 5dd etc.
-
-Vim supports keyboard macros. They let you record and replay your keystrokes. This is really great if you have some tedious typing to do.
-To start recording press q followed by a. To stop recording press the ESC key. Then press @ followed by a to replay the keystrokes.
-If you are new to vim, I recommend this course]]></summary>
-        <author>
-            <name>Harvey</name>
         </author>
     </entry>
     <entry>
@@ -1700,29 +1801,6 @@ snapshotChanges() as stated elsewhere.]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Sonnet about access a-woes... ha HA!]]></title>
-        <id>https://dev.to/chadgauth/sonnet-about-access-a-woes-ha-ha-3f56</id>
-        <link href="https://dev.to/chadgauth/sonnet-about-access-a-woes-ha-ha-3f56"/>
-        <updated>2021-05-26T18:27:46.000Z</updated>
-        <summary type="html"><![CDATA[Hello, the world, I am but meek and lean.
-I seek to change the code within systems...
-but LO! The access blocks me here! Oh DAMN!
-To be but free to do what can be done!
-Systems of checks and balances adhere
-but they prevent the hard, the real, the work!
-Design, construct, create a new system.
-One that values o'er bronze the brain within.
-Real work is near... No fear, no fight! It's here!
-Adapt and change complex systems at work...
-To be but simple... YES! No more matrix :P
-Access granted. And now the change is here.
-Today we start a new simple system.
-One that values the brain o'er bronze. COMMIT]]></summary>
-        <author>
-            <name>Chad Gauthier</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How to Contribute to Open Source  Projects – A Beginner&#x27;s Guide]]></title>
         <id>60abe7fb11ffb70827ef63a6</id>
         <link href="https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-beginners-guide/"/>
@@ -1817,17 +1895,6 @@ Done!]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Yara for daily analysis]]></title>
-        <id>https://dev.to/terceranexus6/yara-for-daily-analysis-1o8</id>
-        <link href="https://dev.to/terceranexus6/yara-for-daily-analysis-1o8"/>
-        <updated>2021-05-26T15:52:18.000Z</updated>
-        <summary type="html"><![CDATA[It's been a while since I wrote for the last time, and partly it's because I've focusing on studying a new career path: Threat Hunting. Even though Yara is not an usual tool in my work routine I use it for my own researching, so I thought about breaking the ice with a simple tutorial on using Yara for looking for malware genes in binaries.
-If you are slightly into malware analysis you probably know about Intezer. One of the things I like the most about that tool is the ability of analyzing genes, meaning it compares already known malware strings and Libraries in order to determine if a sample is similar enough (considering the percentage of similarities). Hash comparison lets you know if a binary is exactly the same as a malicious one, but genes comparison allows you to determine a probabl…]]></summary>
-        <author>
-            <name>Paula</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How to Build Super Mario Bros, Zelda, and Space Invaders with Kaboom.js]]></title>
         <id>60aced0011ffb70827ef6d96</id>
         <link href="https://www.freecodecamp.org/news/how-to-build-mario-zelda-and-space-invaders-with-kaboom-js/"/>
@@ -1880,40 +1947,6 @@ This tutorial will walk you through the process of developing and implementing J
         <summary type="html"><![CDATA[I need to create an angular component as alert "are you sure to do xyz?" one of my colleagues used element ref and another use component. what is the difference and use cases of each one and what the effect of the performace]]></summary>
         <author>
             <name>Attia</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[4+1 ways] How to Unsubscribe from Observables in Angular like a 😎]]></title>
-        <id>https://dev.to/nikosanif/4-1-ways-how-to-unsubscribe-from-observables-in-angular-like-a-21f5</id>
-        <link href="https://dev.to/nikosanif/4-1-ways-how-to-unsubscribe-from-observables-in-angular-like-a-21f5"/>
-        <updated>2021-05-26T10:41:33.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-In this article, we will see some of the best practices to unsubscribe from subscriptions (aka Observables) and how to keep our code clean and nicely architectured avoiding memory leaks.
-In a nutshell, we will use:
-the async Angular build-in pipe
-RxJS operators (e.g takeUntil)
-custom array of subscriptions
-the SubSink npm package
-the @ngneat/until-destroy npm package
-If you have experience in Angular, you already know that RxJS is one of the most powerful packages. It uses the concept of Observables to handle and work with asynchronous and event-based code. More specifically, Observable is an entity that emits multiple data values over time and asynchronously.
-It sounds cool, right? Yes, it is cool and powerful, but you already know that!
-What's the problem with Observables …]]></summary>
-        <author>
-            <name>Nikos Anifantis</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why MEAN Stack is the Most Preferred Choice for Web & Mobile App Development?]]></title>
-        <id>https://dev.to/william99659653/why-mean-stack-is-the-most-preferred-choice-for-web-mobile-app-development-1347</id>
-        <link href="https://dev.to/william99659653/why-mean-stack-is-the-most-preferred-choice-for-web-mobile-app-development-1347"/>
-        <updated>2021-05-26T10:15:43.000Z</updated>
-        <summary type="html"><![CDATA[In this digital era, the importance of customized web and mobile apps has increased significantly. But as competition intensifies, it is necessary for companies to come up with feature-rich apps to match world-class standards and attract more people. Therefore, if you want to develop an app from scratch, the website development company
-needs to use a consistent software stack. All you need to have the right set of tools, resources, and a standardized development process to build a customized and user-friendly application.
-MEAN stack is such a stack that can meet your business needs effectively while offering the benefits of advancing technology in customized web and mobile apps. MEAN acronym stands for MongoDB (a database), Express (backend framework), AngularJS (Front-end framework), and …]]></summary>
-        <author>
-            <name>williamjohns</name>
         </author>
     </entry>
     <entry>
@@ -2364,16 +2397,6 @@ Thank you: @dym-sh, @tabokie, @cheese1]]></summary>
         <summary type="html"><![CDATA[Web-oriented databases, frameworks like Nuxt and Next.js, and even frameworkless approaches are evolving the Jamstack, but the core principles are more powerful than ever.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Mathias Biilmann)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[May Is In The Air (2021 Wallpapers Edition)]]></title>
-        <id>https://smashingmagazine.com/2021/04/desktop-wallpaper-calendars-may-2021/</id>
-        <link href="https://smashingmagazine.com/2021/04/desktop-wallpaper-calendars-may-2021/"/>
-        <updated>2021-04-30T09:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Do you need a little inspiration boost? Well, then our new collection of wallpapers is for you. Designed with love by the community for the community, the wallpapers are available with and without a calendar for May 2021.]]></summary>
-        <author>
-            <name>hello@smashingmagazine.com (Cosima Mielke)</name>
         </author>
     </entry>
 </feed>
