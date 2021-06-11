@@ -16,6 +16,1546 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2021-06-11">2021-06-11</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Put a Background on Open Details Elements</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/put-a-background-on-open-details-elements/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>One thing that can be just a smidge funky about the  element is that, when open, it’s not always 100% clear what is inside that element and what isn’t. I’m not saying that always matters or that it’s a …
+The post Put a Background on Open Details Elements appeared first on CSS-Tricks.
+You can support CSS-Tricks by being an MVP Supporter.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">SQL Server on Linux via Docker</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/roxberry/sql-server-on-linux-via-docker-efd">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Get Docker (if it is not already running)
+
+
+Get the SQL Server on Linux for Docker Engine image
+
+
+
+I&#x27;m running Docker on MacOS, I will use the SQL Server on Linux for Docker Engine at Docker Hub
+   docker pull microsoft/mssql-server-linux
+
+Set the settings and start the container
+SQL Server on Linux for Docker Engine requires an environment setting to accept the EULA and set a strong SA password:
+   ACCEPT_EULA &#x3D; Y
+   SA_PASSWORD &#x3D; 
+
+Run this in the terminal:
+   docker run -e &#x27;ACCEPT_EULA&#x3D;Y&#x27; -e &#x27;SA_PASSWORD&#x3D;yourStrong(!)Password&#x27; -p 1433:1433 -d microsoft/mssql-server-linux
+
+Copy a backup to the container
+
+
+
+
+   docker cp &#x27;/tmp/DatabaseName.bak&#x27; mssql-server-linux:/tmp
+
+Restore the backup
+
+
+
+
+   RESTORE DATABASE DatabaseName FROM DISK&#x3D;&#x27;/tmp/DatabaseName.bak&#x27;
+   WITH MOVE &#x27;DatabaseName&#x27; TO &#x27;/var/opt/mssql/data/DatabaseName.MDF&#x27;,
+   MOVE &#x27;DatabaseName_log&#x27; TO &#x27;/var/opt/mssql/data/DatabaseName_log.ldf&#x27;
+   Go
+
+Connect with a docker command or an IDE like DataGrip
+
+
+
+
+Using SQL Server for Linux in Docker has allowed me to continue to develop using a Linux distro or macOS without needing to set up a VM to run the database backend.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">a first look at the serverless framework</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ajcwebdev/a-first-look-at-the-serverless-framework-3okh">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>The Serverless Framework consists of an open source CLI and a hosted dashboard. Together, they provide you with full serverless application lifecycle management. It helps you develop and deploy your AWS Lambda functions, along with the AWS infrastructure resources they require.
+It was created by Austen Collins in 2015 as a boilerplate project for a company or something called Servant, whose existence seems to be completely wiped from the internet aside from this git commit.
+Servant Boilerplate LADEN: AWS Lambda, Angular, AWS DynamoDB, Express, Node.js
+A Servant Boilerplate Application already integrated with Servant built on the LADEN stack.  Use this to rapidly build Servant applications. This stack in particular is perfect for integrations or any applciation that needs to offload intense…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2021-06-10">2021-06-10</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Equal Columns With Flexbox: It’s More Complicated Than You Might Think</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/equal-columns-with-flexbox-its-more-complicated-than-you-might-think/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(14 min)</span>
+                    <span>As awesome as flexbox is, what it’s doing under the hood is actually a little strange because, by default, it is doing two things at once. It first looks at the content size which is what we would get if by declaring width: max-content on an element. But on top of that, flex-shrink is also doing some work allowing the items to be smaller, but only if needed.
+Let’s break those two down and see how they work together.
+The post Equal Columns With Flexbox: It’s More Complicated Than You Might Think appeared first on CSS-Tricks.
+You can support CSS-Tricks by being an MVP Supporter.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Building a Headless CMS with Fauna and Vercel Functions</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/building-a-headless-cms-with-fauna-and-vercel-functions/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
+                    <span>In this tutorial, we will learn and use headless CMS, Fauna, and Vercel functions to build a blogging platform, Blogify After that, you can easily build any web application using a headless CMS, Fauna and Vercel functions.
+The post Building a Headless CMS with Fauna and Vercel Functions appeared first on CSS-Tricks.
+You can support CSS-Tricks by being an MVP Supporter.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Generate breadcrums for your Angular-Router and set page title dynamically.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/gaurangdhorda/generate-breadcrums-for-your-angular-router-and-set-page-title-dynamically-npo">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>In this example I am going to explain you that You can use library to generate breadcrumbs, and also set each page title dynamically.
+first you need to install this library to your angular project.
+npm install set-title-with-breadcrumbs
+This will install library called set-title-with-breadcrumbs, this library is used to generate breadcrumbs component and also you can set page title using angular router. After installing this library..
+Go to your app.module.ts file and add below code
+import { SetTitleWithBreadcrumbsModule} from &#x27;set-title-with-breadcrumbs&#x27;;
+    @NgModule({
+        imports : [SetTitleWithBreadcrumbsModule]
+    })
+
+in side your app-routing.module.ts file you have to add new data:{} object with breadcrumbs and title object property.
+const routes: Routes &#x3D; [
+  {
+    path: &#x27;home&#x27;,
+    component: HomeComponent,
+    data: { title: &#x27;Home Page&#x27;, breadcrums: &#x27;Home&#x27; },
+    children: [
+      {
+        path: &#x27;records&#x27;,
+        component: RecordsComponent,
+        data: { title: &#x27;Find Records Page&#x27;, breadcrums: &#x27;Find-Records&#x27; },
+        children: [
+          {
+            path: &#x27;child&#x27;,
+            component: ChildComponent,
+            data: { title: &#x27;Child Record Page&#x27;, breadcrums: &#x27;Child-Record&#x27; }
+          }
+        ]
+      }
+    ]
+  }
+]
+
+as you can see above, each router-path has data object with two property - breadcrumbs and title.
+Now inside your app.component.html file you need to add component of library.
+
+
+
+
+Connect with me by email : grdtechlab@gmail.com 
+Working demo in this stackblitz link</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Learn the Angular Pipe in-Depth + Tips on boosting performance using Pipe</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/yuvgeek/learn-the-angular-pipe-in-depth-tips-on-boosting-performance-using-pipe-5aa5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Hello everyone 👋,
+In this article, we are going to cover what is Angular Pipe, how to create it and utilize it in our template. Additionally, we will learn how to boost performance with a custom Pipe. 
+From  Angular Documentation, 
+Use pipes to transform strings, currency amounts, dates, and other data for display. Pipes are simple functions you can use in template expressions to accept an input value and return a transformed value.
+Usecase of pipe:
+Use DatePipe to convert the Date object to a human-readable format.
+UpperCasePipe can be used to convert text to Uppercase.
+CurrencyPipe helps to transform a number to a currency string, formatted according to locale rules.
+The best advantage to use Pipe is, while transforming the data, it doesn&#x27;t modify the original data. Let&#x27;s see it in acti…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Youtube channel for Angular</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/gourav_gunjan/youtube-channel-for-angular-32he">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Hi All
+
+
+I have created a channel for every Angular developers out there, where I explain different Angular concepts in a unique way.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Flutter or Angular for web ....?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/hesham1108/flutter-or-angular-for-web-36ph">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>If i need to save time to finish the app !</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular 6 Template Driven Form – NgModel for Two-Way Data Binding</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/loizenai/angular-6-template-driven-form-ngmodel-for-two-way-data-binding-3mhn">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>https://ozenero.com/angular-6-template-driven-form-ngmodel-for-two-way-data-binding
+Angular 6 Template Driven Form – NgModel for Two-Way Data Binding
+In the tutorial, we show how to develop an Angular Form using Template-Driven Form approach with ngModel for two-way data binding, visual feedback and handling error messages.
+Related posts:
+How to Integrate Bootstrap with Angular (Angular 6)
+Angular 6 Component – How to create &amp; integrate New Angular 6 Component
+Angular NgFor Repeater Directive – Loop over a Collection (Angular 6)
+
+
+Angular 6 Form Validation example – Template-driven Forms
+
+
+
+Technologies
+Node.js – version v10.4.0
+Angular – version 6
+Bootstrap 4
+Visual Studio Code – version 1.24.0
+Objectives
+We build an Angular project as below structure:
+
+Workflow
+-&gt; Initial form:
+
+Input Name, Age and select Nationality option:
+
+-&gt; Press Submit button to submit form:
+
+Press Edit button, The Data Form will be appeared again.
+Delete text of Name input, and select bank value for Nationality input.
+-&gt; Error Alert Message appeares:
+
+Angular Template Driven Form
+Project Setup
+Generate Angular project:
+More at:
+https://ozenero.com/angular-6-template-driven-form-ngmodel-for-two-way-data-binding
+Angular 6 Template Driven Form – NgModel for Two-Way Data Binding</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Change Detection in Angular</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/this-is-angular/change-detection-in-angular-4a52">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Hi Readers, So if you have been using Angular for a while you might have heard of Angular Change detection. Angular handles all the changes which happen for the application on behalf of us even without our interference. In this article, we are going to discuss angular change detection and then how we can manage that manually.
+Even if Angular is doing it for we must know how it&#x27;s working and do we even have ways to modify it. So the answer to later is Yes, we can modify for the component to behave differently based upon our requirement.
+So in Angular is there is a change detection cycle that helps render the component tree with the new changes on its own. If there is some value change in the component then you will be able to see the updated value automatically, as Angular re-renders all th…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular : How to add Toastr in your angular project just in 15 minutes?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rajeshkumaryadavdotcom/angular-how-to-add-toastr-in-your-angular-project-just-in-15-minutes-533p">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Demo -
+
+   
+Open your terminal in project folder and run below command -
+npm install ngx-toastr --save
+
+@angular/animations package is a required dependency for the default toast
+npm install @angular/animations --save
+
+Add few styles based on your requirements -
+/ regular style toast 
+@import &#x27;~ngx-toastr/toastr&#x27;;
+
+// bootstrap style toast 
+// or import a bootstrap 4 alert styled design (SASS ONLY) 
+// should be after your bootstrap imports, it uses bs4 variables, mixins, functions 
+@import &#x27;~ngx-toastr/toastr-bs4-alert&#x27;;
+
+// if you&#x27;d like to use it without importing all of bootstrap it requires 
+@import &#x27;~bootstrap/scss/functions&#x27;;
+@import &#x27;~bootstrap/scss/variables&#x27;;
+@import &#x27;~bootstrap/scss/mixins&#x27;;
+@import &#x27;~ngx-toastr/toastr-bs4-alert&#x27;;
+
+If you are using angular-cli you can add it to …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Give your Postgres Queries More Memory to Work With</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jbranchaud/give-your-postgres-queries-more-memory-to-work-with-640">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Are you getting notices from Heroku warning that you are &quot;Running out of temp space on your Postgres add-on&quot;?
+A potential fix to this is adjusting the work_mem value for the database. This will require some tuning to optimize the database for the particular query load that it experiences. So, some trial and error.
+In this article, we&#x27;ll walk through how to check your database&#x27;s work_mem value and how to change it to a better value that will make this warning go away.
+work_mem &quot;specifies the amount of memory to be used by internal sort operations and hash tables before writing to temporary disk files.&quot; (source)
+Before getting started, you&#x27;ll want to take note of the specs of your Postgres instance where these errors occur. You&#x27;ll be interested in both the available RAM and the number of sup…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">GitHub Container Registry: BETTER than Docker Hub?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/github/github-container-registry-better-than-docker-hub-1o9k">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>GitHub Container Registry improves how we handle containers within GitHub. Let&#x27;s see what it is, how it works, and if it is better than Docker Hub.
+As usual, if you are a visual learner, or simply prefer to watch and listen instead of reading, here you have the video with the whole explanation and demo, which to be fair is much more complete than this post.
+
+
+
+
+Link to the video: https://youtu.be/WjzA9dfk5w4
+If you rather prefer reading, well... let&#x27;s just continue :)
+The GitHub Container Registry (GHCR) is a redesigned, enhanced version of GitHub Packages. It not only replaces the Packages Docker service, but also it represents a fundamental shift in how GitHub will provide packages to its customers, because Packages are now tied to organizations and accounts instead of repos. 
+And in the…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Why we shipped a Next.js SDK, and how you can use it</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sentry/why-we-shipped-a-next-js-sdk-and-how-you-can-use-it-14jp">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>As you could probably tell from the title, we shipped an SDK for Next.js. This means you can capture errors, measure performance, manage releases, configure suspect commits, and automatically upload sourcemaps to view unminified JavaScript and TypeScript with zero(-ish) configuration.
+Why was Next.js next on our list? Well, it’s one of the fastest-growing React frameworks and developers love it. Next.js provides a developer experience that helps with building features rapidly, seeing local changes quickly, and reducing build times.
+&quot;Next.js turns traditionally complex decisions into simple implementation details. Spinning up new pages with our existing React components and Material UI went from days to hours with Next.&quot; 
+– Sean Parmelee, Applications Architect, Care.com
+To monitor Next.js …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Using Inheritance So You Don&#x27;t Repeat Yourself &amp; Notes.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/using-inheritance-so-you-don-t-repeat-yourself-ba8">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>There&#x27;s a principle in programming called Don&#x27;t Repeat Yourself (DRY). The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
+
+
+Notice in the example below that the eat method is shared by Cat and Bear:
+
+
+
+
+function Cat(name) {
+  this.name &#x3D; name;
+}
+
+Cat.prototype &#x3D; {
+  constructor: Cat,
+  eat: function() {
+    console.log(&quot;nom nom nom&quot;);
+  }
+};
+
+function Bear(name) {
+  this.name &#x3D; name;
+}
+
+Bear.prototype &#x3D; {
+  constructor: Bear,
+  eat: function() {
+    console.log(&quot;nom nom nom&quot;);
+  }
+};
+
+The eat method is repeated in two places. The code can be edited to follow the DRY principle by creating a supertype (or parent) called Animal:
+
+
+
+
+function Animal() { }
+
+Animal.prototype &#x3D;…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Understanding Where an Object’s Prototype Comes From</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/understanding-where-an-object-s-prototype-comes-from-4a64">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Just like people inherit genes from their parents, an object inherits its prototype directly from the constructor function that created it. For example, here the Dog constructor creates the beagle object:
+
+
+
+
+function Dog(name) {
+  this.name &#x3D; name;
+}
+
+let beagle &#x3D; new Dog(&quot;Snoopy&quot;);
+
+beagle inherits its prototype from the Dog constructor function. You can show this relationship with the isPrototypeOf method:
+
+
+
+
+Dog.prototype.isPrototypeOf(beagle);
+
+This would return true.
+All objects in JavaScript (with a few exceptions) have a prototype. Also, an object’s prototype itself is an object.
+
+
+
+
+function Dog(name) {
+  this.name &#x3D; name;
+}
+
+typeof Dog.prototype; // yields object
+
+Because a prototype is an object, a prototype can have its own prototype! In this case, the prototype of Bird.prototype is Object.prototype:
+
+
+How is this useful? You may recall the hasOwnProperty method from a previous post:
+
+
+
+
+let beagle &#x3D; new Dog(&quot;Snoopy&quot;);
+beagle.hasOwnProperty(&quot;name&quot;);
+
+The hasOwnProperty method is defined in Object.prototype, which can be accessed by Dog.prototype, which can then be accessed by beagle. This is an example of the prototype chain. In this prototype chain, Dog is the supertype for beagle, while beagle is the subtype. Object is a supertype for both Dog and beagle. Object is a supertype for all objects in JavaScript. Therefore, any object can use the hasOwnProperty method.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Lambda Alternative to autoscale HTTP servers using only VMs in your own cloud account</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/depombo/serverless-alternative-for-http-servers-on-vms-in-your-own-cloud-221">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>After using Lambda and struggling with cold starts and clunky local dev in my previous job, we came up with a cloud agnostic alternative that deploys and autoscales HTTP servers on VMs in your own cloud account.
+https://anycloudapp.com/
+Here is a tutorial to deploy and scale a Node.js server in AWS:
+https://docs.anycloudapp.com/documentation/tutorials/aws-node</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">WebPageTest live audits - Thursdays on Twitch</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jeenaj/webpagetest-live-audits-thursdays-on-twitch-2l69">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Our team at WebPageTest tried our hand at Twitch recently and realized it can be more than just a gamer platform! The power of a live streaming platform is truly remarkable especially when you have like- minded professionals in the web performance space coming together, learning together and sharing their insights with everyone else. 
+And we are just getting started here with performance audits. Coming soon are building integrations, and even hosting experts and fellow community members. 
+We just completed our second session today talking about advanced features on WebPageTest and used the Catchpoint (our company) website as well as Allbirds (yes to the shoes!). 
+You can check out today&#x27;s broadcast here
+In our first session, Tim Kadlec deconstructed a web performance session for Joybird, custom furniture and home décor site using WebPageTest per their request. Be right back - This couch in Bentley Daisey color has caught my attention!  
+These live performance sessions on Twitch are turning out to be quite enjoyable, with fun banters among our live streamers as well as serious performance insights for the sites we reviews. It’s all in the chat if you don’t believe me!
+
+
+
+
+
+
+
+
+
+
+
+
+If you want to follow along the sessions Tim used, here are the WebPageTest test result URLs: 
+Desktop 
+Mobile 
+Scroll 
+You may be wondering “Why Twitch, why not YouTube Live?” If you prefer YouTube Live, please let us know and we’ll figure something out. Also, are you wondering “Why Tim Kadlec, why not me or my friend Jane?” Absolutely! Just let us know who and what topic via DM on Twitter
+When’s the next session, you ask? It’s every other Thursday! So go ahead and sign up for alerts and share it with your fellow team members and friends
+Looking forward to testing and building with you!</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Critical Role of Cybersecurity in the Digital Transformation</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/nextlinklabs/the-critical-role-of-cybersecurity-in-the-digital-transformation-31pe">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Cybersecurity and privacy should be priorities for every company when pursuing a digital transformation to maintain security and privacy in the modern digital marketplace.
+As DevOps teams develop software solutions and reorganize operations&quot;, the focus is often on speed, automation, and business optimization. Security and regulatory compliance can be overlooked as overhead costs when those initiatives are in fact critical, fundamental necessities.
+That kind of oversight -- both in practice and in process -- can be costly.
+As far back as 2012, then FBI Director Robert Mueller commented on our vulnerability to cyberattacks, saying that there “are only two types of companies: those that have been hacked, and those that will be.”
+While that statement was made nearly a decade ago, it’s meaning …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">React Futures - Server Components</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/grapecity/react-futures-server-components-ojl">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>In a recent talk, the React team announced a new feature called React Server Components (RSC). What is that exactly, and how can we take advantage of it to write better apps? 
+If you are familiar with React, you know that it is a client-side library that provides developers with a set of abstractions on top of JavaScript that quickly and efficiently write the user interface to a web application. A client-side library means rendering the view in the DOM is done on the client’s browser using JavaScript. The server, in this case, is only responsible for delivering the bundles of your application containing HTML, CSS, and JavaScript and doesn’t perform any rendering.
+The server sends a response back in HTML containing an empty body and script tags that reference JavaScript bundles in the head.…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">That time when you thought you knew Y(A)ML ❗ 😵</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/alxizr/that-time-when-you-thought-you-knew-y-a-ml-5302">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(13 min)</span>
+                    <span>Hello everyone,
+Thank you for joining in for this article about YAML files. We will make it today a little lightweight tutorial about YAML configurations file. We will see what it is, how we can get started with it and where we use YAML files all around but maybe missed those little nuances.
+Y(A)ML is a data serialization language and it is a strict superset of JSON (javascript object notation). It is data oriented structured language used as an input format for different software applications. We can deduct that the language in the end of the day consist of key:value pairs. YML&#x27;s goal is to be more human readable in a clean and consise manner.
+We often use tools available for us by interacting with a GUI interface, but we don&#x27;t realize that under the hood there is nothing more than a YAML…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The feeling of Trunk-Based Development</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/danlebrero/the-feeling-of-trunk-based-development-4hd1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Trunk-Based development. 
+Yet another practice that is rarely practiced in our industry, even if it is identified in the Accelerate book as one of the technical capabilities that is correlated with higher delivery performance.
+Plenty of blogs and conference talks explain the marvellous benefits of using it.
+You probably also needed to practice it to pass Jez Humble&#x27;s  Continuous Integration test:
+Each commit should trigger a build and run some test suite.
+The build is never broken for more than 10 minutes.
+Commit to mainline every day. 
+Yes. You need to commit to trunk/master/main every day if you want to claim that your company is doing Continuous Integration.
+If with all the existing material, your teammates haven&#x27;t been convinced to use Trunk-Based development, adding more reasons to the debate is foolish.
+Replicating the very successful method to convince your company to use Clojure could be a possibility, but a year as CTO teaches you that appealing to people&#x27;s emotions is more effective that any reasoning.
+Basically: 
+
+a race to be the first one to commit &amp; push, so it is your teammate -- and not you -- the one that has to deal with any conflicts. 
+Happy Trunk-Based developing!
+Actually Trunk-Based development is great! For a more serious &quot;Why Trunk-Based development&quot; content I would recommend Mattia Battiston blog Why I love Trunk Based Development or Steve Smith talk The Death of Continuous Integration. Enjoy!</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Jenkins : An overview</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/christy129/jenkins-an-overview-74n">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>What is Jenkins ?
+
+
+It is an automation server which is open source and free for everyone. It automates some parts of software development like build, testing and deployment.
+It is made up on Java and hence portable to work on all major operating systems like MacOS, Windows, Linux, etc.
+lets now see Jenkins tutorial for beginners in detail:
+In this time of cutting edge technology and new innovations coming up every day, Jenkins plays a major role by giving continuous integration by building robust automation.
+Jenkins enhances development and operations process by easy customization, through code testing and wider coverage.
+As the big names in the market like e-bay and Facebook are also using Jenkins to increase their performances, it has prompted other businesses to switch over Jenkins. 
+I…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">First Steps on the research of Web Hosting</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/fangoh/first-steps-on-the-research-of-web-hosting-4jia">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>One of the more daunting thing of developing, is to get to know how to deploy, as it&#x27;s almost guaranteed that you will incur in some kind of cost, so before doing the big jump to trying a VPS (as a service), I decided to make a local Virtual Server to do some testing in setting up server environments.
+Well, to give a little explanation of what I was doing, I need to explain how to web works.
+Now and then I have been mentioning about Front-end and Back-end, in some way, you can rename both to Client-Side and Server-Side. The Client is often you, the end-user, whoever visits the web app or webpage, technically the client-side code is executed by the browser and do whatever needs to be done. Typically, it means to fetch, display, and update data.
+Think of Facebook, for example, the posts, use…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to import several folders with files into WordPress Media Library using wp-cli</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/dacog/how-to-import-several-folders-with-files-into-wordpress-media-library-using-wp-cli-4547">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>wp-content/uploads was done quickly, but Wordpress Media Library didn’t “see” the files. 
+After some quick reading I found out that they need to be imported into the Library, and after some more reading I found wp-cli works with ‘xargs’ in Bash.
+Helpful links at Dev Notes and StackOverflow
+The command I ended using is as follows through SSH:
+find /tmp -name &#x27;*.pdf&#x27; -or -name &#x27;*.doc&#x27; -or -name &#x27;*.jpg&#x27; -or -name &#x27;*.xls&#x27; -or -name &#x27;*.docx&#x27; -or -name &#x27;*.xlsx&#x27; | xarg wp media import
+
+Then you can regenerate all the thumbnails using
+wp media regenerate --all
+
+I recommend using screen as the import could stop if the connection gets down, because for me on a Digital Ocean server with 2gb took around 2-3 hours.
+Source</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Bash script to count words and characters of multiple documents *.[txt|doc]</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/alfiosalanitri/bash-script-to-count-words-and-characters-of-multiple-documents-txt-doc-221f">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>a simple tool for people that need to count characters and words of multiple documents from command line interface.
+Supports: *.txt and *.doc filetype
+a linux distro
+sudo privileges
+unzip package
+catdoc package
+download this script
+open your CLI and type:
+
+
+
+
+sudo mv linux_doc_words_counter /usr/bin
+sudo chmod +x /usr/bin/linux_doc_words_counter
+
+linux_doc_words_counter /path/to/archive.zip</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">&quot;Luxarg&quot; Text Editor ! Pure Python and Socialist 🌹</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/amzy0/luxarg-text-editor-pure-python-and-socialist-3mkk">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Link</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">4 Best FREE Resources for learning Linux Online</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/pazyp/4-best-free-resources-for-learning-linux-online-1fio">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>It’s hard to pin down exactly how popular Linux is on the web, but recent studies estimate Unix and Unix-like operating systems power about 70% of all web servers.
+At least half of those run Linux—and probably the vast majority.
+If you are on a technology learning journey no matter if its back-end development, front-end or server admin it is a great skill to have know or at least have some basic knowlage around.
+With over 10 years in the industry as a DBA and Sys Admin here are my top 4 resources for learning and mastering Linux/Unix.
+https://www.edx.org/course/introduction-to-linux
+https://www.netacad.com/courses/os-it/ndg-linux-unhatched
+https://www.netacad.com/courses/os-it/ndg-linux-essentials
+https://www.edx.org/course/fundamentals-of-red-hat-enterprise-linux
+https://www.linkedin.com/learning/learning-bash-scripting-2?trk&#x3D;learning-serp_learning_search-card&amp;upsellOrderOrigin&#x3D;default_guest_learning
+https://www.youtube.com/watch?v&#x3D;rfscVS0vtbw&amp;feature&#x3D;emb_logo
+What are your best learning resources for learning Linux? Please comment below.
+If you like my articles please check out my blog and follow me on Twitter where I share most of my tips.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">PGP for the Working Dev (2)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/thunderbiscuit/pgp-for-the-working-dev-2-2ol1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>The goal of this post is to get you up to speed on two of the main uses of GPG: cryptographically encrypting and decrypting data.
+Note: this post is the second in a 2-part series aimed at developing a functional use of GPG for the day-to-day tasks of anyone who cares about software. Check out Part 1 to learn about signing and verifying signatures.
+One important aspect of cryptographic keys is that they are simply numbers. They are often really, really big numbers, but simple integers nonetheless. Another important aspect of cryptographic keys as used in GPG is that they come in pairs: a public key and a private key. Knowledge of these numbers (the keys) allows us to perform many tasks, two of which we&#x27;ll tackle here:
+Encrypt a message in a way that only a person with the knowledge of a spe…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">PGP for the Working Dev (1)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/thunderbiscuit/pgp-for-the-working-dev-1-4f4g">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
+                    <span>If you care about software, you should learn how to produce cryptographic signatures on data (documents, messages, binaries, git commits) and how to verify other people&#x27;s signatures. Turns out it&#x27;s rather easy, and all you need is a terminal and maybe half an hour of time!
+The goal of this article is to get you up to speed on two of the main uses of the GPG cli software: cryptographically signing and verifying signatures on data.
+Note: this post is the first of a 2-part series aimed at developing a functional use of GPG for the day-to-day tasks of anyone who cares about software. Check out Part 2 for the lowdown on how to encrypt and decrypt messages.
+GPG stands for GNU Privacy Guard and is a small open source piece of software that allows you to manage keys for cryptographic purposes. GPG…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">First Steps on the research of Web Hosting</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/fangoh/first-steps-on-the-research-of-web-hosting-4jia">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>One of the more daunting thing of developing, is to get to know how to deploy, as it&#x27;s almost guaranteed that you will incur in some kind of cost, so before doing the big jump to trying a VPS (as a service), I decided to make a local Virtual Server to do some testing in setting up server environments.
+Well, to give a little explanation of what I was doing, I need to explain how to web works.
+Now and then I have been mentioning about Front-end and Back-end, in some way, you can rename both to Client-Side and Server-Side. The Client is often you, the end-user, whoever visits the web app or webpage, technically the client-side code is executed by the browser and do whatever needs to be done. Typically, it means to fetch, display, and update data.
+Think of Facebook, for example, the posts, use…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Understanding CORS</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/useanvil/understanding-cors-5gm5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>CORS, or Cross-Origin Resource Sharing, is one thing that can bite a developer
+For example, CORS can help prevent a malicious case where a website executes an
+XMLHttpRequest) to a different
+Let’s take a look at how that would work in a world without CORS:
+A user just visited &quot;https://mybank.example&quot;, one of the most popular
+banking websites, to complete a few transactions.
+The user, maybe on another tab, visits &quot;http://not-suspicious.example&quot;.
+Unknown to the user, not-suspicious.example contains a script that
+sends requests to a list of endpoints from very popular banking sites. This
+is all done in the background.
+If a response comes back containing user session data or other sensitive
+user data, the malicious site now has the means to impersonate the user.
+Now the same example, but on a b…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to copy data between DynamoDb tables</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aws-builders/how-to-copy-data-between-dynamodb-tables-5h9j">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Steps
+Spin up an EC2 instance and execute the below.
+
+
+
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install node
+npm i copy-dynamodb-table
+
+Update EC2 IAM role to grant Dynamodb access to source/target table. If the table is encrypted by Custom KMS, then you need to grant permission to EC2 IAM role as well.
+
+
+
+
+node ./test.js 
+
+—&gt; where test.js contains the following
+#### start code ####
+var copy &#x3D; require(&#x27;copy-dynamodb-table&#x27;).copy
+
+copy({
+    source: {
+      tableName: &#x27;source-dynamodb-table&#x27;, // required
+    },
+    destination: {
+      tableName: &#x27;demo-app-kefta-999-dynamo&#x27;, // required
+    },
+    log: true, // default false
+    create : false // create destination table if not exist
+    schemaOnly : false // if true it will copy…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Knock and Open Source</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/knock/knock-and-open-source-3pg3">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Knock.com is built with Open Source Software (OSS). It permeates our technology stack from the interactive website all the way through to the services and systems that power our infrastructure. We depend on OSS, and we are excited to start contributing back to our community. Doing so aligns well with a couple of our core values, which we call POPSICLE, &quot;people first&quot; and “open”:
+P - passionate
+O - open
+P - people first
+S - simplicity
+I - impact
+C - courage
+L - learning
+E - enjoying life
+We believe in being Open with our community, to Learn from each other, and to make an Impact if we can. We deeply believe that companies relying on OSS should be contributing back to the community in any way they can. For us, that means releasing code as an organization that others may find useful, and cont…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Argument of type NextHandleFunction is not assignable - Nodejs</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/letscodepare/argument-of-type-nexthandlefunction-is-not-assignable-nodejs-138g">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>How to fix the issue for the latest node express regarding with Argument of type &quot;NextHandleFunction&quot; is not assignable to parameter of type &quot;PathParams&quot;.
+Visit the full tutorial here:
+https://letscodepare.com/blog/argument-of-type-nexthandlefunction-is-not-assignable-nodejs</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Getting Started With Popular Express framework</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/imshubh17/getting-started-with-popular-express-framework-3o52">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Introduction
+
+
+
+A huge portion of the Internet’s data travels over HTTP/HTTPS through request-response cycles between clients and servers.
+Starting A Server 
+Express is a Node module, so in order to use it, we will need to import it into our program file. To create a server, the imported express function must be invoked.
+
+
+
+
+const express &#x3D; require(&#x27;express&#x27;);
+const app &#x3D; express();
+
+const PORT &#x3D; 4001;
+app.listen(PORT, () &#x3D;&gt; {
+  console.log(&#x60;Server is listening on port ${PORT}&#x60;);
+});
+
+In this example, our app.listen() call will start a server listening on port 4001, and once the server is started it will log &#x27;Server is listening on port 4001&#x27;
+Writing Your First Route
+&gt; Once the Express server is listening, it can respond to any and all requests. 
+&gt; For example, if your server receives a GET request at ‘/about’, we will use a route to define the appropriate functionality for that HTTP verb (GET) and path (/about).
+
+
+
+
+// Open a call to &#x60;app.get()&#x60; below:
+app.get(&#x27;/expressions&#x27;,(req,res, next)&#x3D;&gt;{
+   // Here we would send back the moods array in response
+})
+
+Inside app.js, create a route handler to handle a GET request to &#x27;/expressions&#x27;. For now, give it a req, res, next callback. For now, log the req object inside the callback. Verify that the route works and logs the request by starting your server and clicking the Refresh Expressions button which will send a GET /expressions request.
+Sending A Response
+
+
+
+
+app.get(&#x27;/expressions&#x27;, (req, res, next) &#x3D;&gt; {
+  res.send(expressions);
+});</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Use promises with almost any Node.js native modules</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aminnairi/use-promises-with-almost-any-node-js-native-modules-35id">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>You are using a recent version of Node.js and are tired of working with callbacks with Node native modules.
+Chances are, there is a version of that module that is using promises out of the box.
+$ touch index.js
+
+const fs &#x3D; require(&quot;fs&quot;).promises;
+
+fs.readdir(process.cwd()).then(files &#x3D;&gt; {
+  console.log(files);
+}).catch(error &#x3D;&gt; {
+  console.error(error.message);
+});
+
+$ node index.js
+
+Or
+$ touch index.mjs
+
+import {promises as fs} from &quot;fs&quot;;
+
+fs.readdir(process.cwd()).then(files &#x3D;&gt; {
+  console.log(files);
+}).catch(error &#x3D;&gt; {
+  console.error(error.message);
+});
+
+$ node index.mjs</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">NPM : Dialog SMS Gateway Library</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/kasunaz/dialog-sms-gateway-305g">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>JavaScript library to send SMS through Dialog telecommunication service
+This library will handle single or multiple SMS send functionality with Dialog telecommunications service.
+npm install dialog-sms-service
+const smsGateway &#x3D; require(&#x27;dialog-sms-service&#x27;);
+
+(async () &#x3D;&gt; {
+  try {
+    // set configuration
+    await smsGateway.setConfig({
+      digest: &#x27;dialog_msg_digest_here&#x27;,
+      mask: &#x27;dialog_msg_mask_here&#x27;,
+      user: &#x27;dialog_msg_user_here&#x27;,
+      campaignName: &#x27;dialog_msg_campaignName_here&#x27;, //optional
+    });
+
+    //send message
+    const result &#x3D; await smsGateway.sendSMS(&#x27;07XXXXXXXX&#x27;, &#x27;Dialog sms test&#x27;);
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+})();
+
+Note:- Please contact Dialog Axiata PLC in order to obtain following fields.
+
+
+
+Field
+Description
+
+
+
+
+Username
+User name for the Dialog SMS gateway account.
+
+
+Password
+Password for the Dialog SMS gateway account.
+
+
+mask
+Text that appears as the sender of the SMS. Eg:- PIZZAHUT
+
+
+
+// set configuration
+await smsGateway.setConfig({
+  digest: &#x27;dialog_msg_digest_here&#x27;,
+  mask: &#x27;dialog_msg_mask_here&#x27;,
+  user: &#x27;dialog_msg_user_here&#x27;,
+  campaignName: &#x27;dialog_msg_campaignName_here&#x27;, //optional
+});
+
+
+
+
+Field
+Description
+
+
+
+
+user
+
+Required. Username that will provided by Dialog.
+
+
+mask
+
+Required. A String. SMS sender ID.Mask value provided by Dialog. Eg:- test (For the test account)
+
+
+digest
+
+Required. md5 encripted values of password. {digest &#x3D; md5(password provided by dialog)}
+
+
+campaignName
+
+Optional. Campaign name to be used in reporting.
+
+
+
+await smsGateway.sendSMS(Phone Number ,Message);
+
+
+
+
+Field
+Description
+
+
+
+
+Phone Number
+
+Required. A String. Phone number/s which will need to receive SMS. the phone number needs to either start with 0 or 94 (do not use +94). If there are multiple receivers make sure to add them as comma (,) separated text. Eg :- &#x27;0771111111,0712222222&#x27;
+
+
+Message
+
+Required. A String. The content of the SMS goes here.
+
+
+
+(The MIT License)
+kmkasunmadushanka@gmail.com</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular : How to add Toastr in your angular project just in 15 minutes?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rajeshkumaryadavdotcom/angular-how-to-add-toastr-in-your-angular-project-just-in-15-minutes-533p">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Demo -
+
+   
+Open your terminal in project folder and run below command -
+npm install ngx-toastr --save
+
+@angular/animations package is a required dependency for the default toast
+npm install @angular/animations --save
+
+Add few styles based on your requirements -
+/ regular style toast 
+@import &#x27;~ngx-toastr/toastr&#x27;;
+
+// bootstrap style toast 
+// or import a bootstrap 4 alert styled design (SASS ONLY) 
+// should be after your bootstrap imports, it uses bs4 variables, mixins, functions 
+@import &#x27;~ngx-toastr/toastr-bs4-alert&#x27;;
+
+// if you&#x27;d like to use it without importing all of bootstrap it requires 
+@import &#x27;~bootstrap/scss/functions&#x27;;
+@import &#x27;~bootstrap/scss/variables&#x27;;
+@import &#x27;~bootstrap/scss/mixins&#x27;;
+@import &#x27;~ngx-toastr/toastr-bs4-alert&#x27;;
+
+If you are using angular-cli you can add it to …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Understanding CORS</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/useanvil/understanding-cors-5gm5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>CORS, or Cross-Origin Resource Sharing, is one thing that can bite a developer
+For example, CORS can help prevent a malicious case where a website executes an
+XMLHttpRequest) to a different
+Let’s take a look at how that would work in a world without CORS:
+A user just visited &quot;https://mybank.example&quot;, one of the most popular
+banking websites, to complete a few transactions.
+The user, maybe on another tab, visits &quot;http://not-suspicious.example&quot;.
+Unknown to the user, not-suspicious.example contains a script that
+sends requests to a list of endpoints from very popular banking sites. This
+is all done in the background.
+If a response comes back containing user session data or other sensitive
+user data, the malicious site now has the means to impersonate the user.
+Now the same example, but on a b…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Critical Role of Cybersecurity in the Digital Transformation</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/nextlinklabs/the-critical-role-of-cybersecurity-in-the-digital-transformation-31pe">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Cybersecurity and privacy should be priorities for every company when pursuing a digital transformation to maintain security and privacy in the modern digital marketplace.
+As DevOps teams develop software solutions and reorganize operations&quot;, the focus is often on speed, automation, and business optimization. Security and regulatory compliance can be overlooked as overhead costs when those initiatives are in fact critical, fundamental necessities.
+That kind of oversight -- both in practice and in process -- can be costly.
+As far back as 2012, then FBI Director Robert Mueller commented on our vulnerability to cyberattacks, saying that there “are only two types of companies: those that have been hacked, and those that will be.”
+While that statement was made nearly a decade ago, it’s meaning …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Cryptography for Absolute Beginners | Go from Zero to Cypherpunk</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/blahblahman9/cryptography-for-absolute-beginners-go-from-zero-to-cypherpunk-n4l">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>We live in a post-Snowden world. For many, that means assuming none of your digital assets are safe from surveillance.
+There are ways, however, to use the internet with insane mathematics in your favor to ensure that no one can see whatever it is that you’re sending to someone else.
+Cryptography is an ancient mathematical science that was originally used for military communications, and designed to conceal the contents of a message should it fall into the hands of the enemy. Recent developments in cryptography have added additional uses, including mechanisms for authenticating users on a network, ensuring the integrity of transmitted information and preventing users from repudiating (i.e. rejecting ownership of) their transmitted messages.
+Today, encryption is an integral part of many of t…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Configuring self-signed SSL certificates for local development</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ashleyconnor/configuring-self-signed-ssl-certificates-for-local-development-35c5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Sometimes it&#x27;s preferible to keep your local development environment as close to production as possible.
+In this post I&#x27;ll cover how to configure self-signed SSL certificates using a project called mkcert which makes
+The instructions are slightly different depending on your local environment:
+Common
+WSL2
+Firefox on Windows
+The first thing you will need is to install mkcert which can be done via homebrew or homebrew for Linux.
+$ brew install mkcert
+
+If you intend to use Firefox, you should also install nss.
+$ brew install nss
+
+Next run mkcert and pass in the the domain names and IPs you want the certificate to include:
+$ mkcert mywebsite.test localhost 127.0.0.1 ::1
+
+Created a new certificate valid for the following names 📜
+ - &quot;mywebsite.test&quot;
+ - &quot;localhost&quot;
+ - &quot;127.0.0.1&quot;
+ - &quot;::1&quot;
+
+The ce…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">WAF for ALBs</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aws-builders/waf-for-albs-55jf">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Overview
+WAF support for ALB is now available in many regions.
+Clients want to provide a pattern of using ALB → (Lambda | EC2) to be secured via WAF (and HTTPS).
+Clients want to minimise the maintenance footprint of adding WAF for many applications.
+Architecture
+
+Pricing Details
+WAF Pricing
+a. WAF
+$5 per web ACL per month
+$1 per rule per web ACL per month (assume one rule &#x3D; “core-waf-automations — SQL Injection Rule”)
+$0.60 per million web requests
+b. F5
+Charge per month in each available region (pro-rated by the hour) $20 / unit
+Charge per million requests in each available region $1.2 / unit
+Estimates
+a. WAF Pricing
+12 web acls (6x2 acls)
+10 rules per WebACL &#x3D; 120 rules total &#x3D; $120
+100 million requests &#x3D; $60
+$2,160 Annual cost
+b. Market place pricing — 4x F5 managed rulesets
+$480 for $8…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Backup and Recovery Security Standards</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aws-builders/backup-and-recovery-security-standards-346e">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Intro
+This document establishes the controls required to ensure availability, confidentiality and integrity of electronic information and software. The scope of this standard includes all IT systems and applications including those provided by third party vendors.
+Information Backup
+Objective: To maintain the confidentiality, integrity and availability of information backups
+Overview:
+Standards:
+Backup processes must be established and approved by business owners as well as comply with the backup and archival policy. The backup processes should take into consideration:
+a) Business continuity plans
+b) Legal, regulatory, statutory and contractual obligations
+c) Manufacturers’ recommendations for reliable storage, such as maximum ‘shelf-life’.
+Procedures must exist to ensure that backup of in…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to use secure private npm registries</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/danielp/how-to-use-secure-private-npm-registries-36m9">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Working with open source npm packages is so fast and easy that security and control is often pushed to the infamous &quot;some other time&quot; -  or simply neglected.
+But why? There are solutions that add security with almost no effort and without impacting developer performance! Watch the video below to see how easy it is.
+Risks associated with using open source npm packages should not be overseen and the number of threats in the ecosystem only increases (like the much discussed dependency confusion). Not to mention that the potential impact on your business is catastrophic. 
+To take back control you should look into adding a private npm registry into your supply chain. And working with a private registry does not even have to impact your workflow. Simply configure the registry and use the private registry instead of using registry.npmjs.org directly.
+Here&#x27;s a video that shows you just how easy it is to work with secure private registries that are secure by default.
+
+
+
+
+
+  
+  
+  What is Bytesafe?
+
+
+Want to block or quarantine packages that contain vulnerabilities? Need to make sure that your apps don’t depend on code that doesn&#x27;t fulfill your business policies? Or maybe you’re looking for hosted secure private registries to be able to share packages and collaborate?
+&quot;Inga problem&quot;, as we say in Swedish &#x3D; Not a problem.
+Bytesafe is a devtool that makes life easier to trust code you are dependant on by:
+  Controlling what packages and dependencies are being used in applications and securing workflows for both internal and external packages
+  Knowing what security and open source license issues exist in the code you depend on so that they can be remediated
+  Protecting the business from unintended packages entering the software development lifecycle (dependency confusion) - working like a dependency firewall</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Securing a Serverless Multi-Tenancy Puppeteer Service</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/tomlarkworthy/securing-a-serverless-multi-tenancy-puppeteer-service-19ce">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>If you ever try to stand up a Puppeteer service you will almost immediately find it is difficult to secure when running inside a Docker environment. 
+I love my serverless, so I was not prepared to take no for an answer. And with a lot of sweat, I think I able to stand up a Puppeteer service with full customer isolation and protection again serverside scripting from within a multi-tenancy docker container.
+Customers should not be able to view each other&#x27;s data.
+Chrome itself is natively very good at sandboxing tabs for security reasons. Ideally, we would simply just exploit the inbuilt security model, e.g. put each customer in their own tab(s). Not so fast though! Unfortunately, Chrome won&#x27;t boot under that configuration. The way that sandbox is implemented does not work containers, as a re…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">ColdFire -  Golang malware development framework</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/kalilinux/coldfire-golang-malware-development-framework-d1h">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>ColdFire provides various methods useful for malware development in Golang. Most functions are compatible with both Linux and Windows operating systems.
+malware development framework</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to Convert LV or MD RAID1 and 0 Into RAID5 Without Losing Data</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/madmannew/how-to-convert-lv-or-md-raid1-and-0-into-raid5-without-losing-data-3mfl">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>In this tutorial, you will learn how to switch from RAID 0 or 1 to RAID 5. How to convert (on Linux, with mdadm or LVM) a software RAID1 (0) system into RAID5 while keeping all the data it stores.
+
+RAID 0 disk arrays are known for relatively high data access time, and that’s why people choose to use them primarily because of the considerable boost in the speed of read and write operations. However, their reliability and fault-tolerance leave much to be desired. Even if one of the drives is out of order, all the data in such a disk array is going to be lost. Recovering the information from this array type is quite a challenge, but even then, all the data you may be able to extract will certainly be damaged. In fact, this type is not much of a disk array because it offers no redundancy at al…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Data Structures in Typescript - Linked List</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ricardo93borges/data-structures-in-typescript-linked-list-gob">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>A linked list is a data structure that holds objects arranged in a linear order, this order is determined by a pointer in each node.
+There are some types of linked lists: 
+Singly linked list - Each node has only a pointer to the next node. 
+Doubly linked list - Each node has pointers to both the previous and next node. 
+Circular linked list - The last node points to the first element.
+
+Head - the first node
+Tail - the last node
+Insertion - It&#x27;s possible to insert a new element anywhere in the list, you just have to take care of the pointers. If you are adding an element to the beginning the new node will pointer to the former head node. If you are appending to the tail, the former tail node will point to the new node. Now, if inserting between nodes, the previous node has to point to the n…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Generate breadcrums for your Angular-Router and set page title dynamically.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/gaurangdhorda/generate-breadcrums-for-your-angular-router-and-set-page-title-dynamically-npo">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>In this example I am going to explain you that You can use library to generate breadcrumbs, and also set each page title dynamically.
+first you need to install this library to your angular project.
+npm install set-title-with-breadcrumbs
+This will install library called set-title-with-breadcrumbs, this library is used to generate breadcrumbs component and also you can set page title using angular router. After installing this library..
+Go to your app.module.ts file and add below code
+import { SetTitleWithBreadcrumbsModule} from &#x27;set-title-with-breadcrumbs&#x27;;
+    @NgModule({
+        imports : [SetTitleWithBreadcrumbsModule]
+    })
+
+in side your app-routing.module.ts file you have to add new data:{} object with breadcrumbs and title object property.
+const routes: Routes &#x3D; [
+  {
+    path: &#x27;home&#x27;,
+    component: HomeComponent,
+    data: { title: &#x27;Home Page&#x27;, breadcrums: &#x27;Home&#x27; },
+    children: [
+      {
+        path: &#x27;records&#x27;,
+        component: RecordsComponent,
+        data: { title: &#x27;Find Records Page&#x27;, breadcrums: &#x27;Find-Records&#x27; },
+        children: [
+          {
+            path: &#x27;child&#x27;,
+            component: ChildComponent,
+            data: { title: &#x27;Child Record Page&#x27;, breadcrums: &#x27;Child-Record&#x27; }
+          }
+        ]
+      }
+    ]
+  }
+]
+
+as you can see above, each router-path has data object with two property - breadcrumbs and title.
+Now inside your app.component.html file you need to add component of library.
+
+
+
+
+Connect with me by email : grdtechlab@gmail.com 
+Working demo in this stackblitz link</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Learning from React - part 5</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/costinmanda/learning-from-react-part-5-53nl">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Original at: https://siderite.dev/blog/learning-from-react---part-5/
+Learning from React series:
+Part 1 - why examining React is useful even if you won&#x27;t end up using it
+Part 2 - what Facebook wanted to do with React and how to get a grasp on it
+Part 3 - what is Reactive Programming all about?
+Part 4  - is React functional programming?
+Part 5 (this one) - Typescript, for better and for worse
+Typescript is a programming language developed by Microsoft. It is a superset of Javascript that allows a lot of type checking and manipulation, hence the name. React and Vue fully support it while Angular requires it. So what is the reason for the adoption of this new language? What are its advantages and disadvantages?
+First of all, what is it? I would start metaphorically, if you can forgive that. I…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Argument of type NextHandleFunction is not assignable - Nodejs</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/letscodepare/argument-of-type-nexthandlefunction-is-not-assignable-nodejs-138g">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>How to fix the issue for the latest node express regarding with Argument of type &quot;NextHandleFunction&quot; is not assignable to parameter of type &quot;PathParams&quot;.
+Visit the full tutorial here:
+https://letscodepare.com/blog/argument-of-type-nexthandlefunction-is-not-assignable-nodejs</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">JavaScript Quick Tip: Quickly Get All Unique Values From An Array</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/oliverjumpertz/javascript-quick-tip-quickly-get-all-unique-values-from-an-array-35o0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>The array is still one if not the major data structure in JavaScript. Especially given the fact that Set and Map were introduced way later, many developers have grown comfortable either going with a plain array or using a library for this purpose.
+If we now take into account that the array is the only data structure in JavaScript that comes with functional monad methods (map, filter, forEach, etc.), although there is a proposal going on to add these methods to all iterables, it&#x27;s often more comfortable to go with a plain array for most purposes.
+The JavaScript array makes no assumptions about its elements. You can mix and match types, and you can also push duplicates. But what if you only want the unique values of your array?
+Gladly, there is a pretty short one-liner that makes it easy for you to filter out duplicates and get an array only containing unique values.
+You can combine the spread operator together with the Set constructor to quickly get all unique values of an array:
+const array &#x3D; [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 4];
+
+const unique Values &#x3D; [...new Set(array)];
+
+There is only one issue with this code: The Set relies on the strict equality comparison (&#x3D;&#x3D;&#x3D;), so it doesn&#x27;t work well for objects.
+If you like visual content more, or if you want to store it for later, I put all this into one single image for you. I hope you like it!
+
+If you would love to read even more content like this, feel free to visit me on Twitter or LinkedIn.
+I&#x27;d love to count you as my ever-growing group of awesome friends!</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular : How to add Toastr in your angular project just in 15 minutes?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rajeshkumaryadavdotcom/angular-how-to-add-toastr-in-your-angular-project-just-in-15-minutes-533p">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Demo -
+
+   
+Open your terminal in project folder and run below command -
+npm install ngx-toastr --save
+
+@angular/animations package is a required dependency for the default toast
+npm install @angular/animations --save
+
+Add few styles based on your requirements -
+/ regular style toast 
+@import &#x27;~ngx-toastr/toastr&#x27;;
+
+// bootstrap style toast 
+// or import a bootstrap 4 alert styled design (SASS ONLY) 
+// should be after your bootstrap imports, it uses bs4 variables, mixins, functions 
+@import &#x27;~ngx-toastr/toastr-bs4-alert&#x27;;
+
+// if you&#x27;d like to use it without importing all of bootstrap it requires 
+@import &#x27;~bootstrap/scss/functions&#x27;;
+@import &#x27;~bootstrap/scss/variables&#x27;;
+@import &#x27;~bootstrap/scss/mixins&#x27;;
+@import &#x27;~ngx-toastr/toastr-bs4-alert&#x27;;
+
+If you are using angular-cli you can add it to …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Azure Data Fundamentals Certification (DP-900) – Pass the Exam With This Free 4.5-Hour Course</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/azure-data-fundamentals-certification-dp-900-pass-the-exam-with-this-free-4-5-hour-course/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>You can learn everything you need to know to earn the Azure Data Fundamentals certification by completing this free 4.5 hour course. What is the Azure Data Fundamentals Certification?The Azure Data Fundamentals Certification is for those seeking a data-related role such as Data Analyst, Data Engineer, or Data</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Useful Front-End Boilerplates And Starter Kits</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/06/useful-frontend-boilerplates-starter-kits/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(16 min)</span>
+                    <span>We don’t need to write everything from scratch every single time. With boilerplates and starter kits, we can set up our projects faster, and get to work immediately.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Three Front-End Auditing Tools I Discovered Recently</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/06/three-frontend-auditing-tools/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Building a faster website can be a rocket task these days. There are so many things to consider, so it’s challenging to get everything right. Here are some less-known tools that might help you get there.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2021-06-09">2021-06-09</time></h2>
     <ul class="sources card">
       <li class="source">
@@ -40,7 +1580,7 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
                 <summary class="article-expander__title">target&#x3D;blank</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/targetblank/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
+                    <span class="article-reading-time">(4 min)</span>
                     <span>Does that make your eye twitch a little bit? Like… it’s a typo. It should be target&#x3D;&quot;_blank&quot; with an underscore to start the value. As in…
 &lt;a target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://codepen.io&quot;Open CodePen in a New Tab
 &lt;/a
@@ -205,362 +1745,6 @@ I also have a YouTube channel called Coffee Music &amp; Coding which you may fin
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Useful Visual Studio Extensions for Working with Blazor</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/grapecity/useful-visual-studio-extensions-for-working-with-blazor-5f9l">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Blazor is a free and open-source web framework. Released by Microsoft in 2018, it enables the development of interactive and reusable web UIs using the C# programming language instead of JavaScript.
-Using Blazor VSCode Extensions, you can build applications from start to finish using the C# programming language. Blazo VSCode Extensions facilitate code reusability and modularity because UI components are implemented using only C#, HTML, and CSS.
-Client software using Blazor VSCode Extensions executes C# code directly in a browser using WebAssembly. This is possible because Blazor itself is a .NET application running on WebAssembly. It can also run client logic on servers as it uses SignalR. SignalR is a real-time messaging framework that ensures efficient communication with servers.
-One of …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Changing the Prototype to a New Object</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/changing-the-prototype-to-a-new-object-110c">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Up until now you have been adding properties to the prototype individually:
-
-
-
-
-Dog.prototype.numLegs &#x3D; 4;
-
-This becomes tedious after more than a few properties.
-
-
-
-
-Dog.prototype.eat &#x3D; function() {
-  console.log(&quot;nom nom nom&quot;);
-}
-
-Dog.prototype.describe &#x3D; function() {
-  console.log(&quot;My name is &quot; + this.name + &quot;.&quot;);
-}
-
-A more efficient way is to set the prototype to a new object that already contains the properties. This way, the properties are added all at once:
-
-
-
-
-Dog.prototype &#x3D; {
-  numLegs: 4,
-  eat: function() {
-    console.log(&quot;nom nom nom&quot;);
-  },
-  describe: function() {
-    console.log(&quot;My name is &quot; + this.name + &quot;.&quot;)
-  }
-};
-
-There is one crucial side effect of manually setting the prototype to a new object. It erases the constructor property! This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results:
-To fix this, whenever a prototype is manually set to a new object, remember to define the constructor property:
-
-
-
-
-function Dog(name) {
-  this.name &#x3D; name;
-}
-
-Dog.prototype &#x3D; {
-  constructor: Dog, // &lt;----
-  numLegs: 4,
-  eat: function() {
-    console.log(&quot;nom nom nom&quot;);
-  },
-  describe: function() {
-    console.log(&quot;My name is &quot; + this.name);
-  }
-};</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Understanding the Constructor Property</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/understanding-the-constructor-property-1eh3">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>There is a special constructor property located on the object instance beagle that was created in the previous posts:
-
-
-
-
-let beagle &#x3D; new Dog();
-
-console.log(beagle.constructor &#x3D;&#x3D;&#x3D; Dog);
-
-This console.log calls would display true in the console.
-
-
-Note that the constructor property is a reference to the constructor function that created the instance. The advantage of the constructor property is that it&#x27;s possible to check for this property to find out what kind of object it is. 
-
-
-Here&#x27;s an example of how this could be used:
-
-
-
-
-function joinDogFraternity(candidate) {
-   if (candidate.constructor &#x3D;&#x3D;&#x3D; Dog) {
-     return true;
-   } else {
-     return false;
-   }
-}
-
-Here I just wrote a joinDogFraternity function that takes a candidate parameter and, using the constructor property, return true if the candidate is a Dog, otherwise return false.
-Note: Since the constructor property can be overwritten (which will be covered in the next two posts) it’s generally better to use the instanceof method to check the type of an object.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Iterating Over All Properties</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/iterating-over-all-properties-33d4">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>You have now seen two kinds of properties: own properties and prototype properties. Own properties are defined directly on the object instance itself. And prototype properties are defined on the prototype.
-
-
-
-
-function Dog(name) {
-  this.name &#x3D; name; // own property
-}
-
-Dog.prototype.numLegs &#x3D; 4; // prototype property
-
-let beagle &#x3D; new Dog(&quot;Snoopy&quot;); 
-
-Here is how you add dog&#x27;s own properties to the array ownProps and prototype properties to the array prototypeProps:
-
-
-
-
-let ownProps &#x3D; [];
-let prototypeProps &#x3D; [];
-
-for (let properties in beagle) {
-  if (beagle.hasOwnProperty(properties)) {
-    ownProps.push(properties);
-  } else {
-    prototypeProps.push(properties);
-  }
-}
-
-console.log(ownProps); // display [&quot;name&quot;] in the console
-console.log(prototypeProps); // display [&quot;numLegs&quot;] in the console</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Using Prototype Properties to Reduce Duplicate Code</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/using-prototype-properties-to-reduce-duplicate-code-4p5i">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Continued.
-Since numLegs will probably have the same value for all instances of Dog, you essentially have a duplicated variable numLegs inside each Dog instance.
-This may not be an issue when there are only two instances, but imagine if there are millions of instances. That would be a lot of duplicated variables.
-A better way is to use Dog’s prototype. Properties in the prototype are shared among ALL instances of Dog. Here&#x27;s how to add numLegs to the Dog prototype:
-
-
-
-
-Dog.prototype.numLegs &#x3D; 4;
-
-function Dog(name) {
-  this.name &#x3D; name;
-}
-
-Dog.prototype.numLegs &#x3D; 4;
-
-let beagle &#x3D; new Dog(&quot;Snoopy&quot;);
-let husky &#x3D; new Dog(&quot;Rex&quot;;
-
-* Now all instances of &#x60;Dog&#x60; have the &#x60;numLegs&#x60; property.
-
-console.log(beagle.numLegs); // will display 4
-console.log(husky.numLegs); // will display 4
-
-Since all instances automatically have the properties on the prototype, think of a prototype as a &quot;recipe&quot; for creating objects. Note that the prototype for beagle and husky is part of the Dog constructor as Dog.prototype. Nearly every object in JavaScript has a prototype property which is part of the constructor function that created it.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Understanding Own Properties</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/understanding-own-properties-2j6j">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Continued.
-In the following example, the Dog constructor defines two properties: name and numLegs:
-
-
-
-
-function Dog(name) {
-  this.name  &#x3D; name;
-  this.numLegs &#x3D; 4;
-}
-
-let greyHound &#x3D; new Dog(&quot;Sakura&quot;);
-let bullDog &#x3D; new Dog(&quot;Tanjiro&quot;);
-
-name and numLegs are called own properties, because they are defined directly on the instance object. That means that greyHound and bullDog each has its own separate copy of these properties. In fact every instance of Dog will have its own copy of these properties. The following code adds all of the own properties of greyHound to the array ownProps:
-
-
-
-
-function Dog(name) {
-  this.name  &#x3D; name;
-  this.numLegs &#x3D; 4;
-}
-
-let greyHound &#x3D; new Dog(&quot;Sakura&quot;);
-let ownProps &#x3D; [];
-
-for (let properties in greyHound) {
-  if (greyHound.hasOwnProperty(properties)) {
-    ownProps.push(properties);
-  }
-}
-
-console.log(ownProps); // the console would display the value [&#x27;name&#x27;, &#x27;numLegs&#x27;]</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Verifying an Object&#x27;s Constructor with instanceof</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/verifying-an-object-s-constructor-with-instanceof-3l6k">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Continued
-Anytime a constructor function creates a new object, that object is said to be an instance of its constructor. JavaScript gives a convenient way to verify this with the instanceof operator. instanceof allows you to compare an object to a constructor, returning true or false based on whether or not that object was created with the constructor. 
-
-
-Here&#x27;s an example:
-
-
-
-
-function Dog(name, color) {
-  this.name &#x3D; name;
-  this.color &#x3D; color;
-  this.numLegs &#x3D; 4;
-}
-
-let goldenRetriever &#x3D; new Dog(&quot;Naruto&quot;, orange);
-
-goldenRetriever instanceof House; // will display true
-
-This instanceof method would return true.
-If an object is created without using a constructor, instanceof will verify that it is not an instance of that constructor:</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Deploy a MicroK8s cluster with cloud-init</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sciabarracom/deploy-a-microk8s-cluster-with-cloud-init-45l7">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>If you need to run Kubernetes, today very frequently you just pick one managed in some cloud provider. However this option is frequently expensive. A cheaper option is to get a bunch of virtual machines and install Kubernetes in it.
-Creating a Kubernetes cluster actually today is pretty simple, using tools like MicroK8s but there are still some manual actions to take.
-To make cluster building even simpler, you can use for example cloud-init, the standard for cloud image initialization. So I decided to write a cloud-init that can automatically build a cluster for you.
-The result is here, you can download it with this command:
-curl -sL bit.ly/microk8s-init &gt;microk8s-init.yaml
-
-To entirely automate the cluster generation I had to use a couple of tricks.
-First I assigned statically an IP addre…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Language. Platform. Ecosystem.</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/andreidascalu/language-platform-ecosystem-30if">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>I&#x27;m usually making quite a bit of noise trying to promote the &quot;original&quot; idea of DevOps. That is, the unifying practice of tackling development and operations together as part of delivering a software product.
-Many (particularly in the world of recruitment) use DevOps as a synonym for Ops when referring to a role. This is not the intention of the concept, though that&#x27;s a point I&#x27;ve talked about in other articles.
-This article is about the first step towards DevOps (or at least what I consider a first step to be). Of course, DevOps doesn&#x27;t mean one person needs to have complete master over both areas but there has to be some crossover so that people know what the person next to them is talking about.
-There&#x27;s a simple way to make a step towards that understanding: know your tools. Specifical…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Real Time Face Mask Detection || Tensorflow || OpenCV</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/gauravsingh9356/real-time-face-mask-detection-tensorflow-opencv-33k0">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Hello, Devs! Worked on CNN model to detect a masked face. The model is currently working with an accuracy of 98.537%. Working on it to improve its accuracy further.
-𝐍𝐞𝐭𝐰𝐨𝐫𝐤 𝐮𝐬𝐞𝐝 : 𝐂𝐨𝐧𝐯𝐨𝐥𝐮𝐭𝐢𝐨𝐧𝐚𝐥 𝐍𝐞𝐮𝐫𝐚𝐥 𝐍𝐞𝐭𝐰𝐨𝐫𝐤
-https://lnkd.in/dk7ad9a
-GitHub</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Experimental React - Concurrent Mode is Coming</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/grapecity/experimental-react-concurrent-mode-is-coming-34d5">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>React is an open-source JavaScript library developers use to build interactive user interfaces and UI components for web and mobile-based applications. Created by Jordan Walke, a Facebook Software engineer, the first version of React came out seven years ago. Now, Facebook maintains it. Since its initial release, React’s popularity has skyrocketed.
-In October 2020, React 17 was announced with — surprisingly — zero new features. However, this certainly doesn’t mean nothing exciting was added. In fact, this release comes with many promising upgrades, including several improvements and bug fixes to version 16’s experimental features: Concurrent Mode and Suspense.
-Though not yet available to the broader public, these features are available for developer experimentation. If and when released, t…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Github, Python and Docker: The Sweet Trio</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/deepjyoti30/github-python-and-docker-the-sweet-trio-18bc">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>I have been meaning to write about this for a while. Since most of my work revolves around building API&#x27;s and deploying them, it is pretty important for me (and people like me) to automate as many things as possible in order to get the best out of my time and available resources.
-My current tech stack revolves around the following:
-Python (that wasn&#x27;t hard to guess, huhh!?)
-FastAPI (For the API)
-Celery (For workers to do tasks in the background)
-Docker (Why not!?)
-GitHub (Version control)
-DigitalOcean (Server)
-I will try to keep things as simple as possible.
-I use Python as my primary language to build API&#x27;s. FastAPI is a Python framework that makes building production API&#x27;s way simpler. Celery is a Python tool/library that queues tasks and does them in the background.
-Using the above thre…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
                 <summary class="article-expander__title">Fusuma, multi-touch gestures for Linux, updated to v2!</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/iberianpig/fusuma-multi-touch-gesture-for-linux-updated-to-v2-11i0">
                   <div class="article-summary-box-inner">
@@ -606,7 +1790,7 @@ Fus…</span>
                 <summary class="article-expander__title">Give your linux terminal a makeover</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/robole/give-your-terminal-a-makeover-55c3">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
+                    <span class="article-reading-time">(6 min)</span>
                     <span>I decided to give my laptop a virtual makeover recently. One thing that stuck out was the terminal. 
 A terminal is a dark rectangle with text. It&#x27;s utilitarian. There isn&#x27;t a lot of options for making it stylish, but you can make it feel more personal with a few changes.
 The 3 major things you can do is: 
@@ -667,319 +1851,6 @@ So, you want to get all this deployed? but before you get so far, you want to ma
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">NodeJS - Run your app with multiple versions of Node</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/vishalraj82/nodejs-run-your-app-with-multiple-versions-of-node-45np">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>As newer version of NodeJS is released, it brings with it - performance improvements, speed, security, new features and more. If you have a nodejs based web application and plan to upgrade the version of nodejs, then of course it becomes important to test the application on the new version to ensure its sanity.
-In this post we will explore how can use Docker to run our nodejs based application with two (or more) versions of nodejs.
-Lets explore the directory structure to understand how the files have been organized.
-vishalr@ubuntu ~&gt; tree multi-node-app
-multi-node-app/
-├── app
-│   ├── index.js
-│   └── package.json
-├── docker-compose.yml
-├── node14.Dockerfile
-├── node16.Dockerfile
-└── proxy
-    └── nginx.conf
-
-2 directories, 6 files
-vishalr@ubuntu ~&gt; 
-
-The main app resides inside the app folder. The files node14.Dockerfile and node16.Dockerfile contain instructions to build docker image, to run app with Node v14.x and v16.x. The file docker-compose.yml is a wrapper over the two docker files and adds Nginx as proxy over two docker containers. The file proxy/nginx.conf contains the barebones configuration to use nginx as proxy for our application.
-Additionally we also need to make the following entry in the file /etc/hosts.
-127.0.0.1  node16.myapp.local  node14.myapp.local
-
-To start all the containers execute the following command -
-vishalr@ubuntu ~&gt; docker-compose up
-
-Once all the containers (nginx, node16 and node14) are up, you can use the urls http://node16.myapp.local and http://node14.myapp.local in your local browser to test your application running with Node v16.x and Node v14.x respectively. 
-You can find this project at my Github repository</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">5 best Node.JS frameworks</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/alexanderkdev/5-best-node-js-frameworks-4a3n">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Node.js is an open-source, cross-platform JavaScript runtime that manages JavaScript code outside the browser.
-HOW TO CHOOSE THE BEST FRAMEWORK?
-Scalability.
-Ecosystem.
-Functionality.
-EXPRESS.JS
-Uber
-Twitter
-BlaBlaCar
-Advantages of Express.js
-Open-sourced, has a vast and vital community;
-Easy to learn;
-A developer can install helpful tools for speed, response, and performance improvement;
-Ability to define with URLs and HTTP protocol;
-Supports multiple template engines;
-Allows creating both static and dynamic content;
-Integration with SQL and NoSQL databases.
-METEOR.JS
-Mazda
-Accenture
-Deloitte
-Brainhub
-Advantages of Meteor.js
-Suitable for MVP development and prototype;
-Smart packages: you may use a single command to connect multiple features;
-You don’t need huge blocks of code: it’s simple and elegant.
-KOA.JS
-Brainhub;
-Bulb;
-GAPO
-Advantages of Koa.js
-A lightweight approach to development
-Easy error handling using try/catch command;
-There’s no built middleware, so nothing makes the application havier or slows down;
-Rich Express ecosystem supports Koa and provides a lot of its translated packages and libraries
-Koa allows simply writing functions instead of spamming middleware.
-NEST.JS
-Adidas
-Autodesk
-Neoteric
-Advantages of Nest.js
-Angular style syntax for the backend
-NodeJS ecosystem
-Integration with Express
-Fast development
-You would quickly switch to Nest if you used Angular or Express before
-HAPI.JS
-BrainHub
-Gozova
-Boodle
-Advantages of Hapi.js:
-Powerful input validation
-Functionality
-Caching Implementation
-Improved error handling system
-Suitable for microservice development
-Flexible RSS memory
-CONCLUSION
-https://exceed-team.com/tech/5-best-nodejs-frameworks?s&#x3D;re&amp;a&#x3D;d) always base our decision on the product’s requirements and features when a Node.js project comes along. It’s very important to pay attention to business needs.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">5 NPM Packages to Secure Your Node.js Backend in 5 Minutes</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/itsnitinr/5-npm-packages-to-secure-your-node-js-backend-in-5-minutes-2732">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>When you start to focus on the performance and security of your backend alongside the other features, you know that you&#x27;re growing and maturing as a developer. It goes without saying but having some sort of security measure against common attacks is essential, even if it&#x27;s just a hobby project.
-If you&#x27;re new to security or want to quickly get started with some basic protection, these 5 NPM packages will help you get started in just a few minutes. The best part about these packages is that all you have to do is just install them and use them as middleware. It&#x27;s that easy! 
-In a hurry or just need the list of packages? Here are the 5 NPM packages that I&#x27;ll be going over:
-
-
-
-Package Name
-Package Link
-
-
-
-
-helmet
-NPM Link
-
-
-xss-clean
-NPM Link
-
-
-hpp
-NPM Link
-
-
-express-mongo-sanitize
-NPM Link
-
-
-e…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Top 6 Leading Node.JS Frameworks</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rlogical/top-6-leading-node-js-frameworks-1294">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>You will come across as many as six top-quality Node.js frameworks well-known for their simplified and lightweight development process. Let’s talk about each one of them in brief.
-Express.js
-Express.js happens to be amongst the leading web app frameworks of Node.js. It is extremely flexible and lightweight that provides powerful features for mobile and web app development. This framework offers a layer of basic web app features without complicating the features of Node.js. You will come across lots of well-known frameworks based on Express.js.
-Meteor.js
-Meteor.js happens to be an open-source platform utilized by numerous developers for developing mobile and web apps. It is popular amongst developers for creating efficient, simple, and scalable JavaScript apps. The industry giants took more…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to download node js on macOS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/nerdclump7/how-to-download-node-js-on-macos-2ol6">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>This guide is for people who want help with how to download node.js on macOS and you will know everything step by step.
-Nodejs.org
-
-Step 2: Click on the current version to download the latest version of the nodejs and it will automatically updates the node.js. And Download the File to continue
-
-Step 3: Go to Finder and then Download tab to find node.js package. Then Double click on the file to install.
-
-Step 4: If you get this then follow the below steps as shown in image 4, If you don’t get it then skip to step 7 to continue.
-
-Step 5: Open System Preferences
-
-Read the Full Article here How to download node js on macOS
-Nerd Clump
-Note: All the images are from Nerd Clump</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">NodeJs Response</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/dhanushxeno/nodejs-response-4ipe">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Consider a Nodejs express app
-I am setting a new parameter &#x27;abc&#x27; with a string to the response object
-If I send a response to frontend will they be able to view the value of abc 
-
-If you inspect via browser, you will be able to see the 
-Headers
-Cookies
-Response Body
-etc
-But is there any possibility for the value &#x27;abc&#x27; to be got by the frontend ?</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Node v14.8+: Top Level Async Await</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/raviojha/node-v14-8-top-level-async-await-2i2b">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>We all know what callback hell is, there is dedicated page for it. I recommend to go through it once. We all know how difficult it is to maintain a pyramid structure of code.
-Then came promises which made our life much easy and code started looking much better, and much easy to maintain.
-Then came async/await which made it even better.
-In this post, let&#x27;s see how to use top level async await.
-But first, let us see how does it look now.
-mkdir top-level-async
-cd top-level-async
-touch async-await.js
-
-Copy Paste the below code.
-function fakeApiCall() {
-  return new Promise((resolve) &#x3D;&gt; {
-    setTimeout(() &#x3D;&gt; {
-      resolve(&quot;I am resolved, after 1000ms!!&quot;);
-    }, 1000);
-  });
-}
-
-async function doSomething() {
-  let result &#x3D; await fakeApiCall();
-  console.log(result);
-}
-
-doSomething();
-
-fakeAp…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Plasma Donation Website using MERN stack</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/nehasoni__/plasma-donation-website-using-mern-stack-26f5">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Hello amazing people 👋,
-Welcome to Plasma Donation Website. As we all know, the world is suffering from the COVID-19 crisis. Our government and health care professionals are trying their best to help the patients suffering from COVID-19. Scientists are trying to discover a vaccine to cure people affected with coronavirus. There is a scientific way from which we can help to lower the death ratio or help the COVID 19 affected person. Plasma therapy is an experimental approach to treat COVID-positive patients and help them recover faster. But, in this situation, it is difficult for a patient to find a plasma donor as everybody can’t donate plasma.
-The main goal of our project is to make it easier for the COVID-19 patients to get a plasma donor easily as well as donate plasma if they have rec…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How To Automate Code Cleanliness in VSCode with Typescript, ESLint, and Prettier</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/wolfejw86/how-to-automate-code-cleanliness-in-vscode-with-typescript-eslint-and-prettier-4d4i">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>I&#x27;m a fan of automating this type of thing since I do it in almost every project I ever start up. I just like the autoformatting and clean look of the code too much to go without now (probably says something about my personality).
-I&#x27;m a fan of automating this type of thing since I do it in almost every project I ever start up. I just like the autoformatting and clean look of the code too much to go without now (probably says something about my personality :P).
-NOTE: If you want a Node.js script that you can run in your repository and automate the entire thing without worrying about the individual pieces, feel free to skip down to my GitHub Gist at the bottom of this post!
-To do this quickly we&#x27;re going to use some codegen to get things up and running with fastify-cli to quickly generate us…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Learn Node.js for beginners</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/marina294/learn-node-js-for-beginners-163g">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Hi there.
-At first, let&#x27;s talk about what is node.js.
-These are just a few companies that use Node.js. There are many more, for the same or different reasons.
-Uber, a cab dispatch service, also uses Node.js for their core system. 
-Node.js was chosen because the Uber service is used all over the world and requires a huge network system to operate.
-Paypal is a payment service that uses email accounts and the Internet.
-By switching from Java to Node.js as the server-side development language, the gap with the front-side development has been reduced.
-LinkedIn is the social network for professional connections. It is best suited for people looking to make serious career moves who want to get noticed by relevant companies. 
-Previously, Ruby on Rails was used, but in order to increase the speed of access, it was moved to Node.js.
-Netflix is the world’s biggest global provider of video streaming including movies and television series, available in over 190 countries. As of July 2020, Netflix reported over 192 million subscribers worldwide, with more than 72 million in the U.S itself.
-Previously, Netflix was using Java on the back end and JavaScript on the front end, which required the developers to be proficient with languages.
-Now, The user interface (UI) of Netflix was built using Node.js.
-Next, his is an explanation of the Node.js package management tool &quot;npm&quot;.
-npm is automatically installed when Node.js is installed.
-There are two ways to install packages with npm &quot;global installation&quot; and &quot;local installation&quot;.
-npm allows to create a file called &quot;package.json&quot;.
-These are useful command of npm.
-npm install npm 
-npm i npm 
-
-npm install [package name] 
-npm i [package name] 
-
-npm uninstall [package name] 
-npm rm [package name] 
-
-npm update [package name] 
-npm up [package name] 
-
-npm list 
-npm ls 
-
-npm init
-
-Today, I explained about basic Node.js.
-I hope this article helps you understand node.js!
-Happy coding! :)</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -1021,103 +1892,6 @@ A continuación, haré una breve explicación de …</span>
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">ACM PCA implementation</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aws-builders/acm-pca-implementation-2064">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Goal
-Generate private cert for all accounts so that all internal applications can use this cert.
-Analysis
-TLDR
-a. Choose an account to centralize one Root CA and another account for one Subordinate CA, use only ACM generated certificate to be eligible for managed renewal.
-b. Give other accounts permission to request Private Certificates, to export it, and then to import it to ACM or Secrets Manager in its own account. For on-premise, after issuing Private Certificate, export it and then store in on-premise Vault.
-c. Renew by repeating step (2) after the certificates are renewed in the central account.
-d. With this arrangement, cost will be 2 x $400 plus $0.75 per Private Certificate stored in ACM which will be less than if you were to host ACM PCA in every accounts.
-Long story
-First off, t…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">5 NPM Packages to Secure Your Node.js Backend in 5 Minutes</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/itsnitinr/5-npm-packages-to-secure-your-node-js-backend-in-5-minutes-2732">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>When you start to focus on the performance and security of your backend alongside the other features, you know that you&#x27;re growing and maturing as a developer. It goes without saying but having some sort of security measure against common attacks is essential, even if it&#x27;s just a hobby project.
-If you&#x27;re new to security or want to quickly get started with some basic protection, these 5 NPM packages will help you get started in just a few minutes. The best part about these packages is that all you have to do is just install them and use them as middleware. It&#x27;s that easy! 
-In a hurry or just need the list of packages? Here are the 5 NPM packages that I&#x27;ll be going over:
-
-
-
-Package Name
-Package Link
-
-
-
-
-helmet
-NPM Link
-
-
-xss-clean
-NPM Link
-
-
-hpp
-NPM Link
-
-
-express-mongo-sanitize
-NPM Link
-
-
-e…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Raku malware analysis</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/terceranexus6/raku-malware-analysis-jon">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Not long ago I explained how to do a simple malware analysis using Yara tool. Yara is nice, mostly because is the common query in most public resources of discovered malware. Although, I wondered about the limits of the rules, and how to look for regex conditionals as I would do in other TTP (Tactics, Techniques and Procedures) queries. Also I wondered if it might be more convenient for a light environment such as my manjaro RPI for malware analysis. SO anyway let&#x27;s explore about Raku possibilities for this topic. First of all, Raku was created by some Perl enthusiasts, one of them (the one who also taught me about it) has a blog here too. 
-It&#x27;s interesting because it keeps the ideal of making a language accessible but doesn&#x27;t quite forget about the flexibility. One of the things that got …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to invalidate a compromised  JWT</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/pazvanti/how-to-invalidate-a-compromised-jwt-23ld">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>In a past article, I wrote about JWTs, how to generate one and how to use them for authorization. JSON Web Tokens, however, have one major drawback. Once it is generated and submitted to the client, it can’t be easily made invalid. This is a big problem if the JWT got leaked and it did not expire (or worse, it does NOT have an expiration date). That is why it is important to make sure that your JWT can be invalidated at the server-side and I will show you two methods to do this.
-The easiest way, at least at first glance, is to have a way of blacklisting a JWT once it is compromised. You can store all compromised JWTs in the database and when an authorization request is received, you check that the JWT used is not part of this list. This approach has one big disadvantage though: the DB can …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Understanding Cross-Site Request Forgery (CSRF or XSRF)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/danilo/understanding-cross-site-request-forgery-csrf-or-xsrf-3d95">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>This post is also available in the following languages: Portuguese.
-On the last article we have learned how we can prevent some Cross-Site Scripting (XSS) attacks by using proper sanitization techniques on our web server. Now, let&#x27;s take a look at another vulnerability that also can cause problems on web pages that are not complying with the adequate security methods.
-💡 If you did not read the previous article on this series, “Secure GET and POST requests using PHP”, I suggest you to do, as some knowledge on what are HTTP Requests, and how they do work, may be required in order to understand the following concepts — and, also, it can help you to increase your webpages&#x27; security.
-Let&#x27;s investigate another one of the most common web vulnerabilities: the Cross-Site Request Forgery (CSRF), th…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -1150,7 +1924,7 @@ Read the full article Best Practices for Checking PropTypes in React Components 
                     <span>The Nextjs App for the intersect
 
 
-I&#x27;ll quickly use a template to creata the nextjs app with basic setup
+I&#x27;ll quickly use a template to create the nextjs app with basic setup
 Typescript, Tailwind support because css is boring.
 git clone https://github.com/100lvlmaster/nextjs-tailwind-typescript-starter.git
 
@@ -1158,8 +1932,8 @@ cd nextjs-tailwind-typescript-starter
 
 yarn
 
-This will give all the required tools already setup. So that we can get the app up and runnig in no time
-You can use your prefered method for making a http get request but im using axios in this one.
+This will give all the required tools already setup. So that we can get the app up and running in no time
+You can use your preferred method for making a Http GET request but I&#x27;m using axios in this one.
 
 
 
@@ -1171,7 +1945,7 @@ export const getImages &#x3D; async (searchString: string) &#x3D;&gt; {
   const config: AxiosRequestConfig &#x3D; {
     params: { q: searchString },
     headers: { Authorization: process.env.NEXT_PUBLIC_API_KEY },
-    // Authorization header we set in the se…</span>
+    // Authorization header we set in the…</span>
                   </div>
                 </a>
               </details>
@@ -1266,120 +2040,6 @@ const ref &#x3D; useRef(null);
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Top 6 Leading Node.JS Frameworks</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rlogical/top-6-leading-node-js-frameworks-1294">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>You will come across as many as six top-quality Node.js frameworks well-known for their simplified and lightweight development process. Let’s talk about each one of them in brief.
-Express.js
-Express.js happens to be amongst the leading web app frameworks of Node.js. It is extremely flexible and lightweight that provides powerful features for mobile and web app development. This framework offers a layer of basic web app features without complicating the features of Node.js. You will come across lots of well-known frameworks based on Express.js.
-Meteor.js
-Meteor.js happens to be an open-source platform utilized by numerous developers for developing mobile and web apps. It is popular amongst developers for creating efficient, simple, and scalable JavaScript apps. The industry giants took more…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Advanced TypeScript: A Generic Function to Update and Manipulate Object Arrays</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/fullstackchris/advanced-typescript-a-generic-function-to-update-and-manipulate-object-arrays-1efb">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Always Pushing for Cleaner Code
-
-
-While building my newest SaaS product, ReduxPlate, I realized a common pattern kept cropping up in my array manipulation functions. I was always updating a specific value at a specific key, based on a specific test on some other key.
-*Plug: Speaking of ReduxPlate, which automatically generates Redux code for you, I&#x27;m writing a book that documents every step I took along the way to build ReduxPlate, from boilerplate starters to the finished live product. I&#x27;d love it if you check it out! Yes, You&#x27;ve read this correctly! I literally build ReduxPlate from start to finish, right before your eyes - and the code is all public!
-For example, for the editor widget on the ReduxPlate homepage, I use a stateful array of type IEditorSettings to determine which editor is…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">gRPC Web on AWS Lambda in 7 minutes</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/bartek1912/grpc-web-on-aws-lambda-in-7-minutes-4ceh">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>https://blog.gendocu.com/posts/grpc-web-on-aws/</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Your only guide to babel in 2021</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/adityaj/your-only-guide-to-babel-in-2021-1i4e">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>What&#x27;s the story behind it?
-
-
-👨‍💻 I was in a search for an all-in-one article to help me get started with Babel without ever reading the whole documentation but I didn&#x27;t found any So, after deeply going through the Babel docs I&#x27;m writing this.
-I assure you to move you from zero to a little less than advanced in babel but don&#x27;t worry I&#x27;ll also tell you important things to become advance in it.
-So, if you&#x27;ve heard about babel but never got into knowing what, why, and how about it, you should continue reading this.
-
-The left one is the user and the right one is the browser.
-JavaScript has evolved a lot in the previous years and the all latest features of JavaScript are not supported in many modern browsers but most of them are.
-Babel is the middle man(transpiler) between your modern JavaScr…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Types and Mocking - Typescript</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/this-is-learning/types-and-mocking-typescript-1m00">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>In this article, we are going to learn how to create functions which are easy to test and mock using TypeScript utility types.
-Let&#x27;s take the following function, how do you mock it&#x27;s inputs i.e. person:
-interface Person {
-    name: {
-        firstName: string;
-        lastName: string;
-    }
-    id: string;
-    age: number;
-    height: number;
-    weight: number;
-}
-
-function getPersonsFullName(person: Person) {
-    return &#x60;${person.name.firstName} ${person.name.lastName}&#x60;;
-}
-
-One common way, is to create an object of type Person with only the fields being used by function and then cast the object as any, as shown below:
-const person &#x3D; {
-    name: {
-        firstName: &quot;Wycliffe&quot;,
-        lastName: &quot;Maina&quot;
-    }
-}
-
-console.log(getPersonsFullName(person as any));
-
-This works, but you are losi…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How To Automate Code Cleanliness in VSCode with Typescript, ESLint, and Prettier</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/wolfejw86/how-to-automate-code-cleanliness-in-vscode-with-typescript-eslint-and-prettier-4d4i">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>I&#x27;m a fan of automating this type of thing since I do it in almost every project I ever start up. I just like the autoformatting and clean look of the code too much to go without now (probably says something about my personality).
-I&#x27;m a fan of automating this type of thing since I do it in almost every project I ever start up. I just like the autoformatting and clean look of the code too much to go without now (probably says something about my personality :P).
-NOTE: If you want a Node.js script that you can run in your repository and automate the entire thing without worrying about the individual pieces, feel free to skip down to my GitHub Gist at the bottom of this post!
-To do this quickly we&#x27;re going to use some codegen to get things up and running with fastify-cli to quickly generate us…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -1414,7 +2074,7 @@ To do this quickly we&#x27;re going to use some codegen to get things up and run
                 <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/learn-bootstrap-5-and-sass-by-building-a-portfolio-website/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(1 min)</span>
-                    <span>Bootstrap is one of the most popular CSS frameworks and Sass is one of the most popular preprocessors for CSS. We just released a course on the freeCodeCamp.org YouTube channel that will teach you about Bootstrap 5 and Sass by building a portfolio website. Patrick Muriungi developed this course.</span>
+                    <span>Bootstrap is one of the most popular CSS frameworks and Sass is one of the most popular preprocessors for CSS. We just published a course on the freeCodeCamp.org YouTube channel that will teach you about Bootstrap 5 and Sass by building a portfolio website. Patrick Muriungi developed this course.</span>
                   </div>
                 </a>
               </details>
@@ -1482,140 +2142,10 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Spring JPA + PostgreSQL + AngularJS example | Spring Boot</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/loizenai/spring-jpa-postgresql-angularjs-example-spring-boot-11o9">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>https://ozenero.com/spring-jpa-postgresql-angularjs-example-spring-boot
-Spring JPA + PostgreSQL + AngularJS example | Spring Boot
-In this tutorial, JavaSampleApproach shows you a Spring Boot example that uses Spring JPA to interact with PostgreSQL and AngularJS as a front-end technology to make request and receive response.
-Related Posts:
-How to use Spring JPA with PostgreSQL | Spring Boot
-How to integrate Http Angularjs with Spring MVC | Spring Boot
-Angular 4 + Spring JPA + PostgreSQL example | Angular 4 Http Client – Spring Boot RestApi Server
-I. Overview
-1. Goal
-
-We&#x27;ll build a Spring Boot Application in that:
-REST Service provides interface for interacting with Customer Database (PostgreSQL) using Spring JPA.
-By using AngularJS to make HTTP request to REST Service and receive response, …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Hackathon -Develop a UI dashboard that displays weather forecasts to African farmers</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/taikai/hackathon-develop-a-ui-dashboard-that-displays-weather-forecasts-to-african-farmers-17o4">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>The Kanda Weather Group is seeking participants to develop a simple User Interface (UI) dashboard that shows our forecasts in an easy-to-understand way for local farmers and stakeholders.
-The company is refining a weather balloon (also known as radiosonde) IoT technology product that collects data and uses Machine Learning to make a simple 12-hour rain forecast. They are 80% cheaper than traditional radiosondes and can be set up anywhere on earth.
-Challenge: Develop a UI dashboard that displays weather forecasts to African farmers and stakeholders
-Prizes: 1.500$ 
-Deadline: July 1th, 2021
-JOIN THE CHALLENGE
-
-
-
-They are working with decentralized climate company dClimate to provide near real-time access to other variables such as soil moisture or rainfall data for our two forecast regions Ac…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Top Advantages of Choosing AngularJS Framework for Web App</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/laravellions/top-advantages-of-choosing-angularjs-framework-for-web-app-33fd">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Web Applications have become an integral part of almost every business. Apps are the direct means through which they can interact with their customers, market their products and provide their customers an easy way to manage their services with them. And, did we forget to mention that they give your business a competitive edge as well?
-When it comes to web application development, there are a number of frameworks available in the market. One of such popular frameworks is – AngularJS, an open-source JavaScript MVC framework. MVC stands for Model-View-Controller. The AngularJS framework has been built and managed by Google.
-The framework was developed to build the client-side applications. Since then, the framework has evolved to become a well defined and sought after JavaScript framework.
-An…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Spring Boot + Angular 6 example | Spring Data + REST + MongoDb CRUD example</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/loizenai/spring-boot-angular-6-example-spring-data-rest-mongodb-crud-example-a2h">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Spring Boot + Angular 6 example | Spring Data + REST + MongoDb CRUD example
-https://ozenero.com/spring-boot-angular-6-example-spring-data-rest-mongodb-crud-example
-In this tutorial, we show you Angular 6 Http Client &amp; Spring Boot Server example that uses Spring Data to do CRUD with MongoDb and Angular 6 as a front-end technology to make request and receive response.
-Related Posts:
-Spring Boot + Angular 6 example | Spring Data JPA + REST + PostgreSQL CRUD example
-Spring Boot + Angular 6 example | Spring Data JPA + REST + MySQL CRUD example
-Angular 6 HttpClient + Spring Boot + MariaDB example | Spring Data JPA + RestAPIs CRUD example
-Spring Boot + Angular 6 example | Spring Data + REST + Cassandra CRUD example
-I. Technologies
-– Java 1.8
-RxJS 6
-II. Overview
-Demo
-
-1. Spring Boot Server
-
-2. Angular 6 Client
-
-III. Practice
-1. Project Structure
-1.1 Spring Boot Server
-
-Customer class corresponds to entity and table customer.
-CustomerRepository is an interface extends MongoRepository, will be autowired in CustomerController for implementing repository methods and custom finder methods.
-CustomerController is a REST Controller which has request mapping methods for RESTful requests such as: getAllCustomers, postCustomer, deleteCustomer, deleteAllCustomers, findByAge, updateCustomer.
-Configuration for Spring Datasource and Spring Data properties in application.properties
-
-
-Dependencies for Spring Boot and MongoDb in pom.xml
-1.2 Angular 6 Client
-In this example, we focus on:
-4 components: customers-list, customer-details, create-customer, search-customer.
-3 modules: FormsModule, HttpClientModule, AppRoutingModule.
-customer.ts: class Customer (id, firstName, lastName)
-customer.service.ts: Service for Http Client methods
-2. How to do
-2.1 Spring Boot Server
-2.1.1 Dependency
-More at:
-Spring Boot + Angular 6 example | Spring Data + REST + MongoDb CRUD example
-https://ozenero.com/spring-boot-angular-6-example-spring-data-rest-mongodb-crud-example</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Arquitectura de Componentes en Angular</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/vanessamarely/arquitectura-de-componentes-en-angular-29k8">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Nuestras aplicaciones estan llenas de componentes y pensar en cómo queremos estructurarlos, nos ayuda en su arquitectura.
-La mayoría de aplicaciones que construimos no son páginas estáticas, hay un estado y hay diferentes tipos de componentes donde el estado podría vivir.‌
-
-Muy conocidos como Dumb o componentes tontos. Usan Inputs/Outputs para su comunicación. 
-Enviamos un valor al container, renderizamos los valores del container; emite un evento cuando está listo y algún otro componente administra el estado y hace las actualizaciones respectivas del estado.
-Con estos componentes nos probamos a nosotros mismos en cuanto a la separación de la complejidad en la lógica que podemos llegar hacer, en estos componentes no hay necesidad de crear servicios mockeados, o hacer alguna petición solo p…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
                 <summary class="article-expander__title">Beginner&#x27;s guide to Docker</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/noviicee/beginner-s-guide-to-docker-42co">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
+                    <span class="article-reading-time">(5 min)</span>
                     <span>“Write Once, Run Anywhere”
 Sun Microsystems about Java, 1995
 Docker about any piece of software, 2013
@@ -1648,47 +2178,6 @@ In order to follow this demo u must have Docker installed on your machine. I&#x2
 To test the correctness of the demo u should have installed a client that could connect to SQL Server (I use SQL Server Management Studio).
 These are the only two things needed to complete this post:
 …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Docker and Snort 3</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jakub41/docker-and-snort-3-386h">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Hello, 
-The project is here: GitHub 
-I tried many researchers but was unable to make the correct setup for the HOME_NET and to see the alerts when I try to ping any of the IP addresses I set up in the snort.lua 
-Would be possible to get help to set it up correctly in my project? 
-I would like to make it work and correctly. 
-Please help me to improve my knowledge on this matter and the way I should make the set up with Docker to run Snort3 as should be. 
-Thank you for yours help :)</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">TypeORM - Prevent SQL Injection with Node.js, React and TypeScript</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/yoshi_yoshi/typeorm-prevent-sql-injection-with-node-js-react-typescript-in-2021-1go4">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Introduction
-
-
-I have demonstrated some data manipulations with ORM(Object-Relational Mapping) frameworks such as TypeORM so far. Today&#x27;s topic is still cases with TypeORM. However, it focuses on the security, which is my main field at the moment. I think you understand why I select topics regarding complex queries, performance, and the difference from the Microsoft ecosystem.
-I developed a demo application in GitHub.
-Demo Application for SQL injection tutorials
-Some experienced developers mention that ORM(Object-Relational Mapping) frameworks such as TypeORM support prevent SQL injection, which is a traditional security matter. However, I still find high-risk cases with ORM frameworks in GitHub repositories, public project spaces, or in my work experience.
-This is a typical high-risk case…</span>
                   </div>
                 </a>
               </details>
@@ -1802,263 +2291,6 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
       </li>
       <li class="source">
         <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Animating Angular Route Transitions</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ngconf/animating-angular-route-transitions-1akb">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Jared Youtsey | ng-conf | Oct 2019
-For this article I’m going to assume you already understand the basics of Angular routing and components. I won’t bore you with building an entire application. We’ll get right to adding animations so you can see immediate results!
-The finished code for this example can be found here.
-In your app.module.ts add BrowserAnimationsModule to the module imports.
-...
-import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
-@NgModule({
-    imports: [
-        ...,
-        BrowserAnimationsModule
-    ],
-    ...
-})
-export class AppModule {}
-
-For unit testing, import NoopAnimationsModule instead. This fulfills the contracts while isolating unit tests from having to deal with the transitions.
-Have you ever seen a PowerPoint presentation that had …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Angular 12 &amp; Cypress: Install to Testing in 2 Minutes</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/admah/angular-12-cypress-install-to-testing-in-2-minutes-2k3k">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Thanks to the Angular CLI and the Cypress Schematic, spinning up a new Angular 12 project with Cypress is incredibly easy.
-Here&#x27;s how to do it in less than 2 minutes:
-Install the Angular CLI if you haven&#x27;t and create a new project:
-
-
-
-
-ng new angular-cypress-demo
-
-Navigate to the newly created project directory and install the Cypress Angular Schematic via the CLI:
-
-
-
-
-ng add @cypress/schematic
-
-Once you&#x27;ve completed these steps, Cypress will be set up with a default config, and basic files and folders will be installed within your project in the cypress folder - including an initial test.  
-For more information regarding schematic configuration click here.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">One-liner to sum up numbers from a CSV file</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/bgord/one-liner-to-sum-up-numbers-from-a-csv-file-1g2g">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>This is the shopping.csv CSV file that we will be working with throughout this blog post.
-item,price
-rice,2.49
-potatos,1.49
-pasta,3.79
-
-The goal is to create a one-line bash script that prints the sum of the prices in the file above, which is 7.77.
-Step: 1. Print the file content
-$ cat shopping.csv
-
-This command prints the file content without modifications.
-Output:
-item,price
-rice,2.49
-potatos,1.49
-pasta,3.79
-
-Step: 2. Cut the first line
-There are many ways to achieve it, but we use the tail +n syntax.
-In our case, it takes all the lines until the end of the file, starting from the second line.
-$ cat shopping.csv | tail +2
-
-Output:
-rice,2.49
-potatos,1.49
-pasta,3.79
-
-Step: 3. Cut the first column
-awk splits each line by a separator defined by the option -F.
-$ cat shopping.csv | tail +2 | awk -F , &#x27;{print $2}&#x27;
-
-Output:
-2.49
-1.49
-3.79
-
-Step: 4. Concatenate the prices
-xargs is used to &quot;squash&quot; the lines into a single string, separating them by space.
-$ cat shopping.csv | tail +2 | awk -F , &#x27;{print $2}&#x27; | xargs
-
-Output:
-2.49 1.49 3.79
-
-Step: 5. Replace spaces with pluses
-The sed expression replaces the escaped space with + in the entire string (globally - g).
-$ cat shopping.csv | tail +2 | awk -F , &#x27;{print $2}&#x27; | xargs | sed -e &#x27;s/\ /+/g&#x27;
-
-Output:
-2.49+1.49+3.79
-
-Step: 6. Perform the calculation
-bc is a simple calculator that you can use interactively or by piping an equation into it.
-$ cat shopping.csv | tail +2 | awk -F , &#x27;{print $2}&#x27; | xargs | sed -e &#x27;s/\ /+/g&#x27; | bc
-
-Output:
-7.77</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How To Take Static And Animated Screenshots On Ubuntu</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/simondosda/how-to-take-static-and-animated-screenshots-on-ubuntu-3kbb">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Picking tools to take screenshots is rarely seen as a primary concern, but I believe it is a largely underrated topic. I do take a lot of them in my daily job: to document an issue, to show something to a member of my team, to illustrate a presentation, a blog article, and so on.
-For a long time, I was just using the default software on Ubuntu but I was really frustrated, they were no way to annotate them to highlight a particular part. Moreover, I often felt the need to show things with an animated screenshot but just did not know how to do so.
-For something I do several times a day, spending some time to find the best fitting tools to my needs was a good investment, and I could not work anymore without the two following programs.
-Flameshot, to take customized screenshots
-
-
-First on the l…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to install WSL2 on Windows 10</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/tairosonloa/how-to-install-wsl2-on-windows-10-5e82">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Hi guys!
-This is the first post of a series that aims to explain how to get a fully productive and integrated Linux development environment within Windows 10. Today, I will explain what is WSL 2 and how to install it on Windows.
-But first what it&#x27;s first. What is WSL 2? The Windows Subsystem for Linux (WSL) lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications such as bash, ssh, sudo, apt, curl, etc. -- directly on Windows, unmodified, without the overhead of a traditional virtual machine or the extra disk space needed for a dual boot setup.
-WSL 2 is a new version of the Windows Subsystem which primary goals are to increase file system performance, as well as adding full system call compatibility. The Linux kernel is executing in para…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Using bridged networks with Docker</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jmarhee/using-bridged-networks-with-docker-3ci3">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Docker containers are assigned addresses from a network on each host (or from a mesh in the case of a Swarm cluster) when run in a standalone fashion, and in order to access them from outside the host, the following patterns are common:
-docker run -d --name nginx -p 8080:80 nginx 
-
-to expose the nginx app on http://HOST_IP:8080 , or less commonly, attaching directly to the host’s network:
-docker run -d --net host --name nginx nginx
-
-where no port forwarding rule is required, because it will bind ports as required to the host network.
-In a production scenario, or even one where a host and its containers should have separate addresses, or not accessed through the host network, docker network can be used to attached to a bridge device, to allow Docker containers to get addresses from your ext…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Azure Update Management</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/officialcookj/azure-update-management-1p89">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>An Azure Automation Account has a feature called Update Management that can manage your Windows and Linux Operating System (OS) updates for Azure, On-Premise and other third party Cloud environments. In this post I will explain what Update Management is, how to switch it on and how to add your servers to it.
-Update Management is a toggle on feature of Azure Automation Account. Within Update Management, you can add servers from multiple environments and manage both Windows and Linux updates. Microsoft does have a supported Operating Systems list here but I will outline in brief what is supported:
-Windows 2012, 2012 R2, 2016 (excl. core), 2019
-Centos 6, 7, 8 (excl. 7.5)
-Red Hat Enterprise 6, 7, 8
-SUSE Enterprise 12, 15, 15,1
-Ubuntu 14.04, 16.04, 18.04
-From within Update Management you can as…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Encrypted Key-Value Store in Kotlin Multiplatform</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/touchlab/encrypted-key-value-store-in-kotlin-multiplatform-2hnk">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Intro
-
-
-At some point you will probably need to store a user&#x27;s auth token on the device, so they won&#x27;t need to auth whenever they use your app. This is a solved problem on Android with EncryptedSharedPreferences and iOS with the Keychain Services API. But if you&#x27;re creating a mobile app using Kotlin Multiplatform, the KMP solution might not be as clear. Today we&#x27;ll go over how to store encrypted key-value data with KMP without having to reinvent the wheel.
-Multiplatform Settings is a solid multiplatform key-value store, created by Touchlab&#x27;s own Russell Wolf, used extensively at Touchlab, as well as in Jetbrains&#x27; KMM Production Sample. There is a Settings interface that is implemented for Android, iOS, MacOS, and JVM platforms. At first glance, it doesn&#x27;t look like Multiplatform Settings o…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Why Is a Social Login More Secure?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rohitjmathew/why-is-a-social-login-more-secure-4jaf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>I&#x27;m sure every developer would have written a demo login application at some point of time. We all start with the simple user defined ID and password. We then try to implement something like a social login as seen in the cover picture with say Google or Twitter. 
-There obviously is more of a complex process involved in setting up a social login but for a user its as simple as clicking a buttons to log in. The ease of not having to remember an ID/password and just being able to signup/login through the click of a button is extremely beneficial to the user
-Social logins really help us achieve a few things:
-Support for multiple devices
-Single Sign On
-Simple to implement
-The ability to share data for users without having to release personal information
-Ability revoke an active session i.e not …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Azure Update Management</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/officialcookj/azure-update-management-1p89">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>An Azure Automation Account has a feature called Update Management that can manage your Windows and Linux Operating System (OS) updates for Azure, On-Premise and other third party Cloud environments. In this post I will explain what Update Management is, how to switch it on and how to add your servers to it.
-Update Management is a toggle on feature of Azure Automation Account. Within Update Management, you can add servers from multiple environments and manage both Windows and Linux updates. Microsoft does have a supported Operating Systems list here but I will outline in brief what is supported:
-Windows 2012, 2012 R2, 2016 (excl. core), 2019
-Centos 6, 7, 8 (excl. 7.5)
-Red Hat Enterprise 6, 7, 8
-SUSE Enterprise 12, 15, 15,1
-Ubuntu 14.04, 16.04, 18.04
-From within Update Management you can as…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
           <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
           <section class="articles-per-source">
             <article>
@@ -2083,17 +2315,6 @@ From within Update Management you can as…</span>
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Use Closures in JavaScript – A Beginner&#x27;s Guide</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/closures-in-javascript/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Closures are a confusing JavaScript concept to learn, because it&#x27;s hard to see how they&#x27;re actually used.  Unlike other concepts such as functions, variables, and objects, you don&#x27;t always use closures conscientiously and directly. You don&#x27;t say: Oh! Here I will use a closure as a solution. But at the</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -2105,95 +2326,8 @@ From within Update Management you can as…</span>
                 <summary class="article-expander__title">How To Build A Geocoding App In Vue.js Using Mapbox</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/06/building-geocoding-app-vue-mapbox/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
+                    <span class="article-reading-time">(7 min)</span>
                     <span>In this guide, we’ll be taking a general look at the concepts of forward geocoding and reverse geocoding, and will build a mini-app that applies these concepts to display specific locations, using Mapbox and Vue.js 2.6.11 to achieve this.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-06-06">2021-06-06</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Create a Private Docker Registry</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/semirteskeredzic/create-a-private-docker-registry-17li">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Dockerized applications and automated pipelines mean that you will eventually need a docker registry sooner or later.
-It is essentially a place where you store Docker images organized in repositories. You can push images to the remote Docker registry and pull images where you want them.
-Nifty service that Docker.com runs is Docker hub or a Docker Registry that has many things automated so you don&#x27;t have to bother with configuring it on your own server (which we will get to in a bit).
-Free tier is also fairly generous at Docker hub because it provides you with unlimited public repositories and one private repository. More private repositories are available in paid tiers and you can find pricing info here: Docker Pricing
-If you want to house your Docker images on your own server, then you ha…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Use a Raspberry Pi as a print server</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/unixorn/use-a-raspberry-pi-as-a-print-server-2hdb">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>I have an old HP 4050N. For a variety of reasons, I want to have it behind a print server instead of having our laptops print directly to it. Here&#x27;s how I set that up.
-A Raspberry Pi (or honestly any Linux box) running docker. I like the Raspberry Pi and Odroid HC2 for this sort of thing because they have very low power consumption.
-A printer that is supported by CUPS
-
-
-
-
-  
-  
-  Setup
-
-
-There are several docker images out there you can use, I made one (the source is on github at unixorn/docker-cupsd) because I wanted one that was multi-architecture - mine has AMD64, ARM7 and ARM64 all baked into the same image so you don&#x27;t have to change the image label based on what system you&#x27;re running it on. It works fine on Raspberry Pi, Odroids and Intel servers.
-The unixorn/cupsd image is a bit on the large side because I crammed a lot of printer drivers into it, you may want to look for docker images that only support single printer families.
-We&#x27;re going to store printers.conf in a directory outside the container so that we don&#x27;t lose our printer configuration every time we upgrade our container.
-I run the cupsd server on an Odroid HC2 because I have /var/lib/docker on the 2TB drive attached to it. I could have put it on one of the Raspberry Pis in my cluster, but didn&#x27;t want it spooling print jobs and causing excessive wear on a rPi&#x27;s microSD card.
-Make a directory to store your printer configuration. We&#x27;ll use /docker/cupsd/etc
-
-export CUPSD_DIR&#x3D;&#x27;/docker/cupsd/etc&#x27;
-touch $CUPSD_DIR/printers.conf
-Run the cupsd server with
-
-
-
-
-sudo docker run -d --restart unless-stopped \
-  -p 631:631 \
-  --privileged \
-  -v /var/run/dbus:/var/run/dbus \
-  -v /dev/bus/usb:/dev/bus/usb \
-  -v &quot;$CUPSD_DIR/printers.conf:/etc/cups/printers.conf&quot; \
-  unixorn/cupsd
-
-You can now connect to http://SERVER:631 and add printers using the web UI.
-When adding the printers to your Mac, select Internet Printing Protocol and put in the IP or DNS name of your print server machine.
-The queues are printers/printername, not printername.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Home Assistant Printer Power Management</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/unixorn/home-assistant-printer-power-management-40bg">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>I&#x27;ve got an old HP laser printer in my basement. We barely print 10 pages a month between the two of us, so we only turn it on when we&#x27;re going to print. That&#x27;s a hassle though, because inevitably we forget to shut it off sometimes and it stays on overnight or even for days, and while it has a powersave mode, the 4050N is so old that even that burns a good amount of power.
-Enter Home Assistant.
-The watcher script and associated tooling all presume that we can send messages to a MQTT topic that HA is watching.
-Your computers should be configured to print to the cupsd server instead of directly to the printer.
-I run cupsd in a container on one of my Odroids. I could run it on the same Odroid HC2 that I run Home Assistant (HA) on, but there&#x27;s no compelling reason to do so and I&#x27;m reserving th…</span>
                   </div>
                 </a>
               </details>
@@ -2351,19 +2485,6 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Are Custom Properties a “Menu of What Will Change”?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/are-custom-properties-a-menu-of-what-will-change/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>PPK laid out an interesting situation in “Two options for using custom properties” where he and Stefan Judis had two different approaches for doing the same thing with custom properties. In one approach, hover and focus styles for a …
-The post Are Custom Properties a “Menu of What Will Change”? appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -2399,38 +2520,6 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
   <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2021-06-01">2021-06-01</time></h2>
     <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Code blocks, but better</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://ped.ro/blog/code-blocks-but-better">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(11 min)</span>
-                    <span>Pedro Duarte made a wishlist for styled code blocks in blog posts and documentation, then hand-rolls a perfect solution for that wishlist. For example, a feature to be able to highlight certain lines or words within the code block. The …
-The post Code blocks, but better appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Front-End Testing is For Everyone</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/front-end-testing-is-for-everyone/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(14 min)</span>
-                    <span>Testing is one of those things that you either get super excited about or kinda close your eyes and walk away. Whichever camp you fall into, I’m here to tell you that front-end testing is for everyone. In fact, …
-The post Front-End Testing is For Everyone appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
       <li class="source">
         <section>
           <h3 class="source-name"><a class="source-name__link" href="https://github.com/osmoscraft/osmosfeed/releases">Release notes from osmosfeed</a></h3>
@@ -2897,64 +2986,9 @@ Thank you @tianheg, @onnyyonn</span>
       </li>
     </ul>
   </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-12">2021-05-12</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Frustrating Design Patterns That Need Fixing: Birthday Picker</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/frustrating-design-patterns-birthday-picker/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(12 min)</span>
-                    <span>In this new series of articles on UX, we take a closer look at some frustrating design patterns and explore better alternatives, along with plenty of examples to keep in mind when building or designing one. Let’s start with an infamous birthday picker.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Little Smashing Stories</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/little-smashing-stories/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Today marks the day we sent out our 300th edition of the Smashing Newsletter. This article is a little celebration in which we share little Smashing stories from people working behind the scenes.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-11">2021-05-11</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">A Primer On CSS Container Queries</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/complete-guide-css-container-queries/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(16 min)</span>
-                    <span>A prototype of the long-awaited CSS container queries has landed in Chrome Canary and is available for experimentation. Let’s look at what problem is being solved, learn how container queries work, and see how they compare with and complement existing CSS features for layout.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-06-10T00:58:10.857Z">2021-06-10T00:58:10.857Z</time>
+    <time id="build-timestamp" datetime="2021-06-11T00:52:00.584Z">2021-06-11T00:52:00.584Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.10.2</a></span>
   </footer>
   <script src="index.js"></script>
