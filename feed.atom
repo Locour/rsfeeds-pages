@@ -1,10 +1,975 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>urn:2021-06-12T00:47:27.104Z</id>
+    <id>urn:2021-06-13T00:54:47.125Z</id>
     <title>osmos::feed</title>
-    <updated>2021-06-12T00:47:27.104Z</updated>
+    <updated>2021-06-13T00:54:47.125Z</updated>
     <generator>osmosfeed 1.10.2</generator>
     <link rel="alternate" href="index.html"/>
+    <entry>
+        <title type="html"><![CDATA[I Built A Whatsapp Bot And Linked It To My Site Free (No third-party service)]]></title>
+        <id>https://dev.to/cyril_ogoh/i-built-a-whatsapp-bot-and-linked-it-to-my-site-free-no-third-party-service-23f2</id>
+        <link href="https://dev.to/cyril_ogoh/i-built-a-whatsapp-bot-and-linked-it-to-my-site-free-no-third-party-service-23f2"/>
+        <updated>2021-06-13T00:44:25.000Z</updated>
+        <summary type="html"><![CDATA[I've always wanted to build or have my own WHATSAPP BOT, to reply my messages as I've never being one to read and reply chats and also send scheduled and automated messages sure as birthday wishes (is kind of a big deal over here)
+So i start by building a uni-gram Pattern Bot in node and feeding it some data, it was super dumb at first but the more data i fed it, the more manageable it was getting 
+
+Now What was left was to integrate it with Whatsapp
+
+So I jumped to Twilio WhatsApp Business API 😎😎 and the cost was fair $0.0042 to send a WhatsApp Template message and $0.005 for WhatsApp Session messages; BUT sadly that much 💔💔 for me as a student in a third world country with high exchange rate, I couldn't waste that amount for the Restriction Twilio was giving and I wanted it to come f…]]></summary>
+        <author>
+            <name>ogoh cyril</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Using an IIFE to Create a Module]]></title>
+        <id>https://dev.to/rthefounding/using-an-iife-to-create-a-module-l1b</id>
+        <link href="https://dev.to/rthefounding/using-an-iife-to-create-a-module-l1b"/>
+        <updated>2021-06-12T22:34:41.000Z</updated>
+        <summary type="html"><![CDATA[An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or module. 
+Ex:
+
+
+
+
+let isCuteMixin = function(obj) {
+  obj.isCute = function() {
+    return true;
+  };
+};
+let singMixin = function(obj) {
+  obj.sing = function() {
+    console.log("Singing to an awesome tune");
+  };
+};
+
+We can group these mixins into a module as follows:
+
+
+
+
+let funModule = (function() {
+  return {
+    isCuteMixin: function(obj) {
+      obj.isCute = function() {
+        return true;
+      };
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log("Singing to an awesome tune");
+      };
+    }
+  };
+})();
+
+Note that you have an immediately invoked function expression (IIFE) that returns an object funModule. This returned object contains all of the mixin behaviors as properties of the object. The advantage of the module pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code.]]></summary>
+        <author>
+            <name>Randy Rivera</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Understanding the Immediately Invoked Function Expression (IIFE)]]></title>
+        <id>https://dev.to/rthefounding/understanding-the-immediately-invoked-function-expression-iife-1fce</id>
+        <link href="https://dev.to/rthefounding/understanding-the-immediately-invoked-function-expression-iife-1fce"/>
+        <updated>2021-06-12T22:27:03.000Z</updated>
+        <summary type="html"><![CDATA[A common pattern in JavaScript is to execute a function as soon as it is declared:
+
+
+
+
+(function () {
+  console.log("Chirp, chirp!");
+})();
+
+This is an anonymous function expression that executes right away, and outputs Chirp, chirp! immediately.
+Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an immediately invoked function expression or IIFE.
+
+
+Let's rewrite the function makeNest and remove its call so instead it's an anonymous immediately invoked function expression (IIFE).
+
+
+
+
+function makeNest() {
+  console.log("A cozy nest is ready");
+}
+
+makeNest();
+
+Answer:
+
+
+
+
+(function () {
+  console.log("A cozy nest is ready");
+})();]]></summary>
+        <author>
+            <name>Randy Rivera</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Using Closure to Protect Properties Within an Object from Being Modified Externally]]></title>
+        <id>https://dev.to/rthefounding/using-closure-to-protect-properties-within-an-object-from-being-modified-externally-dnj</id>
+        <link href="https://dev.to/rthefounding/using-closure-to-protect-properties-within-an-object-from-being-modified-externally-dnj"/>
+        <updated>2021-06-12T22:23:34.000Z</updated>
+        <summary type="html"><![CDATA[In the previous post, bird had a public property name. It is considered public because it can be accessed and changed outside of bird's definition.
+
+
+
+
+bird.name = "Duffy";
+
+Therefore, any part of your code can easily change the name of bird to any value. Think about things like passwords and bank accounts being easily changeable by any part of your codebase. That could cause a lot of issues.
+
+
+The simplest way to make this public property private is by creating a variable within the constructor function. This changes the scope of that variable to be within the constructor function versus available globally. This way, the variable can only be accessed and changed by methods also within the constructor function.
+
+
+
+
+function Bird() {
+  let weight = 15;
+
+  this.getWeight = function() {
+    return weight;
+  }
+}
+let ducky = new Bird();
+console.log(ducky.getWeight()); // will display 15
+
+Here getWeight is a privileged method, because it has access to the private variable weight. This is possible because weight is declared in the same context as getWeight. In JavaScript, a function always has access to the context in which it was created. This is called closure.]]></summary>
+        <author>
+            <name>Randy Rivera</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Using a Mixin to Add Common Behavior Between Unrelated Objects]]></title>
+        <id>https://dev.to/rthefounding/using-a-mixin-to-add-common-behavior-between-unrelated-objects-5g62</id>
+        <link href="https://dev.to/rthefounding/using-a-mixin-to-add-common-behavior-between-unrelated-objects-5g62"/>
+        <updated>2021-06-12T22:17:57.000Z</updated>
+        <summary type="html"><![CDATA[As you have seen, behavior is shared through inheritance. However, there are cases when inheritance is not the best solution. Inheritance does not work well for unrelated objects like Bird and Airplane. They can both fly, but a Bird is not a type of Airplane and vice versa.
+For unrelated objects, it's better to use mixins. A mixin allows other objects to use a collection of functions.
+
+
+
+
+let flyMixin = function(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  }
+};
+
+The flyMixin takes any object and gives it the fly method.
+
+
+
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let plane = {
+  model: "777",
+  numPassengers: 524
+};
+
+flyMixin(bird);
+flyMixin(plane);
+
+Here bird and plane are passed into flyMixin, which then assigns the fly function to each object. Now bird and plane can both fly:
+
+
+
+
+bird.fly();
+plane.fly();
+
+The console would display the string Flying, wooosh! twice, once for each .fly() call.]]></summary>
+        <author>
+            <name>Randy Rivera</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Overriding Inherited Methods]]></title>
+        <id>https://dev.to/rthefounding/overriding-inherited-methods-3oo6</id>
+        <link href="https://dev.to/rthefounding/overriding-inherited-methods-3oo6"/>
+        <updated>2021-06-12T22:10:17.000Z</updated>
+        <summary type="html"><![CDATA[In previous posts, you learned that an object can inherit its behavior (methods) from another object by referencing its prototype object:
+
+
+
+
+ChildObject.prototype = Object.create(ParentObject.prototype);
+
+Then the ChildObject received its own methods by chaining them onto its prototype:
+
+
+
+
+ChildObject.prototype.methodName = function() {...};
+
+It's possible to override an inherited method. It's done the same way - by adding a method to ChildObject.prototype using the same method name as the one to override. Here's an example of Dog overriding the eat() method inherited from Animal:
+
+
+
+
+function Animal() { }
+Animal.prototype.eat = function() {
+  return "nom nom nom";
+};
+
+function Dog() { }
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.eat = function() {
+  return "chew chew chew";
+};
+
+If you have an instance let beagle = new Dog(); and you call beagle.eat(), this is how JavaScript looks for the method on beagle’s prototype chain:
+beagle => Is eat() defined here? No.
+
+
+Dog => Is eat() defined here? => Yes. Execute it and stop searching.
+
+
+Animal => eat() is also defined, but JavaScript stopped searching before reaching this level.
+
+
+Object => JavaScript stopped searching before reaching this level.]]></summary>
+        <author>
+            <name>Randy Rivera</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What is Node JS ?]]></title>
+        <id>https://dev.to/buzzedison/what-is-node-js-1gnd</id>
+        <link href="https://dev.to/buzzedison/what-is-node-js-1gnd"/>
+        <updated>2021-06-12T21:48:42.000Z</updated>
+        <summary type="html"><![CDATA[Node.js is a very popular open source javascript runtime environment which is used to develop network applications. Node JS has gained massive popularity and now is used by thousands of developers all over the world for server-side programming.
+Node.js is a platform built on Chrome’s JavaScript runtime for easily building fast, scalable network applications. Node.js uses event-driven, non-blocking I/O for file system access, networking, and other API calls, allowing it to support thousands of concurrent connections with near-zero programming latency.
+You can make really cool real-time web applications using Node Js. There are a whole bunch of libraries and modules available to help you achieve this.   
+Node JS is a fast growing platform for running JS based applications outside of the browser. 
+Node JS has rocked the world of web application and making some big waves in the tech market. It’s been around for quite some time back in 2009 but is now widely used. (Initial release    May 27, 2009)
+What do you think ? Share your knowledge with the community.]]></summary>
+        <author>
+            <name>Edison Ade</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What Is SSH and How Does It Work?]]></title>
+        <id>https://dev.to/calvin087/what-is-ssh-and-how-does-it-work-e6n</id>
+        <link href="https://dev.to/calvin087/what-is-ssh-and-how-does-it-work-e6n"/>
+        <updated>2021-06-12T17:02:14.000Z</updated>
+        <summary type="html"><![CDATA[What Is SSH?
+
+
+SSH or Secure Shell allows people to have remote access to their servers. It uses cryptographic techniques to make sure all communication to and from the server happens in an encrypted way.
+It gives you a method of authenticating remote users, transferring inputs from the client to the host and relay information back to the client.
+Linux and macOS users can use the terminal to SSH into their remote server directly. Windows users have to use something like Putty.
+You're able to use shell commands in the same way you would if you were physically using the remote computer.
+The SSH command has three pieces;
+ssh {user}@{host}
+
+SSH tells the system that you want to open an encrypted connection.
+
+
+User is for the account you want to access (root === admin for example).
+
+
+Host is th…]]></summary>
+        <author>
+            <name>Calvin T</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Typing effect in React with typed.js and hooks]]></title>
+        <id>https://dev.to/shareef/typing-effect-in-react-with-typed-js-and-hooks-5bl2</id>
+        <link href="https://dev.to/shareef/typing-effect-in-react-with-typed-js-and-hooks-5bl2"/>
+        <updated>2021-06-12T16:10:16.000Z</updated>
+        <summary type="html"><![CDATA[Hello Developers 🤩🤩🤩
+
+
+Let's admit it typing effect looks cool and the good news is we can achieve it without any pain 😜.
+    npm install typed.js
+    or
+    yarn add typed.js
+    or
+    bower install typed.js
+
+Let's dive into the code.
+
+
+
+
+
+import Typed from "typed.js";
+import { useEffect, useRef } from "react";
+
+export default function App() {
+  // Create Ref element.
+  const el = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["Handy", "Mandy", "Candy", "More Strings"], // Strings to display
+      // Speed settings, try diffrent values untill you get good results
+      startDelay: 300,
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 100
+    });
+
+    // Destropying
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
+  return (
+    <div>
+      <h1>Hello Developers</h1>
+      {/* Element to display typing strings */}
+      <span ref={el}></span>
+    </div>
+  );
+}
+
+
+Kaboom🔥🔥🔥 with just some lines of codes we achieve a lot thanks to typed.js
+Custom cursor.
+Loop.
+Smart backspace
+
+
+
+
+
+    ...
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["Handy", "Mandy", "Candy", "More Strings"], // Strings to display
+      // Speed settings, try diffrent values untill you get good results
+      startDelay: 300,
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 100,
+      smartBackspace: true,
+      loop: true,
+      showCursor: true,
+      cursorChar: "!"
+    });
+
+    // Destropying
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+    ...
+
+
+For TypeScript lovers it provide types by default.
+Closing here 👋👋👋.
+Typed.js examples
+Typed.js docs
+This is Shareef.
+Live demo
+GitHub repo of this blog
+GitHub
+Portfolio
+ShareefBhai99
+Linkedin
+Cover photo by Firmbee
+ from Pixabay]]></summary>
+        <author>
+            <name>Mohammed Nadeem Shareef</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Prevent disposable email signup for your company]]></title>
+        <id>https://dev.to/rudsarkar/prevent-disposable-email-signup-for-your-company-483o</id>
+        <link href="https://dev.to/rudsarkar/prevent-disposable-email-signup-for-your-company-483o"/>
+        <updated>2021-06-12T16:04:14.000Z</updated>
+        <summary type="html"><![CDATA[Few days back I was testing a company security as penetration tester. one thing I saw that they only allow user signup with corporate email such yourname@company.abc.
+One thing popup in my mind so I can use disposable email to bypass interesting right? few company disable disposable email but in this case I found that they aren't preventing disposable email.
+I am writing this blog because I wasn't able to find the prevent because if I wanted to do it manually then I have to create a bunch of list to blacklisted those disposable email, this kind of messy to work for me or the developer to deploy fix asap.
+Example if I wanted to prevent manually I have to write code like this to blacklist the disposable email. Code Source
+function is_temp_mail($mail) {
+    $mail_domains_ko = array('0815.ru0c…]]></summary>
+        <author>
+            <name>Rudra Sarkar</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[Node.js][TypeScript][Windows] Play with child process]]></title>
+        <id>https://dev.to/masanori_msl/node-js-typescript-windows-play-with-child-process-114e</id>
+        <link href="https://dev.to/masanori_msl/node-js-typescript-windows-play-with-child-process-114e"/>
+        <updated>2021-06-12T15:24:00.000Z</updated>
+        <summary type="html"><![CDATA[Intro
+
+
+When I call another software from Node.js, I use "child_process" like this.
+[Windows][Node.js][TypeScript] Get installed printer driver names
+"child_process" has four kind of methods(exclude "Sync" mehtods).
+exec
+execFile
+fork
+spawn
+Because I wanted to know how to use them properly, I will try them.
+Node.js ver.16.3.0
+ts-node ver.10.0.0
+TypeScript ver.4.3.2
+According to the documents, they are based on "child_process.spawn()".
+import { exec, execFile, fork, spawn } from "child_process";
+import path, { resolve } from "path/posix";
+
+function start() {
+    spawnSample('powershell',['node', '-v']);
+}
+function spawnSample(command: string, args: string[]) {
+    const execProcess = spawn(command, args);
+    console.log('spawn');
+    console.log(execProcess.spawnfile);
+    execProcess.on('…]]></summary>
+        <author>
+            <name>Masui Masanori</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[Node.js][TypeScript][Windows] Play with child process]]></title>
+        <id>https://dev.to/masanori_msl/node-js-typescript-windows-play-with-child-process-114e</id>
+        <link href="https://dev.to/masanori_msl/node-js-typescript-windows-play-with-child-process-114e"/>
+        <updated>2021-06-12T15:24:00.000Z</updated>
+        <summary type="html"><![CDATA[Intro
+
+
+When I call another software from Node.js, I use "child_process" like this.
+[Windows][Node.js][TypeScript] Get installed printer driver names
+"child_process" has four kind of methods(exclude "Sync" mehtods).
+exec
+execFile
+fork
+spawn
+Because I wanted to know how to use them properly, I will try them.
+Node.js ver.16.3.0
+ts-node ver.10.0.0
+TypeScript ver.4.3.2
+According to the documents, they are based on "child_process.spawn()".
+import { exec, execFile, fork, spawn } from "child_process";
+import path, { resolve } from "path/posix";
+
+function start() {
+    spawnSample('powershell',['node', '-v']);
+}
+function spawnSample(command: string, args: string[]) {
+    const execProcess = spawn(command, args);
+    console.log('spawn');
+    console.log(execProcess.spawnfile);
+    execProcess.on('…]]></summary>
+        <author>
+            <name>Masui Masanori</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PowerShell Equivalents of Common Bash Commands]]></title>
+        <id>https://dev.to/devppratik/powershell-equivalents-of-common-bash-commands-32mo</id>
+        <link href="https://dev.to/devppratik/powershell-equivalents-of-common-bash-commands-32mo"/>
+        <updated>2021-06-12T14:53:21.000Z</updated>
+        <summary type="html"><![CDATA[Hello Everyone👋
+
+Hope this helps. I will make a few more cheat-sheets and dive into the various commands in more detail.
+Thanks for reading 🤝🤝
+Twitter | LinkedIn | GitHub
+Let me know in the comment section if you have any doubt or feedback. Feedback is appreciated!!
+See you in my next post!! Stay Safe😷
+Happy Learning! 😃😃]]></summary>
+        <author>
+            <name>Pratik Kumar Panda</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Prefer npm scripts to global commands]]></title>
+        <id>https://dev.to/evgenyorekhov/prefer-npm-scripts-to-global-commands-8g3</id>
+        <link href="https://dev.to/evgenyorekhov/prefer-npm-scripts-to-global-commands-8g3"/>
+        <updated>2021-06-12T13:18:13.000Z</updated>
+        <summary type="html"><![CDATA[Define npm scripts in your package.json:
+"start": "ember serve",
+"test": "ember exam --load-balance --parallel=4",
+"lint": "npm-run-all --parallel --aggregate-output lint:**",
+
+and use those scripts, don't use global commands.
+Bad: ember test (yes, it's bad even if you see it in the official docs)
+Good: npm test
+There are several benefits to using npm scripts instead of global commands:
+No chance of local vs global package version mismatch that can lead to inexplicable errors
+No chance of using the wrong command and/or options (for example, the default command for running tests in Ember projects is ember test, but a project might use ember exam and/or additional options like --load-balance --parallel=4)
+No need to remember specific commands for each type of project, because npm start and npm test are standard commands used by virtually every JavaScript project, be it an Ember project, a React project, or an Express project
+No need to install global packages, keep track of their versions, and update them
+If you really need to run a one-off command, use npx, it will protect you from local vs global package version mismatch (because it uses local package if it detects one):
+npx prettier --write .]]></summary>
+        <author>
+            <name>Evgeny Orekhov</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What's the difference between var, let and const keywords?]]></title>
+        <id>https://dev.to/letstechtalks/what-s-the-difference-between-var-let-and-const-keywords-5ape</id>
+        <link href="https://dev.to/letstechtalks/what-s-the-difference-between-var-let-and-const-keywords-5ape"/>
+        <updated>2021-06-12T13:03:00.000Z</updated>
+        <summary type="html"><![CDATA[JavaScript has three ways to declare variables.
+
+
+
+
+
+var width = 100;
+let height = 200;
+const key = "Tech Talks";
+
+The scope of a variable defined with the keyword “var” is limited to the “function” within which it is defined.
+If it is defined outside any function, the scope of the variable is global.
+var is function scoped
+
+
+
+Block Example
+{
+ var a = 10;
+ console.log(a);
+} //block 1
+{
+ a++;
+ console.log(a);
+} //block 2
+
+We are using the keyword var to define the variable a, the scope of a is limited to the function within which it is defined.
+Since a is not defined within any function, the scope of the variable a is global, which means that a is recognized within block 2
+Function Example
+function fun1() {
+ var a = 10;
+ console.log(a);
+} //function scope of fun1
+
+function fun2() {
+ a++;
+ c…]]></summary>
+        <author>
+            <name>Ankit Kumar</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Implement Copy to Clipboard on a Website]]></title>
+        <id>https://dev.to/bibekkakati/how-to-implement-copy-to-clipboard-on-a-website-1p0l</id>
+        <link href="https://dev.to/bibekkakati/how-to-implement-copy-to-clipboard-on-a-website-1p0l"/>
+        <updated>2021-06-12T12:41:15.000Z</updated>
+        <summary type="html"><![CDATA[In this article, we are going to see how we can implement a copy to clipboard functionality on our website. On clicking the Copy button, the content/text of a paragraph tag should be copied to the clipboard which we can paste anywhere in our system.
+Let's directly jump onto the code part.
+I am assuming you have some basic knowledge of HTML, JavaScript and DOM manipulation.
+We will write a very simple HTML code to display the paragraph content and a copy button.
+index.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy To Clipboard</title>
+</head>
+
+<body align="center">
+    <p id="content">The text to be copied.</p>
+    <bu…]]></summary>
+        <author>
+            <name>Bibek</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[New Beginning...! MERN]]></title>
+        <id>https://dev.to/shaileshparmarwebdeveloper/new-beginning-mern-4cin</id>
+        <link href="https://dev.to/shaileshparmarwebdeveloper/new-beginning-mern-4cin"/>
+        <updated>2021-06-12T12:17:21.000Z</updated>
+        <summary type="html"><![CDATA[Hello Readers,
+After a long time i am writing on Dev[.]to website,
+I have decided to take 100Daysofcode challenge, so it will give motivate me to learn more and improve myself in dev world.
+my main goal is to become full-stack developer,
+Day 1/100 Days.
+Today i have created covid-19 tracker(India) with React, TypeScript, TailwindCss & API.
+Hosted on: https://shaileshparmar-webdeveloper.github.io/covid19-tracker-india/
+Github: https://github.com/ShaileshParmar-WebDeveloper/covid19-tracker-india]]></summary>
+        <author>
+            <name>Shailesh Parmar</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Reduce load time for Angular Apps]]></title>
+        <id>https://dev.to/gourav_gunjan/reduce-load-time-for-angular-apps-2gg0</id>
+        <link href="https://dev.to/gourav_gunjan/reduce-load-time-for-angular-apps-2gg0"/>
+        <updated>2021-06-12T11:27:52.000Z</updated>
+        <summary type="html"><![CDATA[Hi All
+
+
+Hi Guys, I have created the second post in the series where I talk about boosting performance in Angular. I would really appreciate if your one like or comment can help me reach those who require to know about these topics. Happy Coding!]]></summary>
+        <author>
+            <name>Gourav Gunjan</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Improving security of your apps' source-code in a few minutes]]></title>
+        <id>https://dev.to/truelime/improving-security-of-your-apps-source-code-in-a-few-minutes-3nfn</id>
+        <link href="https://dev.to/truelime/improving-security-of-your-apps-source-code-in-a-few-minutes-3nfn"/>
+        <updated>2021-06-12T10:06:30.000Z</updated>
+        <summary type="html"><![CDATA[Introduction 📄
+
+
+It's a common mistake that every developer tends to make, especially early on: adding secrets to source-control or saving them somewhere else in plain-text. A good example of this is an API key stored in the web.config or settings.json.
+Saving secrets as plain-text is a bad-practice can be a security risk. But where should you save your secrets? And how much does it cost to implement an alternative solution?
+Azure Key Vault (AKV) is a service provided by Microsoft Azure that lets you store encryption keys, secrets and certificates. AKV can be easily integrated with almost any other service in Azure, but it doesn't stop there. It can easily be integrated in other environments too: local machines, apps, if you want to go crazy you can even use it in an AWS environment.
+Make…]]></summary>
+        <author>
+            <name>Sietse Trommelen</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AdonisJS - Operações CRUD  (Parte 1).]]></title>
+        <id>https://dev.to/franciiscocampos170/adonisjs-operacoes-crud-parte-1-3agg</id>
+        <link href="https://dev.to/franciiscocampos170/adonisjs-operacoes-crud-parte-1-3agg"/>
+        <updated>2021-06-12T09:02:26.000Z</updated>
+        <summary type="html"><![CDATA[Olá, hoje quero falar sobre as operações de CRUD do AdonisJS.
+AdonisJS é um framework MVC completo para o NodeJS.
+Para programadores PHP o AdonisJS é comparado ao Laravel, a sua sintaxe é quase semelhante, sem falar que os dois usam Template Engine.
+O AdonisJS é um framework NodeJS e para isso precisamos do NodeJS instalado no nosso computador. Para ser mais especifico, precisamos do NodeJS na versão igual ou superior a 14.15.4 e precisamos também do NPM instalado na versão igual ou superior a 6.0.0.
+Você pode criar um novo projecto utilizando o npm init ou yarn create. Os dois comandos vão instalar os pacotes do AdonisJS no seu computador.
+Nesse caso vamos usar o NPM.
+Vamos abrir o terminal e escrever:
+npm init adonis-ts-app@latest crud-operations
+Depois de executar o comando no terminal você pode escolher entre 3 opções a sua estrutura de projecto.
+web: estrutura de projecto ideal para a criação de aplicações clássicos renderizados para servidores. Nessa selecção vai ser configurado suporte para sessões e também o template engine do AdonisJS
+
+
+api: estrutura de projecto ideal para criação de um servidor API
+
+
+slim: estrutura de projecto ideal para criar a menor aplicação AdonisJS possível e não instala nenhum pacote adicional, expecto o núcleo do framework.
+
+
+
+Para o nosso projecto vamos selecionar a estrutura API.
+Podes ver mais sobre instalação de um projecto AdonisJS aqui.]]></summary>
+        <author>
+            <name>Francisco Campos</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Branch Protection in GitHub]]></title>
+        <id>https://dev.to/ladiesindevops/branch-protection-in-github-5fn9</id>
+        <link href="https://dev.to/ladiesindevops/branch-protection-in-github-5fn9"/>
+        <updated>2021-06-12T08:53:18.000Z</updated>
+        <summary type="html"><![CDATA[Ever been in a position where you wish you could prevent your teammates from merging unapproved code from a development branch to the main branch?
+Do you want to prevent merging code which you are not sure of its build status to your main branch?
+Recently, I found myself in this situation and I plan to share a concept which helped me out - 'Branch Protection in GitHub'.
+Branch protection is the act of setting rules to prevent certain actions from occurring on your branch(es) without your approval.
+This article focuses on, preventing branches (development etc) from being merged to the main branch; such that before any merge can occur, a pull request would require a selected reviewer to review the request and then merge the commit.
+It is expected that you have prior knowledge of:
+  Github
+  …]]></summary>
+        <author>
+            <name>Mbaoma Chioma (Omarrr)</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Branch Protection in GitHub]]></title>
+        <id>https://dev.to/mbaoma/branch-protection-in-github-32io</id>
+        <link href="https://dev.to/mbaoma/branch-protection-in-github-32io"/>
+        <updated>2021-06-12T08:37:32.000Z</updated>
+        <summary type="html"><![CDATA[Ever been in a position where you wish you could prevent your teammates from merging unapproved code from a development branch to the main branch?
+Do you want to prevent merging code which you are not sure of its build status to your main branch?
+Recently, I found myself in this situation and I plan to share a concept which helped me out - 'Branch Protection in GitHub'.
+Branch protection is the act of setting rules to prevent certain actions from occurring on your branch(es) without your approval.
+This article focuses on, preventing branches (development etc) from being merged to the main branch; such that before any merge can occur, a pull request would require a selected reviewer to review the request and then merge the commit.
+It is expected that you have prior knowledge of:
+  Github
+  …]]></summary>
+        <author>
+            <name>Mbaoma Chioma (Omarrr)</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Configure application-specific gestures with Fusuma v2!]]></title>
+        <id>https://dev.to/iberianpig/configure-application-specific-gestures-in-fusuma-v2-43p6</id>
+        <link href="https://dev.to/iberianpig/configure-application-specific-gestures-in-fusuma-v2-43p6"/>
+        <updated>2021-06-12T07:10:49.000Z</updated>
+        <summary type="html"><![CDATA[Starting from this article, I will explain how to configure the new features available in Fusuma v2.
+Fusuma, multi-touch gestures for Linux, updated to v2!
+Kohei Yamada ・ Jun 9 ・ 1 min read
+#linux
+        #ubuntu
+        #ruby
+      
+So far, Fusuma has only allowed you to set one type of action for a gesture globally.
+In this article, we will install fusuma-plugin-appmatcher and configure application-specific settings on Fusuma's config.yml.
+Run the following command in a terminal
+$ sudo gem install fusuma-plugin-appmatcher
+
+To get application name (WM_CLASS) to specify in config.yml, use $ fusuma-appmatcher -l.
+-l option, only foreground application names are retrieved.
+$ fusuma-appmatcher -l
+discord
+Slack
+Gnome-terminal
+Google-chrome
+
+context: WM_CLASS in config.yml.
+
+
+To add to the exis…]]></summary>
+        <author>
+            <name>Kohei Yamada</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hyperconverged Infrastructure Explained]]></title>
+        <id>https://dev.to/kelly27473238/hyperconverged-infrastructure-explained-c6j</id>
+        <link href="https://dev.to/kelly27473238/hyperconverged-infrastructure-explained-c6j"/>
+        <updated>2021-06-12T06:48:28.000Z</updated>
+        <summary type="html"><![CDATA[When considering an on-premises or hybrid IT infrastructure, you will no doubt come into contact with the hyperconvergence hype train. Promising reduced costs, greater flexibility, and free puppies for everyone; what is a hyperconverged infrastructure, what are its benefits, and does it deserve a place in your budget?
+Traditional 3-Tier Infrastructure
+It’s a single box that contains computational resources (processors and memory) and storage resources (hard drives). This is no different to your desktop PC or even your laptop or phone. Everything you need is together in one package. When you scale out your infrastructure this approach becomes inefficient.
+You have to worry about managing loads of different pieces of storage in loads of different discrete units. Expansion is limited by the p…]]></summary>
+        <author>
+            <name>Kelly</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TryHackMe HTTP in Detail]]></title>
+        <id>https://dev.to/applegamer22/tryhackme-http-in-detail-4fcl</id>
+        <link href="https://dev.to/applegamer22/tryhackme-http-in-detail-4fcl"/>
+        <updated>2021-06-12T06:41:36.000Z</updated>
+        <summary type="html"><![CDATA[TryHackMe HTTP in Detail
+
+
+
+  
+  
+  What is HTTP(S)?
+
+
+
+  
+  
+  What does HTTP stand for?
+
+
+Answer: HyperText Transfer Protocol
+Answer: Secure
+The page does not support HTTPS, click on the lock next to the page's address.
+
+
+
+
+Flag: THM{INVALID_HTTP_CERT}
+GET / HTTP/1.1
+Host: tryhackme.com
+User-Agent: Mozilla/5.0 Firefox/87.0
+Referer: https://tryhackme.com/
+
+HTTP/1.1 200 OK
+Server: nginx/1.15.8
+Date: Fri, 09 Apr 2021 13:34:03 GMT
+Content-Type: text/html
+Content-Length: 98
+
+<html>
+<head>
+    <title>TryHackMe</title>
+</head>
+<body>
+    Welcome To TryHackMe.com
+</body>
+</html>
+
+Answer: HTTP/1.1
+Answer: Content-Length
+According to the information provided in the question:
+POST Request
+
+
+This is used for submitting data to the web server and potentially creating new records.
+Answer: POST
+Accordi…]]></summary>
+        <author>
+            <name>Omri Bornstein</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A simple but customizable accordion component in Angular]]></title>
+        <id>https://dev.to/angular/a-simple-but-customizable-accordion-component-in-angular-ck0</id>
+        <link href="https://dev.to/angular/a-simple-but-customizable-accordion-component-in-angular-ck0"/>
+        <updated>2021-06-12T06:38:09.000Z</updated>
+        <summary type="html"><![CDATA[How to create a super simple accordion component in Angular. Using the power of content projection in Angular, we are going to build an accordion/expansion panel that can be customized in multiple ways.
+Accordions in general are vertically stacked lists of headers when clicked reveals some content. Accordions or expandable sections are seen as part of almost all the UI libraries out there.
+If we take a look at Angular material, we have Expansion Panel (ref) and in Ng Bootstrap its called simple Accordion (ref).
+What we are gonna build is a much simpler version of these. And as always, the whole idea behind this is to help you explore some possibilities of Angular. This blog post would be mostly about how we can use Content Projection (ref) in Angular to create reusable and customizable UI …]]></summary>
+        <author>
+            <name>Adithya Sreyaj</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A simple but customizable accordion component in Angular]]></title>
+        <id>https://dev.to/angular/a-simple-but-customizable-accordion-component-in-angular-ck0</id>
+        <link href="https://dev.to/angular/a-simple-but-customizable-accordion-component-in-angular-ck0"/>
+        <updated>2021-06-12T06:38:09.000Z</updated>
+        <summary type="html"><![CDATA[How to create a super simple accordion component in Angular. Using the power of content projection in Angular, we are going to build an accordion/expansion panel that can be customized in multiple ways.
+Accordions in general are vertically stacked lists of headers when clicked reveals some content. Accordions or expandable sections are seen as part of almost all the UI libraries out there.
+If we take a look at Angular material, we have Expansion Panel (ref) and in Ng Bootstrap its called simple Accordion (ref).
+What we are gonna build is a much simpler version of these. And as always, the whole idea behind this is to help you explore some possibilities of Angular. This blog post would be mostly about how we can use Content Projection (ref) in Angular to create reusable and customizable UI …]]></summary>
+        <author>
+            <name>Adithya Sreyaj</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Nodejs, How do I wait until the previous post request is completed.]]></title>
+        <id>https://dev.to/reachmmadhu/nodejs-how-do-i-wait-until-the-previous-post-request-is-completed-1i0g</id>
+        <link href="https://dev.to/reachmmadhu/nodejs-how-do-i-wait-until-the-previous-post-request-is-completed-1i0g"/>
+        <updated>2021-06-12T06:34:11.000Z</updated>
+        <summary type="html"><![CDATA[How can i make to wait until I get response from the below snippet before moving with the next line. In Nodejs it is executing further lines of code or functions. Here i am calling GetAccessToken() First and then fn1(). IN this case GetAccessToken is not waiting for the response and get executed fn1() later getting the Token Value. Any help on this would be great.
+var log = {
+    GetAccessToken: function() 
+    {
+        var https = require('follow-redirects').https;
+
+        var qs = require('querystring');
+
+        var options = {
+        'method': 'POST',
+        'hostname': 'corpqa.sts.xxxx.com',
+        'path': '/adfs/oauth2/token',
+        'headers': {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        'maxRedirects': 20
+        };
+
+        var req =  https.request(options, function (res) {
+            var chunks = [];
+
+            res.on("data", function (chunk) {
+                chunks.push(chunk);   
+            });
+
+             res.on("end",  function (chunk) {
+                var body = Buffer.concat(chunks);
+
+                console.log(body.toString());        
+            });
+
+            res.on("error", function (error) {
+                console.error(error);  
+            });
+            });
+
+        var postData = qs.stringify({
+        'grant_type': 'client_credentials',
+        'client_id': '0asda7b-a7dc-8582-6b0f-02f6d704d4b0',
+        'client_secret': 'm2deXPEvx2sdlRFZtsjkKR_HfDvW5MuDp4',
+        'resource': 'urn:webservices:resource:api_webservices:dev',
+        'redirect_uri': 'https://xgtwdev.xxxx.com/7777/ssswebsvc/sssdocumentumservicesWeb',        
+        'code': '',
+        'nonce': 'Nonce Change for each Transaction',
+        'state': 'State Change for each Transaction'
+        });
+
+        req.write(postData);
+
+        req.end();
+
+    },
+    UploadFile:function()
+    {
+        console.log("Execute UploadFile");
+    }
+}
+
+module.exports = log]]></summary>
+        <author>
+            <name>reachmmadhu</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Learn about developer platforms and tools by taking this survey]]></title>
+        <id>https://dev.to/rahul72/learn-about-developer-platforms-and-tools-by-taking-this-survey-5f04</id>
+        <link href="https://dev.to/rahul72/learn-about-developer-platforms-and-tools-by-taking-this-survey-5f04"/>
+        <updated>2021-06-12T06:28:39.000Z</updated>
+        <summary type="html"><![CDATA[Which skills do you think more people should master in software development? Take this survey and spend 15 min answering questions about programming languages, libraries, tools, and platforms. You could win: a MacBook Pro 13 inch, a Samsung Galaxy S21 +Plus, GitKraken Pro license, $200 towards the tool license of your choice, a portable monitor, VIVO standing desk, ELEGOO Mars 3D printer, Raspberry Pi starter kit, Amazon vouchers, and more. Plus you will get the results of the survey and free goody bag with resources to help you learn more about where to invest your time and skills in 2021. The survey closes on August 4th, so don't leave it for later. Join now, it's easy!
+https://developereconomics.net?utm_campaign=affiliate&utm_source=website&utm_medium=banne&member_id=KgN1BPYe&lang=en&locale=e]]></summary>
+        <author>
+            <name>Rahul</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[Discussion] Use a template engine with backend integration instead of a fully-JS UI framework like react or angular?]]></title>
+        <id>https://dev.to/pazvanti/discussion-use-a-template-engine-instead-of-a-fully-js-ui-4k84</id>
+        <link href="https://dev.to/pazvanti/discussion-use-a-template-engine-instead-of-a-fully-js-ui-4k84"/>
+        <updated>2021-06-12T05:09:39.000Z</updated>
+        <summary type="html"><![CDATA[Let me start by saying that I am a back-end developer. I do have some experience with front-end technologies, but I can't say that I am capable of a full-stack dev session. With that being said, let me rant a bit.
+I find all the JS UI frameworks confusing. There are so many of them, each has its own syntax and structure, many components, and doesn't use "traditional" JS/TS, but many placeholders that get "replaced" later on. I reached this conclusion recently when I started a new project (with a new company) and the UI part was done purely in Angular and the UI communicated with the BE using REST calls. The project had less than a month since it started, so I wasn't quite from the start so I could not impose my view :D
+This brings me to my next rant. The UI does soo many calls to the backe…]]></summary>
+        <author>
+            <name>pazvanti</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What is new in nueva]]></title>
+        <id>https://dev.to/codingwith3dv/what-is-new-in-nueva-23md</id>
+        <link href="https://dev.to/codingwith3dv/what-is-new-in-nueva-23md"/>
+        <updated>2021-06-12T04:59:39.000Z</updated>
+        <summary type="html"><![CDATA[Hello there,
+When I posted it, nueva can only render simple elements like div, p, h1 and others.
+But now we can render it as a component. So that we can make it much cleaner and easy to build complex UI's. Check the repo for an example
+It is currently on v-0.0.9-full. We can add reactive values and all to the Element.
+Check out the project:-
+https://github.com/codingwith3dv/nueva
+https://npmjs.org/package/nueva
+Before you go please try contribute to the project and help it grow.
+Thanks for reading till here
+🤗🤗🤗]]></summary>
+        <author>
+            <name>codingwith3dv</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mutable and immutable useRef semantics with React & TypeScript]]></title>
+        <id>https://dev.to/wojciechmatuszewski/mutable-and-immutable-useref-semantics-with-react-typescript-30c9</id>
+        <link href="https://dev.to/wojciechmatuszewski/mutable-and-immutable-useref-semantics-with-react-typescript-30c9"/>
+        <updated>2021-06-12T04:03:28.000Z</updated>
+        <summary type="html"><![CDATA[In this post, you will learn how different ways declaring a ref with useRef hook influence the immutability of the current ref property. We will be looking at how to make the current property immutable, mutable, and know without much effort if the ref is one or the other.
+All the behavior I'm going to talk about is only relevant in the context of TypeScript. The mutability / immutability is enforced at type level, not runtime level.
+current property
+
+
+The immutable semantics of the useRef hooks are usually used with DOM elements. A common use-case might be to get the ref of an element and focus that element whenever a button is clicked.
+Here is how I would write that.
+import * as React from "react";
+
+const Component = () => {
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
+  retu…]]></summary>
+        <author>
+            <name>Wojciech Matuszewski</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Using Typescript Unions With Never and Extends]]></title>
+        <id>https://dev.to/bionicjulia/using-typescript-unions-with-never-and-extends-39ef</id>
+        <link href="https://dev.to/bionicjulia/using-typescript-unions-with-never-and-extends-39ef"/>
+        <updated>2021-06-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I've reached a point where I'm now really enjoying working with Typescript. I remember one of the senior engineers in my team telling me when I first started that I would find myself being a Typescript convert one day. I didn't really believe it then, as TS seemed to be so much more of a hindrance than help in the early days (it wouldn't even allow me to run my code to debug it!)...but I'm happy to say he was right. ✌🏻
+I've reached the tipping point, where it now feels weird to NOT have Typescript switched on for a Javascript repo. There are, for sure, still days when I'm trying to get a specific scenario typed properly and I'm finding it difficult to even know what to Google for... but it gets easier over time as you start to build a bank of knowledge and realise that the same patterns k…]]></summary>
+        <author>
+            <name>Bionic Julia</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[AWS IAM users, groups and roles explained in an airport]]></title>
         <id>https://dev.to/carlosloredo/aws-iam-users-groups-and-roles-explained-in-an-airport-399a</id>
@@ -13,13 +978,13 @@
         <summary type="html"><![CDATA[First, what is this IAM thing about?
 
 
-Imagine a really big airport, like Hartsfield–Jackson Airport in Atlanta (U.S) or Beijing International Airport (China) with hundreds of airline offices, a lot of flights arriving and leaving, employees doing their different jobs, and many people going around. We can say that everything works in an airport, even if we don't know exactly how. It works.
+Imagine a really big airport, like Hartsfield–Jackson Airport in Atlanta (U.S) or Beijing International Airport (China) with hundreds of airline offices, a lot of flights arriving and leaving, employees doing their different jobs, and many people going around. Even if we don't know exactly how everything works in an airport, we can be sure that it works.
 
 Well, to understand Identity access management (IAM) we can think of Amazon Web Services (AWS) as a big Airport with hundreds of services (airlines), traffic between services (flights), and many users with different roles taking advantage of cloud services (people).
 
 
 
-I think that we've all been to the airport at least one time, right? Well, I don't know if you noticed but in airports, there is a compl…]]></summary>
+I think that we've all been to the airport at least one time, right? Well, I don't know if you noticed but in airports, there is a co…]]></summary>
         <author>
             <name>Carlos Loredo</name>
         </author>
@@ -309,7 +1274,7 @@ To break it down this is a function which has takes two arguments, and we are u�
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Azure Bicep v 0.4.X]]></title>
+        <title type="html"><![CDATA[Introduction to Azure Bicep v 0.4.x]]></title>
         <id>https://dev.to/omiossec/azure-bicep-v-0-4-x-1lim</id>
         <link href="https://dev.to/omiossec/azure-bicep-v-0-4-x-1lim"/>
         <updated>2021-06-11T17:19:28.000Z</updated>
@@ -377,6 +1342,33 @@ Stay connected with me on social platforms for daily software development news.
 -Twitter | Twitch | Instagram | YouTube | GitHub | Website]]></summary>
         <author>
             <name>Michael Crump</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Creating a custom Array.prototype.filter in javascript]]></title>
+        <id>https://dev.to/pazfelipe/creating-a-custom-array-prototype-filter-in-javascript-2nkc</id>
+        <link href="https://dev.to/pazfelipe/creating-a-custom-array-prototype-filter-in-javascript-2nkc"/>
+        <updated>2021-06-11T17:09:59.000Z</updated>
+        <summary type="html"><![CDATA[Javascript is a prototype-based language. It means that every native function can receive custom functions or having its original functions modified.
+In this article, we will create a custom filter function. For who doesn't know, the filter function is an array prototype function that returns all elements that match against the callback passed as argument. For more information about filter you can check the MDN Doc.
+So, without further ado, let's code!
+const data = [1, 2, 3, 4, 5];
+
+Array.prototype.myCustomFilter = function (fn) {
+  const filtered = []; // it will receive all values that match to condition passed in fn callback.
+
+  for (let i = 0; i < this.length; i++) {
+    if (fn(this[i])) {
+      filtered.push(this[i]);
+    }
+  }
+
+  return filtered;
+};
+
+const filteredData = data.myCusto…]]></summary>
+        <author>
+            <name>Felipe Paz</name>
         </author>
     </entry>
     <entry>
@@ -486,45 +1478,6 @@ You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Cloud automation in 2021: The new normal in the tech industry]]></title>
-        <id>https://dev.to/castai/cloud-automation-in-2021-the-new-normal-in-the-tech-industry-1oc7</id>
-        <link href="https://dev.to/castai/cloud-automation-in-2021-the-new-normal-in-the-tech-industry-1oc7"/>
-        <updated>2021-06-11T13:08:15.000Z</updated>
-        <summary type="html"><![CDATA[Scaling, provisioning, and configuring cloud resources manually often results in errors that can affect your availability or performance. Solution? Cloud automation.
-Keep on reading to discover the most impactful use cases of cloud automation across the tech industry.
-I prepared this guide to help you get started:
-What is cloud automation?
-What are the benefits of cloud automation?
-Cloud automation vs. orchestration - what’s the difference?
-Cloud automation use cases that showcase its power
-1. Auto-provisioning cloud resources
-2. Mitigating cloud sprawl and avoiding waste
-3. Enabling Infrastructure as Code (IaC)
-4. Enhancing application development and testing
-5. Making hybrid cloud work
-Does Kubernetes count as cloud automation?
-Are you ready for cloud automation?
-What is cloud automation…]]></summary>
-        <author>
-            <name>CAST AI</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The SRE Newsletter Issue 31]]></title>
-        <id>https://dev.to/mrkevbot/the-sre-newsletter-issue-31-hnf</id>
-        <link href="https://dev.to/mrkevbot/the-sre-newsletter-issue-31-hnf"/>
-        <updated>2021-06-11T12:44:23.000Z</updated>
-        <summary type="html"><![CDATA[In this week's issue of the SRE Newsletter, we take a look at:
-Senior Engineer Skills Beyond Coding
-Building a Healthy On-Call Culture
-What is Resilience Engineering?
-and more!
-https://www.srenewsletter.com/issues/031/]]></summary>
-        <author>
-            <name>Kevin Jordan</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[🤖 Dependable and Secure Realtime in Spring Boot with Auth0 and Ably]]></title>
         <id>https://dev.to/robertinoc_dev/dependable-and-secure-realtime-in-spring-boot-with-auth0-and-ably-1o6m</id>
         <link href="https://dev.to/robertinoc_dev/dependable-and-secure-realtime-in-spring-boot-with-auth0-and-ably-1o6m"/>
@@ -545,17 +1498,6 @@ Users will, when joining, be able to load the last 20 messages of conversation t
 Read more...]]></summary>
         <author>
             <name>Robertino</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Magento Developer Skills You Need To Have]]></title>
-        <id>https://dev.to/marymartinjr/magento-developer-skills-you-need-to-have-hi2</id>
-        <link href="https://dev.to/marymartinjr/magento-developer-skills-you-need-to-have-hi2"/>
-        <updated>2021-06-11T11:28:53.000Z</updated>
-        <summary type="html"><![CDATA[Undergoing eCommerce development is going to bring many challenges. The biggest of which is screening Magento developers. Magento is one of the most trusted eCommerce development technologies that offer maximum flexibility and scalability. But technology is as good as the developer that knows to utilize it for developing high-end products.
-Furthermore, the web application needs to be speedy, stable, and secure. A developer should be known of all the utilities and solutions that can help them build a product that stands upright on these metrics. The open-source platform offers you all these utilities. It comes with brilliant tools that offer amazing flexibilities to build feature-rich applications. You can use it to make high-end eCommerce applications. All you need next is Magento develope…]]></summary>
-        <author>
-            <name>Mary Martin</name>
         </author>
     </entry>
     <entry>
@@ -597,17 +1539,6 @@ $ node index.js
 34%]]></summary>
         <author>
             <name>Amin</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Is real-time data processing worth it for your analytical use cases?]]></title>
-        <id>https://dev.to/dashbird/is-real-time-data-processing-worth-it-for-your-analytical-use-cases-1nm7</id>
-        <link href="https://dev.to/dashbird/is-real-time-data-processing-worth-it-for-your-analytical-use-cases-1nm7"/>
-        <updated>2021-06-11T10:29:40.000Z</updated>
-        <summary type="html"><![CDATA[Real-time processing provides a notable advantage over batch processing --- data becomes available to consumers faster. In the traditional ETL, you would not be able to analyze events from today until tomorrow's nightly jobs would finish. These days, many businesses rely on data being available within minutes, seconds, or even milliseconds. With streaming technologies, we no longer need to wait for scheduled batch jobs to see new data events. Live dashboards are updated automatically as new data comes in. 
-Despite all the benefits, real-time streaming adds a lot of additional complexity to the overall data processes, tooling, and even data format. Therefore, it's crucial to carefully weigh out the pros and cons of switching to real-time data pipelines. In this article, we'll look at severa…]]></summary>
-        <author>
-            <name>Taavi Rehemägi</name>
         </author>
     </entry>
     <entry>
@@ -815,79 +1746,6 @@ Now I added prefix underscore for all my related files in all folders.]]></summa
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Code Smell 78 - Callback Hell]]></title>
-        <id>https://dev.to/mcsee/code-smell-78-callback-hell-287f</id>
-        <link href="https://dev.to/mcsee/code-smell-78-callback-hell-287f"/>
-        <updated>2021-06-11T03:06:33.000Z</updated>
-        <summary type="html"><![CDATA[Processing an algorithm as a sequence of nested callbacks is not clever.
-TL;DR: Don't process calls in a callback way. Write a sequence.
-Readability
-
-
-Hard to debug.
-
-
-Complexity
-
-
-
-
-  
-  
-  Solutions
-
-
-
-
-Change callbacks to sequence calls.
-
-
-Extract repeated Code
-
-
-Refactor.
-
-
-
-
-  
-  
-  Sample Code
-
-
-
-  
-  
-  Wrong
-
-
-
-
-
-var fs = require('fs');
-
-var fileWithData = '/hello.world';  
-fs.readFile(fileWithData, 'utf8', function(err, txt) {  
-    if (err) return console.log(err);
-
-    txt = txt + '\n' + 'Add Data!';
-    fs.writeFile(fileWithData, txt, function(err) {
-        if(err) return console.log(err);
-        console.log('Information added');
-    });
-});
-
-var fs = require('fs');
-
-function logTextWasAdded(err) {  
-    if(err) return console.log(err);
-    console.log('Information added');
-}…]]></summary>
-        <author>
-            <name>Maxi Contieri</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How To Use Vim Mode On The Command Line In Bash]]></title>
         <id>https://dev.to/brandonwallace/how-to-use-vim-mode-on-the-command-line-in-bash-fnn</id>
         <link href="https://dev.to/brandonwallace/how-to-use-vim-mode-on-the-command-line-in-bash-fnn"/>
@@ -953,19 +1811,6 @@ Source your .bashrc file to make the changes take effect.
 $ source ~/.bashrc…]]></summary>
         <author>
             <name>brandon_wallace</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[a first look at the serverless framework]]></title>
-        <id>https://dev.to/ajcwebdev/a-first-look-at-the-serverless-framework-3okh</id>
-        <link href="https://dev.to/ajcwebdev/a-first-look-at-the-serverless-framework-3okh"/>
-        <updated>2021-06-11T00:25:39.000Z</updated>
-        <summary type="html"><![CDATA[The Serverless Framework consists of an open source CLI and a hosted dashboard. Together, they provide you with full serverless application lifecycle management. It helps you develop and deploy your AWS Lambda functions, along with the AWS infrastructure resources they require.
-It was created by Austen Collins in 2015 as a boilerplate project for a company or something called Servant, whose existence seems to be completely wiped from the internet aside from this git commit.
-Servant Boilerplate LADEN: AWS Lambda, Angular, AWS DynamoDB, Express, Node.js
-A Servant Boilerplate Application already integrated with Servant built on the LADEN stack.  Use this to rapidly build Servant applications. This stack in particular is perfect for integrations or any applciation that needs to offload intense…]]></summary>
-        <author>
-            <name>anthony-campolo</name>
         </author>
     </entry>
     <entry>
@@ -1071,53 +1916,6 @@ I hope this helps you as much as it has helped me. 😎]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Give your Postgres Queries More Memory to Work With]]></title>
-        <id>https://dev.to/jbranchaud/give-your-postgres-queries-more-memory-to-work-with-640</id>
-        <link href="https://dev.to/jbranchaud/give-your-postgres-queries-more-memory-to-work-with-640"/>
-        <updated>2021-06-10T23:41:17.000Z</updated>
-        <summary type="html"><![CDATA[Are you getting notices from Heroku warning that you are "Running out of temp space on your Postgres add-on"?
-A potential fix to this is adjusting the work_mem value for the database. This will require some tuning to optimize the database for the particular query load that it experiences. So, some trial and error.
-In this article, we'll walk through how to check your database's work_mem value and how to change it to a better value that will make this warning go away.
-work_mem "specifies the amount of memory to be used by internal sort operations and hash tables before writing to temporary disk files." (source)
-Before getting started, you'll want to take note of the specs of your Postgres instance where these errors occur. You'll be interested in both the available RAM and the number of sup…]]></summary>
-        <author>
-            <name>Josh Branchaud</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[GitHub Container Registry: BETTER than Docker Hub?]]></title>
-        <id>https://dev.to/github/github-container-registry-better-than-docker-hub-1o9k</id>
-        <link href="https://dev.to/github/github-container-registry-better-than-docker-hub-1o9k"/>
-        <updated>2021-06-10T23:21:54.000Z</updated>
-        <summary type="html"><![CDATA[GitHub Container Registry improves how we handle containers within GitHub. Let's see what it is, how it works, and if it is better than Docker Hub.
-As usual, if you are a visual learner, or simply prefer to watch and listen instead of reading, here you have the video with the whole explanation and demo, which to be fair is much more complete than this post.
-
-
-
-
-Link to the video: https://youtu.be/WjzA9dfk5w4
-If you rather prefer reading, well... let's just continue :)
-The GitHub Container Registry (GHCR) is a redesigned, enhanced version of GitHub Packages. It not only replaces the Packages Docker service, but also it represents a fundamental shift in how GitHub will provide packages to its customers, because Packages are now tied to organizations and accounts instead of repos. 
-And in the…]]></summary>
-        <author>
-            <name>Davide 'CoderDave' Benvegnù</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why we shipped a Next.js SDK, and how you can use it]]></title>
-        <id>https://dev.to/sentry/why-we-shipped-a-next-js-sdk-and-how-you-can-use-it-14jp</id>
-        <link href="https://dev.to/sentry/why-we-shipped-a-next-js-sdk-and-how-you-can-use-it-14jp"/>
-        <updated>2021-06-10T23:07:25.000Z</updated>
-        <summary type="html"><![CDATA[As you could probably tell from the title, we shipped an SDK for Next.js. This means you can capture errors, measure performance, manage releases, configure suspect commits, and automatically upload sourcemaps to view unminified JavaScript and TypeScript with zero(-ish) configuration.
-Why was Next.js next on our list? Well, it’s one of the fastest-growing React frameworks and developers love it. Next.js provides a developer experience that helps with building features rapidly, seeing local changes quickly, and reducing build times.
-"Next.js turns traditionally complex decisions into simple implementation details. Spinning up new pages with our existing React components and Material UI went from days to hours with Next." 
-– Sean Parmelee, Applications Architect, Care.com
-To monitor Next.js …]]></summary>
-        <author>
-            <name>Rahul Chhabria</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[First Steps on the research of Web Hosting]]></title>
         <id>https://dev.to/fangoh/first-steps-on-the-research-of-web-hosting-4jia</id>
         <link href="https://dev.to/fangoh/first-steps-on-the-research-of-web-hosting-4jia"/>
@@ -1128,63 +1926,6 @@ Now and then I have been mentioning about Front-end and Back-end, in some way, y
 Think of Facebook, for example, the posts, use…]]></summary>
         <author>
             <name>Hector Osuna</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[First Steps on the research of Web Hosting]]></title>
-        <id>https://dev.to/fangoh/first-steps-on-the-research-of-web-hosting-4jia</id>
-        <link href="https://dev.to/fangoh/first-steps-on-the-research-of-web-hosting-4jia"/>
-        <updated>2021-06-10T22:33:07.000Z</updated>
-        <summary type="html"><![CDATA[One of the more daunting thing of developing, is to get to know how to deploy, as it's almost guaranteed that you will incur in some kind of cost, so before doing the big jump to trying a VPS (as a service), I decided to make a local Virtual Server to do some testing in setting up server environments.
-Well, to give a little explanation of what I was doing, I need to explain how to web works.
-Now and then I have been mentioning about Front-end and Back-end, in some way, you can rename both to Client-Side and Server-Side. The Client is often you, the end-user, whoever visits the web app or webpage, technically the client-side code is executed by the browser and do whatever needs to be done. Typically, it means to fetch, display, and update data.
-Think of Facebook, for example, the posts, use…]]></summary>
-        <author>
-            <name>Hector Osuna</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Understanding CORS]]></title>
-        <id>https://dev.to/useanvil/understanding-cors-5gm5</id>
-        <link href="https://dev.to/useanvil/understanding-cors-5gm5"/>
-        <updated>2021-06-10T22:28:24.000Z</updated>
-        <summary type="html"><![CDATA[CORS, or Cross-Origin Resource Sharing, is one thing that can bite a developer
-For example, CORS can help prevent a malicious case where a website executes an
-XMLHttpRequest) to a different
-Let’s take a look at how that would work in a world without CORS:
-A user just visited "https://mybank.example", one of the most popular
-banking websites, to complete a few transactions.
-The user, maybe on another tab, visits "http://not-suspicious.example".
-Unknown to the user, not-suspicious.example contains a script that
-sends requests to a list of endpoints from very popular banking sites. This
-is all done in the background.
-If a response comes back containing user session data or other sensitive
-user data, the malicious site now has the means to impersonate the user.
-Now the same example, but on a b…]]></summary>
-        <author>
-            <name>Anvil Engineering</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Understanding CORS]]></title>
-        <id>https://dev.to/useanvil/understanding-cors-5gm5</id>
-        <link href="https://dev.to/useanvil/understanding-cors-5gm5"/>
-        <updated>2021-06-10T22:28:24.000Z</updated>
-        <summary type="html"><![CDATA[CORS, or Cross-Origin Resource Sharing, is one thing that can bite a developer
-For example, CORS can help prevent a malicious case where a website executes an
-XMLHttpRequest) to a different
-Let’s take a look at how that would work in a world without CORS:
-A user just visited "https://mybank.example", one of the most popular
-banking websites, to complete a few transactions.
-The user, maybe on another tab, visits "http://not-suspicious.example".
-Unknown to the user, not-suspicious.example contains a script that
-sends requests to a list of endpoints from very popular banking sites. This
-is all done in the background.
-If a response comes back containing user session data or other sensitive
-user data, the malicious site now has the means to impersonate the user.
-Now the same example, but on a b…]]></summary>
-        <author>
-            <name>Anvil Engineering</name>
         </author>
     </entry>
     <entry>
@@ -1205,80 +1946,6 @@ I recommend using screen as the import could stop if the connection gets down, b
 Source]]></summary>
         <author>
             <name>Diego Carrasco Gubernatis</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Using Inheritance So You Don't Repeat Yourself & Notes.]]></title>
-        <id>https://dev.to/rthefounding/using-inheritance-so-you-don-t-repeat-yourself-ba8</id>
-        <link href="https://dev.to/rthefounding/using-inheritance-so-you-don-t-repeat-yourself-ba8"/>
-        <updated>2021-06-10T21:34:42.000Z</updated>
-        <summary type="html"><![CDATA[There's a principle in programming called Don't Repeat Yourself (DRY). The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
-
-
-Notice in the example below that the eat method is shared by Cat and Bear:
-
-
-
-
-function Cat(name) {
-  this.name = name;
-}
-
-Cat.prototype = {
-  constructor: Cat,
-  eat: function() {
-    console.log("nom nom nom");
-  }
-};
-
-function Bear(name) {
-  this.name = name;
-}
-
-Bear.prototype = {
-  constructor: Bear,
-  eat: function() {
-    console.log("nom nom nom");
-  }
-};
-
-The eat method is repeated in two places. The code can be edited to follow the DRY principle by creating a supertype (or parent) called Animal:
-
-
-
-
-function Animal() { }
-
-Animal.prototype =…]]></summary>
-        <author>
-            <name>Randy Rivera</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Critical Role of Cybersecurity in the Digital Transformation]]></title>
-        <id>https://dev.to/nextlinklabs/the-critical-role-of-cybersecurity-in-the-digital-transformation-31pe</id>
-        <link href="https://dev.to/nextlinklabs/the-critical-role-of-cybersecurity-in-the-digital-transformation-31pe"/>
-        <updated>2021-06-10T19:16:46.000Z</updated>
-        <summary type="html"><![CDATA[Cybersecurity and privacy should be priorities for every company when pursuing a digital transformation to maintain security and privacy in the modern digital marketplace.
-As DevOps teams develop software solutions and reorganize operations", the focus is often on speed, automation, and business optimization. Security and regulatory compliance can be overlooked as overhead costs when those initiatives are in fact critical, fundamental necessities.
-That kind of oversight -- both in practice and in process -- can be costly.
-As far back as 2012, then FBI Director Robert Mueller commented on our vulnerability to cyberattacks, saying that there “are only two types of companies: those that have been hacked, and those that will be.”
-While that statement was made nearly a decade ago, it’s meaning …]]></summary>
-        <author>
-            <name>Nextlink Labs</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Cryptography for Absolute Beginners | Go from Zero to Cypherpunk]]></title>
-        <id>https://dev.to/blahblahman9/cryptography-for-absolute-beginners-go-from-zero-to-cypherpunk-n4l</id>
-        <link href="https://dev.to/blahblahman9/cryptography-for-absolute-beginners-go-from-zero-to-cypherpunk-n4l"/>
-        <updated>2021-06-10T18:46:19.000Z</updated>
-        <summary type="html"><![CDATA[We live in a post-Snowden world. For many, that means assuming none of your digital assets are safe from surveillance.
-There are ways, however, to use the internet with insane mathematics in your favor to ensure that no one can see whatever it is that you’re sending to someone else.
-Cryptography is an ancient mathematical science that was originally used for military communications, and designed to conceal the contents of a message should it fall into the hands of the enemy. Recent developments in cryptography have added additional uses, including mechanisms for authenticating users on a network, ensuring the integrity of transmitted information and preventing users from repudiating (i.e. rejecting ownership of) their transmitted messages.
-Today, encryption is an integral part of many of t…]]></summary>
-        <author>
-            <name>blahblahman</name>
         </author>
     </entry>
     <entry>
@@ -1307,55 +1974,6 @@ linux_doc_words_counter /path/to/archive.zip]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Configuring self-signed SSL certificates for local development]]></title>
-        <id>https://dev.to/ashleyconnor/configuring-self-signed-ssl-certificates-for-local-development-35c5</id>
-        <link href="https://dev.to/ashleyconnor/configuring-self-signed-ssl-certificates-for-local-development-35c5"/>
-        <updated>2021-06-10T17:04:37.000Z</updated>
-        <summary type="html"><![CDATA[Sometimes it's preferible to keep your local development environment as close to production as possible.
-In this post I'll cover how to configure self-signed SSL certificates using a project called mkcert which makes
-The instructions are slightly different depending on your local environment:
-Common
-WSL2
-Firefox on Windows
-The first thing you will need is to install mkcert which can be done via homebrew or homebrew for Linux.
-$ brew install mkcert
-
-If you intend to use Firefox, you should also install nss.
-$ brew install nss
-
-Next run mkcert and pass in the the domain names and IPs you want the certificate to include:
-$ mkcert mywebsite.test localhost 127.0.0.1 ::1
-
-Created a new certificate valid for the following names 📜
- - "mywebsite.test"
- - "localhost"
- - "127.0.0.1"
- - "::1"
-
-The ce…]]></summary>
-        <author>
-            <name>Ashley Connor</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Data Structures in Typescript - Linked List]]></title>
-        <id>https://dev.to/ricardo93borges/data-structures-in-typescript-linked-list-gob</id>
-        <link href="https://dev.to/ricardo93borges/data-structures-in-typescript-linked-list-gob"/>
-        <updated>2021-06-10T16:38:50.000Z</updated>
-        <summary type="html"><![CDATA[A linked list is a data structure that holds objects arranged in a linear order, this order is determined by a pointer in each node.
-There are some types of linked lists: 
-Singly linked list - Each node has only a pointer to the next node. 
-Doubly linked list - Each node has pointers to both the previous and next node. 
-Circular linked list - The last node points to the first element.
-
-Head - the first node
-Tail - the last node
-Insertion - It's possible to insert a new element anywhere in the list, you just have to take care of the pointers. If you are adding an element to the beginning the new node will pointer to the former head node. If you are appending to the tail, the former tail node will point to the new node. Now, if inserting between nodes, the previous node has to point to the n…]]></summary>
-        <author>
-            <name>Ricardo Borges</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Useful Front-End Boilerplates And Starter Kits]]></title>
         <id>https://smashingmagazine.com/2021/06/useful-frontend-boilerplates-starter-kits/</id>
         <link href="https://smashingmagazine.com/2021/06/useful-frontend-boilerplates-starter-kits/"/>
@@ -1363,47 +1981,6 @@ Insertion - It's possible to insert a new element anywhere in the list, you just
         <summary type="html"><![CDATA[We don’t need to write everything from scratch every single time. With boilerplates and starter kits, we can set up our projects faster, and get to work immediately.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Cosima Mielke)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to copy data between DynamoDb tables]]></title>
-        <id>https://dev.to/aws-builders/how-to-copy-data-between-dynamodb-tables-5h9j</id>
-        <link href="https://dev.to/aws-builders/how-to-copy-data-between-dynamodb-tables-5h9j"/>
-        <updated>2021-06-10T14:45:48.000Z</updated>
-        <summary type="html"><![CDATA[Steps
-Spin up an EC2 instance and execute the below.
-
-
-
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-. ~/.nvm/nvm.sh
-nvm install node
-npm i copy-dynamodb-table
-
-Update EC2 IAM role to grant Dynamodb access to source/target table. If the table is encrypted by Custom KMS, then you need to grant permission to EC2 IAM role as well.
-
-
-
-
-node ./test.js 
-
-—> where test.js contains the following
-#### start code ####
-var copy = require('copy-dynamodb-table').copy
-
-copy({
-    source: {
-      tableName: 'source-dynamodb-table', // required
-    },
-    destination: {
-      tableName: 'demo-app-kefta-999-dynamo', // required
-    },
-    log: true, // default false
-    create : false // create destination table if not exist
-    schemaOnly : false // if true it will copy…]]></summary>
-        <author>
-            <name>Arun Kumar</name>
         </author>
     </entry>
     <entry>
@@ -1432,35 +2009,17 @@ You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA["Luxarg" Text Editor ! Pure Python and Socialist 🌹]]></title>
+        <title type="html"><![CDATA["Luxarg" Text Editor ! Pure Python and liberty !]]></title>
         <id>https://dev.to/amzy0/luxarg-text-editor-pure-python-and-socialist-3mkk</id>
         <link href="https://dev.to/amzy0/luxarg-text-editor-pure-python-and-socialist-3mkk"/>
         <updated>2021-06-10T14:26:03.000Z</updated>
-        <summary type="html"><![CDATA[Link]]></summary>
+        <summary type="html"><![CDATA[Luxarg link :
+Link]]></summary>
         <author>
             <name>Amzy 0 |  محمد امین عظیمی</name>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Knock and Open Source]]></title>
-        <id>https://dev.to/knock/knock-and-open-source-3pg3</id>
-        <link href="https://dev.to/knock/knock-and-open-source-3pg3"/>
-        <updated>2021-06-10T13:55:26.000Z</updated>
-        <summary type="html"><![CDATA[Knock.com is built with Open Source Software (OSS). It permeates our technology stack from the interactive website all the way through to the services and systems that power our infrastructure. We depend on OSS, and we are excited to start contributing back to our community. Doing so aligns well with a couple of our core values, which we call POPSICLE, "people first" and “open”:
-P - passionate
-O - open
-P - people first
-S - simplicity
-I - impact
-C - courage
-L - learning
-E - enjoying life
-We believe in being Open with our community, to Learn from each other, and to make an Impact if we can. We deeply believe that companies relying on OSS should be contributing back to the community in any way they can. For us, that means releasing code as an organization that others may find useful, and cont…]]></summary>
-        <author>
-            <name>James Sumners</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Generate breadcrums for your Angular-Router and set page title dynamically.]]></title>
         <id>https://dev.to/gaurangdhorda/generate-breadcrums-for-your-angular-router-and-set-page-title-dynamically-npo</id>
         <link href="https://dev.to/gaurangdhorda/generate-breadcrums-for-your-angular-router-and-set-page-title-dynamically-npo"/>
@@ -1508,77 +2067,6 @@ Connect with me by email : grdtechlab@gmail.com
 Working demo in this stackblitz link]]></summary>
         <author>
             <name>GaurangDhorda</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Generate breadcrums for your Angular-Router and set page title dynamically.]]></title>
-        <id>https://dev.to/gaurangdhorda/generate-breadcrums-for-your-angular-router-and-set-page-title-dynamically-npo</id>
-        <link href="https://dev.to/gaurangdhorda/generate-breadcrums-for-your-angular-router-and-set-page-title-dynamically-npo"/>
-        <updated>2021-06-10T13:50:42.000Z</updated>
-        <summary type="html"><![CDATA[In this example I am going to explain you that You can use library to generate breadcrumbs, and also set each page title dynamically.
-first you need to install this library to your angular project.
-npm install set-title-with-breadcrumbs
-This will install library called set-title-with-breadcrumbs, this library is used to generate breadcrumbs component and also you can set page title using angular router. After installing this library..
-Go to your app.module.ts file and add below code
-import { SetTitleWithBreadcrumbsModule} from 'set-title-with-breadcrumbs';
-    @NgModule({
-        imports : [SetTitleWithBreadcrumbsModule]
-    })
-
-in side your app-routing.module.ts file you have to add new data:{} object with breadcrumbs and title object property.
-const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent,
-    data: { title: 'Home Page', breadcrums: 'Home' },
-    children: [
-      {
-        path: 'records',
-        component: RecordsComponent,
-        data: { title: 'Find Records Page', breadcrums: 'Find-Records' },
-        children: [
-          {
-            path: 'child',
-            component: ChildComponent,
-            data: { title: 'Child Record Page', breadcrums: 'Child-Record' }
-          }
-        ]
-      }
-    ]
-  }
-]
-
-as you can see above, each router-path has data object with two property - breadcrumbs and title.
-Now inside your app.component.html file you need to add component of library.
-<lib-set-title-with-breadcrumbs></lib-set-title-with-breadcrumbs>
-<router-outlet></router-outlet>
-
-
-Connect with me by email : grdtechlab@gmail.com 
-Working demo in this stackblitz link]]></summary>
-        <author>
-            <name>GaurangDhorda</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[4 Best FREE Resources for learning Linux Online]]></title>
-        <id>https://dev.to/pazyp/4-best-free-resources-for-learning-linux-online-1fio</id>
-        <link href="https://dev.to/pazyp/4-best-free-resources-for-learning-linux-online-1fio"/>
-        <updated>2021-06-10T12:56:08.000Z</updated>
-        <summary type="html"><![CDATA[It’s hard to pin down exactly how popular Linux is on the web, but recent studies estimate Unix and Unix-like operating systems power about 70% of all web servers.
-At least half of those run Linux—and probably the vast majority.
-If you are on a technology learning journey no matter if its back-end development, front-end or server admin it is a great skill to have know or at least have some basic knowlage around.
-With over 10 years in the industry as a DBA and Sys Admin here are my top 4 resources for learning and mastering Linux/Unix.
-https://www.edx.org/course/introduction-to-linux
-https://www.netacad.com/courses/os-it/ndg-linux-unhatched
-https://www.netacad.com/courses/os-it/ndg-linux-essentials
-https://www.edx.org/course/fundamentals-of-red-hat-enterprise-linux
-https://www.linkedin.com/learning/learning-bash-scripting-2?trk=learning-serp_learning_search-card&upsellOrderOrigin=default_guest_learning
-https://www.youtube.com/watch?v=rfscVS0vtbw&feature=emb_logo
-What are your best learning resources for learning Linux? Please comment below.
-If you like my articles please check out my blog and follow me on Twitter where I share most of my tips.]]></summary>
-        <author>
-            <name>Andrew Pazikas</name>
         </author>
     </entry>
     <entry>
@@ -1600,48 +2088,6 @@ The best advantage to use Pipe is, while transforming the data, it doesn't modif
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Learning from React - part 5]]></title>
-        <id>https://dev.to/costinmanda/learning-from-react-part-5-53nl</id>
-        <link href="https://dev.to/costinmanda/learning-from-react-part-5-53nl"/>
-        <updated>2021-06-10T12:28:49.000Z</updated>
-        <summary type="html"><![CDATA[Original at: https://siderite.dev/blog/learning-from-react---part-5/
-Learning from React series:
-Part 1 - why examining React is useful even if you won't end up using it
-Part 2 - what Facebook wanted to do with React and how to get a grasp on it
-Part 3 - what is Reactive Programming all about?
-Part 4  - is React functional programming?
-Part 5 (this one) - Typescript, for better and for worse
-Typescript is a programming language developed by Microsoft. It is a superset of Javascript that allows a lot of type checking and manipulation, hence the name. React and Vue fully support it while Angular requires it. So what is the reason for the adoption of this new language? What are its advantages and disadvantages?
-First of all, what is it? I would start metaphorically, if you can forgive that. I…]]></summary>
-        <author>
-            <name>Costin Manda</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Argument of type NextHandleFunction is not assignable - Nodejs]]></title>
-        <id>https://dev.to/letscodepare/argument-of-type-nexthandlefunction-is-not-assignable-nodejs-138g</id>
-        <link href="https://dev.to/letscodepare/argument-of-type-nexthandlefunction-is-not-assignable-nodejs-138g"/>
-        <updated>2021-06-10T12:11:03.000Z</updated>
-        <summary type="html"><![CDATA[How to fix the issue for the latest node express regarding with Argument of type "NextHandleFunction" is not assignable to parameter of type "PathParams".
-Visit the full tutorial here:
-https://letscodepare.com/blog/argument-of-type-nexthandlefunction-is-not-assignable-nodejs]]></summary>
-        <author>
-            <name>Let's Code Pare</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Argument of type NextHandleFunction is not assignable - Nodejs]]></title>
-        <id>https://dev.to/letscodepare/argument-of-type-nexthandlefunction-is-not-assignable-nodejs-138g</id>
-        <link href="https://dev.to/letscodepare/argument-of-type-nexthandlefunction-is-not-assignable-nodejs-138g"/>
-        <updated>2021-06-10T12:11:03.000Z</updated>
-        <summary type="html"><![CDATA[How to fix the issue for the latest node express regarding with Argument of type "NextHandleFunction" is not assignable to parameter of type "PathParams".
-Visit the full tutorial here:
-https://letscodepare.com/blog/argument-of-type-nexthandlefunction-is-not-assignable-nodejs]]></summary>
-        <author>
-            <name>Let's Code Pare</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Azure Data Fundamentals Certification (DP-900) – Pass the Exam With This Free 4.5-Hour Course]]></title>
         <id>60b93afaacb62507dd1d8915</id>
         <link href="https://www.freecodecamp.org/news/azure-data-fundamentals-certification-dp-900-pass-the-exam-with-this-free-4-5-hour-course/"/>
@@ -1652,39 +2098,6 @@ https://letscodepare.com/blog/argument-of-type-nexthandlefunction-is-not-assigna
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[View and Edit Word Documents in Angular Apps: Beginners’ Guide]]></title>
-        <id>https://dev.to/syncfusion/view-and-edit-word-documents-in-angular-apps-beginners-guide-46j5</id>
-        <link href="https://dev.to/syncfusion/view-and-edit-word-documents-in-angular-apps-beginners-guide-46j5"/>
-        <updated>2021-06-10T11:30:52.000Z</updated>
-        <summary type="html"><![CDATA[This blog will explain how to view and edit Word documents with the key features of Syncfusion’s Angular Word Processor component, and the procedure to integrate it into an Angular application.
-The Syncfusion Angular Word Processor is also known as document editor. It is a component used to compose, edit, view, and print Word (DOCX, WordML, DOC, RTF, TXT) documents in your Angular applications. It provides all the standard Word processing features, such as:
-Editing text
-Formatting content
-Resizing images and tables
-Finding and replacing text
-Bookmarks
-Tables of contents
-Printing
-Importing and exporting Word documents.
-All the user interactions and editing operations run purely on the client side using our own SFDT (Syncfusion document text) file format. This approach provides a very fast e…]]></summary>
-        <author>
-            <name>Suresh Mohan</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Youtube channel for Angular]]></title>
-        <id>https://dev.to/gourav_gunjan/youtube-channel-for-angular-32he</id>
-        <link href="https://dev.to/gourav_gunjan/youtube-channel-for-angular-32he"/>
-        <updated>2021-06-10T11:26:47.000Z</updated>
-        <summary type="html"><![CDATA[Hi All
-
-
-I have created a channel for every Angular developers out there, where I explain different Angular concepts in a unique way.]]></summary>
-        <author>
-            <name>Gourav Gunjan</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Three Front-End Auditing Tools I Discovered Recently]]></title>
         <id>https://smashingmagazine.com/2021/06/three-frontend-auditing-tools/</id>
         <link href="https://smashingmagazine.com/2021/06/three-frontend-auditing-tools/"/>
@@ -1692,234 +2105,6 @@ I have created a channel for every Angular developers out there, where I explain
         <summary type="html"><![CDATA[Building a faster website can be a rocket task these days. There are so many things to consider, so it’s challenging to get everything right. Here are some less-known tools that might help you get there.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Stefan Judis)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JavaScript Quick Tip: Quickly Get All Unique Values From An Array]]></title>
-        <id>https://dev.to/oliverjumpertz/javascript-quick-tip-quickly-get-all-unique-values-from-an-array-35o0</id>
-        <link href="https://dev.to/oliverjumpertz/javascript-quick-tip-quickly-get-all-unique-values-from-an-array-35o0"/>
-        <updated>2021-06-10T10:39:20.000Z</updated>
-        <summary type="html"><![CDATA[The array is still one if not the major data structure in JavaScript. Especially given the fact that Set and Map were introduced way later, many developers have grown comfortable either going with a plain array or using a library for this purpose.
-If we now take into account that the array is the only data structure in JavaScript that comes with functional monad methods (map, filter, forEach, etc.), although there is a proposal going on to add these methods to all iterables, it's often more comfortable to go with a plain array for most purposes.
-The JavaScript array makes no assumptions about its elements. You can mix and match types, and you can also push duplicates. But what if you only want the unique values of your array?
-Gladly, there is a pretty short one-liner that makes it easy for you to filter out duplicates and get an array only containing unique values.
-You can combine the spread operator together with the Set constructor to quickly get all unique values of an array:
-const array = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 4];
-
-const unique Values = [...new Set(array)];
-
-There is only one issue with this code: The Set relies on the strict equality comparison (===), so it doesn't work well for objects.
-If you like visual content more, or if you want to store it for later, I put all this into one single image for you. I hope you like it!
-
-If you would love to read even more content like this, feel free to visit me on Twitter or LinkedIn.
-I'd love to count you as my ever-growing group of awesome friends!]]></summary>
-        <author>
-            <name>Oliver Jumpertz</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Flutter or Angular for web ....?]]></title>
-        <id>https://dev.to/hesham1108/flutter-or-angular-for-web-36ph</id>
-        <link href="https://dev.to/hesham1108/flutter-or-angular-for-web-36ph"/>
-        <updated>2021-06-10T10:31:42.000Z</updated>
-        <summary type="html"><![CDATA[If i need to save time to finish the app !]]></summary>
-        <author>
-            <name>hesham osman</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Angular 6 Template Driven Form – NgModel for Two-Way Data Binding]]></title>
-        <id>https://dev.to/loizenai/angular-6-template-driven-form-ngmodel-for-two-way-data-binding-3mhn</id>
-        <link href="https://dev.to/loizenai/angular-6-template-driven-form-ngmodel-for-two-way-data-binding-3mhn"/>
-        <updated>2021-06-10T10:01:15.000Z</updated>
-        <summary type="html"><![CDATA[https://ozenero.com/angular-6-template-driven-form-ngmodel-for-two-way-data-binding
-Angular 6 Template Driven Form – NgModel for Two-Way Data Binding
-In the tutorial, we show how to develop an Angular Form using Template-Driven Form approach with ngModel for two-way data binding, visual feedback and handling error messages.
-Related posts:
-How to Integrate Bootstrap with Angular (Angular 6)
-Angular 6 Component – How to create & integrate New Angular 6 Component
-Angular NgFor Repeater Directive – Loop over a Collection (Angular 6)
-
-
-Angular 6 Form Validation example – Template-driven Forms
-
-
-
-Technologies
-Node.js – version v10.4.0
-Angular – version 6
-Bootstrap 4
-Visual Studio Code – version 1.24.0
-Objectives
-We build an Angular project as below structure:
-
-Workflow
--> Initial form:
-
-Input Name, Age and select Nationality option:
-
--> Press Submit button to submit form:
-
-Press Edit button, The Data Form will be appeared again.
-Delete text of Name input, and select bank value for Nationality input.
--> Error Alert Message appeares:
-
-Angular Template Driven Form
-Project Setup
-Generate Angular project:
-More at:
-https://ozenero.com/angular-6-template-driven-form-ngmodel-for-two-way-data-binding
-Angular 6 Template Driven Form – NgModel for Two-Way Data Binding]]></summary>
-        <author>
-            <name>loizenai</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Getting Started With Popular Express framework]]></title>
-        <id>https://dev.to/imshubh17/getting-started-with-popular-express-framework-3o52</id>
-        <link href="https://dev.to/imshubh17/getting-started-with-popular-express-framework-3o52"/>
-        <updated>2021-06-10T09:26:26.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-
-A huge portion of the Internet’s data travels over HTTP/HTTPS through request-response cycles between clients and servers.
-Starting A Server 
-Express is a Node module, so in order to use it, we will need to import it into our program file. To create a server, the imported express function must be invoked.
-
-
-
-
-const express = require('express');
-const app = express();
-
-const PORT = 4001;
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
-});
-
-In this example, our app.listen() call will start a server listening on port 4001, and once the server is started it will log 'Server is listening on port 4001'
-Writing Your First Route
-> Once the Express server is listening, it can respond to any and all requests. 
-> For example, if your server receives a GET request at ‘/about’, we will use a route to define the appropriate functionality for that HTTP verb (GET) and path (/about).
-
-
-
-
-// Open a call to `app.get()` below:
-app.get('/expressions',(req,res, next)=>{
-   // Here we would send back the moods array in response
-})
-
-Inside app.js, create a route handler to handle a GET request to '/expressions'. For now, give it a req, res, next callback. For now, log the req object inside the callback. Verify that the route works and logs the request by starting your server and clicking the Refresh Expressions button which will send a GET /expressions request.
-Sending A Response
-
-
-
-
-app.get('/expressions', (req, res, next) => {
-  res.send(expressions);
-});]]></summary>
-        <author>
-            <name>Shubham Singh</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Use promises with almost any Node.js native modules]]></title>
-        <id>https://dev.to/aminnairi/use-promises-with-almost-any-node-js-native-modules-35id</id>
-        <link href="https://dev.to/aminnairi/use-promises-with-almost-any-node-js-native-modules-35id"/>
-        <updated>2021-06-10T08:11:36.000Z</updated>
-        <summary type="html"><![CDATA[You are using a recent version of Node.js and are tired of working with callbacks with Node native modules.
-Chances are, there is a version of that module that is using promises out of the box.
-$ touch index.js
-
-const fs = require("fs").promises;
-
-fs.readdir(process.cwd()).then(files => {
-  console.log(files);
-}).catch(error => {
-  console.error(error.message);
-});
-
-$ node index.js
-
-Or
-$ touch index.mjs
-
-import {promises as fs} from "fs";
-
-fs.readdir(process.cwd()).then(files => {
-  console.log(files);
-}).catch(error => {
-  console.error(error.message);
-});
-
-$ node index.mjs]]></summary>
-        <author>
-            <name>Amin</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Angular : How to add Toastr in your angular project just in 15 minutes?]]></title>
-        <id>https://dev.to/rajeshkumaryadavdotcom/angular-how-to-add-toastr-in-your-angular-project-just-in-15-minutes-533p</id>
-        <link href="https://dev.to/rajeshkumaryadavdotcom/angular-how-to-add-toastr-in-your-angular-project-just-in-15-minutes-533p"/>
-        <updated>2021-06-10T05:16:44.000Z</updated>
-        <summary type="html"><![CDATA[Demo -
-
-   
-Open your terminal in project folder and run below command -
-npm install ngx-toastr --save
-
-@angular/animations package is a required dependency for the default toast
-npm install @angular/animations --save
-
-Add few styles based on your requirements -
-/ regular style toast 
-@import '~ngx-toastr/toastr';
-
-// bootstrap style toast 
-// or import a bootstrap 4 alert styled design (SASS ONLY) 
-// should be after your bootstrap imports, it uses bs4 variables, mixins, functions 
-@import '~ngx-toastr/toastr-bs4-alert';
-
-// if you'd like to use it without importing all of bootstrap it requires 
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
-@import '~ngx-toastr/toastr-bs4-alert';
-
-If you are using angular-cli you can add it to …]]></summary>
-        <author>
-            <name>RajeshKumarYadav.com</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[PGP for the Working Dev (2)]]></title>
-        <id>https://dev.to/thunderbiscuit/pgp-for-the-working-dev-2-2ol1</id>
-        <link href="https://dev.to/thunderbiscuit/pgp-for-the-working-dev-2-2ol1"/>
-        <updated>2021-06-10T02:29:11.000Z</updated>
-        <summary type="html"><![CDATA[The goal of this post is to get you up to speed on two of the main uses of GPG: cryptographically encrypting and decrypting data.
-Note: this post is the second in a 2-part series aimed at developing a functional use of GPG for the day-to-day tasks of anyone who cares about software. Check out Part 1 to learn about signing and verifying signatures.
-One important aspect of cryptographic keys is that they are simply numbers. They are often really, really big numbers, but simple integers nonetheless. Another important aspect of cryptographic keys as used in GPG is that they come in pairs: a public key and a private key. Knowledge of these numbers (the keys) allows us to perform many tasks, two of which we'll tackle here:
-Encrypt a message in a way that only a person with the knowledge of a spe…]]></summary>
-        <author>
-            <name>thunderbiscuit</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Best Practices for Checking PropTypes in React Components using TypeScript]]></title>
-        <id>https://dev.to/mushfiqweb/best-practices-for-checking-proptypes-in-react-components-using-typescript-7a8</id>
-        <link href="https://dev.to/mushfiqweb/best-practices-for-checking-proptypes-in-react-components-using-typescript-7a8"/>
-        <updated>2021-06-09T22:35:55.000Z</updated>
-        <summary type="html"><![CDATA[JavaScript functions that return React elements are known as React components. These are the parameters that govern what will be added to the DOM. In addition, react components, like functions, may receive props as arguments, resulting in dynamically returned items.
-Props can be of any data type, although component data types may differ. Component A, for example, may anticipate a name argument with a text data type, but component B may anticipate an age argument with a numeric data type. Likewise, D may anticipate an onClick argument with a Function data type, but C may expect a post parameter with an object data type with characteristics like title and date.
-How can we tell our component what kind of data it should expect?
-This may be done in various methods, but this post will focus on PropTypes and TypeScript. Despite holding identical goals, these two techniques operate in different ways. So we’ll go through what these tools are, how to use them, and tell them apart before trying more advanced techniques.
-Prior knowledge of PropTypes and TypeScript is necessary for a thorough understanding of this article. You’ll also require an integrated development environment (IDE), such as Visual Studio Code.
-PropTypes is a type-checking tool for props in React apps that can be used at runtime. The PropTypes efficiency has been provided through the prop-types package since React 15.5. PropTypes let you specify the props that are expected in a component, such as whether they are mandatory or optional. You’ll get a warning in the browser’s JavaScript console if you provide a different type to an element or miss a required prop:
-Read the full article Best Practices for Checking PropTypes in React Components using TypeScript:]]></summary>
-        <author>
-            <name>Mushfiqur Rahman Shishir</name>
         </author>
     </entry>
     <entry>
@@ -2397,16 +2582,6 @@ Chore: rendering logic refactoring. Adopting functional paradigm.
 Thank you @tianheg, @onnyyonn]]></summary>
         <author>
             <name>Release notes from osmosfeed</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tree-Shaking: A Reference Guide]]></title>
-        <id>https://smashingmagazine.com/2021/05/tree-shaking-reference-guide/</id>
-        <link href="https://smashingmagazine.com/2021/05/tree-shaking-reference-guide/"/>
-        <updated>2021-05-14T10:30:00.000Z</updated>
-        <summary type="html"><![CDATA[“Tree-shaking” is a must-have performance optimization when bundling JavaScript. In this article, we dive deeper on how exactly it works and how specs and practice intertwine to make bundles leaner and more performant. Plus, you’ll get a tree-shaking checklist to use for your projects.]]></summary>
-        <author>
-            <name>hello@smashingmagazine.com (Átila Fassina)</name>
         </author>
     </entry>
 </feed>
