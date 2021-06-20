@@ -1,10 +1,779 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>urn:2021-06-19T00:52:49.972Z</id>
+    <id>urn:2021-06-20T00:54:44.674Z</id>
     <title>osmos::feed</title>
-    <updated>2021-06-19T00:52:49.972Z</updated>
+    <updated>2021-06-20T00:54:44.674Z</updated>
     <generator>osmosfeed 1.10.2</generator>
     <link rel="alternate" href="index.html"/>
+    <entry>
+        <title type="html"><![CDATA[Understanding SOLID: Dependency Inversion Principle]]></title>
+        <id>https://dev.to/sowmenappd/understanding-solid-dependency-inversion-principle-1i50</id>
+        <link href="https://dev.to/sowmenappd/understanding-solid-dependency-inversion-principle-1i50"/>
+        <updated>2021-06-20T00:22:34.000Z</updated>
+        <summary type="html"><![CDATA[What is the dependency inversion principle?
+
+
+The dependency inversion principle is one of the standard guiding rules of software design and development to ensure component extensibility and loosely-coupled components.
+Simply said, the dependency inversion principle states that we need to rely on abstractions rather than concrete implementations.
+System coupling is defined as the constraining state of one item to another item inside a system. Coupling occurs on context information. For example, in an air-conditioner, the compressor is said to be coupled to the internal cooling refrigerant and cooling mechanism, since these components together make up the entirety of the cooling system.
+Coupling can be of two types: tight coupling and loose coupling. These refer to how a system would react …]]></summary>
+        <author>
+            <name>Sowmen Rahman</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Adding Custom Easing to the Web Animation API]]></title>
+        <id>https://dev.to/okikio/adding-custom-easing-to-the-web-animation-api-2c68</id>
+        <link href="https://dev.to/okikio/adding-custom-easing-to-the-web-animation-api-2c68"/>
+        <updated>2021-06-19T23:29:33.000Z</updated>
+        <summary type="html"><![CDATA[I recently posted about @okikio/animate, a new Animation library that uses the Web Animation API (WAAPI) to create smooth, and highly performant animation.
+@okikio/animate - the animation library built using the Web Animation API (WAAPI)
+Okiki ・ May 26 ・ 11 min read
+#webdev
+        #typescript
+        #javascript
+        #webanimation
+      
+Well a major limitation of the Web Animation API and consequently @okikio/animate, was that it didn't support custom easing, this limitation is on the verge of being removed.
+Based on a comment by @jakearchibald
+ on Github and an article by kirillvasiltsov
+#229
+    
+  
+jakearchibald
+         commented on Jun 14, 2021
+      
+Yeah, you can hack it with keyframes today, but it'd be nice if it could be could be used within keyframes. Something like linear-easing(0, 0.1, 0.3, 0.6, 0.8, 1) or whatever would be enough.
+View on GitHub
+#229
+    
+  
+jakearchibald
+         commented on Jun 15, 2021
+      
+Here's a little demo to test that https://static-misc-3.glitch.me/linear-easing/.
+Cases like bounce are tricky due to sudden changes of direction, but 50 points seems to do well.
+View on GitHub
+Using the fact that WAAPI allows for linear easing, I created a small function that generates a set of arrays that create custom easing effects like bounce, elastic, and spring. As of right now it builds on top of @okikio/animate but that isn't absolutely necessary, it just may not be as comfortable as using it with @okikio/animate. 
+You can view a demo below,
+
+
+
+
+As of right now if I add this to the @okikio/animate library it will more than double the size of the library (Note: treeshaking the actual package @okikio/animate while custom easing isn't in use will cause it to excluded from the final build reducing the size down to ~5.79 KB).
+I'm not sure if I should make Custom Easing a separate package or build it directly into @okikio/animate, please tell me what you think in the comments below.]]></summary>
+        <author>
+            <name>Okiki</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to easily create beautiful particles animations for your website using tsParticles]]></title>
+        <id>https://dev.to/matteobruni/how-to-easily-create-beautiful-particles-animations-for-your-website-using-tsparticles-p36</id>
+        <link href="https://dev.to/matteobruni/how-to-easily-create-beautiful-particles-animations-for-your-website-using-tsparticles-p36"/>
+        <updated>2021-06-19T21:15:48.000Z</updated>
+        <summary type="html"><![CDATA[How to add tsParticles in your website
+
+
+Have you seen particles effect in some websites and you want one too?
+Do you have particles.js installed but it have problems or it's too heavy for your users?
+Are you searching a new animation for your website?
+Well, you are in the right place. tsParticles is a new library, started from the particles.js codebase, to have some particles animations in your website.
+   
+ / 
+        tsparticles
+      
+    
+
+A lightweight TypeScript library for creating particles. Dependency free (*), browser ready and compatible with React, Vue, Angular, Svelte, jQuery, Preact, Inferno
+         
+This library is available on the two most popular CDNs and it's easy and ready to use, if you were using particles.js it's even easier.
+You'll find the instructions below, with…]]></summary>
+        <author>
+            <name>Matteo Bruni</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[EXPRESS JS MIDDLEWARES]]></title>
+        <id>https://dev.to/islam/express-js-middlewares-mge</id>
+        <link href="https://dev.to/islam/express-js-middlewares-mge"/>
+        <updated>2021-06-19T20:58:00.000Z</updated>
+        <summary type="html"><![CDATA[What is a Middleware?:
+
+
+According to wikiperdia, 
+Middleware is a type of computer software that provides services to software applications beyond those available from the operating system. It can be described as "software glue".
+In our case, express js middleware is a functionality that runs between a request to the server and the response from the server.
+Built-in Middleware:
+express.static: serves static assets such as HTML files, images, and so on.
+express.json: parses incoming requests with JSON payloads.
+express.urlencoded: parses incoming requests with URL-encoded payloads.
+Third Party Middleware:
+Middleware installed via npm
+Custom Middleware:
+Created by you - the developer - for a project.
+Application or Route Level:
+
+
+
+
+const express = require('express');
+
+//Start express app.
+const app = expree();
+
+//Apply a single middleware
+app.use(middleware);
+
+//Apply multiple middleware
+app.use(middleware1, middleware2);
+
+//Or via an array 
+const middlewareArr = [middleware1, middleware2];
+app.use(middlewareArr);
+
+Endpoint Level:
+
+
+
+
+//Apply a single middleware
+app.get('/', middleware, (res, req) => {};
+
+//Apply multiple middleware
+app.get('/', middleware1, middleware2, (res, req) => {};
+
+//Or via an array 
+const middlewareArr = [middleware1, middleware2];
+app.get('/', middlewareArr, (res, req) => {};]]></summary>
+        <author>
+            <name>Islam Sayed</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Introduction to threading and multiprocessing: Concurrency & Parallelism in Python]]></title>
+        <id>https://dev.to/adarshpunj/introduction-to-threading-and-multiprocessing-concurrency-parallelism-in-python-48o</id>
+        <link href="https://dev.to/adarshpunj/introduction-to-threading-and-multiprocessing-concurrency-parallelism-in-python-48o"/>
+        <updated>2021-06-19T20:24:31.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+Most of us have come across terms like multithreading, parallel processing, multiprocessing, concurrency, etc., though each of these terms has its own meaning. In a broader sense, we need these because we want to avoid some kind of latency (or have an illusion of doing so) in the execution of regular programs.
+To do this, we try to write code that doesn’t necessarily runs in order (non-sequential) and all this boils down to two different concepts — concurrency and parallelism.
+I came across concurrency when I was trying to download ~5000 images from the web. I had collected image URLs from Flickr, and these images had to be passed on to a team doing annotation (labelling).
+This is how a sequential program to download images would look like:
+import requests
+
+def download_imag…]]></summary>
+        <author>
+            <name>Adarsh Punj</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ESLint: What, Why, When, How]]></title>
+        <id>https://dev.to/shivambmgupta/eslint-what-why-when-how-5f1d</id>
+        <link href="https://dev.to/shivambmgupta/eslint-what-why-when-how-5f1d"/>
+        <updated>2021-06-19T18:26:41.000Z</updated>
+        <summary type="html"><![CDATA[What is ESLint?
+
+
+ESLint is an open-source Javascript linting utility originally created by Nicholas C. Zakas in June 2013. It is frequently used to find problematic patterns or code that doesn’t adhere to certain style guidelines. ESLint is written using Node.js to provide a fast runtime environment and easy installation via npm.
+JavaScript, being a dynamic and loosely-typed language, is especially prone to developer error. ESLint lets you put guidelines over coding standard and helps you to minimize those errors. The main reason for imposing those guide is because every developer has her style of writing (like naming conventions/tabs/single or double quotes for a string). And, with different styling techniques, your codebase may look weird, more error-prone and vulnerable. Especially whe…]]></summary>
+        <author>
+            <name>Shivam Gupta</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[Express][TypeScript] Uploading file 1]]></title>
+        <id>https://dev.to/masanori_msl/express-typescript-uploading-file-1-1538</id>
+        <link href="https://dev.to/masanori_msl/express-typescript-uploading-file-1-1538"/>
+        <updated>2021-06-19T17:15:20.000Z</updated>
+        <summary type="html"><![CDATA[Intro
+
+
+When I upload large files in ASP.NET Core applications, I slice the data and send them, after finishing uploading all sliced data, I merge them.
+[Angular][ASP.NET Core] Upload chunked files
+How about in Node.js applicaitons?
+I will try it.
+Node.js ver.16.3.0
+TypeScript ver.4.3.2
+ts-node ver.10.0.0
+Express ver.4.17.1
+Webpack ver.5.39.1
+ts-loader ver.9.2.3
+webpack-cli ver.4.7.2
+Because both client-side and server-side JavaScript had had "Stream", so I thought I could send file data by them.
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Hello</title>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <input type="file" id="upload_file_input">
+        <button onclick="Page.upload()">Upload</button>
+        <script src="./js/main.page.js"></script>
+    </body>
+</h…]]></summary>
+        <author>
+            <name>Masui Masanori</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[Express][TypeScript] Uploading file 1]]></title>
+        <id>https://dev.to/masanori_msl/express-typescript-uploading-file-1-1538</id>
+        <link href="https://dev.to/masanori_msl/express-typescript-uploading-file-1-1538"/>
+        <updated>2021-06-19T17:15:20.000Z</updated>
+        <summary type="html"><![CDATA[Intro
+
+
+When I upload large files in ASP.NET Core applications, I slice the data and send them, after finishing uploading all sliced data, I merge them.
+[Angular][ASP.NET Core] Upload chunked files
+How about in Node.js applicaitons?
+I will try it.
+Node.js ver.16.3.0
+TypeScript ver.4.3.2
+ts-node ver.10.0.0
+Express ver.4.17.1
+Webpack ver.5.39.1
+ts-loader ver.9.2.3
+webpack-cli ver.4.7.2
+Because both client-side and server-side JavaScript had had "Stream", so I thought I could send file data by them.
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Hello</title>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <input type="file" id="upload_file_input">
+        <button onclick="Page.upload()">Upload</button>
+        <script src="./js/main.page.js"></script>
+    </body>
+</h…]]></summary>
+        <author>
+            <name>Masui Masanori</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Need ideas about some SW/application for writing]]></title>
+        <id>https://dev.to/maixuanhan/need-ideas-about-some-sw-application-for-writing-11ee</id>
+        <link href="https://dev.to/maixuanhan/need-ideas-about-some-sw-application-for-writing-11ee"/>
+        <updated>2021-06-19T16:49:57.000Z</updated>
+        <summary type="html"><![CDATA[Hi, I want to write about some technical discussion about system designs, architecture designs, programming techniques and how to deal with troubles in real-world but I've found that it is very difficult to just explain topics via multiple arbitrary and unconnected examples. I've got some topics in my mind but I cannot convey them into words. My writing is not good enough. So I'm thinking of implementing some real product while writing about it at a same time. I can post all the design considerations here and will receive feedbacks which will help me (and maybe other people) a lot.
+The problem is that I cannot think of any ideas about software/applications that are not only practical but also useful for real-life use cases. Simple case studies are good but I'm afraid of that the readers will lose the interest. So any suggestion would be welcome and appreciate.
+Thank you very much.]]></summary>
+        <author>
+            <name>Han Mai</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Need ideas about some SW/application for writing]]></title>
+        <id>https://dev.to/maixuanhan/need-ideas-about-some-sw-application-for-writing-11ee</id>
+        <link href="https://dev.to/maixuanhan/need-ideas-about-some-sw-application-for-writing-11ee"/>
+        <updated>2021-06-19T16:49:57.000Z</updated>
+        <summary type="html"><![CDATA[Hi, I want to write about some technical discussion about system designs, architecture designs, programming techniques and how to deal with troubles in real-world but I've found that it is very difficult to just explain topics via multiple arbitrary and unconnected examples. I've got some topics in my mind but I cannot convey them into words. My writing is not good enough. So I'm thinking of implementing some real product while writing about it at a same time. I can post all the design considerations here and will receive feedbacks which will help me (and maybe other people) a lot.
+The problem is that I cannot think of any ideas about software/applications that are not only practical but also useful for real-life use cases. Simple case studies are good but I'm afraid of that the readers will lose the interest. So any suggestion would be welcome and appreciate.
+Thank you very much.]]></summary>
+        <author>
+            <name>Han Mai</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Need ideas about some SW/application for writing]]></title>
+        <id>https://dev.to/maixuanhan/need-ideas-about-some-sw-application-for-writing-11ee</id>
+        <link href="https://dev.to/maixuanhan/need-ideas-about-some-sw-application-for-writing-11ee"/>
+        <updated>2021-06-19T16:49:57.000Z</updated>
+        <summary type="html"><![CDATA[Hi, I want to write about some technical discussion about system designs, architecture designs, programming techniques and how to deal with troubles in real-world but I've found that it is very difficult to just explain topics via multiple arbitrary and unconnected examples. I've got some topics in my mind but I cannot convey them into words. My writing is not good enough. So I'm thinking of implementing some real product while writing about it at a same time. I can post all the design considerations here and will receive feedbacks which will help me (and maybe other people) a lot.
+The problem is that I cannot think of any ideas about software/applications that are not only practical but also useful for real-life use cases. Simple case studies are good but I'm afraid of that the readers will lose the interest. So any suggestion would be welcome and appreciate.
+Thank you very much.]]></summary>
+        <author>
+            <name>Han Mai</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NightwatchJs and GitHub Actions]]></title>
+        <id>https://dev.to/kiranparajuli589/nightwatchjs-and-github-actions-46mk</id>
+        <link href="https://dev.to/kiranparajuli589/nightwatchjs-and-github-actions-46mk"/>
+        <updated>2021-06-19T16:28:44.000Z</updated>
+        <summary type="html"><![CDATA[NightwatchJs
+
+
+Nightwatch.js is an integrated, easy to use End-to-End testing solution for web applications and websites, written in Node.js. It uses the W3C WebDriver API to drive browsers in order to perform commands and assertions on DOM elements.
+GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. You can build, test and deploy your code right from GitHub.
+GitHub Actions is available with GitHub Free, GitHub Pro, GitHub Free for organizations, GitHub Team, GitHub Enterprise Cloud, GitHub Enterprise Server, and GitHub AE. GitHub Actions is not available for private repositories owned by accounts using legacy per-repository plans. For more information, see "GitHub's products."
+CI using GitHub Actions offers workflows that can build the code i…]]></summary>
+        <author>
+            <name>Kiran Parajuli</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Software Security Crash Course]]></title>
+        <id>https://dev.to/heyjtk/software-security-crash-course-1em2</id>
+        <link href="https://dev.to/heyjtk/software-security-crash-course-1em2"/>
+        <updated>2021-06-19T15:46:35.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+Some things you may not know about me: I worked alongside network engineers and cybersecurity professionals for a while before deciding that Software Engineering was the technical discipline that I was drawn to.
+When I went back to school to "make it official" (even though I've been a software engineer for years) I picked Software Engineering and Security as my major, because I hadn't quite dropped that interest in security.
+It never came up in real life until I joined my current team, where my actual title is Senior Product Security Engineer. It was super cool to finally get to apply things from my education to my day to day work.
+At this point, I have only a capstone course left in my degree, so I know about as much information as a baccalaureate software security program …]]></summary>
+        <author>
+            <name>JTK</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Cyber Security — A necessity of time?]]></title>
+        <id>https://dev.to/rootissh/cyber-security-a-necessity-of-time-5b3</id>
+        <link href="https://dev.to/rootissh/cyber-security-a-necessity-of-time-5b3"/>
+        <updated>2021-06-19T15:40:56.000Z</updated>
+        <summary type="html"><![CDATA[“Hey, you heard about the Air India Hack?”.
+
+
+These conversations have made their way into our lives on a regular basis. Especially during the pandemic, the number of hacks has increased and have made global news. Our lives are so dependent on the internet, knowingly or unknowingly, we put out a lot of information onto the internet which makes it easier for the attackers or “Hackers” to target you. More Information leads to easier targeting of us and our systems. A lot of bank frauds, or any kind of financial frauds, happen mostly due to the information available on the internet and finding other ways to get information from our life. We overlook these small details and give out information that the malicious attackers turn to their advantage.
+Importance of Cyber Security
+Dipesh Kaura, gen…]]></summary>
+        <author>
+            <name>rootissh</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The complete DevOps roadmap  🚀]]></title>
+        <id>https://dev.to/ankit01oss/the-complete-devops-roadmap-28n1</id>
+        <link href="https://dev.to/ankit01oss/the-complete-devops-roadmap-28n1"/>
+        <updated>2021-06-19T15:38:29.000Z</updated>
+        <summary type="html"><![CDATA[Hi there,
+This is Ankit, your friendly DevOps content curator. I read a lot of articles about DevOps, distributed systems, performance monitoring, etc. and then share key takeaways from those articles so that you can stay updated and learn a few things quickly.🙂
+DevOps for any organization is a cultural shift. It's not just about tools and technologies but a continuous practice needed for building and maintaining scalable web applications.
+Today I want to share an amazing resource useful for anyone in the journey of becoming an Ops Engineer. This Github project has 163k stars, showing how popular it is. It has roadmaps on becoming a frontend, backend & DevOps engineer.
+Link to the GitHub repo👇
+Developer roadmaps
+Click to enlarge
+Now let's go through the steps of the roadmap one by one.
+Y…]]></summary>
+        <author>
+            <name>Ankit Anand ✨</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Securing Azure Logic apps with Private Endpoints]]></title>
+        <id>https://dev.to/pwd9000/securing-azure-logic-apps-with-private-endpoints-4c3f</id>
+        <link href="https://dev.to/pwd9000/securing-azure-logic-apps-with-private-endpoints-4c3f"/>
+        <updated>2021-06-19T15:11:43.000Z</updated>
+        <summary type="html"><![CDATA[What is an Azure Logic app?
+
+
+Azure Logic Apps is a cloud-based platform for creating and running automated workflows that integrate your apps, data, services, and systems. With this platform, you can quickly develop highly scalable integration solutions for your enterprise and business-to-business (B2B) scenarios. As a member of Azure Integration Services, Logic Apps simplifies the way that you connect legacy, modern, and cutting-edge systems across cloud, on premises, and hybrid environments.
+Azure Private Link (Private Endpoint) allows you to access Azure PaaS services over a Private IP address within the VNet. The PaaS resource gets a new private IP via a virtual network interface (NIC) on your Virtual Network (VNET) attached to the PaaS resource or service, making the resource truly a…]]></summary>
+        <author>
+            <name>Marcel.L</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TypeScript vs Dart - Declaração de Variáveis]]></title>
+        <id>https://dev.to/wileymarques/declaracao-de-variaveis-typescript-vs-dart-4adc</id>
+        <link href="https://dev.to/wileymarques/declaracao-de-variaveis-typescript-vs-dart-4adc"/>
+        <updated>2021-06-19T14:59:43.000Z</updated>
+        <summary type="html"><![CDATA[TypeScript, por ser apenas uma camada em cima do JavaScript, traz as mesmas três formas de declaração de variáveis:
+var
+let
+const
+Dart também possui três formas, mas um pouco diferentes:
+var
+final
+const
+Vamos ver essas diferenças.
+Todos os exemplos podem ser executados no TypeScript Playground, no caso do TypeScript, e no DartPad, para Dart.
+let e const são formas relativamente novas, introduzidas para resolver alguns problemas inerentes a var. Mas vamos começar com algumas características do var para entendermos o porquê de let e const serem criados.
+var em TypeScript
+
+
+A primeira característica confusa de var é a possibilidade de declarar a mesma variável várias vezes. Ou, em outras palavras, declarar múltiplas variáveis com o mesmo nome:
+var x = 10;
+var x = 15; // Variável `x` foi criad…]]></summary>
+        <author>
+            <name>Wiley Marques</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Announcing the Simple-Tree-Component!]]></title>
+        <id>https://dev.to/ckotzbauer/announcing-the-simple-tree-component-46nd</id>
+        <link href="https://dev.to/ckotzbauer/announcing-the-simple-tree-component-46nd"/>
+        <updated>2021-06-19T14:44:30.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+Over a year ago, a colleague of mine and me were searching for a javascript-component capable for tree-rendering. There were a few must-have aspects we were looking for:
+Zero runtime-dependencies (especially no JQuery)
+Actively maintained
+Framework-agnostic
+Good integration with modern bundlers
+These requirements did already reduce the number of possible libraries to a considerable degree. In addition, we had to consider the requirements of our product as well:
+Text-search through tree-nodes
+Mode where the tree is rendered in a container
+Dropdown-mode for single-selection
+Dropdown-mode for multi-selection
+Neither did any component meet our requirements, nor did using two libraries for the different use-cases turn out to be sufficient. So we started considering the effort of …]]></summary>
+        <author>
+            <name>Christian Kotzbauer</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Image Optimization]]></title>
+        <id>https://dev.to/devpwa/image-optimization-2d7n</id>
+        <link href="https://dev.to/devpwa/image-optimization-2d7n"/>
+        <updated>2021-06-19T12:21:55.000Z</updated>
+        <summary type="html"><![CDATA[Introducing "Image Optimization": a fresh 528 page Print + eBook on modern formats, compression, automation and more: 
+https://www.smashingmagazine.com/2021/04/image-optimization-pre-release/
+2+ года в разработке. С благодарностью smashingmagazine]]></summary>
+        <author>
+            <name>Дмитрий</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WHAT IS NODE.JS?]]></title>
+        <id>https://dev.to/himanshu0128/what-is-node-js-eng</id>
+        <link href="https://dev.to/himanshu0128/what-is-node-js-eng"/>
+        <updated>2021-06-19T12:07:51.000Z</updated>
+        <summary type="html"><![CDATA[Irrespective of the fact that you know javascript or not, you must have encountered these questions: What is NodeJS? Is it a server side programming language? Is it just another javascript framework like AngularJS?
+Well, NodeJS is neither a framework nor a programming language.
+As per the official docs:
+Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
+Let's dig deeper and understand this better.
+History:
+It all started in 2009, when javascript was primarily used to run inside a browser. We could embed javascript code in a webpage’s HTML and achieve all sorts of benefits like adding events to pages, calling APIs, adding animations etc.
+While all this was possible, 28-year-old Ryan criticized the Apache HTTP server for it's limited possibilities to handle concurrent co…]]></summary>
+        <author>
+            <name>Himanshu Gupta</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to stop Angular ng serve on Mac/Linux]]></title>
+        <id>https://dev.to/tanatip/how-to-stop-angular-ng-serve-on-mac-linux-347b</id>
+        <link href="https://dev.to/tanatip/how-to-stop-angular-ng-serve-on-mac-linux-347b"/>
+        <updated>2021-06-19T10:18:32.000Z</updated>
+        <summary type="html"><![CDATA[There're two ways to do this: 
+First
+ctrl + c
+Second
+ps command to find the process ID then use the PID to kill the process.
+ps -ef | grep "ng serve"
+
+The output will look like this:
+ 501 25782 23667   0  5:04PM ttys000    0:22.54 ng serve  
+ 501 25790 23408   0  5:05PM ttys001    0:00.01 grep ng serve
+
+Then use this command to stop ng serve.
+kill 25782]]></summary>
+        <author>
+            <name>Tanatip Siriprathum</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Udacity | SUSE: Container Orchestration - Docker]]></title>
+        <id>https://dev.to/jeden/udacity-suse-container-orchestration-docker-5d87</id>
+        <link href="https://dev.to/jeden/udacity-suse-container-orchestration-docker-5d87"/>
+        <updated>2021-06-19T09:50:29.000Z</updated>
+        <summary type="html"><![CDATA[This is the fifth article in the series, Udacity: SUSE Cloud Native Foundations. In this third installment, you'll get to learn what containers are, specifically Docker. Discussed as well is Kubernetes which is used for orchestrating containers.
+This section is actually part of a single lesson, Container Orchestration using Kubernetes, but since it'll be too long, I've decided to put Kubernetes on the next article.
+Once the application has been developed, the next step would now be to package it, containerize and lastly, deploy it.Here we'll be packaging the application using a Docker container and we'll deploy it using Kubernetes cluster to manage containers at scale.
+The traditional way fo deploying applications was through virtual machines or VMs. The application would use the OS file s…]]></summary>
+        <author>
+            <name>Eden</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Angular Dependency Injection(Custom Provider)]]></title>
+        <id>https://dev.to/abilashs003/angular-dependecy-injection-custom-provider-1l3n</id>
+        <link href="https://dev.to/abilashs003/angular-dependecy-injection-custom-provider-1l3n"/>
+        <updated>2021-06-19T08:19:36.000Z</updated>
+        <summary type="html"><![CDATA[Angular Dependency Injection
+
+
+Before discussing dependency injection lets understand what are dependencies first
+Dependencies are services or objects that the class needs to perform its function
+Dependency Injection is a design pattern in which a class/ component request dependencies from external sources rather than creating them.
+In Angular, Component or services are injected with dependencies via the constructor arguments.  Angular DI's framework will provide dependencies calling the factory function to instantiate the dependencies. 
+How Services are exposed to Inject?
+Its using @Injectable decorator and dependency injection provider which is declared in service.
+
+In the above service named AngProvidedDepService the if provided In is removed then you will get following error
+
+No provid…]]></summary>
+        <author>
+            <name>abi</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Angular Dependency Injection(Custom Provider)]]></title>
+        <id>https://dev.to/abilashs003/angular-dependecy-injection-custom-provider-1l3n</id>
+        <link href="https://dev.to/abilashs003/angular-dependecy-injection-custom-provider-1l3n"/>
+        <updated>2021-06-19T08:19:36.000Z</updated>
+        <summary type="html"><![CDATA[Angular Dependency Injection
+
+
+Before discussing dependency injection lets understand what are dependencies first
+Dependencies are services or objects that the class needs to perform its function
+Dependency Injection is a design pattern in which a class/ component request dependencies from external sources rather than creating them.
+In Angular, Component or services are injected with dependencies via the constructor arguments.  Angular DI's framework will provide dependencies calling the factory function to instantiate the dependencies. 
+How Services are exposed to Inject?
+Its using @Injectable decorator and dependency injection provider which is declared in service.
+
+In the above service named AngProvidedDepService the if provided In is removed then you will get following error
+
+No provid…]]></summary>
+        <author>
+            <name>abi</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Battle of The NoSQL Databases | When To Use What]]></title>
+        <id>https://dev.to/lucidmach/the-battle-of-the-nosql-databases-when-to-use-what-1e2o</id>
+        <link href="https://dev.to/lucidmach/the-battle-of-the-nosql-databases-when-to-use-what-1e2o"/>
+        <updated>2021-06-19T08:14:50.000Z</updated>
+        <summary type="html"><![CDATA[Let’s start from the very beginning….
+What is a database?
+It’s just a base/place for data, it's as simple as that.
+However, the bigger question is “why can’t you use something like an excel sheet to store data?”
+The answer is yes you can but it depends more on what you’re trying to do
+An excel sheet is perfect if you’re the only person using/updating the data, now when you scale up to more than say 3 people (in different locations), try to have the excel file store the most up-to-date data as possible, you’ll see exactly why the excel file is a terrible idea.
+What are the different types of databases?
+Traditionally people used something called Structured Query Language (SQL, 🔊: sequel), It basically created commands to do what you would to in an excel table.
+example: if you wanted to inse…]]></summary>
+        <author>
+            <name>Nukala Suraj</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[From JavaScript to TypeScript Crash Course/CheatSheet : Basics]]></title>
+        <id>https://dev.to/rahulbanerjee99/from-javascript-to-typescript-crash-course-cheatsheet-basics-4e8k</id>
+        <link href="https://dev.to/rahulbanerjee99/from-javascript-to-typescript-crash-course-cheatsheet-basics-4e8k"/>
+        <updated>2021-06-19T07:51:25.000Z</updated>
+        <summary type="html"><![CDATA[TypeScript Compiler
+
+
+
+  
+  
+  Install
+
+
+
+
+
+sudo npm install typescript -g
+
+or
+brew install typescript
+
+tsc <fileName.ts>
+
+If I have a file named "index.ts"
+tsc index.ts
+
+The TypeScript compiler essentially converts a TypeScript File to a JavaScript File. It produces a new .js file.
+index.ts -> index.js (a new file, doesn't overwrite .ts file)
+
+It also checks for errors in your code
+It helps you configure your compiler.
+tsc -init
+
+You can configure the root to all your typescript files and the destination where you'd like the converted javascript files to be stored
+// tsconfig.json 
+{
+   "src" : "path to root folder with typescript files",
+   "dist": "path to the folder where you want converted javascript files to be stored"
+}
+
+If you get errors while importing JS Modules, add the followin…]]></summary>
+        <author>
+            <name>Rahul Banerjee</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[8 Myths about Privacy on the Internet]]></title>
+        <id>https://dev.to/nerdclump7/8-myths-about-privacy-on-the-internet-3ao0</id>
+        <link href="https://dev.to/nerdclump7/8-myths-about-privacy-on-the-internet-3ao0"/>
+        <updated>2021-06-19T06:22:06.000Z</updated>
+        <summary type="html"><![CDATA[8 Myths about Privacy on the Internet]]></summary>
+        <author>
+            <name>Nerd Clump</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A quick guide on How to extend kubectl with plugins?]]></title>
+        <id>https://dev.to/sagarjadhv23/a-quick-guide-on-how-to-extend-kubectl-with-plugins-2j2a</id>
+        <link href="https://dev.to/sagarjadhv23/a-quick-guide-on-how-to-extend-kubectl-with-plugins-2j2a"/>
+        <updated>2021-06-19T05:31:33.000Z</updated>
+        <summary type="html"><![CDATA[kubectl
+What is a plugin?
+Why write a plugin?
+
+
+Restart a Pod
+How to write a plugin?
+Demo
+Notes
+Show Your Support
+kubectl is a command-line interface (CLI) used to interact with the Kubernetes cluster. With the help of kubectl you can perform the following operations on the Kubernetes cluster:
+Deploy & Manage containerize application.
+Connect to multiple Kubernetes clusters.
+Get Kubernetes cluster information.
+Many more...
+Visit here for more detail on kubectl. 
+kubectl plugin is a standalone executable file used to enhance the functionality of kubectl with new subcommands.
+With plugins, you can add new features to kubectl as per your requirement.
+To build a complex use case using existing kubectl commands. Let us understand this with the following use case:
+To restart a Pod you can use th…]]></summary>
+        <author>
+            <name>Sagar Jadhav</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Setup Amazon Sagemaker Studio using AWS CDK]]></title>
+        <id>https://dev.to/salah856/how-to-setup-amazon-sagemaker-studio-using-aws-cdk-1a30</id>
+        <link href="https://dev.to/salah856/how-to-setup-amazon-sagemaker-studio-using-aws-cdk-1a30"/>
+        <updated>2021-06-19T04:20:27.000Z</updated>
+        <summary type="html"><![CDATA[Amazon SageMaker Studio is the first fully integrated development environment (IDE) for machine learning (ML). Studio provides a single web-based visual interface where you can perform all ML development steps required to prepare data, as well as build, train, and deploy models. You can quickly upload data, create new notebooks, train and tune models, move back and forth between steps to adjust experiments, compare results, and deploy models to production all in one place, making you much more productive.
+In this article, we see how to use the AWS Cloud Development Kit (AWS CDK) to use the new native resource in AWS CloudFormation to set up Studio and configure its access for data scientists and developers in your organization. This way you can set up Studio quickly and consistently, enabl…]]></summary>
+        <author>
+            <name>Salah Elhossiny</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Full Stack Reddit Clone - Spring Boot, React, Electron App - Part 9]]></title>
+        <id>https://dev.to/maxicb/full-stack-reddit-clone-spring-boot-react-electron-app-part-9-3pj5</id>
+        <link href="https://dev.to/maxicb/full-stack-reddit-clone-spring-boot-react-electron-app-part-9-3pj5"/>
+        <updated>2021-06-19T03:33:11.000Z</updated>
+        <summary type="html"><![CDATA[Full Stack Reddit Clone - Spring Boot, React, Electron App - Part 9
+
+
+
+  
+  
+  Introduction
+
+
+Welcome to Part 9 of creating a Reddit clone using Spring Boot, and React.
+What are we building in this part?
+Pagination Support
+
+
+We will update our backend to support pagination, this will reduce the amount of loading times for the client as the database begins to scale
+JWT Invalidation
+JWT Refreshing
+In Part 8 we added the CREATE && READ endpoints for creating and reading comments!!
+Backend Source: https://github.com/MaxiCB/vox-nobis/tree/master/backend
+
+Frontend Source: https://github.com/MaxiCB/vox-nobis/tree/master/client
+
+Live URL: In Progress
+Let's cover the updating of all of our repositories to implement pagination and sorting support. Inside com.your-name.backend.repository we will upda…]]></summary>
+        <author>
+            <name>Aaron C. Beasley</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How Have Fedora of Mine Been]]></title>
+        <id>https://dev.to/naruaika/how-have-fedora-of-mine-been-439j</id>
+        <link href="https://dev.to/naruaika/how-have-fedora-of-mine-been-439j"/>
+        <updated>2021-06-19T02:30:54.000Z</updated>
+        <summary type="html"><![CDATA[I, sometimes, love being as a researcher. In just a minute or two, my machine, oftentimes, ended up be a mess. Hearing of Fedora thirty-four which has just officially launched, doing a fresh install of the operating system (OS) had been emerging in my mind, all the time. But how could clean installation clean up the mess? Nay, that is not possible! Once I got my hands dirty, everything will not be alright. Consequently, I have thoughts of keeping myself away from messing around for this time.
+As many of people in many different communities have mentioned what is new in the thirty-four edition, followed by how-tos when installing Fedora for the first time, or even again, I have nothing more to share. Still and all, it is rather not a bad idea to capture and talk about decisions I have made.…]]></summary>
+        <author>
+            <name>Naufan Rusyda Faikar</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TryHackMe TShark]]></title>
+        <id>https://dev.to/applegamer22/tryhackme-tshark-3j7g</id>
+        <link href="https://dev.to/applegamer22/tryhackme-tshark-3j7g"/>
+        <updated>2021-06-19T02:20:41.000Z</updated>
+        <summary type="html"><![CDATA[TryHackMe TShark
+
+
+
+  
+  
+  References
+
+
+
+DarkSec. (2021). TryHackMe TShark Official Walkthrough [YouTube Video]. In YouTube. https://youtu.be/tbXIFRS4u7I
+
+
+
+
+  
+  
+  Reading PCAP Files
+
+
+
+  
+  
+  How many packets are in the dns.cap file?
+
+
+
+TShark's -r flag enable reading a PCAP file.
+wc's -l flag counts the lines of a given input.
+
+
+
+
+$ tshark -r dns.cap | wc -l
+38
+
+Answer: 38
+TShark's -Y "dns.qry.type == 1" is used to filter DNS A records.
+
+
+
+
+$ tshark -r dns.cap -Y "dns.qry.type == 1" | wc -l
+6
+
+Answer: 6
+TShark's -T fields is used to specify the output's format.
+TShark's -e dns.qry.name is specify which field to output.
+
+
+
+
+$ tshark -r dns.cap -Y "dns.qry.type == 1" -T fields -e dns.qry.name
+www.netbsd.org
+www.netbsd.org
+GRIMM.utelsystems.local
+GRIMM.utelsystems.local
+GRIMM.utelsystems.local
+GRIMM.utelsystems.local
+
+Answer: GRIMM.utelsystems.local
+$ tshark -r task3.pcap | wc -l
+125
+
+Answer: 125
+$ tshark -r task3.pcap -Y "dns.flags.response == 0" | wc -l
+56
+
+Answer: 56
+$ tshark -r task3.pcap -Y "dns.flags.response == 0" -T fields -e dns.id
+0x0000beef
+
+Answer: 0x0000beef
+$ tshark -r task3.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name | cut -c1 | tr "\n" " " | sed 's/ //g'
+MZWGCZ33ORUDC427NFZV65BQOVTWQX3XNF2GQMDVG5PXI43IGRZGWIL5
+
+Answer: MZWGCZ33ORUDC427NFZV65BQOVTWQX3XNF2GQMDVG5PXI43IGRZGWIL5
+$ echo 'MZWGCZ33ORUDC427NFZV65BQOVTWQX3XNF2GQMDVG5PXI43IGRZGWIL5' | base32 -d
+flag{th1s_is_t0ugh_with0u7_tsh4rk!}
+
+Flag: flag{th1s_is_t0ugh_with0u7_tsh4rk!}]]></summary>
+        <author>
+            <name>Omri Bornstein</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[10 Developers You Must Follow To Improve]]></title>
         <id>https://dev.to/line/10-developers-you-must-follow-to-improve-2jah</id>
@@ -167,8 +936,7 @@ An attacker could ha…]]></summary>
         <id>https://dev.to/aws-builders/how-to-store-and-rotate-database-credentials-using-aws-secret-manager-3g6o</id>
         <link href="https://dev.to/aws-builders/how-to-store-and-rotate-database-credentials-using-aws-secret-manager-3g6o"/>
         <updated>2021-06-18T17:14:29.000Z</updated>
-        <summary type="html"><![CDATA[AWS Secrets Manager helps you protect secrets needed to access your applications, services, and IT resources. The service enables you to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Users and applications retrieve secrets with a call to Secrets Manager APIs, eliminating the need to hard code sensitive information in plain text.
-Secrets Manager offers secret rotation with built-in integration for Amazon RDS, Amazon Redshift, and Amazon DocumentDB. Also, the service is extensible to other types of secrets, including API keys and OAuth tokens. In addition, Secrets Manager enables you to control access to secrets using fine-grained permissions and audit secret rotation centrally for resources in the AWS Cloud, third-party ser…]]></summary>
+        <summary type="html"><![CDATA[“Challenges faced to find the solution of how to secure the database credentials”. I have checked different ways so that I can give the security to users' credentials such as the database username and password. I got the solution to enable the IAM database authentication option in RDS but due to some limitations of IAM database authentication and requirement from client side to secure their users existing credentials. The option of choosing the IAM database authentication is not a good fit for my scenario. So I have checked the service in AWS as AWS Secret Manager which helps to store and rotate the database credentials in terms of username and password not as authentication token. And it's a good fit for my current scenario. So I have just configured a secret manager to store and even rot…]]></summary>
         <author>
             <name>GargeeBhatnagar</name>
         </author>
@@ -378,30 +1146,6 @@ We'll be refactoring a sample App component, the implementation (but not…]]></
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[The Official Release of Apostrophe 3.0]]></title>
-        <id>https://dev.to/apostrophecms/the-official-release-of-apostrophe-3-0-3j0k</id>
-        <link href="https://dev.to/apostrophecms/the-official-release-of-apostrophe-3-0-3j0k"/>
-        <updated>2021-06-18T12:34:14.000Z</updated>
-        <summary type="html"><![CDATA[Welcome to the world Apostrophe 3... we've been waiting for you.  
-It's a big day for Apostrophe! Today we are very pleased to share our 3.0 Stable release of ApostropheCMS with you. This release represents years of work from our core team as well as contributors around the world.
-If you can't wait to dive right in, here are some links:
-Check out the live demo
-
-Dig into the new documentation
-
-Go straight to the source code
-
-Start a project with A3
-Reach out to us for support
-Otherwise, read on for a snapshot of what's new, what's next, and how to get involved.
-If you haven't been following along with our previous updates along the way, here's a quick summary of the biggest changes in A3.
-
-While Apostrophe 2 has custom APIs and a separate apostrophe-headless module, A3 is powered by RESTful…]]></summary>
-        <author>
-            <name>Apostrophe</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Introduction to Project Bicep - The evolution of ARM Templates]]></title>
         <id>https://dev.to/cloudwithchris/introduction-to-project-bicep-the-evolution-of-arm-templates-3676</id>
         <link href="https://dev.to/cloudwithchris/introduction-to-project-bicep-the-evolution-of-arm-templates-3676"/>
@@ -415,29 +1159,9 @@ Azure Resource Manager hasn't always been a part of Azure though. …]]></summar
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[What is Asynchronous JavaScript?]]></title>
-        <id>https://dev.to/badr_eddine/what-is-asynchronous-javascript-961</id>
-        <link href="https://dev.to/badr_eddine/what-is-asynchronous-javascript-961"/>
-        <updated>2021-06-18T11:33:18.000Z</updated>
-        <summary type="html"><![CDATA[If you want to build projects efficiently, then this concept is for you.
-The theory of async JavaScript helps you break down big complex projects into smaller tasks.
-Then you can use any of these three techniques – callbacks, promises or Async/await – to run those small tasks in a way that you get the best results.
-Let's dive in!🎖️
-
-In a synchronous system, tasks are completed one after another.
-Think of this as if you have just one hand to accomplish 10 tasks. So, you have to complete one task at a time.
-Take a look at the GIF 👇 – one thing is happening at a time here:
-
-You'll see that until the first image is loaded completely, the second image doesn't start loading.
-Well, JavaScript is by default Synchronous [single threaded]. Think about it like this – one thread means one hand with …]]></summary>
-        <author>
-            <name>Badr Eddine El-Harchali</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Udacity | SUSE: Architecture Considerations - Lab]]></title>
-        <id>https://dev.to/eden_jose08/udacity-suse-architecture-considerations-lab-305g</id>
-        <link href="https://dev.to/eden_jose08/udacity-suse-architecture-considerations-lab-305g"/>
+        <id>https://dev.to/jeden/udacity-suse-architecture-considerations-lab-305g</id>
+        <link href="https://dev.to/jeden/udacity-suse-architecture-considerations-lab-305g"/>
         <updated>2021-06-18T11:31:38.000Z</updated>
         <summary type="html"><![CDATA[This is the fourth article in the series, Udacity: SUSE Cloud Native Foundations.  This is an extension of the previous article, Udacity | SUSE: Architecture Considerations.
 In this section, we'll go over the two exercises and an edge case from the previous section:
@@ -482,30 +1206,6 @@ If you want to read more about all reasons then visit Why Use MEAN Stack for Web
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[20 Key Reasons Use MEAN Stack Development for Next Project]]></title>
-        <id>https://dev.to/techticsolutioninc/20-key-reasons-use-mean-stack-development-for-next-project-3n6f</id>
-        <link href="https://dev.to/techticsolutioninc/20-key-reasons-use-mean-stack-development-for-next-project-3n6f"/>
-        <updated>2021-06-18T11:21:37.000Z</updated>
-        <summary type="html"><![CDATA[Today in this digital era developing a web application requires a reliable and dependable software stack. Modern-day developers are utilizing a blend of advanced technologies to get swifter and enhanced outcomes through their projects.
-Increasing the use of MEAN Stack is one of the primary examples of this scenario. MEAN JS is utilized to craft robust and scalable web applications. Let’s explore what exactly is Mean Stack and how it can assist your business.
-What is the MEAN stack?
-Mean stack is the compilation and synergy of technologies applied to build web applications. MEAN is used by several Web App Development Companies, and it precisely stands for “MongoDB Express.js AngularJS Node.js.”
-How does Mean stack architecture work?
-
-The Mean Stack Architecture works in five stages.
-Stage 1: Angular as a client-side language is the foremost one to work on the client request.
-Stage 2: The client request then goes into NodeJS being the JavaScript server-side language.
-Stage 3: ExpressJS is then into the process and makes a database request.
-Stage 4: Then MongoDB retrieves the data and sends the response to ExpressJS.
-Stage 5: NodeJS returns the data to the AngularJS to showcase the outcomes, and in return, the data is taken back from the ExpressJS.
-20 reasons to use MEAN stack for web & mobile app development project
-1) Free & open-source stack
-If you want to read more about all reasons then visit Why Use MEAN Stack for Web & Mobile App Development Project?]]></summary>
-        <author>
-            <name>Techtic Solutions, Inc.</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Your Guide to Build On-demand Doctor Appointment Application]]></title>
         <id>https://dev.to/william99659653/your-guide-to-build-on-demand-doctor-appointment-application-2h21</id>
         <link href="https://dev.to/william99659653/your-guide-to-build-on-demand-doctor-appointment-application-2h21"/>
@@ -514,19 +1214,6 @@ If you want to read more about all reasons then visit Why Use MEAN Stack for Web
 Not only patients but also doctors find such apps highly useful. As per the data, around 80% of physicians use medical apps regularly. According to a survey, approximately 1.7 billion smartphone users have a hea…]]></summary>
         <author>
             <name>williamjohns</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ways to load env variables for your script]]></title>
-        <id>https://dev.to/wangpin34/ways-to-load-env-variables-for-your-script-183m</id>
-        <link href="https://dev.to/wangpin34/ways-to-load-env-variables-for-your-script-183m"/>
-        <updated>2021-06-18T09:23:28.000Z</updated>
-        <summary type="html"><![CDATA[Several years ago when I decided to write an article, I got this inject-env-variables-with-no-tears. At that time, I know nothing about makefile and shell script(almost), the only idea in my brain is just Nodejs. Years later, I got new and better solutions.
-Firstly, let's talk about what env variables act in software like a project written in Nodejs. Let's say it's an app that is bootstrapped by create-react-app. By default, this app will be served on the root path of a host, like medium.com. If it's supposed to be served on a sub-path like /apps/my-app, you have to tell the build script what the exact path it is. The way it receives the path value is through the env variable, actually as PUBLIC_URL.
-Now, let talk about how to inject env variables into the project.
-For example, you are goi…]]></summary>
-        <author>
-            <name>Pengson</name>
         </author>
     </entry>
     <entry>
@@ -568,124 +1255,6 @@ php -v
 If php -v still pointing to the old PHP version…]]></summary>
         <author>
             <name>Raj KB</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DynamoDB Streams]]></title>
-        <id>https://dev.to/royal_bhati/dynamodb-streams-13eg</id>
-        <link href="https://dev.to/royal_bhati/dynamodb-streams-13eg"/>
-        <updated>2021-06-18T06:28:28.000Z</updated>
-        <summary type="html"><![CDATA[While working on a backend service, I came across this problem where I had to retrieve a set of data of a specific type, but that type wasn't having any index and the data was also updated frequently.
-Since the data was constantly changing (add/update), first thing that came to my mind was to have a trigger but then as I looked at the documentation of how to add triggers to Dynamo in AWS, I decided to pursue a different solution :p
-So, there were three easy solutions that were present before me without thinking much - 
-→  Complete scan of the table and filter the results
-→ Add an Index for that type
-There were couple of reasons I didn't go along with this idea
-That wasn't a very frequently queried data
-Already had so many indexes so didn't want to add one more just yet before trying other solutions
-→  Run a cron-job 
-Great man once said, If you can't think of anything else, run a cron-job.
-Back in my mind, I wasn't quite convinced with any of the above three solutions and so decided to give dynamodb triggers try. I was aware of DynamoDb streams but never tried them.
-DynamoDB Streams are basically triggers like that we have in Relational DBs but the only difference is that it generates stream of events when there is a data change and you can easily pipe that stream into Kinesis or a Lambda (In my case it was lambda).
-
-AWS made the things look difficult but the process was not complex at all. 
-All I had to do was the following -
-Setup a stream on the dynamodb table which was just a one click action.
-Create a new lambda function and attach it to the dynamodb stream which was also fairly easy
-Rest was basic stuff of listening the data then processing it and finally saving it to the new table
-DynamoDB streams are much more than what I have covered in my use case. You can read more about it here : -https://aws.amazon.com/blogs/database/dynamodb-streams-use-cases-and-design-patterns/]]></summary>
-        <author>
-            <name>Royal Bhati</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Display Formatted Date in JavaScript Without Using Any External Library]]></title>
-        <id>https://dev.to/myogeshchavan97/how-to-display-formatted-date-in-javascript-without-using-any-external-library-1n2m</id>
-        <link href="https://dev.to/myogeshchavan97/how-to-display-formatted-date-in-javascript-without-using-any-external-library-1n2m"/>
-        <updated>2021-06-18T06:01:21.000Z</updated>
-        <summary type="html"><![CDATA[In most of the applications, we need to display a formatted date like 18 June 2021 or 06/18/2021 along with the time.
-So we normally use moment.js or date-fns or day.js library to get that done.
-But using an external library adds a lot of extra code to the final size of the application.
-For example, the moment.js npm library is about 4.21MB in unpacked size.
-
-So even If you use it only once for single formatting, your final application bundle size will increase which will affect your application loading time.
-Also, Moment.js is now a legacy project(in maintenance mode) from Oct 2020.
-So in this article, we'll see how to display the date in a formatted way using just JavaScript without using any external libraries. 
-So let's get started.
-It has the following syntax:
-toLocaleDateString(local…]]></summary>
-        <author>
-            <name>Yogesh Chavan</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Angular : Add cookie consent in your angular project just in 5 minutes]]></title>
-        <id>https://dev.to/rajeshkumaryadavdotcom/angular-add-cookie-consent-in-your-angular-project-just-in-5-minutes-5a3b</id>
-        <link href="https://dev.to/rajeshkumaryadavdotcom/angular-add-cookie-consent-in-your-angular-project-just-in-5-minutes-5a3b"/>
-        <updated>2021-06-18T05:26:53.000Z</updated>
-        <summary type="html"><![CDATA[Open your terminal and run below command -
-npm install --save cookieconsent
-
-Now install ngx-cookieconsent via:
-npm install --save ngx-cookieconsent
-
-Once installed you need to import the main module app.module.ts:
-import {NgcCookieConsentModule} from 'ngx-cookieconsent';
-
-Add this import to imports of @NgModule on the same file app.module.ts
-imports: [NgcCookieConsentModule.forRoot(cookieConfig), ...], 
-
-After adding above import in @NgModule your code will look like this-
-@NgModule({
-  declarations: [AppComponent, ...],
-  imports: [NgcCookieConsentModule.forRoot(cookieConfig), ...],  
-  bootstrap: [AppComponent]
-})
-
-Now add below code in the same file app.module.ts -
-CODE:
-const cookieConfig:NgcCookieConsentConfig = {
-  cookie: {
-    domain: 'localhost' // or 'your.domain.com' 
-  },
-  pa…]]></summary>
-        <author>
-            <name>RajeshKumarYadav.com</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Angular : Add cookie consent in your angular project just in 5 minutes]]></title>
-        <id>https://dev.to/rajeshkumaryadavdotcom/angular-add-cookie-consent-in-your-angular-project-just-in-5-minutes-5a3b</id>
-        <link href="https://dev.to/rajeshkumaryadavdotcom/angular-add-cookie-consent-in-your-angular-project-just-in-5-minutes-5a3b"/>
-        <updated>2021-06-18T05:26:53.000Z</updated>
-        <summary type="html"><![CDATA[Open your terminal and run below command -
-npm install --save cookieconsent
-
-Now install ngx-cookieconsent via:
-npm install --save ngx-cookieconsent
-
-Once installed you need to import the main module app.module.ts:
-import {NgcCookieConsentModule} from 'ngx-cookieconsent';
-
-Add this import to imports of @NgModule on the same file app.module.ts
-imports: [NgcCookieConsentModule.forRoot(cookieConfig), ...], 
-
-After adding above import in @NgModule your code will look like this-
-@NgModule({
-  declarations: [AppComponent, ...],
-  imports: [NgcCookieConsentModule.forRoot(cookieConfig), ...],  
-  bootstrap: [AppComponent]
-})
-
-Now add below code in the same file app.module.ts -
-CODE:
-const cookieConfig:NgcCookieConsentConfig = {
-  cookie: {
-    domain: 'localhost' // or 'your.domain.com' 
-  },
-  pa…]]></summary>
-        <author>
-            <name>RajeshKumarYadav.com</name>
         </author>
     </entry>
     <entry>
@@ -798,59 +1367,6 @@ export default App = () => {
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How to Disable a Repository in Azure DevOps (Azure Repos)]]></title>
-        <id>https://dev.to/n3wt0n/how-to-disable-a-repository-in-azure-devops-azure-repos-3i65</id>
-        <link href="https://dev.to/n3wt0n/how-to-disable-a-repository-in-azure-devops-azure-repos-3i65"/>
-        <updated>2021-06-18T00:39:05.000Z</updated>
-        <summary type="html"><![CDATA[In this post I'm going to show you how to disable a repository in Azure DevOps and prevent users from accessing its contents.
-As usual, if you are a visual learner, or simply prefer to watch and listen instead of reading, here you have the video with the whole explanation and demo, which to be fair is much more complete than this post.
-
-
-
-
-Link to the video: https://youtu.be/G_um1mm7LiM
-If you rather prefer reading, well... let's just continue :)
-Before we talk about how to disable a repo, why would you want to do it?
-Well, for example you may want to disable a repository because you found a secret in it. Or a third-party scanning tool found the repository to be out of compliance.
-In such cases, you may want to temporarily disable the repository while you work to resolve the issue.
-Let's see now how to disable a repo. It is very easy.
-Just go to the Project Settings, scroll down to the Repositories section and enter it, then click on the specific repo you want to Disable. In the settings, you have the Disable Repo switch
-
-When a repo is disabled, it still shows up in the list of repos, however no one can access or update its content.
-And you would also see a message saying that the repo has been disabled when they try to access it in the Azure Repos UI.
-
-And of course after the necessary mitigation steps have been taken, disabled repositories can be re-enabled using the same setting.
-Final note: you can disable a repository only if you are either admin or owner, or you have the Delete repository permissions.
-Let me know in the comment section below if you think this is useful and if you've ever been in a situation in which you could have disabled a repo.
-Like, share and follow me 🚀 for more content:
-📽 YouTube
-Buy me a coffee
-Patreon
-CoderDave.io Website
-Merch
-Facebook page
-GitHub
-Twitter
-LinkedIn
-Podcast]]></summary>
-        <author>
-            <name>Davide 'CoderDave' Benvegnù</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How does Virtual DOM work? (Build your own)]]></title>
-        <id>https://dev.to/aidenybai/how-does-virtual-dom-work-b74</id>
-        <link href="https://dev.to/aidenybai/how-does-virtual-dom-work-b74"/>
-        <updated>2021-06-17T23:09:44.000Z</updated>
-        <summary type="html"><![CDATA[Plug: I help develop million: <1kb virtual DOM - it's fast!
-The virtual DOM is a tree of virtual nodes that represents what the DOM looks like. virtual nodes are light, stateless, and are JavaScript objects that only contain necessary fields. virtual nodes can be assembled into trees, and "diffed" to make pinpoint changes to the DOM.
-The reasoning behind this is because modification and access of DOM nodes is computationally expensive. A diff between virtual nodes, accessing the DOM only for modification, is the premise of virtual DOM. It avoids the DOM as much as possible, favoring plain JavaScript objects instead, making reading and writing much cheaper.
-The Million virtual DOM contains three main functions: m, createElement, patch. To completely understand how virtual DOM works, let's t…]]></summary>
-        <author>
-            <name>Aiden Bai</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Making Mock Data for an Angular list view component]]></title>
         <id>https://dev.to/michaelahoffman/making-mock-data-for-an-angular-list-view-component-41op</id>
         <link href="https://dev.to/michaelahoffman/making-mock-data-for-an-angular-list-view-component-41op"/>
@@ -861,138 +1377,6 @@ If you are a front-end developer or designer who codes and working without the b
 The skills in this series allow you to create demo content in your prototype. This is really useful for ot…]]></summary>
         <author>
             <name>Michaela Hoffman</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Making Mock Data for an Angular list view component]]></title>
-        <id>https://dev.to/michaelahoffman/making-mock-data-for-an-angular-list-view-component-41op</id>
-        <link href="https://dev.to/michaelahoffman/making-mock-data-for-an-angular-list-view-component-41op"/>
-        <updated>2021-06-17T23:02:59.000Z</updated>
-        <summary type="html"><![CDATA[In this tutorial, I’m going to start the process of making a prototype using mock data. My goal at the end of the series is to have quickly mocked data for a prototype while binding it to the UI. As a result, the data can be used across the app and there is only one point of maintenance. 
-When I’m done with the series, I will have one data set that I can use to create demo components of my application.
-If you are a front-end developer or designer who codes and working without the back-end API for a proof of concept or prototype in the browser, this is for you. In order to complete this tutorial, you’ll need to have a good understanding of HTML. And how to start an Angular application.
-The skills in this series allow you to create demo content in your prototype. This is really useful for ot…]]></summary>
-        <author>
-            <name>Michaela Hoffman</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Data Structures in Typescript - Stack]]></title>
-        <id>https://dev.to/ricardo93borges/data-structures-in-typescript-stack-1h35</id>
-        <link href="https://dev.to/ricardo93borges/data-structures-in-typescript-stack-1h35"/>
-        <updated>2021-06-17T22:58:26.000Z</updated>
-        <summary type="html"><![CDATA[A stack uses LIFO (last-in-first-out) ordering, the most recent item added is the first item to be removed, just like a real stack.
-
-A stack can be implemented using an array or a linked list, can be either fixed or dynamic size.
-Push - Add an item to the top of the stack
-Pop - Remove the top item from the stack
-Peek - Return the top of the stack, without removing it.
-isEmpty - Return true if the stack is empty.
-isFull - Return true if the stack is full, used when the stack is fixed size.
-Here's an implementation of a stack using an array, in Typescript an array doesn't have a fixed length, so the operation isFull is not required, however you can implement a stack with a fixed length and use that operation.
-class Stack<T> {
-  private array: T[] = [];
-
-  pop(): T | undefined {
-    if (this.isEmpty()) throw new EmptyStackException();
-
-    return this.array.pop();
-  }
-
-  push(data: T): void {
-    this.array.push(data);
-  }
-
-  peek(): T {
-    if (this.isEmpty()) throw new EmptyStackException();
-
-    return this.array[this.array.length - 1];
-  }
-
-  isEmpty(): boolean {
-    return this.array.length === 0;
-  }
-}]]></summary>
-        <author>
-            <name>Ricardo Borges</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Functional Programming Notes:]]></title>
-        <id>https://dev.to/rthefounding/functional-programming-notes-19j6</id>
-        <link href="https://dev.to/rthefounding/functional-programming-notes-19j6"/>
-        <updated>2021-06-17T21:51:38.000Z</updated>
-        <summary type="html"><![CDATA[In Functional Programming, code is organized into smaller, basic functions that can be combined to build complex programs.
-In these upcoming posts, you'll learn the core concepts of Functional Programming including pure functions, how to avoid mutations, and how to write cleaner code with methods like .map() and .filter().
-Functional programming is a style of programming where solutions are simple, isolated functions, without any side effects outside of the function scope: INPUT -> PROCESS -> OUTPUT
-
-Functional programming is about:
-Isolated functions - there is no dependence on the state of the program, which includes global variables that are subject to change
-
-
-Pure functions - the same input always gives the same output
-
-
-Functions with limited side effects - any changes, or mutations,…]]></summary>
-        <author>
-            <name>Randy Rivera</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Weird rants of a new Devops + Backend engineer 😤 [18 June 21]]]></title>
-        <id>https://dev.to/uds5501/weird-rants-of-a-new-devops-backend-engineer-18-june-21-4on</id>
-        <link href="https://dev.to/uds5501/weird-rants-of-a-new-devops-backend-engineer-18-june-21-4on"/>
-        <updated>2021-06-17T18:30:26.000Z</updated>
-        <summary type="html"><![CDATA[Welcome to the weird notes of a new DevOps and Backend engineer. This is my (quite open) notebook on what was all the stuff I read and learnt. Not necessarily tech, you can just read on and understand what I am rambling on about.
-I finally created my own Docker image of a gin-app and deployed it in a kubernetes pod.
-The biggest challenge? Connecting the 2 pods, our otlp-example and the opentelemetry-collector. 
-I needed to connect from pod A to port 4317 of pod B. Ofcourse, i had exposed the port in pod B using NodePort yet it didn't seem to work.
-What finally worked? Instead of using 0.0.0.0:4317, I just needed to use otel-collector.observability.svc.cluster.local:4317 psst, it's the port name (or deployment name? not sure) , then namespace, then service and so on, which is exposed by a Node Port in this other service.
-MAN ELASTIC APM IS AMAZING. LIKE. SO AMAZING TO LOOK AT THE TRACING <3
-
-
-
-
-
-  
-  
-  Stuff I need to check out tomorrow? 📅
-
-
-
-Plan on figuring out how to collect logs from a pod using fluentD and exporting it to our dear openetelemetry-collector. 
-Use env vars to toggle the GRPC connection port.
-Nothing today
-Thanks for listening to the rant.
-Uddeshya Singh,
-Signing off.]]></summary>
-        <author>
-            <name>Uddeshya Singh</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[🛒 Shopping for obscure libraries]]></title>
-        <id>https://dev.to/adam_cyclones/shopping-for-obscure-libraries-188p</id>
-        <link href="https://dev.to/adam_cyclones/shopping-for-obscure-libraries-188p"/>
-        <updated>2021-06-17T17:47:58.000Z</updated>
-        <summary type="html"><![CDATA[I need to convert Java into Typescript...
-Wired but true, I'm looking for a way to generate type definitions from Java, both the stdlib and custom stuff in .jar archives for use in Rhino 🦏😬
-Its a long shot, but do you have any ideas or old code that does this?]]></summary>
-        <author>
-            <name>Adam Crockett</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Angular on Azure — Part I]]></title>
-        <id>https://dev.to/ngconf/angular-on-azure-part-i-gng</id>
-        <link href="https://dev.to/ngconf/angular-on-azure-part-i-gng"/>
-        <updated>2021-06-17T17:23:50.000Z</updated>
-        <summary type="html"><![CDATA[Pankaj Parker | ng-conf | May 2019
-Using Azure Pipeline
-Developers test software in a local environment using servers such as LAMP, WAMP, node, IIS, and Apache. Local deployment is good in terms of fast development and debugging, but we can’t ship our physical machines to the client in order to access to the application 😂. We have to deploy an application to a web server/cloud in order to make it accessible to the end user on their preferred platform (mobile, desktop, etc).
-A variety of cloud providers exist in the current market, the most popular being Microsoft Azure, Google Cloud Platform, AWS. These providers offer an unbeatable combination of ease, speed, and automation, so if you have not deployed using such a platform, then this is the article for you! This article focuses on deplo…]]></summary>
-        <author>
-            <name>ng-conf</name>
         </author>
     </entry>
     <entry>
@@ -1028,32 +1412,6 @@ If you are using LightDM, I recommend you to use this greeter, try some themes a
 Use the Glorious theme by Manilarome~ It’s glorious.]]></summary>
         <author>
             <name>Jezer Mejía</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building End-to-End Pipeline in Sagemaker]]></title>
-        <id>https://dev.to/aws-builders/building-end-to-end-pipeline-in-sagemaker-2g03</id>
-        <link href="https://dev.to/aws-builders/building-end-to-end-pipeline-in-sagemaker-2g03"/>
-        <updated>2021-06-17T16:37:47.000Z</updated>
-        <summary type="html"><![CDATA[In this part, we will see how we can make an end-to-end pipeline of an entire machine learning process. We can use a combination of AWS services to automate the entire process of machine learning.
-AWS Step Functions is the service provided by Amazon that you can use to create workflows and automate them. These workflows consist of AWS resources, algorithms,
-Each component in a step function is called a state machine. In this part, we will be creating multiple state machines, as follows:
-State machine for training a model
-State machine for saving the model
-
-
-State machine for configuring endpoints
-
-
-State machine for model deployment
-
-
-
-Then we will combine all the state machines in a sequential format so that the entire process can be automated. 
-
-Let’s start the process of creating the pr…]]></summary>
-        <author>
-            <name>Salah Elhossiny</name>
         </author>
     </entry>
     <entry>
@@ -1126,30 +1484,6 @@ Open, cypress.json file which is located in your project root directory, a…]]>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[🛠  Authorization for ASP.NET Web APIs]]></title>
-        <id>https://dev.to/robertinoc_dev/authorization-for-asp-net-web-apis-3o73</id>
-        <link href="https://dev.to/robertinoc_dev/authorization-for-asp-net-web-apis-3o73"/>
-        <updated>2021-06-17T12:43:34.000Z</updated>
-        <summary type="html"><![CDATA[📘 Learn how to secure an ASP.NET Web API by granting access only to authorized users through Auth0 authentication and authorization services.
-
-
-Having control over who can access your API is a necessary requirement to make your application secure. This article will show you how to restrict access to your ASP.NET Web API to authorized users only.
-Let's start by setting up the ASP.NET Web API application to be protected. You can download a glossary Web API from this GitHub repository by running the following command in a terminal window:
-git clone --branch starter --single-branch https://github.com/auth0-blog/glossary-web-api-aspnet.git
-
-
-This ASP.NET application provides you with a CRUD Web API to manage a glossary of terms. You can learn the details of its implementation by reading this article.
-Once you download the application, move to the glossary-web-api-aspnet folder and launch it by typing dotnet run in a terminal window. By pointing your browser to https://localhost:5001/swagger, you should see a page like the following to interactively test the APIs:
-
-The Web API application allows you to get a list of term definitions or a single term definition. It also lets you create a new definition and modify or delete an existing one.
-The current implementation of this glossary Web API allows anyone to perform all the available operations on the glossary. Most probably, you want to allow everyone to get a single glossary item or the full glossary. Still, only authorized users should be enabled to create, update, and delete glossary items.
-Let's go and see how to protect these three actions by integrating your ASP.NET Core Web API with Auth0 services.
-Read more...]]></summary>
-        <author>
-            <name>Robertino</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Azure AI Fundamentals Certification (AI-900) – Pass the Exam With This Free 4 Hour Course]]></title>
         <id>60c2aa56d3126007592d6226</id>
         <link href="https://www.freecodecamp.org/news/azure-data-fundamentals-certification-ai-900-pass-the-exam-with-this-free-4-hour-course/"/>
@@ -1160,78 +1494,6 @@ Read more...]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Auth0 Levels Up Analytics Experience]]></title>
-        <id>https://dev.to/robertinoc_dev/auth0-levels-up-analytics-experience-8k6</id>
-        <link href="https://dev.to/robertinoc_dev/auth0-levels-up-analytics-experience-8k6"/>
-        <updated>2021-06-17T11:53:52.000Z</updated>
-        <summary type="html"><![CDATA[With the refresh, customers have access to actionable insights that give them a high-level understanding of their tenant data without the overhead of third-party tools.
-
-
-We’re excited to announce the first availability of the new Activity page in Auth0’s dashboard. With the refresh, customers have access to actionable insights that give them a high-level understanding of their tenant data without the overhead of third-party tools.
-With Activity analytics, developers can ensure that their Auth0 implementation is working and report back usage and utility. Security engineers can quickly gauge failed logins and monitor security events for potential audit. And product owners can easily understand usage and relay that information to relevant stakeholders.
-The new Activity page drives more data-driven outcomes by enabling customers to:
-Visualize metrics such as active users and failed logins
-Compare data across previous time periods
-Filter data by specific timeframes
-Segment active users across connections and applications (Coming Soon)
-Read more...]]></summary>
-        <author>
-            <name>Robertino</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Assess your networking and security Skills]]></title>
-        <id>https://dev.to/limonsafayet/assess-your-networking-and-security-skills-44cn</id>
-        <link href="https://dev.to/limonsafayet/assess-your-networking-and-security-skills-44cn"/>
-        <updated>2021-06-17T11:52:20.000Z</updated>
-        <summary type="html"><![CDATA[Network security is the practice of preventing and protecting against unauthorized intrusion into corporate networks. As a philosophy, it complements endpoint security, which focuses on individual devices; network security instead focuses on how those devices interact, and on the connective tissue between them. 
-According to the SANS institute Network security is the process of taking physical and software preventative measures to protect the underlying networking infrastructure from unauthorized access, misuse, malfunction, modification, destruction, or improper disclosure, thereby creating a secure platform for computers, users, and programs to perform their permitted critical functions within a secure environment. 
-A brief network security consists of Three layers, Protection, Detection, and Reaction. This is a kind of defense-in-depth strategy. But a system should not rely on a single line of the defense system, rather it should have multiple defense strategies lined up. 
-So how can you test your network and security skills, there is a perfect website to validate your skills and prove yourself as a network and security expert. You can visit Free Tech Exams website and attend CompTIA, A+, Network+, and Security+ Practice Test and Exam. They also provide certification on completion of your test. Each segment is consisting of 10 tests you can practice to. Good luck with becoming a network expert.]]></summary>
-        <author>
-            <name>Limon Safayet</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Introduction to threading and multiprocessing: Concurrency and Parallelism in Python]]></title>
-        <id>https://dev.to/adarshpunj/introduction-to-threading-and-multiprocessing-concurrency-and-parallelism-in-python-2m81</id>
-        <link href="https://dev.to/adarshpunj/introduction-to-threading-and-multiprocessing-concurrency-and-parallelism-in-python-2m81"/>
-        <updated>2021-06-17T11:51:43.000Z</updated>
-        <summary type="html"><![CDATA[Topics covered:
-Concurrency 
-Parallelism
-threading module in Python
-multiprocessing module in Python
- Real world examples (Downloading images from the web concurrently)
-How processes and threads are managed at OS level
-Topics not covered:
-AsyncIO
-GIL
-👉🏻 Read now
-Published at Pythongasm on 16/06/2021]]></summary>
-        <author>
-            <name>Adarsh Punj</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[NodeJS Basics: Fixing Dependency Security Issues]]></title>
-        <id>https://dev.to/smarthomedan/nodejs-basics-fixing-dependency-security-issues-3jdg</id>
-        <link href="https://dev.to/smarthomedan/nodejs-basics-fixing-dependency-security-issues-3jdg"/>
-        <updated>2021-06-17T11:02:33.000Z</updated>
-        <summary type="html"><![CDATA[When hitting an issue with nodejs modules having security vunerabilties, I follow the below process. Assume the problematic module is sharp version 0.22.1
-Updating the module
-Check out the repository
-npm ci
-npm ls sharp
-npm i sharp@0.28.2
-npm ls sharp
-npm uninstall sharp
-Make sure we now commit this package.lock to the repository, and our CI pipeline should have been sorted.]]></summary>
-        <author>
-            <name>Smart Home Dan</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Your Image Is Probably Not Decorative]]></title>
         <id>https://smashingmagazine.com/2021/06/img-alt-attribute-alternate-description-decorative/</id>
         <link href="https://smashingmagazine.com/2021/06/img-alt-attribute-alternate-description-decorative/"/>
@@ -1239,23 +1501,6 @@ Make sure we now commit this package.lock to the repository, and our CI pipeline
         <summary type="html"><![CDATA[Image placement on the modern web is highly intentional, helping to communicate the overall purpose of a page or view. This means that nearly every image you declare needs to have an alternate description.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Eric Bailey)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Typescript cast is a type breaker]]></title>
-        <id>https://dev.to/ylerjen/typescript-cast-is-a-type-breaker-1jbh</id>
-        <link href="https://dev.to/ylerjen/typescript-cast-is-a-type-breaker-1jbh"/>
-        <updated>2021-06-17T10:28:51.000Z</updated>
-        <summary type="html"><![CDATA[Cover image by Pankaj Patel on Unsplash
-Everyone is aware that the any type is a bad thing because it would basically be like coming back to Javascript where there's no strong type check and anything is allowed.
-But even if we respect this rule, we can fall into another pitfal where we break Typescript's type-check by casting types. Following chapter will describe you why and how to avoid it.
-Type creation can be done in several ways in typescript. It can be anonymous, interface/class declarations, type aliases, duck-typings, etc. (See everything in the doc)
-But when it comes about typing a variable, there's one syntax only which is with colon :.
-const mystring: string = 'hello'; // this example could be duck-typed, but yeah, focus on the colon
-
-By typing a variable, TS will know what type…]]></summary>
-        <author>
-            <name>Yann L</name>
         </author>
     </entry>
     <entry>
@@ -1270,47 +1515,6 @@ Vue is an open-source framework that can deal with challenges related to Angular
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Getting The Type Of An Interface Property In Typescript]]></title>
-        <id>https://dev.to/simondosda/getting-the-type-of-an-interface-property-in-typescript-5bl5</id>
-        <link href="https://dev.to/simondosda/getting-the-type-of-an-interface-property-in-typescript-5bl5"/>
-        <updated>2021-06-17T09:25:37.000Z</updated>
-        <summary type="html"><![CDATA[Problem
-
-
-The problem is quite simple, but its solution is not obvious. 
-Imagine that we are working on a Typescript project and we have defined an interface with several fields using different types. 
-interface BlogPost {
-  title: string,
-  content: string
-  publishDate: Date | null,
-  isDraft: boolean
-}
-
-Let's say now that we would like to provide a simple setter that will allow us to update a blog post while running some custom logic. For instance, let's consider that our setter will allow updating a post only if it is a draft. 
-In Typescript, we would write something like this.
-function updatePost(post: BlogPost, property: keyof BlogPost, value): boolean {
-    if (!post.isDraft) {
-        return false;
-    }
-    post[property] = value;  // error: Type 'any' is not assignable to type 'n…]]></summary>
-        <author>
-            <name>Simon</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Multi-Region KMS Keys and its use cases]]></title>
-        <id>https://dev.to/chathra222/multi-region-kms-key-and-its-use-cases-35jl</id>
-        <link href="https://dev.to/chathra222/multi-region-kms-key-and-its-use-cases-35jl"/>
-        <updated>2021-06-17T07:41:35.000Z</updated>
-        <summary type="html"><![CDATA[Hi Folks, AWS announced that a new capability in AWS Key Management Service (AWS KMS) called multi-Region keys, where it lets you replicate keys from one Amazon Web Services (AWS) Region into another. 
-So today I am going to show how multi-Region keys can be used and its usefulness with few examples.
-Multi-Region keys are a set of interoperable KMS keys that have the same key ID and key material, and that you can replicate to different Regions within the same partition. With symmetric multi-Region keys, you can encrypt data in one Region and decrypt it in a different Region.
-AWS services also let you configure multi-Region keys for server-side encryption in case you want the same key to protect data in multiple regions. Also multi-region key will be useful for Client-side encryption where …]]></summary>
-        <author>
-            <name>Chathra Serasinghe</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How to call a external API from Angular Application while executing ng serve]]></title>
         <id>https://dev.to/surya_n/how-to-call-a-external-api-from-angular-application-while-executing-ng-serve-p99</id>
         <link href="https://dev.to/surya_n/how-to-call-a-external-api-from-angular-application-while-executing-ng-serve-p99"/>
@@ -1320,34 +1524,6 @@ I have to register my Angular Application in one service registry (Eureka) by ca
 Something like when I start the app with "ng serve" I want to execute API. Is there any way?]]></summary>
         <author>
             <name>Surya N</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building an RSS Scully Plugin - Angular]]></title>
-        <id>https://dev.to/this-is-angular/building-an-rss-scully-plugin-angular-1lg</id>
-        <link href="https://dev.to/this-is-angular/building-an-rss-scully-plugin-angular-1lg"/>
-        <updated>2021-06-17T07:06:05.000Z</updated>
-        <summary type="html"><![CDATA[In this article, we will learn how to extend Scully functionality through plugins. We will do this by building an RSS Plugin. This plugin will generate an RSS feed for our blog web app build using Angular and Scully.
-For an RSS plugin, we will build a routeDiscoveryDone plugin, which is usually called when all routes have been discovered. This is going to use data discovered during the route discovery process to create an RSS feed. The route discovery process is done by a router plugin, which you can learn more about here.
-Scully provides 9 types of plugins which are called at during different stages of Scully build. For more information about different types of plugins, please visit the official documentation here.
-Setup Scully for Your Angular Project - Link.
-If you used schematics to se…]]></summary>
-        <author>
-            <name>Maina Wycliffe</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building an RSS Scully Plugin - Angular]]></title>
-        <id>https://dev.to/this-is-angular/building-an-rss-scully-plugin-angular-1lg</id>
-        <link href="https://dev.to/this-is-angular/building-an-rss-scully-plugin-angular-1lg"/>
-        <updated>2021-06-17T07:06:05.000Z</updated>
-        <summary type="html"><![CDATA[In this article, we will learn how to extend Scully functionality through plugins. We will do this by building an RSS Plugin. This plugin will generate an RSS feed for our blog web app build using Angular and Scully.
-For an RSS plugin, we will build a routeDiscoveryDone plugin, which is usually called when all routes have been discovered. This is going to use data discovered during the route discovery process to create an RSS feed. The route discovery process is done by a router plugin, which you can learn more about here.
-Scully provides 9 types of plugins which are called at during different stages of Scully build. For more information about different types of plugins, please visit the official documentation here.
-Setup Scully for Your Angular Project - Link.
-If you used schematics to se…]]></summary>
-        <author>
-            <name>Maina Wycliffe</name>
         </author>
     </entry>
     <entry>
@@ -1367,55 +1543,6 @@ WindowingSystem: X11
 GNOME: 3.36.8]]></summary>
         <author>
             <name>Calin Baenen</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[.Net + Angular + PoUi : FullStackPlayGroung]]></title>
-        <id>https://dev.to/silverio27/net-angular-poui-fullstackplaygroung-4f1d</id>
-        <link href="https://dev.to/silverio27/net-angular-poui-fullstackplaygroung-4f1d"/>
-        <updated>2021-06-17T01:15:29.000Z</updated>
-        <summary type="html"><![CDATA[Oi Pessoal!
-Nesse post vou mostrar como criar um crud com .net e angular utilizando po-ui, uma biblioteca de componentes para angular de alta produtividade.
-O código completo está no meu github, clique aqui para acessar.
-.Net5 SDK
-VsCode
-Windows Terminal
-NodeJs
-Angular - CLI
-Abra uma pasta de sua preferencia no terminal.
-src.
-Abra o terminal e navegue até esta pasta e digite o comando abaixo para abrir o vscode.
-code .
-
-A partir de agora vamos utilizar o terminal integrado do vscode. Aperte ctrl + ' para abrir o terminal integrado.
-Crie o projeto com o comando abaixo:
-dotnet new webapi -o api
-
-Apague as classes WeatherForecast.cs e Controllers/WeatherForecastController.cs
-Navegue até a pasta do projeto
-cd api
-
-Crie um arquivo de gitignore
-dotnet new gitignore
-
-Crie a pasta Models e crie a …]]></summary>
-        <author>
-            <name>Lucas Silvério</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Implement an Event Bus in TypeScript]]></title>
-        <id>https://dev.to/thisdotmedia/how-to-implement-an-event-bus-in-typescript-f1d</id>
-        <link href="https://dev.to/thisdotmedia/how-to-implement-an-event-bus-in-typescript-f1d"/>
-        <updated>2021-06-17T00:56:09.000Z</updated>
-        <summary type="html"><![CDATA[Imagine you're building a Single Page Application using Web Components only. You have several pages, have configured the routes, and need to be able to handle general events or actions.
-Here's when you start to think about potential solutions as well: Maybe it's time to add state management to the application?  Is it a good time to build a "custom" solution? What about using some design patterns in this case?
-The answers to these questions will depend on the complexity of the current scenario, the experience of the developers, or on the opinions of the team. It is clear that there is no absolute answer!
-In this article, we'll go over how to communicate between components using a custom Event Bus implementation.
-The Event Bus idea is generally associated with the Publish-subscribe pattern:
-…]]></summary>
-        <author>
-            <name>Luis Aviles</name>
         </author>
     </entry>
     <entry>
@@ -1537,18 +1664,6 @@ Si necesitas eliminar un directorio, pero solo te permite eliminar directorios �
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Vanilla Use Reducer with TypeScript]]></title>
-        <id>https://dev.to/fangoh/vanilla-use-reducer-with-typescript-4f9p</id>
-        <link href="https://dev.to/fangoh/vanilla-use-reducer-with-typescript-4f9p"/>
-        <updated>2021-06-16T20:11:22.000Z</updated>
-        <summary type="html"><![CDATA[Hi, I was recently doing a project for my portfolio, a React Project with a slightly complex state. Personally, I really love TypeScript and the Redux/Reducer patterns, because they give me a great Developer Experience with TypeScript and a lot of autocompletion available, quite useful in order to not get bit by a bug caused by a typo, and really convenient as I don't have to explore files constantly in order to know what are the properties that a certain object should have.
-I always prefer to use TS over vanilla JS, so, it makes a lot of sense to try to make use of strict typing, even in a concept app. Also, while vanilla useReducer might not be what most projects use, I still want to share how I found it to be pretty useful in this context.
-My application is a Social Media-like platform,…]]></summary>
-        <author>
-            <name>Hector Osuna</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Useful and Useless Code Comments]]></title>
         <id>https://css-tricks.com/?p=342630</id>
         <link href="https://blog.jim-nielsen.com/2021/useful-and-usless-code-comments/"/>
@@ -1561,16 +1676,6 @@ The post Useful and Useless Code Comments appeared first on CSS-Tricks.
 You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <author>
             <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ngModel - Type 'Event' is not assignable to type 'string'.]]></title>
-        <id>https://dev.to/mateuszto/ngmodel-type-event-is-not-assignable-to-type-string-f2n</id>
-        <link href="https://dev.to/mateuszto/ngmodel-type-event-is-not-assignable-to-type-string-f2n"/>
-        <updated>2021-06-16T18:43:33.000Z</updated>
-        <summary type="html"><![CDATA[https://stackblitz.com/edit/angular-ivy-ws1lhp?file=src%2Fapp%2Fapp.component.ts What am I doing wrong? Somebody help?]]></summary>
-        <author>
-            <name>Mateusz Tomczyk</name>
         </author>
     </entry>
     <entry>
@@ -1653,63 +1758,6 @@ A melhor maneira de entender o problema é vendo-o em ação, sendo assim vamos 
 While Rogue was not the first dungeon-crawling game with procedural generation features, it introduced the subgenre of roguelike RPG procedurally generated dungeon crawlers with Dungeons-and-Dragons-like items (armor, weapons, potions, and magic scrolls) that also had permadeath (permanent death) and an overhead graphical vie…]]></summary>
         <author>
             <name>daveclarke</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA["Luxarg" Text Editor ! liberty + pure python3 !]]></title>
-        <id>https://dev.to/amzy0/luxarg-text-editor-liberty-pure-python3-5754</id>
-        <link href="https://dev.to/amzy0/luxarg-text-editor-liberty-pure-python3-5754"/>
-        <updated>2021-06-16T02:35:20.000Z</updated>
-        <summary type="html"><![CDATA[/ 
-        luxarg
-      
-    
-LUXARG is another keyboard friendly text editor.
-This project started at August 2019 and restarted at 2021 TODAY!
-Easy to use and userfriendly !
-LUXARG support :
-Fedora, CENTOS and RedHat,
-Debian and Ubuntu,
-OpenSUSE,
-Arch and Manjaro, ...
-
-
-INSERT MODE : <F1>
-SAVE   MODE : <F2>
-OPEN   MODE : <F3>
-
-
-
-INSTALLATION
-$ python<3X> installer.py
-
-
-
-dependencies
-$ pip3 install -r requirements.txt
-
-
-
-update method
-$ cd ~/.luxarg
-$ python<3X> update.py
-
-
-
-Install pip
-pip.txt
-
-
-
-
-
-
-
-
-  
-View on GitHub]]></summary>
-        <author>
-            <name>Amzy 0 |  محمد امین عظیمی</name>
         </author>
     </entry>
     <entry>
@@ -2105,26 +2153,6 @@ Thank you @Zenigata]]></summary>
 Thank you: @LooperXX.]]></summary>
         <author>
             <name>Release notes from osmosfeed</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building A Rich Text Editor (WYSIWYG)]]></title>
-        <id>https://smashingmagazine.com/2021/05/building-wysiwyg-editor-javascript-slatejs/</id>
-        <link href="https://smashingmagazine.com/2021/05/building-wysiwyg-editor-javascript-slatejs/"/>
-        <updated>2021-05-21T11:30:00.000Z</updated>
-        <summary type="html"><![CDATA[Let’s build a rich text, WYSIWYG-editor that supports rich text, images, links and some nuanced features from word processing apps. We will use SlateJS to build the shell of the editor and then add a toolbar and custom configurations.]]></summary>
-        <author>
-            <name>hello@smashingmagazine.com (Shalabh Vyas)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Boost Your Skills Online: Smashing Workshops On Front-End And Design]]></title>
-        <id>https://smashingmagazine.com/2021/05/new-online-workshops-front-end-ux/</id>
-        <link href="https://smashingmagazine.com/2021/05/new-online-workshops-front-end-ux/"/>
-        <updated>2021-05-20T14:20:00.000Z</updated>
-        <summary type="html"><![CDATA[Front-end and design are remarkably complex these days. That’s why we invite kind, smart folks from the community to run online workshops for all of us to learn together. And we have new ones coming up, and we’d like to kindly welcome you to join in.]]></summary>
-        <author>
-            <name>hello@smashingmagazine.com (Iris Lješnjanin)</name>
         </author>
     </entry>
 </feed>
