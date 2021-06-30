@@ -20,8 +20,447 @@
     <ul class="sources card">
       <li class="source">
         <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">What does &#x60;font: 110%/1.4 system-ui&#x60; mean?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/what-does-font-110-1-4-system-ui-mean/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>I use this line, or one like it, in a lot of quick demos. Not that it’s not a production-worthy line of code—I just tend to be a bit more explicit on bigger projects. 
+html {
+  font: 110%/1.4 system-ui;
+}
+…
+The post What does &#x60;font: 110%/1.4 system-ui&#x60; mean? appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Chromium spelling and grammar features</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.azabani.com/2021/05/17/spelling-grammar.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(11 min)</span>
+                    <span>Delan Azabani digs into the (hopefully) coming soon ::spelling-error and ::grammar-error pseudo selectors in CSS. Design control is always nice. Hey, if we can style scrollbars and style selected text, why not this?
+The squiggly lines that indicate possible spelling or grammar errors 
+…
+The post Chromium spelling and grammar features appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">:nth-child Between Two Fixed Indexes</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/nth-child-between-two-fixed-indexes/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>I needed to select some elements between two fixed indexes the other day — like literally the second through fifth elements. Ironically, I have a whole post on “Useful :nth-child Recipes” but this wasn’t one of them. 
+The answer, it …
+The post :nth-child Between Two Fixed Indexes appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
           <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
           <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">ng update @my/lib - What&#x27;s the order of executing custom Angular schematics?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/krisplatis/ng-update-my-lib-what-s-the-order-of-executing-custom-angular-schematics-f5d">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Custom Angular update schematics are executed in the alphabetical order by their names declared in migrations.json.
+When maintaining a custom Angular library and making breaking changes in major version, you&#x27;d like to provide your library users with a smooth migration path (nobody likes to spend much time fixing problems after upgrading npm dependencies, right?). For that purpose you can leverage scripts (aka. Angular custom schematics) that will apply code modifications to fix the breaking changes directly in user&#x27;s codebase - when running a command, i.e. ng update @my/lib@2.0.0.
+All the migration scripts of schematics are declared in a json file, i.e. migrations.json. And each of them is assigned to specific version (so you can have different schematics for migration from 1.x to 2.0, and different from 2.x to 3.0).
+But you might have multiple schematics targeted for the same version, i.e. 2.0.0. In case  the order of schematics matter, you need to be aware that they are executed always in the alphabetical order by the name. That&#x27;s why we should care about the prefix convention in migrations.json declared in our lib, for example numbering -01-, -02-, ...:
+{
+  &quot;schematics&quot;: {
+    &quot;migration-v2--01-components&quot;: {
+      &quot;version&quot;: &quot;2.0.0&quot;,
+      &quot;factory&quot;: &quot;./2/component-migration#migrate&quot;,
+      &quot;description&quot;: &quot;Migrate components&quot;
+    },
+    &quot;migration-v2--02-services&quot;: {
+      &quot;version&quot;: &quot;2.0.0&quot;,
+      &quot;factory&quot;: &quot;./2/services-migration#migrate&quot;,
+      &quot;description&quot;: &quot;Migrate services&quot;
+    },
+  }
+}
+
+To proof it&#x27;s not the order of keys in the JSON that determines the order, but the alphabetical order of the keys (migration-v2--01-components, migration-v2--02-services), see the GitHub @angular/cli source code - sorting schematics by name.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Tutorial Of Implementing Angular Resolver.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/bacancy_technology/tutorial-of-implementing-angular-resolver-4f3k">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>We are living in a world which is covered by lots of applications and we know that these applications are still growing every single day. When the competition is so high, you need to keep your application up to date or updated to meet the requirements of the users. Your application must be fast in terms of loading and moving from different sections, if users find it slow they will surely leave your application. 
+You need to develop such applications which can handle the multiple requests without sacrificing the user&#x27;s experience. Let’s understand it by implementing Angular Resolver.
+What is Angular Resolver
+The main aim of Angular Resolver is to  pre-fetching data when a user switches between one route to another. It will be a very smooth approach for user experience and it loads the data before the user navigates.
+In our article, we also discussed the General Routing Flow v/s Angular Resolver Routing Flow, read article for more details.
+We also mention why one should choose Angular Resolvers and what is Resolve Interface.
+Lets understand the quick steps of Angular Resolver - How to Implement?
+1) Create a new Angular app
+If you want to see the output and want to know more about Angular Resolver, read our original article.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Do AWS Reserved Instances and Savings Plans really reduce costs?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/castai/do-aws-reserved-instances-and-savings-plans-really-reduce-costs-1eph">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Allocating cloud costs is hard, and forecasting them is even harder.
+Pinterest once committed to paying a smashing $170 million for AWS services in advance and was then forced to buy extra capacity at a much higher rate, spending some $20 million more than estimated. 
+How are you supposed to reserve capacity in advance when you have no idea how much of it your company is going to need one or three years from now?
+This is the core problem of products like AWS Reserved Instances and Savings Plans.
+Keep on reading to find out why they’re so risky and what you could be doing instead.
+Here’s a guide I prepared for you:
+AWS Reserved Instances: the basics
+How do Reserved Instances work?
+How much can you save with Reserved Instances?
+Here’s what you risk with AWS Reserved Instances
+You will pay a …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">What is DevOps and how does DevOps work?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/woodjessica/what-is-devops-and-how-does-devops-work-36m6">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>&quot;Today, every business wants quality software at a faster speed so that they can survive in the ever-increasing competition and can provide greater satisfaction to customers. This is where DevOps plays its role and helps businesses in achieving software at fast speed with no compromise on quality. 
+What is DevOps?
+DevOps is an evolution of agile methodology that breaks the traditional silos that exists between cross-functional teams and brings them together by fostering collaboration. 
+DevOps is a cultural shift in which Developers and Operation teams work together to ensure faster software development and delivery by implementing the CI/CD pipeline. 
+What are the benefits of DevOps?
+Below mentioned are some of the benefits of DevOps:
+• DevOps improves team collaboration by breaking down the silos
+How does DevOps work?
+DevOps works by following the DevOps workflow which contains the following phases:
+• Planning
+Today every organization wants faster and quality software that satisfies its customer.
+DevOps is of great help for such organizations as it uses CI/CD tools to ensure the quality of the software is improved and software reaches the customer in less time as compared to older methods of software development and delivery. 
+Leverage DevOps services from next-gen QA and software testing services provider to ensure faster and quality releases.&quot;</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Thumbtack clone script | TaskRabbit clone script</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/dazzsherly/thumbtack-clone-script-taskrabbit-clone-script-3jcf">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Can we imagine a day to be spent without the on-demand services? Such is the impact today’s tech has instilled on us. On this note, let us talk specifically about the on-demand service marketplace like TaskRabbit, how it makes people’s lives easier and why it can be the best choice for entrepreneurs to invest in TaskRabbit like app development.
+An on-demand service marketplace like Thumbtack is a two-way online marketplace that connects Tasposters with Tasker. Let me explain what they are.
+In this way, Thumbtack clone app development caters to the needs of the stakeholders involved in the business ecosystem. And for entrepreneurs, it offers a wide scope for earning revenue through different means. Some of the revenue-generating factors are listed below.
+Concluding Note,
+Get more: https://www.turnkeytown.com/taskrabbit-clone-script</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">🦊 GitLabCheatsheet - 5 -GitLabCI - Order &amp; optimize jobs</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jphi_baconnais/gitlabcheatsheet-5-gitlabci-order-optimize-jobs-2646">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Tips to order and optimize your jobs, this is the program of the fifth Cheatsheet.
+
+
+
+I will create others cheatsheet. Tell me if you have comments or suggest about those cheatsheet 😃.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Who are up for AWS Summit Online India 2021??</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/nukathotirishab/who-are-up-for-aws-summit-online-india-2021-3b9c">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>I wish all aspirants come together and learn new things...</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Automate server intrusion detection and banning with Fail2ban</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/waqar/automate-server-intrusion-detection-and-banning-with-fail2ban-4pgk">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>A Fail2Ban installation monitors server access logs and automatically bans IP addresses of bots and attacking users in iptables. Fail2Ban analyses server logs and identifies a pattern where a suspicious user or bot is trying to access restricted areas on the server. Brute force attacks repeatedly fail and use combinations of login credentials on after another. Fail to ban can detect failed login attempts on SSH and Apache webserver.
+Installation is straight forward update apt-get and run instal fail2ban as a root user. Theses are Debian/Ubuntu commands for CentOS yum would replace apt-get and paths/locations might differ for configuration files. Check this tutorial for non-Debian operating systems.
+sudo apt-get update
+sudo apt-get install fail2ban
+
+Fail2Ban can keep server admin updated wi…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to Learn Linux: An Easy Guide</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/basicspython/how-to-learn-linux-an-easy-guide-5ga">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Learning a new skill always begins with a simple &quot;how to&quot; guide. The same holds true for learning Linux.
+If you&#x27;re interested in Linux, a complete and open source operating system, you&#x27;ve likely encountered some &quot;how to&quot; guides. But learning Linux is more than just following instructions—it&#x27;s about understanding why you do what you do, and not just what to do.
+As a beginner, knowing how to get started with Linux can be tricky. You may find yourself overwhelmed by the sheer number of resources out there. How do you choose? What&#x27;s going to work for you and your unique set of skills?
+
+Of course, the first step is to get Linux on a computer. For new users, it&#x27;s not that hard—Linux is now available on everything from Chromebooks to Raspberry Pis. 
+If you want to install Linux yourself, there ar…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Where are Docker images stored on the host machine?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/iamrj846/where-are-docker-images-stored-on-the-host-machine-25ef">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>When we create Docker objects such as images, containers, volumes, etc., all these objects are stored inside a directory in our local machine. By default, all the Docker objects are stored in the following directory.
+/var/lib/docker/storage-driver
+Moreover, the contents stored inside the /var/lib/docker path depend on the storage driver that you are using as well. Let’s first understand the docker storage drivers in short.
+Docker Storage Drivers
+In an ideal case, very little amount of data gets written onto the writable layer of a Docker container. And we use volumes in Docker to write such data. But there are some workloads that require us to be able to use the container’s writable layer to write data and this is exactly where storage drivers in Docker come in.
+Docker uses a pluggable arc…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to Explore Docker Container’s File System?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/iamrj846/how-to-explore-docker-container-s-file-system-1p0h">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>When it comes to exploring a Docker container’s file system, it can be in two ways - interactive and non-interactive. In short, interactive exploration of a Docker container’s file system can be done by accessing the file system through the bash of the container. While on the other hand, non-interactive exploration relates to studying the filesystem without entering the container environment either through tar files or copying the filesystem of the container.
+Let’s try to discuss both these ways in this article.
+Interactive Exploration of a Container File System
+A container can be in two states where we can explore its file system - non-running and running. By non-running containers, we mean that the container is either not yet created or created but stopped. To explore the file systems of…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">My 3 year Linux anniversary</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/gauthamp10/my-3-year-linux-anniversary-286o">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Hi all,
+It&#x27;s been close to 3 years (newbie in Linux standards) since I&#x27;ve made the switch to full time desktop Linux and I just want to put it out there that I&#x27;ve been really enjoying the whole  journey and learned a lot from the community than I ever did from anywhere else. It had helped me understand more about software and  computers and also improved my workflow and speed up computing tasks in general and my love for the terminal keeps on reaching newer heights.
+I believe that Linux would be very interesting for those people who likes the DIY approach and since Windows 11 doesn&#x27;t offer decent support for older hardware that can be one of the many reasons for you to change to a much more free and privacy respecting more secure and open operating system build by the people without business intentions (*not all though).
+Don&#x27;t blindly switch to Linux when someone says so! It&#x27;s not for everybody and I respect that. But for any of you interested in switching to full time Linux. Do watch this: linux-for-windows-users (The guy doing the video is not from a tech background!)
+Do check out my blog (some things have improved from the time of writing): reasons-i-switched-to-linux
+PS: Neither am I an activist nor trying to stir up any debate here Just the user!. I do respect other people&#x27;s effort. But I prefer Linux over other operating systems that&#x27;s all. 
+Penguin (TUX) image credits:Brian McMahon
+Have a nice week.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Vim: Terminal Integration</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/mr_destructive/vim-terminal-integration-4pfp">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Vim and Terminal!?
+
+
+Vim was made to work with the command line. Many beginners do not understand what are the true capabilities of Vim, myself included:) Vim can run terminal commands without leaving the text editor, open an instance of a terminal, work with shell environments, and other things depending on the use case.
+You can run the shell commands from inside of Vim by just using :! before the command, : means you have to be in command mode. Just after being in command mode, the ! or bang operator will execute the command typed after it from the terminal(Linux/ macOS) or your default shell(Windows -&gt; CMD/Powershell).
+:!pwd
+
+The above command from vim will redirect to the terminal and show the output of the command and return on pressing any key. In this case, it will execute the PWD c…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Keep Notes Clone</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/lord483/keep-notes-clone-55hk">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Hello everyone. Actually this post is not to tell anything to you, but more for some suggestions and ideas. I am trying to make Keep Clone Web App, with my own api. But there&#x27;s one thing I am stuck on, and that is search functionality. I want this functionality at api level and not on client side for obvious reasons. Can anyone help me out? I know this is not a perfect place to ask questions but I also wanted to share this with you.
+Here&#x27;s the link to the hosted app. 
+https://keep-clone-api.herokuapp.com/
+It uses MongoDB linked to my own account. Up untill now there&#x27;s no user authentication, but I am planning on doing this later once basic functionality is completed. 
+And if you need github repo of the same, please ask me. I will share that as well. Any suggestions are welcome, but main topic is that how can I implement search feature on api side. 
+Thank you.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Rest APIs example with  Sequelize ORM with Node.js and Express</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/julfikarhaidar/rest-apis-example-with-sequelize-orm-with-node-js-and-express-p40">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>This article assumes you have a fair knowledge of the basic setup of project and connection sequelize database.
+Let&#x27;s make a sequelize-app Node application and install Sequelize. First off all,create a directory for our project, enter it, and create a project with the default settings:
+$ mkdir sequelize-app 
+$ cd sequelize-app 
+
+Initialize a NodeJS application by running the following command:
+$ npm init -y
+
+This will create a package.json file with a basic config. You can manually add the configuration by omitting the -y flag.
+Next we&#x27;ll create the application file with a basic Express server. Let&#x27;s call it app.js to and run the following command line within the project folder.
+$ npm i express
+
+Add the following codes in the newly created app.js file
+const express &#x3D; require(&#x27;express&#x27;);
+co…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">NPM Cheat Sheet</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/duxtech/npm-cheat-sheet-4ak1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Índice
+
+
+
+
+Crear un archivo package.json 
+Instalar una dependencia localmente
+Instalar una versión específica de un paquete
+Desinstalar un paquete
+Listar las dependencias instaladas
+Obtener información de un paquete en específico
+Listar las dependencias de una dependencia
+Listar paquetes que se pueden actualizar
+Referencias
+Conclusiones
+1. Crear un archivo package.json 
+
+
+
+Crea un archivo package.json preguntandote por la configuración del proyecto en la consola:
+
+
+
+
+npm init
+
+Crea un archivo package.json por defecto (manera rápida):
+
+
+
+
+npm init --yes
+npm init -y
+
+Tanto npm init --yes como npm init -y hacen lo mismo.
+2. Instalar una dependencia localmente 
+
+
+
+Dependencias de producción
+
+
+
+
+//Comando largo
+npm install [nombre-del-paquete]
+// ó
+npm install [nombre-del-paquete] --save
+
+//Com…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Express Middlewares continued...</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/tirthaguha/express-middlewares-continued-3iie">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Warning! We&#x27;re going to see some Functional Programming concepts like pure functions, side effects etc. and obviously higher order functions.
+In the last post, we saw how we can create a middleware wrapper that can wrap any function and make it an express middleware.
+//withMiddleware.js
+
+//Higher Order Function
+const withMiddleware &#x3D; (func) &#x3D;&gt; {
+  return (req, res, next) &#x3D;&gt; {
+    func(); //func has the EXECUTION LOGIC
+    next();
+  }    
+}
+
+module.export &#x3D; withMiddleware;
+
+And we can use it in this way
+const withMiddleware &#x3D; require(&#x27;./withMiddleware&#x27;);
+
+const funcOne &#x3D; () &#x3D;&gt; {
+  //YOUR BUSINESS LOGIC
+}
+
+const funcTwo &#x3D; () &#x3D;&gt; {
+  //YOUR ANOTHER BUSINESS LOGIC
+}
+
+const middlewareOne &#x3D; withMiddleware(funcOne);
+const middlewareTwo &#x3D; withMiddleware(funcTwo);
+
+//use this middlewares in a standa…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
             <article>
               <details class="article-expander">
                 <summary class="article-expander__title">Code-sharing patterns for Next.js</summary>
@@ -34,6 +473,287 @@ This post aims to be an overview of methods to share code between multiple relat
 Let&#x27;s dive into this topic and talk about the first big decision you have to make - multitenancy or monorepo.
 Multitenancy or Monorepo?
 Ultimately we&#x27;re trying to accomplish a simple thing - sharing code between different, yet similar discrete websites. However, there are different ways to achieve this. One way co…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Secure Python console apps with Azure AD</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/425show/secure-python-console-apps-with-azure-ad-54fo">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Last week during our regular stream, we looked at how to secure a Python console (daemon/service) app with Azure Active Directory and acquire a token to call a downstream/upstream API. If you want to see how we build it live on Twitch, you can watch our video on YouTube
+
+
+
+
+
+  
+  
+  Create the Azure AD App Registrations
+
+
+Let&#x27;s shortcut this whole thing and use the awesome .NET Interactive Notebook to wire up and configure our 2 App Registrations. The Notebook is checked in the GitHub repo. You&#x27;ll need to setup your VS Code to run it but it should be pretty explanatory and provides you with the steps that walk you through the process. In summary, the notebook will:
+Create an API app registration
+Assign an Application Role
+Create a Service Principal for the API App
+Create a client app regis…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">IoT Security: What Your Business Needs to Know</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/mitchellclong/iot-security-what-your-business-needs-to-know-5gg8">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>The internet of things (IoT) remains a popular subset of the information technology (IT) realm. However, despite its advancements, IoT is still in its infancy. By 2027, the global IoT market is estimated to be worth over $1,463.19 billion USD. 
+With massive leaps in IoT technology and a rapidly changing landscape, IoT security is a budding concern. Here&#x27;s what you need to know about IoT security.
+
+IoT security is tough to implement. A major contributing factor is the complexity of IoT and its many factors. Instead of the back end, there&#x27;s network security and physical device security to consider as well.
+The current landscape values ease of use over security. As Manuel Pais points out in DZone&#x27;s guide to IoT, there&#x27;s an onus on plug-and-play capability. This prioritizes operability and usa…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Automate server intrusion detection and banning with Fail2ban</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/waqar/automate-server-intrusion-detection-and-banning-with-fail2ban-4pgk">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>A Fail2Ban installation monitors server access logs and automatically bans IP addresses of bots and attacking users in iptables. Fail2Ban analyses server logs and identifies a pattern where a suspicious user or bot is trying to access restricted areas on the server. Brute force attacks repeatedly fail and use combinations of login credentials on after another. Fail to ban can detect failed login attempts on SSH and Apache webserver.
+Installation is straight forward update apt-get and run instal fail2ban as a root user. Theses are Debian/Ubuntu commands for CentOS yum would replace apt-get and paths/locations might differ for configuration files. Check this tutorial for non-Debian operating systems.
+sudo apt-get update
+sudo apt-get install fail2ban
+
+Fail2Ban can keep server admin updated wi…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Deep Dive: Multi-Factor Authentication with .NET 5</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/moe23/deep-dive-multi-factor-authentication-with-net-5-18mf">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>In this article we will be exploring MultiFactor authentication, how does it work and how we can integrate in .Net 5. 
+You can watch the full video on YouTube 
+So what we will cover today:  
+The Problem: Security issues
+What is Multi Factor Authentication
+How does it work?
+Benefits of MFA
+How does it all fit together
+What algorithms is used and how the code is generated?
+QR code and its properties
+Ingredients
+Code and Implementations
+As always you will find the source code in the description down below. Please like, share and subscribe if you like the video. It will really help the channel
+When we create an account for any online service, we will have a username and a password to secure our account and make it private to us. But in this modern day this type of protection is not enough as w…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">🛠 Securing SPAs with Trusted Types</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/robertinoc_dev/securing-spas-with-trusted-types-2b34">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>📘 Learn how Trusted Types help eradicate DOM-based #XSS in frontend #Angular and #React applications.
+
+
+
+  
+  
+  
+TL;DR: XSS vulnerabilities remain a top threat to any HTML-based web application. In fact, 75% of web vulnerabilities in Google&#x27;s reward program are XSS vulnerabilities! Fortunately, built-in platform defenses such as Content Security Policy and Trusted Types equip us with the tools to tackle XSS. In this article, we briefly look at modern XSS vulnerabilities, followed by a detailed look at using Trusted Types policies to mitigate such vulnerabilities. In the end, we provide you with a list of concrete developer guidelines to apply Trusted Types in your projects.
+XSS, or Cross-Site Scripting, is a misnomer. Originally, XSS was a specific script injection attack between two web…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to Take Care of Data Security in React Native?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/pagepro_agency/how-to-take-care-of-data-security-in-react-native-230p">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>It’s impossible nowadays to build software that is 100% secure. The probability of being a victim of an attack or being exposed to a security vulnerability is proportional to the effort developers put into protecting the applications created i.e. in React Native against any attacks.
+Building a mobile app is not only about creating screens, making fancy animations and processing data from the API. One of the biggest challenges in the development process is security. Also, it is one of the most often overlooked aspects when building software.
+When you want to build a secure React Native app, you need to pay attention to many factors. It may require some understanding of iOS and Android native platforms and general security rules in terms of programming. 
+So, what can you do to make your Reac…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">🧩 Introducing: The OAuth 2 Game</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/robertinoc_dev/introducing-the-oauth-2-game-15ml">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>🕹 The #OAuth 2 #game can help you to familiarize yourself with the most common grant choices for the most frequently used #application types. It features two dice, one for grants and another for application types.
+
+
+
+  
+  
+  
+The OAuth 2 game is a fun and easy way to learn about how to use OAuth to protect the most common types of applications.
+The OAuth 2 specification lists different ways of obtaining access tokens meant to leverage the different capabilities and security characteristics of distinct client (application) types. We call those different ways grants through the years. The OAuth 2 family of specifications gained new methods, called extension grants, meant to provide guidance for new types of clients. 
+It is not always easy to know what grant to use for your application, espe…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Android app development company in India</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/startelelogic/android-app-development-company-in-india-4n6i">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>A post by StarTele Logic</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How To Create a Type-Safe Implicit Pick</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/prithpalsooriya/how-to-create-a-type-safe-implicit-pick-2jpa">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>This article discusses the implementation of an implicit pick, the reason for it &amp; what makes it special.
+Here is a Typescript Playground with examples that will be used as a reference. Can also be found via my Github Repo.
+ / 
+        ts-implicit-pick
+      
+    
+Partial is great if you want to create an object with some of the values from a given interface. However when the object is used (via property access or through some consuming type), the object still is a Partial - as in all properties are optional, even if you have provided a value.
+
+In these cases, what we really want is a Picked object - an object with the properties we want &quot;picked&quot; out of the original interface.
+Pick is perfect, it gives us the exact strict type that we want, however (as shown) it is very verbose.
+
+For each …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Generate Open Graph images with Next.js and TypeScript on Vercel</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/yuiko/generate-open-graph-images-with-next-js-and-typescript-on-vercel-110j">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Hey guys 👋👋👋
+In this article, I will write how to generate dynamic Open Graph images with Next.js and TypeScript on Vercel.
+For example, the OGI of https://ogp-sample.vercel.app/hoge is like below. (Sorry that I developed this app in Japanese, but you will see the OGI has this site&#x27;s path name: &#x27;hoge&#x27;.)
+
+If you change the path to &#x27;fuga&#x27; like https://ogp-sample.vercel.app/fuga, the OGI is like below.
+
+You will see the OGI is automatically generated by the path name of URL.
+※ This article is the sixth week of trying to write at least one article every week.
+Past articles are listed below.
+Face detection with Tensorflow【React + TypeScript】
+UI Components website Released!
+I made 18 UI components for all developers
+Image Transformation: Convert pictures to add styles from famous paintings
+De…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Coding Interview Backtracking Problems Crash Course – The Only One You&#x27;ll Ever Need</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/coding-interview-backtracking-problems-crash-course/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Whether you are new to coding interviews or are already familiar with the concept of backtracking, this is the crash course for you. We will learn about an all-purpose coding template and apply it to two LeetCode hard problems. Ready to crunch your next coding interview? Let&#x27;s go!</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Linux List Processes – How to Check Running Processes</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/linux-list-processes-how-to-check-running-processes/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Every day, developers use various applications and run commands in the terminal. These applications can include a browser, code editor, terminal, video conferencing app, or music player.  For each of these software applications that you open or commands you run, it creates a process or task. One beautiful feature of</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to Use timedelta Objects in Python to Work with Dates</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/how-to-use-timedelta-objects-in-python/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Why do we need the timedelta object?When you&#x27;re working with dates and times in Python, you&#x27;ll often use the datetime module.  In this post, we&#x27;ll see how we can use the timedelta object in the datetime module. It denotes a span of time and can help when we need</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Microsoft Security, Compliance, and Identity Fundamentals (SC-900) – Pass the Exam With This Free 3.5 Hour Course</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/microsoft-security-compliance-certification-sc-900/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>What is the Microsoft Security, Compliance, and Identity Fundamentals?The Microsoft Security, Compliance and Identity Fundamentals Certification is an essential entry-level certification into Azure and Microsoft Security. In recent years we&#x27;ve seen a significant shift in the work environment where companies allow employees to work from home.  The increase of</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Breaking Down Bulky Builds With Netlify And Next.js</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/06/breaking-down-bulky-builds-netlify-nextjs/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Static Generation is great for performance, but not until the app gets too big and build-times go through the roof. Today, we’ll have a look at how Netlify’s fresh On-Demand Builders can fix that.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Smashing Podcast Episode 40 Mike Cavaliere: What Is Chakra UI For React?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/06/smashing-podcast-episode-40/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(22 min)</span>
+                    <span>In this episode, we’re talking about Chakra UI. What is it and how can it help with your React projects? Drew McLellan talks to expert Mike Cavaliere to find out.</span>
                   </div>
                 </a>
               </details>
@@ -54,12 +774,12 @@ Ultimately we&#x27;re trying to accomplish a simple thing - sharing code between
                 <summary class="article-expander__title">System *Things</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/system-things/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>I think we’re all largely aware of named colors in CSS:
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>I think we’re all largely aware of colors like this:
 color: OldLace;
 background: rebeccapurple;
 I guess you’d just call those “named colors” in CSS. 
-Those aren’t the only kind of named colors there are though. Some of them …
+Those aren’t the only kind of named colors there are though. Some of them are …
 The post System *Things appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
                   </div>
                 </a>
@@ -424,7 +1144,7 @@ Therefore…</span>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">EBS-Elastic Block Store</summary>
+                <summary class="article-expander__title">EBS-Elastic Block Store, Creating Additional Volume</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ramushetty/ebs-elastic-block-store-3ab8">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(3 min)</span>
@@ -502,106 +1222,6 @@ When building infrastructure, as infrastructure developers we tend to create it 
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Building Production Grade Container Images</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/codingsafari/building-production-grade-container-images-3nhg">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>When building and running images locally for development purposes, many best practices are neglected. However, eventually the image gets deployed. For a real deployment we want to take additional steps.
-I want to deploy a simple &quot;echo-server&quot; written in go.
-This is a good example because it is a compiled language, and it spawns a long-running process with which we can interact via HTTP. That is usually the case when deploying application in container.
-The project structure looks like this
-.
-├── Dockerfile
-├── .dockerignore
-├── go.mod
-├── main.go
-└── README.md
-
-package main
-
-import (
- &quot;encoding/json&quot;
- &quot;fmt&quot;
- &quot;log&quot;
- &quot;net/http&quot;
-)
-
-func main() {
- http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) {
-  reqHeadersBytes, _ :&#x3D; json.Marshal(r.Header)
-  text :&#x3D; fmt.Sprintf(&quot;RemoteAddr:…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Transform legacy apps to Microservices using the DevOps approach</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/softwebsub/transform-legacy-apps-to-microservices-using-the-devops-approach-2ndk">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>The digital transformation is driving organizations to modernize their legacy systems and apps. With the pace of change in the tech industry, modern organizations are experiencing the urgency to migrate from legacy apps to microservices to enhance digital customer experience. So now, more than ever, migration of legacy apps is crucial for enterprises to stay ahead of the curve.
-Moreover, due to the impact of the COVID-19 pandemic on different sectors, the need to transform legacy apps is more prevalent than ever before. So, to respond to this new environment, enterprises must keep up with the technology and migrate the existing core business apps to microservices.
-Hence, to move legacy apps to microservices, modern organizations can embrace the DevOps practice. DevOps can be the much-neede…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">🛑 Don’t upgrade your npm package versions by accident (video)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/danielp/don-t-upgrade-your-npm-package-versions-by-accident-video-3e93">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Looking for ways to make sure that your deployments to different environments are identical and use the exact same package versions? Or does your company have requirements to be able to reproduce deployments and trace exactly what dependencies were used at a specific time? Great - continue reading!
-Being dependent on open source 📦 npm packages means dependencies to the public npm registry and npm package maintainers &#x3D; constantly changing environment. This also means that you have the responsibility to keep track of what package versions were used in a specific deployment. This is a crucial task to reduce risks and make sure unintended changes have not been made.
-Even without any change to package.json your builds may produce a different set of dependencies at different points in time (semver versioning and addition of new minor versions to public registries).
-The slightest change in patch versions means your builds are no longer deterministic where you are guaranteed the exact same results - and deploying dependencies that have not been tested is never a good idea...
-💡 For me, the way to go is to freeze your registry when you want to avoid accidental updates. Freezing a registry effectively locks down the state of your package versions and makes the registry read-only so that only intended changes are applied to code you trust.
-The video below shows the easiest way to make your registry read-only using the Freeze policy in Bytesafe:
-
-
-
-
-Benefits of using the Freeze policy in Bytesafe:
-✅ Guaranteed exact same versions when testing and building your applications
-✅ Deterministic and consistent results across all your environments such as Test, UAT and Production
-🔗 This blog post also describes how to work with the Freeze policy to achieve consistent tests and builds.
-I would love to hear what you think of this solution and how you avoid accidental updates today. I&#x27;d be happy to answer any questions you might have.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Debugging with Dashbird: Lambda Task Timed Out After X Seconds</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/dashbird/debugging-with-dashbird-lambda-task-timed-out-after-x-seconds-2083">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>When building serverless applications, Lambda functions often form the backbone of the system. They might provide just a few lines of code, but these lines are usually what hold the whole architecture composed of many managed services together.
-Event-driven architecture is what this style is called, and it&#x27;s most prevalent in serverless applications. API gateways collect requests from your users, convert them to events, and send these along the way. Sometimes an upstream service, like DynamoDB or SQS, can handle such an event directly to save on Lambda invocation costs.
-More often than not, we need to apply some validation and transformation to an event so the service can handle it. That&#x27;s where Lambda comes into play, and that&#x27;s also one source of our timeouts.
-
-One of the main beginner m…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">13 Best Microsoft Teams Apps For Developers</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/satalkar_bhakti/13-best-microsoft-teams-apps-for-developers-32e6">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>Microsoft Teams, launched in 2017, bundled in with Office 365, is a collaboration tool that gained popularity during the pandemic times. Since its release, Microsoft Teams has quickly grown to become one of the fastest successful workplace collaboration tools with more than 145 million daily active users. Best Microsoft Teams apps can be integrated into teams and channels to leverage the immense capabilities offered by the platform.
-Microsoft Teams is majorly used for workplace conversations, team collaboration, file sharing, video chats, and calls aiding workplace productivity. It also acts as a bridge to connect workers and different apps. It is available on all major operating systems like Windows, Android, iOS, and macOS.
-Best Microsoft Teams apps and plug-ins can be integrated to enha…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -644,10 +1264,33 @@ GCC version:  gcc version 11.1.1 202…</span>
                 <summary class="article-expander__title">I made my first blog post</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/mordypython/i-made-my-first-blog-post-2i38">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Hey everyone! I started a blog called Mordy&#x27;s Tech Snippets and today I posted my first article there, it&#x27;s about customizing your bash prompt and I would love feedback! Feel free to ask anything in the comments!
-Blog: https://tech-snippets.web.app/
-https://tech-snippets.web.app/posts/customizing-the-terminal/</span>
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Hey everyone! I started a blog called Mordy&#x27;s Tech Snippets and today I posted my first article there, it&#x27;s about customizing your bash prompt and I would love feedback! Feel free to ask anything in the comments! You can read it below, but head over to check my blog out!
+If you&#x27;re a developer there&#x27;s a big chance that you&#x27;re familiar with the terminal. The terminal&#x27;s used for:
+Git
+
+
+git push
+git pull
+git commit
+Running code
+
+
+python main.py
+gcc/g++ main.cpp
+Editing files
+
+
+nano ~/.bashrc
+You get the idea; the terminal&#x27;s a big part of a developer&#x27;s day, and today, I&#x27;m going to show you how to customize it.
+~/.bashrc file. My terminal currently looks like this. 
+My prompt has:
+Date
+Time
+User@Host
+Current directory enclosed in angle brackets
+The git master branch name in parentheses
+My backgr…</span>
                   </div>
                 </a>
               </details>
@@ -733,49 +1376,6 @@ $ vim
 
 And to exit press ZQ. If in the rare situation it&#x27;s not installed, it is available in your package manager. However, even on a commercial OS like Mac OS X vim is available by default.
 If you are new to vim, you can practice here</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">AWS CodeCommit LifeCycle Hooks run order, summarized in one table for EC2, ECS, Lambda</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/vgcloud/aws-codecommit-lifecycle-hooks-run-order-summarized-in-one-table-for-ec2-ecs-lambda-mh6">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>While preparing for my AWS DevOps Engineer Professional exam I had to understand and memorize the CodeDeploy LifeCycle hooks. As usual, AWS provides decent documentation. Here is an example about how the Run order of hooks is documented. However, I could not find a table with all three cased combined. So I created one and it did help me a lot during the study. And also, I had a question in the exam about the &quot;AfterAllowTestTraffic&quot; hook.
-
-Note 1: The greyed out hooks in the table are reserved for CodeDeploy operations. They cannot be used to run scripts.
-Note 2: Hooks on EC2 can be used to run scripts on instances, while hooks for Lambda and ECS can be used only to run Lambda functions.
-
-Happy coding CodeDeploy lifecycle hooks!</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Install Arch Linux with i3 window manager.</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/vaibhavacharya/install-arch-linux-with-i3-window-manager-3nca">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>In this post we will be going over how to setup a fast &amp; minimal Arch Linux OS with i3 window manager.
-Go ahead &amp; download the .ISO file from Arch Downloads.
-Burn the .ISO file to a USB drive (&gt;&#x3D; 4GB) by using any of the below tools :
-Etcher (Recommended, Cross-Platform)
-Rufus (Windows)
-Insert the USB drive.
-Restart the computer.
-Press F12 or DEL (Depending on how to access boot menu).
-Select your USB drive from the list.
-Now you will be greeted with a screen like this :
-
-enter.
-After some loading, a console will be shown like this :
-
-From here our installation process will start.
-Go ahead and type archinstall in the console.
-Now you be asked to select a keyboard language. You have to type the number which is shown prepended in each language name. For me it&#x27;s us which is English so, I will…</span>
                   </div>
                 </a>
               </details>
@@ -905,121 +1505,16 @@ In this video, I share the reasoning behind creating this package and also how y
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(3 min)</span>
                     <span>Recently, I migrated a project I&#x27;ve been working on to TypeScript. I decided to use Webpack in combination with esbuild loader. The reason being esbuild ecosystem is still relatively new when compared to other bundlers like Webpack, rollup, parcel etc. in terms of plugins and loaders.
-Code for this article is available here
+Code for this article is available here.
+
+
+
+
+I&#x27;ve also made a video for you, if you&#x27;re a visual learner like me!
 At its core, webpack is a static module bundler for modern JavaScript applications. Basically it takes all your code, assets, dependencies and bundles them into static files that are easier to work with and deploy. You can read more about it here
-ESbuild is an extremely fast JavaScript bundler, upto 10-100x fast. You can check the benchmark and read more here
-Let&#x27;s assume we have simple hello world typescript project
-├── dist
-├── index.ts
-├── package.json
-├── tsconfig.j…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How does server side internationalization (i18n) look like?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/adrai/how-does-server-side-internationalization-i18n-look-like-5f4c">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>You may already know how to properly internationalize a client side application, like described in this React based tutorial, this Angular based tutorial or this Vue based tutorial.
-In this blog post we will shed light on the server side.
-Why do I need to handle i18n in my application&#x27;s backend?
-Think of all user faced content not directly rendered in your browser...
-For example you&#x27;re building a command line interface (CLI)?
-You&#x27;re sending some emails?
-Or you&#x27;re using server side rendering (SSR)?
-etc.
-We will show some examples that uses i18next as i18n framework. If you&#x27;re curious to know why we suggest i18next, have a look at this page.
+esbuild is an extremely fast JavaScript bundler, upto 10-100x fast. You can check the benchmark and read more here.
 
-
-
-Let&#x27;s start with something simple: a verry small CLI app. For this example let&#x27;s use commander, originally created by TJ Holowaychuk.
-sayhi command w…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Playing with Express middlewares and  Higher Order Functions</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/tirthaguha/playing-with-express-middlewares-and-higher-order-functions-5e4n">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>like I said in the first post of the series, Express is all about middlewares. 
-Can we create a middleware out of any function, so that developers don&#x27;t have to worry about the tricky syntax and testing of middlewares
-Well, the hardest part is over, defining the problem. Let&#x27;s get our hands dirty now. 
-The generic syntax of a middleware is
-//generic express middleware syntax
-const middleware &#x3D; (req, res, next) &#x3D;&gt; {
-  // EXECUTION LOGIC
-  next(); // This is where the control leaves this middleware and moves to next item in the queue, which could be another middleware, or the final controller etc
-}
-
-Our intention is make it work in a way, that we should be able to inject the EXECUTION LOGIC dynamically. 
-For this, we slightly move away from OOPS of JS and take help of a functional programmin…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Markdown automation made simple using markdown-autodocs github action</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/dineshsonachalam/markdown-automation-made-simple-using-markdown-autodocs-github-action-17nj">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Hi everyone!, I just released markdown-autodocs GitHub action which will help you to auto-document your markdown files. Please give a star for this repo if you find it useful.
-Repo: https://github.com/dineshsonachalam/markdown-autodocs
-Why markdown-autodocs?
-Features
-Examples
-
-
-CODE Block
-JSON to HTML table
-Github Workflow Artifacts table
-Example Repo which uses all the markdown-autodocs feature
-Usage
-
-
-Adding markdown-autodocs in your workflow
-Extended example with all possible options available for this Action
-Github Workflow Artifacts
-Contributing
-License
-To make your repo more appealing and useful you need to provide example code snippets in your README.md. Manually copy and pasting each code snippet in their respective places in your README would be inefficient and time-consuming.
-Thi…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Stripe payment gateway integration in node.js</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jahangeer/stripe-payment-gateway-integration-in-node-js-5733">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Hello guys, Today we gonna implement stripe payment gateway in node. We create simple order and pay with card. Stripe checkout gives us beautiful UI and various payment options. For better understanding watch demo video and support my channel 🙂.
-So  let&#x27;s start coding...
-Demo Video 
-Project Github Link
-Create Node.js App
-$ mkdir node-stripe-payment-gateway
-$ cd node-stripe-payment-gateway
-$ npm init --yes
-$ npm install express stripe
-
-Express : Express is minimal and flexible Node.js web applicaton framework.
-Stripe : The Stripe Node library provides convenient access to the stripe API.
-The package.json look like :
-{
-  &quot;name&quot;: &quot;node-stripe-payment-gateway&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;Implementing stripe payment gateway in node.js&quot;,
-  &quot;main&quot;: &quot;index.js&quot;,
-  &quot;scripts&quot;: {
-    &quot;st…</span>
+Let&#x27;s assume we have simple hello wor…</span>
                   </div>
                 </a>
               </details>
@@ -1231,14 +1726,16 @@ The growth of those tools should not be seen as …</span>
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(3 min)</span>
                     <span>Recently, I migrated a project I&#x27;ve been working on to TypeScript. I decided to use Webpack in combination with esbuild loader. The reason being esbuild ecosystem is still relatively new when compared to other bundlers like Webpack, rollup, parcel etc. in terms of plugins and loaders.
-Code for this article is available here
+Code for this article is available here.
+
+
+
+
+I&#x27;ve also made a video for you, if you&#x27;re a visual learner like me!
 At its core, webpack is a static module bundler for modern JavaScript applications. Basically it takes all your code, assets, dependencies and bundles them into static files that are easier to work with and deploy. You can read more about it here
-ESbuild is an extremely fast JavaScript bundler, upto 10-100x fast. You can check the benchmark and read more here
-Let&#x27;s assume we have simple hello world typescript project
-├── dist
-├── index.ts
-├── package.json
-├── tsconfig.j…</span>
+esbuild is an extremely fast JavaScript bundler, upto 10-100x fast. You can check the benchmark and read more here.
+
+Let&#x27;s assume we have simple hello wor…</span>
                   </div>
                 </a>
               </details>
@@ -1448,202 +1945,11 @@ Any new image searched will be shown and the previous ones will slide down:</spa
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">How can I get WiFi to work on my installation of Arch? (Mobile data&#x27;s killing me!)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/baenencalin/how-can-i-get-wifi-to-work-on-my-installation-of-arch-mobile-data-s-killing-me-cdh">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>So, this is a more detailed version of a post I made on Unix&amp;Linux StackExchange, which is a repost of a (wrongfully placed) post on AskUbuntu.
-
-So I have a WiFi-adapter that is integrated with my motherboard; Network controller: Realtek Semiconductor Co., Ltd. RTL8822CE 802.11ac PCIe Wireless Network Adapter and Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 16).
-this package (tomaspinho/rtl8821ce).
-So, I tried to install the package way:
-First,
-I tried the method of git clone, then manually build (using dkms-install.sh), but that produced these errors:
-About to run dkms install steps...
-Error! Could not locate dkms.conf file.
-File: /usr/src/rtl8821ce-v5.5.2_34066.20200325/dkms.conf does not exist.
-Error! Could not locat…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">#The most effective way to utilize the LinkedIn</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sitesh235/the-most-effective-way-to-utilize-the-linkedin-29on">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>The most effective way to utilize the LinkedIn
-
-
-
-   Since LinkedIn has multiple functions, there is more than one way to answer this question depending on what purpose you want to utilize the platform for. Many people use it for exploring the jobs market and making themselves visible to potential employers. But my expertise is in using LinkedIn for B2B lead generation, and so I’m going to talk about the most effective ways to do that.
-
-LinkedIn is an incredible tool for lead generation – there are millions of decision-makers regularly using the platform. But it is still relatively underused for lead generation given the massive potential for great leads it offers.
-I’ve found that it’s important to conduct multiple activities on LinkedIn to really make the most of it and get those great le…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
                 <summary class="article-expander__title">How to convert any input video file format in S3 bucket to any other video file format using Elastic Transcoder and Lambda</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aws-builders/how-to-convert-any-input-video-file-format-in-s3-bucket-to-any-other-video-file-format-using-elastic-transcoder-and-lambda-3j5o">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(6 min)</span>
                     <span>“Challenges faced to find the solution of how to convert the video file format from .mp3 to .ts format within some seconds”. I have checked different ways so that I can get my video file format conversion within a few seconds and within my budget. I got the solution by using an amazon elastic transcoder service in which I am able to set the configuration of the transcoding pipeline and able to create my custom presets as well. The cost of the pipeline is in my budget. Even I can create different presets as 1M, 1.5M, 600K and many more as per my need or can use the existing preset as well. I have created code for lambda function with s3 trigger which automatically generates the output in s3 bucket whenever i do input in my bucket of any video file format. My output will be based on the lamb…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Run creat-react-app with HTTPS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/pranjaljain0/run-creat-react-app-with-https-4ep6">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Introduction
-
-
-In current days we host websites on Vercel and Netlify and we are automatically assigned a generated SSL to provide with Secured connection(HTTPS), but in the development period we are unaware of the process to run it with HTTPS and we miss out on some testing which works only on HTTPS like google apis, etc.
-Configure creat-react-app project to handle https
-Generate SSL Certificates for localhost
-Add certificates to the project
-Trust certificate in browser
-Run the project secured
-Add a file .env in the root directory of the project with the line
-HTTPS&#x3D;true
-
-Follow this article to generate a SSL certificate for localhost. and place the certificates in the root directory.
-Generate an SSL Certificate With the Root Certificate for localhost
-Pranjal Jain ・ Jun 24 ・ 1 min read
-#security
-        #webdev
-        #webassembly
-      
-
-
-
-
-
-rootCA.key
-rootCA.pem
-rootCA.srl
-server.crt
-server.csr
-server.csr.cnf
-server.key
-v3.ext
-
-in the .env file add these two properties and there paths.
-SSL_CRT_FILE&#x3D;server.crt
-SSL_KEY_FILE&#x3D;server.key
-
-Here you will be using the server.crt as your certificate file &amp; server.key as your key for certificate.
-Follow this article to trust the certificate on your browser 
-Hence you have HTTPS enabled for your project.
-
-If you&#x27;re stuck anywhere do leave a comment.
-Follow me on Twitter at Twitter/pranjaljain0
-github/pranjaljain0
-Happy Hacking!</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Attempt #2 - Workspaces (npm, pnpm)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jonlauridsen/attempt-2-workspaces-npm-pnpm-336a">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Table Of Contents
-
-
-
-npm
-pnpm
-Conclusion
-Okay so attempt #1 didn&#x27;t quite work, but all the package managers have a feature called Workspaces, which npm describes like this:
-[Workspaces] provides support to managing multiple packages from your local files system from within a singular top-level, root package.
-That sure sounds relevant, so let&#x27;s give it a try!
-
-
-
-The npm documentation is so terse I&#x27;ve honestly no clue how to get anything working 🤷‍♀️. If you know your way around npm workspaces I&#x27;m happy to swap stories, but for now I&#x27;m giving up on this.
-
-
-
-Documentation here is definitely a step up, with more examples to draw inspiration from. Still a bit hard to grasp though, but I also came across this nice &quot;actual complete guide to typescript monorepos&quot; article by @cryogenicplanet
- that…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Create a PWA with Sveltekit | Svelte</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/100lvlmaster/create-a-pwa-with-sveltekit-svelte-a36">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>I&#x27;ve been using sveltekit and svelte for over a year now. I&#x27;m also anxiously waiting for it to be matured enought to beat NextJs in terms of community. But I like them both.
-So, on this weekend I wanted to turn one of my projects into a PWA. When I wanted to do with NextJs projects there were a lot of tutorials. But I couldn&#x27;t find many guides for svelte beginners.
-That&#x27;s because svelte has pwa functionality built into it.
- A website
- manifest.json [ basic icons,names,shortcuts]
- service-worker [ for offline cache ]
-So let&#x27;s get on with it.
-
-We&#x27;ll create a demo Sveltekit project:
-npm init svelte@next my-app
-
-
-Then we&#x27;ll choose a simple config in vite for the sake of this article:
-
-Choose typescript because ts &gt;&gt;&gt;&gt; js:
-
-Now we have a demo project setup with typescript, it will be straight-forward from here on:
-
-Let&#x27;s get into our directory:
-cd my-app
-
-And run:
-yarn
-
-
-After that,
-In the /static directory, We&#x27;ll create a manifest.json.
-When svelte compiles the whole application the static files will be copied over to the build folder.
-
-Then we&#x27;ll refer our manifest.json in src/app.html.
-
-And finally we&#x27;ll create our src/service-worker.ts
-Svelte will automatically detect the service-worker in the src folder&#x27;s root and then register our service worker during build.
-Isn&#x27;t that neat?
-
-Now we just need to build or app using yarn build:
-
-Now we can preview our build using yarn preview:
-
-&#x27;0&#x27; is that a &#x27;install app&#x27; button,
-
-Svelte makes it easy to make PWAs.
-The source code of this project lies at:
-https://github.com/100lvlmaster/svelte-pwa
-You can find me at:
-https://100lvlmaster.in</span>
                   </div>
                 </a>
               </details>
@@ -1690,93 +1996,6 @@ on:
             </article>
         </section>
       </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Linux Command Line You Need to Know</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/alfianardhi/linux-command-line-you-need-to-know-2lgn">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Whether you are looking to expand skills about linux. So, out of the hundreds of possible Linux commands you could or have to learn. Here some linux command you need to know.
-The pwd command for to know you where you are now. For example your’re in download folder. Try the following type pwd and you will see that you’re in your download directory.
-For Linux you can type clear or Ctrl+L to Clear the screen. It works in most terminal.
-Command ls is equivalent to the DOS dir command, that it show lists files and directories. This command has some common attributes, example like:
-ls -a for show all folders and files including visible and hidden.
-ls -l for show the contents of the directory in full, starting from access rights, owner, group and the date the file or directory was created.
-ls -i show directory contents and size.
-For troubleshooting you can use command tail -f. Example like this tail -f /var/log/daemon.log.
-If you want to see the previous commands, you can type history in your terminal. Meanwhile, to search command history in Linux, press ctrl+R, then just type the previous command you want to search or use.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Let&#x27;s learn about few networking side command in Linux/Unix</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/payalsasmal/let-s-learn-about-few-networking-side-command-in-linux-unix-3b7d">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Hi There!
-1. netstat:
-netstat stands for Network Statistics. This is very basic command used to print network connections, routing tables, interface statistics etc.
-
-Syntax:
-netstat [OPTIONS]
-
-There are various options which are supported by netstat command. Listing few of them in below
-netstat -i: i stands for Interface.(Network Interface shows that how kernel links up with the software network side to the hardware network side.
-Example:
-
-netstat -r: r stands for Routing. It will show kernel IP routing tables.
-Example:
-
-2. nslookup:
-nslookup stands for Name Server lookup. It helps us to check the IP address mapped to DNS(Domain Name System) and vice versa. This is very useful when we want to troubleshoot the DNS related issue.
-
-Syntax:
-nslookup [OPTIONS]
-
-nslookup has two modes Interactiv…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">BE SECURE!</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ubuntu/be-secure-30j3">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Hi!We use smartphone,laptop and other devices. All of them access to the internet. Many files have malware, If you install or use these files, you will have many problems also hackers can access to your data such as accounts and passwords.I wrote name of some apps that you should not use these apps. I will introduce more secure apps.
-
-
-
-
-
-
-
-
-
-
-
-In conclusion
-Many people think google is really safe but it isn&#x27;t!!!. Google apps are nice in the UI, services and etc,However in security doesn&#x27;t have standard features.I hope you enjoy this article if it is good, share with your friends and if you have any question or any other review, comment that.HAVE A NICE TIME AND GOOD SECURITY :).
-❤️</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
     </ul>
   </section>
   <section class="daily-content">
@@ -1807,162 +2026,6 @@ The post Custom Property Brain Twisters appeared first on CSS-Tricks. You can su
                     <span>I recently had to create a widget in React that fetches data from multiple API endpoints. As the user clicks around, new data is fetched and marshalled into the UI. But it caused some problems.
 One problem quickly became evident: …
 The post How to Cancel Pending API Requests to Show Correct Data appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">[()] &#x3D; Banana in a box</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/micxla81/banana-in-a-box-6o">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>...How much Fun is that, isn&#x27;t???</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Animating Angular’s *ngIf and *ngFor</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ngconf/animating-angular-s-ngif-and-ngfor-5e12">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Jared Youtsey | ng-conf | May 2019
-*ngIf and *ngFor will remove elements from the DOM. There isn’t a CSS solution for animating a non-existing element in the DOM. But Angular provides us with a simple solution.
-For purposes of brevity, wherever I refer to *ngIf it is equally applicable to *ngFor. The complete, working code can be downloaded here.
-Let’s start with the default application generated by the CLI and just modify the nice Angular logo in and out of the view based on a button we add.
-ng new ngifAnimation
-
-You won’t need routing and can select SCSS for the styling.
-Let’s add the button we want to use to toggle our *ngIf on the image. Open app.component.html and add a simple button: (this is the default HTML)
-&lt;!--The content below is only a placeholder and can be replaced.--
-&lt;div st…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Security news weekly round-up - 25th June 2021</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ziizium/security-news-weekly-round-up-25th-june-2021-4135">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>5 weeks in a row! Hi 5!✋
-Introduction
-
-
-This week&#x27;s review encompasses what this series is all about: security.
-iPhone bug breaks WiFi when you join hotspot with unusual name
-
-
-I&#x27;ll say this: be careful with the name you assign to your Wifi network.
-The unusual name in question is %p%s%s%s%s%n.
-Excerpt from the article:
-Once triggered, the bug would render your iPhone unable to establish a WiFi connection, even if it is rebooted or the WiFi hotspot is renamed.
-Researcher Claims Apple Downplayed Severity of iCloud Account Takeover Vulnerability
-
-
-This is yet another piece of news about Apple products. In this case, it&#x27;s iCloud.
-The article title says it all, but, here is an excerpt that summarizes the entire story:
-The issue, researcher Laxman Muthiyah says, was a bypass of the various secu…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">[Cybersecurity &amp; Linux Tools] How to install Metasploit?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/yumatsushima07/cybersecurity-linux-tools-how-to-install-metasploit-2c58">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Many people have been using this tool Metasploit. You came across on it on many tutorials and wondered how do you actually install this?
-The Metasploit framework is a very powerful tool which can be used by cybercriminals as well as ethical hackers to probe systematic vulnerabilities on networks and servers. Because it’s an open-source framework, it can be easily customized and used with most operating systems.
-With Metasploit, the pen testing team can use ready-made or custom code and introduce it into a network to probe for weak spots. As another flavour of threat hunting, once flaws are identified and documented, the information can be used to address systemic weaknesses and prioritize solutions.
-Due to its wide range of applications and open-source availability, Metasploit is used by e…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">[Cybersecurity] How do Reverse shells work?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/yumatsushima07/cybersecurity-how-do-reverse-shells-work-1jfc">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Reverse Shells
-
-
-
-  
-  
-  How do reverse shells work?
-
-
-To make a connection to a typical remote shell, a machine controlled by the attacker connects to the remote network host and it requests a shell connection.
-blind shell
-But what if the remote host is not directly accessible, like it has public IP or is protected by a firewall?
-In this situation reverse shells maybe shouldn&#x27;t be used, where the target machine initiates connection to the listening network host a shell is now established.
-To start you need a listener process on their system to listen the reverse shell connections incoming to their IP address, Eg, 12.12.12.12
-nc -lvnp 7070
-
-The netcat listener will listen at port 7070. An attacker needs to execute the code to the listener. Many reverse shells needs programming langs
-pente…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Encryption for Protecting Python Source Code</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/richard_scott/encryption-for-protecting-python-source-code-4ckg">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Python is a great programming language, it has so many uses, but one thing that it doesn’t do well is help protect your hard work from others. Python source code is plain-text, which means that anyone with access to your files can see what you wrote. Not great when you’ve just written the latest advancement in artificial intelligence (AI) or the best machine learning (ML) algorithm on the planet.
-Python has a great feature where it first compiles your source code into bytecode; this is a low-level platform-independent representation of your source code. Back in the days when computers were slow, this was helpful, but when trying to distribute secure code this is a problem. Most solutions for securing Python code involve the distribution of .pyc files. Now, this isn’t all that bad as it doe…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Introduction to Security, Identity, and Compliance with AWS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aws-builders/introduction-to-security-identity-and-compliance-with-aws-3ike">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(12 min)</span>
-                    <span>While companies increasingly look to cloud computing as a means to expand, modernize and stay competitive, so too do those companies expose themselves to new risks. In fact, Ermetic and IDC report that 80% of CISOs claim their company has had a cloud data breach in the past 18 months. Nearly half of those (43%) had experienced 10 or more breaches.
-The benefits of cloud computing are numerous, but organizations cannot make the switch to this modern platform without understanding the risks involved and, more importantly, how to protect themselves, their staff and their customers.
-Amazon Web Services (AWS) is a cloud service provider that’s on almost every company’s radar today. But many AWS customers today wonder what the best approach to security is and how to get there.
-companies often str…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Restrict Azure DevOps PAT tokens with Azure AD policy</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/pwd9000/restrict-azure-devops-pat-tokens-with-azure-ad-policy-3315">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>What is an Azure DevOps Personal Access Token (PAT)?
-
-
-A personal access token (PAT) is used as an alternative to using a password to authenticate into Azure DevOps. When you&#x27;re working with third-party tools, APIs or the command line that don&#x27;t support Microsoft or Azure AD accounts or you don&#x27;t want to provide your primary credentials to the tool, you can make use of PATs.
-PATs are easy to create when you need them and easy to revoke when you don’t.
-
-When creating a new PAT you can select the organization where you want to use the token, and then choose a lifespan for your token. Say for example making it only active and usable for a period of 30 days. A PATs lifetime can be extended if needed, but cannot be longer than the maximum period of 1 year. You can also specify granular permissi…</span>
                   </div>
                 </a>
               </details>
@@ -2016,45 +2079,6 @@ When creating a new PAT you can select the organization where you want to use th
 We have decided to discontinue the process of allowing new customers to sign up 
 …
 The post Chapter 9: Community appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">4 Common React Mistakes You Might Be Making – And How to Fix Them</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/common-react-mistakes-and-how-to-fix-them/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Let&#x27;s go over the most common mistakes you might be making in your React code right now, plus how to fix them. If you want to create amazing React applications, it&#x27;s essential to avoid many common errors along the way. In this article, we&#x27;ll not only cover how to fix</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Use OpenTelemetry to Understand Software Performance</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/how-to-use-opentelemetry/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(33 min)</span>
-                    <span>If you want good performance in your application, you need to collect data to figure out where to make improvements. That&#x27;s where OpenTelemetry comes in. OpenTelemetry offers a single set of APIs and libraries that standardize how you collect and transfer telemetry data. OpenTelemetry provides a specification for instrumentation so</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">What is Data Analysis? How to Visualize Data with Python, Numpy, Pandas, Matplotlib &amp; Seaborn Tutorial</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/exploratory-data-analysis-with-numpy-pandas-matplotlib-seaborn/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(28 min)</span>
-                    <span>Data Analysis is the process of exploring, investigating, and gathering insights from data using statistical measures and visualizations.  The objective of data analysis is to develop an understanding of data by uncovering trends, relationships, and patterns. Data analysis is both a science and an art. On the one hand it</span>
                   </div>
                 </a>
               </details>
@@ -2154,23 +2178,6 @@ Thank you @PiyushLosalka</span>
       </li>
       <li class="source">
         <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Microservices Architecture – Explained in Plain English</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/microservices-architecture-for-humans/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>Over the last few years, microservices have gone from an overhyped buzzword to something you should understand as a software engineer.  According to an O&#x27;Reilly developer survey in 2020:  61% of companies have been using microservices in the last year29% say at least half of their company systems are built</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
           <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
           <section class="articles-per-source">
             <article>
@@ -2230,18 +2237,6 @@ The post Using Custom Elements in Svelte appeared first on CSS-Tricks. You can s
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">If we’re gonna criticize utility-class frameworks, let’s be fair about it</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/if-were-gonna-criticize-utility-class-frameworks-lets-be-fair-about-it/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(12 min)</span>
-                    <span>I’m not here to raise a shield protecting CSS utility frameworks. I don’t even particularly like the approach, myself, and nothing is above fair criticism. But fair is a key word there. I can’t tell you how many times I’ve …
-The post If we’re gonna criticize utility-class frameworks, let’s be fair about it appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -2266,36 +2261,6 @@ The post If we’re gonna criticize utility-class frameworks, let’s be fair ab
   <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2021-06-21">2021-06-21</time></h2>
     <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Are we in a new era of web design? What do we call it?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://web.dev/new-responsive/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Una is calling it the new responsive. A nod to the era we were most certainly in, the era of responsive design. Where responsive design was fluid grids, flexible media, and media queries, the new responsive is those things …
-The post Are we in a new era of web design? What do we call it? appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Create CSS Charts With Interesting Shapes, Glyphs and Emoji</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/how-to-create-css-charts-with-interesting-shapes-glyphs-and-emoji/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Let’s forego the usual circles and bars we typically see used in charts for more eccentric shapes. With online presentations more and more common today, a quick way to spruce up your web slides and make them stand out is …
-The post How to Create CSS Charts With Interesting Shapes, Glyphs and Emoji appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
       <li class="source">
         <section>
           <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
@@ -2695,31 +2660,9 @@ The post How to Create CSS Charts With Interesting Shapes, Glyphs and Emoji appe
       </li>
     </ul>
   </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-31">2021-05-31</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Happy June Vibes For Your Screen (2021 Desktop Wallpapers Edition)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/desktop-wallpaper-calendars-june-2021/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>What could be a better way to welcome June than with some colorful inspiration? Well, we might have something for you: wallpapers created with love by artists and designers from across the globe.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-06-29T00:50:18.884Z">2021-06-29T00:50:18.884Z</time>
+    <time id="build-timestamp" datetime="2021-06-30T00:55:19.765Z">2021-06-30T00:55:19.765Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.11.0</a></span>
   </footer>
   <script src="index.js"></script>
