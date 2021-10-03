@@ -1,56 +1,1013 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>urn:2021-10-02T01:02:07.296Z</id>
+    <id>urn:2021-10-03T01:09:03.348Z</id>
     <title>osmos::feed</title>
-    <updated>2021-10-02T01:02:07.296Z</updated>
+    <updated>2021-10-03T01:09:03.348Z</updated>
     <generator>osmosfeed 1.11.2</generator>
     <link rel="alternate" href="index.html"/>
     <entry>
-        <title type="html"><![CDATA[Repository Lokal Ubuntu 20.04]]></title>
-        <id>https://dev.to/rizkiamr/repository-lokal-ubuntu-20-04-41g8</id>
-        <link href="https://dev.to/rizkiamr/repository-lokal-ubuntu-20-04-41g8"/>
-        <updated>2021-10-01T22:54:57.000Z</updated>
-        <summary type="html"><![CDATA[Sistem operasi Ubuntu merupakan salah satu distro Linux yang banyak digunakan.
-Mulai dari User Interface yang eye-catching, support komunitas yang tinggi, long-term support dari developer, maupun mirror repository yang tersedia di banyak negara.
-Mirror repository (repo lokal) juga penting agar mempercepat proses delivery package.
-Berikut daftar repo lokal Ubuntu 20.04 pilihan penulis di Indonesia:
-Repo Biznet Gio Cloud, kenceng parah ini repo, favorit penulis.
-deb http://mirror.biznetgio.com/ubuntu/ focal main restricted universe multiverse
-deb http://mirror.biznetgio.com/ubuntu/ focal-updates main restricted universe multiverse
-deb http://mirror.biznetgio.com/ubuntu/ focal-security main restricted universe multiverse
-deb http://mirror.biznetgio.com/ubuntu/ focal-backports main restricted …]]></summary>
+        <title type="html"><![CDATA[DHCP and static IPs ??]]></title>
+        <id>https://dev.to/darken/dhcp-and-static-ips-okk</id>
+        <link href="https://dev.to/darken/dhcp-and-static-ips-okk"/>
+        <updated>2021-10-02T23:07:16.000Z</updated>
+        <summary type="html"><![CDATA[I'm not gonna talk about how does a DHCP server work exactly, 
+If one of the devices in the network is configured with a static IP address, when the DHCP server starts distributing the IP addresses to other machines, what happens exactly ? does it skip it ? or does it duplicate it and therefore there would be a conflict ? 
+So the answer is, NOPE the DHCP server will not distribute that IP address, you may be wondering, but how ?
+Remember that the DHCP server sends an ARP Broadcast asking about the IP address about to be distributed 
+"Who has x.x.x.x"
+At that moment the machine with that static IP address will respond with an ARP saying that it got that IP and that its MAC address is X:X:X:X:X:X so the DHCP server will continue to the next IP address asking "Who has y.y.y.y"
+But here comes another problem, 
+what if the local network is placed behind a router, and we all know that the routers doesn't allow broadcasting, then what happens ?
+well simply instead of ARP Broadcasting, it uses ICMP Packet type 8 code 0 which is the ECHO request ( ping ) and if it gets no answer than it distributes it, else it simply continues to the next IP address.
+And here comes the last question, 
+And what if a device that is configured with a static IP address was shutdown, and the DHCP distributed its IP address, what happens if the machine is up again?
+well there are two solutions for this, some DHCP servers are advanced enough and caches the static IP address and therefore this conflict will never occurs, but if the DHCP server doesn't provide this feature, than it should be configured to exclude these IP addresses or else there will be an IP Duplication.
+And this pretty much sums up the main problems of dealing with a DHCP server.]]></summary>
+        <author>
+            <name>Achraf Affes</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[react pwa app.]]></title>
+        <id>https://dev.to/madrix01/react-pwa-app-29no</id>
+        <link href="https://dev.to/madrix01/react-pwa-app-29no"/>
+        <updated>2021-10-02T22:29:02.000Z</updated>
+        <summary type="html"><![CDATA[I wanted to create a PWA (progressive web app) with react.js and typescript. So I used a built-in flag with create-react-app which generated pwa.
+npx create-react-app my-app --template cra-template-pwa-typescript
+
+But after I ran tests in lighthouse it was not available as a pwa.
+web.dev and other sources and built my own template.
+In src/index.tsx or src/index.js file and change
+
+
+
+serviceWorkerRegistration.unregister();
+
+to
+serviceWorkerRegistration.register();
+
+Add serviceworker.js to pubic/ folder. serviceworker.js works in background and it performs caching, background sync, listen to push notifications and many more stuff!
+
+
+
+
+// public/serviceworker.js
+var CACHE_NAME = 'pwatest';
+var urlsToCache = [
+  '/',
+  '/completed'
+];
+
+const self = this; 
+// Install a service worker
+self.addEv…]]></summary>
+        <author>
+            <name>Shlok Patel</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Auto OpenVPN reconnect and killswitch for VPNs with dynamic IPs]]></title>
+        <id>https://dev.to/nullabletype/auto-openvpn-reconnect-and-killswitch-for-vpns-with-dynamic-ips-4fnm</id>
+        <link href="https://dev.to/nullabletype/auto-openvpn-reconnect-and-killswitch-for-vpns-with-dynamic-ips-4fnm"/>
+        <updated>2021-10-02T22:22:32.000Z</updated>
+        <summary type="html"><![CDATA[The Problem
+
+
+If you’re like me and run a home Linux server, you may wish to add some extra security in the form of a VPN connection to ensure traffic is encrypted. In my case, I use a Raspberry Pi to backup things like RAW images from my camera to an off-site location. The extra security gives me a little peace of mind, especially as the server generally uses a cellular connection.
+I’ve been using UFW to work as a killswitch and only allow traffic via the VPN connection, but one issue I've had is with my trusted VPN provider is that they regularly rotate IP addresses. UFW uses iptables under the hood, meaning it can only be configured to use IP addresses explicitly and not a domain name. This has left my backup machine without an internet connection fairly frequently.
+Just to set this str…]]></summary>
+        <author>
+            <name>Ste Davies</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Auto OpenVPN reconnect and killswitch for VPNs with dynamic IPs]]></title>
+        <id>https://dev.to/nullabletype/auto-openvpn-reconnect-and-killswitch-for-vpns-with-dynamic-ips-4fnm</id>
+        <link href="https://dev.to/nullabletype/auto-openvpn-reconnect-and-killswitch-for-vpns-with-dynamic-ips-4fnm"/>
+        <updated>2021-10-02T22:22:32.000Z</updated>
+        <summary type="html"><![CDATA[The Problem
+
+
+If you’re like me and run a home Linux server, you may wish to add some extra security in the form of a VPN connection to ensure traffic is encrypted. In my case, I use a Raspberry Pi to backup things like RAW images from my camera to an off-site location. The extra security gives me a little peace of mind, especially as the server generally uses a cellular connection.
+I’ve been using UFW to work as a killswitch and only allow traffic via the VPN connection, but one issue I've had is with my trusted VPN provider is that they regularly rotate IP addresses. UFW uses iptables under the hood, meaning it can only be configured to use IP addresses explicitly and not a domain name. This has left my backup machine without an internet connection fairly frequently.
+Just to set this str…]]></summary>
+        <author>
+            <name>Ste Davies</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Manage your meetings like a boss with self-hosted calender]]></title>
+        <id>https://dev.to/krusenas/manage-your-meetings-like-a-boss-with-self-hosted-calender-4hlb</id>
+        <link href="https://dev.to/krusenas/manage-your-meetings-like-a-boss-with-self-hosted-calender-4hlb"/>
+        <updated>2021-10-02T21:12:12.000Z</updated>
+        <summary type="html"><![CDATA[Calendly and other scheduling tools are awesome. It made our lives massively easier. We're using it for business meetings, side projects and anything else where we need some flexible coordination. However, most tools are very limited in terms of control, customization, data protection, and most important - they are not free! That's where Calendso & Synpse come in. Self-hosted, all your data sitting on your own machines. API-driven and ready to be deployed on your own domain. Full control of your events and data.
+In this tutorial we will be deploying a self-hosted Calendso instance that lives under your own DNS domain. You will be able to share meeting links such as https://calendar.synpse.net/karolis/quick-chat with your colleagues, clients and friends:
+
+You will also be able to:
+Integrate…]]></summary>
+        <author>
+            <name>Karolis</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Github Actions - Introdução com Java]]></title>
+        <id>https://dev.to/wesleyegberto/github-actions-introducao-com-java-1g4m</id>
+        <link href="https://dev.to/wesleyegberto/github-actions-introducao-com-java-1g4m"/>
+        <updated>2021-10-02T20:37:05.000Z</updated>
+        <summary type="html"><![CDATA[Github Actions nos permite automatizar, customizar e executar workflows do desenvolvimento de software diretamente no repositório do projeto.
+Podemos:
+rodar o build continuamente
+executar testes automatizados a cada push
+executar processo de CI completo
+executar processo de CD para diversas clouds e ambientes
+O Github Actions possui uma ampla biblioteca de Actions que nos permites executar diversos tipos de ações (desde simples build da aplicação até o build da sua imagem Docker e deploy no seu cluster Kubernetes na AWS).
+Os jobs do Github Actions são orientados à eventos, isso significa que você pode configurar a execução de determinado job a partir de uma determinada ação (push, PR, merge) no seu repositório.
+O Github Actions possui uma camada free que nos disponibiliza um tempo de execu…]]></summary>
+        <author>
+            <name>Wesley Egberto</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git hooks and Docker for Continuous integration]]></title>
+        <id>https://dev.to/simone_a/git-hooks-and-docker-for-continuous-integration-1c36</id>
+        <link href="https://dev.to/simone_a/git-hooks-and-docker-for-continuous-integration-1c36"/>
+        <updated>2021-10-02T19:59:48.000Z</updated>
+        <summary type="html"><![CDATA[Continuous Integration is a great software development practice, we can reduce integration problems and we can allow teams to develop cohesive software more rapidly.
+There are many interesting CI tools in the market but I think the dev CI experience can still be improved. I see companies and dev teams struggling and disappointed when they have to run and setup CI pipelines.
+Most of the IT companies care about code privacy and they don’t like the idea to run their code on external public CI platforms. It's possible to have CI solutions on-premise but most of the time this kind of solutions are expensive for the company. For example, Atlassian has stopped selling new on-prem server licenses. ref.
+
+
+
+
+
+
+
+  
+  
+  Build queue and CI debug:
+
+
+
+As a developer and member of a tech team I’d like to see our CI builds running immediately after a code change and I’d like to see an easy way for debugging the code when it’s running on CI. Most of the time I see teams and developers complaining about long builds queues and usually it’s even quite difficult debugging the code if an error happens during the CI process.
+How many times we see commits failing on CI because the code has not been tested enough locally or the code has not been rebased with the main branch yet. Every time we run a build on Cloud it’s a cost for the team and the company. The good news is we can now easily avoid this scenario. Few years ago, Git has introduced "Git hooks", this new technology allows developers to execute pre-tests before a commit will trigger a new CI process in Cloud.
+After a long brainstorming with some friends, we created a small CI tool localci.io to address all these issues. This tool doesn’t fit with any IT infrastructure, but this could be useful at least for some team. Probably, in the future it will be completely free but currently we still need to cover some cloud costs.]]></summary>
+        <author>
+            <name>Simone</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How I Created an Interview CLI with Node.js for self-interview preparation]]></title>
+        <id>https://dev.to/karthikdevarticles/how-i-created-an-interview-cli-with-node-js-for-self-interview-preparation-39g</id>
+        <link href="https://dev.to/karthikdevarticles/how-i-created-an-interview-cli-with-node-js-for-self-interview-preparation-39g"/>
+        <updated>2021-10-02T19:04:34.000Z</updated>
+        <summary type="html"><![CDATA[Hi Guys, In this article, we will focus on topics of Node.js, CLI, and Interview Preparation.
+I have created a self-interview preparation CLI toolkit, which will show me random questions whenever I run a CLI command called "interview".
+Sounds cool right.
+I felt I would require a real-time experience of attending an interview, but I wanted to have control over what I could be expecting, and still having the random unexpectedness of attending an interview.
+This simple project I felt was in the right direction.
+Latest version of  Node.js installed(I used v14.18.0)
+Text editor - Visual Studio Code 
+Next, open your project folder and enter the below commands to create and initiate the node.js project setup.
+mkdir interview-cli
+cd interview-cli
+npm init -y
+
+Next, open the interview-cli folder an…]]></summary>
+        <author>
+            <name>karthikdevarticles</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Quick Firestore Frontend Search Index]]></title>
+        <id>https://dev.to/jdgamble555/quick-firestore-frontend-search-index-30hd</id>
+        <link href="https://dev.to/jdgamble555/quick-firestore-frontend-search-index-30hd"/>
+        <updated>2021-10-02T19:04:33.000Z</updated>
+        <summary type="html"><![CDATA[For those of you that don't know you can get full-text search capabilities in Firestore, read my article on my adv-firestore-functions search package.
+However, as great as using Firebase Functions are, sometimes we just want a simple and quick way to be able to search through our data. Unfortunately, the Firebase Team has not built this natively yet.
+So, I wanted to create a quick way to index your data from the frontend...
+Note: - This post uses angular examples, but the premise is for any framework.
+The core of this code is based on the soundex function which has been used in SQL databases for generations to emulate a fuzzy search. It basically translates your text so that similar sounds in the English Language would be stored as the same string. There are other versions in other languag…]]></summary>
+        <author>
+            <name>Jonathan Gamble</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PART 0: Fundamentals of NEST.js]]></title>
+        <id>https://dev.to/xamhans/part-0-fundamentals-of-nest-js-365n</id>
+        <link href="https://dev.to/xamhans/part-0-fundamentals-of-nest-js-365n"/>
+        <updated>2021-10-02T18:46:21.000Z</updated>
+        <summary type="html"><![CDATA[Hi there, this is PART 0 of my NEST.js series. In this chapter I will explain the fundamentals of NEST.js, what it is and explain a bit of how it is structured. 
+Here is what the official documentation  says.
+Nest (NestJS) is a framework for building efficient, scalable Node.js server-side applications*
+Express (the default) and optionally can be configured to use [Fastify*(https://github.com/fastify/fastify) as well!
+So this means, that a lot of smart people put much effort in building on top of express (or fastify) a set of pre-built capabilities like logging or validation. This is great, because you dont have to built this by yourself, which means that you can focus on what matters, the business logic. Futhermore you can still use node libaries that you are used to, which is awesome, th…]]></summary>
+        <author>
+            <name>xamhans</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PART 0: Fundamentals of NEST.js]]></title>
+        <id>https://dev.to/xamhans/part-0-fundamentals-of-nest-js-365n</id>
+        <link href="https://dev.to/xamhans/part-0-fundamentals-of-nest-js-365n"/>
+        <updated>2021-10-02T18:46:21.000Z</updated>
+        <summary type="html"><![CDATA[Hi there, this is PART 0 of my NEST.js series. In this chapter I will explain the fundamentals of NEST.js, what it is and explain a bit of how it is structured. 
+Here is what the official documentation  says.
+Nest (NestJS) is a framework for building efficient, scalable Node.js server-side applications*
+Express (the default) and optionally can be configured to use [Fastify*(https://github.com/fastify/fastify) as well!
+So this means, that a lot of smart people put much effort in building on top of express (or fastify) a set of pre-built capabilities like logging or validation. This is great, because you dont have to built this by yourself, which means that you can focus on what matters, the business logic. Futhermore you can still use node libaries that you are used to, which is awesome, th…]]></summary>
+        <author>
+            <name>xamhans</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DigitalOcean Managed Kubernetes  Service]]></title>
+        <id>https://dev.to/dporwal/digitalocean-managed-kubernetes-service-54kp</id>
+        <link href="https://dev.to/dporwal/digitalocean-managed-kubernetes-service-54kp"/>
+        <updated>2021-10-02T18:28:07.000Z</updated>
+        <summary type="html"><![CDATA[Setting Up Kubernetes using Digital Ocean K8s Managed Service
+
+
+
+You can use my referral you will get $100 free usage for 3 months.
+
+
+And when we open the config file we will see these details.
+
+Kubectl need to connect to the k8s master, we nees:
+DNS/IP of the cluster
+Authentication Credentials
+which will found in kubeconfig.
+I'm setting up in windows. So, will be using below reference.
+https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/
+Download this Kubectl binary
+
+Next Step, Move that Binary to C:\Binaries. If Binaries folder is not there, create one.
+
+Create a Environment Variable to call this Binary.
+
+Move the kubeconfig file to C:\Users\ .kube and name it as config ( removing .yml extension)
+
+To Verify, run kubectl , it will work from any path.
+
+For, linux and MacOS installation refer below link.
+https://kubernetes.io/docs/tasks/tools/
+References:
+Official Documentation
+Udemy Course
+Credit:
+Zeal Vora]]></summary>
+        <author>
+            <name>Deepak Porwal</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DigitalOcean Managed Kubernetes  Service]]></title>
+        <id>https://dev.to/dporwal/digitalocean-managed-kubernetes-service-54kp</id>
+        <link href="https://dev.to/dporwal/digitalocean-managed-kubernetes-service-54kp"/>
+        <updated>2021-10-02T18:28:07.000Z</updated>
+        <summary type="html"><![CDATA[Setting Up Kubernetes using Digital Ocean K8s Managed Service
+
+
+
+You can use my referral you will get $100 free usage for 3 months.
+
+
+And when we open the config file we will see these details.
+
+Kubectl need to connect to the k8s master, we nees:
+DNS/IP of the cluster
+Authentication Credentials
+which will found in kubeconfig.
+I'm setting up in windows. So, will be using below reference.
+https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/
+Download this Kubectl binary
+
+Next Step, Move that Binary to C:\Binaries. If Binaries folder is not there, create one.
+
+Create a Environment Variable to call this Binary.
+
+Move the kubeconfig file to C:\Users\ .kube and name it as config ( removing .yml extension)
+
+To Verify, run kubectl , it will work from any path.
+
+For, linux and MacOS installation refer below link.
+https://kubernetes.io/docs/tasks/tools/
+References:
+Official Documentation
+Udemy Course
+Credit:
+Zeal Vora]]></summary>
+        <author>
+            <name>Deepak Porwal</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React useScrollTo hook]]></title>
+        <id>https://dev.to/dagasatvik10/react-usescrollto-hook-3263</id>
+        <link href="https://dev.to/dagasatvik10/react-usescrollto-hook-3263"/>
+        <updated>2021-10-02T18:06:44.000Z</updated>
+        <summary type="html"><![CDATA[Ever since the introduction of hooks in React 16.8, they have become an integral part of every React devs arsenal.
+Recently while I was working on one of my projects, I encountered a relatively common problem. I wanted to scroll to a component when its loaded on screen or on some other event. If you have worked with pure js, then there is a very simple solution using scrollIntoView function.
+const elmnt = document.getElementById("content");
+elmnt.scrollIntoView();
+
+Run the above code on that particular event and it works like a charm.
+Now when I searched for a solution in React, I came across this library react-scroll. Its a react library for animating vertical scrolling that provides functionality to scroll to a component on an event. Its good but I didn't want to add another dependency a…]]></summary>
+        <author>
+            <name>Satvik Daga</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Logger decorator]]></title>
+        <id>https://dev.to/gaetanrdn/logger-decorator-47ob</id>
+        <link href="https://dev.to/gaetanrdn/logger-decorator-47ob"/>
+        <updated>2021-10-02T17:36:57.000Z</updated>
+        <summary type="html"><![CDATA[Typescript method decorator
+
+
+Hey, often we make console.log(...) to see the value of a parameter or a result method.
+Here I present you a decorator which allow to do it easily. It’s purpose is for debugging when you are developing something.
+Now that’s how to use it:
+class Toto {
+  @Log()
+  public myMethod(...args: unknown[]): boolean { ... }
+
+  @Log({ outputs: false })
+  public myMethod2(...args: unknown[]): void { ... }
+
+  @Log({ inputs: false })
+  public myMethod3(...args: unknown[]): unknown { ... }
+
+  @Log({ type: 'trace' })
+  public myMethod4(...args: unknown[]): unknown { ... }
+
+  @Log({ type: 'trace', inputs: false, outputs: false })
+  public myMethod5(...args: unknown[]): unknown { ... }
+
+}
+
+Hope this could help or inspire someone.
+Thanks for reading, feel free to comment.
+TypeScript Function Overloads
+My Favorite Git Commands
+How to Handle Required Inputs in Angular
+Angular for everyone: All about it]]></summary>
+        <author>
+            <name>Gaëtan Redin</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Common chunks in Angular]]></title>
+        <id>https://dev.to/sanketmaru/common-chunks-in-angular-3eel</id>
+        <link href="https://dev.to/sanketmaru/common-chunks-in-angular-3eel"/>
+        <updated>2021-10-02T17:28:59.000Z</updated>
+        <summary type="html"><![CDATA[This blog summarises on use case in which common chunk is created in an Angular application.
+We will start by creating a new angular application using ng new my-app command present in cli.
+In this application we will have a toast module which will show toast on click of a button.
+We will load toast module inside multiple modules and check how its shipped to the user.
+It doesn't included basic Angular commands like creating component, module.
+Let's start then.
+As a first use case we will include the toast module in the main app module.
+The toast module has a component and a service which is used to create the message and can be called by outside module where its injected, in our use case its app module.
+As we have injected toast module in main app module its included in main chunk of angula…]]></summary>
+        <author>
+            <name>Sanket Maru</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Learning TypeScript: Part 1]]></title>
+        <id>https://dev.to/john_madden_13/learning-typescript-part-1-3ll</id>
+        <link href="https://dev.to/john_madden_13/learning-typescript-part-1-3ll"/>
+        <updated>2021-10-02T16:50:10.000Z</updated>
+        <summary type="html"><![CDATA[Hello all!
+
+
+This is my first post to Dev.to and I am very excited for this to be the beginning of my TypeScript series where I will be documenting what I am learning through Codecademy and Free Code Camp. I will not just be copying and pasting the information, but learning, and bringing it to you in a concise manner. Please enjoy and don't be timid to send me a message of what you think!
+                         LETTUCE BEGIN🥬
+
+
+TypeScript is a superset of Javascript, invented by Microsoft, that adds strong type checking. Hence, the 'type' in TypeScript, I guess. The TS code is taken into a compiler and then translated into JS code, meaning all of the features of JS are available to us, plus the added features of TS. 
+Some added features are such as better development-time tooling (the a…]]></summary>
+        <author>
+            <name>🦾Jack Madden🦾</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Automate CI/CD build pipeline for a Springboot app using Jenkins and Github Webhooks]]></title>
+        <id>https://dev.to/saucekode/automate-ci-cd-build-pipeline-for-a-springboot-app-using-jenkins-and-github-webhooks-3h30</id>
+        <link href="https://dev.to/saucekode/automate-ci-cd-build-pipeline-for-a-springboot-app-using-jenkins-and-github-webhooks-3h30"/>
+        <updated>2021-10-02T16:49:56.000Z</updated>
+        <summary type="html"><![CDATA[In this article, we will be setting up a CI/CD pipeline for a springboot application using Jenkins.
+An existing Springboot application
+You should have Jenkins installed
+Continous integration and delivery make up the devops lifecycle. There are 8 phases in the devops lifecyle. 
+Continous delivery make up the first four phases which include: plan, code, build and test. Continous integration make up the last four phases which include: integrate, deploy, operate and monitor.
+Jenkins is a tool for integrating automatically into the existing codebase after testing is complete. It spans both continous delivery (build and test phase) and continous integration (integration).
+If your project is already hosted on Github, you can skip this step. Otherwise, create a repository on Github, map the remote…]]></summary>
+        <author>
+            <name>Amaka Mbah</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Improving API Documentation using React Query and TypeScript]]></title>
+        <id>https://dev.to/arn4v/improving-api-documentation-using-react-query-and-typescript-2321</id>
+        <link href="https://dev.to/arn4v/improving-api-documentation-using-react-query-and-typescript-2321"/>
+        <updated>2021-10-02T16:43:30.000Z</updated>
+        <summary type="html"><![CDATA[As your codebase grows, there is only one way to increase developer productivity: Documentation. One of many reasons I prefer TypeScript to JavaScript is that overtime, as your codebase grows, developer productivity increases because TypeScript (and typed languages in general) offer something that dynamically typed languages cannot, automatic documentation in your IDE.
+This article assumes you're familiar with React Query. If you're not, I highly recommend you read the official docs and this intro guide by Sai Kranthi.
+Imagine an simple app that does two things based on the PokeAPI:
+Renders a list of Pokemons that link to their own dedicated page
+Have dedicated pages for all pokemons
+To fetch the list of pokemons, with Redux you would have to:
+Create a global store
+Create a reducer with an…]]></summary>
+        <author>
+            <name>Arnav Gosain</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Belajar Linux OS? #End - Kenapa sih pake Linux?]]></title>
+        <id>https://dev.to/rizkiamr/belajar-linux-os-end-kenapa-sih-pake-linux-629</id>
+        <link href="https://dev.to/rizkiamr/belajar-linux-os-end-kenapa-sih-pake-linux-629"/>
+        <updated>2021-10-02T16:07:46.000Z</updated>
+        <summary type="html"><![CDATA[Buat kalian yang pengen berkarir di IT, baik di Tim Developer, Operations maupun Security, menguasai Linux bisa menjadi nilai plus buat kalian apalagi tim Operations dan Security yang sehari-hari tidak bisa lepas dari server.
+Karena menurut data statistik, 1 juta website terpopuler pake Linux buat OS Server-nya.
+Lalu, kita ngga bisa denial kalo OS pilihan dari kebanyakan hacker itu ya Linux..
+Ini karena hacker-hacker tuh suka otak-atik semaunya sendiri dan karena Linux itu open-source, Linux bisa di-customize buat nyesuaiin kebutuhan mereka.
+Dan juga, unethical dan bad hackers biasanya pake tools yang mereka bikin sendiri atau yang sudah tersedia di Linux untuk nge-hack ke dalam jaringan dan aplikasi yang lemah dan rentan keamanannya.
+Banyak Distro Linux yang sudah terinstall tools buat hacking yang siap pake.
+Tapi jika tools tersebut belum ada, maka tinggal diinstall dong wkwk.
+Diantara Distro Linux buat hacking yang umum dipake adalah:
+Kali Linux, yang berbasis dari varian Debian.
+BackBox, yang berbasis dari varian Ubuntu.
+Parrot Security OS, yang berbasis dari varian Debian.
+CAINE, yang berarti Computer Aided INvestigative Environment yang biasanya dipake buat Digital Forensic dan
+Samurai Web Testing Framework untuk pentest (penetration testing) aplikasi web (web application).
+Jadi jika kalian mau berkarir di Tim Operations (seperti DevOps dan SRE) maupun belajar hacking sebagai hobi, atau untuk menjadi ethical hacker, kalian wajib belajar dan jago di Linux xD.]]></summary>
         <author>
             <name>Rizky Amrullah</name>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[My thoughts on SFML.]]></title>
-        <id>https://dev.to/faulty/my-thoughts-on-sfml-l20</id>
-        <link href="https://dev.to/faulty/my-thoughts-on-sfml-l20"/>
-        <updated>2021-10-01T22:54:48.000Z</updated>
-        <summary type="html"><![CDATA[I've been using SFML; actually writing a simple program with it. It sucks... for some cases.
-It's pretty easy to work with; you get a while loop (while (window.isOpen())) and in that loop you can add an event handler for key presses, etc. So with some function magic or huge if statements, you can write a pretty good game!
-So, for 2D games yes, else? possible but there are alternatives; Panda3D, Torque, some more I found on the internet.
-Final Thoughts; I think it's a great 2D game engine!
-[1] = https://sfml-dev.org]]></summary>
+        <title type="html"><![CDATA[Belajar Linux OS - #8 Distro]]></title>
+        <id>https://dev.to/rizkiamr/belajar-linux-os-8-distro-b52</id>
+        <link href="https://dev.to/rizkiamr/belajar-linux-os-8-distro-b52"/>
+        <updated>2021-10-02T15:48:57.000Z</updated>
+        <summary type="html"><![CDATA[Seperti pada Desktop Environment dan Aplikasi-aplikasi yang dapat diotak-atik, Linux OS-nya sendiri pun ternyata bisa kita otak-atik sesuai selera kita masing-masing.
+Nah hasil otak-atikan kita tadi ituloh yang disebut dengan Linux Distributions atau Distro.]]></summary>
         <author>
-            <name>Didier</name>
+            <name>Rizky Amrullah</name>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Implementing infrastructure-as-code with Ansible and GIT]]></title>
-        <id>https://dev.to/serdigital64/implementing-infrastructure-as-code-with-ansible-and-git-48ng</id>
-        <link href="https://dev.to/serdigital64/implementing-infrastructure-as-code-with-ansible-and-git-48ng"/>
-        <updated>2021-10-01T22:17:04.000Z</updated>
-        <summary type="html"><![CDATA[What is "infrastructure-as-code"?
+        <title type="html"><![CDATA[Belajar Linux OS - #7 Command Line (atau) Shell]]></title>
+        <id>https://dev.to/rizkiamr/belajar-linux-os-7-command-line-atau-shell-4ao7</id>
+        <link href="https://dev.to/rizkiamr/belajar-linux-os-7-command-line-atau-shell-4ao7"/>
+        <updated>2021-10-02T15:45:57.000Z</updated>
+        <summary type="html"><![CDATA[Linux Command Line atau Shell adalah process dari OS yang memungkinkan kita untuk mengatur komputer dengan menggunakan perintah-perintah sebagai text interface.
+Pada Desktop Environment modern, tidak terlalu penting juga menggunakan Shell.
+Tapi kebanyakan tool-tool buat hacking itu berbasis CLI dan jika kita mau belajar hacking, hukumnya fardhu 'ain (sangat wajib) buat terbiasa di "dunia hitam" eh Shell terminal maksudnya dan juga wajib tahu di luar-kepala tentang perintah dasar dan perintah advance dari Linux.
+Coba ketik perintah date
+$ date
+Sat  2 Oct 15:41:49 UTC 2021
 
-
-To keep the concept simple, think of your infrastructure as a picture (end-state) and the main characteristics (configuration) that you would use to describe it.
-Using this information you should be able to reproduce the picture any time you need, and the result should always be the same as the original.
-There are several tools and methods to implement this approach but the most important thing to consider is that you also need to adapt your management procedures to switch from the traditional imperative model to the infrastructure-as-code declarative model.
-To successfully implement infrastructure-as-code special attention must be paid to the selection of supporting tools and the definition of the conceptual model that will represent the managed environ…]]></summary>
+Maka akan muncul jam dan tanggal seperti contoh di atas.
+Pada series Belajar Linux Commands kita akan belajar tentang macam-macam perintah Linux yang wajib kita tahu jika kita ingin menjadi hacker xD.
+Seperti Desktop Environment dan Aplikasinya, Linux OS juga bisa diotak-atik sesuai selera kita masing-masing.
+Nah hasil otak-atikan kita itu tadi yang disebut sebagai Linux Distributions atau Distro.]]></summary>
         <author>
-            <name>SerDigital64</name>
+            <name>Rizky Amrullah</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Belajar Linux OS - #6 Desktop Environment (DE) dan Aplikasi]]></title>
+        <id>https://dev.to/rizkiamr/belajar-linux-6-desktop-environment-de-dan-aplikasi-ojl</id>
+        <link href="https://dev.to/rizkiamr/belajar-linux-6-desktop-environment-de-dan-aplikasi-ojl"/>
+        <updated>2021-10-02T15:26:21.000Z</updated>
+        <summary type="html"><![CDATA[Komponen Desktop Environment (DE) dari Linux OS adalah "sesuatu" yang kita bisa berinteraksi dengannya melalui aplikasi bawaan (atau yang kita install sendiri) seperti file manager untuk me-manage file, atau web browser untuk internetan. 
+Kita ga perlu bingung, karena banyak Desktop Environment yang bisa kita pilih sesuai selera kita.
+Beberapa yang umum digunakan adalah GNOME, KDE, LKDE dan MATE Desktop.
+Pada environment server, biasanya kita ngga akan menjumpai Desktop Environment disana, tapi jika kita maksa buat nge-install, kita akan akan disuguhi tampilan desktop lengkap dengan icon-icon dan aplikasi-aplikasi yang bisa kita klik dan start.
+Aplikasi-aplikasi yang biasanya sudah terinstall (bawaan) adalah aplikasi office, software untuk pemrosesan kata (seperti Word), aplikasi email dan game seperti Minecraft, Solitare dan Chess.]]></summary>
+        <author>
+            <name>Rizky Amrullah</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Belajar Linux OS - #5 Graphical Server]]></title>
+        <id>https://dev.to/rizkiamr/belajar-linux-os-5-graphical-server-1jem</id>
+        <link href="https://dev.to/rizkiamr/belajar-linux-os-5-graphical-server-1jem"/>
+        <updated>2021-10-02T15:18:37.000Z</updated>
+        <summary type="html"><![CDATA[Ketika Linux OS pertama kali dikenalkan, hampir seluruhnya berbasis CLI (Command Line Interface), yang membuat Linux OS belum sepopuler Graphical OS lainnya seperti Windows atau MacOS X pada saat itu.
+Akan tetapi, sekarang kebanyakan Linux OS datang dengan graphical server yang dikenal dengan X server atau X.
+X server memungkinkan untuk menampikan tampilan grafis ke layar monitor kita.
+Pada environment server, biasanya tidak terinstall X server, tapi jika kita memaksa menginstall X server, kita akan disuguhi oleh login screen dan full GUI (seperti windows dan MacOS) yang bisa di-klik. Pada distro tertentu, kita mungkin perlu mengetikkan perintah startx untuk mulai menjalankan X server.]]></summary>
+        <author>
+            <name>Rizky Amrullah</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Belajar Linux OS - #4 Daemons]]></title>
+        <id>https://dev.to/rizkiamr/belajar-linux-os-4-daemons-jc</id>
+        <link href="https://dev.to/rizkiamr/belajar-linux-os-4-daemons-jc"/>
+        <updated>2021-10-02T15:11:16.000Z</updated>
+        <summary type="html"><![CDATA[(baca: "Day-mens"), adalah bagian dari OS juga, dan daemons adalah nama lain dari process-process yang berjalan/bekerja di belakang layar (background).
+Contohnya, ketika kita login atau ketika kita mengetikkan perintah print, login atau printing service itu jalan sebagai sebuah daemon.
+Di Linux, kita bisa liat daftar process-process yang sedang berjalan dengan mengetikkan perintah ps -ef. Tiap process punya identitas uniknya masing-masing yang disebut PID yang berarti Process IDentifier.
+Salah satu process yang krusial di Linux adalah init process, yang bisa dibilang sebagai kakek dari semua process-process, kenapa kok dibilang kakek? Karena setiap process yang jalan, kecuali kernel, adalah (child) turunan dari init process ini dan bisa dilacak ulang sampai init. Kernelnya sendiri jalan di…]]></summary>
+        <author>
+            <name>Rizky Amrullah</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Proactive monitoring with Angular and Datadog]]></title>
+        <id>https://dev.to/iacons/proactive-monitoring-with-angular-and-datadog-265h</id>
+        <link href="https://dev.to/iacons/proactive-monitoring-with-angular-and-datadog-265h"/>
+        <updated>2021-10-02T15:09:57.000Z</updated>
+        <summary type="html"><![CDATA[Being proactive is essential for any application whether that concerns the API, the web or mobile application. You can capture errors as they happen, with zero involvement from application users. Then of course you can work to fix the error, contact end users or whatever might seem appropriate on each case.
+As part of this article we examine how we can setup proactive monitoring using Angular 12 and Datadog, by following two different approaches. The implementation should be similar for React and Vue and of course this can be adjusted to use Sentry or any other Datadog alternative.
+Datadog is mostly popular as a cloud and infrastructure monitoring but it can be also used as a centralized logging platform. Personally I find that you get better application insights when you combine infrastru…]]></summary>
+        <author>
+            <name>Iacovos Constantinou</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Belajar Linux OS - #3 Bootloader]]></title>
+        <id>https://dev.to/rizkiamr/bootloader-3o1m</id>
+        <link href="https://dev.to/rizkiamr/bootloader-3o1m"/>
+        <updated>2021-10-02T14:41:41.000Z</updated>
+        <summary type="html"><![CDATA[Bootloader adalah "sesuatu" yang bikin komputer kita menyala (boot up).
+Kita mungkin sering melihat pesan sekilas pada monitor kita seperti "Your computer is starting up".
+Ketika pesan sekilas ini muncul, bagian bootloader dari OS sedang bekerja di belakang layar (background), memastikan komputer kita siap dipake.
+Bootloader adalah bagian dari Master Boot Record (MBR) yang mana MBR adalah bagian dari OS.
+Bootloader itu kerjanya ngapain sih? Dia itu kerjanya nge-load OS ke RAM komputer kita.
+Umumnya Bootloader Linux itu berisi:
+GRUB (GRand Unified Bootloader)
+LILO (LInux LOader)
+Syslinux yang mana campuran dari banyak bootloader-bootloader ringan yang bikin komputer kita berhasil boot dari berbagai macam metode, seperti dari CD, DVD, USB bahkan dari LAN.
+Untuk mengetahui apa itu bootloader …]]></summary>
+        <author>
+            <name>Rizky Amrullah</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Belajar Linux OS - #2 Kernel]]></title>
+        <id>https://dev.to/rizkiamr/kernel-4od7</id>
+        <link href="https://dev.to/rizkiamr/kernel-4od7"/>
+        <updated>2021-10-02T13:46:18.000Z</updated>
+        <summary type="html"><![CDATA[Kernel adalah inti dari Linux OS dan kernel juga kadang-kadang disebut "Linux" itu sendiri.
+Kernel bekerja mengatur processor komputer, memory dan device-device yang tersambung ke komputer seperti DVD Drive, USB Drive, keyboard, dll.
+Ketika hacker membuat malware yang menginfeksi dan merusak kernel Linux, menyebabkan yang namanya "Kernel Panic" dan itu nggak main-main btw.
+Untuk mengetahui nama dan detail dari sistem operasi Linux, kita bisa pake perintah berikut (salah satu).
+uname -r dan uname -a
+
+lsb_release -a
+cat /etc/os-release
+cat /proc/version
+dmesg | grep 'Linux'
+Kita coba bedah satu-satu.
+uname -r dan uname -a
+
+
+
+
+$ uname -r
+4.4.0-193-generic
+$ uname -a
+Linux host01 4.4.0-193-generic #224-Ubuntu SMP Tue Oct 6 17:15:28 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+Ketika kita mengetikk…]]></summary>
+        <author>
+            <name>Rizky Amrullah</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AWS Serverless with NestJS : blank-app]]></title>
+        <id>https://dev.to/alex_bdet/aws-serverless-with-nestjs-blank-app-44af</id>
+        <link href="https://dev.to/alex_bdet/aws-serverless-with-nestjs-blank-app-44af"/>
+        <updated>2021-10-02T13:34:18.000Z</updated>
+        <summary type="html"><![CDATA[Good day !
+Coming home from the Devoxx conference in Paris, the main technology that I wanted to try out and explore was serverless.
+Just to clarify what serverless is in a few words :
+Serverless computing is a method of providing backend services on an as-used basis. Servers are still used, but a company that gets backend services from a serverless vendor is charged based on usage, not a fixed amount of bandwidth or number of servers. (Source : cloudflare)
+I've been playing around with NestJS (a NodeJS framework) for some time now and wanted to try building a server using AWS lambda functions using NestJS for the backend of an application.
+To speed up the process and have a nice base to kickstart my projects, I've built a simple repository (usable as a template on Github). It contains the…]]></summary>
+        <author>
+            <name>Alex Bdet</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Adding charts using the Highcharts library to an Angular application]]></title>
+        <id>https://dev.to/rodrigokamada/adding-charts-using-the-highcharts-library-to-an-angular-application-2bbl</id>
+        <link href="https://dev.to/rodrigokamada/adding-charts-using-the-highcharts-library-to-an-angular-application-2bbl"/>
+        <updated>2021-10-02T13:13:57.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+Angular is a development platform for building WEB, mobile and desktop applications using HTML, CSS and TypeScript (JavaScript). Currently, Angular is at version 12 and Google is the main maintainer of the project.
+highcharts is a rich and interactive charts library based on SVG.
+Before you start, you need to install and configure the tools:
+git
+Node.js and npm
+Angular CLI
+IDE (e.g. Visual Studio Code)
+1. Let's create the application with the Angular base structure using the @angular/cli with the route file and the SCSS style format.
+ng new angular-highcharts
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]
+CREATE angular-highcharts/README.md (1063 bytes)
+CR…]]></summary>
+        <author>
+            <name>Rodrigo Kamada</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Belajar Linux OS - #1 Apa itu Linux?]]></title>
+        <id>https://dev.to/rizkiamr/linux-os-apa-itu-linux-2m7l</id>
+        <link href="https://dev.to/rizkiamr/linux-os-apa-itu-linux-2m7l"/>
+        <updated>2021-10-02T13:10:32.000Z</updated>
+        <summary type="html"><![CDATA[Kebanyakan dari kita pasti tidak asing dengan Sistem Operasi (OS) seperti Windows 10 atau MacOS X.
+Seperti Windows dan MacOS, Linux adalah sistem operasi juga.
+Namun tidak seperti Windows dan MacOS, Linux bersifat open-source dan dipakai oleh banyak device, seperti smartphone, tablet, PC, bahkan supercomputer.
+Sistem Operasi Linux terdiri dari beberapa bagian, diantaranya: 
+Kernel
+Bootloader
+Daemons
+Graphical server
+Desktop Environment (DE) dan Aplikasi
+Command Line atau Shell]]></summary>
+        <author>
+            <name>Rizky Amrullah</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Nodejs Best Practices(part 1- Introduction)]]></title>
+        <id>https://dev.to/ogagacodes/nodejs-best-practices-part-1-introduction-49fl</id>
+        <link href="https://dev.to/ogagacodes/nodejs-best-practices-part-1-introduction-49fl"/>
+        <updated>2021-10-02T12:27:19.000Z</updated>
+        <summary type="html"><![CDATA[I once heard a colleague ask, 'how do you survive with javascript(js), so many libraries. Nodejs, Reactjs, Angularjs, Vuejs, expressjs. Terrible, I pity you guys. Infact I know there is probably another js cooking', laughing hysterically. 
+
+I forgave my colleague for saying nodejs is a Javascript library, because he is wrong and nodejs is not a Javascript library.
+Nodejs is runtime environment for javascript on the server. It uses the javascript v8 engine, hence it's a single threaded, event driven environment. 
+Tools you Need
+Nodejs:
+Download at Get Nodejs
+The instructions are quite clear, but if you have any 
+difficulty, please drop in comment section below
+A Code Editor (I will use vscode throughout this tutorial)
+Download at Get VsCode.
+I really hope most of those reading this already …]]></summary>
+        <author>
+            <name>ADJARO OGAGA</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[remove all the node_modules directories from machine | Free Up Space]]></title>
+        <id>https://dev.to/hasone/remove-all-the-nodemodules-directories-from-machine-free-up-space-985</id>
+        <link href="https://dev.to/hasone/remove-all-the-nodemodules-directories-from-machine-free-up-space-985"/>
+        <updated>2021-10-02T11:57:20.000Z</updated>
+        <summary type="html"><![CDATA[we as developer have hundred of project in the machine, but have you've ever wondered how much space node_modules takes on single project and what happens when you're running out of free space. this will help you to make some free space safely.
+before removing let's show all the node_modules directories and its memory. cause the removing process is irrevisable so we need to make sure. first cd into a specific directory where most of the projects are:
+LINX/MACOS
+$ cd Dev/
+$ find . -name "node_modules" -type d -prune | xargs du -chs
+
+
+WINDOW
+$ cd Dev 
+$ FOR /d /r . %d in (node_modules) DO @IF EXIST "%d" echo %d"
+
+now let's remove all the node_modules directories from all the projects. make sure that you're inside a directory where you're comfortable removing all the node_modules cause this action is irereversable:
+LINUX
+$ cd Dev
+$ find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
+
+WINDOW
+$ cd Dev 
+$ FOR /d /r . %d in (node_modules) DO @IF EXIST "%d" rm -rf "%d"
+
+a single node_modules took about 400MB - 90MB in my cases and total space it took around 10gigabyte - 15gigabyte. it will help you to free up some space in your machine if you have limited SSD, but if you've removed from all the directories, you have to install it again for the project you're working on, keep this in mind.
+I hope you enjoyed this article and learnt something valuable, thank you all and stay blessed!
+Me: https://ericgit.me]]></summary>
+        <author>
+            <name>HasOne</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Running MongoDB on Docker Compose]]></title>
+        <id>https://dev.to/abhishekjaindba/running-mongodb-on-docker-compose-ld0</id>
+        <link href="https://dev.to/abhishekjaindba/running-mongodb-on-docker-compose-ld0"/>
+        <updated>2021-10-02T11:44:34.000Z</updated>
+        <summary type="html"><![CDATA[Running MongoDB on Docker Compose
+
+In this article, we will discuss how DBA can run a MongoDB instance using docker-compose. It’s very easy and quite flexible to handle. According to my opinion docker-compose removes all the installation and configuration pain when you need a test instance immediately. In a non-production environment for proof of concepts (POC) environment, you can easily use MongoDB on docker-compose.
+High-Level Steps for Installation & Configuration
+Install Docker 
+mkdir -p /opt/docker_com_repo
+cd /opt/docker_com_repo
+vi docker-compose.yml
+Copy Below docker compose code for MongoDB and paste in side the docker-compose.yml
+read more : https://thedbadmin.com/running-mongodb-on-docker-compose/]]></summary>
+        <author>
+            <name>abhishekjaindba</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Discovering Vim : Netrw]]></title>
+        <id>https://dev.to/ps173/discovering-vim-netrw-me8</id>
+        <link href="https://dev.to/ps173/discovering-vim-netrw-me8"/>
+        <updated>2021-10-02T10:09:05.000Z</updated>
+        <summary type="html"><![CDATA[Do you use a file explorer in vim ? I guess it probably is something like this, this or maybe this. While all these are fancy looking with icons and stuff there is a file tree and explorer in vim already. It is not the best file-explorer honestly but it works and is faster than most of these. Yes I am talking about the good ol' netrw. 
+Now the stuff I am talking here is very limited to basic needs only and you can obviously see :h netrw if you want to know more. 
+So anyway here's a breif guide. Firstly let's talk what should I be able to do with any file explorer. 
+add file and directory 
+delete file and directory 
+So well let's start with opening some new directory called tmp. Now in this tmp directory suppose I want to add a file. So In vim I do :Explore. Now explore opens netrw for the …]]></summary>
+        <author>
+            <name>Pratham Sharma</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How Internet Message Access Protocol(IMAP) works in Node JS]]></title>
+        <id>https://dev.to/venkat3750/how-internet-message-access-protocol-imap-works-in-node-js-1jh5</id>
+        <link href="https://dev.to/venkat3750/how-internet-message-access-protocol-imap-works-in-node-js-1jh5"/>
+        <updated>2021-10-02T09:18:11.000Z</updated>
+        <summary type="html"><![CDATA[Hello my dear peers 😃! Hope you're doing well. Welcome to my tech blog and this time we are discussing about IMAP package and it's uses in Node JS with real time code snippet examples. In this, first will only focus on reading emails.
+Let's open our terminal and hit npm install node-imap. to install IMAP package.
+In this blog, we are mainly focusing on how to read email attachments based on the DATE RANGE, FROM particular email address and it's SUBJECT.
+Let's see from the below example code which fetches first 3 email messages from the mail box.
+var Imap = require('node-imap'),
+    inspect = require('util').inspect;
+
+var imap = new Imap({
+  user: 'mygmailname@gmail.com',
+  password: 'mygmailpassword',
+  host: 'imap.gmail.com',
+  port: 993,
+  tls: true
+});
+
+function openInbox(cb) {
+  imap.…]]></summary>
+        <author>
+            <name>Venkat3750</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Get started with github]]></title>
+        <id>https://dev.to/nikhil27b/get-started-with-github-2647</id>
+        <link href="https://dev.to/nikhil27b/get-started-with-github-2647"/>
+        <updated>2021-10-02T07:43:13.000Z</updated>
+        <summary type="html"><![CDATA[Hey guys hacktoberfest is started if you don’t know about GitHub or what is GitHub how its use so this is useful post for you.
+GitHub is a web-based interface that uses Git, the open source version control software that lets multiple people make separate changes to web pages at the same time. As Carpenter notes, because it allows for real-time collaboration, GitHub encourages teams to work together to build and edit their site content.
+1.go to github.com and simple create your account .
+1.Download git from browser.
+https://git-scm.com/ .
+1.Now we are Create folder for your project folder use this command (mkdir Demo).
+1.Use command ( git init  )in terminal .
+https://github.com//Demo.git
+Congratulations! 🎉🎉🎉 You have create your 1st requst to git now if you want to learn more comment git at this post or simple check github docs .
+A collabration with Geeky4u Did you find it helpful let me know in comments.]]></summary>
+        <author>
+            <name>Nikhil Bobade</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[blocked by CORS policy? CORS Proxy is Solution 😎]]></title>
+        <id>https://dev.to/rajeshj3/blocked-by-cors-policy-cors-proxy-is-solution-5ck8</id>
+        <link href="https://dev.to/rajeshj3/blocked-by-cors-policy-cors-proxy-is-solution-5ck8"/>
+        <updated>2021-10-02T07:18:27.000Z</updated>
+        <summary type="html"><![CDATA[❓ What is CORS?
+
+
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading of resources. CORS also relies on a mechanism by which browsers make a “preflight” request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.
+
+The solution to bypass CORS is to use a Proxy. A Proxy server, that forwards your request as it is.
+But, problems with a Proxy Server is to manage the server, optimize the server, handle traffic, use of Kubernetes to minimize bills, and what n…]]></summary>
+        <author>
+            <name>Rajesh Joshi</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[falcon-cli 4 post-quantum file sigs]]></title>
+        <id>https://dev.to/chiefbiiko/falcon-cli-4-post-quantum-file-sigs-57oi</id>
+        <link href="https://dev.to/chiefbiiko/falcon-cli-4-post-quantum-file-sigs-57oi"/>
+        <updated>2021-10-02T06:37:51.000Z</updated>
+        <summary type="html"><![CDATA[Post-quantum cryptography is being developed, benchmarked, tested, discussed, and elaborated... Let me join in on that with a little practical software piece. falcon-cli is a CLI tool to sign and verify files with the post-quantum signature scheme FALCON, a round 3 finalist for digital signature algorithms in NIST's post-quantum cryptography standardization competition.
+The tool supports keygen, file sign and verify ops, as such it is complete and ready for common file signature use cases. Imagine - now you can sign your Github Releases with (probably) post-quantum safe signatures and chill (4ever)...
+Usage should be straightforward when glimpsin' over the README. The default key location shouldn't be surprisin' as well: ~/.falcon-cli/(public|secret).key. Also, if explicit input or output files are omitted, the tool falls back to stdin and stdout for IO.
+In case of any issues get at me on GitHub.]]></summary>
+        <author>
+            <name>chiefbiiko</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Managing Secrets with Doppler in Django]]></title>
+        <id>https://dev.to/tammibriggs/managing-secrets-with-doppler-in-django-585l</id>
+        <link href="https://dev.to/tammibriggs/managing-secrets-with-doppler-in-django-585l"/>
+        <updated>2021-10-02T05:13:11.000Z</updated>
+        <summary type="html"><![CDATA[Summary
+
+
+Using .env files to manage application config and secrets is a step forward from hard-coding secrets, but there are also security risks and issues relating to the synchronization and manual management of .env files across different environments. This tutorial introduces Doppler, a solution to secret management and synchronization.
+In this article, we have a Django application that has its secrets defined in a .env file. We will look at how we can move those secrets from the traditional .env file to Doppler.
+Managing secrets and configs in Doppler keeps them in sync across different environments. You only have to define your secrets once and Doppler acts as a central source of truth for your secrets, saving you the stress of having to re-define them in every environment or share t…]]></summary>
+        <author>
+            <name>Taminoturoko Briggs</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Contribute to your favourite resume builder this Hacktoberfest! 🎆]]></title>
+        <id>https://dev.to/viveknigam3003/contribute-to-your-favourite-resume-builder-this-hacktoberfest-3k0g</id>
+        <link href="https://dev.to/viveknigam3003/contribute-to-your-favourite-resume-builder-this-hacktoberfest-3k0g"/>
+        <updated>2021-10-02T04:32:50.000Z</updated>
+        <summary type="html"><![CDATA[Resuminator is participating in Hacktoberfest 2021, hosted by DigitalOcean 🥳
+We invite all developers and designers to contribute to Resuminator this October 2021 by opening new issues, sharing your thoughts in our discussions, or by submitting a pull request (PR) against any Hacktoberfest labeled issue 🙌🏻
+For your convenience, we have opened an issue here to track all the Hacktoberfest related issues 😄
+First of all we'd be super glad to see your interest in participating in this year's Hacktoberfest with us.
+We are accepting code contributions on mainly three repositories
+resuminator - The main web-app and website codebase.
+resuminator-server -
+The backend code which handles the data retrieval for the app.
+docs - Documentation and Wiki for Resuminator and its products
+(The line you are reading comes from this codebase)
+For a quick overview of tech stack - we use React, Next JS, TypeScript, Node JS and MongoDB along with other
+here
+In case of any doubts or queries, feel free to tag any of our maintainers on any of the GitHub issues for their domain.
+@viveknigam3003 - Frontend, Website, Design, General Issues
+
+
+@merrcury - Backend, DevOps, Dev Setup, Docs
+If you want to reach out to us, you can also ping us on Twitter @resuminator OR reach out to us on our Discord Server using discord.resuminator.in
+See you there! ✌️ 
+Happy Hacktoberfest! 🎉]]></summary>
+        <author>
+            <name>Vivek Nigam</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hacktoberfest 2021]]></title>
+        <id>https://dev.to/techgirl007/hacktoberfest-2021-4i71</id>
+        <link href="https://dev.to/techgirl007/hacktoberfest-2021-4i71"/>
+        <updated>2021-10-02T04:11:25.000Z</updated>
+        <summary type="html"><![CDATA[THE GOOD, THE BAD and THE UGLY
+I am going to be honest, I have been focusing on completing my law degree.  The last 2 years of this degree has been 'brutal'. As such, I have not had the time to focus on the fun stuff like coding.  So, Hacktoberfest is a big deal for me.  It not only gives the opportunity to 'stay in the game of coding' but it also gives me that little breather from studies.
+I have participated in 2 Hacktoberfest.  Last year, I ran an event to inspire other people to get involved with Hacktoberfest.  Over 250 people showed up for an online tutorial. *SHOCK 
+Notably, this year has had its challenges.  I know I am not the only one.  The hard times teaches us compassion and empathy. So, for me, Hacktoberfest is about joining a fun community, celebrating a month of code, inspir…]]></summary>
+        <author>
+            <name>TechGirl007</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Resolving merge conflicts]]></title>
+        <id>https://dev.to/ritikbheda/resolving-merge-conflicts-4fh4</id>
+        <link href="https://dev.to/ritikbheda/resolving-merge-conflicts-4fh4"/>
+        <updated>2021-10-02T03:55:23.000Z</updated>
+        <summary type="html"><![CDATA[I continued working on my commandline-ssg application this week, adding two new features and performing git merge on parallel branches. The features were simple to implement, and then when I sought to conduct a three-way recursive merge for my readme file, I only had a few of conflicts to deal with.
+I selected two features to work on for this week. the features are as follows:
+I started it by creating issue. Then I created a branch called issue-10. I then started with coding and added exit statements on every places where program do not run further or do not run as expected. I committed the code and later I updated the README.md file and committed it as well.
+I started by creating issue. Then I created a branch called issue-11. I then started with coding and my solution to it was introduci…]]></summary>
+        <author>
+            <name>Ritik Bheda</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Meta Resume Challenge]]></title>
+        <id>https://dev.to/wheelerswebsites/meta-resume-challenge-5a1a</id>
+        <link href="https://dev.to/wheelerswebsites/meta-resume-challenge-5a1a"/>
+        <updated>2021-10-02T03:28:59.000Z</updated>
+        <summary type="html"><![CDATA[Backstory
+
+
+I have been an advocate for the #CloudGuruChallenge since Forrest Brazeal started it with The Cloud Resume Challenge. Before his announcement, I would often find myself thinking of side projects that I could build to enhance my skills, yet that usually didn't turn out well. Now acloudguru provides a bunch of these awesome challenges regularly that I can really dive into. 
+https://acloudguru.com/blog/tag/cloudguruchallenge
+Unfortunately, when actively participating in literally every challenge that is released by acloudguru you may find some overlap. This existence of this overlap is precisely how I dreamt up this challenge. 
+More specifically, I am referring to three challenges in particular. 
+Resume on AWS Challenge
+
+
+Resume on Azure Challenge
+
+
+Resume on GCP Challenge
+
+
+
+This…]]></summary>
+        <author>
+            <name>Justin Wheeler</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TypeScript 4.5 Shortens Path to Safer Standard Library]]></title>
+        <id>https://dev.to/uhyo_/typescript-4-5-shortens-path-to-safer-standard-library-256m</id>
+        <link href="https://dev.to/uhyo_/typescript-4-5-shortens-path-to-safer-standard-library-256m"/>
+        <updated>2021-10-02T02:08:39.000Z</updated>
+        <summary type="html"><![CDATA[Amongst the new features of TypeScript 4.5, support for loading external packages in place of built-in type definitions (standard library) is particularly of note. The original intent seems to be externalizing lib.dom.d.ts as @types/web so that users can have separate upgrading schedule for TypeScript's core type definitions and one for DOM. The type definitions for DOM are fragile and often breaks backwards compatibility, probably because they are auto-generated.
+Thanks to this nicely generalized solution for externalized standard library, better-typescript-lib, a library developed by the author, also receives huge benefit. Particularly, installation is far easier starting from better-typescript-lib v2 that supports TS 4.5 and later.
+better-typescript-lib is a package that provides altern…]]></summary>
+        <author>
+            <name>🈚️うひょ🤪</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to configure a `lib` option of tsconfig.json for React Native]]></title>
+        <id>https://dev.to/retyui/how-to-configure-a-lib-option-of-tsconfig-json-for-react-native-27oi</id>
+        <link href="https://dev.to/retyui/how-to-configure-a-lib-option-of-tsconfig-json-for-react-native-27oi"/>
+        <updated>2021-10-02T01:41:00.000Z</updated>
+        <summary type="html"><![CDATA[By default official react native typescript template and @tsconfig/react-native uses "lib": ["es2017"]
+If you want to set newer level the next tables can help you identify an individual library component or to know what iOS version supports new functions/proposals
+Note:
+React Native on Android will use a JavaScriptCore version from npm jsc-android 
+
+
+React Native on iOS will use JavaScriptCore that provided by operating system. So, different iOS versions include a different JSC engine
+
+
+
+
+
+
+
+  
+  
+  es2020
+
+
+
+Android (RN version)
+0.60.x
+0.61.x
+0.62.x
+0.63.x
+0.64.x
+0.65.x
+
+
+
+
+
+BigInt (es2020.bigint)
+❌
+❌
+❌
+❌
+❌
+❌
+
+
+
+BigInt64Array (es2020.bigint)
+❌
+❌
+❌
+❌
+❌
+❌
+
+
+
+BigUint64Array (es2020.bigint)
+❌
+❌
+❌
+❌
+❌
+❌
+
+
+
+Promise.allSettled() (es2020.promise)
+❌
+❌
+❌
+❌
+❌
+❌
+
+
+
+str.matchAll(/regex/g) (es2020.stri…]]></summary>
+        <author>
+            <name>David Narbutovich</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Override Part of an Existing Type in Typescript]]></title>
+        <id>https://dev.to/bionicjulia/override-part-of-an-existing-type-in-typescript-gh</id>
+        <link href="https://dev.to/bionicjulia/override-part-of-an-existing-type-in-typescript-gh"/>
+        <updated>2021-10-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I've recently been on a mission to eliminate all Typescript errors in our code base at work, and have been steadily chipping away at them systematically, during any downtime I get. I used to dislike Typescript when I first came across it, but really love it now and get an immense sense of satisfaction watching the red squigglies disappear as I work through each Typescript issue, bit by bit. 🤓
+It was whilst doing this last week that I came across a situation that was new to me. What I was faced with was this...
+I have a component that takes in a prop item which has an interface IItem defined as:
+interface IItem extends PickerItemProps {
+  iconSource?: ImageSourcePropType;
+}
+
+// ...and separately in another file, the React Native library provides this interface
+export interface PickerItemPr…]]></summary>
+        <author>
+            <name>Bionic Julia</name>
         </author>
     </entry>
     <entry>
@@ -151,92 +1108,6 @@ build:
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Deploy angular docker app to own server using GitLab pipeline]]></title>
-        <id>https://dev.to/sats268842/deploy-angular-docker-app-to-own-server-using-gitlab-pipeline-54pl</id>
-        <link href="https://dev.to/sats268842/deploy-angular-docker-app-to-own-server-using-gitlab-pipeline-54pl"/>
-        <updated>2021-10-01T20:31:48.000Z</updated>
-        <summary type="html"><![CDATA[Here in test environment, it will deploy into aws s3 bucket and in production evironment, it will deploy docker image into own server.
-Gitlab container registry is used for building and storing docker image, then finally pull docker image into server.
-.gitlab.-ci.yml
-image: node:14
-
-variables:
-  GIT_DEPTH: '0'
-  DOCKER_HOST: tcp://docker:2375/
-before_script:
-  - apt-get update
-  - apt-get install zip
-
-stages:
-  - install_dependencies
-  - build
-  - docker-image-creation
-  - deploy
-
-
-install_dependencies:
-  stage: install_dependencies
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - node_modules/
-      - dist/
-  script:
-    - npm ci
-  only:
-    changes:
-      - package-lock.json
-
-build:
-  stage: build
-  script:
-    - npm run build:ssr
-    - cd dist/${PROJECT_NAME}
-    - ls -al -F
- …]]></summary>
-        <author>
-            <name>Santhosh Thomas</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Update OpenSSL to 3.0 on CentOS7]]></title>
-        <id>https://dev.to/nikolastojilj12/update-openssl-to-3-0-on-centos7-150o</id>
-        <link href="https://dev.to/nikolastojilj12/update-openssl-to-3-0-on-centos7-150o"/>
-        <updated>2021-10-01T20:02:50.000Z</updated>
-        <summary type="html"><![CDATA[Prerequisites
-
-
-Use sudo when needed.
-Install perl-IPC-Cmd and perl-Test-Simple:
-sudo yum install perl-IPC-Cmd perl-Test-Simple
-
-Go to OpenSSL's download page and copy the link to the latest version. At this time it's 3.0.0. Then run (adapt the command to reflect your version):
-cd /usr/src
-wget https://www.openssl.org/source/openssl-3.0.0.tar.gz
-tar -zxf openssl-3.0.0.tar.gz
-rm openssl-3.0.0.tar.gz
-
-Compile, make, test and install OpenSSL:
-cd /usr/src/openssl-3.0.0
-./config
-make
-make test
-make install
-
-Create symlinks to libssl and libcrypto:
-ln -s /usr/local/lib64/libssl.so.3 /usr/lib64/libssl.so.3
-ln -s /usr/local/lib64/libcrypto.so.3 /usr/lib64/libcrypto.so.3
-
-Test the installed version with:
-openssl version
-
-You should get something like this:
-OpenSSL 3.0.0 7 sep 2021 (Library: OpenSSL 3.0.0 7 sep 2021)]]></summary>
-        <author>
-            <name>Nikola Stojiljkovic</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Saving Netlify App Secrets using Doppler]]></title>
         <id>https://dev.to/orighoprecious/saving-netlify-app-secrets-using-doppler-3a4n</id>
         <link href="https://dev.to/orighoprecious/saving-netlify-app-secrets-using-doppler-3a4n"/>
@@ -305,53 +1176,6 @@ Access your Atlas dashboard. Then, …]]></summary>
 The post Using the platform appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <author>
             <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Making Kubernetes Operations Easy with kubectl Plugins]]></title>
-        <id>https://dev.to/martinheinz/making-kubernetes-operations-easy-with-kubectl-plugins-3iok</id>
-        <link href="https://dev.to/martinheinz/making-kubernetes-operations-easy-with-kubectl-plugins-3iok"/>
-        <updated>2021-10-01T18:25:29.000Z</updated>
-        <summary type="html"><![CDATA[kubectl is powerful tool that allows you to perform literally any and all Kubernetes-related tasks. Regardless of whether you need to just list pods, debug node, manage RBAC or whatever else, kubectl can do it. Some of these common tasks however, can be quite clunky or might include many steps that might take considerable time to perform. In other cases the output of kubectl might not be exactly readable or might include lot of noise, which might be very annoying, especially if you're for example trying to debug something, in which case time is of essence. So, why waste time on repetitive, common, time consuming tasks when we can avoid it. Asking how? Well, let me introduce you to kubectl plugins!
-kubectl ships with limited set of core features which don't cover all the tasks that Kubernet…]]></summary>
-        <author>
-            <name>Martin Heinz</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A guide to deploying a Static React App on Akash Network Cloud | Tekraze]]></title>
-        <id>https://dev.to/balvinder294/a-guide-to-deploying-a-static-react-app-on-akash-network-cloud-tekraze-51ie</id>
-        <link href="https://dev.to/balvinder294/a-guide-to-deploying-a-static-react-app-on-akash-network-cloud-tekraze-51ie"/>
-        <updated>2021-10-01T18:07:21.000Z</updated>
-        <summary type="html"><![CDATA[We are gonna show, how to deploy a static react app built using React on Akash Network which is a Decentralized Cloud. This will help you deploy other web applications built with the same or different technologies on Akash Decloud Network.
-So, what we will need.
- React App
- DockerHub Account
- Akash Wallet Setup with some AKT Token
-
-
-
-Check the article below on reading how to set up Akash wallet and other variables.
-https://blog.dehazelabs.com/deploy-docker-apps-on-akash-decloud-network-ca40d2386b9a
-So, I have already built one app in React + TS when I was trying to learn functional react (I am from angular background). The GitHub repo can be found at the below link. You can skip this step if you have your own app.
-https://github.com/balvinder294/My-React-Resume/tree/dockerized
-Download sta…]]></summary>
-        <author>
-            <name>Balvinder Singh</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why You Need Static Code Analysis]]></title>
-        <id>https://dev.to/kirekov/why-you-need-static-code-analysis-28po</id>
-        <link href="https://dev.to/kirekov/why-you-need-static-code-analysis-28po"/>
-        <updated>2021-10-01T17:00:53.000Z</updated>
-        <summary type="html"><![CDATA[Programming is becoming more and more domain-oriented. There are hundreds of frameworks and dozens of libraries that help to overcome the complexity of low-level details in order to focus on something more important and even more sophisticated. I’m talking about business logic. And today I’ll try to convince you that static code analysis is the one thing that not only can make your coding life more pleasant but help the business to build more robust processes as well.
-Let’s make something clear. What does business value the most in a software system? Is it performance? The modern technologies? Or maybe documentation? Actually, business cares about two things.
-The income the software gets.
-The maintainability.
-The first one is pretty obvious. The essential goal of any company is to earn mon…]]></summary>
-        <author>
-            <name>Semyon Kirekov</name>
         </author>
     </entry>
     <entry>
@@ -517,70 +1341,6 @@ The post Working With Built-in GraphQL Directives appeared first on CSS-Tricks. 
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Jaeger vs Elastic APM - key differences, features and alternatives]]></title>
-        <id>https://dev.to/signoz/jaeger-vs-elastic-apm-key-differences-features-and-alternatives-146b</id>
-        <link href="https://dev.to/signoz/jaeger-vs-elastic-apm-key-differences-features-and-alternatives-146b"/>
-        <updated>2021-10-01T13:03:36.000Z</updated>
-        <summary type="html"><![CDATA[Jaeger is an open-source end-to-end distributed tracing tool for microservices architecture. On the other hand, Elastic APM is an application performance monitoring system that is built on top of the ELK Stack (Elasticsearch, Logstash, Kibana, Beats). In this article, let's explore their key features, differences, and alternatives.
-Application performance monitoring is the process of keeping your app's health in check. APM tools enable you to be proactive about meeting the demands of your customers. There are many components to a good APM tool like metrics monitoring, distributed tracing, log management, alert systems, etc.
-Jaeger and Elastic APM are both popular tools in the domain of application performance monitoring. But both have different scope and use-cases.
-Jaeger was originally bu…]]></summary>
-        <author>
-            <name>Ankit Anand ✨</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why Most Programmers Prefer Mac or Linux Over Windows?]]></title>
-        <id>https://dev.to/nibodhdaware/why-most-programmers-prefer-mac-or-linux-over-windows-3mep</id>
-        <link href="https://dev.to/nibodhdaware/why-most-programmers-prefer-mac-or-linux-over-windows-3mep"/>
-        <updated>2021-10-01T12:55:40.000Z</updated>
-        <summary type="html"><![CDATA[Greetings again!! in the  last post I said I am going to start a new series of posts where I will teach all the basics of code where I will teach all the basic "ABC's" of code like variables, functions, constants, etc... Yeah, we are not gonna do it. reason being:
-I got a better idea for this idea (This sentence already makes me laugh 😆) and...
-I got writer's block while writing "variables in 5 different programming languages" and got this idea so I wrote this one.
-so I don't think "ABC's of code" will be happening any time soon...
-
-I personally own a Mac and it's been a few months since I got it and also have been a Windows user for 5 years before the Mac switch so I can say I have used both extensively. To get it straight I love MacOS will do anything to choose it over Windows laptops a…]]></summary>
-        <author>
-            <name>Nibodh Daware</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What’s New in Nuxt 3? Get A Complete Idea About It]]></title>
-        <id>https://dev.to/rlogical/what-s-new-in-nuxt-3-get-a-complete-idea-about-it-2opk</id>
-        <link href="https://dev.to/rlogical/what-s-new-in-nuxt-3-get-a-complete-idea-about-it-2opk"/>
-        <updated>2021-10-01T12:17:26.000Z</updated>
-        <summary type="html"><![CDATA[Before proceeding to the new features, know the present status of the Nuxt 3. After a lot of delays, finally, Nuxt 3 is going to release on 21st October in 2021. This is now officially announced at Nuxt Nation that it will launch at the mentioned date with a dedicated website page which is good news for all. It is now in the private beta, and access is provided to the development team as well as close partners of Vue core only. Moreover, it is worth mentioning the Nuxt website redesign and fresh branding identity.
-New Features of Nuxt 3
-As the release date of Nuxt 3 is out, everyone is curious about the improvements and new features that will come with Nuxt 3. All details about it are explained below.
-1. General Optimizations
-It brings several improvements and general optimizations. The co…]]></summary>
-        <author>
-            <name>Rlogical Techsoft Pvt Ltd</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[My First Post. 🚀]]></title>
-        <id>https://dev.to/aditya11017/my-first-post-i38</id>
-        <link href="https://dev.to/aditya11017/my-first-post-i38"/>
-        <updated>2021-10-01T12:03:57.000Z</updated>
-        <summary type="html"><![CDATA[My name is Aditya, this is my first post after joining DEV Community. Today I decided to try something new and hope to write some helpful articles in near future.]]></summary>
-        <author>
-            <name>Aditya Sharma</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[get images to angular frontend from nodejs backend]]></title>
-        <id>https://dev.to/dam2021/get-images-to-angular-frontend-from-nodejs-backend-38in</id>
-        <link href="https://dev.to/dam2021/get-images-to-angular-frontend-from-nodejs-backend-38in"/>
-        <updated>2021-10-01T12:03:30.000Z</updated>
-        <summary type="html"><![CDATA[Hi, 
-Does anyone know how to get images to the angular fronend from the node backend. Please let me know what is the correct way to do it. 
-Thanks i advance.]]></summary>
-        <author>
-            <name>Damchith</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[get images to angular frontend from nodejs backend]]></title>
         <id>https://dev.to/dam2021/get-images-to-angular-frontend-from-nodejs-backend-38in</id>
         <link href="https://dev.to/dam2021/get-images-to-angular-frontend-from-nodejs-backend-38in"/>
@@ -628,49 +1388,6 @@ There are various portals out there that connect you with freelancing web develo
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Connecting Event Busses Across AWS Accounts]]></title>
-        <id>https://dev.to/thebenforce/connecting-event-busses-across-aws-accounts-10o3</id>
-        <link href="https://dev.to/thebenforce/connecting-event-busses-across-aws-accounts-10o3"/>
-        <updated>2021-10-01T11:47:50.000Z</updated>
-        <summary type="html"><![CDATA[I've spent the last few weeks researching how to connect event busses in two different AWS accounts using the CDK. Most of the information that I've found has just been CloudFormation templates, which is fine, but some of the resources you have to create in CloudFormation are automatically created in the CDK.
-Now that I've solved the problem, I'd like to help the next unfortunate sole that needs to implement this. Fortunately the final solution isn't that complicated.
-This article leaves out some boilerplate code, like creating the stacks. For the full source go to: https://github.com/theBenForce/post-samples/tree/article/cross-account-event-bus
-To get this to work you'll have to create a bus in each account—obviously. Beyond that, you'll need to create different resources for the sending …]]></summary>
-        <author>
-            <name>Ben Force</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Update: typescript backend is in the bin.]]></title>
-        <id>https://dev.to/nine/update-typescript-backend-is-in-the-bin-4m22</id>
-        <link href="https://dev.to/nine/update-typescript-backend-is-in-the-bin-4m22"/>
-        <updated>2021-10-01T11:44:49.000Z</updated>
-        <summary type="html"><![CDATA[It’s been almost a year since I last wrote about Nines tech choices. I wanted to give a brief update on what’s changed and what’s stayed. 
-This was the one piece of the puzzle I liked the most from building Nine. Since the frontend is a static Next.js app using typescript, GraphQL pairs perfectly and having all the data and mutations in the frontend static typed is awesome!
-The frontend for Nine being static is really important and has been a great experience. 
-There is one niggle that I need to sort out at the moment though, the frontend deploy is getting slow. We’re currently building several thousand static pages, what’s worse though, it’s growing as we get more stores online.
-As you might tell from the title of this post, the backend API written in node and typescript is gone. 
-I am st…]]></summary>
-        <author>
-            <name>Pete Hawkins</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Update: typescript backend is in the bin.]]></title>
-        <id>https://dev.to/nine/update-typescript-backend-is-in-the-bin-4m22</id>
-        <link href="https://dev.to/nine/update-typescript-backend-is-in-the-bin-4m22"/>
-        <updated>2021-10-01T11:44:49.000Z</updated>
-        <summary type="html"><![CDATA[It’s been almost a year since I last wrote about Nines tech choices. I wanted to give a brief update on what’s changed and what’s stayed. 
-This was the one piece of the puzzle I liked the most from building Nine. Since the frontend is a static Next.js app using typescript, GraphQL pairs perfectly and having all the data and mutations in the frontend static typed is awesome!
-The frontend for Nine being static is really important and has been a great experience. 
-There is one niggle that I need to sort out at the moment though, the frontend deploy is getting slow. We’re currently building several thousand static pages, what’s worse though, it’s growing as we get more stores online.
-As you might tell from the title of this post, the backend API written in node and typescript is gone. 
-I am st…]]></summary>
-        <author>
-            <name>Pete Hawkins</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[My code review journey as a Web Security Engineer]]></title>
         <id>https://dev.to/bscript/my-code-review-journey-as-a-web-security-engineer-581i</id>
         <link href="https://dev.to/bscript/my-code-review-journey-as-a-web-security-engineer-581i"/>
@@ -693,60 +1410,6 @@ The primary purpose of security engineers is to work collaboratively with the re
 By executing the steps in this guide…]]></summary>
         <author>
             <name>Bour Abdelhadi</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Creating your first module using Terraform]]></title>
-        <id>https://dev.to/squadcast/creating-your-first-module-using-terraform-36ie</id>
-        <link href="https://dev.to/squadcast/creating-your-first-module-using-terraform-36ie"/>
-        <updated>2021-10-01T10:46:14.000Z</updated>
-        <summary type="html"><![CDATA[Deploying infrastructure manually is an outdated practice. Using Terraform to automate manual deployment is the new normal. In this blog, we have explained in detail, how to create your first module using Terraform.
-Before the advent of cloud and DevOps, most companies managed and deployed their infrastructure manually. This used to be risky because not only was it error-prone, it also slowed down the entire infrastructure cycle. The good news is that now, most companies are not deploying infrastructure manually but instead using tools like Terraform. In this blog, we are going to cover Terraform and the use of terraform modules.
-Introduction to Infrastructure as Code(IaC)
-
-
-The key idea behind Infrastructure as Code(IaC) is to manage almost ‘everything’ as code, where everything involves …]]></summary>
-        <author>
-            <name>Squadcast Community</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Cloud Technology News of the Month: September 2021]]></title>
-        <id>https://dev.to/castai/cloud-technology-news-of-the-month-september-2021-21mo</id>
-        <link href="https://dev.to/castai/cloud-technology-news-of-the-month-september-2021-21mo"/>
-        <updated>2021-10-01T10:11:59.000Z</updated>
-        <summary type="html"><![CDATA[Autumn is officially back, and with it another portion of fresh cloud technology news. 
-This series brings you up to speed with the latest releases, acquisitions, research, and hidden gems in the world of cloud computing – the stuff actually worth reading.
-Here’s what happened in the cloud world this August.
-_____
-Story of the month: Do most SaaS cloud cost tools really suck?
-It makes sense for industry players to be skeptical about cloud cost optimization tools. It’s true that many solutions on the market are pretty complicated and steal away a great deal of time for onboarding and training.
-But allocating, analyzing, and forecasting cloud costs is time-consuming as well. You have to research pricing plans, make infrastructure changes, create new instances, and do all the other things tha…]]></summary>
-        <author>
-            <name>CAST AI</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Managing SSH/SFTP connections with a single Python script]]></title>
-        <id>https://dev.to/costa86/managing-ssh-sftp-connections-with-a-single-python-script-3b4m</id>
-        <link href="https://dev.to/costa86/managing-ssh-sftp-connections-with-a-single-python-script-3b4m"/>
-        <updated>2021-10-01T10:11:24.000Z</updated>
-        <summary type="html"><![CDATA[This is a quick one. Update the servers list on this file, then you will have your SSH/SFTP connections displayed in a nicely table-like format, so you can easily pick one to connect to!]]></summary>
-        <author>
-            <name>Lorenzo Costa</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to build a chat into an Angular app with TalkJS]]></title>
-        <id>https://dev.to/talkjs/how-to-build-a-chat-into-an-angular-app-with-talkjs-1moo</id>
-        <link href="https://dev.to/talkjs/how-to-build-a-chat-into-an-angular-app-with-talkjs-1moo"/>
-        <updated>2021-10-01T10:03:15.000Z</updated>
-        <summary type="html"><![CDATA[In today’s tutorial, we will take a look at how we can integrate the TalkJS Chat API into an existing Angular application. AllParts is an imaginary e-commerce website that specializes in automobile spare parts and accessories. They have an Angular application that is integrated with Firebase. It allows users to authenticate themselves using Google and then purchase spare parts and essentials for automobiles.
-With TalkJS, AllParts have implemented a buyer-seller chat that the customers can use to resolve queries, get recommendations or ask general questions. It is not a full-fledged application but goes well with this tutorial. You can set up your project from GitHub before getting started and if you’ve already done that, let’s get going.
-
-To add TalkJS to your Angular application, use the …]]></summary>
-        <author>
-            <name>Aswin Rajeev</name>
         </author>
     </entry>
     <entry>
@@ -788,62 +1451,6 @@ There's a lot floating in my head right now regarding this because this is kinda
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[AES Encryption in Linux]]></title>
-        <id>https://dev.to/blastoise/aes-encryption-in-linux-585f</id>
-        <link href="https://dev.to/blastoise/aes-encryption-in-linux-585f"/>
-        <updated>2021-10-01T09:42:05.000Z</updated>
-        <summary type="html"><![CDATA[Ever felt the need of hiding stuff from the world. In this article, I'll show you how you can encrypt and decrypt your data using the AES Encryption technique. We'll use the openssl command for this purpose.
-Symmetric encryption is a type of encryption where only one key (a secret key) is used to both encrypt and decrypt data. By using symmetric encryption algorithms, data is converted to a form that cannot be understood by anyone who does not possess the secret key to decrypt it.
-Advanced Encryption Standard (also known as Rijndael), is one of the best symmetric encryption algorithm. AES is a block encryption algorithm and thus supports five modes which are as follows:
-ECB mode: Electronic Code Book mode
-CBC mode: Cipher Block Chaining mode
-CFB mode: Cipher Feedback mode
-OFB mode: Output …]]></summary>
-        <author>
-            <name>Ashutosh Kumar</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Python Guide for JS-devs]]></title>
-        <id>https://dev.to/panprices/python-for-js-devs-lk7</id>
-        <link href="https://dev.to/panprices/python-for-js-devs-lk7"/>
-        <updated>2021-10-01T09:22:00.000Z</updated>
-        <summary type="html"><![CDATA[I have been using JavaScript for most of my career, but I recently started working at a company that uses Python for most of its stack. Even though Python is easy to get started with, a couple of quirks are easy to get stuck on, and some best practices that I wish I knew earlier. Here is a list of my most significant hurdles and what I learned from the perspective of a JavaScript developer. Hopefully, it's useful for anyone else doing the same transition.
-First, let's take a quick look at similar concepts with different names in the two languages.
-Errors in JavaScript are called Exceptions in Python. They are otherwise identical in any meaningful way.
-null in JavaScript is None in Python. There is no equivalent of undefined in Python.
-Some keywords in Python are abbreviations of the actual…]]></summary>
-        <author>
-            <name>Julius Colliander Celik</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Clean Architecture on Frontend | The dev.to post of the month.]]></title>
-        <id>https://dev.to/ksengine/the-dev-to-post-of-the-month-5056</id>
-        <link href="https://dev.to/ksengine/the-dev-to-post-of-the-month-5056"/>
-        <updated>2021-10-01T08:24:28.000Z</updated>
-        <summary type="html"><![CDATA[Alex Posted an article about "Clean Architecture on Frontend" on Sep 1 and Updated it on Sep 6
-AlexFollow
-
-    
-Developer, mentor, speaker 🧑‍💻❤️
-    
-He says:
-Not very long ago I gave a talk about the clean architecture on frontend. In this post I'm outlining...
-It's a cool article with over 3600 positive reactions 👍.
-Clean Architecture on Frontend
-Alex ・ Sep 1 ・ 34 min read
-#typescript
-        #react
-        #architecture
-      
-Direct link 👆.
-Thanks 💖💖💖.]]></summary>
-        <author>
-            <name>Kavindu Santhusa</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Understand the TLS Handshake]]></title>
         <id>https://dev.to/shostarsson/understand-the-tls-handshake-3iip</id>
         <link href="https://dev.to/shostarsson/understand-the-tls-handshake-3iip"/>
@@ -861,55 +1468,6 @@ Video produced by Wild & Secure, your consulting firm to all things security and
 https://wildnsecure.com]]></summary>
         <author>
             <name>Rémi Lavedrine</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Canonical MAAS, Metal-As-A-Service, y provisiona tus nodos bare metal de forma elegante]]></title>
-        <id>https://dev.to/sinhouse/canonical-maas-metal-as-a-service-y-provisiona-tus-nodos-bare-metal-de-forma-elegante-2akl</id>
-        <link href="https://dev.to/sinhouse/canonical-maas-metal-as-a-service-y-provisiona-tus-nodos-bare-metal-de-forma-elegante-2akl"/>
-        <updated>2021-10-01T07:26:48.000Z</updated>
-        <summary type="html"><![CDATA[AVISO: las imágenes de este post pertenecen a Canonical la cual tiene todos los derechos reservados de las mismas.
-Por razones de rendimiento y/o costes no todas las aplicaciones Cloud Native están alojadas en los grandes proveedores de nube global al estilo de Amazon AWS, Google Cloud o Microsoft Azure.
-También ocurre con muchos otros servicios que no están pensados para la nube y continúan ejecutándose en servidores bare metal dentro de los distintos centros de datos que no pertenecen a estos operadores globales.
-Para estos casos Canonical, la empresa detrás de Ubuntu Linux, tiene disponible una potente herramienta libre de lo más interesante a la vez que desconocida para muchos administradores de sistemas.
-Me refiero a MAAS con la que podrás gestionar todos tus servidores de forma desat…]]></summary>
-        <author>
-            <name>J. Mulet</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[RxJS - Multicast Operator]]></title>
-        <id>https://dev.to/this-is-learning/rxjs-multicast-operator-1k9i</id>
-        <link href="https://dev.to/this-is-learning/rxjs-multicast-operator-1k9i"/>
-        <updated>2021-10-01T06:23:32.000Z</updated>
-        <summary type="html"><![CDATA[Hi Folk 👋,
-share
-Returns a new Observable that multicasts (shares) the original Observable. As long as there is at least one Subscriber this Observable will be subscribed and emitting data. When all subscribers have unsubscribed it will unsubscribe from the source Observable. Because the Observable is multicasting it makes the stream hot.
-/**
-marble share
-{
-    source a:           +--0-1-2-3-4-#
-    operator share:     {
-        +--0-1-2-3-4-#
-        ......+2-3-4-#
-    }
-}
-*/
-import { interval } from 'rxjs';
-import { share, take, tap } from 'rxjs/operators';
-
-const source1 = interval(1000)
-.pipe(
-    take(5),
-    tap((x: number) => console.log('Processing: ', x)),
-    share()
-);
-
-source1.subscribe({
-    next: x => console.log('subscription 1: ', x),
-    complete: () => console.log('subsc…]]></summary>
-        <author>
-            <name>Luca Del Puppo</name>
         </author>
     </entry>
     <entry>
@@ -981,106 +1539,6 @@ Also drop a heart ❤ if you gained some knowledge!]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How to send message to specific discord channel from your server application?]]></title>
-        <id>https://dev.to/johnmelodyme/how-to-send-message-to-specific-discord-channel-from-your-server-application-2n6h</id>
-        <link href="https://dev.to/johnmelodyme/how-to-send-message-to-specific-discord-channel-from-your-server-application-2n6h"/>
-        <updated>2021-10-01T02:07:34.000Z</updated>
-        <summary type="html"><![CDATA[How to send message to specific discord's channel from your server application?
-
-
-Had you wonder how to send the log / messages from the server application to discord channel? In my personal poject I use NodeJs for the server side, each of the important details from the server will be sent to my discord's channel. For instance, each time my user made a payment or register for my app. I am about to demonstrate how exactly I did it.
-I use the ES6 dicipline for my application.
-Packages I will be using are axios, and nodemon.
-Initiate a project by npm init -y.
-get the webhok url by going to your channel's settings -> integration -> create webhook.
-start coding.
-In this case I will use the method of HTTP POST request to the webhook.
-bash you can simply do :
-#!/bin/sh
-url = "thewebhookurl"
-
-curl -H "Content-Type: application/json" -X POST -d '{"content":"'"YOUR WHAT EVER MESSAGE "'"}' $url
-
-
-but in nodejs,
-
- log(msg) {
-        let webhook_url = 'thewebhoooklink';
-
-        let params = {
-            username: 'ABC',
-            content: msg,
-        };
-
-        return axios({
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            data: JSON.stringify(params),
-            url: webhook_url,
-        });
-    }
-
-and it should work but calling the function log('something something');
-HAPPY CODING!]]></summary>
-        <author>
-            <name>John Melody Me</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Fetching data in React: Quick guide]]></title>
-        <id>https://dev.to/jideabdqudus/fetching-data-in-react-quick-guide-4fba</id>
-        <link href="https://dev.to/jideabdqudus/fetching-data-in-react-quick-guide-4fba"/>
-        <updated>2021-10-01T01:04:59.000Z</updated>
-        <summary type="html"><![CDATA[Fetching data from an API either from an external source or from the Backend of your application can be done in many ways.
-In this Quick guide, I would show you how to fetch data in a react app by making an HTTP request to a REST API using 4 different patterns.
-Before I begin, let’s have a refresher on what REST APIs are:
-What is a REST API?
-A REST API (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for “REpresentational State Transfer”.
-In this guide, we would be making use of the Github REST API and its sample response looks like this:
-{
-"login": "jideabdqudus",
-"id": 45945474,
-"node_id": "MDQ6VXNlcjQ1OTQ1NDc0",
-"avatar_url": …]]></summary>
-        <author>
-            <name>jideabdqudus</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[History and Rise of "Passwordless"]]></title>
-        <id>https://dev.to/clerk/history-and-rise-of-passwordless-3ndl</id>
-        <link href="https://dev.to/clerk/history-and-rise-of-passwordless-3ndl"/>
-        <updated>2021-10-01T00:15:20.000Z</updated>
-        <summary type="html"><![CDATA[A Brief History of Passwordless
-Passwords have been our main digital authentication method since 1961, though its vulnerability to hacking was demonstrated within one year.
-Encrypted password storage and public-key cryptography were developed in the late 60s to early 70s.
-But the 1980s brought the first version of "passwordless" authentication. This came in the form of dynamic, one-time passwords (OTP) held on physical fobs.
-OTPs eventually developed into two protocols: time-based OTPs (TOTP) and cryptographed hash-based message authentication codes or HMAC OTPs (HOTP). Dynamic OTPs are still widely used as an authentication protocol.
-The late 1990s brought single sign-on (SSO) into use. SSO helped organizations manage user authentication across an entire network of applications. However, …]]></summary>
-        <author>
-            <name>Clerk.dev</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Passwordless 101]]></title>
-        <id>https://dev.to/clerk/passwordless-101-542c</id>
-        <link href="https://dev.to/clerk/passwordless-101-542c"/>
-        <updated>2021-10-01T00:09:28.000Z</updated>
-        <summary type="html"><![CDATA[What is Passwordless Authentication?
-Passwordless authentication is exactly what it sounds like: an authentication strategy to verify user identity without the need for the user to manually enter knowledge-based information.
-As we outlined in the previous article in this series, passwordless methodologies have been in use since the 1980's, but were ultimately popularized in the 2000's as multi-factor authentication (MFA) and single sign-on (SSO) became standards.
-From MFA and SSO to 'passwordless'
-Multi-factor authentication requires users to provide multiple unique ways of identifying themselves, which can include:
-  Something the user knows, like an ID number, user name, and/or password
-  Something the user has, like a token, authenticator app, ubikey, email address, or phone number
-  So…]]></summary>
-        <author>
-            <name>Clerk.dev</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Accessibility Best Practices for Mobile App Development]]></title>
         <id>611b08a4e884de075217ff23</id>
         <link href="https://www.freecodecamp.org/news/mobile-accessibility/"/>
@@ -1088,73 +1546,6 @@ Multi-factor authentication requires users to provide multiple unique ways of id
         <summary type="html"><![CDATA[The United States Census Bureau estimates that more than 12% of the United States' population is living with a disability. Disabilities can include vision difficulties, hearing difficulties, mobility challenges, and much more.  And a person can become disabled at any stage of their life.  Since a significant portion of the]]></summary>
         <author>
             <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Explain Public-Key Cryptography and Digital Signatures to Anyone]]></title>
-        <id>https://dev.to/robertinoc_dev/how-to-explain-public-key-cryptography-and-digital-signatures-to-anyone-23b2</id>
-        <link href="https://dev.to/robertinoc_dev/how-to-explain-public-key-cryptography-and-digital-signatures-to-anyone-23b2"/>
-        <updated>2021-09-30T21:13:13.000Z</updated>
-        <summary type="html"><![CDATA[🔍 Here’s an easy-to-understand analogy to help your non-technical friends and customers understand public keys and private keys, and how they relate to cryptography and digital signatures.
-
-
-
-  
-  
-  
-If you work in cybersecurity or any computer-related field, sooner or later, you’ll have to explain public-key cryptography and digital signatures to non-technical people. With the recent rise of remote work and stories about system breaches, computer security has become a topic of discussion even among laypeople.
-After trying to explain public-key cryptography and digital signatures to some clients with varying degrees of success, I wanted to develop an analogy that explained them and was easy to remember. I’ve found that even techies get confused by the formal definitions, and many non-technical explanations just seem unsatisfying.
-That’s when I stumbled upon Panayotis Vryonis’ article, Public-key cryptography for non-geeks. It became my go-to analogy until my computer science professor, Dr. Robin Dawes pointed out a flaw. I refined it with his help, and a suggestion from Matthew Ernest, and the result is below. I hope you find it helpful when trying to explain these concepts to anyone!
-Imagine a box with a special lock, as pictured below:
-
-The lock has three positions:
-When the lock is at the “9:00” position, the box is locked, and its contents are inaccessible.
-When the lock is at the “12:00” position, the box is unlocked, which means you can open it and view its contents.
-When the lock is at the “3:00” position, the box is locked, and its contents are inaccessible.
-In order to avoid wandering into endless “What if...?” tangents, assume that it’s prohibitively costly to pick the lock or break the box.
-Read more...]]></summary>
-        <author>
-            <name>Robertino</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Working with parallel branches in Git]]></title>
-        <id>https://dev.to/tuanthanh2067/working-with-parallel-branches-in-git-5jd</id>
-        <link href="https://dev.to/tuanthanh2067/working-with-parallel-branches-in-git-5jd"/>
-        <updated>2021-09-30T19:02:51.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-Hello everyone, my name is Dustin, today I want to write a blog about my progress of working with branches in Git. So this is the lab 03, which I have to create 2 parallel branches to work on different aspects of the program.
-First off, I needed to decide what to add to my program. At the time, I had a few options like changing code block, or hr, or exit code for my program... So I thought that the exit code is a must that my program needed to have and the code block thing is quite more interesting than hr. After choosing what I needed to do, I had to file 2 issues so I had something to refer back to. 
-The 2 issues I was talking about:
-First one
-Second one
-Writing code for these 2 issues are quite straightforward. It took me a few minutes to finish it. However, I'm not so sure about the inline code block thing, and should ask my professor about it to make sure that's what he's looking for. 
-So, for the first issue, I created a new branch called issue-18 and issue-19 for the second issue. When finishing the first issue, I had to git add and git commit and switched to branch issue-19 to continue coding. As I've done it, I also had to git add and git commit. After that, I had to use merge to merge those 2 branches. 
-I used git merge issue-18 which is my first issue, git had no problem merging it. It was fast forward right away. However, for the second issue, when I git merge issue-19, instead of fast forward, Git used three way recursive strategy. Then, I just needed to push it to github so the code will be visible to everyone. 
-Project Repo
-Commit 1
-Commit 2]]></summary>
-        <author>
-            <name>Tuan Thanh Tan</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building a type-safe dictionary in TypeScript]]></title>
-        <id>https://dev.to/logrocket/building-a-type-safe-dictionary-in-typescript-1oli</id>
-        <link href="https://dev.to/logrocket/building-a-type-safe-dictionary-in-typescript-1oli"/>
-        <updated>2021-09-30T18:58:13.000Z</updated>
-        <summary type="html"><![CDATA[Written by Gapur Kassym ✏️
-A dictionary is a common data structure in a programming language. As JavaScript developers, it’s important to work with type-safe dictionaries because there will be conflicts or unexpected issues if we store different types of data within the same dictionary.
-In this article, we’ll cover how to build a type-safe dictionary using TypeScript.
-First of all, we need to know what a dictionary is. In a programming language, a dictionary is a typical data structure that stores data in key-value pairs. JavaScript, however, does not offer a Dictionary type. Thankfully, we can create a type-safe dictionary in a few simple ways.
-Object types in JavaScript
-
-
-There are two primary ways to create a dictionary in JavaScript: using the Object type and using key-value pairs. The…]]></summary>
-        <author>
-            <name>Matt Angelosanto</name>
         </author>
     </entry>
     <entry>
@@ -1168,48 +1559,6 @@ There are two primary ways to create a dictionary in JavaScript: using the Objec
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Generating strongly typed reducer actions for React]]></title>
-        <id>https://dev.to/mpriour/generating-strongly-typed-reducer-actions-for-react-j77</id>
-        <link href="https://dev.to/mpriour/generating-strongly-typed-reducer-actions-for-react-j77"/>
-        <updated>2021-09-30T17:13:25.000Z</updated>
-        <summary type="html"><![CDATA[Using reducers in the React Context api leaves a lot of room for error, even when using TypeScript. A reducer takes a single argument and returns a state. The common format for the argument is an object with an action property and a payload or value property. The action's value is generally a string such as setTitle. In the case of action:'setTitle', the value would then be the title you want to set on the state object. The problems with this approach are:
-You have to look back at the reducer to see what the correct spelling and valid values of action are.
-There is no type checking of the values that are linked with the action.
-This article assumes that you have a basic familiarity with React, useReducer, and TypeScript.
-If you just want to skip to the code, you can see the final working v…]]></summary>
-        <author>
-            <name>Matt Priour</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[You MUST use the useCallback hook!]]></title>
-        <id>https://dev.to/itays123/you-must-use-the-usecallback-hook-4h5m</id>
-        <link href="https://dev.to/itays123/you-must-use-the-usecallback-hook-4h5m"/>
-        <updated>2021-09-30T16:52:15.000Z</updated>
-        <summary type="html"><![CDATA[Hi everyone! My name is Itay and I’m a fullstack developer who specializes in back-of-the-frontend React.js code.
-In this shot, I’ll show you the usages of the useCallback hook for better performance of your application, and explain why you should use it.
-For a start, let’s look at this code:
-export function MyComponent () {
-    const [numericState, setNumber] = useState(0);
-    const handleClick = () => {
-        setNumber(x => x%2 +1);
-    }
-    return (
-        <>
-        <button onClick={handleClick}>Click Me</button>
-        {numbericState}
-        </>
-    )
-}
-
-What’s wrong with this code? It’s not completely optimized. The handle click function is changing on every render!
-That would be the equivalent of writing the following class based component:
-export default class MyComponent ex…]]></summary>
-        <author>
-            <name>Itay Schechner</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[SQL Distinct Statement – How to Query, Select, and Count]]></title>
         <id>613f3c6d852f4307d372c7ca</id>
         <link href="https://www.freecodecamp.org/news/sql-distinct-statement-how-to-query-select-and-count/"/>
@@ -1220,52 +1569,6 @@ export default class MyComponent ex…]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Docker Networking]]></title>
-        <id>https://dev.to/dporwal/docker-networking-5ef0</id>
-        <link href="https://dev.to/dporwal/docker-networking-5ef0"/>
-        <updated>2021-09-30T16:14:56.000Z</updated>
-        <summary type="html"><![CDATA[Docker takes care of the networking aspects so that containers can communicate with other containers and also with the Docker Host.
-Docker networking subsystem is pluggable, using drivers. 
-There are several drivers available by default and provides core networking functionality.
-bridge 
-host
-overlay
-macvlan
-none
-We can check what all the network drivers are supported by Docker Containers and also at what ip that driver is configured to connect to the other containers.
-docker network ls
-
-if you want to check particular network driver is running at what IP, we can inspect that network driver
-docker inspect bridge
-
-
-We can check what all drivers what containers are running and what are not by simply inspecting that particular network driver.
-docker inspect network host
-
-
-We can also create a…]]></summary>
-        <author>
-            <name>Deepak Porwal</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Vue Academy #6: Async update queue]]></title>
-        <id>https://dev.to/codeoz/vue-academy-6-async-update-queue-56k</id>
-        <link href="https://dev.to/codeoz/vue-academy-6-async-update-queue-56k"/>
-        <updated>2021-09-30T15:38:06.000Z</updated>
-        <summary type="html"><![CDATA[Vue performs DOM updates asynchronously! But what does mean?
-I will begin by explain you what is going on if we don't use an async update queue.
-Imagine that we have an array and we show it into the DOM, each time we push a new item, we will render the DOM.
-
-It's not really dramatic if we only add some items. But imagine if we decide to add 1000 items in this array at the same moment, we will render our DOM 1000 times! Your DOM will explode 🤯.
-We don't really need to update the DOM 1000 times, we only need one time, and we should only update it when we finish to add all items!
-Vue performs DOM updates asynchronously. Whenever a data change is observed (in our case, adding item into our array), it will NOT directly update the DOM, it will add all change into a queue (buffer).
-It wait a few…]]></summary>
-        <author>
-            <name>CodeOz</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Git for Professionals – Free Version Control Course]]></title>
         <id>6155d5c364aefe07d3fa1467</id>
         <link href="https://www.freecodecamp.org/news/git-for-professionals/"/>
@@ -1273,20 +1576,6 @@ It wait a few…]]></summary>
         <summary type="html"><![CDATA[Almost every software developer uses git. Many use it continually throughout the day. While you may already know the very basics of git, your productivity will be increased if you learn some advanced git concepts. We just released a git course on the freeCodeCamp.org YouTube channel that will help]]></summary>
         <author>
             <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A WebRTC server in your browser (virtual server; private audio)]]></title>
-        <id>https://dev.to/jzombie/a-webrtc-server-in-your-web-browser-for-group-communications-5c6l</id>
-        <link href="https://dev.to/jzombie/a-webrtc-server-in-your-web-browser-for-group-communications-5c6l"/>
-        <updated>2021-09-30T15:10:07.000Z</updated>
-        <summary type="html"><![CDATA[Source Code available on GitHub
-Speaker.app is a batteries-included, quasi-decentralized, alternative free speech audio platform that is compatible on any device that supports a modern web browser.
-Rather than a centralized server providing proxying of streams from each participant to other participants (i.e. an MCU / SFU), one can choose to host a network (or "room") where others can connect to, either publicly or privately.  The network hosting participant's web browser acts as the "server" for the other participants to connect to on the given network, and all proxying is done, including message storage and relaying, through that browser.
-Public networks are visible in a "network discovery" view, which serves as the default homepage for the application.
-No user accounts or passwords are …]]></summary>
-        <author>
-            <name>jzombie</name>
         </author>
     </entry>
     <entry>
@@ -1302,196 +1591,6 @@ The post Creating the Perfect Commit in Git appeared first on CSS-Tricks. You ca
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[react-avatar-group: A responsive, automatically-generated group avatar component, powered by ui-avatars.]]></title>
-        <id>https://dev.to/mbagley1020/react-avatar-group-a-responsive-automatically-generated-group-avatar-component-powered-by-ui-avatars-pk</id>
-        <link href="https://dev.to/mbagley1020/react-avatar-group-a-responsive-automatically-generated-group-avatar-component-powered-by-ui-avatars-pk"/>
-        <updated>2021-09-30T14:25:13.000Z</updated>
-        <summary type="html"><![CDATA[This library is great for displaying the 'active' users of your React application. The responsiveness of react-avatar-group is meant to be similar to the Google Docs user icons. Some live examples are available here.
-If you need a more in-depth tutorial on using this package with actual, live users, check out this post here. Otherwise, here's a quick walk-through on how to use this package.
-
-First, install the package:
-npm install react-avatar-group
-
-Then open up your React file and import the package, as follows:
-// App.tsx
-import AvatarGroup from 'react-avatar-group';
-
-export default function App(){
-  <AvatarGroup
-    avatars={[
-      "James", 
-      "Ava", 
-      {
-        avatar: "Jackson",
-        fontColor: "FF00FF",
-        tooltip: "This is a custom tooltip"
-      }
-    ]}
-  />
-}
-
-The only required prop to the AvatarGroup component is avatars, which is an array of strings or IAvatar objects, for more customization.
-Another important prop is max. This will hide the avatars beyond a certain length with a custom overflow avatar (as seen in the gif above). displayAllOnHover will show all minions passed when the mouse hovers the avatar group, if there is a max number passed.
-All the props for react-avatar-group can be seen here.
-Using these other props, your AvatarGroup may look like the following:
-import AvatarGroup from 'react-avatar-group';
-
-export default function App(){
-  <AvatarGroup
-    avatars={[
-      "James", 
-      "Ava", 
-      {
-        avatar: "Jackson",
-        fontColor: "FF00FF",
-        tooltip: "This is a custom tooltip"
-      }
-    ]}
-    initialCharacters={1}
-    max={3}
-    size={60}
-    displayAllOnHover
-    shadow={2}
-  />
-}]]></summary>
-        <author>
-            <name>Michael Bagley</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to build 7,000+ REST APIs within 2 mins (Node.js + MySQL) !!]]></title>
-        <id>https://dev.to/o1lab/how-to-build-7-000-rest-apis-within-2-mins-node-js-mysql-470b</id>
-        <link href="https://dev.to/o1lab/how-to-build-7-000-rest-apis-within-2-mins-node-js-mysql-470b"/>
-        <updated>2021-09-30T14:01:46.000Z</updated>
-        <summary type="html"><![CDATA[NocoDB is an open source Airtable alternative that instantly also provides you REST APIs on any MySQL database!
-Without further ado-lets see quickly how to create APIs.
-Node.js or Docker
-An existing MySQL database
-
-
-I am using a large MySQL database with 400+ tables within it! Creating APIs for each one of the table and relation would be more than 7000+ APIs.
-npx create-nocodb-app
-
-docker run -d --name nocodb -p 8080:8080 nocodb/nocodb
-
-
-
-
-
-  
-  
-  Where can I find more details about NocoDB ?
-
-
-
-
-  
- / 
-        nocodb
-      
-    
-NocoDB
-
-
-
-Website •
-    Discord •
-    Twitter
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Using Docker
-docker run -d --name nocodb -p 8080:8080 nocodb/nocodb:latest
-To persist data you can mount volume at /usr/app/data/.
-npx create-nocodb-app
-
-
-
-Using Git
-git clone https://github.com/nocodb/nocodb-seed
-cd nocodb-seed
-npm install
-npm start
-
-
-
-GUI
-Access Dashboard using : http://localhost:8080/dashboard
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-…
-  
-View on GitHub
-Yes - we do! 
-NocoDB does support all of the below databases : 
-Postgres
-SQL-server
-SQLite
-MySQL & MariaDB.
-📣   Github : https://github.com/nocodb/nocodb
-
-📣   Docs : https://docs.nocodb.com
-
-📣   Discord : https://discord.gg/5RgZmkW
-
-📣   Twitter : https://twitter.com/nocodb
-
-
-
-
-  
-  
-  FAQs
-
-
-
-Is authentication built in ? Yes
-Is ACL built in ? Yes
-Is collaboration built in ? Yes
-Are webhooks built in ? Yes
-Is there an audit log ? Yes
-As an open source project how NocoDB got angel funded]]></summary>
-        <author>
-            <name>o1lab</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Comparing HTML Preprocessor Features]]></title>
         <id>https://css-tricks.com/?p=350620</id>
         <link href="https://css-tricks.com/comparing-html-preprocessor-features/"/>
@@ -1501,56 +1600,6 @@ Of the languages that browsers speak, I’d wager that the very first one that d
 The post Comparing HTML Preprocessor Features appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <author>
             <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Don't Configure Your Shell's Prompt]]></title>
-        <id>https://dev.to/waylonwalker/don-t-configure-your-shell-s-prompt-37b7</id>
-        <link href="https://dev.to/waylonwalker/don-t-configure-your-shell-s-prompt-37b7"/>
-        <updated>2021-09-30T13:29:59.000Z</updated>
-        <summary type="html"><![CDATA[Don't waste hours configuring s super trick custom prompt, use starship.
-See instructions for all the shells on their home page https://starship.rs/.
-What do you think?  Does it work here on Dev.  I've never posted the vertical format here and would be interested in your feedback 👇
-―――――――― Socials ――――――――――――
-twitter:  https://twitter.com/_WaylonWalker
-https://www.twitch.tv/waylonwalker
-https://github.com/waylonwalker/
-https://www.twitch.tv/waylonwalker]]></summary>
-        <author>
-            <name>Waylon Walker</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rsync ile CentOS8 Üzerinde Dizin Senkronizasyonu]]></title>
-        <id>https://dev.to/aciklab/rsync-ile-centos8-uzerinde-dizin-senkronizasyonu-294a</id>
-        <link href="https://dev.to/aciklab/rsync-ile-centos8-uzerinde-dizin-senkronizasyonu-294a"/>
-        <updated>2021-09-30T10:38:42.000Z</updated>
-        <summary type="html"><![CDATA[Rsync ile dizin senkronizasyonu yapmak için öncelikle sunucular arasında parolasız erişimi sağlamak gerekmektedir. 
-Senkronizasyon yapılacak sunucuların her ikisine gidilerek,
-yum install ssh
-
-komutu ile SSH paketi kurulur.
-Her ikisi sunucuda da,
-cd ~
-mkdir .ssh
-touch .ssh/config .ssh/known_hosts .ssh/authorized_keys
-
-komutları ile gerekli SSH dizin yapısı oluşturulur. Daha sonra ilk sunucuda,
-nano .ssh/config
-
-ile konfigürasyon dosyası açıldıktan sonra,
-Host server02 # İkinci sunucu kısa adı
-    HostName 10.0.0.2 # İkinci sunucu ip adresi
-    User root # Rsync için kullanılacak user
-    Port 22
-
-ikinci sunucunun bilgileri girilir. Aynı işlem ikinci sunucuda da, birinci sunucunun bilgileri girilerek uygulanır.
-SSH anahtarı oluşturmak için her iki sunucuda da,
-ssh-keygen
-
-komutu çalıştırılı…]]></summary>
-        <author>
-            <name>Zeki Ahmet Bayar</name>
         </author>
     </entry>
     <entry>
@@ -1590,26 +1639,6 @@ AngularJS is an older framework that didn’t keep up with modern development pr
         <summary type="html"><![CDATA[Get your desktop ready for fall and the upcoming Halloween season with a fresh batch of desktop wallpapers. Created with love by designers and artists from across the globe, they come in versions with and without a calendar for October 2021.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Cosima Mielke)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AWS Load balancer]]></title>
-        <id>https://dev.to/es404020/aws-load-balancer-10cg</id>
-        <link href="https://dev.to/es404020/aws-load-balancer-10cg"/>
-        <updated>2021-09-30T05:55:39.000Z</updated>
-        <summary type="html"><![CDATA[AWS EC2 load balancer is one of the most popular service offer by Amazon Web Service. In this post we shall be exploring AWS load balancer, types of AWS load balancers, when to use them and how to setup load balancers on AWS Management console.
-load Balancers are servers that forward internet traffic to multiple servers (EC2 instances) downstream.
-
-1.Spread load across multiple downstream instances
-An ELB(EC2 Load Balancer ) is a managed load balancers by AWS. Meaning AWS guarantees that it will be working. AWS takes care of upgrades ,maintenance, high availability across multiple zones. It costs less to setup your own load balancers but it would be a lot of effort on your end.
-They are support important for load balancers. They enable the load balancer to know if instances it forward traffic to are available to reply to requests. The health check is done on a port and a route. If  the response is not 200 (OK) ,then the instance is unhealthy.
-
-1.Classic load Balances(V1 -old generation)-2009
-Load Balancer can scale but not instantaneously if you have a massive scale to do you need to contact AWS for a "Warm-up".
-For Troubleshooting
-In the next post we shall be setting up ELb .Thanks for reading.]]></summary>
-        <author>
-            <name>es404020</name>
         </author>
     </entry>
     <entry>
@@ -1656,60 +1685,6 @@ En la terminal nos aparecerá un mensaje de éxito una vez que todo finalice y n
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[My Journey to flexiple]]></title>
-        <id>https://dev.to/es404020/my-journey-to-flexiple-54g3</id>
-        <link href="https://dev.to/es404020/my-journey-to-flexiple-54g3"/>
-        <updated>2021-09-29T19:26:47.000Z</updated>
-        <summary type="html"><![CDATA[So I officially joint flexiple has a freelance developer 29/9/2021 🥳🎉.I would be explaining  how I got into flexiple in this blog post.
-I can't really remember what I was googling when I saw an advert by flexiple .So I sign up and the company recruiter schedule a call with me the following week.
-After this process, flexiple prepared my CV by trying to  organize it to suite potential client i would work with in the future. Which was pretty straight forward and fast.
-The final stage was divided into two stages
-So I had to start preparing for this interview with leetcode and Hacker Ranker. I  started practicing algorithm, learnt recursion, binary search, Hash tree etc. 
-To prepare further someone shared a picture of some AlogExpert algorithms  questions and  how it helped him land is current  job .I took a screen shot and started solving this algorithms one after the other .Note  I didn't solve all
-
-To cut the long story short I did the code challenge and I am officially a freelance developer at flexiple looking forward to the journey ahead.]]></summary>
-        <author>
-            <name>es404020</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[5 Basic linux commands with detailed explanation and their resemblance to windows.]]></title>
-        <id>https://dev.to/shubhamtyagi/5-basic-linux-commands-detailed-explanation-to-start-with-your-linux-journey-443f</id>
-        <link href="https://dev.to/shubhamtyagi/5-basic-linux-commands-detailed-explanation-to-start-with-your-linux-journey-443f"/>
-        <updated>2021-09-29T19:15:37.000Z</updated>
-        <summary type="html"><![CDATA[Linux sometimes seems to be very difficult from the outside but once you get a head start there are a ton of possibilities with linux which are not available with windows. Obviously you may not get as attractive and beginner friendly interface as windows does but everything comes with a price doesn't it.
-Here I will list 10 commands and explain them which you could try out yourself on your linux OS right away and experience it yourselves. 
-df
-
-this command will show the amount of available disk space and used disk space for file system to which you as a user currently has access to. For eg : if you have a dual boot system established in your pc and your linux OS doesn't have access to the D folder.If you run this command on your linux terminal then you wont be able to see the partiton of used and unused space of D folder. this command is same as when you open the disk management tool in windows.
-
-
-
-top
-
-This command when you type in your terminal it will show the active linux processes which are managed by your linux kernel. This command is used like how you would use task manager in windows, the difference being , it shows the details of all the processes in far more depth than windows does.
-it will look something like this when you type the command.
-
-
-this is what is meant by each column head.
-
-you can press 'q' to exit this window in your termial.
-ls
-  
-
-
-cd
-cd [directory name]
-cd ..
-
-
-touch
-touch [filename.extension]]]></summary>
-        <author>
-            <name>Shubham Tyagi</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[HTML Comment – How to Comment Out a Line or Tag in HTML]]></title>
         <id>6154412664aefe07d3fa085b</id>
         <link href="https://www.freecodecamp.org/news/html-comment-how-to-comment-out-a-line-or-tag-in-html/"/>
@@ -1717,56 +1692,6 @@ touch [filename.extension]]]></summary>
         <summary type="html"><![CDATA[In this article, you'll learn how to add single and multi-line comments to your HTML documents.  You'll also see why comments are considered a good practice when writing HTML code.  Let's get started!  The HTML Comment Tag The general syntax for an HTML comment looks like this:  <!-- I]]></summary>
         <author>
             <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to convert HTML to PDF using Angular]]></title>
-        <id>https://dev.to/_mnavarros/how-to-convert-html-to-pdf-using-angular-3jj8</id>
-        <link href="https://dev.to/_mnavarros/how-to-convert-html-to-pdf-using-angular-3jj8"/>
-        <updated>2021-09-29T16:52:25.000Z</updated>
-        <summary type="html"><![CDATA[Yesterday, I was working on Hyperpanels' dashboard feature and my coworker @albertobeiz said the sentence every front-end developer fears: 
-
-Can we generate a PDF from that?
-Let's see how I did it.
-First, you'll need some help, so run the following commands:
-npm i --save dom-to-image
-npm i --save jspdf
-
-Once we have this two packages, we can use them in our code 
-import { jsPDF } from 'jspdf';
-import domtoimage from 'dom-to-image';
-
-Add an ID to the HTML element you want to print:
-<ion-content class="grid-container">
-    <div id="dashboard">
-
-Finally, the function to turn that HTML into a PDF:
-toPdf() {
-    const dashboard = document.getElementById('dashboard');
-
-    const dashboardHeight = dashboard.clientHeight;
-    const dashboardWidth = dashboard.clientWidth;
-    const options = { background: 'white', width: dashboardWidth, height: dashboardHeight };
-
-    domtoimage.toPng(dashboard, options).then((imgData) => {
-         const doc = new jsPDF(dashboardWidth > dashboardHeight ? 'l' : 'p', 'mm', [dashboardWidth, dashboardHeight]);
-         const imgProps = doc.getImageProperties(imgData);
-         const pdfWidth = doc.internal.pageSize.getWidth();
-         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-         doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-         doc.save('Dashboard for hyperpanels.pdf');
-    });
-}
-
-This will create a PDF that will be saved from your browser:
-
-And voilá, your HTML turned into a PDF:
-
-Let me know if you have any doubts or comments.
-Happy coding!]]></summary>
-        <author>
-            <name>Manuel Navarro</name>
         </author>
     </entry>
     <entry>
@@ -1789,50 +1714,6 @@ The post Web Streams Everywhere (and Fetch for Node.js) appeared first on CSS-Tr
 The post Front-End Dev Shortcuts in iOS 15 appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <author>
             <name>Geoff Graham</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[PrimeNG Meets Tailwind]]></title>
-        <id>https://dev.to/primetek/primeng-meets-tailwind-4d41</id>
-        <link href="https://dev.to/primetek/primeng-meets-tailwind-4d41"/>
-        <updated>2021-09-29T13:52:09.000Z</updated>
-        <summary type="html"><![CDATA[PrimeNG is a design-agnostic UI component library for Angular thanks to its flexible theming system. Today we’re excited to announce the new free Tailwind theme to join the already impressive lineup featuring Material, Bootstrap, FluentUI and PrimeOnes themes.
-The new theme uses the official color palette from Tailwind and based on the design bits at Tailwind UI such as forms, modals and menus. If you are utilizing tailwind ui and looking for a fully featured UI component library, PrimeFaces with the Tailwind theme will be an excellent choice. Note that, the theme does not use tailwind classes and instead provides a look-alike style for a unified design when used together.
-
-Image is a new addition to the UI suite to display an image with transformation options like rotate and zoom. For multiple images, please see the Galleria.
-
-There are over 30 improvements in this release, defect fixes are mostly based on community feedback so thank you for helping us to make the library better.
-PrimeNG is licensed under MIT and free to download at NPM.
-Our current focus is on improving accessibility by creating a dedicated section per component for keyboard support and screen readers along with scores from audit tools.]]></summary>
-        <author>
-            <name>PrimeTek</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Use Environment Variables in An Angular App]]></title>
-        <id>https://dev.to/mick_patterson_/how-to-use-environment-variables-in-an-angular-app-92g</id>
-        <link href="https://dev.to/mick_patterson_/how-to-use-environment-variables-in-an-angular-app-92g"/>
-        <updated>2021-09-29T12:24:47.000Z</updated>
-        <summary type="html"><![CDATA[Environment variables in an Angular app are extremely useful for storing constants in your app that need to be used frequently, such as API url's, API access keys, Firebase config values and other general flags.
-When a new Angular app is created via the CLI tooling using ng new, one of the folders generated is 'environments'.
-By default, this folder contains two files:
-- environment.ts
-- environment.prod.ts
-These files come prepopulated with the following code:
-environment.ts:
-export const environment = {
-  production: false,
-};
-
-environment.prod.ts:
-export const environment = {
-  production: true,
-};
-
-The simple explanation of the usage of these files is that any values added into an environment file are injected into the compiled files when the Angular app is built. 
-The different files …]]></summary>
-        <author>
-            <name>Michael Patterson</name>
         </author>
     </entry>
     <entry>
@@ -2193,16 +2074,6 @@ Thank you @ad-m]]></summary>
         <summary type="html"><![CDATA[After almost five years in development, the new HTTP/3 protocol is nearing its final form. Let’s take a close look at the challenges involved in deploying and testing HTTP/3, and how and if you should change your websites and resources as well.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Robin Marx)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Reducing Carbon Emissions On The Web]]></title>
-        <id>https://smashingmagazine.com/2021/09/reducing-carbon-emissions-on-web/</id>
-        <link href="https://smashingmagazine.com/2021/09/reducing-carbon-emissions-on-web/"/>
-        <updated>2021-09-03T11:30:00.000Z</updated>
-        <summary type="html"><![CDATA[Websites, unfortunately, aren’t as environmentally friendly as we might like them to be. This article contains some thoughts and experiences from trying to clean them up.]]></summary>
-        <author>
-            <name>hello@smashingmagazine.com (Berwyn Powell)</name>
         </author>
     </entry>
 </feed>
