@@ -16,6 +16,555 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2021-11-06">2021-11-06</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">A Free Fully Functional Blog in Angular and Firebase</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jdgamble555/a-free-fully-functional-blog-in-angular-and-firebase-e4j">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>So, I&#x27;ve decided to release my source code on github for my Fireblog.io fully functional blog written in Angular, using Firestore as the database, and hosted on Cloud Run.
+--- scroll down for screenshots, or Fireblog.io ---
+I was originally hosted on Firebase Functions, but I wanted it to be a little bit faster, and the ng deploy to Firebase Functions also stopped working as expected. In fact, I wonder what the Angular Firebase Team is doing at all these days. The documentation for Angular Firebase 9 is still not up-to-date, and it seems like they are behind on updating to Angular 13 (to be fair, it has only been a few days at this point).
+Before I get into anything, I have to recommend you check out Fireship.io, as it is the reason I have become proficient in these technologies. 
+I have r…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular : RxJS concatMap operator</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/dipteekhd/angular-rxjs-concatmap-operator-4614">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>In Angular, we use HTTP to get data from backend,HTTP methods always return an observable.Generally we subscribe to that observable and assign response data to class variables to use it in our component.
+But using RxJS operators we can compose multiple observables(data streams) or process  observable data  before subscribing to it.
+RxJS concatMap operator
+Observable emits observable).
+concatMap operator
+Takes each value from the outer observable and maps that value  to observable(called as inner observable) 
+Concat all inner observables into a single observable in order  and subscribe to inner observables and emit data of each inner observable into output observable in sequential manner.
+concatMap never subscribes to the next inner observable until the previous one completes.
+Example:
+
+Run live
+Here we have 2 API’s
+In the above case we need to take all roll numbers from the first API  and pass it to the second API.
+
+So solution to this problem is use concatMap RxJS operator instead of nested subscription.
+
+First contactMap operator -
+getToppers_rollNum() this method returns an Observable of type number[] , conactMap  maps Observable to Observable (inner observable) then subscribes to inner observable and emit data into output observable(top_3_rollNum$).
+Second  concatMap operator -
+top_3_rollNum$ as outer observable.concatMap takes each roll number from the outer observable and hits http request sequentially(here we have 3 inner observables return by 3 http requests) &amp; emits http response data into output observable(topper_marks$).
+concatMap never hits the next http request until the previous one completes.
+Shorthand syntax for above code
+
+So,concatMap is used where sequence of execution matters.
+Thanks for reading! If you found this helpful please share!</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Why and how to use secondary entrypoints in your Angular Libraries in Nx</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/kauppfbi_96/why-and-how-to-use-secondary-entrypoints-in-your-angular-libraries-in-nx-3bb2">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Photo by Sangga Rima Roman Selia on Unsplash
+Nx Devtools recently released version 13.1, which came with a very handy generator for Angular libraries, which creates secondary entrypoints for your Angular Libraries with ease. In this blog post we will cover why and how we should make use of this new function.
+By adding secondary entrypoints, we basically split our Angular libraries into multiple chunks, just like Angular Material does.
+// One entrypoint: 
+import { MatButtonModule, MatCardModule } from &#x27;@angular/material&#x27;;
+
+// With secondary entrypoints:
+import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
+import { MatCardModule } from &#x27;@angular/material/card&#x27;;
+
+The idea behind it is not new at all, this option already exists since the beginning phase of ng-packagr. By leveraging seco…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Compose Generator - Update 1.2.0</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/marcauberer/compose-generator-update-120-e6i">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>If you haven&#x27;t read about Compose Generator yet, visit the introduction article here. This particular article shows which features / improvements were added in version 1.2.0 of Compose Generator.
+Apart from optimization and bugfixes, there are a few new features to discuss in the following parts.
+
+Version 1.2.0 brings support for a second reverse proxy service in addition to JWilder Nginx / Let&#x27;s Encrypt Companion called Traefik. Traefik is a highly customizable edge router which brings a massive amount of built-in features: Reverse proxying, automatic service-detection, load balancing, no-downtime upgrades/configuring and supports Docker, Docker Swarm, Kubernetes, AWS, etc.
+For supporting Traefik, we added the proxy-labels field to the predefined service configuration spec, because config…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Chatops on AWS: Leveraging AWS Chatbot to get Glue Job notifications on Slack</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/amlana24/chatops-on-aws-leveraging-aws-chatbot-to-get-glue-job-notifications-on-slack-158a">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Recently I started reading about Chatops and it really intrigued me to learn more about it. It really fascinated me to see how easy it is now to setup alerting and be notified about operational stuff. While I was learning more, I thought why not explore the same on AWS and thats when I bumped onto AWS Chatbot.
+In this post I will go through the basics of this AWS managed service called ‘Chatbot’ and demonstrate how quickly you can setup an alerting mechanism to Slack, monitoring an AWS Glue ETL job.  
+For more details: https://amlanscloud.com/awschatbot/</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Deploy to Google Cloud Run from GitHub Release using GitHub Actions</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/bashayr29/deploy-to-google-cloud-run-from-github-release-using-github-actions-1od4">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>https://link.medium.com/kM9nREOrYkb</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Hello World com Terraform</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/bernardo/hello-world-com-terraform-3cbl">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>O Terraform trabalha com uma linguagem de configuração construida em blocos como os blocos provider, resource, variable entre outros.  
+O objetivo principal da linguagem Terraform é declarar recursos , que representam objetos de infraestrutura. Todos os outros recursos de linguagem existem apenas para tornar a definição de recursos mais flexível e conveniente.
+Os blocos são contêineres para outro conteúdo e geralmente representam a configuração de algum tipo de objeto, como um recurso. Os blocos têm um tipo de bloco, podem ter zero ou mais rótulos e ter um corpo que contém qualquer número de argumentos e blocos aninhados. A maioria dos recursos do Terraform é controlada por blocos de nível superior em um arquivo de configuração. Em outras palavras o Terraform trabalha com encapsulamento e instancias de objetos.
+Beleza, nada melhor do que um Hello World para começar uma nova linguagem né?
+No terraform o resultado de uma execução e tratado como uma saida da propria execução.
+Para definir uma saída, você abre um bloco de saída usando a palavra chave output. Você então começa o bloco output com {. Você só tem permissão para definir uma única propriedade chamada value. Qualquer valor que você der à propriedade value será enviado ao console após um sucesso terraform apply. Você então fecha o bloco de saída com }.
+output &quot;message&quot; {
+    value &#x3D; &quot;Hello World&quot;
+}
+
+A saida será essa: 
+
+Para saber mais sobre a linguagem e só clicar aqui
+Vlw Flw</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">SEO Made Simple: How to Rank Better and Faster</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/snowbit/seo-made-simple-how-to-rank-better-and-faster-72f">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>SEO is an important aspect of marketing any business online but it is often misunderstood. This article will go over why you need to do SEO and how to optimize your website to rank higher on search engines.
+SEO stands for Search Engine Optimization
+
+It is the process of taking your website or piece of content to rank higher on search engines
+The better visibility your pages have in search results, the more likely you are to gather attention and attract prospective and existing customers to your business.
+Search Engines like Google, uses bots to crawl websites and pages, and collects information and put them in index. 
+It is just like library where librarian helps to find out your required book from a huge library.
+
+Yes, it is a fundamental part of digital marketing, because there are billi…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">An Introduction to Object Pascal and Java: A Winning Crew Boat Team</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ideradevtools/an-introduction-to-object-pascal-and-java-a-winning-crew-boat-team-1hf8">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
+                    <span>An Introduction to Modern Object Pascal and Java
+
+
+Modern Object Pascal uses the latest dialect of the Object Pascal programming language with a syntax similar to C# and Python 3.0, but that is easier to read, write, and learn.
+Object Pascal supports high-level abstractions like polymorphism and generics while preserving the speed of compiled code without runtime overhead or performance penalties.
+Java is a powerful programming language with broad coding possibilities but is challenging to handle, especially for beginners.
+It is a class-based object-oriented programming language with many different versions across many years but is well suited for massive enterprise projects with thousands of developers.
+Delphi and Object Pascal offer a simpler, more streamlined programming language that p…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Full-Stack Developer Vocabulary (Pt.2, the more advanced)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/code_jedi/the-full-stack-developer-vocabulary-pt2-the-more-advanced-33ge">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>XML? JSX? Sudo? Jamstack?
+
+
+
+  
+  
+  WTF is everyone talking about???
+
+
+If you&#x27;re new to this whole full-stack development thing and get confused by some of the words people use when talking about full-stack development, then stick around because in this 3 part series, I&#x27;ll be compiling the most common words and phrases related to full-stack development. Of course, it will take much more time to learn the details of each of the things I&#x27;ll be mentioning in these articles. These articles are just summarizers to give you an idea of these words and phrases so that you can understand what people are referencing with them when talking about certain areas of full-stack development.
+1. XML
+This article to get a better understanding of XML.
+2. JSX
+3. JSON
+4. Firewall
+5. IP Address
+6. IPv4
+7. IPv6
+8. Proxy Server
+9. VPN
+10. Nginx
+11. Apache
+12. Jamstack
+13. Sudo
+14. Web Scraping
+Puppeteer, Selenium and BeautifulSoup.
+15. Git
+16. Cron jobs
+17. Responsive Web Design
+18. MySQL
+19. NoSQL
+MongoDB and Neo4J.
+20. Environment variables
+Stick around for Pt.3(The last part): The languages, tools and frameworks!
+I&#x27;ll be posting the full list on my gumroad once I&#x27;ve released Part 3. A follow there will be much appreciated ;)</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Accessing Power Platform in DevOp Pipelines using Service Principals</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/diskdrive/accessing-power-platform-in-devop-pipelines-using-service-principals-ndi">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>The Power Platform is really great for building things quickly 
+This article outlines the first step which is to establish a way for a DevOps to authenticate and access a Power Platform environment
+DevOps uses Service Connections to authenticate against environments and you really have two types. You could create a Service Connection that just uses a standard user account or you could use a Service Principal.
+With a user account, this will be treated like a normal user - so there may be license implications and is generally not the recommended method. With just a tiny bit of effort we can use Service Principals and therefore this is what I&#x27;ll be demonstrating with.
+You will need to access your Azure Active Directory tenant and be in one of the following roles:
+
+
+Application administrator
+A…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Introduction to Github.dev</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/capscode/introduction-to-githubdev-24al">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Hello Devs,
+if (yes) {
+  console.log(&quot;let me know&quot;);
+} else {
+  console.log(&quot;give it a try&quot;);
+}
+
+it is basically a online vs code editor for your github repos and its really amazing and fast.
+Just open any of your repo and replace github.com with github.dev and that it, now you can able to edit your code and commit your code in online VS code.
+lets discuss the shortcut to open VS code directly from your github repo,
+Below is a demo, do checkout this.
+
+Hope its a nice and informative read for you.
+https://www.capscode.in/blog TO LEARN MORE...
+Thanks,
+CapsCode</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">An online shop API Node js</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/devtips3/an-online-shop-api-node-js-4l38">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>onlineshop-api
+Features:
+Technology Stack:
+Github : https://github.com/saidMounaim/onlineshop-api
+Follow me on github : https://github.com/saidMounaim/</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">What is JavaScript? JavaScript and Web Development?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ourcodinghours/what-is-javascript-javascript-and-web-development-1cb5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Whenever a web portal does far more than displaying static material on the screen— presenting regular content modifications, infographics, dynamic 2D/3D visuals, sliding multimedia jukeboxes, and so on — you can guarantee that JavaScript is being an active participant. It&#x27;s the main module of a three-layer frame that is used in regular web technology solutions, the first two of which are HTML and CSS
+HTML is the hypertext markup language that we have been using to give structure and legitimacy to our web content, such as establishing sections, format, and data tables, as well as inserting visual content.
+How Would the Website Appear if JavaScript Wasn&#x27;t Used?
+All you&#x27;d have on the web if JavaScript didn&#x27;t exist would be HTML and CSS. Only limited website constructions are possible with the…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Rendering Dynamic Content and Template Engines</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/thenerdydev/rendering-dynamic-content-1470">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Hey everyone 👋🏻,
+In this article, let us learn about how we can render dynamic content to the client (which is not static). Let us first touch briefly on what a template engine is because rendering dynamic content is closely related to what a template engine will help us in achieving. 
+
+A template engine is software designed to combine templates with a data model to produce multiple pages that share the same look throughout the site. These are the views in an MVC project.
+So this helps us in putting dynamic content on our HTML pages. 
+We got a HTML like template (technically not HTML) which is typically a file that contains a lot of HTML like content in it but with some placeholders plugged into it and then we have a server (a Node.js Express server or any other server) serving the Node/…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How To create an API using Node.js, Express, and Typescript</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/nayanpatil1998/how-to-create-an-api-using-nodejs-express-and-typescript-89d">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>In this article, we will learn to create an API server using the Express framework and Typescript.
+An API (Application Programming Interface) is a way of interacting with a service, through a series of predefined requests.
+Express is an open-source web framework, for Node.js, designed to make developing websites, web apps, and API&#x27;s easier.
+TypeScript is JavaScript with syntax for types, it is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+so let&#x27;s dive into the tutorial,
+Basic knowledge of  NodeJs  and Javascript
+Basics of TypeScript
+To initialize the project in the working directory and create a package.json file by running the below command in terminal
+npm init -y
+
+After running this command it will create the package.json file i…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Deep dive into Node.js Architecture</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/altamashali/deep-dive-into-nodejs-architecture-5190">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>In this article, we are going to deep dive into Node.js architecture and understand the asynchronous nature of Node.js.
+Let&#x27;s dive into it.
+Node.js is a single-threaded, asynchronous, event-driven runtime environment for running Javascript code on the server.
+By Single-threaded means Javascript runtime executes only one piece of code( or statement) at any instance of time synchronously. It has only one call stack and one heap memory. But then how does runtime handles multiple asynchronous operations in an efficient way ? Node.js handles it efficiently using its event-driven approach. Don&#x27;t worry about that now. We will come back to it soon :) .
+I/O(input/output) is the slowest among the fundamental operations of a computer. It involves accessing data on the disk, reading and writing a file…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Why I&#x27;m studying this? - Web Applications Security, Part 1</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/leofelicissimo/why-im-studying-this-web-applications-security-part-1-3el6">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>This and the followings texts will be part of my personal study about security for Web Applications. It represents a big challenge for me. For two reasons: First, because english is not my first language and I couldn&#x27;t imagine to write a text in english at my life. And second, because security is a gap that I have at this exactly moment. And with this and others texts I want to win this two challenges and get enter in a beautiful and new world!
+
+Just kidding lol, let&#x27;s move on!
+Security is an important them when we are building an information system, because in this kind of application we have private data going from a side to another. Then, it is not without importance (I know that must exists a better term for this) because in case of have our data stolen our users could be prejudiced an…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The ultimate collection of production-ready NestJS Boilerplate</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/joeygoksu/the-ultimate-collection-of-production-ready-nestjs-boilerplate-2d4h">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>The ultimate collection of production-ready and flexible NestJS Boilerplate.  🚀 
+NestJS framework boilerplate with:
+📱 NestJS — latest version
+🎉 TypeScript - Type checking
+⚙️ Dotenv - Supports environment variables
+🗝 Authentication - JWT, RSA256
+🏬 Authorization - RBAC, CBAC
+🏪 TypeORM - Database ORM
+🏪 PostgreSQL - Open-Source Relational Database
+🧠 Configuration - Single config for all
+📃 Swagger - API Documentation
+🐳 Docker Compose - Container Orchestration
+🔐 Helmet - secure HTTP headers
+😴 Insomnia - Insomnia config for endpoints
+📏 ESLint — Pluggable JavaScript linter
+💖 Prettier - Opinionated Code Formatter
+👉 Let&#x27;s try: https://github.com/joeygoksu/prime-nestjs
+My other blog posts:
+Kubernetes on AWS EKS for Beginners(Part 1)
+Apache NiFi on AWS
+Using lottie animations in gatsby
+Coding Criteria
+AWS Amplify @auth directives</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular : RxJS concatMap operator</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/dipteekhd/angular-rxjs-concatmap-operator-4614">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>In Angular, we use HTTP to get data from backend,HTTP methods always return an observable.Generally we subscribe to that observable and assign response data to class variables to use it in our component.
+But using RxJS operators we can compose multiple observables(data streams) or process  observable data  before subscribing to it.
+RxJS concatMap operator
+Observable emits observable).
+concatMap operator
+Takes each value from the outer observable and maps that value  to observable(called as inner observable) 
+Concat all inner observables into a single observable in order  and subscribe to inner observables and emit data of each inner observable into output observable in sequential manner.
+concatMap never subscribes to the next inner observable until the previous one completes.
+Example:
+
+Run live
+Here we have 2 API’s
+In the above case we need to take all roll numbers from the first API  and pass it to the second API.
+
+So solution to this problem is use concatMap RxJS operator instead of nested subscription.
+
+First contactMap operator -
+getToppers_rollNum() this method returns an Observable of type number[] , conactMap  maps Observable to Observable (inner observable) then subscribes to inner observable and emit data into output observable(top_3_rollNum$).
+Second  concatMap operator -
+top_3_rollNum$ as outer observable.concatMap takes each roll number from the outer observable and hits http request sequentially(here we have 3 inner observables return by 3 http requests) &amp; emits http response data into output observable(topper_marks$).
+concatMap never hits the next http request until the previous one completes.
+Shorthand syntax for above code
+
+So,concatMap is used where sequence of execution matters.
+Thanks for reading! If you found this helpful please share!</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Respecting someone&#x27;s gender in a Person object.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/baenencalin/respecting-someones-gender-in-a-person-object-4fok">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Here&#x27;s how I&#x27;d respect someone&#x27;s gender in TypeScript
+/*
+ * A 3-bit number that represents the person&#x27;s gender.
+ * (bits in the order of: MFT.)
+ * (MFT stands for &quot;Male Female Trans&quot;.)
+ * (Special blends:
+ *  0x111 &#x3D; Gender Fluid
+ *  0x110 &#x3D; Bigender
+ *  0x001 &#x3D; Nonbinary
+ *  0x000 &#x3D; Agender
+ * )
+ * (
+ *  Expansion upon this format is welcome. If you want
+ *  to add more attributes, for more non-binary genders,
+ *  feel free, and tell me your format below!
+ * )
+*/
+type Gender &#x3D; number;
+function sterilizeGenderId(g:Gender):Gender {
+    return g &amp; 0b111; // 0b111 &#x3D; 7.
+}
+
+class Person {
+    constructor(
+        name:String|string, age:number, gender:Gender
+    ) {
+        this.gender &#x3D; sterilizeGenderId(gender);
+        this.name &#x3D; name;
+        this.age &#x3D; age;
+    }
+    gender:Gender;
+    name:String|string;
+    age:number;
+}</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to convert an object to a read-only or a constant object in TypeScript?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/melvin2016/how-to-convert-an-object-to-a-read-only-or-a-constant-object-in-typescript-1dba">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Originally posted here!
+To convert an entire object to a read-only or a constant object, you can use the as keyword after the object initialization followed by the keyword const in TypeScript.
+// using &quot;as&quot; keyword after the person
+// object initialisation followed by the keyword &quot;const&quot;
+// to make the object readonly or a constant object
+const person &#x3D; {
+  name: &quot;John Doe&quot;,
+  age: 23,
+} as const;
+
+// change the &quot;name&quot; property value
+person.name &#x3D; &quot;Hello&quot;; // ❌ not allowed. Cannot assign to &#x27;name&#x27; because it is a read-only property.
+
+For example, let&#x27; say we have an object called person with 2 properties called name and age having values of John Doe and 23 respectively like this,
+// a simple object
+const person &#x3D; {
+  name: &quot;John Doe&quot;,
+  age: 23,
+};
+
+Now if hover over the person object vari…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to write an ESLint plugin in TypeScript</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/darraghor/how-to-write-an-eslint-plugin-in-typescript-3k5a">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(11 min)</span>
+                    <span>I use NestJS at my day job. It’s a complicated framework sometimes and there are lots of things that devs “just have to remember” or there will be bugs in your application that you won’t see until runtime.
+I wanted to remove this cognative load from NestJS engineers so that they can focus on valuable work instead. I wrote an ESLint plugin to alert developers directly in their IDE or editor when these common issues exist - (Available on NPM) https://www.npmjs.com/package/@darraghor/eslint-plugin-nestjs-typed
+Here is what I learned about writing ESLint plugins in typescript for typescript while building the plugin.
+ESlint is the default linting tool in the JavaScript ( E CMA S cript) ecosystem. It is a command line tool but there are integrations with all popular IDEs and text editors.
+From …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2021-11-05">2021-11-05</time></h2>
     <ul class="sources card">
       <li class="source">
@@ -147,90 +696,6 @@ To be successful, we needed to spearhead two initiatives. The …</span>
                     <span>Recently a junior developer sent me an obfuscated stack trace and was pretty surprised when I instantly knew the problem and pointed him at the necessary change. To be fair, I had the advantage of being the person who put that bug there in the first place... But still the ability to glean information from a stack trace, even an obfuscated one, is a serious skill.
 The stack trace in question was a ClassNotFoundException, that&#x27;s typically pretty easy and already tells you everything you need to know. The class isn&#x27;t there.Why it isn&#x27;t there is really a matter of what we did wrong. In this case since the project was obfuscated the bug was that this class wasn&#x27;t excluded from obfuscation.
 Despite all the hate it got over the years, NullPointerException is one of my favorite exceptions. You ins…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Release Notes 11.05 - Syntropy Agent Golang Refactor</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/syntropystack/release-notes-1105-syntropy-agent-golang-refactor-45fp">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>We&#x27;re thrilled to announce the release of our Syntropy Golang Agent, replacing our previous Python-based agent. This new release is not an alternative option; rather, it&#x27;s a complete refactor from scratch and a replacement going forward. It has all the features and capabilities of the previous agent, with barely any changes from the outside; however, we hope it will provide better performance and more sustainable development in the long term. We won&#x27;t go into why Golang, as you can find zillion articles everywhere on the internet!
-As of today, the python agent is deprecated, and all efforts are put into building the best Syntropy Agent in Go. At the moment, it&#x27;s just a stable replica of the former, but new features are to be added.
-The Baseline: For you as a Syntropy user, that won&#x27;t chang…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">What is Smishing?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/robertinoc_dev/what-is-smishing-154g">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>The number of phishing attempts sent by SMS grew by 328% in 2020. Here’s how Smishing works and how you can protect yourself.
-
-
-
-  
-  
-  
-You know all about phishing. From time to time, emails purporting to be from Facebook or your bank drift into your inbox and insist you “verify your account.” Look closer and you spot the telltale signs of a scam: a sketchy-looking sender address, sloppy writing, and a complete lack of personalization. You sigh and hit delete.
-It’s easy to be cynical about opportunistic, mass-mailed phishing attempts. Although some look genuine to even the most cautious eye, others feel decidedly amateurish and are readily identifiable. Billions of emails are sent each month, with over 245,000 phishing-related websites created in January alone according to the Anti-Phish…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Apply Cloudfront Security Headers Policy With Terraform</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aws-builders/apply-cloudfront-security-headers-policy-with-terraform-fd3">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>In November 2021, AWS announced Response Headers Policies — native support of response headers in CloudFront. You can read the full announcement here: Amazon CloudFront introduces Response Headers Policies
-I said “native” because previously you could set response headers either using CloudFront Functions or Lambda@Edge.
-And one of the common use cases for that was to set security headers. So now you don’t need to add intermediate requests processing to modify the headers: CloudFront does that for you with no additional fee.
-Starting from the 3.64.0 version of Terraform AWS provider, you can create the security headers policies and apply them for your distribution.
-Let’s see how that looks!
-First, you need to describe the aws_cloudfront_response_headers_policy resource:
- resource &quot;aws_cloud…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">10 Best App Development Ideas for App Developers in Miami</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/amelia89361190/10-best-app-development-ideas-for-app-developers-in-miami-1de">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Known for its white-sand beaches, warm climate, and delicious cuisine, Miami is a place for people who are always up.
-app developers in Miami  are utilizing this opportunity to transform ideas into digital products that perform well in the market.
-Meditation App
-Whether you are targeting generation Z and millennials or you want to develop an app for the baby boomers, investing in meditation app development can be a lucrative idea for your business. Since staying mindful and mentally healthy is more than a need; it is a growing concern for everybody.
-Food Delivery App
-With the growing use of the internet and mobile apps, people always look for solutions that bring them everything they need from the comfort of their homes. Food delivery app development can be a prospective solution in this r…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">AzCopy.exe exited with non-zero exit code while uploading files to blob storage</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/wallism/azcopyexe-exited-with-non-zero-exit-code-while-uploading-files-to-blob-storage-1dk9">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>In Azure DevOps, trying to copy a file to Azure Storage using the Azure file copy task.
-Initially we were using v3 and it had an error in a &quot;Pre-job&quot; task (but the task itself succeeded) with this error:
-Unable to fetch storage account key. Error: &#x27;{0}&#x27; Error: Input required: ConnectedServiceNameSelector
-In v2 of the task the error is:
-Unable to fetch storage account key. Error: &#x27;{0}&#x27; TypeError: Cannot read property &#x27;retrieveSecret&#x27; of undefined
-Under the hood the task must be creating a SAS token and then trying to upload to the blob storage. To fix the problem you need to ensure the Service Principal being used has these two roles on the Azure Storage Account:
-Storage Account Contributor - &quot;Lets you manage storage accounts, including accessing storage account keys which provide full access to storage account data.&quot;
-Storage Blob Data Contributor - &quot;Allows for read, write and delete access to Azure Storage blob containers and data&quot;
-You can add those roles in IAM</span>
                   </div>
                 </a>
               </details>
@@ -481,47 +946,6 @@ Je vais donc publier un nouvel article environ au deux jours et petit à petit v
 Pour ne rien manquer suivez moi sur twitter : https://twitter.com/EricLeCodeur
 Dans cette section nous allons apprendre comment manipuler une base de données MongoDB à partir de notre API. 
 Vous savez sans doute qu&#x27;il existe plusieurs type de base de données comme les base de données SQ…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Automatically Format Code On File Save in Visual Studio Code Using Prettier</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/myogeshchavan97/automatically-format-code-on-file-save-in-visual-studio-code-using-prettier-3ebe">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Whenever we&#x27;re working on any project, It&#x27;s important to have a default formatter set up for your Code Editor.
-This will improve your productivity by not wasting time in formatting the code If the line gets longer and does not fit on screen.
-Also, using a formatter avoids bugs in your code so you will clearly see where your specific block starts and where it ends and helps to identify matching brackets in the code.
-So in this article, we will see how to set up Prettier formatter in Visual Studio Code(VS Code).
-So let&#x27;s get started.
-Install the Prettier extension for VS Code which formats code written in Javascript, Angular, Vue, React, Typescript and many other languages.
-Click on the extensions icon in VS Code
-Search for prettier
-
-You will see the extension from Prettier
-Click on the inst…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Creating GraphQL Api Using NestJS For Multiple Databases</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/muratas/creating-graphql-api-using-nestjs-for-multiple-databases-2h0b">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(18 min)</span>
-                    <span>About GraphQL
-
-
-In recent years GraphQL has become very popular due to major advantages it offers against well known REST. Briefly,
-It eliminates over fetching &amp; under fetching problems in REST
-With GraphQL, we don&#x27;t need to version or api as in REST
-GraphQL imposes an opinionated structure which easily leads to standardization whithin teams
-Although this article is on creating an api, GraphQL is the best friend of frontend developers. The idea behind is to let the UI component decide its data reqirements and send a query to GraphQL to fetch exactly what it needs.
-You can refer to graphql-at-paypal-an-adoption-story for a well detailed story
-Javascript developers loved Nodejs. Number of projects with Nodejs is getting heigher every day. Using the same language in frontend and also in backe…</span>
                   </div>
                 </a>
               </details>
@@ -844,7 +1268,7 @@ The post Introducing Svelte, and Comparing Svelte with React and Vue appeared fi
                 <summary class="article-expander__title">Fixing the Drift in Shape Rotations</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/fixing-the-drift-in-shape-rotations/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
+                    <span class="article-reading-time">(2 min)</span>
                     <span>Steve Ruiz calls this post an “extra-obscure edition of design tool micro-UX,” but I find it fascinating! If you select a bunch of elements in a design tool, then rotate then, then later select those same elements and try to …
 The post Fixing the Drift in Shape Rotations appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
                   </div>
@@ -1063,91 +1487,6 @@ IE11 ha impedido que Angular aproveche algunas de las características modernas 
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Compose Generator - Create Service Templates</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/marcauberer/compose-generator-create-service-templates-ond">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Note: If you didn&#x27;t read the first article of this series yet, please do this first. This article builds onto base knowledge about Compose Generator.
-
-Compose Generator currently offers &gt; 60 high quality predefined service templates, which you can use out of the box. You can find a list of all supported templates here.
-There are a lot of awesome software projects out there that Compose Generator does not support yet. That&#x27;s where you come into play (more about this at the end of the article) …
-A predefined service template consists of the following file structure:
-
-├─volumes
-│ ├─volume1
-│ ├─volume2
-│ ├─volume3
-│ └─...
-├─config.json
-├─service.yml
-├─environment.env
-└─README.md
-
-Configuration file (config.json): Holds the metadata for a service template like name, label, questi…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Share a GPU between pods on AWS EKS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/danielkneipp/share-a-gpu-between-pods-on-aws-eks-1519">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>On this post we discuss the necessary IaC (Infrastructure as Code) files to provision an EKS cluster capable of sharing a single GPU between multiple pods (code available here).
-If you ever tried to use GPU-based instances with AWS ECS, or on EKS using the default Nvidia plugin, you would know that it&#x27;s not possible to make a task/pod shared the same GPU on an instance. If you want to add more replicas to your service (for redundancy or load balancing), you would need one GPU for each replica.
-And this doesn&#x27;t seem to be going to change in the near future for ECS (see this feature request)
-GPU-based instances are expensive, and despite the fact that some Machine Learning frameworks (e.g. Tensorflow) are pre-configured to use the entire GPU by default, that&#x27;s not always the case. ML service…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Root to Linux: BIOS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/coffeecraftcode/root-to-linux-bios-16jm">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>At Forem a few coworkers and I have formed a Linux Club🤓. 
-Joe Doss is leading us on this adventure into Linux.
-
-The adventure starts by working through the Gentoo Handbook and installing Gentoo(a distribution of Linux) on Lenovo ThinkPads. 
-
- Our ThinkPad specs 
-During our meetings, I have been taking notes. These notes are useful for people in our club. 
-One of the first things we did when we got our laptops was set up our BIOS. 
-This post will give a brief description of what BIOS is, how to navigate to it, and some of the common settings you might change. 
-BIOS or Basic Input/Output System is a small piece of code that lives in a “read only” chip on your system board(motherboard). 
-Note:  read-only means that a file can be opened or read but can&#x27;t be deleted or renamed. 
-The BIOS will…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Four Behaviors of High Performing API Teams - And How to Measure Them</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/matthewreinbold/four-behaviors-of-high-performing-api-teams-and-how-to-measure-them-1ood">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>One API ecosystem challenge I&#x27;ve had over the years is quantifying what &quot;good&quot; looks like (I&#x27;ve published that journey on my website, with pieces including &quot;Rethinking NPS for Quality&quot; and &quot;How Reporting Can Backfire&quot; ). Despite most organizations&#x27; desire to be &quot;data-driven&quot;, much of the quality storytelling we do remains anecdotal and story driven.
-On the one hand, quantifying abstract concepts like &quot;maturity&quot;, &quot;quality&quot;, or &quot;maintainability&quot; is problematic. On the other hand, quantifiable metrics like &quot;time-to-hello-world&quot; and &quot;uptime percentile&quot; don&#x27;t describe the health of an API ecosystem or whether improvement efforts are improving the speed and safety of overall API development.
-I joined Postman in April, just as the company was preparing its latest survey. I saw it as an opportunity to build upon existing industry devops insights by testing whether they also apply to API program performance.
-In the 180th Net #API Notes, I deep dive on the Postman 2021 State of the APIs Report; specifically, what are the four behaviors of high-performing API teams? And how do we measure them? 
-More in the newsletter:
-https://tinyletter.com/NetAPINotes/letters/net-api-notes-for-2021-11-04-issue-180-state-of-the-api-report</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
                 <summary class="article-expander__title">Root to Linux: BIOS</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/coffeecraftcode/root-to-linux-bios-16jm">
                   <div class="article-summary-box-inner">
@@ -1199,152 +1538,6 @@ du command
 
 
 This command lets the user get a quick view of the disk usage. The best way to us…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Integrating MongoDB database in web app</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/roopalisingh/mongodb-through-mongoose-3fbd">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Hi there👋,
-In this guide we will be learning how to integrate MongoDB in our project using Mongoose.
-or the backend of your app)
-MongoDB is an open-source document database and leading NoSQL database.
-Mongoose is an Object Data Modelling(ODM) library for MongoDB and Node.js.
-Instead of connecting our node app directly to MongoDB, we will use Mongoose.
-
-
-For this guide, we will be storing user info. in our database.
-If you&#x27;re working on complete MERN stack then all of these steps are meant to be perform in the backend of your app.)
-1. Start with installing Mongoose.
-npm install mongoose
-
-2. Create a file userModel.js.
-In this file, we will create a userSchema. A schema is the structure of the database.
-import mongoose from &quot;mongoose&quot;;
-
-const userSchema &#x3D; new mongoose.Schema(
-  {
-    // It …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Deploy Angular SSR Application on AWS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/prabhjeet6/deploy-angular-ssr-application-on-aws-b9n">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>This post illustrates deployment process of Server Side Rendered Angular application, as can be guessed from the title.
-Though, AWS has a dedicated service for deploying SSR applications, called  AWS Amplify, but, as of writing this post, Angular Universal is not supported by Amplify. There are multiple other options available to achieve the required result. One of the more popular ones were the usage of a third party API, called Serverless. But, It was particularly challenging for me to find a clean and vanilla solution as I was juggling between different options.
-Below, I will demonstrate the usage of AWS Elastic Beanstalk to deploy Angular SSR.     
-Open AWS Management Console and go to Elastic Beanstalk homepage. Click on Create Application.
-
-Next, Give your application a name, and select Platform and Platform branch as illustrated below.
-
-On the same page, proceed with uploading the zipped dist folder of your Angular app which gets generated upon building your app in the local system. Now, click on Configure more options button. 
-
-On the next screen, click on the Edit button on the software tile.
-  
-Provide the Node Command considering dist as root. The path used in Node Command generally is of the folder where file to be run is placed.
-
-Save the Configuration and click on Create App subsequently. Environment setup will take a few minutes, after which it will provide the Health status, logs and Deployment URL, as, can be seen below.
-
-Hope, This article is useful for the readers. Please share and provide reactions if you like the blog.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to connect to MySQL with Node.js</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/salvietta150x40/how-to-connect-to-mysql-with-nodejs-26fo">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Let&#x27;s see how you can connect to a MySQL database using Node.js, the popular JavaScript runtime environment.
-
-
-Create a MySQL database
-
-
-
-mysql -u USER -p
-
-
-
-CREATE DATABASE employees;
-
-USE employees;
-Create a table in the database:
-
-
-CREATE TABLE IF NOT EXISTS employees (    
-id int(11) NOT NULL AUTO_INCREMENT,    
-name varchar(50),    
-PRIMARY KEY (id)  
-);
-INSERT INTO employees (nombre) VALUES (&quot;Silvia&quot;);  
-INSERT INTO employees (nombre) VALUES (&quot;Luigi&quot;);  
-INSERT INTO employees (nombre) VALUES (&quot;Alejandro&quot;);
-
-
-
-
- 
-
-
-Install node-mysql
-You will need to have the node-mysql package installed, so if you don&#x27;t have it installed, you will need to install it. To do this you must use the npm package manager:
-
-
-npm install mysql
-
-
-
-Establish the MySQL connection
-
-
-
-var mysql &#x3D; require(&#x27;mysql&#x27;);  
-var conexion&#x3D; mysql.createConnection({      
-   host : &#x27;localhost&#x27;,      
-   database : &#x27;employees&#x27;,      
-   user : &#x27;USER&#x27;,      
-   password : &#x27;PASS&#x27;,  
-});    
-conexion.connect(function(err) {     
-   if (err) {          
-       console.error(&#x27;Error de conexion: &#x27; + err.stack);          
-       return;      
-   }      
-   console.log(&#x27;Connected to the identifier &#x27; + conexion.threadId); 
-});
-
-
-
-conexion.query(&#x27;SELECT * FROM empleados&#x27;, function (error, results, fields) {
-      if (error)          
-          throw error;        
-      results.forEach(result &#x3D;&gt; {          
-      console.log(result);      
-      });  
-});
-Finally, terminate the connection:
-
-
-connection.end();
-
-this guide.</span>
                   </div>
                 </a>
               </details>
@@ -1549,207 +1742,6 @@ I found a really good…</span>
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Authorization of a Twitch Extension</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/shrmpy/authorization-of-a-twitch-extension-1hn9">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>This article is the third in a multi-part series to walk through the creation of a Twitch extension. For the third part, the goal is to refactor the authorization.
-To go directly to the project, the source code repository is available at 
- / 
-        pavlok
-      
-    
- / 
-        pavlok-panel
-      
-    
-Requirements:
-CORS
-OAuth2
-encryption
-
-
-
-
-
-  
-  
-  § Routes
-
-
-
-  
-  
-  /auth flow
-
-
-
-
-
-
-
-There was claims-extraction processing in earlier incarnations as part of the state field construction. In examining the flow, the diagram helps show there is no longer a claims-extraction step. It&#x27;s been isolated from preprocess which means now the logic that enforces the extension secret is missing. We have to decide how to re-enable the verification of the extension secret. This will be the focus of…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Typescript and the Force</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/santiago548/typescript-and-the-force-555d">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>I have recently been tasked with a coding challenge to utilize the Stawars API to display a list of characters from the API as well as a the information provided for each character. the code was provided by the possible employer for a super rad company that I am hoping to land a junior role with. I was a little iffy at first as its a vertical I had ever anticipated working in, but after talking with there head engineer I felt like we really hit it off and how he described the way they set up their teams as well as continue to offer stipend for learning and developing was a big draw!
-to the challenge though the first part was pretty simple they provided some code that made an fetch request to the API cool cool I remember doing API fetch request although its been a while since I have for the…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to stop infinite loop without breaking React&#x27;s rule of hooks (useEffect)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/tresabhi/stop-infinite-loop-without-breaking-reacts-rule-of-hooks-useeffect-1k67">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>I have many different places where I have to use the same logic, so I have generalized my logic system into a class...
-...
-const contextLayer &#x3D; new contextLayerCore(...useState([]));
-...
-
-This class provides me with a bunch of functions like addContext, removeAll, etc. However, the addContext function is a bit problematic...
-...
-addContext(context: listing) {
-  this.setState([...this.state, context]);
-}
-...
-
-Simple enough; all it does is append an object using the setState function which should re-render any components using the state. Here&#x27;s the problem, this causes an infinite loop...
-...
-this.setState([...this.state, context]);
-//                     ^
-// also updates when state updates, hence re-runs the setState function
-...
-
-This causes and infinite loop. I could using useEffect(..., []) to make it not be dependant, however, this is a function inside a class, thus it breaks React&#x27;s rules of hooks.
-I have to retain the functionality of this class, so I cannot move the function up into the component(s) as a lot of components use this class and would simply create duplicate code.
-And example of where it is used...
-...
-
-...
-
-What should I do? Is there an alternative of useEffect? Should I be using a different system for this purpose?
-Convert it to a custom hook!
-export default function useContextLayer (initialState: Array
-) {
-  const [state, setState] &#x3D; useState(initialState);
-
-  return {
-    removeAll: () &#x3D;&gt; {...},
-    addContext: () &#x3D;&gt; {...},
-    // doesn&#x27;t even need an useEffect anymore
-  }
-}</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Implementing React Check Permissions: the Component</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/bwca/implementing-react-check-permissions-the-component-3gjm">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>You can follow the code in this article in the commit in the repo I made for the series.
-This is the last article in the series and in this final article we will be taking a look how to create a wrapper component for conditional rendering of components based on user permissions.
-Why do we need it? Because it is more convenient to wrap a component in a wrapper than to call a hook in every case we need conditional rendering.
-Let&#x27;s create an interface to represent the props of our future wrapper component in our models folder:
-// ./permissions-validation/models/with-permissions-props.ts
-import { ReactElement } from &#x27;react&#x27;;
-
-export interface WithPermissionsProps {
-  checkAll?: boolean;
-  children: ReactElement;
-  permissions?: string | string[];
-  placeholder?: JSX.Element;
-}
-…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to configure import aliases in Vite, TypeScript and Jest</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sand4rt/how-to-configure-import-aliases-in-vite-typescript-and-jest-418i">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Most people have seen them, those immensely long import paths like the example below:
-import module from &quot;../../../../../modules/module.ts&quot;;
-
-To improve this, you can use import aliases and make it look like the example
-import module from &quot;@/modules/module.ts&quot;;
-
-The benefit of this is readability and that you can move files and folders to sub or parent directories without changing the import paths.
-Tools like Vue CLI are supporting this out-of-the-box, but if you want to use the new blazing-fast build tool Vite, you&#x27;ll need to (at the time of writing)
-For this to work, all tools need to know that import aliases are used by modifying each tool&#x27;s configuration file.
-Vite has a configuration file called vite.config.ts and by adding the resolve object Vite will know that import aliases are being used:
-// vite.config.ts
-import { defineConfig } from &quot;vite&quot;;
-import path from &quot;path&quot;;
-
-export default defineConfig({
-  resolve: {
-    alias: {
-      &quot;@&quot;: path.resolve(__dirname, &quot;./src&quot;),
-    },
-  },
-});
-
-By adding a paths object to the compilerOptions inside the tsconfig.json like the example below TypeScript will also know that import aliases are being used:
-// tsconfig.json
-{
-  &quot;compilerOptions&quot;: {
-    &quot;paths&quot;: {
-      &quot;@/*&quot;: [&quot;./src&quot;]
-    }
-  }
-}
-
-At last Jest knows that aliasses are being used by adding the moduleNameMapper to the jest.config.ts configuration file like the code below:
-// jest.config.ts
-module.exports &#x3D; {
-  moduleNameMapper: {
-    &quot;^@/(.*)$&quot;: &quot;/src/$1&quot;,
-  },
-};</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">AtlasGQL - A self-composing GraphQL server library using TypeScript, Express and Apollo Server</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/marcellobarile/atlasgql-a-self-composing-graphql-server-library-using-typescript-express-and-apollo-server-1cba">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Before digging into the details, let me first do a very quick introduction to what GraphQL is.
-GraphQL is a query language designed to build client applications by providing an intuitive and flexible syntax and system for describing their data requirements and interactions.
-GraphQL does not mandate a particular programming language or storage system for application services that implement it. Instead, application services take their capabilities and map them to a uniform language, type system, and philosophy that GraphQL encodes.
-This provides a unified interface friendly to product development and a powerful platform for tool-building.
-spec.graphql.org/October2021
-My journey with GraphQL started when its adoption was still surrounded by some skepticism; at that time there were not many to…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -1880,44 +1872,6 @@ My journey with GraphQL started when its adoption was still surrounded by some s
                     <span class="article-reading-time">(22 min)</span>
                     <span>In June of 1995, representatives from Microsoft arrived at the Netscape offices. The stated goal was to find ways to work together—Netscape as the single dominant force in the browser market and Microsoft as a tech giant just beginning to …
 The post Chapter 10: Browser Wars appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Introduction to Angular CLI Builders</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/tarungurang/introduction-to-angular-cli-builders-33p2">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>In this blog, we&#x27;ll look at a new API in Angular CLI that allows us to add new CLI features and enhance existing ones. We&#x27;ll go over how to interact with this API and what extension points we can use to extend the CLI&#x27;s features.
-With Angular 8, the Builders API was released, and it includes the ability to override commands such as ng build, ng test, and ng lint. Not to be confused with Angular Schematics, which can be used to add custom commands to ng generate or provide support for ng add.
-We introduced the workspace file (angular.json) in the Angular CLI about a year ago, and we reworked several key principles of how its commands were implemented as a result. We ended up placing the following commands in boxes:
-Commands on the schematic diagram. We&#x27;ve probably heard of Schematics, the C…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Top 7 Reasons Why AngularJS Is A Good Choice For Web Application Development</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/cathysmith/top-7-reasons-why-angularjs-is-a-good-choice-for-web-application-development-4526">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>7 Reasons Why AngularJS Is A Good Choice For Web Application Development 
- 
-
-AngularJS is an open-source Javascript framework for Web App Development that is built and maintained by Google. It is developed to create client-side applications which are written in Javascript. Also, within no time, AngularJS emerged as a well-liked Javascript Framework. 
-Amazon claims that every 100-millisecond increase in page loading time results in a 1% gain in revenue.
-This image has an empty alt attribute; its file name is 617bc5f9db8f6.gif
-In case if you are asking for more reasons, this is the blog that you should read. Here we are listing out the top reasons to choose Angular for web development, mobile app development, or any custom application development. 
-Also, the benefits of Angular include the e…</span>
                   </div>
                 </a>
               </details>
@@ -2090,32 +2044,9 @@ The post Rebase vs. Merge: Integrating Changes in Git appeared first on CSS-Tric
                 <summary class="article-expander__title">Responsible JavaScript</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/responsible-javascript-2/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
+                    <span class="article-reading-time">(3 min)</span>
                     <span>High five to Jeremy on the big release of Responsible JavaScript on A Book Apart. There is a lot of talk about how the proliferation of JavaScript has had a negative impact on the web, but now we have …
 The post Responsible JavaScript appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Building an app with Angular &amp; Firebase</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jscrambler/building-an-app-with-angular-firebase-1lg4">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Firebase is a service provided by Google where the back end is provided as a service for use in applications. Its database (Firebase Realtime Database) is a NoSQL database where data is stored in JSON like documents. In this tutorial, you&#x27;ll learn how to build an Angular application using Firebase as backend. So, let&#x27;s get started.
-Let&#x27;s start by setting up Firebase by signing into the Firebase console. 
-
-Click on the Add project to create a new project. 
-You&#x27;ll be prompted to enter a name for your project. We&#x27;ll be naming our project js-scrambler-demo. Next, it&#x27;ll ask you whether to enable Google Analytics for this project or not. We’ll disable it since it&#x27;s not required for this tutorial and click on Create project.
-
-Click on the continue button and you will be able to view the following…</span>
                   </div>
                 </a>
               </details>
@@ -2743,31 +2674,9 @@ Thank you: @hirdot</span>
       </li>
     </ul>
   </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-10-08">2021-10-08</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Building A Static-First MadLib Generator With Portable Text And Netlify On-Demand Builder Functions</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/10/static-first-madlib-generator-portable-text-netlify-builder-functions/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(24 min)</span>
-                    <span>In this article, we’ll be building an interactive fiction experience in which a user can insert words that match parts of speech given by the content creator. Let’s go!</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-11-06T01:00:47.115Z">2021-11-06T01:00:47.115Z</time>
+    <time id="build-timestamp" datetime="2021-11-07T01:05:18.117Z">2021-11-07T01:05:18.117Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.11.3</a></span>
   </footer>
   <script src="index.js"></script>
