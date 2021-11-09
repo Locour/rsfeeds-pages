@@ -1,10 +1,1073 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>urn:2021-11-08T01:03:20.743Z</id>
+    <id>urn:2021-11-09T01:03:19.566Z</id>
     <title>osmos::feed</title>
-    <updated>2021-11-08T01:03:20.743Z</updated>
+    <updated>2021-11-09T01:03:19.566Z</updated>
     <generator>osmosfeed 1.11.3</generator>
     <link rel="alternate" href="index.html"/>
+    <entry>
+        <title type="html"><![CDATA[Understanding timing attacks with code examples]]></title>
+        <id>https://dev.to/propelauth/understanding-timing-attacks-with-code-examples-32e6</id>
+        <link href="https://dev.to/propelauth/understanding-timing-attacks-with-code-examples-32e6"/>
+        <updated>2021-11-08T23:10:04.000Z</updated>
+        <summary type="html"><![CDATA[Vulnerable login example
+
+
+The following code snippet has a subtle security issue with it. Can you tell what's wrong?
+// Returns true if the email/password pair is valid
+async function isValidCredentials(emailAddress, password) {
+    // Fetch the password hash from the DB by email address
+    const passwordHashOrNull = await fetchPasswordHash(emailAddress);
+
+    // If there was no match, return false
+    if (!passwordHashOrNull) {
+        return false;
+    }
+
+    // Bcrypt is "a library to help you hash passwords"
+    // Here we use the compare function to check that the
+    //   provided password matches the hashed password in the DB
+    const doesPasswordMatch = await bcrypt.compare(password, passwordHashOrNull);
+    return doesPasswordMatch;
+}
+
+// Fetches the password hash from the DB
+a…]]></summary>
+        <author>
+            <name>propelauthblog</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Typescript Example #2.]]></title>
+        <id>https://dev.to/baenencalin/typescript-example-2-42n1</id>
+        <link href="https://dev.to/baenencalin/typescript-example-2-42n1"/>
+        <updated>2021-11-08T22:48:24.000Z</updated>
+        <summary type="html"><![CDATA[// An example of using generics in a type union.
+// A compact version of my Option<T> type from
+// "Typescript Example #1." (https://dev.to/baenencalin/typescript-example-1-ia3).
+type Option<T> = T|null;]]></summary>
+        <author>
+            <name>Calin Baenen</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fixing Just One False Positive in Brakeman]]></title>
+        <id>https://dev.to/presidentbeef/fixing-just-one-false-positive-in-brakeman-4060</id>
+        <link href="https://dev.to/presidentbeef/fixing-just-one-false-positive-in-brakeman-4060"/>
+        <updated>2021-11-08T22:27:16.000Z</updated>
+        <summary type="html"><![CDATA[A while ago, I came across a Brakeman false positive that I wanted to fix.
+For a single false positive, it became a bit of an epic journey.
+The code looked something like this:
+class Task < ApplicationRecord
+  enum status: {
+    pending: 0,
+    success: 1,
+    failed: 3,
+  }
+
+  NOT_FAILURES = ['pending', 'success'].freeze
+end
+
+class TaskRunner
+  def get_failures
+    start_time = Date.beginning_of_quarter
+    end_time = Date.end_of_quarter
+
+    no_failure_enums = Task.statuses.values_at(*Task::NOT_FAILURES)
+
+    query = <<~QUERY
+      SELECT COUNT(*)
+      FROM `tasks`
+      WHERE `tasks`.`status` NOT IN (#{no_failure_enums.join(',')})
+      AND `tasks`.`time_end` BETWEEN #{start_time} AND #{end_time}
+    QUERY
+
+    # Line below triggers a SQL injection warning
+    Task.connection.select_al…]]></summary>
+        <author>
+            <name>Justin</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VSCode project-wide TS checks]]></title>
+        <id>https://dev.to/beeinger/vscode-project-wide-ts-checks-2c7m</id>
+        <link href="https://dev.to/beeinger/vscode-project-wide-ts-checks-2c7m"/>
+        <updated>2021-11-08T22:26:06.000Z</updated>
+        <summary type="html"><![CDATA[Being a coder I have never limited myself to one language, one framework and I didn’t want to have a milion code editors each specialised in different thing so I have always used VSCode. Keeping the theme, the look and feel of the editor with power of an IDE one plugin away no matter which language I want to jump into is the key factor that guided my choice.
+However, I have tried JetBrains’ WebStorm before and just couldn’t get rid of one huge thing haunting me, the project-wide type checking.
+In VSCode the typescript plugin works great but it only checks files that are currently opened in the editor! Other files inside the project are not being checked until opened 😕 Now this is a huge bump, having to run the check manually through console or build the whole app in order to check if one type alternation hasn’t influenced anything else? Madness…
+This is when I decided to research this problem — and there really is no out of the box solution! After trying every way on the internet I have finally pieced together the final solution for this problem:
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "tsc-watch project",
+        "type": "typescript",
+        "tsconfig": "tsconfig.json",
+        "option": "watch",
+        "problemMatcher": ["$tsc-watch"],
+        "group": "build",
+        "runOptions": {
+          "runOn": "folderOpen"
+        },
+        "presentation": { "reveal": "never" }
+      }
+    ]
+  }
+
+This is an automated task for VSCode — it runs when the project folder is opened and keeps on running, checking the whole repo real-time based on the changes you make! Finally! 🎉
+Put it in
+
+.vscode/tasks.json
+
+
+
+
+Re-open the project folder and accept the popup asking whether Automatic Folder Tasks should be allowed
+If the popup isn’t there do:
+⌘⇧p
+-> Manage Automatic Tasks in Folder
+-> Allow Automatic Tasks in Folder
+
+
+
+  
+  
+  🎉 All done! Enjoy your VSCode with TypeScript better than ever! 🎉]]></summary>
+        <author>
+            <name>Maciej Sułecki</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Five common causes for flaky tests and what you can do about them]]></title>
+        <id>https://dev.to/sprihatucker/five-common-causes-for-flaky-tests-and-what-you-can-do-about-them-2ej7</id>
+        <link href="https://dev.to/sprihatucker/five-common-causes-for-flaky-tests-and-what-you-can-do-about-them-2ej7"/>
+        <updated>2021-11-08T22:20:24.000Z</updated>
+        <summary type="html"><![CDATA[Flaky tests are non-deterministic tests in your test suite. They may be intermittently passing or failing, making test results unreliable.
+Why are flaky tests bad?
+Developer productivity goes down as test results become inaccurate and trust in the test-suite decreases.
+Multiple, unrelated commits cause similar errors, making maintenance difficult.
+Legitimate issues may get ignored due to a high number of false positives.
+Repetitive work is required to determine if bugs exist at all.
+Diagnostics time increases as errors can be in the test or code.
+User dissatisfaction due to bugs ending up in production.
+Let's look at five common causes for flaky tests showing up in your build pipeline and what you can do about them.
+One of the common reasons why tests do not find bugs is concurrency. They …]]></summary>
+        <author>
+            <name>Spriha B. Tucker</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[System Monitoring Commands 📈💻]]></title>
+        <id>https://dev.to/linuxseb/system-monitoring-commands-4gc9</id>
+        <link href="https://dev.to/linuxseb/system-monitoring-commands-4gc9"/>
+        <updated>2021-11-08T22:14:58.000Z</updated>
+        <summary type="html"><![CDATA[Hey everyone! I am back with another Linux article!😊
+Today I will be going over basic commands you can use to monitor system performance! 📈📉💻
+The 'top' command is used to display active processes and how much they are using system resources.
+
+lsof stands for list of open files- basically shows you list of files and the processes
+
+'tcpdump' is used to analyze network traffic
+'htop' is a lot like top - It's just allows you to monitor system resources or processes. As you can see, it's a bit more fancy than top
+
+'iostat' is a command that is used to monitor input/output devices, by telling you how long the devices have been active.
+
+Displays the processes
+
+Tells you how long the system has been up
+
+'free' shows you the amount of available memory you have.
+
+Used to monitor individual tasks. Great for troubleshooting issues.
+
+'w' tells you information about users logged on and their processes
+
+These commands can be vital for you to monitor your system, so I will be releasing a part 2 soon, as well!😆
+For future Linux and security content, please give me a follow 
+@linuxseb
+ 
+
+
+  
+  
+  Thank you again!😊]]></summary>
+        <author>
+            <name>Seb</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Overview of the OWASP Serverless Top 10 [videos]]]></title>
+        <id>https://dev.to/miguelacallesmba/overview-of-the-owasp-serverless-top-10-videos-1e25</id>
+        <link href="https://dev.to/miguelacallesmba/overview-of-the-owasp-serverless-top-10-videos-1e25"/>
+        <updated>2021-11-08T22:02:12.000Z</updated>
+        <summary type="html"><![CDATA[This YouTube video series provides quick overviews of the top 10 cybersecurity risks for serverless applications. Each video covers the risk and some recommendations on how to address it.
+In this video, I discussed the reasons why the OWASP Serverless Top 10 cybersecurity risks for a serverless application are important to consider.
+%[https://www.youtube.com/watch?v=wWDzqrvt73A]
+In this video, I discussed what is the injection attack.
+%[https://www.youtube.com/watch?v=QhmAs30-b_k]
+In this video, I discussed what is broken authentication and authorization.
+%[https://www.youtube.com/watch?v=fDO4n3HrvQw]
+In this video, I discussed the sensitive data exposure risk.
+%[https://www.youtube.com/watch?v=Q8j8Cu0jhqc]
+In this video, I discussed the XML external entities risk.
+%[https://www.youtube.com/watch?v=wtgTtYXenyM]
+In this video, I discussed the broken access control risk.
+%[https://www.youtube.com/watch?v=nqBQdAiTOb8]
+In this video, I discussed the security misconfiguration risk.
+%[https://www.youtube.com/watch?v=yDyYqDGph8c]
+In this video, I discussed the cross-site scripting (XSS).
+%[https://www.youtube.com/watch?v=jyLOBsHg-7c]
+In this video, I discussed the insecure deserialization risk.
+%[https://www.youtube.com/watch?v=RlV79AmI6Yw]
+In this video, I discussed the risk of using components with known vulnerabilities.
+%[https://www.youtube.com/watch?v=Ij6xU48K11k]
+In this video, I discussed the insufficient logging and monitoring risk.
+%[https://www.youtube.com/watch?v=2Alu17kfNQA]]]></summary>
+        <author>
+            <name>Miguel A. Calles MBA</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Estude TypeScript]]></title>
+        <id>https://dev.to/jonatanlima/estude-typescript-486a</id>
+        <link href="https://dev.to/jonatanlima/estude-typescript-486a"/>
+        <updated>2021-11-08T20:54:04.000Z</updated>
+        <summary type="html"><![CDATA[Post original: link
+Bom dia amigos, gostaria de citar alguns benefícios de aprender e utilizar TypeScript em JavaScript.
+Alguns motivos:
+Temos a possibilidades de trabalhar com tipagem, algo muito útil para nós desenvolvedores JavaScript.
+Orientação a Objetos, sim, vamos poder usufruir de todo o poder desse paradigma (Class, Interface, Abstract), somando com a programação funcional nativa.
+Melhora seu código, seu código vai se tornar mais coeso, bem divido, claro, se você usufruir de interfaces, classes abstratas e da boa e velha herança.
+Muitas tecnologias utilizam ou dão suporte ao TypeScript: Angular, React, Graphql, Graphcool e etc.
+Lembre-se TypeScript é um supertest de JavaScript, ou seja, você pode implementar ele sem precisar usar esses frameworks citados acima.
+Comece agora a utilizar TypeScript e eleve seu JavaScript para o próximo nível. Vou deixar alguns links legais pra você estudar TypeScript:
+O próprio site dará todo o suporte que você precisará: https://lnkd.in/dC4bbuX
+
+
+No próprio site tem uma área pra você começar do zero: https://lnkd.in/dB8pTuj
+
+
+
+Agora só depende de você, estude, pratique e use TypeScript em seus novos projetos.
+Fiquem com Deus e até a próxima.
+Nunca desista de correr atrás dos seus sonhos]]></summary>
+        <author>
+            <name>Jonatan Lima</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Przegląd wybranych ataków na polskich internautów (25.10–7.11.2021 r.)]]></title>
+        <id>https://dev.to/gizamichal/przeglad-wybranych-atakow-na-polskich-internautow-2510-7112021-r-4p4j</id>
+        <link href="https://dev.to/gizamichal/przeglad-wybranych-atakow-na-polskich-internautow-2510-7112021-r-4p4j"/>
+        <updated>2021-11-08T20:02:30.000Z</updated>
+        <summary type="html"><![CDATA[https://sekurak.pl/przeglad-wybranych-atakow-na-polskich-internautow-25-10-7-11-2021-r/]]></summary>
+        <author>
+            <name>Michał Giza</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS Grid Can Do Auto Height Transitions]]></title>
+        <id>https://css-tricks.com/?p=356204</id>
+        <link href="https://css-tricks.com/css-grid-can-do-auto-height-transitions/"/>
+        <updated>2021-11-08T19:01:31.000Z</updated>
+        <summary type="html"><![CDATA[Bonafide CSS trick alert! Nelson Menezes figured out a new way (that only works in Firefox for now) that is awfully clever.
+Perhaps you know that CSS cannot animate to auto dimensions, which is super unfortunate. Animating from …
+The post CSS Grid Can Do Auto Height Transitions appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
+        <author>
+            <name>Chris Coyier</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How To Give Developers Secure Access to Kubernetes Clusters]]></title>
+        <id>https://dev.to/eionel/how-to-give-developers-secure-access-to-kubernetes-clusters-4j26</id>
+        <link href="https://dev.to/eionel/how-to-give-developers-secure-access-to-kubernetes-clusters-4j26"/>
+        <updated>2021-11-08T18:47:28.000Z</updated>
+        <summary type="html"><![CDATA[Installing Lens
+
+
+Navigate to the Lens website (https://k8slens.dev/) and download the latest version of Lens for your preferred OS. Once you have downloaded and installed, open the application, Lens IDE will automatically add your Kubeconfig (if done correctly, you will see a cluster icon on the left-hand-side). Lens works with any certified CNCF Kubernetes distro. 
+Now that your cluster has been added, you have full situational awareness of your Kubernetes cluster. Users can easily monitor all objects and resources within their cluster.  
+In order to share a cluster with a team or team member, you will first need to create a Lens Spaces account:
+https://app.k8slens.dev/signup)
+Click “Create an account” and follow the process to sign up for a Lens Spaces account. Once you have registered …]]></summary>
+        <author>
+            <name>Eionel</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Migração de serverless framework v1 para v2]]></title>
+        <id>https://dev.to/thiagofelippi/migracao-de-serverless-framework-v1-para-v2-1je</id>
+        <link href="https://dev.to/thiagofelippi/migracao-de-serverless-framework-v1-para-v2-1je"/>
+        <updated>2021-11-08T18:41:43.000Z</updated>
+        <summary type="html"><![CDATA[Recentemente em alguns projetos que participei tive alguns desafios com relação a mudança do serverless framework de v1 para v2. No projeto utilizei NodeJS com Typescript, toda infra na AWS.
+Estava utilizando a versão 1.83.2 juntamente com a imagem do docker softinstigate/serverless:1.83.0
+Link da imagem: Docker Hub
+Queríamos utilizar a imagem: Docker Hub
+Que no momento era a mais atual. Porém tivemos alguns desafios e é sobre isto que falarei hoje
+Primeiramente, porque quisemos mudar? Simplesmente porque queríamos mexer com tecnologias mais modernas, usar features novas e nos atualizarmos afim de não termos um projeto depreciado ao longo do tempo.
+Queriamos estar disponíveis para testar novas features da versão v2, aumentar a versão do node, que estava a 10 e iria começar a parar de ter s…]]></summary>
+        <author>
+            <name>Thiago Crespo</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Caching Anaconda environments in GitHub Actions]]></title>
+        <id>https://dev.to/epassaro/caching-anaconda-environments-in-github-actions-5hde</id>
+        <link href="https://dev.to/epassaro/caching-anaconda-environments-in-github-actions-5hde"/>
+        <updated>2021-11-08T17:15:35.000Z</updated>
+        <summary type="html"><![CDATA[One of the most time-consuming tasks in my GitHub workflows is the solving, download and installation of Anaconda environments.
+Some of my pipelines runs on Linux and Mac, so I usually need to set up matrix to handle the different installation paths of Miniconda.
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            label: Linux
+            prefix: /usr/share/miniconda3/envs/carsus
+
+          - os: macos-latest
+            label: macOS
+            prefix: /Users/runner/miniconda3/envs/carsus
+
+At the step level, install Miniconda without specifying a YAML environment file.
+I choose the Mambaforge variant, which is basically a custom Miniconda build shipped with the lightning-fast mamba package manager and the conda-forge channel enabled.
+- name: Setup Miniconda
+  uses: conda-incubator/setup-miniconda@v2
+  with:
+      miniforge-variant: Mambaforge
+      miniforge-version: latest
+      activate-environment: <your-env-name>
+      use-mamba: true
+
+The cache task work with keys. When the task is executed, looks for a saved cache that matches the key and retrieves the data.
+Cache is specific for every OS. Also, I set up the key in a way that will update the cache every 24 hours or if the environment has changed.
+- name: Set cache number
+  run: echo "::set-output name=number::$(date +'%d%m')"
+  id: cache-number
+
+- uses: actions/cache@v2
+  with:
+    path: /usr/share/miniconda3/envs/carsus
+    key: ${{ runner.os }}-conda-${{ hashFiles('<your-env-yaml-file>') }}-${{ env.CACHE_NUMBER }}
+  env:
+    CACHE_NUMBER: ${{ steps.cache-number.outputs.number }}
+  id: conda-cache
+
+Finally, if the cache is not available, update the environment according to the YAML environment file.
+- name: Update environment
+  run: mamba env update -n <your-env-name> -f <your-env-yaml-file>
+  if: steps.conda-cache.outputs.cache-hit != 'true']]></summary>
+        <author>
+            <name>epassaro</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[C/C++] How to get scope_id of IPv6 Link local Address on Linux.]]></title>
+        <id>https://dev.to/fmtweisszwerg/cc-how-to-get-scopeid-of-ipv6-link-local-address-on-linux-7c4</id>
+        <link href="https://dev.to/fmtweisszwerg/cc-how-to-get-scopeid-of-ipv6-link-local-address-on-linux-7c4"/>
+        <updated>2021-11-08T17:08:28.000Z</updated>
+        <summary type="html"><![CDATA[A well-known way is to use getaddrinfo() such like:
+#include <arpa/inet.h>
+#include <cerrno>
+#include <cstring>
+#include <iostream>
+#include <netdb.h>
+#include <string>
+#include <sys/socket.h>
+#include <sysexits.h>
+
+int main(void)
+{
+    struct addrinfo hints;
+    memset(&hints, 0, sizeof(struct addrinfo));
+    hints.ai_family = AF_INET6;
+    hints.ai_socktype = SOCK_DGRAM;
+    hints.ai_protocol = IPPROTO_UDP;
+
+    struct addrinfo* result_addrinfo = nullptr;
+    auto result = getaddrinfo("fe80::dabb:c1ff:fe0a:17f2%enp39s0", std::to_string(12345).c_str(), &hints, &result_addrinfo);
+    if( result != 0 ){
+        std::cout << "`getaddrinfo()` failed: " << gai_strerror(errno) << std::endl;
+        return result;
+    }
+
+    for(
+        struct addrinfo* info = result_addrinfo;
+        info != nullptr;
+        info = info->ai_next
+    ){
+        char ipv6addr_human_readable_form[INET6_ADDRSTRLEN] = {0, };
+        inet_ntop(info->ai_family, &((struct sockaddr_in6*)(info->ai_addr))->sin6_addr, ipv6addr_human_readable_form, info->ai_addrlen);
+        auto ipv6_scope_id = ((struct sockaddr_in6*)(info->ai_addr))->sin6_scope_id;
+
+        std::cout << "IPv6 address = " << ipv6addr_human_readable_form << std::endl;
+        std::cout << "Scope-ID = " << std::to_string(ipv6_scope_id) << std::endl;
+    }
+
+    freeaddrinfo(result_addrinfo);
+    return EX_OK;
+}
+
+Of course, the Scope-ID can also be obtained as previously. But is there an easier and shorter?
+if_nametoindex()
+
+
+Fortunately, Linux provides a function called if_nametoindex (). It returns the index number of the network interface, which is currently equal to the Scope-ID.
+#include <net/if.h>
+#include <iostream>
+#include <sysexits.h>
+
+int main(void)
+{
+    auto scope_id = if_nametoindex("enp39s0");
+    std::cout << scope_id << std::endl;
+
+    return EX_OK;
+}
+
+Now, the code became much shorter and easier. Also, there is no need to care to free memory!]]></summary>
+        <author>
+            <name>Fomalhaut Weisszwerg</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Remove Protected Data with No-code]]></title>
+        <id>https://dev.to/frizzled/remove-protected-data-with-no-code-2cng</id>
+        <link href="https://dev.to/frizzled/remove-protected-data-with-no-code-2cng"/>
+        <updated>2021-11-08T17:08:26.000Z</updated>
+        <summary type="html"><![CDATA[remove-pii is a no-code solution that creates shareable CSVs while removing protected data, PII and PHI with just a few clicks.
+Working with third parties, contractors and partners who need access to files containing protected data means walking a tightrope between providing useful data without violating privacy, HIPAA or GDPR. 
+Let's remove protected data from a CSV without writing any code using an example file.
+
+This walk-through will use remove-pii.com. Although we're working with a website, no data is transmitted to any server; all processing is handled in the browser. An offline version is also available.
+Now, we'll provide our CSV to the website. This will parse the headers and allow us to replace any data within the file.  Any unset columns pass through to the final file. 
+
+Let's s…]]></summary>
+        <author>
+            <name>Vlad Loscutoff</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Subscribe to and Receive Push Notifications from YouTube’s API using Typescript and Nodejs]]></title>
+        <id>https://dev.to/algodame/how-to-subscribe-to-and-receive-push-notifications-from-youtubes-api-using-typescript-and-nodejs-2gik</id>
+        <link href="https://dev.to/algodame/how-to-subscribe-to-and-receive-push-notifications-from-youtubes-api-using-typescript-and-nodejs-2gik"/>
+        <updated>2021-11-08T16:25:11.000Z</updated>
+        <summary type="html"><![CDATA[Youtube’s API provides developers with a way to get push notifications for when specific changes occur on a youtube channel. Youtube’s API sends out these notifications through a PubSubHubbub webhook protocol.
+Webhooks are used to send near-real-time data to applications. 
+Let’s say you have an application that sends out emails to a mailing list and you only want to send out these emails whenever Beyonce posts a video on her channel. To do this, you can use Youtube’s webhooks to subscribe to push notifications on Beyonce’s channel. Whenever Beyonce posts a video, Youtube will tunnel down a request to your server to inform you of this event.
+In order to get the push notifications from Youtube’s webhook, you need to provide Youtube with a URL which you will use to receive the data for whenev…]]></summary>
+        <author>
+            <name>Chiamaka Ojiyi</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Thing to know before developing your cyber security solution]]></title>
+        <id>https://dev.to/aws-builders/thing-to-know-before-developing-your-cyber-security-solution-2onk</id>
+        <link href="https://dev.to/aws-builders/thing-to-know-before-developing-your-cyber-security-solution-2onk"/>
+        <updated>2021-11-08T16:16:46.000Z</updated>
+        <summary type="html"><![CDATA[According to the Cybersecurity and Infrastructure Security Agency(CISA)," Cybersecurity is the art of protecting networks, devices, and data from unauthorized access or criminal use and the practice of ensuring confidentiality, integrity, and availability of information.". A few terms to know before going ahead,
+Privacy means maintaining confidentiality.
+Anonymity means no body knows who you are?
+Pseudonymity means using an alias.
+How much of your daily life relies on technology? How much of your personal information is stored on a device or a server?
+There are many risks, some more serious than others. Among these dangers is malware erasing your entire system, an attacker breaking into your system and altering files, an attacker using your computer to attack others, or an attacker stealin…]]></summary>
+        <author>
+            <name>hridyesh bisht</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Angular: An Exploration in Triggering Validation and Transformation]]></title>
+        <id>https://dev.to/rfornal/angular-an-exploration-in-triggering-validation-and-transformation-5g4k</id>
+        <link href="https://dev.to/rfornal/angular-an-exploration-in-triggering-validation-and-transformation-5g4k"/>
+        <updated>2021-11-08T16:10:54.000Z</updated>
+        <summary type="html"><![CDATA[Recently, I came across an intriguing article about (Dynamic self-registered FormControl in Angular)(https://medium.com/@toha.marko/dynamic-self-registered-reactive-formcontrol-in-angular-bf2342b7f14d).
+Everything about this article was well done and very interesting.
+There was one point in the article that spiked my interest: the author triggered the "creation" of the Form Controls dynamically within the Angular HTML.
+So, I decided to experiment and see if I could use this as a means to trigger data validation and transformation.
+This is an experiment, simple to see if I can do something. Personally, I see some benefit in the pattern. But, this does not mean I am endorsing this as a good pattern or a better means than any other way of doing something.
+The working code ...
+REPO
+PAGE
+Here's…]]></summary>
+        <author>
+            <name>bob.ts</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Angular: An Exploration in Triggering Validation and Transformation]]></title>
+        <id>https://dev.to/rfornal/angular-an-exploration-in-triggering-validation-and-transformation-5g4k</id>
+        <link href="https://dev.to/rfornal/angular-an-exploration-in-triggering-validation-and-transformation-5g4k"/>
+        <updated>2021-11-08T16:10:54.000Z</updated>
+        <summary type="html"><![CDATA[Recently, I came across an intriguing article about (Dynamic self-registered FormControl in Angular)(https://medium.com/@toha.marko/dynamic-self-registered-reactive-formcontrol-in-angular-bf2342b7f14d).
+Everything about this article was well done and very interesting.
+There was one point in the article that spiked my interest: the author triggered the "creation" of the Form Controls dynamically within the Angular HTML.
+So, I decided to experiment and see if I could use this as a means to trigger data validation and transformation.
+This is an experiment, simple to see if I can do something. Personally, I see some benefit in the pattern. But, this does not mean I am endorsing this as a good pattern or a better means than any other way of doing something.
+The working code ...
+REPO
+PAGE
+Here's…]]></summary>
+        <author>
+            <name>bob.ts</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Install Dropbox on ArchLinux with paru]]></title>
+        <id>https://dev.to/shawon/install-dropbox-in-archlinux-with-paru-2nen</id>
+        <link href="https://dev.to/shawon/install-dropbox-in-archlinux-with-paru-2nen"/>
+        <updated>2021-11-08T15:56:41.000Z</updated>
+        <summary type="html"><![CDATA[Have you ever encountered ERROR: One or more PGP signatures could not be verified! this error during the installation of Dropbox in Arch based distro ? If yes then this guide is for you. 
+Dropbox has their own PGP key because they upload it directly to the AUR that key is for linux@dropbox.com (if you don't know what PGP keys are it's basically a complex math formula that proves that this app is being uploaded and managed on the AUR by somebody at dropbox)
+if you use a tool like yay or paru it can handle the functions of pacman and downloading stuff from the AUR and it's dead simple to use, I recommend paru because it's more modern and faster
+To install paru run these commands
+sudo pacman -S --needed base-devel
+
+git clone https://aur.archlinux.org/paru.git
+
+cd paru
+
+makepkg -si
+
+After succesfully installing paru now it's time to install Dropbox. To do that first run
+paru dropbox
+
+Now you'll be prompt with a list of packages from AUR to choose from. You have to choose aur/dropbox which should be the first one... So press 1 and hit enter
+
+If you want to review hit Y and enter
+
+To close the review hit q on the the keyboard
+Now you must prompt with installation confirmation. Hit Y and enter. You may need to enter your password for installation. 
+After completion of you installation run dropbox on your terminal or search on the GUI
+
+That's it!]]></summary>
+        <author>
+            <name>Shawon Saha</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Add a Default Value to an Existing Column in MySQL]]></title>
+        <id>https://dev.to/bobbyiliev/how-to-add-a-default-value-to-an-existing-column-in-mysql-28dk</id>
+        <link href="https://dev.to/bobbyiliev/how-to-add-a-default-value-to-an-existing-column-in-mysql-28dk"/>
+        <updated>2021-11-08T15:33:31.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+In this quick tutorial, you will learn how to add a default value to an existing column in MySQL.
+You always need to be careful, when changing the structure of an existing column in your database. Make sure to always have backups of your database before making such changes. 
+For MySQL, you could use the following script to generate a backup of your database:
+Script to backup a MySQL/MariaDB database
+When making changes to a column in your database, you can use the ALTER TABLE statement followed by the ALTER COLUMN statement.
+The syntax is the following:
+ALTER TABLE name_of_the_table ALTER name_of_the_column SET DEFAULT your_new_default_value;
+
+Let's say that we had a table called users and a column called is_admin. We want all new users to have the is_admin value set to 0. T…]]></summary>
+        <author>
+            <name>Bobby Iliev</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Evitando conflitos na infraestrutura]]></title>
+        <id>https://dev.to/bernardo/evitando-conflitos-na-infraestrutura-3f4k</id>
+        <link href="https://dev.to/bernardo/evitando-conflitos-na-infraestrutura-3f4k"/>
+        <updated>2021-11-08T15:13:12.000Z</updated>
+        <summary type="html"><![CDATA[Terraform State é uma das coisas mais legais da ferramenta por facilitar a gestão do codígo com times distribuídos evitando conflitos desnecessários na esteira. 
+Sempre que você executa o Terraform, ele registra informações sobre a infraestrutura que criou em um arquivo de estado do Terraform. Por padrão, quando você executa o Terraform na pasta /foo/bar, o Terraform cria o arquivo /foo/bar/terraform.tfstate. Este arquivo contém um formato JSON personalizado que registra um mapeamento dos recursos do Terraform em seus arquivos de configuração para a representação desses recursos no mundo real. Por exemplo, digamos que sua configuração do Terraform contenha o seguinte:
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+}
+
+Depois de exe…]]></summary>
+        <author>
+            <name>Luiz Bernardo</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SIM Card Based Mobile Authentication with iOS]]></title>
+        <id>https://dev.to/tru-id/sim-card-based-mobile-authentication-with-ios-11n6</id>
+        <link href="https://dev.to/tru-id/sim-card-based-mobile-authentication-with-ios-11n6"/>
+        <updated>2021-11-08T15:11:00.000Z</updated>
+        <summary type="html"><![CDATA[tru.ID SubscriberCheck offers both mobile phone number verification and SIM swap detection. SubscriberCheck achieves this by combining the workflows of PhoneCheck, which confirms the ownership of a mobile phone number by verifying the possession of an active SIM card with the same number, with SIMCheck, which provides information on when a SIM card associated with a mobile phone number was last changed. SubscriberCheck can be used when augmenting existing 2FA or anti-fraud workflows.
+If you'd prefer to go directly to the completed code, it's in the sim-card-auth-ios Github repository.
+For development you'll need:
+Xcode 12
+An Apple developer account via the Apple Developer Portal
+
+An iPhone or an iPad with a SIM card with an active data connection
+Node.js installed for the tru.ID CLI
+With t…]]></summary>
+        <author>
+            <name>Greg Holmes</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Know your Azure environment better with Grafana]]></title>
+        <id>https://dev.to/kutsyk/know-your-azure-environment-better-with-grafana-3o8o</id>
+        <link href="https://dev.to/kutsyk/know-your-azure-environment-better-with-grafana-3o8o"/>
+        <updated>2021-11-08T15:09:27.000Z</updated>
+        <summary type="html"><![CDATA[Originaly posted here
+Monitoring of production environment is an essential part of any products not depending on the size. But monitoring big production environments efficiently is the essential difference between good quality of service and bad service.
+Brief prehistory — our product is delivered to a few different clients. It means we have a multi-tenant environment and each of them requires proper monitoring. Every tenant has its own production subscription and independent infrastructure.
+At the start all our monitoring was organized on native Azure Cloud resources, meaning all data go into Application Insight (Log analytics) and dashboards were built in the same environment. But as a result when we needed to investigate the root cause of the issue in our environment we were spending ap…]]></summary>
+        <author>
+            <name>Vasyl Kutsyk</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Telegram notification with Github Actions]]></title>
+        <id>https://dev.to/felipemsfg/telegram-notification-with-github-actions-69m</id>
+        <link href="https://dev.to/felipemsfg/telegram-notification-with-github-actions-69m"/>
+        <updated>2021-11-08T15:01:42.000Z</updated>
+        <summary type="html"><![CDATA[🇧🇷 Versão em português
+Use the following script to receive Telegram notifications always your Github Actions is running.
+    - name: Send Telegram Message Ok
+        uses: appleboy/telegram-action@master
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        with:
+          to: ${{ secrets.TELEGRAM_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            *1st line of your message with bold*
+            *2nd line of your message with bold, too*
+            Application: *Write something to be put inside your message*. The below lines still are part of your message.          
+            Branch: *${{ github.ref }}*
+            Repository: *${{ github.repository }}*
+            Owner: *${{ github.repository_owner }}*
+
+If you want to go deeper into this component, go to project's github repository
+As we can see, to use this component we need two important informations, the TELEGRAM_ID and the TELEGRAM_TOKEN.
+To get your TELEGRAM_TOKEN, you will need to create a telegram's bot, do that starting a conversation with BotFather. Start a new conversation and search for @botfather.
+
+You can start the conversation sending a /help message to see all options allowed. But if you want to skip this step, just send /newbot and follow the instructions. When finish bot's creation, you will receive a message with your bot's token, as show below:
+
+Good job! Now you got your TELEGRAM_TOKEN, in this example it is 2063069520:AAE7Gcummn9fSp_xLQH7dBGihpzOyWQCm9g.
+Now, let's find out your TELEGRAM_ID. Just search for @userinfobot and start a conversation with /star message. The result message will be like that:
+@your_telegram_username
+Id: 12345678
+First: <Your Firstname>
+Last: <Your Lastname>
+Lang: en-US
+
+Your TELEGRAM_ID is the number in second line, right between your username and firstname.
+In this point you have all information to start sending notification messages at any pipeline in Github Actions.
+Just add these information to repository secrets.]]></summary>
+        <author>
+            <name>Felipe Marques</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How To Protect Against Ransomware In 2021]]></title>
+        <id>https://dev.to/robertinoc_dev/how-to-protect-against-ransomware-in-2021-130m</id>
+        <link href="https://dev.to/robertinoc_dev/how-to-protect-against-ransomware-in-2021-130m"/>
+        <updated>2021-11-08T14:59:50.000Z</updated>
+        <summary type="html"><![CDATA[👾 Ransomware attacks are among the most profitable for criminals and remain  the most prominent malware threat today.
+
+
+
+  
+  
+  
+As digital assets increase in value (in some cases, being the most valuable assets a company owns), threats become more profitable to criminals too. The largest ransomware payout made by an insurance company ($40 million) to date happened in 2021, and the trend doesn’t show any signs of slowing down.
+The major problem with attacks like these is that computers today are so fast and interconnected that malware can harness those resources to spread itself throughout the network and encrypt an enormous amount of files before the victim can respond.
+Unfortunately, after the files have been encrypted, there is not much that can be done. Most modern ransomware has goo…]]></summary>
+        <author>
+            <name>Robertino</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Let's Go!]]></title>
+        <id>https://dev.to/joetags/lets-go-1b41</id>
+        <link href="https://dev.to/joetags/lets-go-1b41"/>
+        <updated>2021-11-08T14:57:57.000Z</updated>
+        <summary type="html"><![CDATA[As I finish the last week of my software engineering bootcamp, it is time to start focusing my energy on the job hunt. One of the companies I’m interested in working with lists a particular technology as a Nice to have’. So, this week, I decided to write my blog on golang, the Go language. Let the endless journey of learning continue.
+The Go language was developed by computer scientists Robert Griesemer, Rob Pike, and Ken Thompson at Google and released in 2009. The mission was to address deficiencies in other programming languages used at Google. A few issues the trio sought to address was to create a language that was easy for a programmer to use. That meant having a minimal set of strict rules. They also wanted a language that would compile quickly and could scale to large codebases tha…]]></summary>
+        <author>
+            <name>JoeTags</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Icon Glassmorphism Effect in CSS]]></title>
+        <id>https://css-tricks.com/?p=322098</id>
+        <link href="https://css-tricks.com/icon-glassmorphism-effect-in-css/"/>
+        <updated>2021-11-08T14:57:42.000Z</updated>
+        <summary type="html"><![CDATA[I recently came across a cool effect known as glassmorphism in a Dribble shot. My first thought was I could quickly recreate it in a few minutes if I just use some emojis for the icons without wasting time …
+The post Icon Glassmorphism Effect in CSS appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
+        <author>
+            <name>Ana Tudor</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Does the Next Generation of Static Site Generators Make Building Sites Better?]]></title>
+        <id>https://css-tricks.com/?p=356134</id>
+        <link href="https://css-tricks.com/does-the-next-generation-of-static-site-generators-make-building-sites-better/"/>
+        <updated>2021-11-08T14:56:23.000Z</updated>
+        <summary type="html"><![CDATA[Just ran across îles, a new static site generator mostly centered around Vue. The world has no particular shortage of static site generators, but it’s interesting to see what this “next generation” of SSGs seem to focus on or …
+The post Does the Next Generation of Static Site Generators Make Building Sites Better? appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
+        <author>
+            <name>Chris Coyier</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Best 3 Youtube channel for Learning DevOps]]></title>
+        <id>https://dev.to/star_trooper/best-3-youtube-channel-for-learning-devops-51m0</id>
+        <link href="https://dev.to/star_trooper/best-3-youtube-channel-for-learning-devops-51m0"/>
+        <updated>2021-11-08T14:49:22.000Z</updated>
+        <summary type="html"><![CDATA[1.TechWorld with Nana
+
+TechWorld with Nana
+TechWorld with Nana youtube channel is focused on Cloud and DevOps founded by @techworld_with_nana
+ . 
+You can find beginner friendly crash course in which you will learn concepts of Docker , Kubernetes , Github Actions , AgroCD , Terraform etc from scratch.
+
+2.DevOps Directive
+
+DevOps Directive
+DevOps Directive youtube channel also focuses on Cloud and DevOps concepts, founded by @sidpalas
+  . 
+You can find beginner friendly tutorial in which you will learn concepts of Docker , Github Actions and Cloud platforms like AWS from scratch. 
+ Sid also shares tips and best practices about how to build small size docker images.
+
+On DevOps Directive youtube channel you will also find talks and podcast with professionals working in Tech Industry which are hundred percent insightful to watch.
+
+3.FreeCodeCamp
+
+FreeCodeCamp
+On Freecodecamp youtube channel you will find numereous Devops and Cloud related tutorials and complete crash course t
+
+ It doesn't focus only on DevOps and Cloud but reason to add the youtube channel in this blog is for getting started with DevOps you need to have basic knowledge of Web Development for which Freecodecamp have covered you.
+I guess every web languages and framework tutorial are present on FreeCodeCamp.
+
+ Freecodecamp also has amazing blogs written by amazing professional folks which you will find on there official website.]]></summary>
+        <author>
+            <name>Atharva Shirdhankar</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Node.js GitHub Authentication using Passport.js and MongoDB]]></title>
+        <id>https://dev.to/joshuajee/nodejs-github-authentication-using-passportjs-and-mongodb-2lfd</id>
+        <link href="https://dev.to/joshuajee/nodejs-github-authentication-using-passportjs-and-mongodb-2lfd"/>
+        <updated>2021-11-08T14:38:54.000Z</updated>
+        <summary type="html"><![CDATA[In this article, you will learn how to authenticate with GitHub using Passport.js in a Nodejs express app. 
+You can get the source code for this project here, this project can be used as a boilerplate code when setting up an express app that uses Passportjs for authentication.
+Basic Knowledge of NodeJS
+Node JS should be installed on your system.
+## What is Passport.js?
+Passport is authentication middleware for Node.js. It is very flexible and modular. A comprehensive set of strategies supports authentication using a username and password, Google, Facebook, Apple, Twitter, and more. Find out more about Passport here.
+Before using passport-github2, you must have a Github account and register an application with Github. If you have not done this, You can do that here.
+
+To start, create a Node…]]></summary>
+        <author>
+            <name>Joshua Evuetapha</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The top 10 Linux Commands that Every Data Engineer Should Know]]></title>
+        <id>https://dev.to/bobbyiliev/the-top-10-linux-commands-that-every-data-engineer-should-know-mbg</id>
+        <link href="https://dev.to/bobbyiliev/the-top-10-linux-commands-that-every-data-engineer-should-know-mbg"/>
+        <updated>2021-11-08T14:38:19.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+No matter if you are a data analyst or a system administrator when working with unstructured files in Linux there are a set of commands that would help you a lot in your daily tasks.
+In this tutorial, you will learn the basics of the following commands and how to combine them using a pipe (|) and analyze some raw data files.
+The list of the commands that we will go over are:
+cat
+head and tail
+pipe (|)
+wc
+grep
+awk
+sort
+uniq
+sed
+tr
+Here is a very simple example file that I will be using to go over each of the commands:
+Username    ID  Name    Orders
+rachel  9012    Rachel  2
+laura   2070    Laura   3
+craig   4081    Craig   4
+mary    9346    Mary    1
+jamie   5079    Jamie   2
+bobby   1456    Bobby   3
+tony 5489 Tony  6
+devdojo 9874 DevDojo    3
+tom 2589 Tom    2
+rachel  9012 …]]></summary>
+        <author>
+            <name>Bobby Iliev</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The top 10 Linux Commands that Every Data Engineer Should Know]]></title>
+        <id>https://dev.to/bobbyiliev/the-top-10-linux-commands-that-every-data-engineer-should-know-mbg</id>
+        <link href="https://dev.to/bobbyiliev/the-top-10-linux-commands-that-every-data-engineer-should-know-mbg"/>
+        <updated>2021-11-08T14:38:19.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+No matter if you are a data analyst or a system administrator when working with unstructured files in Linux there are a set of commands that would help you a lot in your daily tasks.
+In this tutorial, you will learn the basics of the following commands and how to combine them using a pipe (|) and analyze some raw data files.
+The list of the commands that we will go over are:
+cat
+head and tail
+pipe (|)
+wc
+grep
+awk
+sort
+uniq
+sed
+tr
+Here is a very simple example file that I will be using to go over each of the commands:
+Username    ID  Name    Orders
+rachel  9012    Rachel  2
+laura   2070    Laura   3
+craig   4081    Craig   4
+mary    9346    Mary    1
+jamie   5079    Jamie   2
+bobby   1456    Bobby   3
+tony 5489 Tony  6
+devdojo 9874 DevDojo    3
+tom 2589 Tom    2
+rachel  9012 …]]></summary>
+        <author>
+            <name>Bobby Iliev</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to upload a file to Azure Blob using Spring Boot?]]></title>
+        <id>https://dev.to/rohan2596/how-to-upload-a-file-to-azure-blob-using-spring-boot-3c3a</id>
+        <link href="https://dev.to/rohan2596/how-to-upload-a-file-to-azure-blob-using-spring-boot-3c3a"/>
+        <updated>2021-11-08T14:34:32.000Z</updated>
+        <summary type="html"><![CDATA[Hello👋, Its Rohan Kadam😊
+Today cloud is becoming come standard for the development of any software. We used the cloud in every aspect of the programming cycle be it uploading our code to Github or Gitlab or be it using Google Drive or Dropbox or uploading our personal files. In the article, we are going to understand how we can implement file** upload to Azure Blob Using Spring Boot**.
+
+Blob storage is a feature in Microsoft Azure that lets developers store unstructured data in Microsoft’s cloud platform. This data can be accessed from anywhere in the world and can include audio, video and text. Blobs are grouped into “containers” that are tied to user accounts. Blobs can be manipulated by using any programming language. Blobs are widely used by streaming companies with high volumes of a…]]></summary>
+        <author>
+            <name>ROHAN KADAM</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Meet Hydrogen: A React Framework For Dynamic, Contextual And Personalized E-Commerce]]></title>
+        <id>https://smashingmagazine.com/2021/11/hydrogen-react-framework-dynamic-contextual-personalized-ecommerce/</id>
+        <link href="https://smashingmagazine.com/2021/11/hydrogen-react-framework-dynamic-contextual-personalized-ecommerce/"/>
+        <updated>2021-11-08T14:30:00.000Z</updated>
+        <summary type="html"><![CDATA[A great commerce experience is not a Lighthouse score or a set of Core Web Vitals figures (although both are important inputs), but it’s also a trilemma that carefully balances competing needs of delivering a great customer experience, dynamic storefront capabilities and long-term business objectives.]]></summary>
+        <author>
+            <name>hello@smashingmagazine.com (Ilya Grigorik)</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Automate deployment in simplest way by SilvenLEAF]]></title>
+        <id>https://dev.to/silvenleaf/automate-deployment-in-simplest-way-by-silvenleaf-17p</id>
+        <link href="https://dev.to/silvenleaf/automate-deployment-in-simplest-way-by-silvenleaf-17p"/>
+        <updated>2021-11-08T14:22:43.000Z</updated>
+        <summary type="html"><![CDATA[Ahoy there! Let's automate deploying our Web App! We'll be using React for this. Don't worry, because react or angular or vue, that's not important. The core concept is same for all! Also we'll be going from level 0. So even if you don't know React or any of these, just hop on!!
+It is a part of my future DevOps and automation blogs. So stay tuned for more amazing stuff!!
+To deploy an app, we need an app, right? So let's create one. But if you don't like React, go with Angular, Vue or whatever you like.
+First create a github repo (assuming you have a github account, if not, create one and then create a github repo) and then clone it onto your computer. Open it in your favorite text-editor (mine VS Code). Then type the following command to create a react app.
+npx create-react-app client --te…]]></summary>
+        <author>
+            <name>SilvenLEAF</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Securing Kubernetes Deployments]]></title>
+        <id>https://dev.to/semaphore/securing-kubernetes-deployments-3bg7</id>
+        <link href="https://dev.to/semaphore/securing-kubernetes-deployments-3bg7"/>
+        <updated>2021-11-08T13:46:03.000Z</updated>
+        <summary type="html"><![CDATA[A recent survey by Red Hat found that more than half of the Kubernetes environments are misconfigured. Even worse, about 90% of respondents had at least one security incident last year, leading to the very first wave of Kubernetes-native malware. In this tutorial, we present three tools to validate and secure your Kubernetes deployments.
+Kubernetes main selling point is in its declarative nature — we write a manifest describing the desired final state of a deployment and let the platform figure out the rest. But the fact of the matter is that these manifests are easy to get wrong, breaking stuff in the process.
+Continuous delivery with Kubernetes is only viable when we test at every stage. For example:
+ First, test the code in the build stage.
+ Then, build the container image and check its…]]></summary>
+        <author>
+            <name>Tomas Fernandez</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Key Features and Advantages of Google Kubernetes Engine]]></title>
+        <id>https://dev.to/rlogical/key-features-and-advantages-of-google-kubernetes-engine-2jf</id>
+        <link href="https://dev.to/rlogical/key-features-and-advantages-of-google-kubernetes-engine-2jf"/>
+        <updated>2021-11-08T13:17:54.000Z</updated>
+        <summary type="html"><![CDATA[Kubernetes Overview
+It is an extensible and portable open-source platform used to manage containers. It was created by Google, also known as K8s, which makes many computers or machines work in one unit. Through Kubernetes, several people can utilize containerized apps that work together, whether the apps are on various platforms.
+Why To Opt For GKE (Google Kubernetes Engine)?
+GKE helps a lot in app development services as it manages containerized applications. There are many reasons to select GKE, and some of them are mentioned below.
+Google developed both GKE and Kubernetes. So, there is an excellent team, and GKE provides easy integration with plentiful Google services.
+
+It offers nodes auto-scaling that Amazon Kubernetes and Azure container Services lack.
+
+Any new tool or feature releas…]]></summary>
+        <author>
+            <name>Rlogical Techsoft Pvt Ltd</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Application Performance Monitoring For SREs]]></title>
+        <id>https://dev.to/thenjdevopsguy/application-performance-monitoring-for-sres-475e</id>
+        <link href="https://dev.to/thenjdevopsguy/application-performance-monitoring-for-sres-475e"/>
+        <updated>2021-11-08T12:51:17.000Z</updated>
+        <summary type="html"><![CDATA[The idea of monitoring systems and applications has been around for years. Ensuring that a system and application are performing the way they're supposed to isn't anything new. It's simply a component that's been changing drastically, specifically with application performance and load using a practice called Application Performance Monitoring (APM).
+So why is APM important now and why should you care? In this blog post, you're going to learn about APM, why it's important, and how to get started.
+In the early days of software, tools started to come out for understanding how much load a system running an application could take. A notable tool is Apache JMeter, which is a load testing tool for analyzing and measuring performance. The first release of JMeter was in 1998, which means the idea o…]]></summary>
+        <author>
+            <name>Mike Levan</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Overview of AWS: Quantum, Robotics, Satellite, Security, Identity, Compliance, and Storage Services |AWS WhitePaper Summary]]></title>
+        <id>https://dev.to/awsmenacommunity/overview-of-aws-quantum-robotics-satellite-security-identity-compliance-and-storage-services-aws-whitepaper-summary-2ahi</id>
+        <link href="https://dev.to/awsmenacommunity/overview-of-aws-quantum-robotics-satellite-security-identity-compliance-and-storage-services-aws-whitepaper-summary-2ahi"/>
+        <updated>2021-11-08T12:08:04.000Z</updated>
+        <summary type="html"><![CDATA[Quantum Technologies
+
+
+
+Amazon Braket is a fully managed quantum computing service that helps researchers and developers get started with the technology to accelerate research and discovery. Amazon Braket provides a development environment for you to explore and build quantum algorithms, test them on quantum circuit simulators, and run them on different quantum hardware technologies.
+
+AWS RoboMaker is a service that makes it easy to develop, test, and deploy intelligent robotics applications at scale. RoboMaker extends the most widely used open-source robotics software framework, Robot Operating System (ROS), with connectivity to cloud services. This includes AWS machine learning services, monitoring services, and analytics services that enable a robot to stream data, navigate, communicate…]]></summary>
+        <author>
+            <name>‪Karim Negm‬‏</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Conduct A Web Application Penetration Testing]]></title>
+        <id>https://dev.to/khalilpreview/conduct-a-web-application-penetration-testing-27f5</id>
+        <link href="https://dev.to/khalilpreview/conduct-a-web-application-penetration-testing-27f5"/>
+        <updated>2021-11-08T10:30:35.000Z</updated>
+        <summary type="html"><![CDATA[In this digital age when everything is being done online, web applications have become an integral part of all businesses. Since today’s web applications usually store or send out sensitive data, they attract malicious hackers and script kiddies, at an unprecedented level, to find and exploit vulnerabilities in them for their personal gain or just to have fun.
+To secure your web application, security testing is the best way to identify security loopholes and misconfiguration flaws in your application before malicious hackers do. This is achieved by simulating attacks in order to find the potential vulnerabilities in your application.
+Web application penetration testing a.k.a web app pentesting is essential as it helps in determining the security posture of the entire web application includ…]]></summary>
+        <author>
+            <name>Khalil Preview</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[5 Security Vulnerabilities to Fix Without any Programming Skill]]></title>
+        <id>https://dev.to/smartscanner/5-security-vulnerabilities-to-fix-without-any-programming-skill-37in</id>
+        <link href="https://dev.to/smartscanner/5-security-vulnerabilities-to-fix-without-any-programming-skill-37in"/>
+        <updated>2021-11-08T10:12:57.000Z</updated>
+        <summary type="html"><![CDATA[We usually think security and hacking are complicated—at least it's super geeky in movies—but you will be surprised to see how easy you can fix some security problems even without programming knowledge. Let's review and fix them right away.
+Do you use 123456 to login into your website? Change it now! Easy passwords can be guessed and cracked in minutes.
+passphrase.
+Outdated applications are like open doors for hackers to break in. Hackers search the whole Internet for outdated applications of any kind (web server, CMS, router, etc.). If you're using outdated software, you've already become a target for hackers.
+Does your website display a list of files and folders when the URL ends with a slash (/)? If yes, you have a directory listing issue you need to fix.
+A universal and easy fix for th…]]></summary>
+        <author>
+            <name>SmartScanner</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to build a Node.js admin panel]]></title>
+        <id>https://dev.to/forestadmin/how-to-build-a-nodejs-admin-panel-379b</id>
+        <link href="https://dev.to/forestadmin/how-to-build-a-nodejs-admin-panel-379b"/>
+        <updated>2021-11-08T09:19:58.000Z</updated>
+        <summary type="html"><![CDATA[What is great about Node.js is that it allows for building even complex applications that can handle a plethora of real-time data. In the last couple of years, many well-known established companies like Netflix, eBay, or Uber have rewritten their microservices using Node.js. LinkedIn, in turn, has successfully migrated a part of the code that has been written in Ruby on Rails to Node.js. It shouldn’t come as a surprise that robust applications need robust internal tools.
+Node.js doesn’t have a default admin panel solution like Django Admin for Django or Active Admin for Ruby on Rails. However, there are quite a few options for building an admin panel for a Node.js application:
+Build all internal tools in-house from scratch. This option gives you the maximum flexibility but it also comes wi…]]></summary>
+        <author>
+            <name>Monika Ambrozowicz</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[😎 How to convert a normal React form to use react-hook-form?]]></title>
+        <id>https://dev.to/maxprogramming/how-to-convert-a-normal-react-form-to-use-react-hook-form-26g9</id>
+        <link href="https://dev.to/maxprogramming/how-to-convert-a-normal-react-form-to-use-react-hook-form-26g9"/>
+        <updated>2021-11-08T09:11:34.000Z</updated>
+        <summary type="html"><![CDATA[Hey everyone!
+
+
+Nice to see you all around again! Today you'll find out how easy it is to use the  react-hook-form  library for forms instead of the normal method of forms in React.
+
+So, the first thing is first, normally, in React we use state, and whenever the value of an input changes, we change the state. This method's good but there is a lot of code. Here's how the code looks like in this case.
+import { useState } from 'react';
+
+export default function LoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    // Submit logic
+  }
+
+  return (
+    <div>
+      <form onSubmit={onSubmit}>
+        <input
+          type='email'
+          value={email}
+          onChange={e => setEmail(e.targe…]]></summary>
+        <author>
+            <name>Max Programming</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React doesn't need state management tool, I said]]></title>
+        <id>https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4</id>
+        <link href="https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4"/>
+        <updated>2021-11-08T08:50:53.000Z</updated>
+        <summary type="html"><![CDATA[From time to time someone still tells me that is using REDUX or similar tool in their project. I usually respond, that I wouldn't use it as now with hooks and context API you don't need it.
+But context API usually brings performance problems and is also a bit awkward to use it properly, so today I'll try to show how to avoid common problems, and also build your own (micro) state management tool, without any compromises.
+Basic idea is to manage state in one component and pass the whole it by context so it's accessible from all child components, so we can avoid props drilling.
+export const StateContext = createContext(null);
+const Provider = () => {
+  return (
+    <StateContext.Provider value={state}>
+      <ChildComponent />
+    </StateContext.Provider>
+  )
+}
+
+However you also need some way…]]></summary>
+        <author>
+            <name>stepan662</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Angular Login with Session Authentication]]></title>
+        <id>https://dev.to/tarungurang/angular-login-with-session-authentication-noi</id>
+        <link href="https://dev.to/tarungurang/angular-login-with-session-authentication-noi"/>
+        <updated>2021-11-08T08:08:38.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+In this article, we'll look at how to handle the login process with Session Authentication. We'll verify if the user is logged in or not, and if he is not, then the route will simply be blocked.
+Let’s go through the following Angular principles for better understanding.
+Angular Routing module
+Manage the user authentication permission for the Angular path.
+Angular Auth Guard
+This Angular function helps a lot when it comes to handling authentication. This is an interface that instructs the router whether or not to enable navigation to a specific route. We're using the 'canActivate' guard form in this case.
+Angular localStorage
+In an Angular program, there are three ways to store data on the client-side.
+Memory
+Session storage
+Local Storage.
+We're using localStorage in this cas…]]></summary>
+        <author>
+            <name>Tarun Gurang</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Configuring Symfony 2.7 App with Apache 2.4 HTTP Server on Ubuntu 20.04]]></title>
+        <id>https://dev.to/jsv1280/configuring-symfony-27-app-with-apache-24-http-server-on-ubuntu-2004-35b1</id>
+        <link href="https://dev.to/jsv1280/configuring-symfony-27-app-with-apache-24-http-server-on-ubuntu-2004-35b1"/>
+        <updated>2021-11-08T04:48:53.000Z</updated>
+        <summary type="html"><![CDATA[Normally, when we are configuring legacy applications is difficult to find accurate documentation about the used tools (Dependencies, Libraries, Environment).
+Currently, Symfony's version is 5.3.10 thus actual documentation points out towards these newer versions from the framework even though previous documentation is still accessible since version 2.7
+
+Avoid looking for hundred sites and freaking out whether any solutions work or work partially, in this post we are going a step to step to configure a Symfony 2.7 app in Apache 2.4 HTTP Server running in Ubuntu 20.04.
+I don't recommend editing etc/apache2/apache2.conf because it is the main configuration file of Apache so if you broke that file probably your Apache will not work.
+Add the next code in etc/apache2/sites-available/000-default…]]></summary>
+        <author>
+            <name>Jairo Salazar</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How I Manipulate Files on the Command line]]></title>
         <id>https://dev.to/dolamu/7-easy-tips-to-manipulate-files-on-the-linux-command-line-2glf</id>
@@ -14,6 +1077,22 @@
 The other thing I discovered during this period is that we are all beginners and sharing is helpful, since no one is an island. So I decided to share my experience with others starting out as well. As we all know, learning is never-ending. There will always be new tools and new commands to learn, especially when you're a beginner. The followin…]]></summary>
         <author>
             <name>Dolamu Asipa</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to get or access the properties and methods of h6 HTML element tags without errors in TypeScript?]]></title>
+        <id>https://dev.to/melvin2016/how-to-get-or-access-the-properties-and-methods-of-h6-html-element-tags-without-errors-in-typescript-443</id>
+        <link href="https://dev.to/melvin2016/how-to-get-or-access-the-properties-and-methods-of-h6-html-element-tags-without-errors-in-typescript-443"/>
+        <updated>2021-11-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Originally posted here!
+To get or access the properties and methods of the h6 HTML element tags without having errors or red squiggly lines in TypeScript, you have to assert the type for the h6 HTML element tag using the HTMLHeadingElement interface in TypeScript.
+The errors or warnings are shown by the TypeScript compiler since the compiler doesn't know more information on the h6 HTML element tag ahead of time. But we know that we are referencing the h6 HTML tag and thus we can tell the compiler to use the HTMLHeadingElement interface which contains the declarations for properties and methods.
+// get reference to the first 'h6'
+// HTML element tag in the document
+// with type assertion using the HTMLHeadingElement interface
+const h6Tag = document.querySelector("h6") as HTMLHeadingElement;…]]></summary>
+        <author>
+            <name>MELVIN GEORGE</name>
         </author>
     </entry>
     <entry>
@@ -37,19 +1116,6 @@ Once we're ready with helpers, we can jump to the hook code.
 const useScrollspy = (ids…]]></summary>
         <author>
             <name>Rafał Goławski</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Threats Driven - Web Applications Security, Part 2]]></title>
-        <id>https://dev.to/leofelicissimo/threats-driven-web-applications-security-part-2-1f7o</id>
-        <link href="https://dev.to/leofelicissimo/threats-driven-web-applications-security-part-2-1f7o"/>
-        <updated>2021-11-07T21:07:39.000Z</updated>
-        <summary type="html"><![CDATA[In the previous article I've started writing a quite about why I'm currently studying about Securing Web Applications. Now moving on, I'm going to deeper to the theme starting from the STRIDE Microsoft Model and exploring the Basic Security Design Principles from a paper of 1975 published by John H. Saltzer at MIT.
-Sometimes when building an application, we think the only to make it secure means to avoid hackers attack and this is not a development job, is something related to operations job. Let's talk the true here (secure env). Which words come on your mind when you think about security? Password and Hackers (right?). 
-But, the process of secure an application starts when we firstly get an answer to the question: What might we fighting against?
-The propose of Saltzer's paper is explore …]]></summary>
-        <author>
-            <name>Leonardo Felicissimo</name>
         </author>
     </entry>
     <entry>
@@ -93,90 +1159,6 @@ where slug = slug_text;
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Having fun with pendulums in ThreeJs]]></title>
-        <id>https://dev.to/nordicbeaver/having-fun-with-pendulums-in-threejs-31hc</id>
-        <link href="https://dev.to/nordicbeaver/having-fun-with-pendulums-in-threejs-31hc"/>
-        <updated>2021-11-07T19:36:56.000Z</updated>
-        <summary type="html"><![CDATA[I was messing around with ThreeJs and got an idea of a simple but interesting animation. Here is the video of how I turned it into reality.
-
-
-
-
-If you just want to see the end result, go ahead and click here.]]></summary>
-        <author>
-            <name>NordicBeaver</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Preventing Alert Fatigue]]></title>
-        <id>https://dev.to/mbaris/preventing-alert-fatigue-3f0n</id>
-        <link href="https://dev.to/mbaris/preventing-alert-fatigue-3f0n"/>
-        <updated>2021-11-07T19:26:04.000Z</updated>
-        <summary type="html"><![CDATA[Expectation for software reliability and availability is at an all-time high now. With money and prestige on the line, every application and website wants to avoid downtime while building new things as fast as possible. However, perfect infrastructure or perfect software does not exist, so incidents do happen. 
-What we can do is minimizing the impact by making sure we are responding quickly and efficiently. This makes on-call rotations a part of our lives now.
-If structured and compensated correctly, on-call rotations can improve the overall quality and the response time for incidents quite a lot. However, it is not always a positive experience to be on call. One reason for an unpleasant on-call is getting many alerts.
-Alarm fatigue or alert fatigue describes how busy workers become desens…]]></summary>
-        <author>
-            <name>Mehmet Barış Kalkar</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Terraform - Understanding the Value - Declarative Language (TERF)]]></title>
-        <id>https://dev.to/faizanrazanetcraftautomation/terraform-understanding-the-value-declarative-language-terf-5m8</id>
-        <link href="https://dev.to/faizanrazanetcraftautomation/terraform-understanding-the-value-declarative-language-terf-5m8"/>
-        <updated>2021-11-07T18:49:46.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-I was asked at work recently by someone completely new to DevOps and coding in general - "Why would you use Terraform? It is so much easier to do things in the portal."
-Today, we will be exploring my personal favourite feature of Terraform - the fact it is declarative. 
-Yes - I have ranked my favourite and most hated features of Terraform :).
-This will be very beginner orientated. This is also a laying down some of the foundational concepts for the upcoming TERF series (Terraform Enterprise Ready Framework).
-Terraform state on their website:
-The Terraform language is declarative, describing an intended goal, rather than the steps to reach that goal. 
-A common explanation on google searches:
-A language which describes what needs to be done, instead of how to do it.
-If you are…]]></summary>
-        <author>
-            <name>Faizan Raza</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[TypeScript] Convert from TypeScript(JavaScript) data type to binary data]]></title>
-        <id>https://dev.to/masanori_msl/typescript-convert-from-typescriptjavascript-data-type-to-binary-data-372</id>
-        <link href="https://dev.to/masanori_msl/typescript-convert-from-typescriptjavascript-data-type-to-binary-data-372"/>
-        <updated>2021-11-07T17:52:37.000Z</updated>
-        <summary type="html"><![CDATA[Intro
-
-
-When I receive or send data between client side and server side in TypeScript, I convert data to JSON.
-Node.js ver.17.0.1
-TypeScript 4.4.4
-I can convert string values by "TextDecoder" and "TextEncoder".
-export function init(): void {
-    const originalText = "こんにちは";
-    const textBuffer = convertFromStringToBuffer(originalText);
-    console.log(textBuffer);
-    const convertedText = convertFromBufferToString(textBuffer);
-    console.log(convertedText);
-}
-function convertFromStringToBuffer(value: string): ArrayBuffer {
-    // Encode with UTF-8
-    const encoder = new TextEncoder();
-    return encoder.encode(value);
-}
-function convertFromBufferToString(value: ArrayBuffer): string {
-    // Decode with UTF-8
-    const decoder = new TextDecoder();
-    return decoder.decode(value);
-}
-
-U…]]></summary>
-        <author>
-            <name>Masui Masanori</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Building More Than Just a YouTube Video Downloader]]></title>
         <id>https://dev.to/benank/building-more-than-just-a-youtube-video-downloader-1ko7</id>
         <link href="https://dev.to/benank/building-more-than-just-a-youtube-video-downloader-1ko7"/>
@@ -187,21 +1169,6 @@ TensorFlow.js (the machine learning platform that I'm using) can't analyze an em
 Improving the editor user experience - to create new dance charts from YouTube videos, a player needs to go to the Create tab and make a new project, using a YouTub…]]></summary>
         <author>
             <name>benank</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A Git Guide for Beginners]]></title>
-        <id>https://dev.to/abstract/a-git-guide-for-beginners-2amb</id>
-        <link href="https://dev.to/abstract/a-git-guide-for-beginners-2amb"/>
-        <updated>2021-11-07T17:26:27.000Z</updated>
-        <summary type="html"><![CDATA[In this article, I'll tell you about VCS (Version Control System), about Git itself, why you should learn it, and other cool stuff that even advanced users among you could not know. 
-In a nutshell, Version Control System is a system that records changes to a file or a set of files over time and allows you to return later to a specific version of your project. It means that even if you or your co-worker made a mistake you can easily return to the latest version of your project and start from there again. It makes everything easier and gives you chances to experiment
-Local (RCS)
-Centralized (CVS, Subversion)
-Distributed (Git, Mercurial, BitKeeper)
-Local VCS deployed on one machine and works as a backup of a specific machine. Pictures or diffs (difference between two versions of your project)…]]></summary>
-        <author>
-            <name>Mark Vassilevskiy</name>
         </author>
     </entry>
     <entry>
@@ -297,53 +1264,6 @@ Awesome! Now we have finished our load-balanced Mean-Stack app 😎🎉]]></summ
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Load-Balanced MEAN-Stack by AWS CloudFormation & Docker 🐳]]></title>
-        <id>https://dev.to/tgotwig/load-balanced-mean-stack-by-aws-cloudformation-docker-3pj9</id>
-        <link href="https://dev.to/tgotwig/load-balanced-mean-stack-by-aws-cloudformation-docker-3pj9"/>
-        <updated>2021-11-07T16:54:15.000Z</updated>
-        <summary type="html"><![CDATA[In this short article I will show how to deploy a Mean-Stack app by AWS-CLI and CloudFormation using a v1 load-balancer 😃
-All the code regarding our deployment you can also find here:
-https://github.com/TGotwig/devops
-We take usage of an very nice and simple MEAN-Stack project which comes from Brad Traversy 🤗
-Download the sample repo and cd into it:
-git clone git@github.com:TGotwig/devops.git
-cd aws-cloudformation/solutions/advanced/mean-stack
-
-Install the awscli from somewhere and login:
-aws configure --profile <YOUR_AWS_ACCOUNT_NAME>
-
-You will be asked for two IDs, you can get them through:
-
- 
-
-Create a file called parameters.json:
-[
-  {
-    "ParameterKey": "KeyName",
-    "ParameterValue": "<KeyName>"
-  }
-]
-
-Replace <KeyName> by your SSH key under EC2 / Key Pairs:
-
-Create a file called .env for the Makefile:
-stack-name=simple-mean-stack
-profile=<YOUR_AWS_ACCOUNT_NAME>
-region=<YOUR_AWS_REGION>
-
-Start it by running make up, an EC2 machine should boot up:
-
-After some time we can reach the app, run make getUrl to get the url:
-
-After refreshing the page few times you should see another IP:
-
-You can remove the entire stack by running make rm! 🔥 
-Awesome! Now we have finished our load-balanced Mean-Stack app 😎🎉]]></summary>
-        <author>
-            <name>Thomas Gotwig</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How to Update Node.js to the latest version on Ubuntu]]></title>
         <id>https://dev.to/mdmarufsarker/how-to-update-nodejs-to-the-latest-version-on-ubuntu-3md6</id>
         <link href="https://dev.to/mdmarufsarker/how-to-update-nodejs-to-the-latest-version-on-ubuntu-3md6"/>
@@ -413,19 +1333,6 @@ v17.0.1
 Playlist]]></summary>
         <author>
             <name>Md. Maruf Sarker</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to get an A+ Security Grade on Mozilla Observatory (Part 1 - Netlify)]]></title>
-        <id>https://dev.to/jeremyling/how-i-got-an-a-security-grade-on-mozilla-observatory-part-1-netlify-3bge</id>
-        <link href="https://dev.to/jeremyling/how-i-got-an-a-security-grade-on-mozilla-observatory-part-1-netlify-3bge"/>
-        <updated>2021-11-07T14:43:49.000Z</updated>
-        <summary type="html"><![CDATA[After rewriting the FormBlob website with Hugo, I wanted to ensure that the website adhered to security best practices and was not vulnerable to any known issues. I began looking for a measure for website security and found Mozilla Observatory. On my very first scan, I received a C grade. While not particularly bad, I wanted to rectify any flaws found to achieve the best score I could. It was also an opportunity to learn a little more about website security.
-The following quote is taken directly from the FAQ at https://observatory.mozilla.org/faq.
-The Observatory tests for preventative measure against cross-site scripting attacks, man-in-the-middle attacks, cross-domain information leakage, cookie compromise, content delivery network compromise, and improperly issued certificates.
-However,…]]></summary>
-        <author>
-            <name>Jeremy</name>
         </author>
     </entry>
     <entry>
@@ -462,43 +1369,6 @@ During this short period of my career, I got the opportunity to work with severa
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[What are Kubernetes Services?]]></title>
-        <id>https://dev.to/otomato_io/what-are-kubernetes-services-52o0</id>
-        <link href="https://dev.to/otomato_io/what-are-kubernetes-services-52o0"/>
-        <updated>2021-11-07T12:57:56.000Z</updated>
-        <summary type="html"><![CDATA[A Kubernetes service is a logical abstraction for a group of pods in a cluster (all performing the same function).
-Since pods are ephemeral, a service enables a group of pods that provide certain functions (web services, image processing, etc.) to be assigned a name and a unique IP address (clusterIP). As long as the service uses this IP address, it does not change. Services also define policies for their access.
-In Kubernetes, a deployment is a way to start a pod of containerized applications and ensure that the required number of replicas are always running on the cluster. 
-A service, on the other hand, is responsible for exposing an interface to these pods which enables network access either within the cluster or between external processes and the service.
-Kubernetes services connect a …]]></summary>
-        <author>
-            <name>Roman Balashevich</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Docker Tips - UFW]]></title>
-        <id>https://dev.to/rhuaridh/docker-tips-ufw-3k8o</id>
-        <link href="https://dev.to/rhuaridh/docker-tips-ufw-3k8o"/>
-        <updated>2021-11-07T09:22:30.000Z</updated>
-        <summary type="html"><![CDATA[Docker Tips - UFW
-
-
-By default docker will override the "Uncomplicated Firewall" (UFW) rules, it is important to be aware of this so that you do not accidentally expose your docker containers to the world.
-If you had UFW configured to block port 3000, then you would be forgiven for assuming our docker app would also be blocked.
-docker run -d -p 3000:5000 training/webapp python app.py
-However, docker adds rules to IP tables directly. This bypasses UFW which causes our app to be exposed to the world.
-The problem is that our port mapping tag exposes our app:
--p 3000:5000
-Restricting access to localhost is a simple change:
--p 127.0.0.1:3000:5000
-This binds port 5000 inside the container to port 3000 on the localhost or 127.0.0.1 interface on the host machine.
-Our app is now blocked from external traffic!
-GCP, AWS and even OVH all have external firewalls that sit infront of the server. Leveraging cloud based firewalls in addition to UFW is the best way to solve the issue.]]></summary>
-        <author>
-            <name>Rhuaridh</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How To Connect Your Server To Your Phone.]]></title>
         <id>https://dev.to/emanuelone/how-to-connect-your-server-to-your-phone-ikg</id>
         <link href="https://dev.to/emanuelone/how-to-connect-your-server-to-your-phone-ikg"/>
@@ -532,71 +1402,6 @@ Congratulations, you can now serve your contents to your phone.]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Kubernetes for beginners: Where do I start?]]></title>
-        <id>https://dev.to/earthboundmisfit/kubernetes-for-beginners-where-do-i-start-5fmh</id>
-        <link href="https://dev.to/earthboundmisfit/kubernetes-for-beginners-where-do-i-start-5fmh"/>
-        <updated>2021-11-07T08:24:16.000Z</updated>
-        <summary type="html"><![CDATA[Being developers, we get zoned out in those standup calls when the server admins take over and flaunt their container orchestration skills. Let's take over and it's our time to shine now.
-We have been hearing a lot about containers and how they've been streamlining the way a development lifecycle works. Not getting deep into containers in this post, you can have a look into this. When our applications become bigger or if we are getting into making it modular, multiple containers come into play. Here's where things get tricky. For example, if we are running an e-commerce application - our auth/login, payment services, product catalogues, inventory management will run as individual containers or services - this is the microservices approach. Say if we are running the application using a Dock…]]></summary>
-        <author>
-            <name>Muzammil</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JWT Authentication with FastAPI]]></title>
-        <id>https://dev.to/bekbrace/jwt-authentication-with-fastapi-3hja</id>
-        <link href="https://dev.to/bekbrace/jwt-authentication-with-fastapi-3hja"/>
-        <updated>2021-11-07T07:40:40.000Z</updated>
-        <summary type="html"><![CDATA[FastAPI : a great framework for creating APIs, it takes very small effort to realize how fast it is in comparison with other frameworks like Flask, Pyramid, bottle, tornado and Django.
-Developers are switching from Flask to FastAPI for a lot of reasons like speed, for instance.
-This is techempower.com, an independent website that benchmarks web servers by running a variety of tests on them, FastAPI (with Uvicorn, the ASGI server implementation) is one of the fastest web servers.
-
-And why I prefer FastAPI over others Fws is because of its high performance, ease of syntax, you have something like Pydantic that allows modern python typing, also asynchronous requests with Async/Await syntax .. and no wonder that FastAPI is on par with Go language and Node JS (which is built on the V8 engine, the same engine of Google Chrome)
-Take a look at my latest video on the channel where you can learn how to build user authentication with web based tokens using JWTs ( pronounce Jots) or JSON Web Tokens; and how this is better than the traditional cookie based sessions
-
-
-
-
-Thank you for reading ( and maybe watching :) )
-I will see you in next Video posts, till then stay safe and be well, friends]]></summary>
-        <author>
-            <name>Bek Brace</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Typescript Example #1.]]></title>
-        <id>https://dev.to/baenencalin/typescript-example-1-ia3</id>
-        <link href="https://dev.to/baenencalin/typescript-example-1-ia3"/>
-        <updated>2021-11-07T05:59:15.000Z</updated>
-        <summary type="html"><![CDATA[// An example of generics in TypeScript.
-class Option<T> {
-    constructor(v:T|null=null) { this.value = v; }
-    readonly value:T|null;
-}]]></summary>
-        <author>
-            <name>Calin Baenen</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Easiest way to Test TypeScript using Jest by SilvenLEAF]]></title>
-        <id>https://dev.to/silvenleaf/easiest-way-to-test-typescript-using-jest-by-silvenleaf-iem</id>
-        <link href="https://dev.to/silvenleaf/easiest-way-to-test-typescript-using-jest-by-silvenleaf-iem"/>
-        <updated>2021-11-07T05:44:55.000Z</updated>
-        <summary type="html"><![CDATA[Hey there my Js siblings! Excited to crash into TypeScript and fell madly in love? But ever wondered how to test your love? Well then fear not! Here we go again! Onto the beautiful world of Testing!!
-Also stay tuned! Because on our very next blog, we'll learn some amazing DevOps stuff and integrating it with Github Actions as well!
-Anyway, let's init the adventure!
-Create a folder and open it in your favorite editor (mine VS Code). Then type this command on your project terminal
-npm init -y
-
-(It'll create a package.json file to track all the packages that you'd download and so on)
-For those who are a bit lost on how to set up the environment and run the TypeScript files, check this one out TypeScript SETUP by SilvenLEAF
-Well anyway, in short (for details, checkout the above link)
-install t…]]></summary>
-        <author>
-            <name>SilvenLEAF</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Web Developer environment setup for a new Ubuntu/ Ubuntu based distro]]></title>
         <id>https://dev.to/_mohanmurali/web-developer-environment-setup-for-a-new-ubuntu-ubuntu-based-distro-bpn</id>
         <link href="https://dev.to/_mohanmurali/web-developer-environment-setup-for-a-new-ubuntu-ubuntu-based-distro-bpn"/>
@@ -615,59 +1420,6 @@ node -v
 Node…]]></summary>
         <author>
             <name>Mohan Murali</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DEV-OPS]]></title>
-        <id>https://dev.to/attaullahshafiq10/dev-ops-59dm</id>
-        <link href="https://dev.to/attaullahshafiq10/dev-ops-59dm"/>
-        <updated>2021-11-07T05:12:47.000Z</updated>
-        <summary type="html"><![CDATA[DEV-OPS
-Its a culture, concept, process and approach that merges software requirement gathering, software development, testing, quality assurance, system configurations, product deployment and operations. Organizations building or improving software products are moving towards a DevOps approach where development, testing, security, quality assurance and operations are getting merged within a large team and those technical resources work side by side to achieve higher return on investment
-DevOps is one of the most broad topics within software dev because it lacks boundaries and limitations. Many technologies, tools, concepts, processes and ideas converge to give a good DevOps pipeline and DevOps process resulting in agile planning, continuous integration, continuous delivery, and high level…]]></summary>
-        <author>
-            <name>Hafiz Muhammad Attaullah</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Que danado é um pod? - part 1]]></title>
-        <id>https://dev.to/guilesuica/que-danado-e-um-pod-part-1-8dc</id>
-        <link href="https://dev.to/guilesuica/que-danado-e-um-pod-part-1-8dc"/>
-        <updated>2021-11-07T03:50:02.000Z</updated>
-        <summary type="html"><![CDATA[Neste post eu vou tentar destrinchar cada ponto dentro do contexto de um pod, sendo assim vamos ver um pouco de redes, politicas de rede, persistência de dados para pods, exemplos práticos e mais umas coisinhas aí. Esse primeiro post será a parte um de alguns posts sobre Kubernetes que vou soltar por aqui. Esse é a parte 1 sobre pods que eu vou postar.  
-Um pod nada mais é do que o menor artefato possível de implementação dentro de um cluster Kubernetes. É nele que podemos subir um ou mais containers, compartilhando storage e recursos de rede.
-Cada container em um pod executa no próprio cgroup, mas eles comparilham alguns namespaces.
-Uma característica interessante dos pods, é que eles foram criados para serem efêmeros, sendo assim quando um pod cai ele automáticamente é iniciado novamente…]]></summary>
-        <author>
-            <name>Guilherme Lira</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to learn and practice more in Kubernetes Network Policy for CKx exams and EKS ?]]></title>
-        <id>https://dev.to/aws-builders/how-to-learn-and-practice-more-in-kubernetes-network-policy-for-ckx-exams-and-eks--4cgn</id>
-        <link href="https://dev.to/aws-builders/how-to-learn-and-practice-more-in-kubernetes-network-policy-for-ckx-exams-and-eks--4cgn"/>
-        <updated>2021-11-07T02:59:52.000Z</updated>
-        <summary type="html"><![CDATA[Good to learn more in Kubernetes network policy for CKx exams and EKS. Below are resources:
-https://kubernetes.io/docs/concepts/services-networking/network-policies/
-https://kubernetes.io/docs/concepts/services-networking/network-policies/#networkpolicy-resource
-https://github.com/ahmetb/kubernetes-network-policy-recipes
-https://editor.cilium.io/ - it allows you to save the final netpol in k8s netpol OR Cilium netpol (EKS-A is using Cilium !)]]></summary>
-        <author>
-            <name>Walter Lee</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to learn and practice more in Kubernetes Network Policy for CKx exams and EKS ?]]></title>
-        <id>https://dev.to/aws-builders/how-to-learn-and-practice-more-in-kubernetes-network-policy-for-ckx-exams-and-eks--4cgn</id>
-        <link href="https://dev.to/aws-builders/how-to-learn-and-practice-more-in-kubernetes-network-policy-for-ckx-exams-and-eks--4cgn"/>
-        <updated>2021-11-07T02:59:52.000Z</updated>
-        <summary type="html"><![CDATA[Good to learn more in Kubernetes network policy for CKx exams and EKS. Below are resources:
-https://kubernetes.io/docs/concepts/services-networking/network-policies/
-https://kubernetes.io/docs/concepts/services-networking/network-policies/#networkpolicy-resource
-https://github.com/ahmetb/kubernetes-network-policy-recipes
-https://editor.cilium.io/ - it allows you to save the final netpol in k8s netpol OR Cilium netpol (EKS-A is using Cilium !)]]></summary>
-        <author>
-            <name>Walter Lee</name>
         </author>
     </entry>
     <entry>
@@ -693,32 +1445,6 @@ Esto es muy parecido a lo que en otros lenguajes se le llama diccionario, mapa o
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Compose Generator - Update 1.2.0]]></title>
-        <id>https://dev.to/marcauberer/compose-generator-update-120-e6i</id>
-        <link href="https://dev.to/marcauberer/compose-generator-update-120-e6i"/>
-        <updated>2021-11-06T23:36:19.000Z</updated>
-        <summary type="html"><![CDATA[If you haven't read about Compose Generator yet, visit the introduction article here. This particular article shows which features / improvements were added in version 1.2.0 of Compose Generator.
-Apart from optimization and bugfixes, there are a few new features to discuss in the following parts.
-
-Version 1.2.0 brings support for a second reverse proxy service in addition to JWilder Nginx / Let's Encrypt Companion called Traefik. Traefik is a highly customizable edge router which brings a massive amount of built-in features: Reverse proxying, automatic service-detection, load balancing, no-downtime upgrades/configuring and supports Docker, Docker Swarm, Kubernetes, AWS, etc.
-For supporting Traefik, we added the proxy-labels field to the predefined service configuration spec, because config…]]></summary>
-        <author>
-            <name>Marc Auberer</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Chatops on AWS: Leveraging AWS Chatbot to get Glue Job notifications on Slack]]></title>
-        <id>https://dev.to/amlana24/chatops-on-aws-leveraging-aws-chatbot-to-get-glue-job-notifications-on-slack-158a</id>
-        <link href="https://dev.to/amlana24/chatops-on-aws-leveraging-aws-chatbot-to-get-glue-job-notifications-on-slack-158a"/>
-        <updated>2021-11-06T23:36:00.000Z</updated>
-        <summary type="html"><![CDATA[Recently I started reading about Chatops and it really intrigued me to learn more about it. It really fascinated me to see how easy it is now to setup alerting and be notified about operational stuff. While I was learning more, I thought why not explore the same on AWS and thats when I bumped onto AWS Chatbot.
-In this post I will go through the basics of this AWS managed service called ‘Chatbot’ and demonstrate how quickly you can setup an alerting mechanism to Slack, monitoring an AWS Glue ETL job.  
-For more details: https://amlanscloud.com/awschatbot/]]></summary>
-        <author>
-            <name>amlan</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[A Free Fully Functional Blog in Angular and Firebase]]></title>
         <id>https://dev.to/jdgamble555/a-free-fully-functional-blog-in-angular-and-firebase-e4j</id>
         <link href="https://dev.to/jdgamble555/a-free-fully-functional-blog-in-angular-and-firebase-e4j"/>
@@ -730,48 +1456,6 @@ Before I get into anything, I have to recommend you check out Fireship.io, as it
 I have r…]]></summary>
         <author>
             <name>Jonathan Gamble</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Deploy to Google Cloud Run from GitHub Release using GitHub Actions]]></title>
-        <id>https://dev.to/bashayr29/deploy-to-google-cloud-run-from-github-release-using-github-actions-1od4</id>
-        <link href="https://dev.to/bashayr29/deploy-to-google-cloud-run-from-github-release-using-github-actions-1od4"/>
-        <updated>2021-11-06T21:50:25.000Z</updated>
-        <summary type="html"><![CDATA[https://link.medium.com/kM9nREOrYkb]]></summary>
-        <author>
-            <name>Bashayr Alabdullah</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The ultimate collection of production-ready NestJS Boilerplate]]></title>
-        <id>https://dev.to/joeygoksu/the-ultimate-collection-of-production-ready-nestjs-boilerplate-2d4h</id>
-        <link href="https://dev.to/joeygoksu/the-ultimate-collection-of-production-ready-nestjs-boilerplate-2d4h"/>
-        <updated>2021-11-06T20:57:20.000Z</updated>
-        <summary type="html"><![CDATA[The ultimate collection of production-ready and flexible NestJS Boilerplate.  🚀 
-NestJS framework boilerplate with:
-📱 NestJS — latest version
-🎉 TypeScript - Type checking
-⚙️ Dotenv - Supports environment variables
-🗝 Authentication - JWT, RSA256
-🏬 Authorization - RBAC, CBAC
-🏪 TypeORM - Database ORM
-🏪 PostgreSQL - Open-Source Relational Database
-🧠 Configuration - Single config for all
-📃 Swagger - API Documentation
-🐳 Docker Compose - Container Orchestration
-🔐 Helmet - secure HTTP headers
-😴 Insomnia - Insomnia config for endpoints
-📏 ESLint — Pluggable JavaScript linter
-💖 Prettier - Opinionated Code Formatter
-👉 Let's try: https://github.com/joeygoksu/prime-nestjs
-My other blog posts:
-Kubernetes on AWS EKS for Beginners(Part 1)
-Apache NiFi on AWS
-Using lottie animations in gatsby
-Coding Criteria
-AWS Amplify @auth directives]]></summary>
-        <author>
-            <name>Joey Goksu</name>
         </author>
     </entry>
     <entry>
@@ -789,47 +1473,6 @@ Follow me on github : https://github.com/saidMounaim/]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Why I'm studying this? - Web Applications Security, Part 1]]></title>
-        <id>https://dev.to/leofelicissimo/why-im-studying-this-web-applications-security-part-1-3el6</id>
-        <link href="https://dev.to/leofelicissimo/why-im-studying-this-web-applications-security-part-1-3el6"/>
-        <updated>2021-11-06T19:57:37.000Z</updated>
-        <summary type="html"><![CDATA[This and the followings texts will be part of my personal study about security for Web Applications. It represents a big challenge for me. For two reasons: First, because english is not my first language and I couldn't imagine to write a text in english at my life. And second, because security is a gap that I have at this exactly moment. And with this and others texts I want to win this two challenges and get enter in a beautiful and new world!
-
-Just kidding lol, let's move on!
-Security is an important them when we are building an information system, because in this kind of application we have private data going from a side to another. Then, it is not without importance (I know that must exists a better term for this) because in case of have our data stolen our users could be prejudiced an…]]></summary>
-        <author>
-            <name>Leonardo Felicissimo</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What is JavaScript? JavaScript and Web Development?]]></title>
-        <id>https://dev.to/ourcodinghours/what-is-javascript-javascript-and-web-development-1cb5</id>
-        <link href="https://dev.to/ourcodinghours/what-is-javascript-javascript-and-web-development-1cb5"/>
-        <updated>2021-11-06T18:23:05.000Z</updated>
-        <summary type="html"><![CDATA[Whenever a web portal does far more than displaying static material on the screen— presenting regular content modifications, infographics, dynamic 2D/3D visuals, sliding multimedia jukeboxes, and so on — you can guarantee that JavaScript is being an active participant. It's the main module of a three-layer frame that is used in regular web technology solutions, the first two of which are HTML and CSS
-HTML is the hypertext markup language that we have been using to give structure and legitimacy to our web content, such as establishing sections, format, and data tables, as well as inserting visual content.
-How Would the Website Appear if JavaScript Wasn't Used?
-All you'd have on the web if JavaScript didn't exist would be HTML and CSS. Only limited website constructions are possible with the…]]></summary>
-        <author>
-            <name>Our Coding Hours</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rendering Dynamic Content and Template Engines]]></title>
-        <id>https://dev.to/thenerdydev/rendering-dynamic-content-1470</id>
-        <link href="https://dev.to/thenerdydev/rendering-dynamic-content-1470"/>
-        <updated>2021-11-06T16:15:07.000Z</updated>
-        <summary type="html"><![CDATA[Hey everyone 👋🏻,
-In this article, let us learn about how we can render dynamic content to the client (which is not static). Let us first touch briefly on what a template engine is because rendering dynamic content is closely related to what a template engine will help us in achieving. 
-
-A template engine is software designed to combine templates with a data model to produce multiple pages that share the same look throughout the site. These are the views in an MVC project.
-So this helps us in putting dynamic content on our HTML pages. 
-We got a HTML like template (technically not HTML) which is typically a file that contains a lot of HTML like content in it but with some placeholders plugged into it and then we have a server (a Node.js Express server or any other server) serving the Node/…]]></summary>
-        <author>
-            <name>The Nerdy Dev</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Angular : RxJS concatMap operator]]></title>
         <id>https://dev.to/dipteekhd/angular-rxjs-concatmap-operator-4614</id>
         <link href="https://dev.to/dipteekhd/angular-rxjs-concatmap-operator-4614"/>
@@ -861,60 +1504,6 @@ So,concatMap is used where sequence of execution matters.
 Thanks for reading! If you found this helpful please share!]]></summary>
         <author>
             <name>diptee</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Angular : RxJS concatMap operator]]></title>
-        <id>https://dev.to/dipteekhd/angular-rxjs-concatmap-operator-4614</id>
-        <link href="https://dev.to/dipteekhd/angular-rxjs-concatmap-operator-4614"/>
-        <updated>2021-11-06T14:41:41.000Z</updated>
-        <summary type="html"><![CDATA[In Angular, we use HTTP to get data from backend,HTTP methods always return an observable.Generally we subscribe to that observable and assign response data to class variables to use it in our component.
-But using RxJS operators we can compose multiple observables(data streams) or process  observable data  before subscribing to it.
-RxJS concatMap operator
-Observable emits observable).
-concatMap operator
-Takes each value from the outer observable and maps that value  to observable(called as inner observable) 
-Concat all inner observables into a single observable in order  and subscribe to inner observables and emit data of each inner observable into output observable in sequential manner.
-concatMap never subscribes to the next inner observable until the previous one completes.
-Example:
-
-Run live
-Here we have 2 API’s
-In the above case we need to take all roll numbers from the first API  and pass it to the second API.
-
-So solution to this problem is use concatMap RxJS operator instead of nested subscription.
-
-First contactMap operator -
-getToppers_rollNum() this method returns an Observable of type number[] , conactMap  maps Observable<number[]> to Observable <number>(inner observable) then subscribes to inner observable and emit data into output observable(top_3_rollNum$).
-Second  concatMap operator -
-top_3_rollNum$ as outer observable.concatMap takes each roll number from the outer observable and hits http request sequentially(here we have 3 inner observables return by 3 http requests) & emits http response data into output observable(topper_marks$).
-concatMap never hits the next http request until the previous one completes.
-Shorthand syntax for above code
-
-So,concatMap is used where sequence of execution matters.
-Thanks for reading! If you found this helpful please share!]]></summary>
-        <author>
-            <name>diptee</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How To create an API using Node.js, Express, and Typescript]]></title>
-        <id>https://dev.to/nayanpatil1998/how-to-create-an-api-using-nodejs-express-and-typescript-89d</id>
-        <link href="https://dev.to/nayanpatil1998/how-to-create-an-api-using-nodejs-express-and-typescript-89d"/>
-        <updated>2021-11-06T13:30:55.000Z</updated>
-        <summary type="html"><![CDATA[In this article, we will learn to create an API server using the Express framework and Typescript.
-An API (Application Programming Interface) is a way of interacting with a service, through a series of predefined requests.
-Express is an open-source web framework, for Node.js, designed to make developing websites, web apps, and API's easier.
-TypeScript is JavaScript with syntax for types, it is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
-so let's dive into the tutorial,
-Basic knowledge of  NodeJs  and Javascript
-Basics of TypeScript
-To initialize the project in the working directory and create a package.json file by running the below command in terminal
-npm init -y
-
-After running this command it will create the package.json file i…]]></summary>
-        <author>
-            <name>Nayan Patil</name>
         </author>
     </entry>
     <entry>
@@ -935,93 +1524,6 @@ import { MatCardModule } from '@angular/material/card';
 The idea behind it is not new at all, this option already exists since the beginning phase of ng-packagr. By leveraging seco…]]></summary>
         <author>
             <name>kauppfbi</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Respecting someone's gender in a Person object.]]></title>
-        <id>https://dev.to/baenencalin/respecting-someones-gender-in-a-person-object-4fok</id>
-        <link href="https://dev.to/baenencalin/respecting-someones-gender-in-a-person-object-4fok"/>
-        <updated>2021-11-06T07:43:21.000Z</updated>
-        <summary type="html"><![CDATA[Here's how I'd respect someone's gender in TypeScript
-/*
- * A 3-bit number that represents the person's gender.
- * (bits in the order of: MFT.)
- * (MFT stands for "Male Female Trans".)
- * (Special blends:
- *  0x111 = Gender Fluid
- *  0x110 = Bigender
- *  0x001 = Nonbinary
- *  0x000 = Agender
- * )
- * (
- *  Expansion upon this format is welcome. If you want
- *  to add more attributes, for more non-binary genders,
- *  feel free, and tell me your format below!
- * )
-*/
-type Gender = number;
-function sterilizeGenderId(g:Gender):Gender {
-    return g & 0b111; // 0b111 = 7.
-}
-
-class Person {
-    constructor(
-        name:String|string, age:number, gender:Gender
-    ) {
-        this.gender = sterilizeGenderId(gender);
-        this.name = name;
-        this.age = age;
-    }
-    gender:Gender;
-    name:String|string;
-    age:number;
-}]]></summary>
-        <author>
-            <name>Calin Baenen</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to write an ESLint plugin in TypeScript]]></title>
-        <id>https://dev.to/darraghor/how-to-write-an-eslint-plugin-in-typescript-3k5a</id>
-        <link href="https://dev.to/darraghor/how-to-write-an-eslint-plugin-in-typescript-3k5a"/>
-        <updated>2021-11-06T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[I use NestJS at my day job. It’s a complicated framework sometimes and there are lots of things that devs “just have to remember” or there will be bugs in your application that you won’t see until runtime.
-I wanted to remove this cognative load from NestJS engineers so that they can focus on valuable work instead. I wrote an ESLint plugin to alert developers directly in their IDE or editor when these common issues exist - (Available on NPM) https://www.npmjs.com/package/@darraghor/eslint-plugin-nestjs-typed
-Here is what I learned about writing ESLint plugins in typescript for typescript while building the plugin.
-ESlint is the default linting tool in the JavaScript ( E CMA S cript) ecosystem. It is a command line tool but there are integrations with all popular IDEs and text editors.
-From …]]></summary>
-        <author>
-            <name>Darragh O'Riordan</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to convert an object to a read-only or a constant object in TypeScript?]]></title>
-        <id>https://dev.to/melvin2016/how-to-convert-an-object-to-a-read-only-or-a-constant-object-in-typescript-1dba</id>
-        <link href="https://dev.to/melvin2016/how-to-convert-an-object-to-a-read-only-or-a-constant-object-in-typescript-1dba"/>
-        <updated>2021-11-06T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Originally posted here!
-To convert an entire object to a read-only or a constant object, you can use the as keyword after the object initialization followed by the keyword const in TypeScript.
-// using "as" keyword after the person
-// object initialisation followed by the keyword "const"
-// to make the object readonly or a constant object
-const person = {
-  name: "John Doe",
-  age: 23,
-} as const;
-
-// change the "name" property value
-person.name = "Hello"; // ❌ not allowed. Cannot assign to 'name' because it is a read-only property.
-
-For example, let' say we have an object called person with 2 properties called name and age having values of John Doe and 23 respectively like this,
-// a simple object
-const person = {
-  name: "John Doe",
-  age: 23,
-};
-
-Now if hover over the person object vari…]]></summary>
-        <author>
-            <name>MELVIN GEORGE</name>
         </author>
     </entry>
     <entry>
@@ -1049,44 +1551,6 @@ The post Yes, Design Systems Do Improve Developer Efficiency and Design Consiste
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[A mock of localStorage written in TypeScript]]></title>
-        <id>https://dev.to/shinshin86/a-mock-of-localstorage-written-in-typescript-2680</id>
-        <link href="https://dev.to/shinshin86/a-mock-of-localstorage-written-in-typescript-2680"/>
-        <updated>2021-11-05T19:20:51.000Z</updated>
-        <summary type="html"><![CDATA[A mock of localStorage written in TypeScript
-
-
-The other day, I started writing mock of localStorage in TypeScript.
-Regarding this code, please note that it does not behave completely the same as localStorage.
-The behavior is not perfectly reproduced (The value returned when an unintended value is passed, for example), but the basic logic is implemented.
-type Store = any;
-
-class LocalStorageMock {
-  store: Store;
-  length: number;
-
-  constructor() {
-    this.store = {};
-    this.length = 0;
-  }
-
-  key(n: number): any {
-    if (typeof n === 'undefined') {
-      throw new Error(
-        "Uncaught TypeError: Failed to execute 'key' on 'Storage': 1 argument required, but only 0 present."
-      );
-    }
-
-    if (n >= Object.keys(this.store).length) {
-      return null;
-    }
-
-    return Object.…]]></summary>
-        <author>
-            <name>Yuki Shindo</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Git and GitHub Tutorial – Version Control for Beginners]]></title>
         <id>617acb5b33422e07df366c9d</id>
         <link href="https://www.freecodecamp.org/news/git-and-github-for-beginners/"/>
@@ -1104,29 +1568,6 @@ class LocalStorageMock {
         <summary type="html"><![CDATA[On your Windows machine, the Windows key launches the Start menu, and from there you can access anything on your computer.  When you press it in combination with other keys, it also acts as a useful shortcut to utilities you don't get easily through your computer's graphic user interface (GUI)]]></summary>
         <author>
             <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Security news weekly round-up - 5th November 2021]]></title>
-        <id>https://dev.to/ziizium/security-news-weekly-round-up-5th-november-2021-2ame</id>
-        <link href="https://dev.to/ziizium/security-news-weekly-round-up-5th-november-2021-2ame"/>
-        <updated>2021-11-05T16:59:27.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-Hello! I welcome you all to this week's review, and I hope you all had a nice week 🤗.
-In case you are reading for the first time, I am Habdul Hazeez, and the author of this weekly series of articles where we review some security news that is worthy of your time. This has been the case for over a year now.
-Do you like what I do? You can buy me a Coffee.
-Moving on.
-This week's review is about malware, vulnerabilities, hacking, and social engineering. The latter resulted in someone losing half a million dollars.
-Let's get on with it.
-Shrootless: macOS Vulnerability Found by Microsoft Allows Rootkit Installation
-
-
-Remember this: No System Is Safe.
-The title might make this sounds like a "simple" vulnerability, but it's not. A rootkit is among the most dangerous malware to get r…]]></summary>
-        <author>
-            <name>Habdul Hazeez</name>
         </author>
     </entry>
     <entry>
@@ -1167,28 +1608,6 @@ It turns out that you…]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Ransomware Mitigation: The New Vault Lock for AWS Backup]]></title>
-        <id>https://dev.to/aws-heroes/ransomware-mitigation-the-new-vault-lock-for-aws-backup-3f89</id>
-        <link href="https://dev.to/aws-heroes/ransomware-mitigation-the-new-vault-lock-for-aws-backup-3f89"/>
-        <updated>2021-11-05T16:06:05.000Z</updated>
-        <summary type="html"><![CDATA[Very recently, AWS announced Vault Lock for AWS backup. This new feature enables the protection of backups from accidental or malicious actions.  Behind the scenes, this extra safeguard is made possible by storing backups using a Write-Once-Read-Many (WORM) model. 
-The main reason to rehash this? Unique features like this seem to stay under the radar way too often. Secondly, if you already use AWS Backup, then enabling this extra protection is almost effortless.
-Here's an example of AWS Backup Vault using Locks in CloudFormation:
-  SomeBackupVault:
-    Type: AWS::Backup::BackupVault
-    DeletionPolicy: Retain
-    UpdateReplacePolicy: Retain
-    Properties:
-      BackupVaultName: SomeBackupVault
-      Notifications:
-        BackupVaultEvents:
-          - BACKUP_JOB_FAILED
-          - BACKUP…]]></summary>
-        <author>
-            <name>Gert Leenders</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How to Create an Animated Chart of Nested Squares Using Masks]]></title>
         <id>https://css-tricks.com/?p=355623</id>
         <link href="https://css-tricks.com/how-to-create-an-animated-chart-of-nested-squares-using-masks/"/>
@@ -1218,24 +1637,6 @@ The post enterkeyhint appeared first on CSS-Tricks. You can support CSS-Tricks b
         <summary type="html"><![CDATA[I have added Google Adsense to my angular site. It shows ads on some pages and doesn't on some pages. I will show the example of pages which doesn't shows ads, suppose we go to this page "https://www.indiantrain.in/train-time-table", in the search box we have filled the train number and hit get schedule button. It will redirect to other page. Almost all the features of my site is in this manner only. I think angular block the Adsense script and that's why it doesn't load all the time. As we already know, outside script need to sanitize in order to run in angular. So, I just want to know the proper way to add Google Adsense to my site.]]></summary>
         <author>
             <name>Indian Train</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What is Smishing?]]></title>
-        <id>https://dev.to/robertinoc_dev/what-is-smishing-154g</id>
-        <link href="https://dev.to/robertinoc_dev/what-is-smishing-154g"/>
-        <updated>2021-11-05T14:27:39.000Z</updated>
-        <summary type="html"><![CDATA[The number of phishing attempts sent by SMS grew by 328% in 2020. Here’s how Smishing works and how you can protect yourself.
-
-
-
-  
-  
-  
-You know all about phishing. From time to time, emails purporting to be from Facebook or your bank drift into your inbox and insist you “verify your account.” Look closer and you spot the telltale signs of a scam: a sketchy-looking sender address, sloppy writing, and a complete lack of personalization. You sigh and hit delete.
-It’s easy to be cynical about opportunistic, mass-mailed phishing attempts. Although some look genuine to even the most cautious eye, others feel decidedly amateurish and are readily identifiable. Billions of emails are sent each month, with over 245,000 phishing-related websites created in January alone according to the Anti-Phish…]]></summary>
-        <author>
-            <name>Robertino</name>
         </author>
     </entry>
     <entry>
@@ -1364,22 +1765,6 @@ tail - view last l…]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[5 reasons why you should use PropelAuth]]></title>
-        <id>https://dev.to/propelauth/5-reasons-why-you-should-use-propelauth-56b9</id>
-        <link href="https://dev.to/propelauth/5-reasons-why-you-should-use-propelauth-56b9"/>
-        <updated>2021-11-05T01:45:35.000Z</updated>
-        <summary type="html"><![CDATA[PropelAuth is a hosted, configurable authentication service. Below are five reasons why you should consider it for your product.
-Once you sign up for PropelAuth, you immediately have your own authentication service. This includes a lot behind the scenes, but to your end-users, the first thing they will see is this
-
-You can brand your site easily by supplying your product's colors and a logo. This branding applies not only to all your auth pages, but also to any emails that we send (forgotten passwords, email confirmations, user invites, etc.).
-
-Also, this branding includes the URL your customers are on. We support custom domains so your users see your auth pages on https://auth.yourdomain.com, not https://yourname.propelauth.com.
-Since PropelAuth hosts your auth pages, we simplify auth int…]]></summary>
-        <author>
-            <name>propelauthblog</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Introducing Svelte, and Comparing Svelte with React and Vue]]></title>
         <id>https://css-tricks.com/?p=355937</id>
         <link href="https://css-tricks.com/introducing-svelte-and-comparing-svelte-with-react-and-vue/"/>
@@ -1433,38 +1818,6 @@ Helps to launch local development server with live reloading of static and dynam
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Root to Linux: BIOS]]></title>
-        <id>https://dev.to/coffeecraftcode/root-to-linux-bios-16jm</id>
-        <link href="https://dev.to/coffeecraftcode/root-to-linux-bios-16jm"/>
-        <updated>2021-11-04T20:11:57.000Z</updated>
-        <summary type="html"><![CDATA[At Forem a few coworkers and I have formed a Linux Club🤓. 
-Joe Doss is leading us on this adventure into Linux.
-
-The adventure starts by working through the Gentoo Handbook and installing Gentoo(a distribution of Linux) on Lenovo ThinkPads. 
-
- Our ThinkPad specs 
-During our meetings, I have been taking notes. These notes are useful for people in our club. 
-One of the first things we did when we got our laptops was set up our BIOS. 
-This post will give a brief description of what BIOS is, how to navigate to it, and some of the common settings you might change. 
-BIOS or Basic Input/Output System is a small piece of code that lives in a “read only” chip on your system board(motherboard). 
-Note:  read-only means that a file can be opened or read but can't be deleted or renamed. 
-The BIOS will…]]></summary>
-        <author>
-            <name>Christina Gorton</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[hawk project]]></title>
-        <id>https://dev.to/medpaf/hawk-project-30ig</id>
-        <link href="https://dev.to/medpaf/hawk-project-30ig"/>
-        <updated>2021-11-04T20:01:03.000Z</updated>
-        <summary type="html"><![CDATA[Hawk is a network and pentest utility that I developed so that I could perform different kinds of task using the same suite, instead of jumping from one tool to another.
-Link to the repository: https://github.com/medpaf/hawk]]></summary>
-        <author>
-            <name>Paulo Medeiros</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[I was invited to Adventures in Angular podcast]]></title>
         <id>https://dev.to/tomaszs2/i-was-invited-to-adventures-in-angular-podcast-286b</id>
         <link href="https://dev.to/tomaszs2/i-was-invited-to-adventures-in-angular-podcast-286b"/>
@@ -1473,28 +1826,6 @@ Link to the repository: https://github.com/medpaf/hawk]]></summary>
 check it out]]></summary>
         <author>
             <name>Tom Smykowski</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[👤 Role-Based Authorization for ASP.NET Web APIs]]></title>
-        <id>https://dev.to/robertinoc_dev/role-based-authorization-for-aspnet-web-apis-3m5e</id>
-        <link href="https://dev.to/robertinoc_dev/role-based-authorization-for-aspnet-web-apis-3m5e"/>
-        <updated>2021-11-04T18:59:21.000Z</updated>
-        <summary type="html"><![CDATA[💡 What is the best way to apply Role-Based Access Control (RBAC) to your ASP.NET Web API? Let's find out together.
-
-
-
-  
-  
-  
-Role-Based Access Control, also known as RBAC, is one of the most common strategies to restrict access to protected resources within an organization. It simplifies permission assignment by categorizing users in roles. However, many people making their first foray into RBAC have questions:
-How can you reflect this user categorization on your application to check users' privileges?
-How can you deal with roles in your code?
-Is role control appropriate for Web APIs?
-In this article, you will learn the best way to implement RBAC in your ASP.NET Core Web API by using Auth0's capabilities.
-Consider a payroll system in a company. Different people accessing this system hav…]]></summary>
-        <author>
-            <name>Robertino</name>
         </author>
     </entry>
     <entry>
@@ -1526,20 +1857,6 @@ Consider a payroll system in a company. Different people accessing this system h
 The post Fixing the Drift in Shape Rotations appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <author>
             <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to create scheduled  cloud backups of your database using mega with webmin]]></title>
-        <id>https://dev.to/renzocastillo/how-to-create-scheduled-cloud-backups-of-your-database-using-mega-with-webmin-1oop</id>
-        <link href="https://dev.to/renzocastillo/how-to-create-scheduled-cloud-backups-of-your-database-using-mega-with-webmin-1oop"/>
-        <updated>2021-11-04T15:32:16.000Z</updated>
-        <summary type="html"><![CDATA[Hi! The procedure to create a scheduled backup in the cloud with webmin is divided into the following steps:
-Configuration and installation of the mega command line tool (megatools): To install megatools, configure it with your mega.co.nz account, and know how to use 'megaput' and 'megarm', I recommend you to follow the instructions in this post. Once you have finish the installation and configuration of mega tools, I recommend doing a couple of tests with megaput and megarm of any file they have on their server to test if their configuration was well done.
-
-
-Configuring webmin to accept dates in the file name: We need another configuration to make webmin agree to run this type of override, otherwise it will think that the name that is placed in our file will be 'static'. For this case we …]]></summary>
-        <author>
-            <name>Renzo Castillo</name>
         </author>
     </entry>
     <entry>
@@ -1615,25 +1932,6 @@ The post Scroll-Linked Animations With the Web Animations API (WAAPI) and Scroll
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How to get the size of a directory in Linux]]></title>
-        <id>https://dev.to/boiliev/how-to-get-the-size-of-a-directory-in-linux-3bhd</id>
-        <link href="https://dev.to/boiliev/how-to-get-the-size-of-a-directory-in-linux-3bhd"/>
-        <updated>2021-11-04T09:17:37.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-Linux is one of the most popular operating systems in the world. It is Unix-like, and it is also open-source. Quite a big percentage of developers use Linux because it can be customized in so many ways.
-What's cool about Linux is its command line. Every 'hackers' paradise. There are a ton of commands. If you aren't familiar with any Linux commands, be sure to check out this post on the 8 Linux Commands Everyone Should Know.
-There is probably a command for almost anything that you want to do. For example what if you wanted to get the size of a directory? Well luckily for you there is a command for that. In this post, we are going to talk about that command and see what it can offer.
-du command
-
-
-This command lets the user get a quick view of the disk usage. The best way to us…]]></summary>
-        <author>
-            <name>Boyan Iliev</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Angular 13 ya esta disponible]]></title>
         <id>https://dev.to/macaoblog/angular-13-ya-esta-disponible-2oce</id>
         <link href="https://dev.to/macaoblog/angular-13-ya-esta-disponible-2oce"/>
@@ -1681,109 +1979,6 @@ We are starting with the definition of User and Todo #models, with a few fields 
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[⭐Angular 13 Features ⭐]]></title>
-        <id>https://dev.to/sandeepbalachandran/angular-13-features-5b1e</id>
-        <link href="https://dev.to/sandeepbalachandran/angular-13-features-5b1e"/>
-        <updated>2021-11-04T07:18:50.000Z</updated>
-        <summary type="html"><![CDATA[Hey there,
-Version 13.0.0 is here and it has some great updates for Angular developers everywhere. 🎉🎉
-✅ View Engine is no longer available in Angular as of v13
-✅ Changes to the Angular Package Format (APF)
-✅ Component API updates
-✅ End of IE11 support
-✅ Improvements to the Angular CLI
-✅ Framework changes and dependency updates ( TypeScript 4.4, Rxjs 7.4)
-✅ Improvements to Angular tests
-✅ Angular material component updates
-✅ PR merges from community
-✅ Docs Updated | Docs updating | Docs will be updated
- How to update to version 13
-Visit update.angular.io for detailed information and guidance. To have the best update experience,
-Update to 13
-ng update @angular/cli @angular/core
-
-In order to update your global angular,
-npm i -g @angular/cli
-
-What’s in this release?
-
-
-  
-  
-  ✅ Ivy is the de…]]></summary>
-        <author>
-            <name>Sandeep Balachandran</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Angular 13 is released]]></title>
-        <id>https://dev.to/tomaszs2/angular-13-is-released-15n3</id>
-        <link href="https://dev.to/tomaszs2/angular-13-is-released-15n3"/>
-        <updated>2021-11-04T06:31:24.000Z</updated>
-        <summary type="html"><![CDATA[Angular 13 is released!
-What's  new:
-More Ivy = speed improvements
-Improved AFP - faster execution
-Easier dynamic component creation
-IE11 not supported
-build cache improves build time by almost 70%
-RxJS version update
-Faster and less memory intense unit tests
-
-
-Improved a11y for Angular Material
-
-
-support for inlining Adobe Fonts - faster apps
-
-
-Improved localization API
-
-
-Easier directives disabling
-
-
-And more
-
-
-
-Release notes: https://blog.angular.io/angular-v13-is-now-available-cce66f7bc296
-
-
-  
-  
-  angular #Javascript]]></summary>
-        <author>
-            <name>Tom Smykowski</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to install Node js on Linux]]></title>
-        <id>https://dev.to/codingalex/how-to-install-node-js-on-linux-5gj0</id>
-        <link href="https://dev.to/codingalex/how-to-install-node-js-on-linux-5gj0"/>
-        <updated>2021-11-03T22:41:18.000Z</updated>
-        <summary type="html"><![CDATA[When we start using Linux, one of the first doubts is how to install our favorite applications. As developers, we need several tools, one of the most common is Node.js and NPM. Let's see what is Node.js, NPM and how to install them in Linux.
-
-
-  
-  
-  What is Node JS?
-
-
-Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser. Node.js is a popular, lightweight web framework for beginners, and it is used by many big companies like Netflix and Uber.
-
-
-  
-  
-  What is NPM?
-
-
-NPM is the default package manager for Node.js projects. NPM includes a command-line tool (CLI) that give you access to the NPM package registry. The registry stores the numerous JavaScript packages made available through the NPM CLI, along with their…]]></summary>
-        <author>
-            <name>Alexis Guzman</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Chapter 10: Browser Wars]]></title>
         <id>https://css-tricks.com/?p=354925</id>
         <link href="https://css-tricks.com/chapter-10-browser-wars/"/>
@@ -1802,40 +1997,6 @@ The post Chapter 10: Browser Wars appeared first on CSS-Tricks. You can support 
         <summary type="html"><![CDATA[Serverless UI is simply a free, open-source command-line utility for quickly building and deploying serverless applications on the AWS platform. In this article, we will learn and cover everything needed on using Serverless UI to deploy our projects or serverless applications to cloud services providers.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Ikeh Akinyemi)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[First steps with the kas build system]]></title>
-        <id>https://dev.to/lorenzoarena/first-steps-with-the-kas-build-system-37hn</id>
-        <link href="https://dev.to/lorenzoarena/first-steps-with-the-kas-build-system-37hn"/>
-        <updated>2021-11-03T11:19:23.000Z</updated>
-        <summary type="html"><![CDATA[I often work with the Yocto Project to build custom Linux distributions for a
-kas tries
-First, we must install python3 and pip, together with some other dependencies:
-$ sudo apt install python3 python3-pip
-$ pip3 install distro jsonschema PyYAML
-
-Then install kas; I had a problem with a dependency so I had to install another package by hand
-$ pip3 install testresources
-$ pip3 install kas
-
-As an example, we can try to build a simple image for the qemu machine which is already contained in the poky
-kas-project.yml, which will describe how our distribution must be built
-$ mkdir kas-pine64
-$ touch kas-project.yml
-
-Add the following snippet to the project configuration file:
-header:
-   version: 11
-machine: qemux86-64
-distro: poky
-target: core-image-minimal
-repos:
-   kas-pine64:
-   poky:
-   url:…]]></summary>
-        <author>
-            <name>Lorenzo Arena</name>
         </author>
     </entry>
     <entry>
@@ -1899,41 +2060,6 @@ The post Responsible JavaScript appeared first on CSS-Tricks. You can support CS
         <summary type="html"><![CDATA[This article sheds the spotlight on Magento PWAs and explains why business owners are getting them (often instead of native applications). Alex Husar introduces ways of how progressive web applications can be developed on Magento, as well as go over the major pros and cons of each development path.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Alex Husar)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Buttons vs. Links]]></title>
-        <id>https://css-tricks.com/?p=354978</id>
-        <link href="https://css-tricks.com/buttons-vs-links/"/>
-        <updated>2021-11-01T22:58:12.000Z</updated>
-        <summary type="html"><![CDATA[There are thousands of articles out there about buttons and links on the web; the differences and how to use them properly. Hey, I don’t mind. I wrote my own as well¹.
-It’s such a common mistake on …
-The post Buttons vs. Links appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
-        <author>
-            <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Have Single-Page Apps Ruined the Web? (“Transitional Apps”)]]></title>
-        <id>https://css-tricks.com/?p=355034</id>
-        <link href="https://css-tricks.com/have-single-page-apps-ruined-the-web-transitional-apps/"/>
-        <updated>2021-11-01T21:43:10.000Z</updated>
-        <summary type="html"><![CDATA[A big heaping 19-minute bowl of not-too-hot, not-too-cold baby bear porridge website building from Rich Harris. 
-I’ve certainly overheard more than my fair share of arguments about Single Page Apps (SPAs) vs Multi-Page Apps (MPAs). Although it’s only recently that …
-The post Have Single-Page Apps Ruined the Web? (“Transitional Apps”) appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
-        <author>
-            <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[So, You Want to Build an @mention Autocomplete Feature?]]></title>
-        <id>https://css-tricks.com/?p=354588</id>
-        <link href="https://css-tricks.com/so-you-want-to-build-an-mention-autocomplete-feature/"/>
-        <updated>2021-11-01T14:27:26.000Z</updated>
-        <summary type="html"><![CDATA[We’re all familiar with the concept of autocompletion, right? You type something into a search box and it tries to guess what you’re looking for as you type, displaying suggestions, often below the cursor. While we’re used to autocomplete on …
-The post So, You Want to Build an @mention Autocomplete Feature? appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
-        <author>
-            <name>Sarah Dayan</name>
         </author>
     </entry>
     <entry>
