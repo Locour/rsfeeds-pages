@@ -24,6 +24,332 @@
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Let&#x27;s build a list of real and alive open-source Angular projects.</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ovidiu141/lets-build-a-list-of-real-and-alive-open-source-angular-projects-1en6">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>I only found lists polluted with dead/toy/component-library OSS projects. (or even containing AngularJS projects)
+I want to find some real and alive open source projects which are using Angular. I&#x27;m sure some of us want to dive deeper and read some Angular code used in real life.
+Feel free to mention projects in the comments and I will try to keep the list up to date.
+List:
+PeerTube (Angular 13 | 9.9k Github stars) 
+https://github.com/Chocobozzz/PeerTube
+
+
+Openproject (Angular 12 | 5.3k Github stars)
+https://github.com/opf/openproject
+
+
+Oppia (Angular 11 | 4.3k Github stars)
+https://github.com/oppia/oppia</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How does Angular know about (click)?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ovidiu141/how-does-angular-know-about-click-3poc">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Do it
+But how does Angular know how to deal with this (click) thing? 
+It works because of the so called Event Biding. Basically it binds the target event name (click) to a method from the component (doSomething).
+As explained in this nice article , Angular doesn&#x27;t have a list of it&#x27;s own event names, but it actually uses the names of the underlying DOM events.
+So the event binding part of the Do it snippet is the equivalent of this vanilla snippet:
+element.addEventListener(&#x27;click&#x27;, () &#x3D;&gt; { doSomething() });
+
+
+This means the if I want to know which events I can bind to in Angular I can search them here: https://developer.mozilla.org/en-US/docs/Web/Events
+What about the $event?
+If the event is a DOM event, like click, mouseenter, keyup etc then the $event is the event itself. For example in the case of click, the $event is a MouseEvent.
+EventEmitter) the $event is actually the emitted data.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to display a navbar component after logging in without reloading the page in angular 12</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rammurthykota/how-to-display-a-navbar-component-after-logging-in-without-reloading-the-page-in-angular-12-2kfi">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>My landing page does not show a navbar, but I want to display a navbar after logging in successfully.  Currently, I&#x27;m able to show navbar if I do a full page reload after logging in successfully. I&#x27;m very sure that there is a better way than this approach.
+app.component.html
+
+
+
+login.component.ts
+login(){
+    this.credentials &#x3D; this.myForm.value;
+    if(this.credentials){
+      this.loginService.authenticate(this.credentials)
+      .subscribe(data &#x3D;&gt; {
+        this.storageService.setLocalStorageItem(&#x27;auth&#x27;, JSON.stringify(data));
+        this.dataService.global.showNav &#x3D; true;
+        this.sharedService.getProjectMetadata()
+        .subscribe(metadata &#x3D;&gt; {
+          this.storageService.setLocalStorageItem(&#x27;projectMetaData&#x27;, JSON.strin…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Cplayer and Its application</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/crajbanshi/cplayer-and-its-application-2eap">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>I have created a web based music player using javascript. I kept its name as CPlayer.
+Github link
+https://github.com/crajbanshi/cplayer
+And also created one website using this. Application name is MSound. Now it is deployed in stage trying to move it to production. I hope th MSound app will be in fly very soon.
+Visit the application stage url: http://tune.rf.gd</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Angular app in Github pages</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/davidmimay/angular-app-in-github-pages-2a56">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>How to deploy and angular app to GitHub pages and get it running under your own domain: username.github.io. Also you can use the GitHub API to get access to your repositories data as I did on my personal portfolio:
+Live demo
+Source code
+Git
+GitHub account
+Angular CLI
+Create a new public repository using your GitHub username and this form:
+username.github.io
+
+First, clone the newly created repository to a local folder:
+$ git clone https://github.com/username/username.github.io.git
+Navigate to the repository root folder:
+$ cd username.github.io
+Create a new angular project in the root directory of the repo:
+$ ng new myApp --directory ./
+Open angular.json file and change the buildOutput path to “docs”:
+angular.json
+…
+&quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;docs&quot;,
+…
+
+Build the angular application in production mode:
+$ ng build --prod
+You can push the /docs folder only, or you can push the whole application /myApp (recommended):
+$ git add .
+$ git commit -m &quot;Init app&quot;
+$ git push
+Now navigate to your repository settings https://github.com/username/username.github.io/settings
+
+scroll down to the GitHub pages section to change the build source to /docs. Few seconds later your site will be built and published and you should see the message “Your site is published at…”. If don’t, try refreshing the site.
+
+Then you can view the deployments at the right side of the repository, under environments, pressing github-pages or at https://github.com/username/username.github.io/deployments
+
+You can make changes locally, test them using $ ng serve and then build for production using $ ng build --prod and push your updated code to GitHub. The page will automatically re-build.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Understand unit tests once and for all [In less than 3 min]</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/talhakhalid101/understand-unit-tests-once-and-for-all-in-less-than-3-min-5bpm">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>One day, browsing through software development communities I came across the following image:
+
+Time passed, I finally learned what unit tests are, what this cheap rabbit represents and I would like to help you understand too.
+But what are unit tests?
+A unit test is basically testing the smallest testable part of a program.
+Okay, but what does that mean?
+If you pr the grass in a language that supports functional paradigm for example, the smallest testable part of your code should be a function. So a unit test would be the test of any function. In the case of object orientation it would be the testing of a method of your object.
+Well… as everything is easier to understand in practice, let&#x27;s go to the code!
+In the example below, we have a function that adds two numbers and returns the sum val…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The inmates are running the asylum: 10 things you should know about your internal Platform Team</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/peibolsang/the-inmates-are-running-the-asylum-10-things-you-should-know-about-your-internal-platform-team-4lk2">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>(Cover photo credits: James Harrison @jstrippa via Unsplash)
+The idea of leveraging tools and frameworks to create better software is not new. For example, in traditional product-centric approaches, vendors pushed developers to build services that orbited around a smart integration bus with the vain hope of making the software more robust (Oracle SOA Suite anyone?). Constrained by lots of proprietary technologies, this approach was far from ideal for developers to design and build their applications. Nowadays, with the emergence of standards-based computing utilities (Serverless) and the novel software engineering practices that evolved with them (NoOps), we can look at these internal tools from a more developer-centric point of view.
+Nowadays, you no longer need to buy a product to cover …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Fast and easy way to setup web developer certificates</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/istarkov/fast-and-easy-way-to-setup-web-developer-certificates-450e">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Modern days having that cookies auth etc depends on https we need to have https local web environment.
+Before to generate local certificates I used minica. 
+The main issue that you need a big readme for osx, linux and windows users, how to regenerate keys, 
+Having that we use vscode remote for development it was 2x more work to register all that keys on local and remote machines.
+The solution below doesnt need any setup from developers. 
+Register on DNS provider A records for development like:
+A blabla.devdomain.com 127.0.0.1
+Then using letsencrypt certbot for your provider just generate needed certificates.
+They are already trusted and the only issue is 3 month expiration period, what can be easily fixed with cron.
+In our case we use cloudflare as DNS. 
+Create cloudflare API token https:/…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Understanding Docker in a visual way (in 🎥 video): part 1 – Images</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aurelievache/understanding-docker-in-a-visual-way-in-video-part-1-images-4fbn">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Understanding Docker can be difficult or time-consuming. In order to spread knowledges about Cloud technologies I started to create sketchnotes about Docker, then I&#x27;ve auto-published a book and since now I&#x27;ve started a new serie of video! :-)
+I imagined a serie of short videos with a mix of sketchnotes and speech.
+I think it could be a good way, more visual, with audio &amp; video to explain Docker (and others technologies).
+The first episode is focused on a very important Docker object: Images.
+
+
+
+
+The video is in French BUT I done the subtitles in english (and french too).
+If you liked the video and are interested to watch another ones, please give me some feedbacks (and you can also subscribe to my Youtube channel, if you want to ❤️).
+I can also give you, in an article, the full english transcript and sketchnotes in high quality, about this video, if you are interested.
+If you are interested, I published all the sketchnotes on Docker (and new ones!) to make a &quot;book&quot; of 120 pages: &quot;Understanding Docker in a visual way&quot;.
+If you like theses sketchnotes, you can follow me, I will publish others sketchs shortly :-).</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to learn AWS for free ?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aws-builders/how-to-learn-aws-for-free--2inc">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>𝑻𝒘𝒐 𝑮𝒓𝒆𝒂𝒕 𝒂𝒏𝒅 𝑭𝒓𝒆𝒆 𝑨𝑾𝑺 𝒍𝒆𝒂𝒓𝒏𝒊𝒏𝒈 𝒓𝒆𝒔𝒐𝒖𝒓𝒄𝒆𝒔 below:
+https://lnkd.in/gnAzj7bH
+https://lnkd.in/g_FCjGvF
+I just &quot;buy&quot; (free) one and watching #dataanalytics !
+
+https://www.linkedin.com/feed/update/urn:li:activity:6865332472352260096/]</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">This Year&#x27;s Hacktoberfest!</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/yuvraj_singh/this-years-hacktoberfest-2j43">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>This year hacktoberfest was fun to do. In beginning i just started submitting my PRs and then after long 29 days, i reviewed my PRs and Damn Maximum of the Projects were not in Hacktoberfest Participation list and in panic I somehow manage to find five projects that were hacktoberfest-accepted. Thanks to God i reviewed my Submission, Otherwise this Year would be empty Without it. This was my story Guys! Share yours&#x27;s in comment.😊😉</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Secrets With SOPS</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aarushikansal/secrets-with-sops-2h5e">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>SOPS (Secrets OperationS) is an open source tool from Mozilla, intended to edit, encrypt, decrypt a range of different file types, such as YAML, JSON, ENV etc. 
+Encryption can be done in variety of ways, using major cloud providers encryption tools, PGP, and even age.
+In this article, we&#x27;ll focus on using AWS + KMS. A similar setup and workflow can be used for GCP and Azure as well. 
+Download + install one of: 
+stable releases
+
+
+unstable features
+
+
+
+More details can be found on the SOPS github repo.
+Pre-requistes for this are: 
+A ready to use KMS key.
+Correctly configured AWS credentials, for example:
+
+
+
+
+[default]
+aws_access_key_id &#x3D; 
+aws_secret_access_key &#x3D; 
+
+[kmsuser]
+aws_access_key_id &#x3D; 
+aws_secret_access_key &#x3D; 
+
+
+A s…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Here are the Dockerfile tips you can use to get your builds faster and safer</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/mtk3d/here-are-the-dockerfile-tips-you-can-use-to-get-your-builds-faster-and-safer-4o1a">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Nowadays we are using docker a lot in web development. It&#x27;s easy to use, great in scaling, and gives us an immutable environment for running your application from local development to deploy on production.
+In this article, I want to show you some of those practices based on this example:
+FROM php:7-fpm
+WORKDIR /app
+
+COPY . .
+
+ADD https://deb.nodesource.com/setup_12.x .
+RUN bash setup_12.x
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir&#x3D;/usr/local/bin/ --filename&#x3D;composer
+
+RUN apt update &amp;&amp; \
+    apt install -y \
+    curl \
+    git \
+    htop \
+    libicu-dev \
+    libgd-dev \
+    mariadb-client \
+    libonig-dev \
+    vim \
+    unzip \
+    nodejs
+
+RUN apt purge -y --auto-remove
+RUN npm install -g yarn
+
+RUN docker-php-ext-install \
+    exif \
+    gd \
+    intl \
+    m…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Secure your app in a few easy steps 🔒</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/leahein/secure-your-app-in-a-few-easy-steps-2amo">
                   <div class="article-summary-box-inner">
@@ -76,6 +402,321 @@ Disclaimer: The EC2 instance used in this guide is not within AWS&#x27;s Free-Ti
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Heal You - Fitness App UI kit</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/adom_shafi_17/heal-you-fitness-app-ui-kit-21c8">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Hello Everyone. Meet Heal You, it is a premium UI Kit consist of 80+ health &amp; fitness app screens that can help you to boost your design process. This kit is carefully crafted and contains many UI components that you can use for design inspiration or speed up your design workflow. You can also find a series of screens that guide users through the app interface &amp; functions. You can make your custom workout on this app. You can track your daily activity &amp; set up an alarm for your exercise time. Easy to customize to fit your style. Also, You can get a dark mode version of it. Available in Figma, XD, Sketch &amp; Flutter File.
+https://www.uihut.com/feature/heal-you-fitness-app-ui-kit/16704</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">OS themed profile</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/yashdatir/os-themed-profile-4bf1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Hey there, m up with one of my other mini project, making an OS clone for my profile. It has its own UI, CLI, formats etc. I feel this may have endless possibilities for its usage, also may come up with something creative. I would also like if any one can collaborate for the same. Currently it has all the data static, but arrangements have been made to make it dynamic using a backend. So, lets get in touch...
+https://yashdatir.github.io/profile-os/</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Your doctor (parent process) – is your prescription  publisher, meanwhile you, well guess who you are ?..</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/projektorius96/your-doctor-parent-process-is-your-prescription-publisher-meanwhile-you-well-guess-who-you-are--38b9">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>If you reading , it means you are subscriber , you (as child process) read doctor&#x27;s stdout &amp; stderr i.e. you are a child process (subscriber) that consumes the output as Writable, not as Readable stream as what you may expected initially. In layman&#x27;s terms you behave opposite than you doctor, common sense, you are not a doctor (unless RIP Don Shirley)
+const path &#x3D; require(&#x27;path&#x27;)
+const child_process &#x3D; require(&#x27;child_process&#x27;);
+// child_process.spawn(command@string, args@array, {options@object})
+
+let ls &#x3D; child_process.spawn(&#x27;ls&#x27;, [&#x27;-la&#x27;], {cwd: path.join(__dirname)})
+// console.log(ls.pid /* self */ &#x3D;&#x3D;&#x3D; ls._handle.pid /* inherited from parent */)
+
+// the line below will be ignored , &#x27;cause this is child process : it does not intended to consume stdin ;
+ls.stdin.on(&#x27;data&#x27;, (data)&#x3D;&gt;console.log(&quot;data:&quot;, data))
+
+ls.stdout.on(&#x27;data&#x27;, (data) &#x3D;&gt; console.log(&#x60;stdout: ${data}&#x60;));
+
+ls.stderr.on(&#x27;data&#x27;, (data) &#x3D;&gt; console.log(&#x60;stderr: ${data}&#x60;)); // give spawn command as e.g lsapfhjsfjka to reproduce error
+
+ls.on(&#x27;close&#x27;, (code) &#x3D;&gt; console.log(&#x60;child process exited with code ${code}&#x60;));
+
+
+This been first of short series on Dev.to . See you in a next one ! 
+
+Thanks to @devternity
+ for support I&#x27;ve been spared up today !</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">File Uploads on GraphQL: Why or Why not</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/mrsauravsahu/file-uploads-on-graphql-why-or-why-not-ek0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Note: The code mentioned in this post can be found in these repositories. 
+NestJS Reference - mrsauravsahu/blog-graphql-nestjs-fileupload
+
+.NET Reference - mrsauravsahu/blog-graphql-dotnet-fileupload
+
+
+
+
+If you just want to see how to do file uploads with GraphQL, just click here
+GraphQL has become quite popular due to its various features fixing under/over fetching issues. It also allows for easy caching, federation, non-versioning APIs, subscriptions etc,.
+For the modern Internet where data needs to be accessible on various types of applications running on various types of devices, GraphQL seems like a great way forward and also a good concept to put into your knowledge bag.
+GraphQL request and responses are typically in JSON format even though the GraphQL Spec doesn&#x27;t mandate any format…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">An online Book shop API Node js</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/devtips3/an-online-book-shop-api-node-js-6a5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>bookstore-api
+Features:
+Technology Stack:
+Github : https://github.com/saidMounaim/a-bookstore-api
+Follow me on github : https://github.com/saidMounaim/</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Create a multi-tenant application in Nest.js Part 3 (multi-database setup)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ismaeil_shajar/create-a-multi-tenancy-application-in-nestjs-part-3-multi-database-setup-13ap">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>In part 1, we set up the nestjs framework and configured and tested microservices architecture application using nest.js. In part 2, we used Sequelize and mongoose to access the database and tested for both MySQL database and MongoDB.
+In this part; we will see how to let the application connect to multiple databases depending on the request. Since it is a multi-tenancy application, each tenant has their own database containing their data accessing the same application, thus the application needs to connect to different databases.
+forRootAsync() instead of forRoot(), we need to use a custom class for configuration.
+For both sequelize and mongoose, add this:
+MongooseModule.forRootAsync({
+    useClass:MongooseConfigService
+  }),
+SequelizeModule.forRootAsync({
+      useClass:SequelizeConfigSer…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Typing speed project for beginners</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/lucifer25x/typing-speed-project-for-beginners-4g1m">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Added some functions:
+Keystroke Counter (False/True)
+Word counter (False/True)
+More detailed finish window.
+Fixed textarea problem.
+Source Code: https://github.com/Lucifer25x/typing-test
+https://lucifer25x.github.io/typing-test/</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Web-push Notification using React and Node js</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ronyfr3/web-push-notification-using-react-and-node-js-oc9">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>I will share my code here for better understanding the core concept.
+
+
+public/custom-sw.js
+console.log(&quot;Service Worker Loaded...&quot;);
+self.addEventListener(&#x27;push&#x27;, event &#x3D;&gt; {
+  const data &#x3D; event.data.json()
+  console.log(&#x27;New notification&#x27;, data)
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body:data.description,
+      icon:data.icon
+    })
+  );
+})
+
+src/serviceWorker.js
+// This optional code is used to register a service worker.
+// register() is not called by default.
+
+// This lets the app load faster on subsequent visits in production, and gives
+// it offline capabilities. However, it also means that developers (and users)
+// will only see deployed updates on subsequent visits to a page, after all the
+// existing tabs open on the page have been closed, sinc…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How does the browser magically see React changes in development?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/matthewekeller/how-does-the-browser-magically-see-react-changes-in-development-4oc4">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Several months ago I was new to React.  As an experienced developer of classic javascript, one of the most objectionable things about the newer thick client frameworks such as React and Angular is the need to build the client side application to see changes. Let&#x27;s face it, we are used to only having to refresh the browser page.  Fortunately for us the community has has helped us out with this issue, specifically the Create React App community.
+1) Node.js, React, and Webpack are watching your code and transpiling it - It&#x27;s no secret that React delivered to the browser is quite different than what you wrote. Your tsx code has to be changed to jsx and your jsx code has to be changed to javascript, and this javascript has to be packed up for delivery to the browser.  Since you don&#x27;t feel like doing this on your own some automation is in order, fortunately you will not have to think about this, just know that it is happening.
+2) A socket has been created on the browser back to the server - This is where the real magic is because by creating a socket with the server, communication can be pushed to the browser instead of having the browser poll the server, which would be far more messy.  So everytime you change your code, the chain reaction described in step one happens and then a message is sent up the socket to tell the browser to refresh the page.
+There is a really interesting wrinkle to step 2.  If you load your page and then fire up your DOM inspector you will not see this socket, which is super confusing.  However, if you force a refresh of your browser page with the inspector open you will then see the socket.  A bug perhaps in Chrome?
+So there it is, a peak behind the curtain.  Happy coding.
+For more information on the latest frameworks, check out this article Common Frameworks for 2022.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Uptime of macOS system via terminal</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/stankukucka/uptime-of-macos-system-via-terminal-4jip">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>You are logged into your system. In this case, it&#x27;s macOS. You are facing just a simple question. Are you the only one who is logged in? I would like to give you an answer to this simple question with a bit of explanation. Here in upcoming lines, there will be a bit of theory background behind it.
+In case your system is healthy (understand as an official system with applied updates), you are the only physical user logged in. You can check this logged in information with a simple command you will enter into the terminal. But there is a trick in that, will explain in next lines hereunder. Open your Terminal.app you&#x27;ll find out in Finder in the section Applications and Utilities. For more informations check official Terminal User Guide.
+By entering uptime command you&#x27;ll be informed in one line output about the current time, number of days your system is up, number of logged-in users etc.
+uptime
+
+If you&#x27;ll enter this very same command into the terminal in capital form as UPTIME, you&#x27;ll receive a more readable summary of the logged-in sessions by the user.
+UPTIME
+
+The same output can be given by entering w command into the terminal.
+w
+
+Do remember you will always have a minimum of 2 logged-in users. By default when you open another terminal session it will be counted as another active user logged in. In other words, if you open four-terminal sessions, you will see 4 users logged in +1 as the default logged-in user I have written about.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">KYS-ED: When Compressing come into Cryptography</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/xampy/kys-ed-when-compressing-come-into-cryptography-1iml">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>In this lecture, we will dicuss about a new compression/cryptography algorithm. We cover how it started and what we&#x27;ve got at the end of researches.
+One month ago, We started working on a lossless compression algorithm. We took a message from an alphabets of $n$ symbols and tried to find a way to reduce the amount of bits used tohold the message. Normally each symbol in the alphabet hold 
+
+
+After seraveral tries, We found an algorithm which compress the source data with a constant ratio. 
+This is how the algorithm works.
+The algorithm don&#x27;t work on symbol directly but use them to construct the treatement block. And it takes as input the binary form of the message regardless of the message type, pass the binary data to the treatlent block and at output we get a new binary data which size is…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">8 Most Common Type Of Cyber Attacks</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/prajwolshrestha/8-most-common-type-of-cyber-attacks-2be5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Before learning about types of cyber attacks, you must know what a cyber attack is. Basically, it is an attack performed by a group or an individual to gain unauthorized access to a system with the intent to harm the victim.
+In this article, we will briefly learn about some of the most common types of cyber attacks  and how to protect yourself from them.
+Phishing involves sending emails that appear to be from trusted sources. The goal is to make the victim click on the link and trick them into giving their login credentials or spreading malware.
+Spear phishing is carried out in the same way, except it is more focused on particular people. The attacker has to do some research on the victim before sending them the malicious link. For example, with a little research an attacker can find your …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Secrets With SOPS</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aarushikansal/secrets-with-sops-2h5e">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>SOPS (Secrets OperationS) is an open source tool from Mozilla, intended to edit, encrypt, decrypt a range of different file types, such as YAML, JSON, ENV etc. 
+Encryption can be done in variety of ways, using major cloud providers encryption tools, PGP, and even age.
+In this article, we&#x27;ll focus on using AWS + KMS. A similar setup and workflow can be used for GCP and Azure as well. 
+Download + install one of: 
+stable releases
+
+
+unstable features
+
+
+
+More details can be found on the SOPS github repo.
+Pre-requistes for this are: 
+A ready to use KMS key.
+Correctly configured AWS credentials, for example:
+
+
+
+
+[default]
+aws_access_key_id &#x3D; 
+aws_secret_access_key &#x3D; 
+
+[kmsuser]
+aws_access_key_id &#x3D; 
+aws_secret_access_key &#x3D; 
+
+
+A s…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Green Flower - Global Voting</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/greenflowervoting/green-flower-global-voting-2kn2">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>This is the beginning of a Monthly Series about Voting The following Content is driven by the community of https://github.com/GreenFlowerVoting/GreenFlowerVoting/medium.md
+This Space enables a discussion to create a global, society fair, secure voting system.
+Imagination: We discover a planet and we are trying to create a voting system that stands for
+global equality without any borders 
+without any regional differences regardless of the geographical locations of the individuals
+independent of society or education
+Problems:
+Regional differences 
+Unique Identification 
+Manipulation 
+Desinterest 
+Uncertainty 
+Lobbying 
+Contributions 
+What are your concerns?
+Goals for this Project:
+Create an open collective - open source voting plattform
+Start and Election
+The chosen one will receive a Reward!
+The voters will decide how the Reward will be spent to benefit the voters.
+CONTRIBUTIONS: 
+https://github.com/GreenFlowerVoting/GreenFlowerVoting</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Secure your app in a few easy steps 🔒</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/leahein/secure-your-app-in-a-few-easy-steps-2amo">
                   <div class="article-summary-box-inner">
@@ -86,6 +727,189 @@ This will aim to outline all of the headers recommended by the OWASP Secure Head
 
 As a caveat, these are by no means foolproof. However, they do provide a first layer of defense in depth for attackers.
 The recommended mechanism for configuring your web application to return these headers in every response, is by configuring your web server. Since nginx is a widely used option, I will provide examples that demonstrate how to…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">CSS modules in next.js</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/fredrikbergqvist/css-modules-in-nextjs-34nm">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>On bergqvist.it I used styled jsx for styling my components. I preferred that to other css-in-js frameworks (like JSS) because of it actually using CSS syntax instead of JavaScript objects.
+    // styled jsx example with good old CSS
+    {&#x60;
+      .label { color: red; font-style: italic; }
+      .article { padding: 0; }
+    &#x60;}
+    
+
+    //JSS example with CSS as a JS object
+    const useStyles &#x3D; createUseStyles({
+      label: {
+        color: &#x27;red&#x27;
+        fontStyle: &#x27;italic&#x27;
+      },
+      article: {
+        padding: 0
+      }
+    })
+
+I like Styled jsx but it has had an issue with FOUC in the last few versions of Next.js though, and with Next 12 I decided to try something new and migrate to CSS Modules instead.
+A CSS Module is a CSS file in which all class names and anim…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to display a navbar component after logging in without reloading the page in angular 12</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rammurthykota/how-to-display-a-navbar-component-after-logging-in-without-reloading-the-page-in-angular-12-2kfi">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>My landing page does not show a navbar, but I want to display a navbar after logging in successfully.  Currently, I&#x27;m able to show navbar if I do a full page reload after logging in successfully. I&#x27;m very sure that there is a better way than this approach.
+app.component.html
+
+
+
+login.component.ts
+login(){
+    this.credentials &#x3D; this.myForm.value;
+    if(this.credentials){
+      this.loginService.authenticate(this.credentials)
+      .subscribe(data &#x3D;&gt; {
+        this.storageService.setLocalStorageItem(&#x27;auth&#x27;, JSON.stringify(data));
+        this.dataService.global.showNav &#x3D; true;
+        this.sharedService.getProjectMetadata()
+        .subscribe(metadata &#x3D;&gt; {
+          this.storageService.setLocalStorageItem(&#x27;projectMetaData&#x27;, JSON.strin…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Create A CallBack Functions JavaScript And TypeScript</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/own_alazzam10/create-a-callback-functions-javascript-and-typescript-4h9a">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>At Some Time You Want To Build A CallBack Functions With Parameters This Tutoial is For Begginers And Middle Level So Let&#x60;s Start
+CallBack Functions is Mean A Function Then You Want To Make Thing After Exectue it By Browser Like This.
+JavaScript
+TypeScript
+This Will Be Printing Function This Execute A callBack method after printing the name
+JavaScript
+TypeScript
+Then We Need To Pass Data Between The Data Inside Function And CallBack Function Like This
+JavaScript
+TypeScript
+This is the tutorial about CallBack Functions JavaScript And TypeScript follow me for more and sorry about syntex highlight because not working</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Cplayer and Its application</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/crajbanshi/cplayer-and-its-application-2eap">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>I have created a web based music player using javascript. I kept its name as CPlayer.
+Github link
+https://github.com/crajbanshi/cplayer
+And also created one website using this. Application name is MSound. Now it is deployed in stage trying to move it to production. I hope th MSound app will be in fly very soon.
+Visit the application stage url: http://tune.rf.gd</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Create a multi-tenant application in Nest.js Part 3 (multi-database setup)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ismaeil_shajar/create-a-multi-tenancy-application-in-nestjs-part-3-multi-database-setup-13ap">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>In part 1, we set up the nestjs framework and configured and tested microservices architecture application using nest.js. In part 2, we used Sequelize and mongoose to access the database and tested for both MySQL database and MongoDB.
+In this part; we will see how to let the application connect to multiple databases depending on the request. Since it is a multi-tenancy application, each tenant has their own database containing their data accessing the same application, thus the application needs to connect to different databases.
+forRootAsync() instead of forRoot(), we need to use a custom class for configuration.
+For both sequelize and mongoose, add this:
+MongooseModule.forRootAsync({
+    useClass:MongooseConfigService
+  }),
+SequelizeModule.forRootAsync({
+      useClass:SequelizeConfigSer…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Typing speed project for beginners</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/lucifer25x/typing-speed-project-for-beginners-4g1m">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Added some functions:
+Keystroke Counter (False/True)
+Word counter (False/True)
+More detailed finish window.
+Fixed textarea problem.
+Source Code: https://github.com/Lucifer25x/typing-test
+https://lucifer25x.github.io/typing-test/</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">แชร์ประสบการณ์ลอง migrate จาก pnpm ไป yarn berry กัน</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/jungai/aechrprasbkaarnlng-migrate-cchaak-pnpm-aip-yarn-berry-kan-2kac">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>เนื่องจากได้เห็นโพสต์ที่เกี่ยวกับ yarn berry แล้วเลยอยากลองที่จะ migrate จากตัวที่ใช้ pnpm ไป berry ก็เลยเกิดเป็นโพสต์นี้ครับ
+จริงๆแล้วผมเคยได้ยินyarn (berry) มานานมาแล้วแต่ไม่เคยลองเพราะว่าช่วงนั้นผมเคยเห็น issue ที่ใช้แล้ว project ไม่สามารถรันได้เลยก็เลยคิดว่ารอสักพักค่อยมาลองสุดท้ายก็ลืม -.- 
+ตั้งแต่เข้าสู่วงการ dev ผมก็เริ่มที่ npm -&gt; yarn(classic) -&gt; pnpm(ปัจจุบัน)
+ขอย้อนไปตอนที่ใช้ yarn classic (หลังจากนี้จะขอย่อว่า classic) ผมใช้ feature นึงคือตัว worksapcesใช้มาประมาณ 3 ปีได้แล้วถ้านับไม่ผิด และก็เมื่อไม่นานมานี้ผมได้เห็นตัว pnpm เป็นที่พูดถึงกันก็เลยลองไปดูว่ามันเป็นยังไงมี feature ไหนบ้าง
+หลังจากที่ไปดูว่าโดยรวมถือว่าโอเคเลยมีทุก feature ที่ผมใช้หลังจากนั้นโปรเจคช่วงๆหลังผมจะเป็น pnpm ทั้งหมด
+ก่อนที่จะเข้าหัวข้อหลักคือ yarn berry มาดูตัวอย่าง structure ที่ผมใช้ pnpm แบบอย่างง่ายต…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Counter application with react and typescript</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/suhakim/counter-application-with-react-and-typescript-56j4">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Let&#x27;s build this counter application using react-typescript.We are going to use useReducer hook for this application.
+
+Let&#x27;s set up our application
+$ cd Desktop
+$ mkdir react-counter
+$ cd react-counter
+
+Now create a react app
+$ npx create-react-app ./ --template typescript
+
+You should see a brand new react application.Clean up all unnecessary files.You can use a different component but in my case i am going to use App.tsx component.
+At first create a component App and export it defaultly
+const App:React.FunctionComponent&#x3D;()&#x3D;&gt;{
+  return 
+
+}
+
+Now we are going to setup our useReducer hooks.Add this statement to your code
+const [state, dispatch] &#x3D; React.useReducer(counterReducer, initialState);
+
+Now let&#x27;s create our cunterReducer and initialState
+First initialSt…</span>
                   </div>
                 </a>
               </details>
@@ -137,7 +961,7 @@ The post Interactive Rebase: Clean up your Commit History appeared first on CSS-
                 <a class="article-summary-link article-summary-box-outer" href="https://dev.to/maxwelladn/deploying-net-core-angular-and-sql-server-to-ubuntu-2a6h">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(6 min)</span>
-                    <span>In this article I will share with you how to deploy NGX.BILL a .net core/SQL Server and angular application to ubuntu using nginx
+                    <span>In this article I will share with you how I deploy NGX.BILL a .net core/SQL Server and angular application to ubuntu using nginx
 Prerequisites:  You must have an Ubuntu 16.04, 18.04, or 20.04 machine with at least 2 GB of memory.
 Connect to the same server as the database using an ssh client.
 Putty 
@@ -163,7 +987,7 @@ Copy the ssh key the new user.
 cp -r ~/.ssh /home/USER/
 sudo chown -R USER:USER /home/USER/.ssh
 
-Res…</span>
+Rest…</span>
                   </div>
                 </a>
               </details>
@@ -249,252 +1073,6 @@ If you want to follow along you could spin up a new Ubuntu 21.04 server on your 
 If you prefer running Materialize on a different operating system, you can follow the steps on how to install Materialize here:
 How to install Materialize
 Materialize is a streaming database for real-time analy…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">THE BEST INFRASTRUCTURE AS CODE TOOLS FOR 2021</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rezapped/the-best-infrastructure-as-code-tools-for-2021-4pbl">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Infrastructure as code tools manage and provision infrastructure via code. Here are some of the best IaC tools for 2021.
- 
-
-
-
-When it comes to cloud infrastructure, making something consistently replicable is extremely valuable for different reasons. Infrastructure as Code Tools can remove the manual process in a cloud environment with automation.
-Estimated reading time: 5 minutes
-Summary
-Legacy IT Infrastructure
-What is infrastructure as code?
-Managing Infrastructure as Code
-What is code configuration management?
-Puppet
-SaltStack
-Chef
-What are infrastructure as code tools?
-AWS CloudFormation
-Google Cloud Deployment Manager
-Azure Resource Manager
-Terraform
-Pulumi
-Contact Gennovacap for more information
-
-
-
-In data centers, engineering teams would traditionally have to manually configure add…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">🔓 Auth0 Integration with Singpass</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/robertinoc_dev/auth0-integration-with-singpass-4lc7">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Learn how to enable Singpass login with QR code in Auth0 Universal Login.
-
-
-
-  
-  
-  
-When it comes to national digital identity, Singapore has a lot to say. 
-Singpass in 2003 and has been enhancing it over the years. 
-With Auth0&#x27;s customer base quickly growing in Southeast Asia, Singapore and Japan, it was about time to officially offer Singpass services on the Auth0 platform.
-This is the first of a two-post series. In this post, we’ll learn how to integrate Singpass QR Login with Auth0 Universal Login. 
-Singpass QR login uses OIDC authorization code flow. 
-
-
-Websites integrate with Singpass by hosting NDI embedded Javascript SDK. On page load, the Singpass SDK starts an authorization flow, with the state and no…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">TruStacks</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/trustacks1/trustacks-1if5">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Speed is power. TruStacks gives you the power and ability to quickly standardize your developer workflows and will provide you a consistent foundation that can be easily followed and replicated.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Enable CGI in Apache2</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/yashindane/enable-cgi-in-apache2-mgi">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>By default when you install apache2, and navigate to /var/www directory you won&#x27;t find the cgi-bin folder. To enable CGI in apache2 follow this steps -
-$ sudo apt install apache2 -y
-
-We can find the available modules in /etc/apache2/mods-available. Here you will see the cgi.load module which you need to load.
-Enable by-
-$ sudo ln -s /etc/apache2/mods-available/cgi.load
-
-Now as Apache configuration has changed, reload the apache service by -
-$ sudo service apache2 reload
-
-Apache2 recognizes cgi-scripts in the directory /usr/lib/cgi-bin, so we need to place the script in this folder.
-Lets create a cgi script in python that returns the output of free -m command.
-#!/usr/bin/python3
-
-from subprocess import getstatusoutput as gso
-import cgi
-
-print(&quot;content-type:text/plain&quot;)
-print()
-
-print(gso(&quot;free -m&quot;)[1])
-
-Make this script executable by -
-$ sudo chmod +x c.py
-
-Now just curl to get response
-
-Connect with me -
-Linkedin
-GitHub Profile</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">React: Optimizing Re-Renders with shouldComponentUpdate</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/optimizing-re-renders-with-shouldcomponentupdate-5862">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>FreeCodeCamp states that if any component receives new state or new props, it re-renders itself and all its children. This is usually okay. But React provides a lifecycle method you can call when child components receive new state or props, and declare specifically if the components should update or not. The method is shouldComponentUpdate(), and it takes nextProps and nextState as parameters.
-
-
-You can use shouldComponentUpdate() to prevent this by comparing the props. The method must return a boolean value that tells React whether or not to update the component. 
-
-
-Code:
-
-
-
-
-class OnlyEvens extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(&#x27;Should I update?&#x27;);
-    // Change code below this line
-    return true;
-    // Change code above this line
-  }
-  componentDidUpdate() {
-    console.log(&#x27;Component re-rendered.&#x27;);
-  }
-  render() {
-    return 
-{this.props.value}
-;
-  }
-}
-
-class Controller extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state &#x3D; {
-      value: 0
-    };
-    this.addValue &#x3D; this.addValue.bind(this);
-  }
-  addValue() {
-    this.setState(state &#x3D;&gt; ({
-      value: state.value + 1
-    }));
-  }
-  render() {
-    return (
-      
-Add
-        
-      
-    );
-  }
-}
-
-Answer:
-
-
-
-
-class OnlyEvens extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(&#x27;Should I update?&#x27;);
-    // Change code below this line
-    if (nextProps.value % 2 &#x3D;&#x3D;&#x3D; 0) {
-      return true
-    } else {
-      return false;
-    }
-    // Change code above this line
-  }
-
-You click the Add button and watch the order of events in your browser&#x27;s console as the lifecycle hooks are triggered.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Amazon EKS Distro (EKS-D)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/aws-builders/amazon-eks-distro-eks-d-1jkk">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Since June 2018, AWS has provided Amazon Elastic Kubernetes Service (EKS) to its customers. It is an upstream and certified conformant version of Kubernetes. This service helped to manage containerized workloads and services in the AWS Cloud and in on-premises. Amazon EKS have always guaranteed scalability, reliability, performance and high availability.
-This service was satisfying for many users as they have enjoyed applying it effeciently to their projects.
-On the 1st of December 2020, AWS announced their new service Amazon EKS Distro (EKS-D) to the audience interested in Kubernetes, the portable, extensible and open-source platform of orchestration. As everyone was curious about this concept, a myriad of questions immerged: What is EKS-D? Why Amazon created this product? What is the adv…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">React: Add Event Listeners</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/rthefounding/react-add-event-listeners-7ib">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>FreeCodeCamp says that the componentDidMount() method is also the best place to attach any event listeners you need to add for specific functionality. In which React provides a synthetic event system which wraps the native event system present in browsers. 
-We&#x27;ve already been using some of these synthetic event handlers such as onClick(). But, if you want to attach an event handler to the document or window objects, you have to do this directly.
-
-
-Today we have to add an event listener in the componentDidMount() method for keydown events and have these events trigger the callback handleKeyPress(). We can use the document.addEventListener() which takes the vent (in quotes) as the first argument and the callback as the second argument.
-
-
-After that , in componentWllMount(), remove the same e…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Mayday, mayday! I need a scalable infrastructure to migrate on Scaleway Elements! Part 2 - Ops &amp; Container migration</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/stack-labs/mayday-mayday-i-need-a-scalable-infrastructure-to-migrate-on-scaleway-elements-part-2-ops-container-migration-h02">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Hello again!
-We saw in the part 1 how to build a scalable Scaleway Elements organization, implementing a networking topology, defining a disaster recovery and centralizing IAM and key management.
-In this part 2, we will talk about DevOps, monitoring, logging and migration of business applications in Kubernetes as an example.
-The Cloud is ruled by DevOps – this fact has been proven time and again. [1]
-I highly recommend all my customers to adopt a DevOps culture and practices from the beginning.
-Using a CI/CD tool becomes vital when you have multiples environments and a complex infrastructure configuration that depends on infrastructure as code.
-Many DevOps tools exist in the market. Let&#x27;s take Gitlab as an example.
-With Gitlab, you could manage your own instance in your infrastructure or u…</span>
                   </div>
                 </a>
               </details>
@@ -772,17 +1350,6 @@ A lack of a long-term vision can be costly during…</span>
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Password Security: A bit deeper dive into Hashes, Salts, Bcrypt and Node&#x27;s Crypto module.</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/stephepush/password-security-a-bit-deeper-dive-into-hashes-salts-bcrypt-and-nodes-crypto-module-7l7">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>As I finished much of the administration portion of the current project I&#x27;m working on, I started to explore possible solutions for authentication within the app. I spent a good portion of last month going through a tutorial series made by Zach Gollwitzer (link to it on freeCodeCamp&#x27;s youtube page as well as the playlist Zach&#x27;s own youtube channel). The tutorial seems pretty comprehensive, it begins with a review of using Express middle-ware, because moving forward, you use lots of middle-ware throughout the rest of the series. The series then moves on to using PassportJS, the Passport Local Strategy and Sessions, and then to using PassportJS with Javascript Web Tokens (JWT) with Passport and then to JWTs by themselves in an angular front-end. I didn&#x27;t actually go through the very end, whi…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -872,160 +1439,6 @@ Typescript Support Doc</span>
                     <span>This series is about making a generic website for a local business with TypeScript, NodeJs, NestJs, Prisma, React and NextJs. I&#x27;m trying to make my videos quite short, about 10 minutes each (except for the first one), while putting as much content there as I can. Here is the full playlist.
 In this videos we&#x27;ll create a User model to store users data on the server and discuss why we need password hashing and salt. We&#x27;ll also add new forms and pages to manage users in the Admin panel.
 Enjoy :)</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Validating login form with Formik library...</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/suhakim/validating-login-form-with-formik-library-lik">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Hey there, today i am gonna validate a login form using formim library.We are going to use react,reduxjs/toolkit and typescript in our project.
-At first create a folder on Desktop.Command going to be like that..
-$ cd Desktop
-$ mkdir formik-login
-
-and then get into that directory
-$ cd formik-login
-
-and create a react project like that
-$ npx create-react-app ./ --template redux-typescript
-
-And open the directory in your favourite text editor.In my case it is vs-code.So run the command
-$ code .
-
-Make sure you are in the project directory
-Now install formik command is
-$ yarn add formik
-
-Now we are ready for your client side login form validation project.You can create different component but i am going to use App.tsx only.
-Now at the top import 4 components from formik.
-import {Formik, Form, F…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Composable commerce: Switch parts of your stack in seconds</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/medusajs/composable-commerce-switch-parts-of-your-stack-in-seconds-4880">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>We recently launched our sophisticated Medusa Search API. It allows you to add a blazingly fast product search to your ecommerce setup, improving the overall customer experience and your conversion rates.
-From a developer perspective, the Search API unifies communication between Medusa and search engines thereby allowing you to switch between different engines in seconds with only a couple of lines of code. So far, Medusa has only supported product search using MeiliSearch, but we can now proudly present a plugin for Algolia - one of the giants.
-The purpose of this article is to show you how to install and configure Algolia for your Medusa store. Additionally, we&#x27;ll showcase the powerful Search API by guiding you through changing from one search engine to another.
-Installation
-Create an ac…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Parcel Frontend Starter</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ihaback/parcel-frontend-starter-ghj">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Parcel Frontend Starter
-
-
-
-Pre-configured with typescript, styling, global state handling, formatting, building &amp; testing.
-⚡️ Fast dev server powered by parcel
-
-📖 Typescript ready
-💅 Styling and theme intellisense autocompletion with styled-components
-
-📦 Pre-configured global state handling with redux-toolkit
-
-🐛 Discover inconsistencies and fix formatting through linting scripts with Eslint
-
-🔑 Testing scripts with React Testing Library
-
-💡 Path aliases do avoid pesky ../../ paths in your code
-npx degit https://github.com/ihaback/parcel-frontend-starter.git your-project-name
-
-cd your-project-name
-
-npm install
-
-  &quot;alias&quot;: {
-    &quot;@utils&quot;: &quot;./src/utils.tsx&quot;,
-    &quot;@store&quot;: &quot;./src/store&quot;,
-    &quot;@features/*&quot;: &quot;./src/features/$1&quot;,
-    &quot;@styles&quot;: &quot;./src/styles/index.ts&quot;
-  },
-  &quot;jest&quot;: {
-    &quot;preset&quot;: &quot;ts-jest&quot;,
-    &quot;testEnvironment&quot;: &quot;jsdom&quot;,
-    &quot;setupFilesAfterEnv&quot;: [
-      &quot;/jest-setup.ts&quot;
-    ],
-    &quot;collectCoverageFrom&quot;: [
-      &quot;src/**/*.{ts,tsx,js,jsx}&quot;,
-      &quot;!src/**/*.d.ts&quot;
-    ],
-    &quot;moduleNameMapper&quot;: {
-      &quot;@utils&quot;: &quot;/src/utils.tsx&quot;,
-      &quot;@store&quot;: &quot;/src/store&quot;,
-      &quot;@features/(.*)&quot;: &quot;/src/features/$1&quot;,
-      &quot;@styles&quot;: &quot;/src/styles/index.ts&quot;
-    }
-  }
-
-
-{
-  &quot;compilerOptions&quot;: {
-    &quot;baseUrl&quot;: &quot;.&quot;,
-    &quot;paths&quot;: {
-      &quot;@styles&quot;: [
-        &quot;./src/styles/index.ts&quot;
-      ],
-      &quot;@features/*&quot;: [
-        &quot;./src/features/*&quot;
-      ],
-      &quot;@store&quot;: [
-        &quot;./src/store/index.ts&quot;
-      ],
-      &quot;@utils&quot;: [
-        &quot;src/utils.tsx&quot;
-      ],
-    }
-  },
-}
-
-npm install
-
-npm run dev
-
-npm run build
-
-{
-  &quot;scripts&quot;: {
-    &quot;dev&quot;: &quot;parcel index.html --open&quot;,
-    &quot;build&quot;: &quot;parcel build index.html&quot;,
-    &quot;test&quot;: &quot;jest&quot;,
-    &quot;test:coverage&quot;: &quot;jest --coverage&quot;,
-    &quot;lint&quot;: &quot;eslint \&quot;**/*.{js,jsx,ts,tsx}\&quot; --fix&quot;
-  },
-}</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Fastest Way To Build Lightweight Angular Content Service</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/devbyrayray/the-fastest-way-to-build-lightweight-angular-content-service-3l6l">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>In the typical Angular applications, we use a lot of titles, labels, headers, and more content. But if you need a way to put those content elements in one place, you need something like a dictionary. It&#x27;s a combination of small words and more extensive sentences.
-Some applications need multiple languages, but others need one language but have loads of content to re-use. In this article, I want to show you the fastest way to create a content (some call it a dictionary) Service for your Angular application.
-If you need a content service with multiple languages, I highly recommend NGX-Translate. This package offers a simple API and Pipe mechanism to re-use pieces of content but also supports multiple languages.
-
-The simplest and fastest way to create Angular Services is by using the Angular C…</span>
                   </div>
                 </a>
               </details>
@@ -1277,113 +1690,6 @@ Step 1: In the package.json file, add the dependencies and dev dependencies and 
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Angular 11+ FormGroup Array ด้วย RxWeb</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sutin1234/angular-11-formgroup-array-dwy-rxweb-eml">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>ติดตั้ง @rxweb/reactive-form-validators
-$ npm install @rxweb/reactive-form-validators
-/** app.module.ts */
-
-import { RxReactiveFormsModule } from &#x27;@rxweb/reactive-form-validators&#x27;;
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    RxReactiveFormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-
-
-สร้าง job.model.ts
-/** models/job.model.ts*/
-
-import { required } from &quot;@rxweb/reactive-form-validators&quot;;
-
-export class JobModel {
-  @required()
-  jobName: string;
-
-  ...
-}
-
-
-
-สร้าง user.model.ts
-/** models/user.model.ts*/
-
-import { required, requiredTrue } from &quot;@rxweb/reactive-form-validators&quot;;
-
-export class JobModel {
-  @required()
-  jobName: string;
-
-  @requiredTrue()
-  jobValue:…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Angular Authentication: Best Practices 🏆</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/nikosanif/angular-authentication-best-practices-3h8h">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>An Angular application that demonstrates best practices for user authentication flow.
-By @nikosanif
- / 
-        angular-authentication
-      
-    
-An Angular application that demonstrates best practices for user authentication flow.
-By @nikosanif
-
-
-
-
-Live Demo
-Getting Started
-Features
-Tech Stack
-High-level Design
-Contributing
-Support
-License
-Live application: angular-authentication.netlify.app
-
-Node.js
-Angular CLI
-Clone this repository: git clone git@github.com:nikosanif/angular-authentication.git
-
-cd angular-authentication
-Install dependencies: npm install
-
-Serve the Angular app: npm start
-
-Open your browser at: http://localhost:4200
-
-
-
-Useful Commands
-npm start - starts a dev server of Angular app
-npm run build - builds full prod build
-npm run lint - linting source code of this project
-n…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
       <li class="source">
@@ -1607,367 +1913,6 @@ montarlo en un usb o cd con ayuda de algún programa (rufus), reiniciar el pc y 
       </li>
       <li class="source">
         <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">API Client Design Across Languages - Part 1</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/freshbooks/api-client-design-across-languages-part-1-5hmk">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>In my recent post Some Best Practices On Building An Integration, I espoused the benefits of using API owner supplied tools and libraries, and mentioned areas where a well-built SDK hides complexity from, or otherwise makes things easier for, a developer.
-A colleague suggested that it might be useful to present examples of some of these areas to give some pointers for someone who needs to implement that functionality themselves, can&#x27;t make use of an SDK, or simply for someone looking to build their own API client. So, this is part 1 of a deep dive into functionality in FreshBooks&#x27; (and some other API owner&#x27;s) SDKs.
-This first post won&#x27;t go too much into functionality as I think it&#x27;s best to start on structure.
-A RESTful API is language agnostic and clients built any number of languages mus…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Train PNR Status API</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/reboot13_dev/train-pnr-status-api-175p">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>So I made a PNR status API using data scrapped from confirmtkt.com
-Built in Node.js 
-Express Framework for routes and API handling
-Cheerio for Data scraping
-Node fetch to get response from confirmtkt
-Hosted on Vercel.com
-
-
-
-
-  
-  
-  Links
-
-
-Live Mode : https://pnr-status.vercel.app
-End Point : api/{PNR}
-Telegram || Instagram || Twitter || Youtube || LinkedIN || Donate</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">btoa replacement in Node.js</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/2ezpz2plzme/btoa-replacement-in-nodejs-3k6g">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>If you&#x27;re trying to use btoa in Node, you&#x27;ll notice that it is deprecated. It&#x27;ll suggest you to use the Buffer class instead.
-Here&#x27;s how you replicate the same functionality using Buffer:
-// Deprecated
-btoa(string)
-
-// Buffer equivalent
-Buffer.from(string).toString(&#x27;base64&#x27;)</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Build a Wallet System with Flutterwave Payment Integration Into NodeJs Application</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/olanetsoft/how-to-build-a-wallet-system-with-flutterwave-payment-integration-into-nodejs-application-175b">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(12 min)</span>
-                    <span>Today, many website owners want online payment gateways, especially as the industry has developed by leaps and bounds. Creating a wallet system is a bit of a nightmare when designing an app for the health sector, finance, or other sectors.
-We will learn how to create a wallet system and how to integrate the Flutterwave payment system in this tutorial.
-To follow along with this tutorial, we will need:
-A working knowledge of JavaScript.
-A good understanding of Node.js.
-A basic understanding of MongoDB or any database of our choice.
-Postman and some knowledge on how to use Postman.
-We also need a Flutterwave account to receive or accept payments from our application.
-A digital wallet, often known as an e-wallet, is an electronic device, internet service, or software application that allows on…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">free post job and find</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/xiaoyuan0017/free-post-job-and-find-13pd">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>hello,everyone.
-http://www.remote-visa.com/job
-hope you like.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Top Reasons Why choose Node.js for your next web app project?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/techavidus/top-reasons-why-choose-nodejs-for-your-next-web-app-project-1582">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Are you wondering what is the real reason that has led to the popularity of Nodejs development? There are many reasons.
-It&#x27;s the ideal solution for businesses looking to invest in a live-time running environment and application that spans platforms.
-JavaScript support is one reason why developers are using Node.js for web application development It comes with a myriad of amazing features, including permitting developers to add web servers and network tools through JavaScript.
-In the realm of product development, Node.js could be too complex for the novice, making the user nervous about making a web application that is successful.
-However, that doesn&#x27;t mean it&#x27;s difficult. Given how simple it is to accomplish the task with the help of two-way interaction between client and server is a great…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Build a Web Scraper With Node.JS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/terieyenike/how-to-build-a-web-scraper-with-nodejs-f6h">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>How do you increase productivity, especially when you want to multi-task and achieve so much in so little time? We have all encountered situations when our lead in an organisation instructs us to get (scrape) information off the internet, especially if we are in a team that does a lot of manual processes to achieve your work. Doing this with a pen and paper can lead to errors and missing out on specific information from the website.
-This tutorial will demonstrate how to automate scraping data off of the website and using it for whatever purpose.
-You can find the source code of the completed project on CodeSandbox. Fork, tweak the scripts and run the code.
-
-
-As developers, a basic understanding of JavaScript is necessary for you t…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">12 Ways to Speed Up Google Chrome</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/hetmansoftware/12-ways-to-speed-up-google-chrome-47lg">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Read this article to learn how to boost Google Chrome by disabling unnecessary extensions and plugins, optimizing its settings and interface and so on. With some changes to the extensions enabled in your browser and hidden features, you can improve the browser’s performance considerably.
-
-You may have noticed that the browser lets you choose from a wide variety of extensions, so you can add as many of them as you need for every specific purpose. Some extensions are used to ward off ads, others help to protect your computer and improve its security by preventing the browser from opening harmful websites or display any suspicious contents.
-Similarly, you can add extensions providing a wide choice of tools to work with Google Docs, Charts and Slides that make it possible to create and edit th…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Daily Ethernaut Challenge - #5 Token</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/turboza/daily-ethernaut-challenge-5-token-30ae">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>This is the series on playing with Ethernaut, a level-based solidity challenge focusing on the hands-on solidity/web3 hacking. And I like this for adding fun to learning. Thanks to Openzeppelin team.
-This challenge has a difficulty of 3/10. We start with 20 tokens and have to increase our balance from the initial value. Sound simple?
-Here is the code
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.0;
-
-contract Token {
-
-  mapping(address &#x3D;&gt; uint) balances;
-  uint public totalSupply;
-
-  constructor(uint _initialSupply) public {
-    balances[msg.sender] &#x3D; totalSupply &#x3D; _initialSupply;
-  }
-
-  function transfer(address _to, uint _value) public returns (bool) {
-    require(balances[msg.sender] - _value &gt;&#x3D; 0);
-    balances[msg.sender] -&#x3D; _value;
-    balances[_to] +&#x3D; _value;
-    return true;
-…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Leveraging Logic Apps to prevent over-provisioning owner access to subscriptions</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/unosd/leveraging-logic-apps-to-prevent-over-provisioning-owner-access-to-subscriptions-36aa">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Often happens that agility and freedom conflict with security.
-Have you ever had developer teams request ownership of a full subscription to be able to freely experiment?
-You still want to keep isolation, segregate responsibilities and permissions.
-Ability to experiment freely is paramount to innovation, but uncontrolled proliferation of subscriptions can bear a significant management overhead.
-Can we have the best of both worlds? The short answer is: yes.
-A resource group can be an effective boundary as it allows its contributors to yet create any resource, but also restrict the scope of access within a subscription.
-You can also enforce tags and Azure policies to control costs and enforce security.
-But now a team is restricted to creating resources within a single resource group and it c…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Why do your Field Professionals need Access Control Management Software?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/joygomez/why-do-your-field-professionals-need-access-control-management-software-2891">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>If you are part of the access control system industry, which is why you are on this website, you may be aware of all the tension and pressure field professionals face on the field. The job assures security and safety to the customer, but there are certain situations where there may not be security for your working hours, equipment or invoices. Manual field service can time consuming, hard to track, and lacks assurance. Writing down notes, filling forms, and other physical-based field management has been outdated with the introduction of Access Control Management Software.
-Both the management and field professionals use this software to stabilize and streamline their business. This software is a game-changer from managing work orders and schedules to monitoring technicians and the company p…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Ajv × JTD: Get Typedefs and its Validator at the Same Time</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/ningensei848/ajv-x-jtd-get-typedefs-and-its-validator-at-the-same-time-4n9h">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>This article has been translated from the original article by the author himself using DeepL translator. Thanks, www.deepl.com !
-Introduce Ajv JSON Validator 
-and adopt JSON Typed Definition
-
-Cross-platform typed definitions and validators at your fingertips!
-Note: This article you reading has been written with reference to this page.
-It is adopted as a common standard for both the front-end and the back-end, and is universally understandable and writable by many people ―――
-In programming, data structures can take many forms, depending on their use; e.g. CSV / XML / YAML / TOML. While there are many examples of these, none are as widespread or as easily understood by everyone as JSON. It is often used for human reading and writing, as well as for client-server interaction.
-
-On the other ha…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Angular 11+ FormGroup Array ด้วย RxWeb</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sutin1234/angular-11-formgroup-array-dwy-rxweb-eml">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>ติดตั้ง @rxweb/reactive-form-validators
-$ npm install @rxweb/reactive-form-validators
-/** app.module.ts */
-
-import { RxReactiveFormsModule } from &#x27;@rxweb/reactive-form-validators&#x27;;
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    RxReactiveFormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-
-
-สร้าง job.model.ts
-/** models/job.model.ts*/
-
-import { required } from &quot;@rxweb/reactive-form-validators&quot;;
-
-export class JobModel {
-  @required()
-  jobName: string;
-
-  ...
-}
-
-
-
-สร้าง user.model.ts
-/** models/user.model.ts*/
-
-import { required, requiredTrue } from &quot;@rxweb/reactive-form-validators&quot;;
-
-export class JobModel {
-  @required()
-  jobName: string;
-
-  @requiredTrue()
-  jobValue:…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Angular Authentication: Best Practices 🏆</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/nikosanif/angular-authentication-best-practices-3h8h">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>An Angular application that demonstrates best practices for user authentication flow.
-By @nikosanif
- / 
-        angular-authentication
-      
-    
-An Angular application that demonstrates best practices for user authentication flow.
-By @nikosanif
-
-
-
-
-Live Demo
-Getting Started
-Features
-Tech Stack
-High-level Design
-Contributing
-Support
-License
-Live application: angular-authentication.netlify.app
-
-Node.js
-Angular CLI
-Clone this repository: git clone git@github.com:nikosanif/angular-authentication.git
-
-cd angular-authentication
-Install dependencies: npm install
-
-Serve the Angular app: npm start
-
-Open your browser at: http://localhost:4200
-
-
-
-Useful Commands
-npm start - starts a dev server of Angular app
-npm run build - builds full prod build
-npm run lint - linting source code of this project
-n…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to get or access the properties and methods of main HTML element tag without errors in TypeScript?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/melvin2016/how-to-get-or-access-the-properties-and-methods-of-main-html-element-tag-without-errors-in-typescript-17p9">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Originally posted here!
-To get or access the properties and methods of the main HTML element tag without having errors or red squiggly lines in TypeScript, you have to assert the type for the main HTML element tag using the HTMLElement interface in TypeScript.
-The errors or warnings are shown by the TypeScript compiler since the compiler doesn&#x27;t know more information on the main HTML element tag ahead of time. But we know that we are referencing the main HTML tag and thus we can tell the compiler to use the HTMLElement interface which contains the declarations for properties and methods.
-// get reference to the first &#x27;main&#x27;
-// HTML element tag in the document
-// with type assertion using the HTMLElement interface
-const mainTag &#x3D; document.querySelector(&quot;main&quot;) as HTMLElement;
-
-// no errors …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
           <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
           <section class="articles-per-source">
             <article>
@@ -2064,156 +2009,6 @@ The post Quick and Dirty Bootstrap Overrides at Runtime appeared first on CSS-Tr
                     <span class="article-reading-time">(1 min)</span>
                     <span>Nice domain, eh? Does just what it says on the tin: cleans up pictures. You draw over areas of the image you want cleaned up, and it does its best using weird science. It’s like Photoshop’s Spot Healing Brush…
 The post cleanup.pictures appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">What You Need to Know about Angular v13</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/oktadev/what-you-need-to-know-about-angular-v13-7fd">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Angular v13 has arrived! And with it come a lot of exciting new features and updates. Angular continues to improve runtime performance, decrease compilation time, promote good software development practices, enhance developer experience, and keep up to date with dependencies such as TypeScript and RxJS. Is anyone else excited about RxJS v7?! 🤩 Let&#x27;s take a look at a few of the many new exciting features in Angular v13 with some code examples using authentication. 
-With v13, View Engine is no longer available, replaced by Ivy. Ivy is the future of Angular applications, and the benefits are tremendous. After initially landing in v12, Ivy paves the way for new feature updates, simplifies existing capabilities, and increases rendering performance.
-The way you can now create components dynamic…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Angular 11+ new way form validation with RxWeb</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/sutin1234/angular-11-new-way-form-validation-with-rxweb-4d8f">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>An Open-Source Architecture
-Provides all type of clientside validations.
-/** app.module.ts */
-
-import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-
-
-/** app.component.ts */
-
-import { FormBuilder, FormGroup } from &#x27;@angular/forms&#x27;;
-
-export class AppComponent implements OnInit {
-  myForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
-  ...
-
-  ngOnInit(): void {
-    this.myForm &#x3D; this.formBuilder.group({
-      name: [null, [Validators.required]],
-      lastName: [null, [Validators.required]],
-      age: [null, [Validators.required]]
-  …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Free React Responisve Travel Agency Website Design using Styled Components with ScrollReveal Animations✈️</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/koolkishan/free-react-responisve-travel-agency-website-design-using-styled-components-with-scrollreveal-animations-3lpf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>You can get the template from the link proivided in the description of the video.
-
-
-
-  
-  
-  Technologies Used :-
-
-
-
-React
-Styled Components
-React Icons
-Scroll Reveal
-
-
-
-
-
-  
-  
-  Please do like the video and subscribe to the channel. It helps and motivates me to create more content like this.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://dev.to">DEV Community</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Install docker on Raspberry Pi</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/barberone/install-docker-on-raspberry-pi-15pg">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Using an interesting Pi setup (Chipsee CM4-156) I needed to install docker and the instructions on their site we&#x27;re slightly incorrect to get it installed
-Kept getting an error when it tried to find a docker release for &#x27;buster&#x27; and that&#x27;s the latest version supported by this little &#x27;all in one&#x27; device
-Here&#x27;s what I ran to get it working
-This part is the same:
-sudo apt-get update
-
-sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-
-Add their GPG Key (same from site):
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-[Different] Remove previous entry (this was added when the first install failed, you may have done the same)
-sudo rm /etc/apt/sources.list.d/docker.list
-
-[Different] Work around to install the correct docker image:
-sudo curl -sL https://get.docker.com | sed &#x27;s/9)/10)/&#x27; | sh
-
-Referenced information / stackexchange 
-.. now back to installing Home Assistant on this Pi</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Postgres pgagroal connectionpool</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://dev.to/yugabyte/postgres-pgagroal-connectionpool-23fc">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>This blogpost is about a connectionpool that is lesser known than pgbouncer, which is pgagroal. Both are socalled &#x27;external connectionpools&#x27;, which mean they can serve application/user connections but are not part of an application. 
-They also serve the same function, which is to serve as a proxy between clients and applications on one side, and to a postgres instance on the other side. In that position, the first obvious advantage is that it can perform as an edge service, concentrating connections from one network, and proxy the requests to the database in a non-exposed network.
-Another advantage is that the client/application side connections are decoupled from the database side connections, and therefore can serve badly behaving applications (which create and destroy connections to a d…</span>
                   </div>
                 </a>
               </details>
@@ -2852,30 +2647,8 @@ Thank you: @hirdot</span>
                 <summary class="article-expander__title">A Simple But Effective Mental Health Routine For Programmers</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/10/effective-mental-health-routine-programmers/">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
+                    <span class="article-reading-time">(10 min)</span>
                     <span>In this article, we’ll look at why taking care of our work-life balance is important, how to develop a simple and effective mental health routine, and the most common and efficient techniques you can use to make your custom routine.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-10-15">2021-10-15</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Tips And Tricks For Evaluating UX/UI Designers</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/10/tips-tricks-evaluating-ux-ui-designers/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(13 min)</span>
-                    <span>Customers may start using your app because you offer a unique product, but user experience is what makes them stay. For that, you need excellent UX designers, and the know-how to spot them when hiring.</span>
                   </div>
                 </a>
               </details>
@@ -2886,7 +2659,7 @@ Thank you: @hirdot</span>
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-11-13T01:01:58.380Z">2021-11-13T01:01:58.380Z</time>
+    <time id="build-timestamp" datetime="2021-11-14T01:05:23.525Z">2021-11-14T01:05:23.525Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.11.3</a></span>
   </footer>
   <script src="index.js"></script>
