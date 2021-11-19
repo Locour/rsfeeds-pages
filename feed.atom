@@ -1,10 +1,1128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>urn:2021-11-18T01:03:44.248Z</id>
+    <id>urn:2021-11-19T01:03:40.899Z</id>
     <title>osmos::feed</title>
-    <updated>2021-11-18T01:03:44.248Z</updated>
+    <updated>2021-11-19T01:03:40.899Z</updated>
     <generator>osmosfeed 1.11.3</generator>
     <link rel="alternate" href="index.html"/>
+    <entry>
+        <title type="html"><![CDATA[Programming Projects for New Developers – What to Build to Get Coding Experience]]></title>
+        <id>614641bf852f4307d373021f</id>
+        <link href="https://www.freecodecamp.org/news/programming-projects-for-new-developers/"/>
+        <updated>2021-11-18T23:59:00.000Z</updated>
+        <summary type="html"><![CDATA[If you're a new developer, you're probably familiar with the “Experience Paradox”. It describes the frustrating cycle many of us go through when we're trying to get our first developer jobs: To get a job, you need "work experience". But to get "work experience", you need a job...! Job requires]]></summary>
+        <author>
+            <name>freeCodeCamp.org</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kubuntu Focus M2 Linux Laptop Review]]></title>
+        <id>https://dev.to/mitchellclong/kubuntu-focus-m2-linux-laptop-review-4h3e</id>
+        <link href="https://dev.to/mitchellclong/kubuntu-focus-m2-linux-laptop-review-4h3e"/>
+        <updated>2021-11-18T23:39:15.000Z</updated>
+        <summary type="html"><![CDATA[Typically a Linux machine is a mostly do-it-yourself (DIY) endeavor. You’re usually on your own installing an operating system (OS), regardless of whether you’re using a pre-built machine or custom build. However, there are plenty of off-the-shelf Linux laptops and desktops available. The Kubuntu Focus is an outstanding Linux laptop. It comes with the Ubuntu-based Kubuntu Linux distribution (distro) pre-loaded, boasts an impressive spec sheet, and exceptional build quality. This combination makes is a great choice for programmers, gamers, and anyone switching from Windows or macOS to Linux. But is the Kubuntu Focus M2 right for you? Find out in our hands-on review!
+
+The Kubuntu Focus M2 is a Linux laptop. It ships with the Kubuntu Linux distro pre-installed and, as such, runs Ubuntu with t…]]></summary>
+        <author>
+            <name>Moe Long</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Managing Azure Resources using Spacelift]]></title>
+        <id>https://dev.to/spacelift/managing-azure-resources-using-spacelift-36oh</id>
+        <link href="https://dev.to/spacelift/managing-azure-resources-using-spacelift-36oh"/>
+        <updated>2021-11-18T23:37:00.000Z</updated>
+        <summary type="html"><![CDATA[In this post I want to show how easy it is to create a Spacelift Stack that manages Azure resources. To keep things simple, I’m going to assume that you already know what Spacelift can do, and the basics of creating and running Stacks, but if not check out our terraform-starter repo that walks you through the process of setting up an account, and getting started.
+In order to allow Spacelift to manage Azure resources, we need to do the following:
+Create a Service Principal in Azure with the correct ARM permissions to manage our resources.
+Create a Stack in Spacelift that uses the Azure provider.
+Give our Stack the credentials for our Service Principal.
+All of the information you need to configure the Azure provider can be found here. This post just explains how to combine that information w…]]></summary>
+        <author>
+            <name>Adam Connelly</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Easily Use SSL on Nginx With Certbot]]></title>
+        <id>https://dev.to/slashtechno/ssl-on-nginx-using-certbot-24hi</id>
+        <link href="https://dev.to/slashtechno/ssl-on-nginx-using-certbot-24hi"/>
+        <updated>2021-11-18T23:04:58.000Z</updated>
+        <summary type="html"><![CDATA[Install Certbot
+
+
+
+  
+  
+  Full instructions are here
+
+
+To install Certbot, you should have Snap installed as well. For instructions, follow this tutorial.
+
+Then, update snap
+sudo snap install core; sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+To use Certbot you should have server_name in your Ngnix config. For example, this is a sample of how my Nginx config file looked like before Certbot.
+server{
+        root /home/pi/website;
+        server_name example.slashtechno.com;
+}
+
+Once you have the config set up properly, restart nginx. On most systems it will be the following command.
+sudo service nginx restart  
+sudo certbot certonly --nginx  
+sudo certbot delete]]></summary>
+        <author>
+            <name>slashtechno</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Great node version management]]></title>
+        <id>https://dev.to/devinrhode2/great-node-version-management-33aj</id>
+        <link href="https://dev.to/devinrhode2/great-node-version-management-33aj"/>
+        <updated>2021-11-18T22:29:18.000Z</updated>
+        <summary type="html"><![CDATA[Here's a package.json:
+{
+  "...": "...",
+  "engines-comment": [
+    "When new node/yarn versions are released, you may see these errors:",
+    "  engine \"yarn|node\" is incompatible with this module.",
+    "Just bump version numbers below:"
+  ],
+  "engines": {
+    "node": "16.13.x",
+    "yarn": "1.22.15"
+  },
+  "node-version-rationale": [
+    "Give some flexibility by ignoring patch updates",
+    "but otherwise force developers to update node every couple 1-4 months"
+  ],
+  "yarn-version-rationale": [
+    "Exact yarn version helps us produce consistent yarn.lock files"
+  ]
+}
+
+Our pipeline is set always try and use the latest lts.
+Our pipeline will run:
+# Always run install+build:ci with latest LTS, to see output
+# But verify engines at very end
+yarn config set ignore-engines true
+
+yarn in…]]></summary>
+        <author>
+            <name>Devin Rhode</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Developer's Guide TO Building Notification Systems: Part 3 - Routing & Preferences]]></title>
+        <id>https://dev.to/courier/the-developers-guide-to-building-notification-systems-part-3-routing-preferences-3g27</id>
+        <link href="https://dev.to/courier/the-developers-guide-to-building-notification-systems-part-3-routing-preferences-3g27"/>
+        <updated>2021-11-18T22:21:41.000Z</updated>
+        <summary type="html"><![CDATA[Your CTO handed you a project to revamp or build your product’s notification system recently. You realized the complexity of this project around the same time as you discovered that there’s not a lot of information online on how to do it. Companies like LinkedIn, Uber, and Slack have large teams of over 25 employees working just on notifications, but smaller companies like yours don’t have that luxury. So how can you meet the same level of quality with a team of one? This is the third post in our series on how you, a developer, can build or improve the best notification system for your company. It follows the first post about identifying user requirements and designing with scalability and reliability in mind. In this piece, we will learn about setting up routing and preferences.
+Notificat…]]></summary>
+        <author>
+            <name>Micah Zayner</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Iniciando con Docker]]></title>
+        <id>https://dev.to/tris460/iniciando-con-docker-2lfi</id>
+        <link href="https://dev.to/tris460/iniciando-con-docker-2lfi"/>
+        <updated>2021-11-18T20:44:10.000Z</updated>
+        <summary type="html"><![CDATA[Docker te permite construir, distribuir y ejecutar cualquier app en cualquier lugar, mediante contenedores.
+https://www.docker.com/ y descargar 'Docker desktop' y crear una cuenta en DockerHub.
+Contenedores: Dónde va a correr la app, sirve para poder compartir las imagenes con otros servidores, computadoras, etc. Es una agrupación de procesos aislados del sistema.
+Imágenes: Encapsulación del contenedor a compartir.
+Volúmenes de datos: Archivos del sistema. 
+Redes: Permiten la comunicación entre servidores.
+docker login Inicia sesión en DockerHub para poder usarlo.
+docker run <contenedor> Ejecuta el contenedor.
+
+
+
+--name <nombre> Le asigna un nombre al contenedor.
+--mount src=<nombre_volumen>,dst=<ruta_contenedor> Asigna un volumen al contenedor, como -v.
+-i Abre el modo interactivo.
+-t Eje…]]></summary>
+        <author>
+            <name>Beatriz Martínez Pérez</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[YOU.com - the private search engine that summarizes the web for you]]></title>
+        <id>https://dev.to/gideononyewuenyi/youcom-the-private-search-engine-that-summarizes-the-web-for-you-35bn</id>
+        <link href="https://dev.to/gideononyewuenyi/youcom-the-private-search-engine-that-summarizes-the-web-for-you-35bn"/>
+        <updated>2021-11-18T20:38:13.000Z</updated>
+        <summary type="html"><![CDATA[I just used a search engine that summarizes information on the web while protecting user privacy and saving time and money with no ad targeting.
+welcome to the future of web search - You.com
+An AI-driven search engine set to put YOU first!
+Richard Socher the CEO of You.com made an announcement on twitter about the launched of You.com, a private search engine that summarizes the web for you.
+It didn't take me up to 3 minutes to setup my account and make it my default search, been the best experience of search.
+If you are looking for a search engine to summarize the web for you while protecting your privacy and saving you time and money with no ad targeting.
+you should check out You.com
+Thank me later!]]></summary>
+        <author>
+            <name>Gideon Onyewuenyi</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DevOps & SRE Words Matter: How Our Language has Evolved]]></title>
+        <id>https://dev.to/blameless/devops-sre-words-matter-how-our-language-has-evolved-dp5</id>
+        <link href="https://dev.to/blameless/devops-sre-words-matter-how-our-language-has-evolved-dp5"/>
+        <updated>2021-11-18T20:31:15.000Z</updated>
+        <summary type="html"><![CDATA[As the tech world changes, language changes with it. New technologies will always introduce new terms and descriptions to provide clear understanding. For example, the emergence of the cloud introduced language to describe the changing relationship between servers and clients. Then, of course, product providers will also dictate how their products are to be described, i.e. describing services as “cloud-native”.
+On other occasions, language changes through deliberate effort to influence behavior. Thought leaders will often invent alternative words to describe existing ideas in order to effect cultural change. Even a slight change in diction can massively affect one’s engagement, attitude, and even their worldview. In this blog, we’ll look at how language colours how we perceive our environm…]]></summary>
+        <author>
+            <name>Emily Arnott</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Many Faces of VS Code in the Browser]]></title>
+        <id>https://css-tricks.com/?p=356818</id>
+        <link href="https://css-tricks.com/the-many-faces-of-vs-code-in-the-browser/"/>
+        <updated>2021-11-18T20:22:27.000Z</updated>
+        <summary type="html"><![CDATA[VS Code is built from web technologies (HTML, CSS, and JavaScript), but dare I say today it’s mostly used a local app that’s installed on your machine. That’s starting to shift, though, as there has been an absolute explosion of …
+The post The Many Faces of VS Code in the Browser appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
+        <author>
+            <name>Chris Coyier</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[angularday report]]></title>
+        <id>https://dev.to/vanrado/angularday-report-1nfh</id>
+        <link href="https://dev.to/vanrado/angularday-report-1nfh"/>
+        <updated>2021-11-18T19:40:39.000Z</updated>
+        <summary type="html"><![CDATA[November 2021, seems that pandemic situation is still not getting better but on the other hand several frontend or javascript focused conferences provide online attendance. So, why not visit the Italian one and meet several known and impressive people from the dev community :-)
+AngularDay
+
+
+This Italian Angular international conference was organized by GrUSP community on November 12th 2021. The event happened online, on Hopin easy-to-use web platform for conferences.
+There were various known speakers from the Angular community and also the official Angular Core Team joined (Emma Twersky, Mark Thompson, Jessica Janiuk) in the last part.
+The atmosphere of the conference was easy going and was moderated by Giulia Tosato, Tomas Trajan and also Tracy Lee joined in the last part.
+I decided to hi…]]></summary>
+        <author>
+            <name>Radovan Racak</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React SketchBoard DevLog #1 - Drawing with mouse, color and width selection and panning.]]></title>
+        <id>https://dev.to/nordicbeaver/react-sketchboard-devlog-1-drawing-with-mouse-color-and-width-selection-and-panning-5h3o</id>
+        <link href="https://dev.to/nordicbeaver/react-sketchboard-devlog-1-drawing-with-mouse-color-and-width-selection-and-panning-5h3o"/>
+        <updated>2021-11-18T18:01:11.000Z</updated>
+        <summary type="html"><![CDATA[Recently I started developing a react library for drawing in a browser. It turned out that it's not as trivial as it seemed and there is a lot of cool stuff and interesting problems there. So I decided to do a DevLog and share those thing with you.
+I hope you'll enjoy!]]></summary>
+        <author>
+            <name>NordicBeaver</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Beyond Compliance: Fable’s Mission to Improve Digital Accessibility]]></title>
+        <id>https://dev.to/linearb/beyond-compliance-fables-mission-to-improve-digital-accessibility-42c7</id>
+        <link href="https://dev.to/linearb/beyond-compliance-fables-mission-to-improve-digital-accessibility-42c7"/>
+        <updated>2021-11-18T17:58:08.000Z</updated>
+        <summary type="html"><![CDATA[It's time we recognize that the way we build digital products is broken. That's because the products we use today represent the people who build them more than the people who use them.
+There is a digital divide between the experiences of people with disabilities and people who are able-bodied. Bridging this divide is about more than compliance or checking a box.
+Fable is helping companies practice accessibility at scale with the goal of operationalizing accessibility in the same way we already do for things like DesignOps and DevOps.
+Listen as Fable's CEO and Co-founder, Alwar Pillai, and Fable's Engineering Manager, Perry Trinier, talk about the importance of inclusive design, the need for digital accessibility and how to integrate accessibility into the development process.
+Fable's founding story and mission
+The need and importance of inclusive design
+How engineering orgs can improve accessibility
+Making your tech stack more accessible
+Why everyone benefits from inclusive design
+
+
+
+
+
+  
+  
+  Join the Dev Interrupted Community
+
+
+With over 2000 members, the Dev Interrupted Discord Community is the best place for Engineering Leaders to engage in daily conversation. No sales people allowed. Join the community >>
+
+Full transcription available at DevInterrupted.com]]></summary>
+        <author>
+            <name>Conor Bronsdon</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Insecure Direct Object Reference & How to Protect Against it]]></title>
+        <id>https://dev.to/warrant/insecure-direct-object-reference-how-to-protect-against-it-7li</id>
+        <link href="https://dev.to/warrant/insecure-direct-object-reference-how-to-protect-against-it-7li"/>
+        <updated>2021-11-18T17:57:20.000Z</updated>
+        <summary type="html"><![CDATA[Insecure Direct Object Reference (IDOR) is one of the most common forms of broken access control which OWASP recently listed as the number one application security issue in 2021. A quick search for "IDOR" on Hacker One's Hacktivity feed shows that many top tech companies (and even the U.S. Department of Defense) have fallen victim to IDOR, in some cases paying out well over $10,000 per bug bounty. In this post, I'll explain what IDOR is, what causes it, and ways to protect your application against it.
+IDOR is an access control vulnerability that occurs when an application uses an identifier for direct access to an object in a database but doesn't perform proper access control or authorization checks before querying or modifying the database. This often results in vulnerabilities that allow…]]></summary>
+        <author>
+            <name>Karan Kajla</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Stress and Mental Health in Tech – What I learned from Dr. Jennifer Akullian&#x27;s freeCodeCamp Tech Talk]]></title>
+        <id>619392bd11d3cb08287a6f36</id>
+        <link href="https://www.freecodecamp.org/news/stress-and-mental-health-in-tech/"/>
+        <updated>2021-11-18T17:54:34.000Z</updated>
+        <summary type="html"><![CDATA[People in the tech industry face mental health issues like depression and anxiety every day, all around the world. But what can we do about it? In this article, I will talk about what I learned from Dr. Jennifer Akullian's freeCodeCamp Tech Talk and share her tips for reducing your]]></summary>
+        <author>
+            <name>freeCodeCamp.org</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AWS Cognito Pricing and Features – 2021]]></title>
+        <id>https://dev.to/shivangchauhan7/aws-cognito-pricing-and-features-2021-1ef6</id>
+        <link href="https://dev.to/shivangchauhan7/aws-cognito-pricing-and-features-2021-1ef6"/>
+        <updated>2021-11-18T17:45:08.000Z</updated>
+        <summary type="html"><![CDATA[What Is Amazon Cognito?
+
+
+It is a service introduced by AWS (Amazon Web Services) which allows users to add authentication to projects, it allows users to sign in with different social identity providers, and scales to millions of users and requests.
+It supports access management standards like OAuth and SAML, users do not have to worry about setting up a UI for authentication as it provides a built-in UI that can be integrated with any application very quickly, this UI can also be customized according to specific requirements of the company.
+AWS Cognito Pricing
+
+
+**DISCLAIMER**
+As of today when writing this post, which is Thursday, November 18, 2021, GMT+0530 (India Standard Time), this is the pricing model for Amazon Cognito.
+For Cognito User Pools Amazon charges on the basis of how many…]]></summary>
+        <author>
+            <name>Shivang Chauhan</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mailing a Postcard with JavaScript Part 1]]></title>
+        <id>https://dev.to/lob/mailing-a-postcard-with-javascript-part-1-175h</id>
+        <link href="https://dev.to/lob/mailing-a-postcard-with-javascript-part-1-175h"/>
+        <updated>2021-11-18T16:57:50.000Z</updated>
+        <summary type="html"><![CDATA[Creating a Postcard with Lob and Node.js
+
+
+Lob’s Print & Mail and Address Verification APIs enable developers to interact with Lob’s services programmatically. You can mail a postcard or letter to your customers at critical points in their journey as easily as you might send an email. These physical reminders help you keep in touch with clients, and encourage clients to keep purchasing your products and services.   
+In this three-part tutorial, we’ll create a postcard template, verify our recipient’s address, send a postcard, and track it along its journey. We’ll create a Javascript application to do all this, so our users can access everything they need in one place. 
+Complete code for tutorial available on GitHub.
+To follow along, you’ll need your own Lob account. You can sign up here an…]]></summary>
+        <author>
+            <name>Lob</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Customize Your Windows 10 Taskbar to Be More Productive]]></title>
+        <id>6196275811d3cb08287a850e</id>
+        <link href="https://www.freecodecamp.org/news/how-to-customize-your-windows10-taskbar-for-productivity/"/>
+        <updated>2021-11-18T16:44:28.000Z</updated>
+        <summary type="html"><![CDATA[On your computer desktop, you can use the taskbar to help you monitor applications, check battery life, and more.  Being able to customize what your task bar can do is crucial for boosting your productivity. And there's more to it than just monitoring applications.  In this guide, I will show]]></summary>
+        <author>
+            <name>freeCodeCamp.org</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Some thoughts on working with the CDK and serverless architecture in AWS]]></title>
+        <id>https://dev.to/therealdakotal/some-thoughts-on-working-with-the-cdk-and-serverless-architecture-in-aws-3fm8</id>
+        <link href="https://dev.to/therealdakotal/some-thoughts-on-working-with-the-cdk-and-serverless-architecture-in-aws-3fm8"/>
+        <updated>2021-11-18T16:24:14.000Z</updated>
+        <summary type="html"><![CDATA[Originally published to dakotalewallen.me
+A lot of grey area exists between SAM and the CDK. SAM makes it nice to verify things locally before pushing out to AWS, CDK doesn't provide anything other than seeing your initial stack. So the dev process for the cdk looks like, read docs -> write js -> deploy to CloudFormation (typically a few minutes for anything more than a s3 bucket) -> manually verify  -> repeat. Not a fast process at all. Honestly if you could just take the support for local debugging from SAM and give it to the CDK it'd be near perfect.
+CDK documentation is pretty confusing. Somewhat understandable given how young it is, but still. Also doesn't help that a lot of the guides that exist are also outdated. Some even coming from AWS themselves. There's also a lot modules in th…]]></summary>
+        <author>
+            <name>Dakota Lewallen</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Some thoughts on working with the CDK and serverless architecture in AWS]]></title>
+        <id>https://dev.to/therealdakotal/some-thoughts-on-working-with-the-cdk-and-serverless-architecture-in-aws-3fm8</id>
+        <link href="https://dev.to/therealdakotal/some-thoughts-on-working-with-the-cdk-and-serverless-architecture-in-aws-3fm8"/>
+        <updated>2021-11-18T16:24:14.000Z</updated>
+        <summary type="html"><![CDATA[Originally published to dakotalewallen.me
+A lot of grey area exists between SAM and the CDK. SAM makes it nice to verify things locally before pushing out to AWS, CDK doesn't provide anything other than seeing your initial stack. So the dev process for the cdk looks like, read docs -> write js -> deploy to CloudFormation (typically a few minutes for anything more than a s3 bucket) -> manually verify  -> repeat. Not a fast process at all. Honestly if you could just take the support for local debugging from SAM and give it to the CDK it'd be near perfect.
+CDK documentation is pretty confusing. Somewhat understandable given how young it is, but still. Also doesn't help that a lot of the guides that exist are also outdated. Some even coming from AWS themselves. There's also a lot modules in th…]]></summary>
+        <author>
+            <name>Dakota Lewallen</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[List Comprehension in Python]]></title>
+        <id>6193c41c11d3cb08287a70ce</id>
+        <link href="https://www.freecodecamp.org/news/list-comprehension-in-python-with-code-examples/"/>
+        <updated>2021-11-18T16:20:35.000Z</updated>
+        <summary type="html"><![CDATA[Lists are a helpful and frequently used feature in Python.  And list comprehension gives you a way to create lists while writing more elegant code that is easy to read.  In this beginner-friendly article, I'll give an overview of how list comprehension works in Python. I'll also show plenty of]]></summary>
+        <author>
+            <name>freeCodeCamp.org</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Aumentar la productividad con extensiones en Gnome]]></title>
+        <id>https://dev.to/luismorenomx/aumentar-la-productividad-con-extensiones-en-gnome-4b9e</id>
+        <link href="https://dev.to/luismorenomx/aumentar-la-productividad-con-extensiones-en-gnome-4b9e"/>
+        <updated>2021-11-18T16:15:42.000Z</updated>
+        <summary type="html"><![CDATA[Hay muchas extensiones en Gnome que son de mi agrado y creo que las de este listado son mis favoritas.
+Compartir estos recursos es porque tengo intensión en todo momento de incrementar la productividad a la hora de estar desarrollando software.
+No sé si en otros entornos de escritorio se pueda mejorar la productividad, lo que sí sé es que en Gnome ha ido mejorando todo poco a poco y se agradece.
+Caffeine- Disable the screensaver and auto suspend
+https://extensions.gnome.org/extension/3997/app-grid-tweaks/)
+Desktop Icons- Add icons to the desktop
+https://extensions.gnome.org/extension/779/clipboard-indicator/)
+Multi Monitors AddOn- Add multiple monitors overview and panel for gnome-shell.
+https://extensions.gnome.org/extension/921/multi-monitors-add-on/)
+Tilix Dropdown- Launch Tilix in Quake mode.
+https://extensions.gnome.org/extension/1185/tilix-dropdown/)
+Dash to dock- Moves the dash out of the overview transforming it in a dock.
+https://extensions.gnome.org/extension/307/dash-to-dock/)
+OpenWeather- Display weather information from https://openweathermap.org/
+https://extensions.gnome.org/extension/750/openweather/)
+App Grid Tweaks- Customize the application grid view.
+https://extensions.gnome.org/extension/3997/app-grid-tweaks/)
+Clipboard Indicator- Adds a clipboard indicator to the top panel, and caches clipboard history.
+https://extensions.gnome.org/extension/779/clipboard-indicator/)
+Custom Hot Corners- Customizable hot corners.
+https://extensions.gnome.org/extension/1362/custom-hot-corners/)
+Desktop Scroller- Switch between desktops scrolling at the upper edge of the screen, including in overview.
+https://extensions.gnome.org/extension/3709/desktop-scroller-gnome-338/)
+gTile- Tile windows on a grid.
+https://extensions.gnome.org/extension/28/gtile/)
+Screenshot Tool- Conveniently create, copy, store and upload screenshots.
+https://extensions.gnome.org/extension/1112/screenshot-tool/)]]></summary>
+        <author>
+            <name>Luis Moreno</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sending Audio Files to Your Express.js Server]]></title>
+        <id>https://dev.to/deepgram/sending-audio-files-to-your-expressjs-server-j03</id>
+        <link href="https://dev.to/deepgram/sending-audio-files-to-your-expressjs-server-j03"/>
+        <updated>2021-11-18T16:02:43.000Z</updated>
+        <summary type="html"><![CDATA[Here at Deepgram, we work with audio files all the time. We have SDKs that make it easy for developers to send audio files to our API. But it's also really useful to know how to post an audio file to a backend server in case you ever find yourself needing to do that. So I thought I would introduce a simple way for Node developers to take an audio file that is uploaded through the browser and send it to a backend Express.js server.
+Let's start on the backend with our Express.js server. Express.js is a Node.js framework that provides us with so many useful methods and middleware, making working in Node that much easier.
+We'll set up the server and implement a middleware package called Multer that helps us handle different file types that we receive to our post endpoint.
+We can start our proj…]]></summary>
+        <author>
+            <name>SandraRodgers</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PHP Date and Time Recipes]]></title>
+        <id>https://css-tricks.com/?p=356570</id>
+        <link href="https://css-tricks.com/php-date-and-time-recipes/"/>
+        <updated>2021-11-18T15:38:51.000Z</updated>
+        <summary type="html"><![CDATA[Dealing with dates and times is one of those things that can frustrate programmers a lot. At the same time, they are fundamental to software development, used from everything from meta and how things are ordered to time-based triggers and …
+The post PHP Date and Time Recipes appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
+        <author>
+            <name>Arjuna Sky Kok</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[My series on database design <WIP>]]></title>
+        <id>https://dev.to/sukrosono/my-series-on-database-design-46h</id>
+        <link href="https://dev.to/sukrosono/my-series-on-database-design-46h"/>
+        <updated>2021-11-18T15:35:07.000Z</updated>
+        <summary type="html"><![CDATA[https://www.youtube.com/playlist?list=PLIsQ7ns9vF5BlSWHzSDfrUGrRApl_rKUc]]></summary>
+        <author>
+            <name>Adi Prasetyo</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Prisma Data Platform's PlanetScale Integration]]></title>
+        <id>https://dev.to/planetscale/prisma-data-platforms-planetscale-integration-j3d</id>
+        <link href="https://dev.to/planetscale/prisma-data-platforms-planetscale-integration-j3d"/>
+        <updated>2021-11-18T15:30:09.000Z</updated>
+        <summary type="html"><![CDATA[As developers, we often want to build faster, but that comes with tradeoffs that we have to deal with in the long run. At PlanetScale, we want to empower developers to be able to build without having to worry about issues of database scalability as their application grows. Similarly, Prisma wants to empower developers to efficiently work with data while making fewer errors. 
+PlanetScale and Prisma have partnered up to allow developers to create PlanetScale databases in the new Prisma Data Platform. You can have a starter database schema and a live PlanetScale database ready to accept thousands of new database connections with a few clicks.
+The Prisma Data Platform provides you with application templates with Prisma data schemas, so you don't even have to think about a data model to get started. Once set up, you can deploy to Vercel immediately or use the Prisma Data Explorer and Query Builder to explore your PlanetScale database.
+Try out creating your first PlanetScale database with one of the application templates and experience the power of Prisma with PlanetScale for yourself.]]></summary>
+        <author>
+            <name>etnoctua</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Configurar virtualhost en Apache y Debian 10]]></title>
+        <id>https://dev.to/luismorenomx/configurar-virtualhost-en-apache-y-debian-10-3p9e</id>
+        <link href="https://dev.to/luismorenomx/configurar-virtualhost-en-apache-y-debian-10-3p9e"/>
+        <updated>2021-11-18T15:27:22.000Z</updated>
+        <summary type="html"><![CDATA[Hay veces que desarrollamos más de un proyecto web en la misma computadora y para eso necesitamos configurar nuestro equipo de tal modo que se puedan tener varios proyectos dentro de la misma carpeta, pero con diferente ruta de acceso desde el navegador y para eso yo realice lo siguiente.
+Copiar el archivo 000-default.conf a otro (en este caso será blog.local) con el nombre blog.local.conf
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/blog.local.conf 
+
+Editar el archivo blog.local.conf y dejarlo como a continuación se muestra (recuerda cambiar 'user' por tu usuario local).
+<VirtualHost *:80>  
+   ServerName blog.local    
+   ServerAlias blog.local   
+   ServerAdmin webmaster@localhost  
+   DocumentRoot /home/user/Server/blog  
+   ErrorLog ${APACHE_LOG_D…]]></summary>
+        <author>
+            <name>Luis Moreno</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ดู document ของ Bash builtin commands ผ่านคำสั่ง help]]></title>
+        <id>https://dev.to/iporsut/duu-document-khng-bash-builtin-commands-phaankhamsang-help-559m</id>
+        <link href="https://dev.to/iporsut/duu-document-khng-bash-builtin-commands-phaankhamsang-help-559m"/>
+        <updated>2021-11-18T14:46:04.000Z</updated>
+        <summary type="html"><![CDATA[พวกคำสั่งที่เป็น builtin ของ Bash บางครั้งใช้ man เพื่อดู manual ไม่ได้ แต่ Bash เองเตรียมคำสั่งชื่อว่า help มาไว้เพื่อดู document ของพวก builtin commands เหล่านี้ได้
+ถ้าเราสั่ง help เฉยๆจะขึ้นลิสต์ command ที่สามารถดู document ได้ เช่น
+
+ถ้าเราอยากดู document ของแต่ละ command ก็สั่ง help ตามด้วยชื่อ command นั้นๆเช่น
+help echo
+
+ 
+คำสั่ง help ช่วยได้เยอะเลยยิ่งถ้าต้องเขียน shell script เพราะบางคำสั่งเราใช้ใน script บ่อยกว่าที่จะสั่งตรงๆเช่น if หรือ for
+help for
+
+
+help if]]></summary>
+        <author>
+            <name>Weerasak Chongnguluam</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Advanced Git Tools—Interactive Rebase, Cherry-Picking, Reflog, and more]]></title>
+        <id>6196642611d3cb08287a8688</id>
+        <link href="https://www.freecodecamp.org/news/advanced-git-interactive-rebase-cherry-picking-reflog-and-more/"/>
+        <updated>2021-11-18T14:42:26.000Z</updated>
+        <summary type="html"><![CDATA[If you are a software developer, you likely use Git all the time. But many developers don't use advanced git commands that can speed up their worflow. We just published a course on the freeCodeCamp.org YouTube channel that will teach you how to use advanced git commands. Tobias Günther]]></summary>
+        <author>
+            <name>freeCodeCamp.org</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Artificial Intelligence Technology: AI Trends That Matter for Business]]></title>
+        <id>https://dev.to/oleksiitsymbal/artificial-intelligence-technology-ai-trends-that-matter-for-business-2a8e</id>
+        <link href="https://dev.to/oleksiitsymbal/artificial-intelligence-technology-ai-trends-that-matter-for-business-2a8e"/>
+        <updated>2021-11-18T14:31:59.000Z</updated>
+        <summary type="html"><![CDATA[According to 2020’s McKinsey Global Survey on artificial intelligence (AI), in 2020 more than 50% of companies have adopted AI in at least one business unit or function, so we witness the emergence of new AI trends. Organizations apply AI tools to generate more value, increase revenue and customer loyalty. AI leading companies invest at least 20% of their earnings before interest and taxes (EBIT) in AI. This figure may increase as COVID-19 is accelerating digitization. Lockdowns resulted in a massive surge of online activity and an intensive AI adoption in business, education, administration, social interaction, etc.
+This article aims to overview new and current AI trends that emerged in 2020 and are still increasing in 2021. Based on trends, companies can make projections of the AI future…]]></summary>
+        <author>
+            <name>OleksiiTsymbal</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Guide on How to Unzip Files in Linux?]]></title>
+        <id>https://dev.to/cloudytech147/guide-on-how-to-unzip-files-in-linux-4oee</id>
+        <link href="https://dev.to/cloudytech147/guide-on-how-to-unzip-files-in-linux-4oee"/>
+        <updated>2021-11-18T14:13:43.000Z</updated>
+        <summary type="html"><![CDATA[it's consistently dangerous when we work with sudo advantages in a Linux machine as you approach all the setup and framework records, and if you mess up with them, your entire framework may crash. So we encourage you to run the underneath referenced orders with absolute attention to detail.
+Additionally, to utilize the unfasten order, it's required to have the unfasten bundle introduced on our Linux machine. You can basically utilize the bundle administrator of any famous Linux circulation you are rushing to introduce the unfasten bundle. Notwithstanding, the vast majority of the Linux appropriations come pre-introduced with this bundle.
+
+
+
+
+If you are using Fedora, CentOS, etc. and you have yum package manager, you can use:
+
+
+
+
+  
+  
+  How to Unzip Files in Linux?
+
+
+When we run the unzip command without any options, in the most native form, it simply extracts all the files and directories inside the current directory that you are in.
+
+
+
+
+Output Suppression
+You can see that the unzip command enlists the details of the files that it is extracting from the archived file. To avoid printing the details and suppress the output, we can simply use the quiet (-q) option along with the unzip command.
+
+
+
+
+If you want to extract them to a different directory, you can use the -d option and specify the path to the destination directory. Please note that if you don’t have write access to the destination directory, you can use the sudo command to get the root privileges.
+
+
+
+If you want to unzip a file that is password-protected, you can use the -P option along with the unzip command.
+
+
+
+
+However, typing the password as plain text in the terminal (command line) could be insecure. What you can do is simply extract the zipped file in a normal manner. When it tries to unzip the files and finds a file with a password, it will automatically prompt you to input the password.
+
+
+
+
+To conclude this detailed and comprehensive article, we discussed how to unzip files in Linux using the unzip command.]]></summary>
+        <author>
+            <name>cloudytech147</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Animate your Angular App using Motion One]]></title>
+        <id>https://dev.to/this-is-angular/animate-your-angular-app-using-motion-one-4bg3</id>
+        <link href="https://dev.to/this-is-angular/animate-your-angular-app-using-motion-one-4bg3"/>
+        <updated>2021-11-18T14:07:19.000Z</updated>
+        <summary type="html"><![CDATA[Motion One is a new animation library built on the Web Animations API. If you have used Popmotion or Greensock before, this library's syntax should look very familiar.
+In this blog post, I will show you how to use Motion One in an Angular application. I will walk you through the installation process, create a simple animation, and use Motion One's spring and timeline features.
+Check out a live demo I've created that you can interact with as part of my Angular Animation Explorer.
+First, we will need to add Motion One's dependency via npm using the following command.
+npm install --save motion
+
+If you run into any typings issue from the library, try adding skipLibCheck: true to your tsconfig.json.
+
+To animate an element from your template, you will need to give it an id so you can access them…]]></summary>
+        <author>
+            <name>William Juan</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Machine Learning and Elasticsearch empowering great marketplaces]]></title>
+        <id>https://dev.to/filiphaftek/machine-learning-and-elasticsearch-empowering-great-marketplaces-1f47</id>
+        <link href="https://dev.to/filiphaftek/machine-learning-and-elasticsearch-empowering-great-marketplaces-1f47"/>
+        <updated>2021-11-18T13:08:34.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+Speed is the key factor of every online business in a modern world. Buying and selling cars on classified marketplaces also follows this trend. On Publi24, a general classifieds portal in Romania, part of Russmedia Equity Parters group, we are providing our customers a used car marketplace. We focus on the quality of posted listings and enable fast and precise search options to help our users find their dream car. Because the number of posted ads is constantly increasing, our product team conducted a research on how to improve customer satisfaction by making the prices of the car listings more accurate. Our goal is for the sellers and buyers of Publi24 to make great deals on both sides.
+Machine Learning technology a try, but also wanted to experiment with one of the most pow…]]></summary>
+        <author>
+            <name>Filip Haftek</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Extend SvgIcon sizes in React Material UI]]></title>
+        <id>https://dev.to/karladler/extend-svgicon-sizes-in-react-material-ui-44f8</id>
+        <link href="https://dev.to/karladler/extend-svgicon-sizes-in-react-material-ui-44f8"/>
+        <updated>2021-11-18T13:05:03.000Z</updated>
+        <summary type="html"><![CDATA[Using React Material UI you have the opportunity to use any SVG file like an icon. To do so, you just wrap it into the SvgIcon component.
+An example for your HomeIcon component might look like this:
+import React from 'react';
+import { SvgIcon, SvgIconProps } from '@mui/material';
+import { ReactComponent as HomeSvg } from '../../assets/Icons/Home.svg';
+
+function HomeIcon(props: SvgIconProps) {
+  return (
+    <SvgIcon component={HomeSvg} viewBox="0 0 24 24" {...props} />
+  );
+}
+
+export default HomeIcon;
+
+Importing svg files as react components required svgr, otherwise you would need to use the SVG code as children of SvgIcon
+With SvgIcon you have the possibility to set the fontSize attribute to "small", "inherit", "large" or "medium", but what if we if we would need more of this?
+<HomeIcon fontSize="small" />
+<HomeIcon />
+<HomeIcon fontSize="large" />
+<HomeIcon sx={{ fontSize: 40 }} />
+
+Here is where component variants come into play.
+In our theme we just add a new variant to the MuiSvgIcon component. E.g. we we want an new size called huge we do it like this:
+components: {
+   MuiSvgIcon: {
+      variants: [
+        {
+          props: { fontSize: 'huge' },
+          style: {
+            fontSize: '5rem',
+          },
+        },
+      ],
+    },
+}
+
+That should already work, but when we are using typescript and setting it, the compiler will complain.
+<HomeIcon fontSize="huge" />
+
+So we need to extend the interface for the component too:
+declare module '@mui/material/SvgIcon' {
+  interface SvgIconPropsSizeOverrides {
+    huge: true;
+  }
+}
+
+Just add the above module declaration e.g. to your theme.ts  and that's it.]]></summary>
+        <author>
+            <name>Karl Adler</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Make Your SSD Last Longer]]></title>
+        <id>https://dev.to/hetmansoftware/how-to-make-your-ssd-last-longer-45pm</id>
+        <link href="https://dev.to/hetmansoftware/how-to-make-your-ssd-last-longer-45pm"/>
+        <updated>2021-11-18T13:02:20.000Z</updated>
+        <summary type="html"><![CDATA[Read this article to find out what Windows features reduce the lifespan of your SSD and how to disable them. If your computer still uses a conventional HDD, it is high time to consider switching to a solid-state drive – SSD. It is going to add a significant boost to your computer or laptop.
+Are SSDs so perfect? Well, not exactly. In comparison with HDDs, solid-state drives have certain advantages, the most prominent being the limited number of read/write cycles. It means that the number of erase/write cycles for SSDs is lower than for conventional hard disks. In today’s article, we will try to explain the cause for such deficiency and how you could avoid wearing out the disk more than needed.
+The main component of a hard disk (HDD) is the platters where the information is actually written.…]]></summary>
+        <author>
+            <name>Michael Mirosnichenko</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[When to use Conda and when to use Poetry?]]></title>
+        <id>https://dev.to/oo_pai_7a4947410fc4a570ec/when-to-use-conda-and-when-to-use-poetry-3k72</id>
+        <link href="https://dev.to/oo_pai_7a4947410fc4a570ec/when-to-use-conda-and-when-to-use-poetry-3k72"/>
+        <updated>2021-11-18T12:35:54.000Z</updated>
+        <summary type="html"><![CDATA[Hi.
+I've been fairly extensively using conda for a while now, ditching the old pip + virtualenv habbit of mine, since I'm collaborating with people on a common source code instead of freelancing by myself like the old days, and therefore this question has come to my mind and gone every few weeks.
+Have I chosen the correct dependency manager?
+A little background: Miniconda + conda environments (yml files) have been a good fit so far. Our projects are products focusing on datascience solutions, and we develop the data science microservice of the product. But we're still in the heavy exploration phase, and have not really stabilized the "MLOps" loop.
+So back to the question.
+I see many have advocated for the use of Poetry. Can someone explain to me the pros and cons of each approach? Why poetry seems so loved by many, and when should someone consider switching from conda to poetry?
+Thanks!]]></summary>
+        <author>
+            <name>Oo Pai</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LFX mentorship @ Vitess]]></title>
+        <id>https://dev.to/abhaykatheria/lfx-mentorship-vitess-3nmn</id>
+        <link href="https://dev.to/abhaykatheria/lfx-mentorship-vitess-3nmn"/>
+        <updated>2021-11-18T12:10:43.000Z</updated>
+        <summary type="html"><![CDATA[This summer I was fortunate enough to be selected as linux foundation mentee for Vitess which is a CNCF graduated project. 
+vitess.io
+Vitess is a database clustering system for horizontal scaling of MySQL through generalized sharding.
+Sharding is the concept of breaking up data into smaller chunks distributed across separate database nodes.
+My aim for the summer was to develop an exhaustive test suite for Vitess's compatibility with Django's model layer.
+During this period, I was mentored by a team of engineers from Planetscale who are currently maintaining Vitess. I was part of daily stand-up meetings and was in constant touch with my mentors, who guided me through the whole project. Also I got a chance to be part of community-day for Vitess in which contributors and maintainers from all around the world interacted. 
+Sadly, due to an unfortunate event I was unable to work for weeks. But my mentors and the admins at CNCF were kind enough to understand my situation and granted me an extension for the program. And with the help of my mentors i was able to complete the project within the extended deadline.
+I learnt a lot during this mentorship program and will continue to contribute more to the project in future.]]></summary>
+        <author>
+            <name>Abhay Katheria</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Introduction to Kubernetes Storage]]></title>
+        <id>https://dev.to/squadcast/introduction-to-kubernetes-storage-p3n</id>
+        <link href="https://dev.to/squadcast/introduction-to-kubernetes-storage-p3n"/>
+        <updated>2021-11-18T11:52:12.000Z</updated>
+        <summary type="html"><![CDATA[As Kubernetes Pods don't store data persistently, it offers different storage components to prevent this data loss. In this blog, learn how Volume works in Kubernetes, how to create it, and how to attach it to the Pod.
+
+Before exploring Kubernetes volumes, let’s first understand Docker. Docker containers are meant to be transient, which means they will only last for a short period. They are called upon when required to process data and are destroyed once finished.
+The same is true for the data within the container. The data is destroyed along with the container. To persist data processed by the container, we attach a volume to the containers created. Now even if the container is deleted, the data generated or processed by it remains.
+Now let’s look at how it works in the case of Kubernetes…]]></summary>
+        <author>
+            <name>Squadcast Community</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Simple Remove or Change HTTP Server header in NGINX Plus.]]></title>
+        <id>https://dev.to/supachai/simple-remove-or-change-http-server-header-in-nginx-plus-5658</id>
+        <link href="https://dev.to/supachai/simple-remove-or-change-http-server-header-in-nginx-plus-5658"/>
+        <updated>2021-11-18T11:40:34.000Z</updated>
+        <summary type="html"><![CDATA[First written, I must have remove or change strings value HTTP Server header in NGINX. Excellet, The NGINX Plus have Core functional (Build-in) without third-party dynamic module for solution this case, detial as like below.
+Official Document: https://nginx.org/en/docs/http/ngx_http_core_module.html#server_tokens
+
+Example Configuration for nginx.conf
+http { 
+....
+#server_tokens off; 
+#server_tokens "Microsoft-IIS/8.5"; 
+#server_tokens none; 
+server_tokens ""; 
+...
+ } 
+
+Noted: Uncomment server_tokens lines for each testing case.
+Capture Screen of Testing
+
+Thanks for reading my written, Good luck.]]></summary>
+        <author>
+            <name>supachai jaturaprom</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Simple Remove or Change HTTP Server header in NGINX Plus.]]></title>
+        <id>https://dev.to/supachai/simple-remove-or-change-http-server-header-in-nginx-plus-5658</id>
+        <link href="https://dev.to/supachai/simple-remove-or-change-http-server-header-in-nginx-plus-5658"/>
+        <updated>2021-11-18T11:40:34.000Z</updated>
+        <summary type="html"><![CDATA[First written, I must have remove or change strings value HTTP Server header in NGINX. Excellet, The NGINX Plus have Core functional (Build-in) without third-party dynamic module for solution this case, detial as like below.
+Official Document: https://nginx.org/en/docs/http/ngx_http_core_module.html#server_tokens
+
+Example Configuration for nginx.conf
+http { 
+....
+#server_tokens off; 
+#server_tokens "Microsoft-IIS/8.5"; 
+#server_tokens none; 
+server_tokens ""; 
+...
+ } 
+
+Noted: Uncomment server_tokens lines for each testing case.
+Capture Screen of Testing
+
+Thanks for reading my written, Good luck.]]></summary>
+        <author>
+            <name>supachai jaturaprom</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Implementing Onion architecture in NestJS]]></title>
+        <id>https://dev.to/amroabdalla00/implementing-onion-architecture-in-nestjs-1k2f</id>
+        <link href="https://dev.to/amroabdalla00/implementing-onion-architecture-in-nestjs-1k2f"/>
+        <updated>2021-11-18T10:52:44.000Z</updated>
+        <summary type="html"><![CDATA[What’s Onion architecture?
+
+
+As shown in the picture, onion architecture is a way to structure the code by dividing it into domain-driven design layers. each layer can only access the layer below it throw its interfaces, and then using the dependency inversion principle each interface will be replaced with its class.
+
+Onion Architecture leads to more maintainable applications since it emphasizes separation of concerns throughout the system.” Jeffery Palermo
+NestJs is a service-side framework based on NodeJs. NestJs has many built-in features but most importantly for us now is the Dependency Injection and the possibility to add Dependency inversion which is what we need to apply the Onion Architecture.
+In the rest of the article, I’ll try to explain the NestJs implementation using a simple …]]></summary>
+        <author>
+            <name>Amro</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Running Tron (TRX) Node With GetBlock: Here’s How It Works]]></title>
+        <id>https://dev.to/getblock/running-tron-trx-node-with-getblock-heres-how-it-works-2co4</id>
+        <link href="https://dev.to/getblock/running-tron-trx-node-with-getblock-heres-how-it-works-2co4"/>
+        <updated>2021-11-18T10:44:02.000Z</updated>
+        <summary type="html"><![CDATA[Being cutting-edge nodes API connection provider, GetBlock continues its series of articles designed to demonstrate the opportunities of our toolkit. Today let’s get our hands dirty with Tron Network (TRX) that attempts to become a mainstream ‘Ethereum killer’ since 2017.
+Tron (Tron Network, Tron Blockchain) was introduced back in 2018 by Justin Sun, an eccentric Chinese American entrepreneur. Tron is developed and maintained by a Singapore-incorporated non-profit Tron Foundation established in July 2017.
+At its core, Tron is a Proof-of-Stake (PoS) blockchain built around native cryptocurrency Tronics (TRX). It works not unlike BitShares (BTS) or Eos (EOS): tokenholders lock their tokens in favour of validators in order to share transactional fees with them.
+In July, 2018, Tron acquired th…]]></summary>
+        <author>
+            <name>GetBlock</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Running Tron (TRX) Node With GetBlock: Here’s How It Works]]></title>
+        <id>https://dev.to/getblock/running-tron-trx-node-with-getblock-heres-how-it-works-2co4</id>
+        <link href="https://dev.to/getblock/running-tron-trx-node-with-getblock-heres-how-it-works-2co4"/>
+        <updated>2021-11-18T10:44:02.000Z</updated>
+        <summary type="html"><![CDATA[Being cutting-edge nodes API connection provider, GetBlock continues its series of articles designed to demonstrate the opportunities of our toolkit. Today let’s get our hands dirty with Tron Network (TRX) that attempts to become a mainstream ‘Ethereum killer’ since 2017.
+Tron (Tron Network, Tron Blockchain) was introduced back in 2018 by Justin Sun, an eccentric Chinese American entrepreneur. Tron is developed and maintained by a Singapore-incorporated non-profit Tron Foundation established in July 2017.
+At its core, Tron is a Proof-of-Stake (PoS) blockchain built around native cryptocurrency Tronics (TRX). It works not unlike BitShares (BTS) or Eos (EOS): tokenholders lock their tokens in favour of validators in order to share transactional fees with them.
+In July, 2018, Tron acquired th…]]></summary>
+        <author>
+            <name>GetBlock</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Top 10 Software Development Companies in the USA.]]></title>
+        <id>https://dev.to/steven_d_gital/top-10-software-development-companies-in-the-usa-1o86</id>
+        <link href="https://dev.to/steven_d_gital/top-10-software-development-companies-in-the-usa-1o86"/>
+        <updated>2021-11-18T10:19:44.000Z</updated>
+        <summary type="html"><![CDATA[We all know the software development industry is one of the fastest-growing industries in the terms of technologies updates. 
+Today, where competition is taking place at the top, all small and big enterprises visit top software development companies to develop their digital presence and to transform their business into digital form.
+Here, My article will help you to find the best software development companies around the world.
+When a business is thinking about running the business on automated mode, looking to improve productivity by streamlining the workflow management - for that hiring a trusted software development company will be the best thing for business. Software development companies with their software experts help small and big enterprises to design their software business appl…]]></summary>
+        <author>
+            <name>Steven Davis</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Testing an NgRx project]]></title>
+        <id>https://dev.to/timdeschryver/testing-an-ngrx-project-4jdo</id>
+        <link href="https://dev.to/timdeschryver/testing-an-ngrx-project-4jdo"/>
+        <updated>2021-11-18T10:14:12.000Z</updated>
+        <summary type="html"><![CDATA[Follow me on Twitter at @tim_deschryver | Subscribe to the Newsletter | Originally published on timdeschryver.dev.
+No intro needed, let's directly dive into some code snippets for each part of the Angular application!
+Actions
+Reducers
+Selectors
+Effects
+
+
+Effects that use Actions and Services
+Effect tests rewritten with observer-spy
+Effect tests and fake timers
+Effects that don't dispatch actions
+Effects that use the NgRx Global Store
+Effects that use the Angular Router
+Components With Global Store
+Component Store
+
+
+Integration tests
+Unit tests
+Component store unit tests
+Component unit tests that use the component store
+Conclusion
+Let's start with the easiest one, which are the NgRx actions.
+A reducer is a (synchronous) pure function that is invoked with the current state and an action.
+Bec…]]></summary>
+        <author>
+            <name>Tim Deschryver</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Introduction to Custom Angular Schematics]]></title>
+        <id>https://dev.to/tarungurang/introduction-to-custom-angular-schematics-1cn7</id>
+        <link href="https://dev.to/tarungurang/introduction-to-custom-angular-schematics-1cn7"/>
+        <updated>2021-11-18T10:06:19.000Z</updated>
+        <summary type="html"><![CDATA[Schematics are very useful. They provide us to achieve more in a shorter amount of time. But most significantly used, we can think less about routine stuff which leaves our limited attention span to focus on solving real changes.
+Ensure that you have the following packages installed at a global level on your computer. Note that in a real-life development context, you should have some of these local to your project. But for the having well been stable development environment we will install them globally.
+node v12.8.0 npm v.6.10.2 @angular-cli (core y cli) v.10 @schematics/angular @schematics/schematics@0.1000.5
+This allows us to use the schematics command and specifically the blank schematics to generate a new schematics project where we can start implementing our custom schematics.
+Go to …]]></summary>
+        <author>
+            <name>Tarun Gurang</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Forem]]></title>
+        <id>https://dev.to/satarii/forem-2fo</id>
+        <link href="https://dev.to/satarii/forem-2fo"/>
+        <updated>2021-11-18T09:39:24.000Z</updated>
+        <summary type="html"><![CDATA[Forem is open source software for building communities. Communities for your peers, customers, fanbases, families, friends, and any other time and space where people need to come together to be part of a collective.]]></summary>
+        <author>
+            <name>sataniel</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fun Linux commands:-]]></title>
+        <id>https://dev.to/digvijay_karadia/fun-linux-commands--3och</id>
+        <link href="https://dev.to/digvijay_karadia/fun-linux-commands--3och"/>
+        <updated>2021-11-18T09:39:15.000Z</updated>
+        <summary type="html"><![CDATA[The Linux command line can be the home of power users and sysadmins. However, Linux is more than just a lot of hard work. Linux was developed by fun-loving people who created an array of comical commands. Try playing around with these yourself when you want a smile.
+Steam locomotive (SL)
+locomotive.png
+Real uses
+Fireplace (aafire)
+$ sudo apt install libaa-bin
+On Fedora, CentOS, and others:
+$ sudo dnf install aalib
+fireside.png
+Real uses
+Yes
+$ yes Buffalo Bills
+bills.png
+Real uses
+$ foo
+$ yes | foo
+Alternatively, you can auto-deny messages using yes as well:
+$ yes no | foo
+Fortune
+Install Fortune with your package manager:
+$ sudo apt install fortune
+On Fedora:
+$ sudo dnf install fortune-mod
+The fortune command has many datasets it can draw from. For instance, you can get famous quotes from literature or the science-fiction TV show Firefly, or choose from jokes, tips about Linux, and much more. Search your repository for "fortune" to see what options your distribution provides.
+$ fortune
+$ fortune | wc --chars
+Here's the result of lolcat -h for its help output:
+lolcat_rainbow.png
+Figlet and banner
+$ figlet centos.com
+figlet_centos.png
+Pipe figlet to lolcat for a colorful banner:
+$ figlet centos.com | lolcat
+lolcat_figlet_centos.png
+$ banner Hello World
+hello_world.png
+Espeak
+Once espeak is installed, turn up the volume on your computer and have some fun listening to your machine talk to you. Espeak is a software speech synthesizer, and there are a few different voice libraries available.
+$ espeak "Linux is the best operating system."]]></summary>
+        <author>
+            <name>Digvijay Karadia</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to make a password generator with python.]]></title>
+        <id>https://dev.to/vaarun_sinha/how-to-make-a-password-generator-with-python-2b1a</id>
+        <link href="https://dev.to/vaarun_sinha/how-to-make-a-password-generator-with-python-2b1a"/>
+        <updated>2021-11-18T09:32:09.000Z</updated>
+        <summary type="html"><![CDATA[In this tutorial we will make a password generator with the secrets module. Why not random module? see the first post in this series to understand.
+So Let's Begin!
+Generate a random password, according to the user input.
+Get user input
+Create lists for letters etc...
+Loop over lists and make a password.
+Print the password.
+Get user input
+Here we will use try/except blocks so that when user types a string we do not get an error.
+We will get inputs for number of special characters, small letters, big letters and numbers required for generating the password.
+Code:
+try:
+        num_of_numbers = int(input("How many numbers should your password have: "))
+except ValueError:
+        num_of_numbers = int(input("How many numbers should your password have: "))
+try:
+        num_of_special = int(
+     …]]></summary>
+        <author>
+            <name>Vaarun Sinha</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AWS Step Functions Most Used Nodejs SDK APIs]]></title>
+        <id>https://dev.to/shivangchauhan7/aws-step-functions-most-used-nodejs-sdk-apis-33k3</id>
+        <link href="https://dev.to/shivangchauhan7/aws-step-functions-most-used-nodejs-sdk-apis-33k3"/>
+        <updated>2021-11-18T09:24:05.000Z</updated>
+        <summary type="html"><![CDATA[Introduction
+
+
+In this post, I will be listing some of the most important AWS Nodejs SDK APIs for AWS Step Functions, we will go through the syntax and brief explanation of each of these APIs.
+You might want to check out this AWS Step Functions Cheatsheet to know about the most used AWS CLI Commands used with explanations.
+Most Important APIs
+
+
+APIs syntax will be given in a format of Lambda function so it can be directly used.
+Create State Machine
+
+
+
+
+
+exports.createStateMachine = async (event) => {
+  try {
+    const params = {
+      definition: '<String>',
+      name: '<String>',
+      roleArn: '<String>'
+    };
+    const data = await stepfunctions.createStateMachine(params).promise();
+    console.log(data);
+  }
+  catch (error) {
+    console.log(error)
+    // Do something with the error
+…]]></summary>
+        <author>
+            <name>Shivang Chauhan</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Template String Types as Discriminants in Typescript 4.5]]></title>
+        <id>https://dev.to/this-is-learning/template-string-types-as-discriminants-in-typescript-45-4fdi</id>
+        <link href="https://dev.to/this-is-learning/template-string-types-as-discriminants-in-typescript-45-4fdi"/>
+        <updated>2021-11-18T08:21:00.000Z</updated>
+        <summary type="html"><![CDATA[Typescript 4.5 was just released and one of the features that stood out to me is the Template String Types as Discriminants. In this article, we are going to explore this new feature using rudimentary examples.  In my last article, we covered using discriminated unions to write better types that are easy to narrow. 
+This is an extension of that but instead of having a concrete literal type, you can use a non-concrete literal type i.e. string, number, etc. instead as part of the template literal type, and Typescript will be able to use it as a discriminant.
+In order to understand this feature, we are going to start by creating two types: SuccessType and ErrorType. They are going to represent possible responses for different operations we can perform in a computer system i.e. HTTP Request, F…]]></summary>
+        <author>
+            <name>Maina Wycliffe</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Template String Types as Discriminants in Typescript 4.5]]></title>
+        <id>https://dev.to/this-is-learning/template-string-types-as-discriminants-in-typescript-45-4fdi</id>
+        <link href="https://dev.to/this-is-learning/template-string-types-as-discriminants-in-typescript-45-4fdi"/>
+        <updated>2021-11-18T08:21:00.000Z</updated>
+        <summary type="html"><![CDATA[Typescript 4.5 was just released and one of the features that stood out to me is the Template String Types as Discriminants. In this article, we are going to explore this new feature using rudimentary examples.  In my last article, we covered using discriminated unions to write better types that are easy to narrow. 
+This is an extension of that but instead of having a concrete literal type, you can use a non-concrete literal type i.e. string, number, etc. instead as part of the template literal type, and Typescript will be able to use it as a discriminant.
+In order to understand this feature, we are going to start by creating two types: SuccessType and ErrorType. They are going to represent possible responses for different operations we can perform in a computer system i.e. HTTP Request, F…]]></summary>
+        <author>
+            <name>Maina Wycliffe</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Angular vs React vs Vue : Best choice for js Framework?]]></title>
+        <id>https://dev.to/anquestechnolab/angular-vs-react-vs-vue-best-choice-for-js-framework-2p0n</id>
+        <link href="https://dev.to/anquestechnolab/angular-vs-react-vs-vue-best-choice-for-js-framework-2p0n"/>
+        <updated>2021-11-18T08:08:30.000Z</updated>
+        <summary type="html"><![CDATA[This blog is a helpful resource for deciding which solution is best for you: Angular vs React vs Vue JavaScript framework.
+If you’re a developer just starting out on a project and can’t decide which JavaScript framework to use, this guide should help.
+React is a user interface library, Angular is a front-end framework, and Vue.js is a progressive framework.
+They can be used almost interchangeably to build front-end applications, but they are not identical, so it is important to compare them and understand their differences.
+Each framework is component-based, allowing for the rapid development of UI features.
+In this segment, we’ll look at various aspects of Angular, Vue, and React to see how they can meet your needs. This post is not just a comparison of Angular vs. React vs. Vue, but it a…]]></summary>
+        <author>
+            <name>Anques Technolabs</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Node.js Hosting Requirements & Service Provider Selection Tips]]></title>
+        <id>https://dev.to/matthieurobin/nodejs-hosting-requirements-service-provider-selection-tips-lpn</id>
+        <link href="https://dev.to/matthieurobin/nodejs-hosting-requirements-service-provider-selection-tips-lpn"/>
+        <updated>2021-11-18T07:54:25.000Z</updated>
+        <summary type="html"><![CDATA[Having no idea what Node.js hosting requirements should be covered for your app?
+Looking for the best Node.js hosting platform?
+In this post, we’ll take in-depth look at all the aspects and subtleties you should analyse to choose the best option.
+Also we’ll provide a step-by-step tutorial on how to get Node.js applications hosted in the cloud on the example of Ghost publishing platform.
+Why Developers and Enterprises Prefer Node.js
+JavaScript code is quite easy-to-understand even for non-professionals, as well as the open-source platform facilitates the application development process.
+Moreover, the Node Package Manager includes tons of pre-built modules, which accelerate development speed even more. Scalability, reduced response time and the ability to use the same language on server and client sides are also the proven benefits of Node.js.
+As for now most businesses and industries choose Node.js for building their projects. Such a runtime environment is perfect for modern applications because it scales quite well without additional investments into hardware.
+REST APIs, real-time apps, single-pages and more can be easily built and executed on almost all known platforms.
+Choosing the Best Node.js Hosting Provider
+In this guidance, we’ll go through the main aspects you should weigh before choosing the right hosting platform.
+Not all the providers support an event-driven JavaScript runtime environment and development framework, so you should do careful research to find the best Node.js hosting for your app.
+First of all, you should realise if you have enough time and skills for the system administration routine. If yes, you can get some cloud VM or VPS and install, deploy and manage everything on your own. But, if you prefer to focus on application code than a managed cloud hosting platform would be a perfect choice.
+Good luck ;-)]]></summary>
+        <author>
+            <name>Matthieu ROBIN</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[White Label Crypto Exchange Software Development - In a Nutshell]]></title>
+        <id>https://dev.to/emmabaker/white-label-crypto-exchange-software-development-in-a-nutshell-43pk</id>
+        <link href="https://dev.to/emmabaker/white-label-crypto-exchange-software-development-in-a-nutshell-43pk"/>
+        <updated>2021-11-18T07:10:21.000Z</updated>
+        <summary type="html"><![CDATA[Cryptocurrency is becoming a familiar term and grabbed the attention of many people from all parts of the world. It is due to the rising popularity and beneficial factors of top crypto coins like bitcoin, ethereum, Cardano, and more. Already many people started to use these cryptocurrencies for making profits. As the usage of crypto assets is increasing day by day, there is a demand for cryptocurrency exchanges too. Crypto exchange is an online trading platform where one can buy, sell, or exchange all sets of popular crypto assets securely without any hassle. The Crypto industry offers several business opportunities for startups and entrepreneurs. But among them, the cryptocurrency exchange is the best and trending money-generating business model in this modern era.
+In today’s modern world…]]></summary>
+        <author>
+            <name>Emma</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NPM Login Not Working]]></title>
+        <id>https://dev.to/clavinjune/npm-login-not-working-2obp</id>
+        <link href="https://dev.to/clavinjune/npm-login-not-working-2obp"/>
+        <updated>2021-11-18T06:18:24.000Z</updated>
+        <summary type="html"><![CDATA[This solution works for Node v16.13.0 and NPM v8.1.3
+I don't always hate working using NPM unless it starts downloading tons of node_modules and giving not so verbose logs. Today, my colleague and I found an NPM login bug that's not so interesting and hard to debug. It takes me about an hour to find out what is the root cause.
+In this article, I will write the solution just in case you meet the same issue.
+In my current company, we use Nexus3 as our private repository for the NPM module. I also use Node v12.22.4 and NPM v8.1.3 for working on my local machine. To login into our Nexus repository, I use .npmrc with this format:
+@myorg:registry=https://repo.myorg.com/repository/npm-private
+always-auth=true
+_auth={{ base64 of username:password redacted here }}
+
+And we're happy with it. No issue…]]></summary>
+        <author>
+            <name>Clavin June</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Build Crud API with Node.js, Express, and MongoDB]]></title>
+        <id>https://dev.to/sureshramani/build-crud-api-with-nodejs-express-and-mongodb-14hk</id>
+        <link href="https://dev.to/sureshramani/build-crud-api-with-nodejs-express-and-mongodb-14hk"/>
+        <updated>2021-11-18T06:06:36.000Z</updated>
+        <summary type="html"><![CDATA[Currently, most of the websites operate on an API-based backend structure, where we just send a request from the front end of the website by calling an API and obtaining the required results. In this blog, we are going to build a simple CRUD (Create, Read, Update and Delete) app with the application of Node JS, Express JS, and MongoDB from the basics. Before we jump into the application, let's look into the tools we are going to use.
+Express is one of the most popular web frameworks for node.js. It is built on top of the node.js HTTP module and adds support for routing, middleware, view system, etc. It is very simple and minimal, unlike other frameworks that try to do way too much, thereby reducing the flexibility for developers to have their own design choices.
+Mongoose is an ODM (Object …]]></summary>
+        <author>
+            <name>Suresh Ramani</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DevSecOps Done RIGHT! Why and What to Do.]]></title>
+        <id>https://dev.to/n3wt0n/devsecops-done-right-why-and-what-to-do-4b2j</id>
+        <link href="https://dev.to/n3wt0n/devsecops-done-right-why-and-what-to-do-4b2j"/>
+        <updated>2021-11-18T05:33:53.000Z</updated>
+        <summary type="html"><![CDATA[DevSecOps is something we all keep hearing, and everyone says it is important. 
+But why is it important? And how can we adopt DevSecOps the right way without penalizing any aspect of our workflow, especially in a Cloud Native scenario?
+Let's take a look at the best practices for DevSecOps, and DOs and DONTs of this practice.
+As usual, if you are a visual learner, or simply prefer to watch and listen instead of reading, here you have the video with the whole explanation.
+
+
+
+
+Link to the video: https://youtu.be/KaoPQLyWq_g
+If you rather prefer reading, well... let's just continue :)
+In my role as DevOps Architect I get to work with the biggest, most important, and most strategic Microsoft and GitHub's clients in Asia and Oceania on their DevOps Transformations.
+And you know that DevOps is a …]]></summary>
+        <author>
+            <name>Davide 'CoderDave' Benvegnù</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why and why not to use Linux?]]></title>
+        <id>https://dev.to/developerbishwas/why-and-why-not-to-use-linux-5dl0</id>
+        <link href="https://dev.to/developerbishwas/why-and-why-not-to-use-linux-5dl0"/>
+        <updated>2021-11-18T04:55:19.000Z</updated>
+        <summary type="html"><![CDATA[Reasons to use Linux
+
+
+Linux has a better environment for programming. It can smoothly execute software like PyCharm, Rider and Android Studio. Linux has a huge source of tools to make a specific task easier. Not only aircrack-ng there are many other CLI based tools, that gonna help you. And one thing, docker also executes awesomely in Linux.
+Linux has a growing software for video editing which might not fulfill all our requirements. Idiots in the Linux community quarrels over distro i.e. "my distro is better", instead of coding a nice piece of software or staying silent. Image editing and other stuff can be tedious for you. I don't see any point in using Wine, wine just decrease the GUI appearance of the app.
+I use Ubuntu, Ubuntu is super awesome. Fool people quarrel over distros but that's not what smart linux users do.
+Most of the Linux distro arguments are about the desktop environments. You can literally install any desktop environment in any linux based OS you're using. So, let's not quarrel over Linux Distro (aka: Desktop Environment). 
+Let's contribute on making software and games for Linux. Let's do it.]]></summary>
+        <author>
+            <name>NewLinuxHelper</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GraphQL Auth without Middleware]]></title>
+        <id>https://dev.to/verneleem/graphql-auth-without-middleware-37c6</id>
+        <link href="https://dev.to/verneleem/graphql-auth-without-middleware-37c6"/>
+        <updated>2021-11-18T04:04:55.000Z</updated>
+        <summary type="html"><![CDATA[What if I told you, that you could have one of the most advanced auth built into your GraphQL API without adding any middleware?
+Before we begin though, let's break apart Auth into its two sub-categories, Authentication and Authorization. Authentication is "who you are" while Authorization is "what you are allowed" to do. For this short article, we will be covering the latter of these two concepts.
+Since GraphQL is a stateless API, it does not create sessions between the client and the API. The common method to authorize clients to query or mutate data is by passing a token known as a JSON Web token (JWT). The common way for a client to obtain a JWT is by authenticating through some auth provider who returns a JWT to the client. This JWT then provided by the client to the GraphQL API in th…]]></summary>
+        <author>
+            <name>verneleem</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Zero Trickery Custom Radios and Checkboxes]]></title>
         <id>https://css-tricks.com/?p=356895</id>
@@ -27,17 +1145,6 @@ The post Zero Trickery Custom Radios and Checkboxes appeared first on CSS-Tricks
         <summary type="html"><![CDATA[In this article, I'm going to share with you what I've learned so far at my first programming job as a junior full-stack developer.  Ever since my developer career began in July, 2021 I've been learning constantly. And I'm gonna share some tips from my experiences so that you can]]></summary>
         <author>
             <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[New Plans, New Pricing]]></title>
-        <id>https://dev.to/doppler/new-plans-new-pricing-130g</id>
-        <link href="https://dev.to/doppler/new-plans-new-pricing-130g"/>
-        <updated>2021-11-17T23:39:07.000Z</updated>
-        <summary type="html"><![CDATA[Today I am excited to share that we have restructured our plans to encourage the use of power features, including making SAML SSO free for everyone! Back in 2020, our team made a faulty assumption that only large teams would want our advanced features. But over time we heard the opposite from you, as developers. We realize that there are a subset of features on our paid plans that would unlock new possibilities and use-cases if they were accessible. You asked to become power users. Going forward Doppler will offer two plans centered around developers and teams.
-Doppler is built by developers for developers. We believe that individuals whether that be hobbyists, students, educators, open-source contributors, or something else deserve a developer-friendly way to manage the literal keys to th…]]></summary>
-        <author>
-            <name>Brian Vallelunga</name>
         </author>
     </entry>
     <entry>
@@ -82,89 +1189,6 @@ The post What do you get for using a search input type? appeared first on CSS-Tr
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Killing a defunct process]]></title>
-        <id>https://dev.to/jeden/killing-a-defunct-process-7od</id>
-        <link href="https://dev.to/jeden/killing-a-defunct-process-7od"/>
-        <updated>2021-11-17T22:40:32.000Z</updated>
-        <summary type="html"><![CDATA[What happened:
-What this means
-What to do
-References
-Encountered this when I was trying to install htop on one of my test-RHEL EC2 instances. I was following the steps in this link.
-I've also learned that defunct processes are almost similar with zombie processes, but there's also some differences which you can read here.
-Two terminals opened, both connected to same instance
-installed the package on second terminal while update was running on first
-Got this message on second terminal when trying to install package and update simultaneously:
-Running transaction check
-Waiting for process with pid 5941 to finish.
-
-Checking which process is that
-$ ps -ef |grep 5941
-root        5941    5939 18 06:00 pts/0    00:01:42 yum update -y
-root       36173   36153  0 06:09 pts/2    00:00:00 grep --color…]]></summary>
-        <author>
-            <name>Eden Jose</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Introduction To Maxa]]></title>
-        <id>https://dev.to/own_alazzam10/introduction-to-maxa-9m</id>
-        <link href="https://dev.to/own_alazzam10/introduction-to-maxa-9m"/>
-        <updated>2021-11-17T22:40:04.000Z</updated>
-        <summary type="html"><![CDATA[A Powerful TypeScript Library For Creating Beautiful UIs, Secure, Fast And Flexible Web Apps Only Using PowerFul Languages TypeScript And Sass
-
-  
-
-
-
-
-Components-Based & State Management : Build Complex UI Components Easily that's logic is written in
-TypesScript Files and pass rich data through your app and make it secure no one can know your data.
-Ultimate Apps : Maxa Build Your Own App Faster And Simplify + Minify Your Code To Get High Performance.
-Lightweight : Maxa Make Your Own App Optimized And LightWeight On Server That
-Load Fast With Electron Apps Without No More Optimization Steps.
-Self Management : Maxa have A Built-In Element SelfReferencePlugin Management Functions.
-Rich With Web APIs : You Can Use Web APIs Easily Like WebShare,Vibration,Notification And More.
-Robust Routing : …]]></summary>
-        <author>
-            <name>Own Alazzam</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Quickly Improve Your Infrastructure as Code]]></title>
-        <id>https://dev.to/spacelift/how-to-quickly-improve-your-infrastructure-as-code-3b1o</id>
-        <link href="https://dev.to/spacelift/how-to-quickly-improve-your-infrastructure-as-code-3b1o"/>
-        <updated>2021-11-17T22:40:00.000Z</updated>
-        <summary type="html"><![CDATA[The introduction of Infrastructure as Code or IaC has transformed the way you can provision and deploy high-performance cloud-based IT infrastructures.
-IaC tools, such as Terraform, have been integrated into DevOps toolchains, saving DevOps IaC teams from the excessive manual effort.
-While these tools undoubtedly help accelerate building IT infrastructures, their limitations can impact DevOps’ ability to optimize and improve control of their IaC processes supporting future business needs.
-In this article, you’ll learn about IT infrastructure limitations that IaC DevOps teams deal with on a daily basis and how Spacelift is able to get past them.
-One of the most frequent challenges while using more generic IaC tools is the non-intuitive workflow driven by its reliance on pull requests. Some …]]></summary>
-        <author>
-            <name>Marcin Wyszynski</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[💡 Why Auth0 “Shifted Left” with Azure]]></title>
-        <id>https://dev.to/robertinoc_dev/why-auth0-shifted-left-with-azure-47ge</id>
-        <link href="https://dev.to/robertinoc_dev/why-auth0-shifted-left-with-azure-47ge"/>
-        <updated>2021-11-17T21:55:07.000Z</updated>
-        <summary type="html"><![CDATA[How we expanded customer choice while building a security-first architecture.
-
-
-
-  
-  
-  
-Choice is good. We like it when our supermarket shelves are stocked with hundreds of varieties of breakfast cereal. We pick the smartphones we use and the cars we drive. The same should be true for businesses and the technologies they use.
-Today, we brought the Auth0 Identity Platform to Microsoft Azure, giving our private cloud customers the ability to pick the right infrastructure provider for their needs.
-This means a greater selection of regions. Microsoft currently operates in over 60 regions around the world, making it easier to comply with data residency and sovereignty requirements.
-And if you’re already running your app on Azure’s cloud servers, you’ll benefit from a converged infrastructure,…]]></summary>
-        <author>
-            <name>Robertino</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[💡 Why Auth0 “Shifted Left” with Azure]]></title>
         <id>https://dev.to/robertinoc_dev/why-auth0-shifted-left-with-azure-47ge</id>
         <link href="https://dev.to/robertinoc_dev/why-auth0-shifted-left-with-azure-47ge"/>
@@ -196,19 +1220,6 @@ While passing these rules isn't a guarantee or metric for ensuring full accessib
 For convenience, I've divided the rules I will be covering into three groups. The first group, general, covers ARIA roles and attributes. The second group, content, includes rules related to textual rep…]]></summary>
         <author>
             <name>Wade H.</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Perfect Configuration Format? Try Typescript]]></title>
-        <id>https://dev.to/tmcneal/the-perfect-configuration-format-try-typescript-5hg2</id>
-        <link href="https://dev.to/tmcneal/the-perfect-configuration-format-try-typescript-5hg2"/>
-        <updated>2021-11-17T21:13:44.000Z</updated>
-        <summary type="html"><![CDATA[A lot of ink has been spilled about configuration file formats. Popular formats like JSON, TOML, YAML, and XML each have their advantages and drawbacks. There's an alternative that should be receiving more attention: Typescript!
-Before getting into why Typescript is a compelling choice for config files, let's review the common file formats used in a typical web application today:
-XML: Back in the late 90s to mid 2000s this was king both as a messaging protocol and flat file format. It gets a bad rap, but there is a lot to like about XML as a config file format, including great tooling support and a robust schema definition language in XSD. 
-JSON: Extremely common as a data interchange format in REST APIs, and also very popular as a config file format. For a lot of developers this strikes t…]]></summary>
-        <author>
-            <name>Todd McNeal</name>
         </author>
     </entry>
     <entry>
@@ -353,19 +1364,6 @@ class fu…]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[What is Blockchain and how is software development related to it?]]></title>
-        <id>https://dev.to/leobdev/what-is-blockchain-and-how-is-software-development-related-to-it-40o1</id>
-        <link href="https://dev.to/leobdev/what-is-blockchain-and-how-is-software-development-related-to-it-40o1"/>
-        <updated>2021-11-17T20:56:23.000Z</updated>
-        <summary type="html"><![CDATA[Probably at some point, you have heard the term blockchain, and regardless of whether or not you are familiar with the IT world, sooner or later it will be integrated into your life since it means a change in the way of understanding the digital world.
-Blockchain was born from the bitcoin revolution as the coding system or the technology that supports the entire structure of the virtual currency, and thanks to the great potential that has been identified in this system, other applications have been developed in addition to the financial one, which we will talk about later.
-In simple words, blockchain is a distributed and secure database where all types of transactions can be applied. The great difference between the blockchain with any other type of codification is its operation.
-Explained…]]></summary>
-        <author>
-            <name>Leo Barnuevo</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[How to Set Up Serverless Online Payments with Netlify and Stripe]]></title>
         <id>618fda8c11d3cb08287a5a51</id>
         <link href="https://www.freecodecamp.org/news/serverless-online-payments/"/>
@@ -373,19 +1371,6 @@ Explained…]]></summary>
         <summary type="html"><![CDATA[One of the first steps many young startups take is setting up a static web page, perhaps with an email newsletter, to help them build an audience.  As the weeks go by and the MVP is getting further along, the subject of how to handle payments will eventually emerge. From]]></summary>
         <author>
             <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What is Endpoint Protection - Steps to Stay Secured]]></title>
-        <id>https://dev.to/backlinkgiant/what-is-endpoint-protection-steps-to-stay-secured-27o3</id>
-        <link href="https://dev.to/backlinkgiant/what-is-endpoint-protection-steps-to-stay-secured-27o3"/>
-        <updated>2021-11-17T20:43:10.000Z</updated>
-        <summary type="html"><![CDATA[Endpoint protection is a network security management solution that focuses on network endpoints or individual devices. These devices connect to a network, such as workstations and mobile devices. Endpoint security is another name for endpoint protection.
-Endpoint security or endpoint protection are two standard terms used interchangeably. Endpoint protection is a term that describes security solutions that handle endpoint security challenges. These security challenges include securing and protecting endpoints against zero-day vulnerabilities, attacks, and unintended data breaches caused by negligence.
-Endpoint Protection Explained
-Many firms employ various devices to access a company network or a value endpoint protection or security. The sensitive data that a company holds is under scruti…]]></summary>
-        <author>
-            <name>Backlinkgiant</name>
         </author>
     </entry>
     <entry>
@@ -469,135 +1454,6 @@ Feel free to reach out if you have any questions or suggestions to make this art
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Docker Commands Everyone Should Know: [Short Note]]]></title>
-        <id>https://dev.to/dhanushaperera07/docker-commands-everyone-should-know-short-note-3m9g</id>
-        <link href="https://dev.to/dhanushaperera07/docker-commands-everyone-should-know-short-note-3m9g"/>
-        <updated>2021-11-17T20:03:19.000Z</updated>
-        <summary type="html"><![CDATA[About This Article
-
-
-This article is a short note of some of the essential Docker commands that I think are useful for beginners.
-Tip: I have created this short note while following the tutorial. I invite you to follow this Docker Tutorial for Beginners [FULL COURSE in 3 Hours] and subscribe to her channel. She is doing a stunning job.
- 
-
-
-  
-  
-  Docker Commands
-
-
-
-  
-  
-  Pulling a docker container image
-
-
-
-
-
-# syntax
-docker pull <docker-image>
-
-# example
-docker pull postgres
-
- 
-
-
-  
-  
-  Pulling a specific version of a docker container image
-
-
-
-
-
-# syntax
-docker pull <docker-image>:<specify-the-version-here>
-
-# example
-docker pull postgres:9.6
-
- 
-
-
-  
-  
-  Pulls the docker image and runs/starts the docker container | starts new container with a command
-
-
-
-
-
-# pulls and starts the latest…]]></summary>
-        <author>
-            <name>Dhanusha Perera</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Context Switching is Killing Your Productivity]]></title>
-        <id>https://dev.to/softwaredotcom/context-switching-is-killing-your-productivity-427m</id>
-        <link href="https://dev.to/softwaredotcom/context-switching-is-killing-your-productivity-427m"/>
-        <updated>2021-11-17T19:58:28.000Z</updated>
-        <summary type="html"><![CDATA[What is context switching? 
-
-
-Context switching is a form of multitasking requiring developers to switch between unrelated tasks. 
-Frequent context switching reduces productivity, decreases energy and creativity, and negatively impacts quality of work. Minimizing context switching can help developers better focus on their highest priority tasks, avoid mental fatigue, and reduce the risk of burnout. 
-The concept of context switching originated in computer science. When computers switch between tasks, they need to carry out several intermediary tasks to stop the previous task and begin the new task. Each switch costs time and energy:
-[Context switching] refers to the process of storing the system state for one task, so that task can be paused and another task resumed. A context switch can al…]]></summary>
-        <author>
-            <name>Geoff Stevens</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CalinixOS Alpha 5 Stable Release]]></title>
-        <id>https://dev.to/arghyasarkar/calinixos-alpha-5-stable-release-5898</id>
-        <link href="https://dev.to/arghyasarkar/calinixos-alpha-5-stable-release-5898"/>
-        <updated>2021-11-17T19:27:25.000Z</updated>
-        <summary type="html"><![CDATA[I'm Arghya Sarkar the lead developer of Calinix, and these are the recent updates of CalinixOS
-If you haven't seen my previous article, check out
-https://dev.to/arghyasarkar/a-modern-os-for-the-power-user-2koe
-There I explained what Calinix is. We've come a long way since then, and have released our Alpha 5 Stable release
-The stable release fixes all the Bugs that were discovered in the whole series of Alpha 5 Releases. 
-Our releases currently are made in the following way:
-Each Alpha series goes through 10 levels of testing, and the usual stable release (after 10 tests) is expected to have least bugs/no bugs.
-Currently we are testing our Alpha 6-4 release (4th testing of Alpha 6)
-The Alpha 6 stable release will go through half a month of testing for bugs and stuff then only released
-This …]]></summary>
-        <author>
-            <name>Arghya Sarkar</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[HELLO WORLD in Morse Code]]></title>
-        <id>https://dev.to/souviktests/hello-world-in-morse-code-456g</id>
-        <link href="https://dev.to/souviktests/hello-world-in-morse-code-456g"/>
-        <updated>2021-11-17T18:44:49.000Z</updated>
-        <summary type="html"><![CDATA[In this video, I've said HELLO WORLD in Morse Code. Morse Code is one of the first digital communication languages that is used worldwide. This code was invented by Samuel Morse in 1938.
-Know more: https://en.wikipedia.org/wiki/Morse_code
-
-HELLO WORLD.
-https://twitter.com/thesouvikpaul]]></summary>
-        <author>
-            <name>Souvik Paul</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[HELLO WORLD in Morse Code]]></title>
-        <id>https://dev.to/souviktests/hello-world-in-morse-code-456g</id>
-        <link href="https://dev.to/souviktests/hello-world-in-morse-code-456g"/>
-        <updated>2021-11-17T18:44:49.000Z</updated>
-        <summary type="html"><![CDATA[In this video, I've said HELLO WORLD in Morse Code. Morse Code is one of the first digital communication languages that is used worldwide. This code was invented by Samuel Morse in 1938.
-Know more: https://en.wikipedia.org/wiki/Morse_code
-
-HELLO WORLD.
-https://twitter.com/thesouvikpaul]]></summary>
-        <author>
-            <name>Souvik Paul</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Ethernet Doesn&#x27;t Have a Valid IP Configuration – How to Fix Invalid Connection in Windows 10]]></title>
         <id>6194a7d111d3cb08287a7a03</id>
         <link href="https://www.freecodecamp.org/news/ethernet-doesnt-have-a-valid-ip-configuration-how-to-fix-invalid-connection-in-windows-10/"/>
@@ -608,42 +1464,11 @@ https://twitter.com/thesouvikpaul]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How to Remove a Virus Creating Shortcuts For Files and Folders in Pen Drives, Memory Cards and USB Drives (a Shortcut Virus)]]></title>
-        <id>https://dev.to/hetmansoftware/how-to-remove-a-virus-creating-shortcuts-for-files-and-folders-in-pen-drives-memory-cards-and-usb-drives-a-shortcut-virus-lkf</id>
-        <link href="https://dev.to/hetmansoftware/how-to-remove-a-virus-creating-shortcuts-for-files-and-folders-in-pen-drives-memory-cards-and-usb-drives-a-shortcut-virus-lkf"/>
-        <updated>2021-11-17T18:29:33.000Z</updated>
-        <summary type="html"><![CDATA[Read this article to find out how to remove s shortcut virus turning files and folders into shortcuts How to restore data lost after such virus hits your system.
-Have your files and folders on a USB drive, pen drive or memory card turned into shortcuts? Is your USB drive, pen drive or memory card shown as a shortcut? Are you looking for a method to restore your data and remove the pesky shortcut virus? Is your computer infected, in spite of having an antivirus installed? Unfortunately, few antiviruses can protect you against this misfortune.
-With all those nasty effects, this type of virus is relatively harmless (especially if you think of ransomware and the like) so data can be restored, and the virus removed quite easily.
-At the moment, the two types of shortcut viruses are the most wide…]]></summary>
-        <author>
-            <name>Michael Mirosnichenko</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Zero downtime data migrations with PlanetScale Data Imports]]></title>
-        <id>https://dev.to/planetscale/zero-downtime-data-migrations-with-planetscale-data-imports-125k</id>
-        <link href="https://dev.to/planetscale/zero-downtime-data-migrations-with-planetscale-data-imports-125k"/>
-        <updated>2021-11-17T17:15:25.000Z</updated>
-        <summary type="html"><![CDATA[PlanetScale now supports zero downtime data migrations from your existing MySQL database with our new Data Imports tool. We’re leveraging the power of Vitess to let you try us out as a replica and then easily switch over your database to PlanetScale completely. No dumping your data, no restoring from backup. Just give us a connection and let us handle the rest.
-When you connect your existing MySQL database to PlanetScale, you instantly get to experience the power of PlanetScale’s platform, which includes: 
-Secure Passwords that scale to thousands of simultaneous connections. 
-Query Statistics start finding & optimizing slow queries. 
-Web Console to query your database directly from the PlanetScale web UI.
-The tool will help you along the way to make your data import successful and alert you on any incompatibility issues we may encounter.
-Try importing your existing MySQL Database on PlanetScale and let us know how we can make this better. We’d love to hear from you on any ideas you have to improve onboarding.]]></summary>
-        <author>
-            <name>etnoctua</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Announcing vite-react-ts-extended]]></title>
         <id>https://dev.to/malloc007/announcing-vite-react-ts-extended-2093</id>
         <link href="https://dev.to/malloc007/announcing-vite-react-ts-extended-2093"/>
         <updated>2021-11-17T17:11:52.000Z</updated>
-        <summary type="html"><![CDATA[2020 Webpack & Babel is de facto
-
-
+        <summary type="html"><![CDATA[Getting Start template! 👉 https://github.com/laststance/vite-react-ts-extended
 This year there has been a big movement in build tools in the JavaScript community.
 
 In 2020, Webpack, especially in combination with Babel, seemed to be the de facto standard for build tools.
@@ -675,22 +1500,6 @@ so I would be happy if you could use it as a way to build a instant React+TypeSc
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Stacked changes: how Facebook and Google engineers stay unblocked and ship faster]]></title>
-        <id>https://dev.to/foster/stacked-changes-how-facebook-and-google-engineers-stay-unblocked-and-ship-faster-1cab</id>
-        <link href="https://dev.to/foster/stacked-changes-how-facebook-and-google-engineers-stay-unblocked-and-ship-faster-1cab"/>
-        <updated>2021-11-17T16:39:58.000Z</updated>
-        <summary type="html"><![CDATA[POV: waiting for your pull requests to get reviewed
-You just finished writing the new comments feature for your web app: you wrote the code, tested it, and put up the PR. You're under a deadline and your next highest priority task is to add reactions to those comments.
-But wait a minute - the reactions code will depend on the comments code, which isn't yet merged to main. Which means you're blocked.
-If you've ever found yourself in this position, you know you have three options:
-Work on something lower-priority while you wait for your comments PR to be approved (and risk missing the deadline).
-Interrupt your teammate to ask for a faster review.
-Make your comments PR bigger by merging what should have been a separate reactions PR into it (which will make it harder to review and increase the…]]></summary>
-        <author>
-            <name>Greg Foster</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[ROLE BASED ACCESS CONTROL IN ADONIS JS WITH NPM ROLE-ACL]]></title>
         <id>https://dev.to/slickdev_raphael/role-based-access-control-in-adonis-js-with-npm-role-acl-4jg3</id>
         <link href="https://dev.to/slickdev_raphael/role-based-access-control-in-adonis-js-with-npm-role-acl-4jg3"/>
@@ -712,88 +1521,13 @@ In the us…]]></summary>
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[A Guide To Modern CSS Colors With RGB, HSL, HWL, LAB and LCH]]></title>
+        <title type="html"><![CDATA[A Guide To Modern CSS Colors With RGB, HSL, HWB, LAB And LCH]]></title>
         <id>https://smashingmagazine.com/2021/11/guide-modern-css-colors/</id>
         <link href="https://smashingmagazine.com/2021/11/guide-modern-css-colors/"/>
         <updated>2021-11-17T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[In this article, we’ll take a look at the best ways to handle colors in CSS today, some tips for using them in a design system, and what we can expect from our colors in the not-too-distant future.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Michelle Barker)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Connecting via SSH from one EC2 instance to another]]></title>
-        <id>https://dev.to/jeden/connecting-via-ssh-from-one-ec2-instance-to-another-2mk1</id>
-        <link href="https://dev.to/jeden/connecting-via-ssh-from-one-ec2-instance-to-another-2mk1"/>
-        <updated>2021-11-17T15:58:36.000Z</updated>
-        <summary type="html"><![CDATA[Pre-requisites
-Main Steps
-If something goes wrong
-References
-Final Reminders!
-This is another quicknotes which I tend to forget at times. 
-two or more Amazon EC2 instances
-instances must be in same subnet and same availability zone
-It actually only requires you to to generate an RSA key on each server. Assumption:
-server-a is source (my server-a is RHEL)
-server-b is destination (my server-b is Ubuntu)
-On server-a, generate an rsa key by running:
-
-
-
-
-ssh-keygen
-# You would need to enter a passphrase twice - recommended to have a passphrase
-
-On you ~/.ssh  folder, you should now see two id_rsa. 
-One is a private key (something that's yours only) and a publc key(something you share). Note that you can rename your private and public key. Open the id_rsa.pub using vi editor and copy the content…]]></summary>
-        <author>
-            <name>Eden Jose</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Connecting via SSH from one EC2 instance to another]]></title>
-        <id>https://dev.to/jeden/connecting-via-ssh-from-one-ec2-instance-to-another-2mk1</id>
-        <link href="https://dev.to/jeden/connecting-via-ssh-from-one-ec2-instance-to-another-2mk1"/>
-        <updated>2021-11-17T15:58:36.000Z</updated>
-        <summary type="html"><![CDATA[Pre-requisites
-Main Steps
-If something goes wrong
-References
-Final Reminders!
-This is another quicknotes which I tend to forget at times. 
-two or more Amazon EC2 instances
-instances must be in same subnet and same availability zone
-It actually only requires you to to generate an RSA key on each server. Assumption:
-server-a is source (my server-a is RHEL)
-server-b is destination (my server-b is Ubuntu)
-On server-a, generate an rsa key by running:
-
-
-
-
-ssh-keygen
-# You would need to enter a passphrase twice - recommended to have a passphrase
-
-On you ~/.ssh  folder, you should now see two id_rsa. 
-One is a private key (something that's yours only) and a publc key(something you share). Note that you can rename your private and public key. Open the id_rsa.pub using vi editor and copy the content…]]></summary>
-        <author>
-            <name>Eden Jose</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Comparison of Type Systems in Front-end Languages]]></title>
-        <id>https://dev.to/csssr/comparison-of-type-systems-in-front-end-languages-e0i</id>
-        <link href="https://dev.to/csssr/comparison-of-type-systems-in-front-end-languages-e0i"/>
-        <updated>2021-11-17T15:36:41.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-With the stable growth of web projects, developers have found that they need some tools that will make maintaining and writing new code easier. There are various ways to help you to verify and validate code such as tests, contracts, typing, etc. We are going to focus on  type systems in different static typing languages useful in web development centering on comparison by a couple of parameters.
-We are not going to look for winners or losers because decisions taken on the type systems in languages we are going to discuss didn't come from scratch. If we were going to rate any of these languages objectively, we would need to take into account the whole ecosystem of language, history, advantages, and limitations that appeared in languages because of their design.
-How easily/ele…]]></summary>
-        <author>
-            <name>Islam Vindizhev</name>
         </author>
     </entry>
     <entry>
@@ -816,43 +1550,6 @@ The post Cherry-Picking Commits in Git appeared first on CSS-Tricks. You can sup
 The post The Gap (Design Engineering) appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <author>
             <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Deceptive Promises behavior]]></title>
-        <id>https://dev.to/arturmalinovich/deceptive-promises-behavior-ii7</id>
-        <link href="https://dev.to/arturmalinovich/deceptive-promises-behavior-ii7"/>
-        <updated>2021-11-17T15:19:52.000Z</updated>
-        <summary type="html"><![CDATA[The most part of applications written in JS nowadays uses at least few calls of Promises API, some of them uses es5 syntax, others async/await. But sometimes incomplete understanding of this technology(as in any other) can lead to unpredictable behavior, which can confuse uses, and take hours for you to understand the cause of the problem.
-Spending too much time in writing JS code, i've found interesting case with promises: promises have an API which can lead to incorrect interpreting of potential result.
-This is mostly related to classic es5 promise realization, but, alas, also affects async/await promises realization.
-Lets as an example check the process of saving user:
-const handleSave = userData => {
-  saveUser(rawUserData)
-    .then(user => showNotification(`User ${getUserName(user)} …]]></summary>
-        <author>
-            <name>ArturMalinovich</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Essential Guide to Linux Servers: Introduction]]></title>
-        <id>https://dev.to/devsimplicity/essential-guide-to-linux-servers-introduction-1f3f</id>
-        <link href="https://dev.to/devsimplicity/essential-guide-to-linux-servers-introduction-1f3f"/>
-        <updated>2021-11-17T14:29:56.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-A bit of background: I've been using Linux both on my desktops and servers since the early 2000s. I'll try to distill what I learned over those years into a simple and easy-to-follow guide, in a way that I would approach things if I had to start from scratch.
-I'll try to make things friendly towards new users - you should be able to follow the guide even if you have very little (or even no) experience with Linux. 
-We're going to start by going through the process of setting up a Linux VPS and then build upon that.
-So, why even bother instead of going "serverless"?
-Well, first, there's no such thing as serverless, there are only servers controlled by you and servers controlled by someone else. In the long term, trading-off that control tends to come at a huge price.
-By learning to run things yourself, even if you do end up going "serverless" on some projects, you'll have a much better and deeper understanding of those trade-offs, limitations, pitfalls, and lock-ins.
-Easy scaling promises, for the most part, are just that - promises. Even if they weren't, it's extremely unlikely that you'll really need them. A lot of people would be very surprised how much you can get from a single Linux box.
-Considering what you get in return, running your own VPS is really cheap (you can get a nice KVM-based VPS for a few bucks a month). 
-But having full freedom and control over your server is priceless. With serverless options, you'll always be severely limited in what you can do and what you can depend upon (and even that limited set of dependencies is subject to change at any time).
-In the next post, we're going to make a few important decisions about our new server.
-Note: This is part #1 of the Essential Guide to Linux Servers in-progress series. You can follow me here or on Twitter for updates.]]></summary>
-        <author>
-            <name>DS: Simple, Not Easy</name>
         </author>
     </entry>
     <entry>
@@ -903,60 +1600,6 @@ Node js is free and open source, hence you can use open source server software s
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[What's New in Node.js 17]]></title>
-        <id>https://dev.to/appsignal/whats-new-in-nodejs-17-40ih</id>
-        <link href="https://dev.to/appsignal/whats-new-in-nodejs-17-40ih"/>
-        <updated>2021-11-17T13:00:17.000Z</updated>
-        <summary type="html"><![CDATA[Node.js v17.0.0, the latest major version of the popular JavaScript runtime, has just been released. It supersedes v16 in the Current release line of the runtime. V16 is now in line to be promoted to the long-term support (LTS) channel on October 26, 2021, as it's an even-numbered release.
-Despite being a relatively minor update, this release brings several refinements to the runtime, including more promisified APIs, JavaScript engine upgrades, and OpenSSL 3.0 support.
-In this article, we'll take a look at some of the major highlights from this release and the implications for Node.js developers.
-Node.js continues to promisify its core APIs as part of its strategic initiative plan. In the last few major Node.js releases, Promise-based APIs were added for the dns, fs, stream, and timers mod…]]></summary>
-        <author>
-            <name>Ayooluwa Isaiah</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SvelteKit FIDO U2F Login: Multifactor Authentication]]></title>
-        <id>https://dev.to/askrodney/sveltekit-fido-u2f-login-multifactor-authentication-2fch</id>
-        <link href="https://dev.to/askrodney/sveltekit-fido-u2f-login-multifactor-authentication-2fch"/>
-        <updated>2021-11-17T11:28:49.000Z</updated>
-        <summary type="html"><![CDATA[✨ SvelteKit FIDO U2F Two Factor Authentication (2FA)
-
-
-This is post is about SvelteKit FIDO U2F Login.  FIDO U2F provides a way to beef up login security using a hardware USB token owned by the user.  In computing typically we authenticate ourselves (let the system know we are who we say we are) using three possible types of identifier.  These are: something we know (like a password), something we have (like a 2FA code generated by an authenticator app) or something we are (like biometric data generated using facial recognition or a thumbprint).  Traditionally, we relied on a password only, though requesting a second authentication type (two factor authentication or 2FA) or multifactor authentication (MFA) is now more commonplace.  FIDO U2F keys fall into the second category and make login…]]></summary>
-        <author>
-            <name>Rodney Lab</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to avoid Software Supply Chain Attacks]]></title>
-        <id>https://dev.to/danielp/how-to-avoid-software-supply-chain-attacks-4a0l</id>
-        <link href="https://dev.to/danielp/how-to-avoid-software-supply-chain-attacks-4a0l"/>
-        <updated>2021-11-17T10:19:31.000Z</updated>
-        <summary type="html"><![CDATA[Cybersecurity attacks only continue to increase and in 2021, supply chain attacks are expected to grow by 400% according to the report ENISA Threat Landscape for Supply Chain Attacks. Security minded companies are quickly making supply chain security a main focal point - but the software supply chain is still considered the weakest link by threat actors.
-The increase is well in-line with how often we read about new ransomware and malware attacks. Just recently there were account takeovers on the popular packages ua-parser-js, coa and rc with a combined average of 30 million weekly downloads.
-If your organization is exposed to a malicious version, a compromised system means anything would be possible for attackers - installing backdoors, crypto miners, keyloggers and extraction of data. All…]]></summary>
-        <author>
-            <name>Daniel Parmenvik</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why I Made My Own Personal Documentation Site?]]></title>
-        <id>https://dev.to/yehezkielgunawan/why-i-made-my-own-personal-documentation-site-2gmb</id>
-        <link href="https://dev.to/yehezkielgunawan/why-i-made-my-own-personal-documentation-site-2gmb"/>
-        <updated>2021-11-17T08:06:32.000Z</updated>
-        <summary type="html"><![CDATA[Disclaimer
-
-
-This is just my opinion as a newbie frontend engineer who was exhausted from googling the same thing every time I need it. But I hope this article can be a reference for you.
-# Introduction
-The story began when I decided to switch from Angular to React as my favorite and go-to framework in June 2021. Previously, everything is fine. I googled normally when I have to do some troubleshooting or just want to search for information related to my project using React. Everything changed when I started to feel tired of googling the same thing each time I need that information or code snippet.
-A college friend suggested I make my docs site. Then, he also showed me his own docs site at base.sznm.dev. Like before, I asked him, "Why did you make this? It's just like you put your notes her…]]></summary>
-        <author>
-            <name>Yehezkiel Gunawan</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Full Stack Java Developer Road Map 2022]]></title>
         <id>https://dev.to/rameshfadatare/full-stack-java-developer-road-map-2022-ga1</id>
         <link href="https://dev.to/rameshfadatare/full-stack-java-developer-road-map-2022-ga1"/>
@@ -964,8 +1607,7 @@ A college friend suggested I make my docs site. Then, he also showed me his own 
         <summary type="html"><![CDATA[In this article, I am going to talk about how to become a full-stack java developer.
 Well if you are a Java developer and if you want to become a full-stack Java developer then you are in a right place and if you are a Java beginner and if you want to become a full-stack Java developer then you are also in the right place.
 In this article, I am going to give you a learning path to become a full-stack java developer so basically, we will discuss what are the skills I mean what are the tools and technologies that you are going to learn to become a full-stack java developer. 
-Before looking to the learning path for full-stack java developer let's first understand what is a full stack developer. Well full stack developer is an engineer who works on both client-side and server-side software. Full-stack developers have the capability to develop applications from start to end because a full stack developer has hands-on experience on both server-side technologies as well as client-side technologies.
-Complete article explained in the below YouTube video:]]></summary>
+Before looking to the learning path for full-stack java developer let's first understand what is a full stack developer. Well full stack developer is an engineer who works on both client-side and server-side software. Fu…]]></summary>
         <author>
             <name>Ramesh Fadatare</name>
         </author>
@@ -1005,37 +1647,6 @@ We have seen in the latest Angular release, the use of ComponentFactoryResolver 
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Best Way to Create Dynamic Components in Angular]]></title>
-        <id>https://dev.to/stackblogger/best-way-to-create-dynamic-components-in-angular-57dk</id>
-        <link href="https://dev.to/stackblogger/best-way-to-create-dynamic-components-in-angular-57dk"/>
-        <updated>2021-11-17T05:33:21.000Z</updated>
-        <summary type="html"><![CDATA[The article is originally published to my blog here.
-Angular is a TypeScript based Open Source JavaScript framework. A situation like this happens most of the time where we need to create components dynamically. This article explains what is the best way to create dynamic components in Angular.
-A component is a page in Angular. We will try to create it dynamically using the latest Ivy Component API and see how it works. Let’s start!
-ComponentFactoryResolver is removed from latest Angular release. This article explains how to use Ivy API to create components dynamically.
-We have seen in the latest Angular release, the use of ComponentFactoryResolver is removed. Ivy creates the opportunity to instantiate the component with ViewContainerRef.createComponent without creating an associated facto…]]></summary>
-        <author>
-            <name>Jameer Khan</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Using Bash Sort to Sort Files Like a Boss]]></title>
-        <id>https://dev.to/ravgeetdhillon/using-bash-sort-to-sort-files-like-a-boss-1h2g</id>
-        <link href="https://dev.to/ravgeetdhillon/using-bash-sort-to-sort-files-like-a-boss-1h2g"/>
-        <updated>2021-11-17T05:14:18.000Z</updated>
-        <summary type="html"><![CDATA[Are you looking out for a way to organize your files and perform some operations on them? There are many instances in programming where you need to sort some data, such as a list of files. Sorting files with the Bash sort and ls commands will help you keep things organized.
-In this tutorial, you will learn the fundamentals of sorting files and file contents.
-I wrote this post to help you learn the fundamentals of sorting files and file contents using Shell scripting.
-Read the full blog on Adam The Automator.
-Thanks for reading 💜
-I publish a monthly newsletter in which I share personal stories, things that I am working on, what is happening in the world of tech, and some interesting dev-related posts which I across while surfing on the web.
-Connect with me through Twitter • LinkedIn • Github or send me an Email.
-— Ravgeet, Full Stack Developer and Technical Content Writer]]></summary>
-        <author>
-            <name>Ravgeet Dhillon</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Caching Angular Resolver State]]></title>
         <id>https://dev.to/nordyj/caching-angular-resolver-state-487d</id>
         <link href="https://dev.to/nordyj/caching-angular-resolver-state-487d"/>
@@ -1044,56 +1655,6 @@ Connect with me through Twitter • LinkedIn • Github or send me an Email.
 In my Angular application, I’m using resolvers to pre-fetch any data needed for a route before sending the application to that route. One bit of data that is not likely to change, or will at least change very slowly, would be my repository of state/province data. Though it’s technically POSSIBLE that the U.S. could lose or gain a state, it’s also very unlikely. Therefore, I’d rather cache that data locally in my Angular application the f…]]></summary>
         <author>
             <name>Jamie Nordmeyer</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to secure your server with SSL in less than 10 minutes]]></title>
-        <id>https://dev.to/nljms/how-to-secure-your-server-with-ssl-in-less-than-10-minutes-49nc</id>
-        <link href="https://dev.to/nljms/how-to-secure-your-server-with-ssl-in-less-than-10-minutes-49nc"/>
-        <updated>2021-11-17T04:23:07.000Z</updated>
-        <summary type="html"><![CDATA[This is a quick guide for engineers who doesn't have broad knowledge in setting up SSL together with nginx from scratch.
-Docker
-Nginx
-Node (Can be any web framework)
-I won't be tackling in depth topics about docker, nginx, etc.
-A simple microservice that serves up a backend service which is served in nginx inside the swag container.
-
-We're going to create a simple web server using Express JS or you can clone the repository here and https://github.com/nljms/linux-server-swag-demo/.
-Once the server is up and running let's proceed to the next step 🙂
-
-In order to build our microservices, we have to create their images first. If you have cloned the repository given above, you'll notice that there were two Dockerfiles (the Dockerfile which serves as the node application image, and the Dockerfil…]]></summary>
-        <author>
-            <name>Neil James Monzales</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Nest JS REST API Tutorial]]></title>
-        <id>https://dev.to/cryptus_neoxys/nest-js-rest-api-tutorial-2gdi</id>
-        <link href="https://dev.to/cryptus_neoxys/nest-js-rest-api-tutorial-2gdi"/>
-        <updated>2021-11-17T03:58:16.000Z</updated>
-        <summary type="html"><![CDATA[Getting started
-
-
-The first things you'll need are:
-Node installed
-Your favourite Code Editor/IDE
-Once you have those setup, let us get started with nest.
-npm i -g @nestjs/cli
-
-Now we can use this to bootstrap our nest project, using the following command:
-nest new <project-name>
-
-The command should start scaffolding your app, select your preferred package manager and let the CLI setup and install dependencies.
-
-Then navigate into your project directory and start the development server.
-cd nest-beginner
-npm run start:dev
-
-Open a browser and go to http://localhost:3000/, and you should see a familiar message
-
-To keep this tutorial simple, we are going to use nest CLI's resource generator recipe for generating our resources. Go ahead and run the following command to generate the User resourc…]]></summary>
-        <author>
-            <name>Dev Sharma</name>
         </author>
     </entry>
     <entry>
@@ -1109,36 +1670,6 @@ The post A Clever Sticky Footer Technique appeared first on CSS-Tricks. You can 
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Coding Interview Prep – Free Resources to Help You Ace Your Interviews]]></title>
-        <id>618f31ff11d3cb08287a562a</id>
-        <link href="https://www.freecodecamp.org/news/coding-interview-preparation/"/>
-        <updated>2021-11-16T23:50:43.000Z</updated>
-        <summary type="html"><![CDATA[In the words of RealToughCandy, everyone wants a "one-stop shop" when it comes to learning. She uses this term to describe Educative.io, but Educative.io costs $60 a month unless you choose to commit to its annual plan. So it's not a free resource, which means it's not available]]></summary>
-        <author>
-            <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mailto Link – How to Make an HTML Email Link [Example Code]]]></title>
-        <id>618216468bcfae07ca4e073f</id>
-        <link href="https://www.freecodecamp.org/news/mailto-link-how-to-make-an-html-email-link-example-code/"/>
-        <updated>2021-11-16T22:58:22.000Z</updated>
-        <summary type="html"><![CDATA[A mailto link allows users to send emails straight from a website using the user's default email client. But how do you create a mailto link in HTML? In this article, I will walk you through how to create a mailto link in HTML using example code. Basic mailto link]]></summary>
-        <author>
-            <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What is CPU? Meaning, Definition, and What CPU Stands For]]></title>
-        <id>618d64b411d3cb08287a49e3</id>
-        <link href="https://www.freecodecamp.org/news/what-is-cpu-meaning-definition-and-what-cpu-stands-for/"/>
-        <updated>2021-11-16T22:53:22.000Z</updated>
-        <summary type="html"><![CDATA[Every single computing device has a CPU.  You may have heard of this tech term before, but what is it exactly? What is a CPU and how does it work?  In this beginner-friendly article you'll learn the basics on what a CPU actually is, and I'l give you an overview]]></summary>
-        <author>
-            <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Line length revisited: following the research]]></title>
         <id>https://css-tricks.com/?p=356849</id>
         <link href="https://css-tricks.com/line-length-revisited-following-the-research/"/>
@@ -1150,104 +1681,6 @@ The post Line length revisited: following the research appeared first on CSS-Tri
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[El [Nuevo] estado de CSS en Angular]]></title>
-        <id>https://dev.to/macaoblog/el-nuevo-estado-de-css-en-angular-4089</id>
-        <link href="https://dev.to/macaoblog/el-nuevo-estado-de-css-en-angular-4089"/>
-        <updated>2021-11-16T21:31:51.000Z</updated>
-        <summary type="html"><![CDATA[Artículo original de Angular Blog por Emma Twersky en inglés aquí: 
-En esta publicación, veremos las nuevas funciones web que afectan la forma en que definimos el estilo en nuestras aplicaciones Angular.
-En 2019,Sass introdujo un nuevo sistema de módulos, incluida una migración de @import a @use. Al cambiar a la sintaxis@use, podemos determinar más fácilmente qué CSS no se utiliza y reducir el tamaño de la salida CSS compilada. Esto hace que sea imposible extraer inadvertidamente dependencias transitivas. Cada módulo se incluye solo una vez, sin importar cuántas veces se carguen esos estilos.
-Angular Material v12 incluyó una migración del uso de @import a @use para todas las importaciones en los estilos Angular Material Sass. Esta refactorización de nuestra Superficie de API de personaliza…]]></summary>
-        <author>
-            <name>Antonio Cardenas</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[P-PL.com - JavaScript Interview Questions Quiz: Just how Well Do YOU Know JavaScript?]]></title>
-        <id>https://dev.to/tgrimes/p-plcom-javascript-interview-questions-quiz-just-how-well-do-you-know-javascript-1dac</id>
-        <link href="https://dev.to/tgrimes/p-plcom-javascript-interview-questions-quiz-just-how-well-do-you-know-javascript-1dac"/>
-        <updated>2021-11-16T20:18:03.000Z</updated>
-        <summary type="html"><![CDATA[P-PL is a place where teachers and students, experts and beginners, freelancers and customers can come together to collaborate on software development.
-Currently, were are seeking experts in the languages of Python and JavaScript.
-Just how well do YOU know JavaScript? Take our 10 Question Interview Quiz to find out… https://bit.ly/321NHgd
-Before you can become a Jedi Master in JavaScript, you first must master the Interview. Give it a go today and see how you do!
-At its core, p-pl.com is a network of experts willing to connect over video chat.
-As a user, you have access to video chat anyone at anytime given their schedule and expertise you are looking for.
-Whether you are a software engineer looking for help on a bug or a life coach advising clients on their next big move, p-pl.com is the solution for convenient quality information.
-As an expert and consultant, you have the option to bill for your time and expertise for every call you accept. It is YOUR time, why not get paid?]]></summary>
-        <author>
-            <name>Lambda Technology Inc</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[EventDispatch(er) vs. EventEmitter]]></title>
-        <id>https://dev.to/projektorius96/eventdispatcher-vs-eventemitter-25lh</id>
-        <link href="https://dev.to/projektorius96/eventdispatcher-vs-eventemitter-25lh"/>
-        <updated>2021-11-16T17:34:01.000Z</updated>
-        <summary type="html"><![CDATA[Link to the article on my hashnode.com profile]]></summary>
-        <author>
-            <name>projektorius96</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tic-Tac-Toe using HTML,CSS,JS (Express.js) (for intermediates)]]></title>
-        <id>https://dev.to/lucifer25x/tic-tac-toe-using-htmlcssjs-expressjs-for-intermediates-18pm</id>
-        <link href="https://dev.to/lucifer25x/tic-tac-toe-using-htmlcssjs-expressjs-for-intermediates-18pm"/>
-        <updated>2021-11-16T16:10:03.000Z</updated>
-        <summary type="html"><![CDATA[Simple Tic-Tac-Toe game for intermediates
-
-
-
-  
-  
-  Source Code: https://github.com/Lucifer25x/tic-tac-toe-new
-
-
-
-  
-  
-  Functions:
-
-
-
-Play with bot
-2 Player
-https://replit.com/@Lucifer25x/tic-tac-toe-new#.replit
-Code explain:
-const blocks = Array.from(document.querySelectorAll('.block'));
-let board = ["", "", "", "", "", "", "", "", ""]
-
-let currentPlayer = "X";
-let isGaming = true;
-let playerX = "X";
-let playerO = "O";
-let winner = "";
-let xWon = "You Won!";
-let oWon = "Game Over!";
-
-let win = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-]
-
-After I created some functions:
-let checkDraw = function () {
-    if (board.every(function (element) {
-        return element !== "";
-    })) {
-        winner = "draw";
-    …]]></summary>
-        <author>
-            <name>Lucifer25x</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Meet Touch Design For Mobile Interfaces, A New Smashing Book By Steven Hoober]]></title>
         <id>https://smashingmagazine.com/2021/11/touch-design-pre-release/</id>
         <link href="https://smashingmagazine.com/2021/11/touch-design-pre-release/"/>
@@ -1255,16 +1688,6 @@ let checkDraw = function () {
         <summary type="html"><![CDATA[Meet “Touch Design for Mobile Interfaces”, our brand-new guide on designing for mobile with proven, universal, human-centric standards. 400 pages. Shipping starting late-December.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Vitaly Friedman)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Create a Website Free of Cost – Website Builder Platform Guide]]></title>
-        <id>618211678bcfae07ca4e072b</id>
-        <link href="https://www.freecodecamp.org/news/how-to-create-a-website-free-of-cost-website-builder-platform-guide/"/>
-        <updated>2021-11-16T15:53:09.000Z</updated>
-        <summary type="html"><![CDATA[If you are interested in creating a website that requires no coding at all, then you can use a free website builder. In this article, I will provide you with a list of four free website builders you can choose from when creating your websites. Here is the complete list.]]></summary>
-        <author>
-            <name>freeCodeCamp.org</name>
         </author>
     </entry>
     <entry>
@@ -1290,261 +1713,6 @@ The post Jamstack TV appeared first on CSS-Tricks. You can support CSS-Tricks by
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How to Build a Voice-Based Todo App using React, Firebase, and Alan AI]]></title>
-        <id>6190f90f11d3cb08287a5fb1</id>
-        <link href="https://www.freecodecamp.org/news/build-a-voice-based-weather-application-using-react-and-alan-ai/"/>
-        <updated>2021-11-16T15:32:00.000Z</updated>
-        <summary type="html"><![CDATA[React Todo applications are generally very basic – in fact, they're a great exercise if you're a React beginner and want to work on building up your skills. But have you ever built a Todo application where a user can add todos using voice commands? This makes it a bit more]]></summary>
-        <author>
-            <name>freeCodeCamp.org</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Kafka vs. RabbitMQ: Comparing Node.js message brokers]]></title>
-        <id>https://dev.to/logrocket/kafka-vs-rabbitmq-comparing-nodejs-message-brokers-1lkc</id>
-        <link href="https://dev.to/logrocket/kafka-vs-rabbitmq-comparing-nodejs-message-brokers-1lkc"/>
-        <updated>2021-11-16T14:53:35.000Z</updated>
-        <summary type="html"><![CDATA[Written by Wisdom Ekpot ✏️
-A message broker is a computer program that allows software, systems, and services to communicate with each other and exchange data, taking incoming messages from applications and performing actions on them.
-By using message brokers, producers and consumers can communicate with the broker using a standard protocol for communication, with the broker handling all the data's state management and tracking.
-This means all consumer applications do not need to take on the responsibility of managing state, tracking, and the message delivery complexity of the message broker itself. Message brokers rely on a component called message queues that store messages until a consumer service can process them.
-In this article, we’ll compare two Node.js message brokers: Apache Kafka…]]></summary>
-        <author>
-            <name>Matt Angelosanto</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[Question] Handle multiples users on same page, real-time]]></title>
-        <id>https://dev.to/daburuu/question-handle-multiples-users-on-same-page-33oi</id>
-        <link href="https://dev.to/daburuu/question-handle-multiples-users-on-same-page-33oi"/>
-        <updated>2021-11-16T13:50:52.000Z</updated>
-        <summary type="html"><![CDATA[Hellooo ! How are you guys doing ?
-Here's the deal:
-I have an angular app with express backend.
-Is there a simple way to highlight on Eric's table the row that Marc clicked so they don't bother checking the same row details ? And this without refresh ? And on real-time ?
-Thanks for reading me, can't wait to read your responses !
-Have a nice day and take care, feel free to ask if you want more informations ! ♥]]></summary>
-        <author>
-            <name>David L</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[Question] Handle multiples users on same page, real-time]]></title>
-        <id>https://dev.to/daburuu/question-handle-multiples-users-on-same-page-33oi</id>
-        <link href="https://dev.to/daburuu/question-handle-multiples-users-on-same-page-33oi"/>
-        <updated>2021-11-16T13:50:52.000Z</updated>
-        <summary type="html"><![CDATA[Hellooo ! How are you guys doing ?
-Here's the deal:
-I have an angular app with express backend.
-Is there a simple way to highlight on Eric's table the row that Marc clicked so they don't bother checking the same row details ? And this without refresh ? And on real-time ?
-Thanks for reading me, can't wait to read your responses !
-Have a nice day and take care, feel free to ask if you want more informations ! ♥]]></summary>
-        <author>
-            <name>David L</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Container security best practices: Comprehensive guide]]></title>
-        <id>https://dev.to/miguel000/container-security-best-practices-comprehensive-guide-1d2d</id>
-        <link href="https://dev.to/miguel000/container-security-best-practices-comprehensive-guide-1d2d"/>
-        <updated>2021-11-16T13:49:32.000Z</updated>
-        <summary type="html"><![CDATA[Sticking to container security best practices is critical for successfully delivering verified software, as well as preventing severe security breaches and its consequences.
-According to the 2020 CNFC Survey, 92 percent of companies are using containers in production, a 300 percent increase since 2016. Thus, Kubernetes, Openshift, and other container technologies are present everywhere.
-But aren’t containers meant to be safe and isolated? Well, kind of.
-For example, an exploitable vulnerability inside a container, combined with exposed metadata and a wrong credentials configuration, can compromise your whole cloud infrastructure. As described in our Cloud lateral movement post, a hacker can use this chain of exploits and wrong configurations to run crypto mining applications in your cloud …]]></summary>
-        <author>
-            <name>Miguel</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Delete a File or Folder that Can’t Be Deleted, Is Write-Protected or Can’t Be Accessed?]]></title>
-        <id>https://dev.to/hetmansoftware/how-to-delete-a-file-or-folder-that-cant-be-deleted-is-write-protected-or-cant-be-accessed-18ck</id>
-        <link href="https://dev.to/hetmansoftware/how-to-delete-a-file-or-folder-that-cant-be-deleted-is-write-protected-or-cant-be-accessed-18ck"/>
-        <updated>2021-11-16T13:41:34.000Z</updated>
-        <summary type="html"><![CDATA[Do you have a problem when you can’t delete a folder or several files from your PC or laptop? Does Windows show you an “access denied” error? It can happen due to various causes when you delete, edit or overwrite files. Read this article to find out how to delete a file or folder that can’t be deleted because of write protection, denied access, virus infection or opening a file in an unknown program.
-If you try to delete a file or folder from a pen drive, memory card or a hard disk and see the message saying The disk is write-protected, it means some sort of protection against writing data is set up for such disk.
-
-If you get this kind of message when deleting a file or folder: Could not find this item. Verify the item’s location and try again, there might be several causes behind this pro…]]></summary>
-        <author>
-            <name>Michael Mirosnichenko</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Implement File Upload in Angular?]]></title>
-        <id>https://dev.to/tarungurang/how-to-implement-file-upload-in-angular-43gc</id>
-        <link href="https://dev.to/tarungurang/how-to-implement-file-upload-in-angular-43gc"/>
-        <updated>2021-11-16T13:19:24.000Z</updated>
-        <summary type="html"><![CDATA[Being able to upload the files and use them afterward is the required characteristic of many apps. The following are commonly used elements to perform file upload with Angular.
-FormData is an object that you can use for storing key-value pairs. It allows you to construct an object which aligns with an HTML form. This feature allows you to send the data, such as file upload using the XMLHttpRequest interface or Http client libraries.
-You can use the following command to create the FormData:
-const formdata = new FormData();
-
-
-HttpClientModule contains an API that you can use to send and fetch the data in your application from the Http servers. You can use the following command to import this module.
-Import {HttpClientModule} from ‘@angular/common/http’;
-
-
-Reactive forms allow you to use a mo…]]></summary>
-        <author>
-            <name>Tarun Gurang</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Enforce MFA Access to the AWS Console]]></title>
-        <id>https://dev.to/aws-builders/enforce-mfa-access-to-the-aws-console-1ho1</id>
-        <link href="https://dev.to/aws-builders/enforce-mfa-access-to-the-aws-console-1ho1"/>
-        <updated>2021-11-16T12:26:17.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-One of the most important security concerns for entities using AWS is securing their AWS accounts. Evidently, managing an AWS account with 5 users may be somewhat a walk in the park. However, as the usage of the account scales, and the number of users increases, managing account becomes trivial. Several policies must be put in place in order to organize access between different stakeholders. 
-One of the most common security features is to enable Multi-Factor Authentication on the AWS account users.
-In this tutorial, we are going to setup a process that forbids any AWS user from using any service without:
-Setting up an MFA device.
-Signing in using MFA. Any user that signs in without MFA must not be allowed to manage any resource on AWS.
-In this tutorial we will perform the fo…]]></summary>
-        <author>
-            <name>Nicolas El Khoury</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Les variables d'environnement LINUX]]></title>
-        <id>https://dev.to/hpgriff/les-variables-denvironnement-linux-1ge0</id>
-        <link href="https://dev.to/hpgriff/les-variables-denvironnement-linux-1ge0"/>
-        <updated>2021-11-16T11:59:46.000Z</updated>
-        <summary type="html"><![CDATA[Création de variables d'environnement linux pour une utilisation dans les scripts bash ou dans les commandes du terminal.
-On commence par créer une variable locale directement dans le terminal
-DB_SAVES_PATH='/home/Griff/dbsvg'
-On check que la variable est ok
-echo $DB_SAVES_PATH
-Le résultat s'affiche dans le terminal. Ici il doit être: /home/Griff/dbsvg
-On passe la variable locale en variable d'environnement
-export DB_SAVES_PATH
-On check que la variable est bien enregistrée en tant que variable d'environnement
-printenv DB_SAVES_PATH
-Là encore le résultat affiché doit être: /home/Griff/dbsvg
-Une fois les variables définies en variables d'environnement, elles sont accessibles directement dans les scripts bash ou ligne de commande.
-Exemple dans un export de base de données :
-mysqldump ma_base_de_données -u griff > $DB_SAVES_PATH/export.sql
-Lister toutes les variables d'environnement
-env
-Supprimer une variable d'environnement
-unset DB_SAVES_PATH
-export MA_VAR - Passage d'une variable locale en variable d'environnement
-
-
-printenv MA_VAR - Affichage du contenu de ma variable dans le terminal
-
-
-env MA_VAR - Listing de toutes les variables d'environnement
-
-
-unset MA_VAR - Suppression d'une variable d'environnement
-
-
-$MA_VAR - Utilisation d'une variable d'environnement dans un script bash ou en ligne de commande]]></summary>
-        <author>
-            <name>Hp.Griff</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Form Lib 1.7.0 released]]></title>
-        <id>https://dev.to/schukai/form-lib-170-released-15m8</id>
-        <link href="https://dev.to/schukai/form-lib-170-released-15m8"/>
-        <updated>2021-11-16T11:46:40.000Z</updated>
-        <summary type="html"><![CDATA[Today we have released the latest edition of our Form Lib. Our library offers us the possibility to link forms with data. In addition, we have programmed here various controls that are not available in the standard. 
-Only the changes are described here. The full functionality can be found in the documentation.
-This release builds on Monster 1.24.0 and contains minor improvements in the handling of data sources. 
-In addition, you can now disable all included controls via a central disabled attribute in the form tag.
-The Confirm button contains minor improvements.
-
-
-<monster-confirm-button>
-   <p>Should the record be deleted?</p>
-   <span slot="button">DELETE</span>
-   <span slot="confirm">OK</span>
-   <span slot="cancel">CANCEL</span>
-</monster-confirm-button>
-
-
-disabled attribute.
-<monster-confirm-button disabled>
-   <p>Should the record be deleted?</p>
-   <span slot="button">DELETE</span>
-   <span slot="confirm">OK</span>
-   <span slot="cancel">CANCEL</span>
-</monster-confirm-button>
-
-
-hope you enjoy it!
-Forms, nothing but forms
-documentation
-project home
-form example
-we are hiring]]></summary>
-        <author>
-            <name>Volker Schukai</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Secure software supply chain: why every link matters]]></title>
-        <id>https://dev.to/miguel000/secure-software-supply-chain-why-every-link-matters-bna</id>
-        <link href="https://dev.to/miguel000/secure-software-supply-chain-why-every-link-matters-bna"/>
-        <updated>2021-11-16T10:23:06.000Z</updated>
-        <summary type="html"><![CDATA[The new threats in software development are not only related to the specific company itself. The whole software supply chain is a target for attackers and it is really important to make sure that we put all our effort into securing each link because if one fails, everything will be affected.
-Supply chain activities include each step of the transformation of raw materials, components, and resources into a completed product, and its delivery to the end customer.
-Each step could be a complex process itself and cause a security incident.
-The software supply chain is similar to other activities or industries. Some resources are consumed, then transformed, through a series of steps and processes, and finally supplied as a product or service to a customer.
-In software, the raw materials are commo…]]></summary>
-        <author>
-            <name>Miguel</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[tmux or zsh?]]></title>
-        <id>https://dev.to/rezakhademi/tmux-or-zsh-5432</id>
-        <link href="https://dev.to/rezakhademi/tmux-or-zsh-5432"/>
-        <updated>2021-11-16T06:42:37.000Z</updated>
-        <summary type="html"><![CDATA[This is my first article on dev.to, so go easy on me!
-tmux is an open-source terminal multiplexer for Linux operating  distributions. It allows multiple terminal sessions to be accessed simultaneously in a single window. 
-on the other hand, ZSH, also called as 'Z Shell', is an extended version of the Bourne Shell (sh), with plenty of new features, and support for plugins and themes. Since it’s based on the same shell as Bash, ZSH has many of the same features, and switching over is a breeze.
-If your editor for developing and coding is vim or sth like that, the best solution for you is tmux because you can always switch between tabs in a breeze and edit the code at the same time.
-But if you are like me and use VSCode as code editor, I recommend you to install zsh and even OhMyZsh to have some great features like: auto suggestion(Not recommended), syntax highlighting and etc.
-So, both of them are great and offer you some helpful features. zsh is more like a handful featured terminal and tmux will bring your editor and terminal at same place to switch simultaneously!
-you can use both of them or install zash on tmux!]]></summary>
-        <author>
-            <name>Reza Khademi</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Authentication using the Auth0 to an Angular application]]></title>
-        <id>https://dev.to/rodrigokamada/authentication-using-the-auth0-to-an-angular-application-eg0</id>
-        <link href="https://dev.to/rodrigokamada/authentication-using-the-auth0-to-an-angular-application-eg0"/>
-        <updated>2021-11-16T04:41:50.000Z</updated>
-        <summary type="html"><![CDATA[Introduction
-
-
-Angular is a development platform for building WEB, mobile and desktop applications using HTML, CSS and TypeScript (JavaScript). Currently, Angular is at version 13 and Google is the main maintainer of the project.
-Auth0 is an easy to implement, adaptable authentication and authorization platform.
-Before you start, you need to install and configure the tools:
-git
-Node.js and npm
-Angular CLI
-IDE (e.g. Visual Studio Code)
-1. Let's create the account. Access the site https://auth0.com/ and click on the button Sign up.
-
-2. Fill in the field Email and click on the button SIGN UP.
-
-3. Fill in the fields Email, Password and click on the button Continue.
-
-4. Click on the option Personal and click on the button NEXT.
-
-5. Let's create the application. Click on the menu Applications an…]]></summary>
-        <author>
-            <name>Rodrigo Kamada</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Color Alpha Anywhere]]></title>
         <id>https://css-tricks.com/?p=356611</id>
         <link href="https://css-tricks.com/color-alpha-anywhere/"/>
@@ -1553,94 +1721,6 @@ IDE (e.g. Visual Studio Code)
 The post Color Alpha Anywhere appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <author>
             <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Limitar o acesso ao serviço de metadados de instâncias EC2]]></title>
-        <id>https://dev.to/rafaelonline/limitar-o-acesso-ao-servico-de-metadados-de-instancias-ec2-44kh</id>
-        <link href="https://dev.to/rafaelonline/limitar-o-acesso-ao-servico-de-metadados-de-instancias-ec2-44kh"/>
-        <updated>2021-11-15T22:06:52.000Z</updated>
-        <summary type="html"><![CDATA[Motivação
-
-
-Limitar o acesso aos metadados de uma instância faz parte de uma estratégia de segurança em camadas, que tem como objetivo impedir o acesso aos metadados por usuários/aplicações não autorizadas. 
-Essa ação soma-se à utilização do IMDSv2.
-Podemos utilizar regras de iptables para limitar o acesso, permitindo acesso a usuários ou grupos específicos.
-O exemplo a seguir libera o acesso ao serviço de metadados da instância por todos os processos em execução na conta do usuário "app".
-sudo iptables -I OUTPUT 1 --proto tcp --destination 169.254.169.254 --match owner --uid-owner app--jump ACCEPT
-
-O exemplo a seguir impede o acesso ao serviço de metadados da instância por todos os processos, exceto os processos em execução na conta do usuário root.
-sudo iptables --append OUTPUT --proto tcp --destination 169.254.169.254 --match owner ! --uid-owner root --jump REJECT
-
-A ordem é fundamental, a regra de bloqueio deverá ser a última.
-Obs.: O módulo owner do iptables só corresponderá à associação do grupo se o grupo for o grupo primário de um determinado usuário local. Outros grupos não são correspondidos.
-Criei uma role Ansile para ser utilizada na configuração das instancias ou no processo de criação de AMIs
-Repositório: EC2 Metadata Service restrict access
-A configuração o acesso ao metadata está sendo limitado somente ao usuário root e/ou aqueles usuários que realizam sudo
-As configurações foram feitas seguindo as seguintes documentações:
-Documentação oficial da AWS
-Apresentação sobre EC2 instance metadata
-PDF da Apresentação sobre EC2 instance metadata
-Documentação oficial do Ansible - Módulo Iptables]]></summary>
-        <author>
-            <name>Rafael Conceição</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Limitar o acesso ao serviço de metadados de instâncias EC2]]></title>
-        <id>https://dev.to/rafaelonline/limitar-o-acesso-ao-servico-de-metadados-de-instancias-ec2-44kh</id>
-        <link href="https://dev.to/rafaelonline/limitar-o-acesso-ao-servico-de-metadados-de-instancias-ec2-44kh"/>
-        <updated>2021-11-15T22:06:52.000Z</updated>
-        <summary type="html"><![CDATA[Motivação
-
-
-Limitar o acesso aos metadados de uma instância faz parte de uma estratégia de segurança em camadas, que tem como objetivo impedir o acesso aos metadados por usuários/aplicações não autorizadas. 
-Essa ação soma-se à utilização do IMDSv2.
-Podemos utilizar regras de iptables para limitar o acesso, permitindo acesso a usuários ou grupos específicos.
-O exemplo a seguir libera o acesso ao serviço de metadados da instância por todos os processos em execução na conta do usuário "app".
-sudo iptables -I OUTPUT 1 --proto tcp --destination 169.254.169.254 --match owner --uid-owner app--jump ACCEPT
-
-O exemplo a seguir impede o acesso ao serviço de metadados da instância por todos os processos, exceto os processos em execução na conta do usuário root.
-sudo iptables --append OUTPUT --proto tcp --destination 169.254.169.254 --match owner ! --uid-owner root --jump REJECT
-
-A ordem é fundamental, a regra de bloqueio deverá ser a última.
-Obs.: O módulo owner do iptables só corresponderá à associação do grupo se o grupo for o grupo primário de um determinado usuário local. Outros grupos não são correspondidos.
-Criei uma role Ansile para ser utilizada na configuração das instancias ou no processo de criação de AMIs
-Repositório: EC2 Metadata Service restrict access
-A configuração o acesso ao metadata está sendo limitado somente ao usuário root e/ou aqueles usuários que realizam sudo
-As configurações foram feitas seguindo as seguintes documentações:
-Documentação oficial da AWS
-Apresentação sobre EC2 instance metadata
-PDF da Apresentação sobre EC2 instance metadata
-Documentação oficial do Ansible - Módulo Iptables]]></summary>
-        <author>
-            <name>Rafael Conceição</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Consistency vs flexibility when building components]]></title>
-        <id>https://dev.to/this-is-learning/consistency-vs-flexibility-when-building-components-i34</id>
-        <link href="https://dev.to/this-is-learning/consistency-vs-flexibility-when-building-components-i34"/>
-        <updated>2021-11-15T16:45:42.000Z</updated>
-        <summary type="html"><![CDATA[A few days ago I asked Twitter how would one solve the task of implementing a button component that can also display an icon. Is it by adding an icon property to the button component or by having a separate icon component nested inside the button? I also asked why would one choose one approach over the other.
-
-Quite a few people replied with their pros and cons for both options. In this post I’m going to try and summarize the points mentioned there. I think that’s quite valuable to have as a reference in the future.
-icon property on a button component
-
-
-
-  
-  
-  Pros
-
-
-
-Convention - only one way to display an icon
-Consistency - all buttons with an icon will look the same across the app/product
-Simpler syntax to remember
-Simple at first but might become complex later on when more requiremen…]]></summary>
-        <author>
-            <name>Dzhavat Ushev</name>
         </author>
     </entry>
     <entry>
@@ -1655,56 +1735,6 @@ The post Defining and Applying UI Themes Using the Mimcss CSS-in-JS Library appe
         </author>
     </entry>
     <entry>
-        <title type="html"><![CDATA[ใช้ SSH config ช่วยจำ option เวลาจะ remote ด้วย SSH]]></title>
-        <id>https://dev.to/iporsut/aich-ssh-config-chwyccham-option-ewlaaccha-remote-dwy-ssh-3f1d</id>
-        <link href="https://dev.to/iporsut/aich-ssh-config-chwyccham-option-ewlaaccha-remote-dwy-ssh-3f1d"/>
-        <updated>2021-11-15T15:16:30.000Z</updated>
-        <summary type="html"><![CDATA[SSH config ช่วยให้เรา config option ของแต่ละ host เอาไว้หลายๆอันได้ ทำให้ตอนเรียก ssh ใส่แค่ชื่อ hostname ใน config ก็พอแล้ว
-เวลาใช้ ssh เพื่อ remote เครื่องอื่น ปกติแล้วจะสั่งประมาณนี้
-ssh user@hostname
-
-หรือถ้ามี port ที่ต่างจาก ssh ปกติ (22) ก็ใส่ option สำหรับ port เพิ่มคือ
-ssh -p 2222 user@hostname
-
-หรือถ้ามี IdentityFile ด้วย ก็ต้องเพิ่ม option ไปอีกแบบนี้
-ssh -i identity.key -p 2222 user@hostname
-
-ตัวอย่างเช่นผมจะ ssh เข้า Ubuntu ที่ลงไว้ใน Virtual Box โดยใช้ vagrant ปกติแล้วจะสั่ง vagrant ssh ก็ได้ แต่ถ้าจะสั่งด้วย ssh เองโดยตรงจะต้องสั่งประมาณนี้
-ssh -i ~/vagrants/ubuntu/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@127.0.0.1
-
-ทีนี้ถ้าเราจะใช้ SSH config ช่วยเราก็สร้างไฟล์ config ที่ $HOME/.ssh/config
-จากนั้นกำหนดค่าแบบนี้
-Host ubuntu-vagrant
-  HostName 127.0.0.1
-  IdentityFile ~/vagrants/ubuntu/.vagrant/machines/default/virtualbox/private_key
-  Port 2222
-  User vagrant
-
-ลักษณะ config file ของ SSH ก็มี key เช่น Host, HostName, IdentityFile, Port และ User แล้วเว้นวรรคด้วย 1 ช่องว่าง ตามด้วยค่าที่กำหนดให้ key นั้นๆ 
-แล้วก็มีการใช้ indentation เพื่อบอกว่าค่านั้นเป็น key/value ย่อยๆของ key หลักอีกที
-จากตัวอย่างผมกำหนด Host คือ ubuntu-vagrant แล้วก็กำหนดค่า HostName เป็น IP หรือ Domain name ของ Host ที่เราต้องการต่อ แล้วก็ค่า IdentityFile ไปที่ path ของ private key ของ vagrant ที่กำหนดให้กับ VM ที่ต้องการ remote ตามด้วยค่า Port 2222 แล้วก็​ User คือ username ในทีนี้คือ vagrant
-เสร็จแล้วหลังจากนั้นเวลาเราต้องการ connect ไปที่ Ubuntu ใน VM ก็แค่สั่ง
-ssh ubuntu-vagrant
-
-เท่านี้ก็ได้แล้ว]]></summary>
-        <author>
-            <name>Weerasak Chongnguluam</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What is free memory in Linux?]]></title>
-        <id>https://dev.to/yugabyte/what-is-free-memory-in-linux-18km</id>
-        <link href="https://dev.to/yugabyte/what-is-free-memory-in-linux-18km"/>
-        <updated>2021-11-15T13:39:33.000Z</updated>
-        <summary type="html"><![CDATA[This blogpost is about linux memory management, and specifically about the question that has been asked about probably any operating system throughout history: how much free memory do I need to consider it to be healthy?
-To start off, a reference to a starwars quote: 'This is not the free memory you're looking for'. 
-What this quote means to say is that whilst the free memory statistic obviously shows free memory, what you are actually looking for is the amount of memory that can be used for memory allocations on the system. On linux, this is not the same as free memory.
-Of course free memory is directly available, actually free memory, which can be directly used by a process that needs free memory (a free page). A free page is produced by the kernel page daemon (commonly named 'swapper'),…]]></summary>
-        <author>
-            <name>Frits Hoogland</name>
-        </author>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Powerful Terminal And Command-Line (CLI) Tools For Modern Web Development]]></title>
         <id>https://smashingmagazine.com/2021/11/powerful-terminal-commandline-tools-modern-web-development/</id>
         <link href="https://smashingmagazine.com/2021/11/powerful-terminal-commandline-tools-modern-web-development/"/>
@@ -1712,48 +1742,6 @@ Of course free memory is directly available, actually free memory, which can be 
         <summary type="html"><![CDATA[What’s your favorite command-line tool? In this post, Louis Lazaris shares a collection of relevant command-line apps and utilities that he has personally come across in the past few years. If there’s a useful one that hasn’t been mentioned and one you use regularly, please do share it in the comments.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Louis Lazaris)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[I created a terminal style website.]]></title>
-        <id>https://dev.to/m4tt72/i-created-a-terminal-style-website-1jb2</id>
-        <link href="https://dev.to/m4tt72/i-created-a-terminal-style-website-1jb2"/>
-        <updated>2021-11-15T08:38:22.000Z</updated>
-        <summary type="html"><![CDATA[https://m4tt72.com
-https://github.com/m4tt72/terminal
-I'm a Linux enthusiast, and I tried creating something that will allow 'normal' people to have a glimpse at my world.
-Feedback is welcomed 🙏]]></summary>
-        <author>
-            <name>Yassine Fathi</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Gerenciando processos no Linux]]></title>
-        <id>https://dev.to/mdcg/gerenciando-processos-no-linux-5m</id>
-        <link href="https://dev.to/mdcg/gerenciando-processos-no-linux-5m"/>
-        <updated>2021-11-14T22:01:57.000Z</updated>
-        <summary type="html"><![CDATA[Introdução
-
-
-Provavelmente você já deve ter ouvido sobre "processos" enquanto estava mexendo em seu computador. A maioria de nós talvez só nos damos conta da existência deles em "momentos ruins", por exemplo, quando alguma aplicação está travada e temos que "finalizar o processo dela". Contudo, fora o conhecimento em saber como finalizar o "bendito" para você continuar exercendo suas atividades, algo importantíssimo também é entender qual é a real importância de um processo.
-Quando estamos trabalhando em um ambiente multiprogramado/multitarefa, o Sistema Operacional (SO) é responsável por gerenciar diversos programas executados "concorrentemente", controlando o compartilhamento dos recursos para cada um deles. Para que isso seja possível, todo programa executado deve sempre estar associado…]]></summary>
-        <author>
-            <name>Mauro de Carvalho</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Criando um pendrive bootável live com Kali Linux]]></title>
-        <id>https://dev.to/mdcg/criando-um-pendrive-bootavel-live-com-kali-linux-3j5l</id>
-        <link href="https://dev.to/mdcg/criando-um-pendrive-bootavel-live-com-kali-linux-3j5l"/>
-        <updated>2021-11-14T20:39:03.000Z</updated>
-        <summary type="html"><![CDATA[Introdução
-
-
-Se você já faz parte ou tem interesse de entrar no mundo do hackvismo, provavelmente já deve ter ouvido falar do Kali Linux. Nessa postagem, eu pretendo falar um pouco sobre essa distribuição, e também, ensiná-lo como você pode estar criando um pendrive bootável no modo live com o mesmo, utilizando apenas a linha de comando do seu terminal. Sem mais delongas, vamos começar!
-PS: Caso você não saiba o que é "bootável no modo live", significa que você poderá inicializar o sistema operacional direto do seu pendrive, com isso, você não precisará necessariamente fazer a instalação do Kali Linux em sua própria máquina.
-O Kali Linux é uma distribuição GNU/Linux baseada no Debian, totalmente open source, que é mantido e financiado pela Offensive Security. Ele é usado para pentesting, a…]]></summary>
-        <author>
-            <name>Mauro de Carvalho</name>
         </author>
     </entry>
     <entry>
@@ -1795,30 +1783,6 @@ The post Interactive Rebase: Clean up your Commit History appeared first on CSS-
         <updated>2021-11-11T20:07:40.000Z</updated>
         <summary type="html"><![CDATA[Scott digs into the history of the <menu> element. He traced it as far back as HTML 2 (!) in a 1994 changelog. The vibe then, it seems, was to mark up a list. I would suspect the intention …
 The post Semantic menu context appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
-        <author>
-            <name>Chris Coyier</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Easy Dark Mode (and Multiple Color Themes!) in React]]></title>
-        <id>https://css-tricks.com/?p=355683</id>
-        <link href="https://css-tricks.com/easy-dark-mode-and-multiple-color-themes-in-react/"/>
-        <updated>2021-11-11T15:28:04.000Z</updated>
-        <summary type="html"><![CDATA[I was working on a large React application for a startup, and aside from just wanting some good strategies to keep our styles organized, I wanted to give this whole “dark mode” thing a shot. With the huge ecosystem around …
-The post Easy Dark Mode (and Multiple Color Themes!) in React appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
-        <author>
-            <name>Abram Thau</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Quickly Get Alerted to Front-End Errors and Performance Issues]]></title>
-        <id>https://css-tricks.com/?p=355516</id>
-        <link href="https://css-tricks.com/quickly-get-alerted-to-front-end-errors-and-performance-issues/"/>
-        <updated>2021-11-11T15:22:31.000Z</updated>
-        <summary type="html"><![CDATA[(This is a sponsored post.)
-Measuring things is great. They say what you only fix what you measure. Raygun is great at measuring websites. Measuring performance, measuring errors and crashes, measuring code problems. 
-You know what’s even better than …
-The post Quickly Get Alerted to Front-End Errors and Performance Issues appeared first on CSS-Tricks. You can support CSS-Tricks by being an MVP Supporter.]]></summary>
         <author>
             <name>Chris Coyier</name>
         </author>
@@ -2001,26 +1965,6 @@ The post Quickly Get Alerted to Front-End Errors and Performance Issues appeared
         <summary type="html"><![CDATA[The `prefers-reduced-motion` media query has excellent support in all modern browsers going back a couple of years. In this article, Michelle Barker explains why there’s no reason not to use it today to make your sites more accessible.]]></summary>
         <author>
             <name>hello@smashingmagazine.com (Michelle Barker)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building The SSG I’ve Always Wanted: An 11ty, Vite And JAM Sandwich]]></title>
-        <id>https://smashingmagazine.com/2021/10/building-ssg-11ty-vite-jam-sandwich/</id>
-        <link href="https://smashingmagazine.com/2021/10/building-ssg-11ty-vite-jam-sandwich/"/>
-        <updated>2021-10-20T11:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Back in January 2020, Ben Holmes set out to do what just about every web developer does each year: rebuild his personal site. In this article, he shares his story of how he set out to build his own build pipeline from absolute ground zero and created “Slinkity”.]]></summary>
-        <author>
-            <name>hello@smashingmagazine.com (Ben Holmes)</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building An API With Gatsby Functions]]></title>
-        <id>https://smashingmagazine.com/2021/10/building-api-gatsby-functions/</id>
-        <link href="https://smashingmagazine.com/2021/10/building-api-gatsby-functions/"/>
-        <updated>2021-10-19T14:00:00.000Z</updated>
-        <summary type="html"><![CDATA[In this tutorial, Paul Scanlon explains how to build an API by using Gatsby Functions and what you need to keep in mind when deploying it to Gatsby Cloud.]]></summary>
-        <author>
-            <name>hello@smashingmagazine.com (Paul Scanlon)</name>
         </author>
     </entry>
 </feed>
